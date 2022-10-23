@@ -1153,7 +1153,7 @@ pub unsafe extern "C" fn h3SetToVertexGraph(
     };
     let mut fromVtx: *mut LatLng = 0 as *mut LatLng;
     let mut toVtx: *mut LatLng = 0 as *mut LatLng;
-    let mut edge: *mut VertexNode = 0 as *mut VertexNode;
+    let mut edge: *mut VertexNode = std::ptr::null_mut::<VertexNode>();
     if numHexes < 1 as libc::c_int {
         initVertexGraph(graph, 0 as libc::c_int, 0 as libc::c_int);
         return E_SUCCESS as libc::c_int as H3Error;
@@ -1208,7 +1208,7 @@ pub unsafe extern "C" fn _vertexGraphToLinkedGeo(
         init
     };
     let mut loop_0: *mut LinkedGeoLoop = 0 as *mut LinkedGeoLoop;
-    let mut edge: *mut VertexNode = 0 as *mut VertexNode;
+    let mut edge: *mut VertexNode = std::ptr::null_mut::<VertexNode>();
     let mut nextVtx: LatLng = LatLng { lat: 0., lng: 0. };
     loop {
         edge = firstVertexNode(graph);

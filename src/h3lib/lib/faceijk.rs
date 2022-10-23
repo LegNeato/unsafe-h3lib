@@ -2872,7 +2872,7 @@ pub unsafe extern "C" fn _adjustOverageClassII(
         overage = FACE_EDGE;
     } else if (*ijk).i + (*ijk).j + (*ijk).k > maxDim {
         overage = NEW_FACE;
-        let mut fijkOrient: *const FaceOrientIJK = 0 as *const FaceOrientIJK;
+        let mut fijkOrient: *const FaceOrientIJK = std::ptr::null::<FaceOrientIJK>();
         if (*ijk).k > 0 as libc::c_int {
             if (*ijk).j > 0 as libc::c_int {
                 fijkOrient = &*(*faceNeighbors.as_ptr().offset((*fijk).face as isize))

@@ -112,7 +112,7 @@ unsafe extern "C" fn runTests() {
         last: 0 as *mut LinkedGeoLoop,
         next: 0 as *mut LinkedGeoPolygon,
     };
-    if cellsToLinkedMultiPolygon(0 as *const H3Index, 0 as libc::c_int, &mut polygon) != 0 {
+    if cellsToLinkedMultiPolygon(std::ptr::null::<H3Index>as libc::c_int, &mut polygon) != 0 {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,

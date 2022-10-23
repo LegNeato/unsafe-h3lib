@@ -203,10 +203,10 @@ static mut sfGeoLoop: GeoLoop = unsafe {
 static mut sfGeoPolygon: GeoPolygon = GeoPolygon {
     geoloop: GeoLoop {
         numVerts: 0,
-        verts: 0 as *const LatLng as *mut LatLng,
+        verts: std::ptr::null::<LatLng>() as *mut LatLng,
     },
     numHoles: 0,
-    holes: 0 as *const GeoLoop as *mut GeoLoop,
+    holes: std::ptr::null::<GeoLoop>() as *mut GeoLoop,
 };
 static mut holeVerts: [LatLng; 3] = [
     {
@@ -243,10 +243,10 @@ static mut holeGeoLoop: GeoLoop = unsafe {
 static mut holeGeoPolygon: GeoPolygon = GeoPolygon {
     geoloop: GeoLoop {
         numVerts: 0,
-        verts: 0 as *const LatLng as *mut LatLng,
+        verts: std::ptr::null::<LatLng>() as *mut LatLng,
     },
     numHoles: 0,
-    holes: 0 as *const GeoLoop as *mut GeoLoop,
+    holes: std::ptr::null::<GeoLoop>() as *mut GeoLoop,
 };
 static mut emptyVerts: [LatLng; 3] = [
     {
@@ -283,10 +283,10 @@ static mut emptyGeoLoop: GeoLoop = unsafe {
 static mut emptyGeoPolygon: GeoPolygon = GeoPolygon {
     geoloop: GeoLoop {
         numVerts: 0,
-        verts: 0 as *const LatLng as *mut LatLng,
+        verts: std::ptr::null::<LatLng>() as *mut LatLng,
     },
     numHoles: 0,
-    holes: 0 as *const GeoLoop as *mut GeoLoop,
+    holes: std::ptr::null::<GeoLoop>() as *mut GeoLoop,
 };
 static mut invalidVerts: [LatLng; 2] = [
     {
@@ -316,10 +316,10 @@ static mut invalidGeoLoop: GeoLoop = unsafe {
 static mut invalidGeoPolygon: GeoPolygon = GeoPolygon {
     geoloop: GeoLoop {
         numVerts: 0,
-        verts: 0 as *const LatLng as *mut LatLng,
+        verts: std::ptr::null::<LatLng>() as *mut LatLng,
     },
     numHoles: 0,
-    holes: 0 as *const GeoLoop as *mut GeoLoop,
+    holes: std::ptr::null::<GeoLoop>() as *mut GeoLoop,
 };
 static mut invalid2Verts: [LatLng; 2] = [
     {
@@ -349,10 +349,10 @@ static mut invalid2GeoLoop: GeoLoop = unsafe {
 static mut invalid2GeoPolygon: GeoPolygon = GeoPolygon {
     geoloop: GeoLoop {
         numVerts: 0,
-        verts: 0 as *const LatLng as *mut LatLng,
+        verts: std::ptr::null::<LatLng>() as *mut LatLng,
     },
     numHoles: 0,
-    holes: 0 as *const GeoLoop as *mut GeoLoop,
+    holes: std::ptr::null::<GeoLoop>() as *mut GeoLoop,
 };
 static mut pointVerts: [LatLng; 1] = [{
     let mut init = LatLng {
@@ -373,10 +373,10 @@ static mut pointGeoLoop: GeoLoop = unsafe {
 static mut pointGeoPolygon: GeoPolygon = GeoPolygon {
     geoloop: GeoLoop {
         numVerts: 0,
-        verts: 0 as *const LatLng as *mut LatLng,
+        verts: std::ptr::null::<LatLng>() as *mut LatLng,
     },
     numHoles: 0,
-    holes: 0 as *const GeoLoop as *mut GeoLoop,
+    holes: std::ptr::null::<GeoLoop>() as *mut GeoLoop,
 };
 static mut lineVerts: [LatLng; 2] = [
     {
@@ -406,10 +406,10 @@ static mut lineGeoLoop: GeoLoop = unsafe {
 static mut lineGeoPolygon: GeoPolygon = GeoPolygon {
     geoloop: GeoLoop {
         numVerts: 0,
-        verts: 0 as *const LatLng as *mut LatLng,
+        verts: std::ptr::null::<LatLng>() as *mut LatLng,
     },
     numHoles: 0,
-    holes: 0 as *const GeoLoop as *mut GeoLoop,
+    holes: std::ptr::null::<GeoLoop>() as *mut GeoLoop,
 };
 unsafe extern "C" fn isTransmeridianCell(mut h: H3Index) -> bool {
     let mut bndry: CellBoundary = CellBoundary {
@@ -1007,17 +1007,17 @@ unsafe extern "C" fn runTests() {
     *verts.offset(boundary.numVerts as isize) = boundary.verts[0 as libc::c_int as usize];
     let mut someGeoLoop: GeoLoop = GeoLoop {
         numVerts: 0,
-        verts: 0 as *const LatLng as *mut LatLng,
+        verts: std::ptr::null::<LatLng>() as *mut LatLng,
     };
     someGeoLoop.numVerts = boundary.numVerts + 1 as libc::c_int;
     someGeoLoop.verts = verts;
     let mut someHexagon: GeoPolygon = GeoPolygon {
         geoloop: GeoLoop {
             numVerts: 0,
-            verts: 0 as *const LatLng as *mut LatLng,
+            verts: std::ptr::null::<LatLng>() as *mut LatLng,
         },
         numHoles: 0,
-        holes: 0 as *const GeoLoop as *mut GeoLoop,
+        holes: std::ptr::null::<GeoLoop>() as *mut GeoLoop,
     };
     someHexagon.geoloop = someGeoLoop;
     someHexagon.numHoles = 0 as libc::c_int;
@@ -1659,17 +1659,17 @@ unsafe extern "C" fn runTests() {
     ];
     let mut geoloop_0: GeoLoop = GeoLoop {
         numVerts: 0,
-        verts: 0 as *const LatLng as *mut LatLng,
+        verts: std::ptr::null::<LatLng>() as *mut LatLng,
     };
     geoloop_0.verts = verts_1.as_mut_ptr();
     geoloop_0.numVerts = 4 as libc::c_int;
     let mut polygon_0: GeoPolygon = GeoPolygon {
         geoloop: GeoLoop {
             numVerts: 0,
-            verts: 0 as *const LatLng as *mut LatLng,
+            verts: std::ptr::null::<LatLng>() as *mut LatLng,
         },
         numHoles: 0,
-        holes: 0 as *const GeoLoop as *mut GeoLoop,
+        holes: std::ptr::null::<GeoLoop>() as *mut GeoLoop,
     };
     polygon_0.geoloop = geoloop_0;
     polygon_0.numHoles = 0 as libc::c_int;

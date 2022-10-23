@@ -109,7 +109,7 @@ pub static mut smallVerts: [LatLng; 7] = [
 #[no_mangle]
 pub static mut smallGeoLoop: GeoLoop = GeoLoop {
     numVerts: 0,
-    verts: 0 as *const LatLng as *mut LatLng,
+    verts: std::ptr::null::<LatLng>() as *mut LatLng,
 };
 #[no_mangle]
 pub static mut smallBBox: BBox = BBox {
@@ -761,7 +761,7 @@ pub static mut largeVerts: [LatLng; 91] = [
 #[no_mangle]
 pub static mut largeGeoLoop: GeoLoop = GeoLoop {
     numVerts: 0,
-    verts: 0 as *const LatLng as *mut LatLng,
+    verts: std::ptr::null::<LatLng>() as *mut LatLng,
 };
 #[no_mangle]
 pub static mut largeBBox: BBox = BBox {

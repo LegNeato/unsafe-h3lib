@@ -65,8 +65,8 @@ pub unsafe extern "C" fn parseArgs(
     mut helpArg: *const Arg,
     mut helpText: *const libc::c_char,
 ) -> libc::c_int {
-    let mut errorMessage: *const libc::c_char = 0 as *const libc::c_char;
-    let mut errorDetails: *const libc::c_char = 0 as *const libc::c_char;
+    let mut errorMessage: *const libc::c_char = std::ptr::null::<libc::c_char>();
+    let mut errorDetails: *const libc::c_char = std::ptr::null::<libc::c_char>();
     let mut failed: libc::c_int = _parseArgsList(
         argc,
         argv,
@@ -114,7 +114,7 @@ pub unsafe extern "C" fn _parseArgsList(
         let mut foundMatch: bool = 0 as libc::c_int != 0;
         let mut j: libc::c_int = 0 as libc::c_int;
         while j < numArgs {
-            let mut argName: *const libc::c_char = 0 as *const libc::c_char;
+            let mut argName: *const libc::c_char = std::ptr::null::<libc::c_char>();
             let mut k: libc::c_int = 0 as libc::c_int;
             while k < 2 as libc::c_int {
                 if !((**args.offset(j as isize)).names[k as usize]).is_null() {

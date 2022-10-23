@@ -86,7 +86,7 @@ unsafe extern "C" fn runTests() {
         size: 0,
         res: 0,
     };
-    if h3SetToVertexGraph(0 as *const H3Index, 0 as libc::c_int, &mut graph) != 0 {
+    if h3SetToVertexGraph(std::ptr::null::<H3Index>as libc::c_int, &mut graph) != 0 {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,

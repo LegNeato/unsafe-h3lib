@@ -915,8 +915,7 @@ unsafe extern "C" fn runTests() {
     free(children_2 as *mut libc::c_void);
     currentTestName = b"compactCells_empty\0" as *const u8 as *const libc::c_char;
     if !(compactCells(
-        0 as *const H3Index,
-        0 as *mut H3Index,
+        std::ptr::null::<H3Index>(),
         0 as libc::c_int as int64_t,
     ) == E_SUCCESS as libc::c_int as libc::c_uint)
     {
@@ -1534,7 +1533,7 @@ unsafe extern "C" fn runTests() {
     currentTestName = b"uncompactCells_empty\0" as *const u8 as *const libc::c_char;
     let mut uncompactSz: int64_t = 0;
     if uncompactCellsSize(
-        0 as *const H3Index,
+        std::ptr::null::<H3Index>(),
         0 as libc::c_int as int64_t,
         0 as libc::c_int,
         &mut uncompactSz,
@@ -1573,7 +1572,7 @@ unsafe extern "C" fn runTests() {
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
     if !(uncompactCells(
-        0 as *const H3Index,
+        std::ptr::null::<H3Index>(),
         0 as libc::c_int as int64_t,
         0 as *mut H3Index,
         0 as libc::c_int as int64_t,

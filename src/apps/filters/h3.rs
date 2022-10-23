@@ -71,11 +71,11 @@ pub unsafe extern "C" fn cellToLatLngCmd(
         let mut init = Arg {
             names: [
                 b"cellToLatLng\0" as *const u8 as *const libc::c_char,
-                0 as *const libc::c_char,
+                std::ptr::null::<libc::c_char>(),
             ],
             required: 1 as libc::c_int != 0,
-            scanFormat: 0 as *const libc::c_char,
-            valueName: 0 as *const libc::c_char,
+            scanFormat: std::ptr::null::<libc::c_char>(),
+            valueName: std::ptr::null::<libc::c_char>(),
             value: 0 as *mut libc::c_void,
             found: false,
             helpText: b"Convert an H3 cell to a latitude/longitude coordinate\0" as *const u8
@@ -90,8 +90,8 @@ pub unsafe extern "C" fn cellToLatLngCmd(
                 b"--help\0" as *const u8 as *const libc::c_char,
             ],
             required: false,
-            scanFormat: 0 as *const libc::c_char,
-            valueName: 0 as *const libc::c_char,
+            scanFormat: std::ptr::null::<libc::c_char>(),
+            valueName: std::ptr::null::<libc::c_char>(),
             value: 0 as *mut libc::c_void,
             found: false,
             helpText: b"Show this help message.\0" as *const u8 as *const libc::c_char,
@@ -148,11 +148,11 @@ pub unsafe extern "C" fn latLngToCellCmd(
         let mut init = Arg {
             names: [
                 b"latLngToCell\0" as *const u8 as *const libc::c_char,
-                0 as *const libc::c_char,
+                std::ptr::null::<libc::c_char>(),
             ],
             required: 1 as libc::c_int != 0,
-            scanFormat: 0 as *const libc::c_char,
-            valueName: 0 as *const libc::c_char,
+            scanFormat: std::ptr::null::<libc::c_char>(),
+            valueName: std::ptr::null::<libc::c_char>(),
             value: 0 as *mut libc::c_void,
             found: false,
             helpText: b"Convert degrees latitude/longitude coordinate to an H3 cell.\0" as *const u8
@@ -167,8 +167,8 @@ pub unsafe extern "C" fn latLngToCellCmd(
                 b"--help\0" as *const u8 as *const libc::c_char,
             ],
             required: false,
-            scanFormat: 0 as *const libc::c_char,
-            valueName: 0 as *const libc::c_char,
+            scanFormat: std::ptr::null::<libc::c_char>(),
+            valueName: std::ptr::null::<libc::c_char>(),
             value: 0 as *mut libc::c_void,
             found: false,
             helpText: b"Show this help message.\0" as *const u8 as *const libc::c_char,
@@ -267,8 +267,8 @@ pub unsafe extern "C" fn generalHelp(
                 b"--help\0" as *const u8 as *const libc::c_char,
             ],
             required: false,
-            scanFormat: 0 as *const libc::c_char,
-            valueName: 0 as *const libc::c_char,
+            scanFormat: std::ptr::null::<libc::c_char>(),
+            valueName: std::ptr::null::<libc::c_char>(),
             value: 0 as *mut libc::c_void,
             found: false,
             helpText: b"Show this help message.\0" as *const u8 as *const libc::c_char,
@@ -279,11 +279,11 @@ pub unsafe extern "C" fn generalHelp(
         let mut init = Arg {
             names: [
                 b"cellToLatLng\0" as *const u8 as *const libc::c_char,
-                0 as *const libc::c_char,
+                std::ptr::null::<libc::c_char>(),
             ],
             required: false,
-            scanFormat: 0 as *const libc::c_char,
-            valueName: 0 as *const libc::c_char,
+            scanFormat: std::ptr::null::<libc::c_char>(),
+            valueName: std::ptr::null::<libc::c_char>(),
             value: 0 as *mut libc::c_void,
             found: false,
             helpText: b"Convert an H3 cell to a latitude/longitude coordinate\0" as *const u8
@@ -295,11 +295,11 @@ pub unsafe extern "C" fn generalHelp(
         let mut init = Arg {
             names: [
                 b"latLngToCell\0" as *const u8 as *const libc::c_char,
-                0 as *const libc::c_char,
+                std::ptr::null::<libc::c_char>(),
             ],
             required: false,
-            scanFormat: 0 as *const libc::c_char,
-            valueName: 0 as *const libc::c_char,
+            scanFormat: std::ptr::null::<libc::c_char>(),
+            valueName: std::ptr::null::<libc::c_char>(),
             value: 0 as *mut libc::c_void,
             found: false,
             helpText: b"Convert degrees latitude/longitude coordinate to an H3 cell.\0" as *const u8

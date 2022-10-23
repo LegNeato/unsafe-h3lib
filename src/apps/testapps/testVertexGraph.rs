@@ -277,8 +277,8 @@ unsafe extern "C" fn runTests() {
         res: 0,
     };
     initVertexGraph(&mut graph_0, 10 as libc::c_int, 9 as libc::c_int);
-    let mut node: *mut VertexNode = 0 as *mut VertexNode;
-    let mut addedNode: *mut VertexNode = 0 as *mut VertexNode;
+    let mut node: *mut VertexNode = std::ptr::null_mut::<VertexNode>();
+    let mut addedNode: *mut VertexNode = std::ptr::null_mut::<VertexNode>();
     addedNode = addVertexNode(&mut graph_0, &mut vertex1, &mut vertex2);
     node = findNodeForEdge(&mut graph_0, &mut vertex1, &mut vertex2);
     if node.is_null() {
@@ -489,8 +489,8 @@ unsafe extern "C" fn runTests() {
         res: 0,
     };
     initVertexGraph(&mut graph_1, 10 as libc::c_int, 9 as libc::c_int);
-    let mut node_0: *mut VertexNode = 0 as *mut VertexNode;
-    let mut addedNode_0: *mut VertexNode = 0 as *mut VertexNode;
+    let mut node_0: *mut VertexNode = std::ptr::null_mut::<VertexNode>();
+    let mut addedNode_0: *mut VertexNode = std::ptr::null_mut::<VertexNode>();
     addedNode_0 = addVertexNode(&mut graph_1, &mut vertex1, &mut vertex2);
     node_0 = findNodeForEdge(&mut graph_1, &mut vertex1, &mut vertex2);
     if node_0.is_null() {
@@ -583,7 +583,7 @@ unsafe extern "C" fn runTests() {
         res: 0,
     };
     initVertexGraph(&mut graph_2, 10 as libc::c_int, 9 as libc::c_int);
-    let mut node_1: *mut VertexNode = 0 as *mut VertexNode;
+    let mut node_1: *mut VertexNode = std::ptr::null_mut::<VertexNode>();
     node_1 = findNodeForEdge(&mut graph_2, &mut vertex1, &mut vertex2);
     if !node_1.is_null() {
         fprintf(
@@ -666,7 +666,7 @@ unsafe extern "C" fn runTests() {
         res: 0,
     };
     initVertexGraph(&mut graph_3, 10 as libc::c_int, 9 as libc::c_int);
-    let mut node_2: *mut VertexNode = 0 as *mut VertexNode;
+    let mut node_2: *mut VertexNode = std::ptr::null_mut::<VertexNode>();
     node_2 = findNodeForVertex(&mut graph_3, &mut vertex1);
     if !node_2.is_null() {
         fprintf(
@@ -729,7 +729,7 @@ unsafe extern "C" fn runTests() {
         res: 0,
     };
     initVertexGraph(&mut graph_4, 10 as libc::c_int, 9 as libc::c_int);
-    let mut node_3: *mut VertexNode = 0 as *mut VertexNode;
+    let mut node_3: *mut VertexNode = std::ptr::null_mut::<VertexNode>();
     let mut success: libc::c_int = 0;
     node_3 = addVertexNode(&mut graph_4, &mut vertex1, &mut vertex2);
     success = (removeVertexNode(&mut graph_4, node_3) == 0 as libc::c_int) as libc::c_int;
@@ -1077,8 +1077,8 @@ unsafe extern "C" fn runTests() {
         res: 0,
     };
     initVertexGraph(&mut graph_5, 10 as libc::c_int, 9 as libc::c_int);
-    let mut node_4: *mut VertexNode = 0 as *mut VertexNode;
-    let mut addedNode_1: *mut VertexNode = 0 as *mut VertexNode;
+    let mut node_4: *mut VertexNode = std::ptr::null_mut::<VertexNode>();
+    let mut addedNode_1: *mut VertexNode = std::ptr::null_mut::<VertexNode>();
     node_4 = firstVertexNode(&mut graph_5);
     if !node_4.is_null() {
         fprintf(
@@ -1132,7 +1132,7 @@ unsafe extern "C" fn runTests() {
         res: 0,
     };
     initVertexGraph(&mut graph_7, 1 as libc::c_int, 9 as libc::c_int);
-    let mut node_5: *mut VertexNode = 0 as *mut VertexNode;
+    let mut node_5: *mut VertexNode = std::ptr::null_mut::<VertexNode>();
     if !(graph_7.numBuckets == 1 as libc::c_int) {
         fprintf(
             __stderrp,

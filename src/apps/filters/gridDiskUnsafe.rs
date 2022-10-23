@@ -104,8 +104,8 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
                 b"--help\0" as *const u8 as *const libc::c_char,
             ],
             required: false,
-            scanFormat: 0 as *const libc::c_char,
-            valueName: 0 as *const libc::c_char,
+            scanFormat: std::ptr::null::<libc::c_char>(),
+            valueName: std::ptr::null::<libc::c_char>(),
             value: 0 as *mut libc::c_void,
             found: false,
             helpText: b"Show this help message.\0" as *const u8 as *const libc::c_char,
@@ -116,7 +116,7 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
         let mut init = Arg {
             names: [
                 b"-k\0" as *const u8 as *const libc::c_char,
-                0 as *const libc::c_char,
+                std::ptr::null::<libc::c_char>(),
             ],
             required: 1 as libc::c_int != 0,
             scanFormat: b"%d\0" as *const u8 as *const libc::c_char,

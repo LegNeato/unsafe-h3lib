@@ -230,10 +230,10 @@ static mut sfGeoLoop: GeoLoop = unsafe {
 static mut sfGeoPolygon: GeoPolygon = GeoPolygon {
     geoloop: GeoLoop {
         numVerts: 0,
-        verts: 0 as *const LatLng as *mut LatLng,
+        verts: std::ptr::null::<LatLng>() as *mut LatLng,
     },
     numHoles: 0,
-    holes: 0 as *const GeoLoop as *mut GeoLoop,
+    holes: std::ptr::null::<GeoLoop>() as *mut GeoLoop,
 };
 unsafe extern "C" fn runTests() {
     currentTestName = b"gridDisk\0" as *const u8 as *const libc::c_char;

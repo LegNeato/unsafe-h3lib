@@ -282,7 +282,7 @@ unsafe extern "C" fn findDeepestContainer(
     let mut parent: *const LinkedGeoPolygon = if polygonCount > 0 as libc::c_int {
         *polygons.offset(0 as libc::c_int as isize)
     } else {
-        0 as *const LinkedGeoPolygon
+        std::ptr::null::<LinkedGeoPolygon>()
     };
     if polygonCount > 1 as libc::c_int {
         let mut max: libc::c_int = -(1 as libc::c_int);
@@ -310,7 +310,7 @@ unsafe extern "C" fn findPolygonForHole(
     polygonCount: libc::c_int,
 ) -> *const LinkedGeoPolygon {
     if polygonCount == 0 as libc::c_int {
-        return 0 as *const LinkedGeoPolygon;
+        return std::ptr::null::<LinkedGeoPolygon>();
     }
     let mut candidates: *mut *const LinkedGeoPolygon = test_prefix_malloc(
         (polygonCount as libc::c_ulong)

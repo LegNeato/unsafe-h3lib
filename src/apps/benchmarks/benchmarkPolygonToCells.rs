@@ -106,16 +106,16 @@ pub static mut sfVerts: [LatLng; 6] = [
 #[no_mangle]
 pub static mut sfGeoLoop: GeoLoop = GeoLoop {
     numVerts: 0,
-    verts: 0 as *const LatLng as *mut LatLng,
+    verts: std::ptr::null::<LatLng>() as *mut LatLng,
 };
 #[no_mangle]
 pub static mut sfGeoPolygon: GeoPolygon = GeoPolygon {
     geoloop: GeoLoop {
         numVerts: 0,
-        verts: 0 as *const LatLng as *mut LatLng,
+        verts: std::ptr::null::<LatLng>() as *mut LatLng,
     },
     numHoles: 0,
-    holes: 0 as *const GeoLoop as *mut GeoLoop,
+    holes: std::ptr::null::<GeoLoop>() as *mut GeoLoop,
 };
 #[no_mangle]
 pub static mut alamedaVerts: [LatLng; 50] = [
@@ -473,16 +473,16 @@ pub static mut alamedaVerts: [LatLng; 50] = [
 #[no_mangle]
 pub static mut alamedaGeoLoop: GeoLoop = GeoLoop {
     numVerts: 0,
-    verts: 0 as *const LatLng as *mut LatLng,
+    verts: std::ptr::null::<LatLng>() as *mut LatLng,
 };
 #[no_mangle]
 pub static mut alamedaGeoPolygon: GeoPolygon = GeoPolygon {
     geoloop: GeoLoop {
         numVerts: 0,
-        verts: 0 as *const LatLng as *mut LatLng,
+        verts: std::ptr::null::<LatLng>() as *mut LatLng,
     },
     numHoles: 0,
-    holes: 0 as *const GeoLoop as *mut GeoLoop,
+    holes: std::ptr::null::<GeoLoop>() as *mut GeoLoop,
 };
 #[no_mangle]
 pub static mut southernVerts: [LatLng; 23] = [
@@ -651,16 +651,16 @@ pub static mut southernVerts: [LatLng; 23] = [
 #[no_mangle]
 pub static mut southernGeoLoop: GeoLoop = GeoLoop {
     numVerts: 0,
-    verts: 0 as *const LatLng as *mut LatLng,
+    verts: std::ptr::null::<LatLng>() as *mut LatLng,
 };
 #[no_mangle]
 pub static mut southernGeoPolygon: GeoPolygon = GeoPolygon {
     geoloop: GeoLoop {
         numVerts: 0,
-        verts: 0 as *const LatLng as *mut LatLng,
+        verts: std::ptr::null::<LatLng>() as *mut LatLng,
     },
     numHoles: 0,
-    holes: 0 as *const GeoLoop as *mut GeoLoop,
+    holes: std::ptr::null::<GeoLoop>() as *mut GeoLoop,
 };
 unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> libc::c_int {
     sfGeoLoop.numVerts = 6 as libc::c_int;

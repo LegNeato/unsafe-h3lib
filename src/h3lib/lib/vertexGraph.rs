@@ -68,7 +68,7 @@ pub unsafe extern "C" fn initVertexGraph(
 }
 #[no_mangle]
 pub unsafe extern "C" fn destroyVertexGraph(mut graph: *mut VertexGraph) {
-    let mut node: *mut VertexNode = 0 as *mut VertexNode;
+    let mut node: *mut VertexNode = std::ptr::null_mut::<VertexNode>();
     loop {
         node = firstVertexNode(graph);
         if node.is_null() {
@@ -103,7 +103,7 @@ pub unsafe extern "C" fn _initVertexNode(
 ) {
     (*node).from = *fromVtx;
     (*node).to = *toVtx;
-    (*node).next = 0 as *mut VertexNode;
+    (*node).next = std::ptr::null_mut::<VertexNode>();
 }
 #[no_mangle]
 pub unsafe extern "C" fn addVertexNode(
@@ -200,24 +200,24 @@ pub unsafe extern "C" fn findNodeForEdge(
             }
         }
     }
-    return 0 as *mut VertexNode;
+    return std::ptr::null_mut::<VertexNode>();
 }
 #[no_mangle]
 pub unsafe extern "C" fn findNodeForVertex(
     mut graph: *const VertexGraph,
     mut fromVtx: *const LatLng,
 ) -> *mut VertexNode {
-    return findNodeForEdge(graph, fromVtx, 0 as *const LatLng);
+    return findNodeForEdge(graph, fromVtx, std::ptr::null::<LatLng>());
 }
 #[no_mangle]
 pub unsafe extern "C" fn firstVertexNode(mut graph: *const VertexGraph) -> *mut VertexNode {
-    let mut node: *mut VertexNode = 0 as *mut VertexNode;
+    let mut node: *mut VertexNode = std::ptr::null_mut::<VertexNode>();
     let mut currentIndex: libc::c_int = 0 as libc::c_int;
     while node.is_null() {
         if currentIndex < (*graph).numBuckets {
             node = *((*graph).buckets).offset(currentIndex as isize);
         } else {
-            return 0 as *mut VertexNode;
+            return std::ptr::null_mut::<VertexNode>();
         }
         currentIndex += 1;
     }
