@@ -36,8 +36,8 @@ unsafe extern "C" fn _getResDigit(
     mut it: *mut IterCellsChildren,
     mut res: libc::c_int,
 ) -> libc::c_int {
-    return ((*it).h >> (15 as libc::c_int - res) * 3 as libc::c_int & 7 as libc::c_int as uint64_t)
-        as Direction as libc::c_int;
+    ((*it).h >> ((15 as libc::c_int - res) * 3 as libc::c_int) & 7 as libc::c_int as uint64_t)
+        as Direction as libc::c_int
 }
 unsafe extern "C" fn _incrementResDigit(mut it: *mut IterCellsChildren, mut res: libc::c_int) {
     let mut val: H3Index = 1 as libc::c_int as H3Index;
@@ -46,12 +46,12 @@ unsafe extern "C" fn _incrementResDigit(mut it: *mut IterCellsChildren, mut res:
 }
 unsafe extern "C" fn _null_iter() -> IterCellsChildren {
     return {
-        let mut init = IterCellsChildren {
+        
+        IterCellsChildren {
             h: 0 as libc::c_int as H3Index,
             _parentRes: -(1 as libc::c_int),
             _skipDigit: -(1 as libc::c_int),
-        };
-        init
+        }
     };
 }
 #[no_mangle]
@@ -80,7 +80,7 @@ pub unsafe extern "C" fn iterInitParent(
     } else {
         it._skipDigit = -(1 as libc::c_int);
     }
-    return it;
+    it
 }
 #[no_mangle]
 pub unsafe extern "C" fn iterStepChild(mut it: *mut IterCellsChildren) {
@@ -101,7 +101,7 @@ pub unsafe extern "C" fn iterStepChild(mut it: *mut IterCellsChildren) {
             (*it)._skipDigit -= 1 as libc::c_int;
             return;
         }
-        if !(_getResDigit(it, i) == INVALID_DIGIT as libc::c_int) {
+        if _getResDigit(it, i) != INVALID_DIGIT as libc::c_int {
             break;
         }
         _incrementResDigit(it, i);
@@ -122,21 +122,21 @@ pub unsafe extern "C" fn iterInitBaseCellNum(
     }
     let mut baseCell: H3Index = 0;
     setH3Index(&mut baseCell, 0 as libc::c_int, baseCellNum, CENTER_DIGIT);
-    return iterInitParent(baseCell, childRes);
+    iterInitParent(baseCell, childRes)
 }
 #[no_mangle]
 pub unsafe extern "C" fn iterInitRes(mut res: libc::c_int) -> IterCellsResolution {
     let mut itC: IterCellsChildren = iterInitBaseCellNum(0 as libc::c_int, res);
     let mut itR: IterCellsResolution = {
-        let mut init = IterCellsResolution {
+        
+        IterCellsResolution {
             h: itC.h,
             _baseCellNum: 0 as libc::c_int,
             _res: res,
             _itC: itC,
-        };
-        init
+        }
     };
-    return itR;
+    itR
 }
 #[no_mangle]
 pub unsafe extern "C" fn iterStepRes(mut itR: *mut IterCellsResolution) {

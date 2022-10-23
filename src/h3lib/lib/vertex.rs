@@ -96,7 +96,8 @@ pub struct PentagonDirectionFaces {
 }
 static mut pentagonDirectionFaces: [PentagonDirectionFaces; 12] = [
     {
-        let mut init = PentagonDirectionFaces {
+        
+        PentagonDirectionFaces {
             baseCell: 4 as libc::c_int,
             faces: [
                 4 as libc::c_int,
@@ -105,11 +106,11 @@ static mut pentagonDirectionFaces: [PentagonDirectionFaces; 12] = [
                 1 as libc::c_int,
                 3 as libc::c_int,
             ],
-        };
-        init
+        }
     },
     {
-        let mut init = PentagonDirectionFaces {
+        
+        PentagonDirectionFaces {
             baseCell: 14 as libc::c_int,
             faces: [
                 6 as libc::c_int,
@@ -118,11 +119,11 @@ static mut pentagonDirectionFaces: [PentagonDirectionFaces; 12] = [
                 7 as libc::c_int,
                 1 as libc::c_int,
             ],
-        };
-        init
+        }
     },
     {
-        let mut init = PentagonDirectionFaces {
+        
+        PentagonDirectionFaces {
             baseCell: 24 as libc::c_int,
             faces: [
                 5 as libc::c_int,
@@ -131,11 +132,11 @@ static mut pentagonDirectionFaces: [PentagonDirectionFaces; 12] = [
                 6 as libc::c_int,
                 0 as libc::c_int,
             ],
-        };
-        init
+        }
     },
     {
-        let mut init = PentagonDirectionFaces {
+        
+        PentagonDirectionFaces {
             baseCell: 38 as libc::c_int,
             faces: [
                 7 as libc::c_int,
@@ -144,11 +145,11 @@ static mut pentagonDirectionFaces: [PentagonDirectionFaces; 12] = [
                 8 as libc::c_int,
                 2 as libc::c_int,
             ],
-        };
-        init
+        }
     },
     {
-        let mut init = PentagonDirectionFaces {
+        
+        PentagonDirectionFaces {
             baseCell: 49 as libc::c_int,
             faces: [
                 9 as libc::c_int,
@@ -157,11 +158,11 @@ static mut pentagonDirectionFaces: [PentagonDirectionFaces; 12] = [
                 5 as libc::c_int,
                 4 as libc::c_int,
             ],
-        };
-        init
+        }
     },
     {
-        let mut init = PentagonDirectionFaces {
+        
+        PentagonDirectionFaces {
             baseCell: 58 as libc::c_int,
             faces: [
                 8 as libc::c_int,
@@ -170,11 +171,11 @@ static mut pentagonDirectionFaces: [PentagonDirectionFaces; 12] = [
                 9 as libc::c_int,
                 3 as libc::c_int,
             ],
-        };
-        init
+        }
     },
     {
-        let mut init = PentagonDirectionFaces {
+        
+        PentagonDirectionFaces {
             baseCell: 63 as libc::c_int,
             faces: [
                 11 as libc::c_int,
@@ -183,11 +184,11 @@ static mut pentagonDirectionFaces: [PentagonDirectionFaces; 12] = [
                 10 as libc::c_int,
                 16 as libc::c_int,
             ],
-        };
-        init
+        }
     },
     {
-        let mut init = PentagonDirectionFaces {
+        
+        PentagonDirectionFaces {
             baseCell: 72 as libc::c_int,
             faces: [
                 12 as libc::c_int,
@@ -196,11 +197,11 @@ static mut pentagonDirectionFaces: [PentagonDirectionFaces; 12] = [
                 11 as libc::c_int,
                 17 as libc::c_int,
             ],
-        };
-        init
+        }
     },
     {
-        let mut init = PentagonDirectionFaces {
+        
+        PentagonDirectionFaces {
             baseCell: 83 as libc::c_int,
             faces: [
                 10 as libc::c_int,
@@ -209,11 +210,11 @@ static mut pentagonDirectionFaces: [PentagonDirectionFaces; 12] = [
                 14 as libc::c_int,
                 15 as libc::c_int,
             ],
-        };
-        init
+        }
     },
     {
-        let mut init = PentagonDirectionFaces {
+        
+        PentagonDirectionFaces {
             baseCell: 97 as libc::c_int,
             faces: [
                 13 as libc::c_int,
@@ -222,11 +223,11 @@ static mut pentagonDirectionFaces: [PentagonDirectionFaces; 12] = [
                 12 as libc::c_int,
                 18 as libc::c_int,
             ],
-        };
-        init
+        }
     },
     {
-        let mut init = PentagonDirectionFaces {
+        
+        PentagonDirectionFaces {
             baseCell: 107 as libc::c_int,
             faces: [
                 14 as libc::c_int,
@@ -235,11 +236,11 @@ static mut pentagonDirectionFaces: [PentagonDirectionFaces; 12] = [
                 13 as libc::c_int,
                 19 as libc::c_int,
             ],
-        };
-        init
+        }
     },
     {
-        let mut init = PentagonDirectionFaces {
+        
+        PentagonDirectionFaces {
             baseCell: 117 as libc::c_int,
             faces: [
                 15 as libc::c_int,
@@ -248,8 +249,7 @@ static mut pentagonDirectionFaces: [PentagonDirectionFaces; 12] = [
                 18 as libc::c_int,
                 16 as libc::c_int,
             ],
-        };
-        init
+        }
     },
 ];
 unsafe extern "C" fn vertexRotations(mut cell: H3Index, mut out: *mut libc::c_int) -> H3Error {
@@ -303,7 +303,7 @@ unsafe extern "C" fn vertexRotations(mut cell: H3Index, mut out: *mut libc::c_in
         }
     }
     *out = ccwRot60;
-    return E_SUCCESS as libc::c_int as H3Error;
+    E_SUCCESS as libc::c_int as H3Error
 }
 static mut directionToVertexNumHex: [libc::c_int; 7] = [
     INVALID_DIGIT as libc::c_int,
@@ -341,12 +341,12 @@ pub unsafe extern "C" fn vertexNumForDirection(
         return -(1 as libc::c_int);
     }
     if isPent != 0 {
-        return (directionToVertexNumPent[direction as usize] + 5 as libc::c_int - rotations)
-            % 5 as libc::c_int;
+        (directionToVertexNumPent[direction as usize] + 5 as libc::c_int - rotations)
+            % 5 as libc::c_int
     } else {
-        return (directionToVertexNumHex[direction as usize] + 6 as libc::c_int - rotations)
-            % 6 as libc::c_int;
-    };
+        (directionToVertexNumHex[direction as usize] + 6 as libc::c_int - rotations)
+            % 6 as libc::c_int
+    }
 }
 static mut vertexNumToDirectionHex: [Direction; 6] = [
     IJ_AXES_DIGIT,
@@ -384,13 +384,13 @@ pub unsafe extern "C" fn directionForVertexNum(
     if err != 0 {
         return INVALID_DIGIT;
     }
-    return (if isPent != 0 {
+    (if isPent != 0 {
         vertexNumToDirectionPent[((vertexNum + rotations) % 5 as libc::c_int) as usize]
             as libc::c_uint
     } else {
         vertexNumToDirectionHex[((vertexNum + rotations) % 6 as libc::c_int) as usize]
             as libc::c_uint
-    }) as Direction;
+    }) as Direction
 }
 static mut DIRECTIONS: [Direction; 6] = [
     J_AXES_DIGIT,
@@ -429,7 +429,7 @@ pub unsafe extern "C" fn cellToVertex(
     let mut owner: H3Index = cell;
     let mut ownerVertexNum: libc::c_int = vertexNum;
     if res == 0 as libc::c_int
-        || (cell >> (15 as libc::c_int - res) * 3 as libc::c_int & 7 as libc::c_int as uint64_t)
+        || (cell >> ((15 as libc::c_int - res) * 3 as libc::c_int) & 7 as libc::c_int as uint64_t)
             as Direction as libc::c_uint
             != CENTER_DIGIT as libc::c_int as libc::c_uint
     {
@@ -448,7 +448,7 @@ pub unsafe extern "C" fn cellToVertex(
             owner = leftNeighbor;
         }
         if res == 0 as libc::c_int
-            || (leftNeighbor >> (15 as libc::c_int - res) * 3 as libc::c_int
+            || (leftNeighbor >> ((15 as libc::c_int - res) * 3 as libc::c_int)
                 & 7 as libc::c_int as uint64_t) as Direction as libc::c_uint
                 != CENTER_DIGIT as libc::c_int as libc::c_uint
         {
@@ -499,7 +499,7 @@ pub unsafe extern "C" fn cellToVertex(
     vertex = vertex & !((7 as libc::c_int as uint64_t) << 56 as libc::c_int)
         | (ownerVertexNum as uint64_t) << 56 as libc::c_int;
     *out = vertex;
-    return E_SUCCESS as libc::c_int as H3Error;
+    E_SUCCESS as libc::c_int as H3Error
 }
 #[no_mangle]
 pub unsafe extern "C" fn cellToVertexes(mut cell: H3Index, mut vertexes: *mut H3Index) -> H3Error {
@@ -516,7 +516,7 @@ pub unsafe extern "C" fn cellToVertexes(mut cell: H3Index, mut vertexes: *mut H3
         }
         i += 1;
     }
-    return E_SUCCESS as libc::c_int as H3Error;
+    E_SUCCESS as libc::c_int as H3Error
 }
 #[no_mangle]
 pub unsafe extern "C" fn vertexToLatLng(mut vertex: H3Index, mut coord: *mut LatLng) -> H3Error {
@@ -548,7 +548,7 @@ pub unsafe extern "C" fn vertexToLatLng(mut vertex: H3Index, mut coord: *mut Lat
         _faceIjkToCellBoundary(&mut fijk, res, vertexNum, 1 as libc::c_int, &mut gb);
     }
     *coord = gb.verts[0 as libc::c_int as usize];
-    return E_SUCCESS as libc::c_int as H3Error;
+    E_SUCCESS as libc::c_int as H3Error
 }
 #[no_mangle]
 pub unsafe extern "C" fn isValidVertex(mut vertex: H3Index) -> libc::c_int {
@@ -573,9 +573,9 @@ pub unsafe extern "C" fn isValidVertex(mut vertex: H3Index) -> libc::c_int {
     if cellToVertex(owner, vertexNum, &mut canonical) != 0 {
         return 0 as libc::c_int;
     }
-    return if vertex == canonical {
+    if vertex == canonical {
         1 as libc::c_int
     } else {
         0 as libc::c_int
-    };
+    }
 }

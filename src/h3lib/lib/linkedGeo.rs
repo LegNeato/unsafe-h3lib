@@ -99,7 +99,7 @@ pub unsafe extern "C" fn addNewLinkedPolygon(
     } else {
     };
     (*polygon).next = next;
-    return next;
+    next
 }
 #[no_mangle]
 pub unsafe extern "C" fn addNewLinkedLoop(
@@ -119,7 +119,7 @@ pub unsafe extern "C" fn addNewLinkedLoop(
         );
     } else {
     };
-    return addLinkedLoop(polygon, loop_0);
+    addLinkedLoop(polygon, loop_0)
 }
 #[no_mangle]
 pub unsafe extern "C" fn addLinkedLoop(
@@ -143,7 +143,7 @@ pub unsafe extern "C" fn addLinkedLoop(
         (*last).next = loop_0;
     }
     (*polygon).last = loop_0;
-    return loop_0;
+    loop_0
 }
 #[no_mangle]
 pub unsafe extern "C" fn addLinkedCoord(
@@ -166,7 +166,7 @@ pub unsafe extern "C" fn addLinkedCoord(
     *coord = {
         let mut init = LinkedLatLng {
             vertex: *vertex,
-            next: 0 as *mut LinkedLatLng,
+            next: std::ptr::null_mut::<LinkedLatLng>(),
         };
         init
     };
@@ -187,11 +187,11 @@ pub unsafe extern "C" fn addLinkedCoord(
         (*last).next = coord;
     }
     (*loop_0).last = coord;
-    return coord;
+    coord
 }
 #[no_mangle]
 pub unsafe extern "C" fn destroyLinkedGeoLoop(mut loop_0: *mut LinkedGeoLoop) {
-    let mut nextCoord: *mut LinkedLatLng = 0 as *mut LinkedLatLng;
+    let mut nextCoord: *mut LinkedLatLng = std::ptr::null_mut::<LinkedLatLng>();
     let mut currentCoord: *mut LinkedLatLng = (*loop_0).first;
     while !currentCoord.is_null() {
         nextCoord = (*currentCoord).next;
@@ -202,8 +202,8 @@ pub unsafe extern "C" fn destroyLinkedGeoLoop(mut loop_0: *mut LinkedGeoLoop) {
 #[no_mangle]
 pub unsafe extern "C" fn destroyLinkedMultiPolygon(mut polygon: *mut LinkedGeoPolygon) {
     let mut skip: bool = 1 as libc::c_int != 0;
-    let mut nextPolygon: *mut LinkedGeoPolygon = 0 as *mut LinkedGeoPolygon;
-    let mut nextLoop: *mut LinkedGeoLoop = 0 as *mut LinkedGeoLoop;
+    let mut nextPolygon: *mut LinkedGeoPolygon = std::ptr::null_mut::<LinkedGeoPolygon>();
+    let mut nextLoop: *mut LinkedGeoLoop = std::ptr::null_mut::<LinkedGeoLoop>();
     let mut currentPolygon: *mut LinkedGeoPolygon = polygon;
     while !currentPolygon.is_null() {
         let mut currentLoop: *mut LinkedGeoLoop = (*currentPolygon).first;
@@ -229,7 +229,7 @@ pub unsafe extern "C" fn countLinkedPolygons(mut polygon: *mut LinkedGeoPolygon)
         count += 1;
         polygon = (*polygon).next;
     }
-    return count;
+    count
 }
 #[no_mangle]
 pub unsafe extern "C" fn countLinkedLoops(mut polygon: *mut LinkedGeoPolygon) -> libc::c_int {
@@ -239,7 +239,7 @@ pub unsafe extern "C" fn countLinkedLoops(mut polygon: *mut LinkedGeoPolygon) ->
         count += 1;
         loop_0 = (*loop_0).next;
     }
-    return count;
+    count
 }
 #[no_mangle]
 pub unsafe extern "C" fn countLinkedCoords(mut loop_0: *mut LinkedGeoLoop) -> libc::c_int {
@@ -249,7 +249,7 @@ pub unsafe extern "C" fn countLinkedCoords(mut loop_0: *mut LinkedGeoLoop) -> li
         count += 1;
         coord = (*coord).next;
     }
-    return count;
+    count
 }
 unsafe extern "C" fn countContainers(
     mut loop_0: *const LinkedGeoLoop,
@@ -272,7 +272,7 @@ unsafe extern "C" fn countContainers(
         }
         i += 1;
     }
-    return containerCount;
+    containerCount
 }
 unsafe extern "C" fn findDeepestContainer(
     mut polygons: *mut *const LinkedGeoPolygon,
@@ -301,7 +301,7 @@ unsafe extern "C" fn findDeepestContainer(
             i += 1;
         }
     }
-    return parent;
+    parent
 }
 unsafe extern "C" fn findPolygonForHole(
     mut loop_0: *const LinkedGeoLoop,
@@ -348,9 +348,9 @@ unsafe extern "C" fn findPolygonForHole(
             &*bboxes.offset(index as isize),
             &mut (*(*loop_0).first).vertex,
         ) {
-            let ref mut fresh0 = *candidates.offset(candidateCount as isize);
+            let fresh0 = &mut (*candidates.offset(candidateCount as isize));
             *fresh0 = polygon;
-            let ref mut fresh1 = *candidateBBoxes.offset(candidateCount as isize);
+            let fresh1 = &mut (*candidateBBoxes.offset(candidateCount as isize));
             *fresh1 = &*bboxes.offset(index as isize) as *const BBox;
             candidateCount += 1;
         }
@@ -361,7 +361,7 @@ unsafe extern "C" fn findPolygonForHole(
         findDeepestContainer(candidates, candidateBBoxes, candidateCount);
     test_prefix_free(candidates as *mut libc::c_void);
     test_prefix_free(candidateBBoxes as *mut libc::c_void);
-    return parent;
+    parent
 }
 #[no_mangle]
 pub unsafe extern "C" fn normalizeMultiPolygon(mut root: *mut LinkedGeoPolygon) -> H3Error {
@@ -373,8 +373,8 @@ pub unsafe extern "C" fn normalizeMultiPolygon(mut root: *mut LinkedGeoPolygon) 
         return E_SUCCESS as libc::c_int as H3Error;
     }
     let mut resultCode: H3Error = E_SUCCESS as libc::c_int as H3Error;
-    let mut polygon: *mut LinkedGeoPolygon = 0 as *mut LinkedGeoPolygon;
-    let mut next: *mut LinkedGeoLoop = 0 as *mut LinkedGeoLoop;
+    let mut polygon: *mut LinkedGeoPolygon = std::ptr::null_mut::<LinkedGeoPolygon>();
+    let mut next: *mut LinkedGeoLoop = std::ptr::null_mut::<LinkedGeoLoop>();
     let mut innerCount: libc::c_int = 0 as libc::c_int;
     let mut outerCount: libc::c_int = 0 as libc::c_int;
     let mut innerLoops: *mut *mut LinkedGeoLoop = test_prefix_malloc(
@@ -407,15 +407,15 @@ pub unsafe extern "C" fn normalizeMultiPolygon(mut root: *mut LinkedGeoPolygon) 
     let mut loop_0: *mut LinkedGeoLoop = (*root).first;
     *root = {
         let mut init = LinkedGeoPolygon {
-            first: 0 as *mut LinkedGeoLoop,
-            last: 0 as *mut LinkedGeoLoop,
-            next: 0 as *mut LinkedGeoPolygon,
+            first: std::ptr::null_mut::<LinkedGeoLoop>(),
+            last: std::ptr::null_mut::<LinkedGeoLoop>(),
+            next: std::ptr::null_mut::<LinkedGeoPolygon>(),
         };
         init
     };
     while !loop_0.is_null() {
         if isClockwiseLinkedGeoLoop(loop_0) {
-            let ref mut fresh2 = *innerLoops.offset(innerCount as isize);
+            let fresh2 = &mut (*innerLoops.offset(innerCount as isize));
             *fresh2 = loop_0;
             innerCount += 1;
         } else {
@@ -429,7 +429,7 @@ pub unsafe extern "C" fn normalizeMultiPolygon(mut root: *mut LinkedGeoPolygon) 
             outerCount += 1;
         }
         next = (*loop_0).next;
-        (*loop_0).next = 0 as *mut LinkedGeoLoop;
+        (*loop_0).next = std::ptr::null_mut::<LinkedGeoLoop>();
         loop_0 = next;
     }
     let mut i: libc::c_int = 0 as libc::c_int;
@@ -447,11 +447,11 @@ pub unsafe extern "C" fn normalizeMultiPolygon(mut root: *mut LinkedGeoPolygon) 
     }
     test_prefix_free(innerLoops as *mut libc::c_void);
     test_prefix_free(bboxes as *mut libc::c_void);
-    return resultCode;
+    resultCode
 }
 #[no_mangle]
 pub unsafe extern "C" fn isClockwiseLinkedGeoLoop(mut loop_0: *const LinkedGeoLoop) -> bool {
-    return isClockwiseNormalizedLinkedGeoLoop(loop_0, 0 as libc::c_int != 0);
+    isClockwiseNormalizedLinkedGeoLoop(loop_0, 0 as libc::c_int != 0)
 }
 #[no_mangle]
 pub unsafe extern "C" fn bboxFromLinkedGeoLoop(
@@ -460,29 +460,29 @@ pub unsafe extern "C" fn bboxFromLinkedGeoLoop(
 ) {
     if ((*loop_0).first).is_null() {
         *bbox = {
-            let mut init = BBox {
+            
+            BBox {
                 north: 0 as libc::c_int as libc::c_double,
                 south: 0.,
                 east: 0.,
                 west: 0.,
-            };
-            init
+            }
         };
         return;
     }
-    (*bbox).south = 1.7976931348623157e+308f64;
-    (*bbox).west = 1.7976931348623157e+308f64;
-    (*bbox).north = -1.7976931348623157e+308f64;
-    (*bbox).east = -1.7976931348623157e+308f64;
-    let mut minPosLng: libc::c_double = 1.7976931348623157e+308f64;
-    let mut maxNegLng: libc::c_double = -1.7976931348623157e+308f64;
+    (*bbox).south = 1.797_693_134_862_315_7e308_f64;
+    (*bbox).west = 1.797_693_134_862_315_7e308_f64;
+    (*bbox).north = -1.797_693_134_862_315_7e308_f64;
+    (*bbox).east = -1.797_693_134_862_315_7e308_f64;
+    let mut minPosLng: libc::c_double = 1.797_693_134_862_315_7e308_f64;
+    let mut maxNegLng: libc::c_double = -1.797_693_134_862_315_7e308_f64;
     let mut isTransmeridian: bool = 0 as libc::c_int != 0;
     let mut lat: libc::c_double = 0.;
     let mut lng: libc::c_double = 0.;
     let mut coord: LatLng = LatLng { lat: 0., lng: 0. };
     let mut next: LatLng = LatLng { lat: 0., lng: 0. };
-    let mut currentCoord: *mut LinkedLatLng = 0 as *mut LinkedLatLng;
-    let mut nextCoord: *mut LinkedLatLng = 0 as *mut LinkedLatLng;
+    let mut currentCoord: *mut LinkedLatLng = std::ptr::null_mut::<LinkedLatLng>();
+    let mut nextCoord: *mut LinkedLatLng = std::ptr::null_mut::<LinkedLatLng>();
     loop {
         currentCoord = if currentCoord.is_null() {
             (*loop_0).first
@@ -519,7 +519,7 @@ pub unsafe extern "C" fn bboxFromLinkedGeoLoop(
         if lng < 0 as libc::c_int as libc::c_double && lng > maxNegLng {
             maxNegLng = lng;
         }
-        if fabs(lng - next.lng) > 3.14159265358979323846264338327950288f64 {
+        if fabs(lng - next.lng) > 3.141_592_653_589_793_f64 {
             isTransmeridian = 1 as libc::c_int != 0;
         }
     }
@@ -544,7 +544,7 @@ pub unsafe extern "C" fn pointInsideLinkedGeoLoop(
         && (*coord).lng < 0 as libc::c_int as libc::c_double
     {
         (*coord).lng
-            + (6.28318530717958647692528676655900576839433)
+            + 6.283_185_307_179_586
                 .to_f64()
                 .unwrap()
     } else {
@@ -552,8 +552,8 @@ pub unsafe extern "C" fn pointInsideLinkedGeoLoop(
     };
     let mut a: LatLng = LatLng { lat: 0., lng: 0. };
     let mut b: LatLng = LatLng { lat: 0., lng: 0. };
-    let mut currentCoord: *mut LinkedLatLng = 0 as *mut LinkedLatLng;
-    let mut nextCoord: *mut LinkedLatLng = 0 as *mut LinkedLatLng;
+    let mut currentCoord: *mut LinkedLatLng = std::ptr::null_mut::<LinkedLatLng>();
+    let mut nextCoord: *mut LinkedLatLng = std::ptr::null_mut::<LinkedLatLng>();
     loop {
         currentCoord = if currentCoord.is_null() {
             (*loop_0).first
@@ -571,12 +571,10 @@ pub unsafe extern "C" fn pointInsideLinkedGeoLoop(
         };
         b = (*nextCoord).vertex;
         if a.lat > b.lat {
-            let mut tmp: LatLng = a;
-            a = b;
-            b = tmp;
+            std::mem::swap(&mut a, &mut b);
         }
         if lat == a.lat || lat == b.lat {
-            lat += 2.2204460492503131e-16f64;
+            lat += 2.220_446_049_250_313e-16_f64;
         }
         if lat < a.lat || lat > b.lat {
             continue;
@@ -584,7 +582,7 @@ pub unsafe extern "C" fn pointInsideLinkedGeoLoop(
         let mut aLng: libc::c_double =
             if isTransmeridian as libc::c_int != 0 && a.lng < 0 as libc::c_int as libc::c_double {
                 a.lng
-                    + (6.28318530717958647692528676655900576839433)
+                    + 6.283_185_307_179_586
                         .to_f64()
                         .unwrap()
             } else {
@@ -593,21 +591,21 @@ pub unsafe extern "C" fn pointInsideLinkedGeoLoop(
         let mut bLng: libc::c_double =
             if isTransmeridian as libc::c_int != 0 && b.lng < 0 as libc::c_int as libc::c_double {
                 b.lng
-                    + (6.28318530717958647692528676655900576839433)
+                    + 6.283_185_307_179_586
                         .to_f64()
                         .unwrap()
             } else {
                 b.lng
             };
         if aLng == lng || bLng == lng {
-            lng -= 2.2204460492503131e-16f64;
+            lng -= 2.220_446_049_250_313e-16_f64;
         }
         let mut ratio: libc::c_double = (lat - a.lat) / (b.lat - a.lat);
         let mut testLng: libc::c_double = if isTransmeridian as libc::c_int != 0
             && aLng + (bLng - aLng) * ratio < 0 as libc::c_int as libc::c_double
         {
             aLng + (bLng - aLng) * ratio
-                + (6.28318530717958647692528676655900576839433)
+                + 6.283_185_307_179_586
                     .to_f64()
                     .unwrap()
         } else {
@@ -617,7 +615,7 @@ pub unsafe extern "C" fn pointInsideLinkedGeoLoop(
             contains = !contains;
         }
     }
-    return contains;
+    contains
 }
 unsafe extern "C" fn isClockwiseNormalizedLinkedGeoLoop(
     mut loop_0: *const LinkedGeoLoop,
@@ -626,8 +624,8 @@ unsafe extern "C" fn isClockwiseNormalizedLinkedGeoLoop(
     let mut sum: libc::c_double = 0 as libc::c_int as libc::c_double;
     let mut a: LatLng = LatLng { lat: 0., lng: 0. };
     let mut b: LatLng = LatLng { lat: 0., lng: 0. };
-    let mut currentCoord: *mut LinkedLatLng = 0 as *mut LinkedLatLng;
-    let mut nextCoord: *mut LinkedLatLng = 0 as *mut LinkedLatLng;
+    let mut currentCoord: *mut LinkedLatLng = std::ptr::null_mut::<LinkedLatLng>();
+    let mut nextCoord: *mut LinkedLatLng = std::ptr::null_mut::<LinkedLatLng>();
     loop {
         currentCoord = if currentCoord.is_null() {
             (*loop_0).first
@@ -644,14 +642,14 @@ unsafe extern "C" fn isClockwiseNormalizedLinkedGeoLoop(
             (*currentCoord).next
         };
         b = (*nextCoord).vertex;
-        if !isTransmeridian && fabs(a.lng - b.lng) > 3.14159265358979323846264338327950288f64 {
+        if !isTransmeridian && fabs(a.lng - b.lng) > 3.141_592_653_589_793_f64 {
             return isClockwiseNormalizedLinkedGeoLoop(loop_0, 1 as libc::c_int != 0);
         }
         sum += ((if isTransmeridian as libc::c_int != 0
             && b.lng < 0 as libc::c_int as libc::c_double
         {
             b.lng
-                + (6.28318530717958647692528676655900576839433)
+                + 6.283_185_307_179_586
                     .to_f64()
                     .unwrap()
         } else {
@@ -660,12 +658,12 @@ unsafe extern "C" fn isClockwiseNormalizedLinkedGeoLoop(
             && a.lng < 0 as libc::c_int as libc::c_double
         {
             a.lng
-                + (6.28318530717958647692528676655900576839433)
+                + 6.283_185_307_179_586
                     .to_f64()
                     .unwrap()
         } else {
             a.lng
         })) * (b.lat + a.lat);
     }
-    return sum > 0 as libc::c_int as libc::c_double;
+    sum > 0 as libc::c_int as libc::c_double
 }

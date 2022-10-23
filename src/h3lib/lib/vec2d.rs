@@ -11,7 +11,7 @@ pub struct Vec2d {
 }
 #[no_mangle]
 pub unsafe extern "C" fn _v2dMag(mut v: *const Vec2d) -> libc::c_double {
-    return sqrt((*v).x * (*v).x + (*v).y * (*v).y);
+    sqrt((*v).x * (*v).x + (*v).y * (*v).y)
 }
 #[no_mangle]
 pub unsafe extern "C" fn _v2dIntersect(
@@ -34,6 +34,6 @@ pub unsafe extern "C" fn _v2dIntersect(
 }
 #[no_mangle]
 pub unsafe extern "C" fn _v2dAlmostEquals(mut v1: *const Vec2d, mut v2: *const Vec2d) -> bool {
-    return fabs((*v1).x - (*v2).x) < 1.19209290e-7f32 as libc::c_double
-        && fabs((*v1).y - (*v2).y) < 1.19209290e-7f32 as libc::c_double;
+    return fabs((*v1).x - (*v2).x) < 1.192_092_9e-7_f32 as libc::c_double
+        && fabs((*v1).y - (*v2).y) < 1.192_092_9e-7_f32 as libc::c_double;
 }

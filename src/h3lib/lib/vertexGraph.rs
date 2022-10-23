@@ -60,7 +60,7 @@ pub unsafe extern "C" fn initVertexGraph(
         } else {
         };
     } else {
-        (*graph).buckets = 0 as *mut *mut VertexNode;
+        (*graph).buckets = std::ptr::null_mut::<*mut VertexNode>();
     }
     (*graph).numBuckets = numBuckets;
     (*graph).size = 0 as libc::c_int;
@@ -84,7 +84,7 @@ pub unsafe extern "C" fn _hashVertex(
     mut res: libc::c_int,
     mut numBuckets: libc::c_int,
 ) -> uint32_t {
-    return fmod(
+    fmod(
         fabs(
             ((*vertex).lat + (*vertex).lng)
                 * pow(
@@ -93,7 +93,7 @@ pub unsafe extern "C" fn _hashVertex(
                 ),
         ),
         numBuckets as libc::c_double,
-    ) as uint32_t;
+    ) as uint32_t
 }
 #[no_mangle]
 pub unsafe extern "C" fn _initVertexNode(
@@ -128,7 +128,7 @@ pub unsafe extern "C" fn addVertexNode(
     let mut index: uint32_t = _hashVertex(fromVtx, (*graph).res, (*graph).numBuckets);
     let mut currentNode: *mut VertexNode = *((*graph).buckets).offset(index as isize);
     if currentNode.is_null() {
-        let ref mut fresh0 = *((*graph).buckets).offset(index as isize);
+        let fresh0 = &mut (*((*graph).buckets).offset(index as isize));
         *fresh0 = node;
     } else {
         loop {
@@ -148,7 +148,7 @@ pub unsafe extern "C" fn addVertexNode(
         (*currentNode).next = node;
     }
     (*graph).size += 1;
-    return node;
+    node
 }
 #[no_mangle]
 pub unsafe extern "C" fn removeVertexNode(
@@ -160,7 +160,7 @@ pub unsafe extern "C" fn removeVertexNode(
     let mut found: libc::c_int = 0 as libc::c_int;
     if !currentNode.is_null() {
         if currentNode == node {
-            let ref mut fresh1 = *((*graph).buckets).offset(index as isize);
+            let fresh1 = &mut (*((*graph).buckets).offset(index as isize));
             *fresh1 = (*node).next;
             found = 1 as libc::c_int;
         }
@@ -177,7 +177,7 @@ pub unsafe extern "C" fn removeVertexNode(
         (*graph).size -= 1;
         return 0 as libc::c_int;
     }
-    return 1 as libc::c_int;
+    1 as libc::c_int
 }
 #[no_mangle]
 pub unsafe extern "C" fn findNodeForEdge(
@@ -200,14 +200,14 @@ pub unsafe extern "C" fn findNodeForEdge(
             }
         }
     }
-    return std::ptr::null_mut::<VertexNode>();
+    std::ptr::null_mut::<VertexNode>()
 }
 #[no_mangle]
 pub unsafe extern "C" fn findNodeForVertex(
     mut graph: *const VertexGraph,
     mut fromVtx: *const LatLng,
 ) -> *mut VertexNode {
-    return findNodeForEdge(graph, fromVtx, std::ptr::null::<LatLng>());
+    findNodeForEdge(graph, fromVtx, std::ptr::null::<LatLng>())
 }
 #[no_mangle]
 pub unsafe extern "C" fn firstVertexNode(mut graph: *const VertexGraph) -> *mut VertexNode {
@@ -221,5 +221,5 @@ pub unsafe extern "C" fn firstVertexNode(mut graph: *const VertexGraph) -> *mut 
         }
         currentIndex += 1;
     }
-    return node;
+    node
 }

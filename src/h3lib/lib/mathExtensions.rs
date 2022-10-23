@@ -10,5 +10,5 @@ pub unsafe extern "C" fn _ipow(mut base: int64_t, mut exp: int64_t) -> int64_t {
         exp >>= 1 as libc::c_int;
         base *= base;
     }
-    return result;
+    result
 }

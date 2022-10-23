@@ -460,7 +460,7 @@ pub unsafe extern "C" fn maxGridDiskSize(mut k: libc::c_int, mut out: *mut int64
         * k as int64_t
         * (k as int64_t + 1 as libc::c_int as libc::c_longlong)
         + 1 as libc::c_int as libc::c_longlong;
-    return E_SUCCESS as libc::c_int as H3Error;
+    E_SUCCESS as libc::c_int as H3Error
 }
 #[no_mangle]
 pub unsafe extern "C" fn gridDisk(
@@ -468,7 +468,7 @@ pub unsafe extern "C" fn gridDisk(
     mut k: libc::c_int,
     mut out: *mut H3Index,
 ) -> H3Error {
-    return gridDiskDistances(origin, k, out, 0 as *mut libc::c_int);
+    return gridDiskDistances(origin, k, out, std::ptr::null_mut::<libc::c_int>());
 }
 #[no_mangle]
 pub unsafe extern "C" fn gridDiskDistances(
@@ -502,7 +502,7 @@ pub unsafe extern "C" fn gridDiskDistances(
             let mut result: H3Error =
                 _gridDiskDistancesInternal(origin, k, out, distances, maxIdx, 0 as libc::c_int);
             test_prefix_free(distances as *mut libc::c_void);
-            return result;
+            result
         } else {
             memset(
                 distances as *mut libc::c_void,
@@ -511,11 +511,11 @@ pub unsafe extern "C" fn gridDiskDistances(
                     as libc::c_ulong
                     as libc::c_ulonglong) as libc::c_ulong,
             );
-            return _gridDiskDistancesInternal(origin, k, out, distances, maxIdx, 0 as libc::c_int);
+            _gridDiskDistancesInternal(origin, k, out, distances, maxIdx, 0 as libc::c_int)
         }
     } else {
-        return E_SUCCESS as libc::c_int as H3Error;
-    };
+        E_SUCCESS as libc::c_int as H3Error
+    }
 }
 #[no_mangle]
 pub unsafe extern "C" fn _gridDiskDistancesInternal(
@@ -568,7 +568,7 @@ pub unsafe extern "C" fn _gridDiskDistancesInternal(
         }
         i += 1;
     }
-    return E_SUCCESS as libc::c_int as H3Error;
+    E_SUCCESS as libc::c_int as H3Error
 }
 #[no_mangle]
 pub unsafe extern "C" fn gridDiskDistancesSafe(
@@ -582,7 +582,7 @@ pub unsafe extern "C" fn gridDiskDistancesSafe(
     if err != 0 {
         return err;
     }
-    return _gridDiskDistancesInternal(origin, k, out, distances, maxIdx, 0 as libc::c_int);
+    _gridDiskDistancesInternal(origin, k, out, distances, maxIdx, 0 as libc::c_int)
 }
 #[no_mangle]
 pub unsafe extern "C" fn h3NeighborRotations(
@@ -597,7 +597,7 @@ pub unsafe extern "C" fn h3NeighborRotations(
     {
         return E_FAILED as libc::c_int as H3Error;
     }
-    *rotations = *rotations % 6 as libc::c_int;
+    *rotations %= 6 as libc::c_int;
     let mut i: libc::c_int = 0 as libc::c_int;
     while i < *rotations {
         dir = _rotate60ccw(dir);
@@ -631,34 +631,28 @@ pub unsafe extern "C" fn h3NeighborRotations(
                 newRotations = baseCellNeighbor60CCWRots[oldBaseCell as usize]
                     [IK_AXES_DIGIT as libc::c_int as usize];
                 current = _h3Rotate60ccw(current);
-                *rotations = *rotations + 1 as libc::c_int;
+                *rotations += 1 as libc::c_int;
             }
             break;
         } else {
             let mut oldDigit: Direction =
-                (current >> (15 as libc::c_int - (r + 1 as libc::c_int)) * 3 as libc::c_int
+                (current >> ((15 as libc::c_int - (r + 1 as libc::c_int)) * 3 as libc::c_int)
                     & 7 as libc::c_int as uint64_t) as Direction;
             let mut nextDir: Direction = CENTER_DIGIT;
             if oldDigit as libc::c_uint == INVALID_DIGIT as libc::c_int as libc::c_uint {
                 return E_CELL_INVALID as libc::c_int as H3Error;
+            } else if isResolutionClassIII(r + 1 as libc::c_int) != 0 {
+                current = current
+                    & !((7 as libc::c_int as uint64_t) << ((15 as libc::c_int - (r + 1 as libc::c_int)) * 3 as libc::c_int))
+                    | (NEW_DIGIT_II[oldDigit as usize][dir as usize] as uint64_t) << ((15 as libc::c_int - (r + 1 as libc::c_int)) * 3 as libc::c_int);
+                nextDir = NEW_ADJUSTMENT_II[oldDigit as usize][dir as usize];
             } else {
-                if isResolutionClassIII(r + 1 as libc::c_int) != 0 {
-                    current = current
-                        & !((7 as libc::c_int as uint64_t)
-                            << (15 as libc::c_int - (r + 1 as libc::c_int)) * 3 as libc::c_int)
-                        | (NEW_DIGIT_II[oldDigit as usize][dir as usize] as uint64_t)
-                            << (15 as libc::c_int - (r + 1 as libc::c_int)) * 3 as libc::c_int;
-                    nextDir = NEW_ADJUSTMENT_II[oldDigit as usize][dir as usize];
-                } else {
-                    current = current
-                        & !((7 as libc::c_int as uint64_t)
-                            << (15 as libc::c_int - (r + 1 as libc::c_int)) * 3 as libc::c_int)
-                        | (NEW_DIGIT_III[oldDigit as usize][dir as usize] as uint64_t)
-                            << (15 as libc::c_int - (r + 1 as libc::c_int)) * 3 as libc::c_int;
-                    nextDir = NEW_ADJUSTMENT_III[oldDigit as usize][dir as usize];
-                }
+                current = current
+                    & !((7 as libc::c_int as uint64_t) << ((15 as libc::c_int - (r + 1 as libc::c_int)) * 3 as libc::c_int))
+                    | (NEW_DIGIT_III[oldDigit as usize][dir as usize] as uint64_t) << ((15 as libc::c_int - (r + 1 as libc::c_int)) * 3 as libc::c_int);
+                nextDir = NEW_ADJUSTMENT_III[oldDigit as usize][dir as usize];
             }
-            if !(nextDir as libc::c_uint != CENTER_DIGIT as libc::c_int as libc::c_uint) {
+            if nextDir as libc::c_uint == CENTER_DIGIT as libc::c_int as libc::c_uint {
                 break;
             }
             dir = nextDir;
@@ -686,18 +680,16 @@ pub unsafe extern "C" fn h3NeighborRotations(
             } else if oldLeadingDigit as libc::c_uint == CENTER_DIGIT as libc::c_int as libc::c_uint
             {
                 return E_PENTAGON as libc::c_int as H3Error;
+            } else if oldLeadingDigit as libc::c_uint == JK_AXES_DIGIT as libc::c_int as libc::c_uint {
+                current = _h3Rotate60ccw(current);
+                *rotations += 1 as libc::c_int;
+            } else if oldLeadingDigit as libc::c_uint
+                == IK_AXES_DIGIT as libc::c_int as libc::c_uint
+            {
+                current = _h3Rotate60cw(current);
+                *rotations += 5 as libc::c_int;
             } else {
-                if oldLeadingDigit as libc::c_uint == JK_AXES_DIGIT as libc::c_int as libc::c_uint {
-                    current = _h3Rotate60ccw(current);
-                    *rotations = *rotations + 1 as libc::c_int;
-                } else if oldLeadingDigit as libc::c_uint
-                    == IK_AXES_DIGIT as libc::c_int as libc::c_uint
-                {
-                    current = _h3Rotate60cw(current);
-                    *rotations = *rotations + 5 as libc::c_int;
-                } else {
-                    return E_FAILED as libc::c_int as H3Error;
-                }
+                return E_FAILED as libc::c_int as H3Error;
             }
         }
         let mut i_0: libc::c_int = 0 as libc::c_int;
@@ -712,13 +704,13 @@ pub unsafe extern "C" fn h3NeighborRotations(
                     && _h3LeadingNonZeroDigit(current) as libc::c_uint
                         != JK_AXES_DIGIT as libc::c_int as libc::c_uint
                 {
-                    *rotations = *rotations + 1 as libc::c_int;
+                    *rotations += 1 as libc::c_int;
                 }
             } else if _h3LeadingNonZeroDigit(current) as libc::c_uint
                 == IK_AXES_DIGIT as libc::c_int as libc::c_uint
                 && alreadyAdjustedKSubsequence == 0
             {
-                *rotations = *rotations + 1 as libc::c_int;
+                *rotations += 1 as libc::c_int;
             }
         }
     } else {
@@ -730,7 +722,7 @@ pub unsafe extern "C" fn h3NeighborRotations(
     }
     *rotations = (*rotations + newRotations) % 6 as libc::c_int;
     *out = current;
-    return E_SUCCESS as libc::c_int as H3Error;
+    E_SUCCESS as libc::c_int as H3Error
 }
 #[no_mangle]
 pub unsafe extern "C" fn directionForNeighbor(
@@ -753,7 +745,7 @@ pub unsafe extern "C" fn directionForNeighbor(
         }
         direction += 1;
     }
-    return INVALID_DIGIT;
+    INVALID_DIGIT
 }
 #[no_mangle]
 pub unsafe extern "C" fn gridDiskUnsafe(
@@ -761,7 +753,7 @@ pub unsafe extern "C" fn gridDiskUnsafe(
     mut k: libc::c_int,
     mut out: *mut H3Index,
 ) -> H3Error {
-    return gridDiskDistancesUnsafe(origin, k, out, 0 as *mut libc::c_int);
+    return gridDiskDistancesUnsafe(origin, k, out, std::ptr::null_mut::<libc::c_int>());
 }
 #[no_mangle]
 pub unsafe extern "C" fn gridDiskDistancesUnsafe(
@@ -824,7 +816,7 @@ pub unsafe extern "C" fn gridDiskDistancesUnsafe(
             return E_PENTAGON as libc::c_int as H3Error;
         }
     }
-    return E_SUCCESS as libc::c_int as H3Error;
+    E_SUCCESS as libc::c_int as H3Error
 }
 #[no_mangle]
 pub unsafe extern "C" fn gridDisksUnsafe(
@@ -833,7 +825,7 @@ pub unsafe extern "C" fn gridDisksUnsafe(
     mut k: libc::c_int,
     mut out: *mut H3Index,
 ) -> H3Error {
-    let mut segment: *mut H3Index = 0 as *mut H3Index;
+    let mut segment: *mut H3Index = std::ptr::null_mut::<H3Index>();
     let mut segmentSize: int64_t = 0;
     let mut err: H3Error = maxGridDiskSize(k, &mut segmentSize);
     if err != 0 {
@@ -848,7 +840,7 @@ pub unsafe extern "C" fn gridDisksUnsafe(
         }
         i += 1;
     }
-    return E_SUCCESS as libc::c_int as H3Error;
+    E_SUCCESS as libc::c_int as H3Error
 }
 #[no_mangle]
 pub unsafe extern "C" fn gridRingUnsafe(
@@ -905,10 +897,10 @@ pub unsafe extern "C" fn gridRingUnsafe(
         direction += 1;
     }
     if lastIndex != origin {
-        return E_PENTAGON as libc::c_int as H3Error;
+        E_PENTAGON as libc::c_int as H3Error
     } else {
-        return E_SUCCESS as libc::c_int as H3Error;
-    };
+        E_SUCCESS as libc::c_int as H3Error
+    }
 }
 #[no_mangle]
 pub unsafe extern "C" fn maxPolygonToCellsSize(
@@ -944,7 +936,7 @@ pub unsafe extern "C" fn maxPolygonToCellsSize(
     }
     numHexagons += 12 as libc::c_int as libc::c_longlong;
     *out = numHexagons;
-    return E_SUCCESS as libc::c_int as H3Error;
+    E_SUCCESS as libc::c_int as H3Error
 }
 #[no_mangle]
 pub unsafe extern "C" fn _getEdgeHexagons(
@@ -996,7 +988,7 @@ pub unsafe extern "C" fn _getEdgeHexagons(
                 loc = (loc + 1 as libc::c_int as libc::c_longlong) % numHexagons;
                 loopCount += 1;
             }
-            if !(*found.offset(loc as isize) == pointHex) {
+            if *found.offset(loc as isize) != pointHex {
                 *found.offset(loc as isize) = pointHex;
                 *search.offset(*numSearchHexes as isize) = pointHex;
                 *numSearchHexes += 1;
@@ -1005,7 +997,7 @@ pub unsafe extern "C" fn _getEdgeHexagons(
         }
         i += 1;
     }
-    return E_SUCCESS as libc::c_int as H3Error;
+    E_SUCCESS as libc::c_int as H3Error
 }
 #[no_mangle]
 pub unsafe extern "C" fn polygonToCells(
@@ -1092,7 +1084,7 @@ pub unsafe extern "C" fn polygonToCells(
             gridDisk(searchHex, 1 as libc::c_int, ring.as_mut_ptr());
             let mut j: libc::c_int = 0 as libc::c_int;
             while j < 7 as libc::c_int {
-                if !(ring[j as usize] == 0 as libc::c_int as libc::c_ulonglong) {
+                if ring[j as usize] != 0 as libc::c_int as libc::c_ulonglong {
                     let mut hex: H3Index = ring[j as usize];
                     let mut loc: int64_t =
                         hex.wrapping_rem(numHexagons as libc::c_ulonglong) as int64_t;
@@ -1110,7 +1102,7 @@ pub unsafe extern "C" fn polygonToCells(
                         loc = (loc + 1 as libc::c_int as libc::c_longlong) % numHexagons;
                         loopCount += 1;
                     }
-                    if !(*out.offset(loc as isize) == hex) {
+                    if *out.offset(loc as isize) != hex {
                         let mut hexCenter: LatLng = LatLng { lat: 0., lng: 0. };
                         cellToLatLng(hex, &mut hexCenter);
                         if pointInsidePolygon(geoPolygon, bboxes, &mut hexCenter) {
@@ -1125,9 +1117,7 @@ pub unsafe extern "C" fn polygonToCells(
             currentSearchNum += 1;
             i_1 += 1;
         }
-        let mut temp: *mut H3Index = search;
-        search = found;
-        found = temp;
+        std::mem::swap(&mut search, &mut found);
         let mut j_0: int64_t = 0 as libc::c_int as int64_t;
         while j_0 < numSearchHexes {
             *found.offset(j_0 as isize) = 0 as libc::c_int as H3Index;
@@ -1139,7 +1129,7 @@ pub unsafe extern "C" fn polygonToCells(
     test_prefix_free(bboxes as *mut libc::c_void);
     test_prefix_free(search as *mut libc::c_void);
     test_prefix_free(found as *mut libc::c_void);
-    return E_SUCCESS as libc::c_int as H3Error;
+    E_SUCCESS as libc::c_int as H3Error
 }
 #[no_mangle]
 pub unsafe extern "C" fn h3SetToVertexGraph(
@@ -1151,8 +1141,8 @@ pub unsafe extern "C" fn h3SetToVertexGraph(
         numVerts: 0,
         verts: [LatLng { lat: 0., lng: 0. }; 10],
     };
-    let mut fromVtx: *mut LatLng = 0 as *mut LatLng;
-    let mut toVtx: *mut LatLng = 0 as *mut LatLng;
+    let mut fromVtx: *mut LatLng = std::ptr::null_mut::<LatLng>();
+    let mut toVtx: *mut LatLng = std::ptr::null_mut::<LatLng>();
     let mut edge: *mut VertexNode = std::ptr::null_mut::<VertexNode>();
     if numHexes < 1 as libc::c_int {
         initVertexGraph(graph, 0 as libc::c_int, 0 as libc::c_int);
@@ -1192,7 +1182,7 @@ pub unsafe extern "C" fn h3SetToVertexGraph(
         }
         i += 1;
     }
-    return E_SUCCESS as libc::c_int as H3Error;
+    E_SUCCESS as libc::c_int as H3Error
 }
 #[no_mangle]
 pub unsafe extern "C" fn _vertexGraphToLinkedGeo(
@@ -1201,13 +1191,13 @@ pub unsafe extern "C" fn _vertexGraphToLinkedGeo(
 ) {
     *out = {
         let mut init = LinkedGeoPolygon {
-            first: 0 as *mut LinkedGeoLoop,
-            last: 0 as *mut LinkedGeoLoop,
-            next: 0 as *mut LinkedGeoPolygon,
+            first: std::ptr::null_mut::<LinkedGeoLoop>(),
+            last: std::ptr::null_mut::<LinkedGeoLoop>(),
+            next: std::ptr::null_mut::<LinkedGeoPolygon>(),
         };
         init
     };
-    let mut loop_0: *mut LinkedGeoLoop = 0 as *mut LinkedGeoLoop;
+    let mut loop_0: *mut LinkedGeoLoop = std::ptr::null_mut::<LinkedGeoLoop>();
     let mut edge: *mut VertexNode = std::ptr::null_mut::<VertexNode>();
     let mut nextVtx: LatLng = LatLng { lat: 0., lng: 0. };
     loop {
@@ -1234,7 +1224,7 @@ pub unsafe extern "C" fn cellsToLinkedMultiPolygon(
     mut out: *mut LinkedGeoPolygon,
 ) -> H3Error {
     let mut graph: VertexGraph = VertexGraph {
-        buckets: 0 as *mut *mut VertexNode,
+        buckets: std::ptr::null_mut::<*mut VertexNode>(),
         numBuckets: 0,
         size: 0,
         res: 0,
@@ -1249,5 +1239,5 @@ pub unsafe extern "C" fn cellsToLinkedMultiPolygon(
     if normalizeResult != 0 {
         destroyLinkedMultiPolygon(out);
     }
-    return normalizeResult;
+    normalizeResult
 }

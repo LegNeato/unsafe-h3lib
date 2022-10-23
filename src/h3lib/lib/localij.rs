@@ -456,9 +456,7 @@ pub unsafe extern "C" fn cellToLocalIjk(
             return E_FAILED as libc::c_int as H3Error;
         }
         revDir = _getBaseCellDirection(baseCell, originBaseCell);
-        if !(revDir as libc::c_uint != INVALID_DIGIT as libc::c_int as libc::c_uint) as libc::c_int
-            as libc::c_long
-            != 0
+        if i64::from(revDir as libc::c_uint) == INVALID_DIGIT as i64
         {
             __assert_rtn(
                 (*::core::mem::transmute::<&[u8; 15], &[libc::c_char; 15]>(b"cellToLocalIjk\0"))
@@ -473,11 +471,11 @@ pub unsafe extern "C" fn cellToLocalIjk(
     let mut originOnPent: libc::c_int = _isBaseCellPentagon(originBaseCell);
     let mut indexOnPent: libc::c_int = _isBaseCellPentagon(baseCell);
     let mut indexFijk: FaceIJK = {
-        let mut init = FaceIJK {
+        
+        FaceIJK {
             face: 0 as libc::c_int,
             coord: CoordIJK { i: 0, j: 0, k: 0 },
-        };
-        init
+        }
     };
     if dir as libc::c_uint != CENTER_DIGIT as libc::c_int as libc::c_uint {
         let mut baseCellRotations: libc::c_int =
@@ -503,7 +501,7 @@ pub unsafe extern "C" fn cellToLocalIjk(
     }
     _h3ToFaceIjkWithInitializedFijk(h3, &mut indexFijk);
     if dir as libc::c_uint != CENTER_DIGIT as libc::c_int as libc::c_uint {
-        if !(baseCell != originBaseCell) as libc::c_int as libc::c_long != 0 {
+        if i64::from(baseCell) == originBaseCell as i64 {
             __assert_rtn(
                 (*::core::mem::transmute::<&[u8; 15], &[libc::c_char; 15]>(b"cellToLocalIjk\0"))
                     .as_ptr(),
@@ -554,12 +552,12 @@ pub unsafe extern "C" fn cellToLocalIjk(
             i_1 += 1;
         }
         let mut offset: CoordIJK = {
-            let mut init = CoordIJK {
+            
+            CoordIJK {
                 i: 0 as libc::c_int,
                 j: 0,
                 k: 0,
-            };
-            init
+            }
         };
         _neighbor(&mut offset, dir);
         let mut r: libc::c_int = res - 1 as libc::c_int;
@@ -579,7 +577,7 @@ pub unsafe extern "C" fn cellToLocalIjk(
         _ijkAdd(&mut indexFijk.coord, &mut offset, &mut indexFijk.coord);
         _ijkNormalize(&mut indexFijk.coord);
     } else if originOnPent != 0 && indexOnPent != 0 {
-        if !(baseCell == originBaseCell) as libc::c_int as libc::c_long != 0 {
+        if i64::from(baseCell) != originBaseCell as i64 {
             __assert_rtn(
                 (*::core::mem::transmute::<&[u8; 15], &[libc::c_char; 15]>(b"cellToLocalIjk\0"))
                     .as_ptr(),
@@ -608,7 +606,7 @@ pub unsafe extern "C" fn cellToLocalIjk(
         }
     }
     *out = indexFijk.coord;
-    return E_SUCCESS as libc::c_int as H3Error;
+    E_SUCCESS as libc::c_int as H3Error
 }
 #[no_mangle]
 pub unsafe extern "C" fn localIjkToCell(
@@ -661,10 +659,8 @@ pub unsafe extern "C" fn localIjkToCell(
         _ijkSub(&mut lastIJK, &mut lastCenter, &mut diff);
         _ijkNormalize(&mut diff);
         *out = *out
-            & !((7 as libc::c_int as uint64_t)
-                << (15 as libc::c_int - (r + 1 as libc::c_int)) * 3 as libc::c_int)
-            | (_unitIjkToDigit(&mut diff) as uint64_t)
-                << (15 as libc::c_int - (r + 1 as libc::c_int)) * 3 as libc::c_int;
+            & !((7 as libc::c_int as uint64_t) << ((15 as libc::c_int - (r + 1 as libc::c_int)) * 3 as libc::c_int))
+            | (_unitIjkToDigit(&mut diff) as uint64_t) << ((15 as libc::c_int - (r + 1 as libc::c_int)) * 3 as libc::c_int);
         r -= 1;
     }
     if ijkCopy.i > 1 as libc::c_int || ijkCopy.j > 1 as libc::c_int || ijkCopy.k > 1 as libc::c_int
@@ -696,7 +692,7 @@ pub unsafe extern "C" fn localIjkToCell(
                 return E_PENTAGON as libc::c_int as H3Error;
             }
             baseCell = _getBaseCellNeighbor(originBaseCell, dir_0);
-            if !(baseCell != 127 as libc::c_int) as libc::c_int as libc::c_long != 0 {
+            if i64::from(baseCell) == 127 as i64 {
                 __assert_rtn(
                     (*::core::mem::transmute::<&[u8; 15], &[libc::c_char; 15]>(
                         b"localIjkToCell\0",
@@ -723,7 +719,7 @@ pub unsafe extern "C" fn localIjkToCell(
         }
         let baseCellRotations: libc::c_int =
             baseCellNeighbor60CCWRots[originBaseCell as usize][dir_0 as usize];
-        if !(baseCellRotations >= 0 as libc::c_int) as libc::c_int as libc::c_long != 0 {
+        if i64::from(baseCellRotations) < 0 {
             __assert_rtn(
                 (*::core::mem::transmute::<&[u8; 15], &[libc::c_char; 15]>(b"localIjkToCell\0"))
                     .as_ptr(),
@@ -735,9 +731,7 @@ pub unsafe extern "C" fn localIjkToCell(
         };
         if indexOnPent != 0 {
             let revDir: Direction = _getBaseCellDirection(baseCell, originBaseCell);
-            if !(revDir as libc::c_uint != INVALID_DIGIT as libc::c_int as libc::c_uint)
-                as libc::c_int as libc::c_long
-                != 0
+            if i64::from(revDir as libc::c_uint) == INVALID_DIGIT as i64
             {
                 __assert_rtn(
                     (*::core::mem::transmute::<&[u8; 15], &[libc::c_char; 15]>(
@@ -808,16 +802,12 @@ pub unsafe extern "C" fn localIjkToCell(
             i_4 += 1;
         }
     }
-    if indexOnPent != 0 {
-        if _h3LeadingNonZeroDigit(*out) as libc::c_uint
-            == K_AXES_DIGIT as libc::c_int as libc::c_uint
-        {
-            return E_PENTAGON as libc::c_int as H3Error;
-        }
+    if indexOnPent != 0 && _h3LeadingNonZeroDigit(*out) as libc::c_uint == K_AXES_DIGIT as libc::c_int as libc::c_uint {
+        return E_PENTAGON as libc::c_int as H3Error;
     }
     *out = *out & !((127 as libc::c_int as uint64_t) << 45 as libc::c_int)
         | (baseCell as uint64_t) << 45 as libc::c_int;
-    return E_SUCCESS as libc::c_int as H3Error;
+    E_SUCCESS as libc::c_int as H3Error
 }
 #[no_mangle]
 pub unsafe extern "C" fn cellToLocalIj(
@@ -835,7 +825,7 @@ pub unsafe extern "C" fn cellToLocalIj(
         return failed;
     }
     ijkToIj(&mut ijk, out);
-    return E_SUCCESS as libc::c_int as H3Error;
+    E_SUCCESS as libc::c_int as H3Error
 }
 #[no_mangle]
 pub unsafe extern "C" fn localIjToCell(
@@ -852,7 +842,7 @@ pub unsafe extern "C" fn localIjToCell(
     if ijToIjkError != 0 {
         return ijToIjkError;
     }
-    return localIjkToCell(origin, &mut ijk, out);
+    localIjkToCell(origin, &mut ijk, out)
 }
 #[no_mangle]
 pub unsafe extern "C" fn gridDistance(
@@ -871,7 +861,7 @@ pub unsafe extern "C" fn gridDistance(
         return destError;
     }
     *out = ijkDistance(&mut originIjk, &mut h3Ijk) as int64_t;
-    return E_SUCCESS as libc::c_int as H3Error;
+    E_SUCCESS as libc::c_int as H3Error
 }
 #[no_mangle]
 pub unsafe extern "C" fn gridPathCellsSize(
@@ -885,7 +875,7 @@ pub unsafe extern "C" fn gridPathCellsSize(
         return distanceError;
     }
     *size = distance + 1 as libc::c_int as libc::c_longlong;
-    return E_SUCCESS as libc::c_int as H3Error;
+    E_SUCCESS as libc::c_int as H3Error
 }
 unsafe extern "C" fn cubeRound(
     mut i: libc::c_double,
@@ -922,20 +912,20 @@ pub unsafe extern "C" fn gridPathCells(
         return distanceError;
     }
     let mut startIjk: CoordIJK = {
-        let mut init = CoordIJK {
+        
+        CoordIJK {
             i: 0 as libc::c_int,
             j: 0,
             k: 0,
-        };
-        init
+        }
     };
     let mut endIjk: CoordIJK = {
-        let mut init = CoordIJK {
+        
+        CoordIJK {
             i: 0 as libc::c_int,
             j: 0,
             k: 0,
-        };
-        init
+        }
     };
     let mut startError: H3Error = cellToLocalIjk(start, start, &mut startIjk);
     if startError != 0 {
@@ -963,12 +953,12 @@ pub unsafe extern "C" fn gridPathCells(
         0 as libc::c_int as libc::c_double
     };
     let mut currentIjk: CoordIJK = {
-        let mut init = CoordIJK {
+        
+        CoordIJK {
             i: startIjk.i,
             j: startIjk.j,
             k: startIjk.k,
-        };
-        init
+        }
     };
     let mut n: int64_t = 0 as libc::c_int as int64_t;
     while n <= distance {
@@ -986,5 +976,5 @@ pub unsafe extern "C" fn gridPathCells(
         }
         n += 1;
     }
-    return E_SUCCESS as libc::c_int as H3Error;
+    E_SUCCESS as libc::c_int as H3Error
 }

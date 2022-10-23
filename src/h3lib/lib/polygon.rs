@@ -49,7 +49,7 @@ pub unsafe extern "C" fn pointInsideGeoLoop(
         && (*coord).lng < 0 as libc::c_int as libc::c_double
     {
         (*coord).lng
-            + (6.28318530717958647692528676655900576839433)
+            + 6.283_185_307_179_586
                 .to_f64()
                 .unwrap()
     } else {
@@ -67,12 +67,10 @@ pub unsafe extern "C" fn pointInsideGeoLoop(
         b = *((*loop_0).verts)
             .offset(((loopIndex + 1 as libc::c_int) % (*loop_0).numVerts) as isize);
         if a.lat > b.lat {
-            let mut tmp: LatLng = a;
-            a = b;
-            b = tmp;
+            std::mem::swap(&mut a, &mut b);
         }
         if lat == a.lat || lat == b.lat {
-            lat += 2.2204460492503131e-16f64;
+            lat += 2.220_446_049_250_313e-16_f64;
         }
         if lat < a.lat || lat > b.lat {
             continue;
@@ -80,7 +78,7 @@ pub unsafe extern "C" fn pointInsideGeoLoop(
         let mut aLng: libc::c_double =
             if isTransmeridian as libc::c_int != 0 && a.lng < 0 as libc::c_int as libc::c_double {
                 a.lng
-                    + (6.28318530717958647692528676655900576839433)
+                    + 6.283_185_307_179_586
                         .to_f64()
                         .unwrap()
             } else {
@@ -89,21 +87,21 @@ pub unsafe extern "C" fn pointInsideGeoLoop(
         let mut bLng: libc::c_double =
             if isTransmeridian as libc::c_int != 0 && b.lng < 0 as libc::c_int as libc::c_double {
                 b.lng
-                    + (6.28318530717958647692528676655900576839433)
+                    + 6.283_185_307_179_586
                         .to_f64()
                         .unwrap()
             } else {
                 b.lng
             };
         if aLng == lng || bLng == lng {
-            lng -= 2.2204460492503131e-16f64;
+            lng -= 2.220_446_049_250_313e-16_f64;
         }
         let mut ratio: libc::c_double = (lat - a.lat) / (b.lat - a.lat);
         let mut testLng: libc::c_double = if isTransmeridian as libc::c_int != 0
             && aLng + (bLng - aLng) * ratio < 0 as libc::c_int as libc::c_double
         {
             aLng + (bLng - aLng) * ratio
-                + (6.28318530717958647692528676655900576839433)
+                + 6.283_185_307_179_586
                     .to_f64()
                     .unwrap()
         } else {
@@ -113,28 +111,28 @@ pub unsafe extern "C" fn pointInsideGeoLoop(
             contains = !contains;
         }
     }
-    return contains;
+    contains
 }
 #[no_mangle]
 pub unsafe extern "C" fn bboxFromGeoLoop(mut loop_0: *const GeoLoop, mut bbox: *mut BBox) {
     if (*loop_0).numVerts == 0 as libc::c_int {
         *bbox = {
-            let mut init = BBox {
+            
+            BBox {
                 north: 0 as libc::c_int as libc::c_double,
                 south: 0.,
                 east: 0.,
                 west: 0.,
-            };
-            init
+            }
         };
         return;
     }
-    (*bbox).south = 1.7976931348623157e+308f64;
-    (*bbox).west = 1.7976931348623157e+308f64;
-    (*bbox).north = -1.7976931348623157e+308f64;
-    (*bbox).east = -1.7976931348623157e+308f64;
-    let mut minPosLng: libc::c_double = 1.7976931348623157e+308f64;
-    let mut maxNegLng: libc::c_double = -1.7976931348623157e+308f64;
+    (*bbox).south = 1.797_693_134_862_315_7e308_f64;
+    (*bbox).west = 1.797_693_134_862_315_7e308_f64;
+    (*bbox).north = -1.797_693_134_862_315_7e308_f64;
+    (*bbox).east = -1.797_693_134_862_315_7e308_f64;
+    let mut minPosLng: libc::c_double = 1.797_693_134_862_315_7e308_f64;
+    let mut maxNegLng: libc::c_double = -1.797_693_134_862_315_7e308_f64;
     let mut isTransmeridian: bool = 0 as libc::c_int != 0;
     let mut lat: libc::c_double = 0.;
     let mut lng: libc::c_double = 0.;
@@ -169,7 +167,7 @@ pub unsafe extern "C" fn bboxFromGeoLoop(mut loop_0: *const GeoLoop, mut bbox: *
         if lng < 0 as libc::c_int as libc::c_double && lng > maxNegLng {
             maxNegLng = lng;
         }
-        if fabs(lng - next.lng) > 3.14159265358979323846264338327950288f64 {
+        if fabs(lng - next.lng) > 3.141_592_653_589_793_f64 {
             isTransmeridian = 1 as libc::c_int != 0;
         }
     }
@@ -194,14 +192,14 @@ unsafe extern "C" fn isClockwiseNormalizedGeoLoop(
         a = *((*loop_0).verts).offset(loopIndex as isize);
         b = *((*loop_0).verts)
             .offset(((loopIndex + 1 as libc::c_int) % (*loop_0).numVerts) as isize);
-        if !isTransmeridian && fabs(a.lng - b.lng) > 3.14159265358979323846264338327950288f64 {
+        if !isTransmeridian && fabs(a.lng - b.lng) > 3.141_592_653_589_793_f64 {
             return isClockwiseNormalizedGeoLoop(loop_0, 1 as libc::c_int != 0);
         }
         sum += ((if isTransmeridian as libc::c_int != 0
             && b.lng < 0 as libc::c_int as libc::c_double
         {
             b.lng
-                + (6.28318530717958647692528676655900576839433)
+                + 6.283_185_307_179_586
                     .to_f64()
                     .unwrap()
         } else {
@@ -210,18 +208,18 @@ unsafe extern "C" fn isClockwiseNormalizedGeoLoop(
             && a.lng < 0 as libc::c_int as libc::c_double
         {
             a.lng
-                + (6.28318530717958647692528676655900576839433)
+                + 6.283_185_307_179_586
                     .to_f64()
                     .unwrap()
         } else {
             a.lng
         })) * (b.lat + a.lat);
     }
-    return sum > 0 as libc::c_int as libc::c_double;
+    sum > 0 as libc::c_int as libc::c_double
 }
 #[no_mangle]
 pub unsafe extern "C" fn isClockwiseGeoLoop(mut loop_0: *const GeoLoop) -> bool {
-    return isClockwiseNormalizedGeoLoop(loop_0, 0 as libc::c_int != 0);
+    isClockwiseNormalizedGeoLoop(loop_0, 0 as libc::c_int != 0)
 }
 #[no_mangle]
 pub unsafe extern "C" fn bboxesFromGeoPolygon(
@@ -265,5 +263,5 @@ pub unsafe extern "C" fn pointInsidePolygon(
             i += 1;
         }
     }
-    return contains;
+    contains
 }

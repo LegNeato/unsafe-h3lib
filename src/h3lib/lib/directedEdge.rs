@@ -121,10 +121,9 @@ pub unsafe extern "C" fn areNeighborCells(
         cellToParent(destination, parentRes, &mut destinationParent);
         if originParent == destinationParent {
             let mut originResDigit: Direction =
-                (origin >> (15 as libc::c_int - (parentRes + 1 as libc::c_int)) * 3 as libc::c_int
+                (origin >> ((15 as libc::c_int - (parentRes + 1 as libc::c_int)) * 3 as libc::c_int)
                     & 7 as libc::c_int as uint64_t) as Direction;
-            let mut destinationResDigit: Direction = (destination
-                >> (15 as libc::c_int - (parentRes + 1 as libc::c_int)) * 3 as libc::c_int
+            let mut destinationResDigit: Direction = (destination >> ((15 as libc::c_int - (parentRes + 1 as libc::c_int)) * 3 as libc::c_int)
                 & 7 as libc::c_int as uint64_t)
                 as Direction;
             if originResDigit as libc::c_uint == CENTER_DIGIT as libc::c_int as libc::c_uint
@@ -183,7 +182,7 @@ pub unsafe extern "C" fn areNeighborCells(
         i += 1;
     }
     *out = 0 as libc::c_int;
-    return E_SUCCESS as libc::c_int as H3Error;
+    E_SUCCESS as libc::c_int as H3Error
 }
 #[no_mangle]
 pub unsafe extern "C" fn cellsToDirectedEdge(
@@ -201,7 +200,7 @@ pub unsafe extern "C" fn cellsToDirectedEdge(
     output = output & !((7 as libc::c_int as uint64_t) << 56 as libc::c_int)
         | (direction as uint64_t) << 56 as libc::c_int;
     *out = output;
-    return E_SUCCESS as libc::c_int as H3Error;
+    E_SUCCESS as libc::c_int as H3Error
 }
 #[no_mangle]
 pub unsafe extern "C" fn getDirectedEdgeOrigin(
@@ -220,7 +219,7 @@ pub unsafe extern "C" fn getDirectedEdgeOrigin(
     origin = origin & !((7 as libc::c_int as uint64_t) << 56 as libc::c_int)
         | (0 as libc::c_int as uint64_t) << 56 as libc::c_int;
     *out = origin;
-    return E_SUCCESS as libc::c_int as H3Error;
+    E_SUCCESS as libc::c_int as H3Error
 }
 #[no_mangle]
 pub unsafe extern "C" fn getDirectedEdgeDestination(
@@ -235,7 +234,7 @@ pub unsafe extern "C" fn getDirectedEdgeDestination(
     if originResult != 0 {
         return originResult;
     }
-    return h3NeighborRotations(origin, direction, &mut rotations, out);
+    h3NeighborRotations(origin, direction, &mut rotations, out)
 }
 #[no_mangle]
 pub unsafe extern "C" fn isValidDirectedEdge(mut edge: H3Index) -> libc::c_int {
@@ -257,7 +256,7 @@ pub unsafe extern "C" fn isValidDirectedEdge(mut edge: H3Index) -> libc::c_int {
     {
         return 0 as libc::c_int;
     }
-    return isValidCell(origin);
+    isValidCell(origin)
 }
 #[no_mangle]
 pub unsafe extern "C" fn directedEdgeToCells(
@@ -278,7 +277,7 @@ pub unsafe extern "C" fn directedEdgeToCells(
     if destinationResult != 0 {
         return destinationResult;
     }
-    return E_SUCCESS as libc::c_int as H3Error;
+    E_SUCCESS as libc::c_int as H3Error
 }
 #[no_mangle]
 pub unsafe extern "C" fn originToDirectedEdges(
@@ -301,7 +300,7 @@ pub unsafe extern "C" fn originToDirectedEdges(
         }
         i += 1;
     }
-    return E_SUCCESS as libc::c_int as H3Error;
+    E_SUCCESS as libc::c_int as H3Error
 }
 #[no_mangle]
 pub unsafe extern "C" fn directedEdgeToBoundary(
@@ -336,5 +335,5 @@ pub unsafe extern "C" fn directedEdgeToBoundary(
     } else {
         _faceIjkToCellBoundary(&mut fijk, res, startVertex, 2 as libc::c_int, cb);
     }
-    return E_SUCCESS as libc::c_int as H3Error;
+    E_SUCCESS as libc::c_int as H3Error
 }

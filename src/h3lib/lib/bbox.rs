@@ -55,25 +55,25 @@ pub struct BBox {
 }
 #[inline(always)]
 unsafe extern "C" fn __inline_isfinitef(mut __x: libc::c_float) -> libc::c_int {
-    return (__x == __x && __x.abs() != ::core::f32::INFINITY) as libc::c_int;
+    (__x == __x && __x.abs() != ::core::f32::INFINITY) as libc::c_int
 }
 #[inline(always)]
 unsafe extern "C" fn __inline_isfinited(mut __x: libc::c_double) -> libc::c_int {
-    return (__x == __x && __x.abs() != ::core::f64::INFINITY) as libc::c_int;
+    (__x == __x && __x.abs() != ::core::f64::INFINITY) as libc::c_int
 }
 #[inline(always)]
 unsafe extern "C" fn __inline_isfinitel(mut __x: f64) -> libc::c_int {
-    return (__x == __x && __x.abs() != ::core::f64::INFINITY) as libc::c_int;
+    (__x == __x && __x.abs() != ::core::f64::INFINITY) as libc::c_int
 }
 #[no_mangle]
 pub unsafe extern "C" fn bboxIsTransmeridian(mut bbox: *const BBox) -> bool {
-    return (*bbox).east < (*bbox).west;
+    (*bbox).east < (*bbox).west
 }
 #[no_mangle]
 pub unsafe extern "C" fn bboxCenter(mut bbox: *const BBox, mut center: *mut LatLng) {
     (*center).lat = ((*bbox).north + (*bbox).south) / 2.0f64;
     let mut east: libc::c_double = if bboxIsTransmeridian(bbox) as libc::c_int != 0 {
-        (*bbox).east + 6.28318530717958647692528676655900576839433
+        (*bbox).east + 6.283_185_307_179_586
     } else {
         (*bbox).east
     }
@@ -83,20 +83,20 @@ pub unsafe extern "C" fn bboxCenter(mut bbox: *const BBox, mut center: *mut LatL
 }
 #[no_mangle]
 pub unsafe extern "C" fn bboxContains(mut bbox: *const BBox, mut point: *const LatLng) -> bool {
-    return (*point).lat >= (*bbox).south
+    (*point).lat >= (*bbox).south
         && (*point).lat <= (*bbox).north
         && (if bboxIsTransmeridian(bbox) as libc::c_int != 0 {
             ((*point).lng >= (*bbox).west || (*point).lng <= (*bbox).east) as libc::c_int
         } else {
             ((*point).lng >= (*bbox).west && (*point).lng <= (*bbox).east) as libc::c_int
-        }) != 0;
+        }) != 0
 }
 #[no_mangle]
 pub unsafe extern "C" fn bboxEquals(mut b1: *const BBox, mut b2: *const BBox) -> bool {
-    return (*b1).north == (*b2).north
+    (*b1).north == (*b2).north
         && (*b1).south == (*b2).south
         && (*b1).east == (*b2).east
-        && (*b1).west == (*b2).west;
+        && (*b1).west == (*b2).west
 }
 #[no_mangle]
 pub unsafe extern "C" fn _hexRadiusKm(mut h3Index: H3Index) -> libc::c_double {
@@ -107,7 +107,7 @@ pub unsafe extern "C" fn _hexRadiusKm(mut h3Index: H3Index) -> libc::c_double {
     };
     cellToLatLng(h3Index, &mut h3Center);
     cellToBoundary(h3Index, &mut h3Boundary);
-    return greatCircleDistanceKm(&mut h3Center, (h3Boundary.verts).as_mut_ptr());
+    greatCircleDistanceKm(&mut h3Center, (h3Boundary.verts).as_mut_ptr())
 }
 #[no_mangle]
 pub unsafe extern "C" fn bboxHexEstimate(
@@ -159,7 +159,7 @@ pub unsafe extern "C" fn bboxHexEstimate(
         estimate = 1 as libc::c_int as int64_t;
     }
     *out = estimate;
-    return E_SUCCESS as libc::c_int as H3Error;
+    E_SUCCESS as libc::c_int as H3Error
 }
 #[no_mangle]
 pub unsafe extern "C" fn lineHexEstimate(
@@ -197,5 +197,5 @@ pub unsafe extern "C" fn lineHexEstimate(
         estimate = 1 as libc::c_int as int64_t;
     }
     *out = estimate;
-    return E_SUCCESS as libc::c_int as H3Error;
+    E_SUCCESS as libc::c_int as H3Error
 }

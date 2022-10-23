@@ -2264,213 +2264,213 @@ static mut faceIjkBaseCells: [[[[BaseCellRotation; 3]; 3]; 3]; 20] = [
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 16 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 18 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 24 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 33 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 30 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 32 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 49 as libc::c_int,
                         ccwRot60: 1 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 48 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 50 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 8 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 5 as libc::c_int,
                         ccwRot60: 5 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 10 as libc::c_int,
                         ccwRot60: 5 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 22 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 16 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 18 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 41 as libc::c_int,
                         ccwRot60: 1 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 33 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 30 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 4 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 0 as libc::c_int,
                         ccwRot60: 5 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 2 as libc::c_int,
                         ccwRot60: 5 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 15 as libc::c_int,
                         ccwRot60: 1 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 8 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 5 as libc::c_int,
                         ccwRot60: 5 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 31 as libc::c_int,
                         ccwRot60: 1 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 22 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 16 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
@@ -2479,213 +2479,213 @@ static mut faceIjkBaseCells: [[[[BaseCellRotation; 3]; 3]; 3]; 20] = [
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 2 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 6 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 14 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 10 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 11 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 17 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 24 as libc::c_int,
                         ccwRot60: 1 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 23 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 25 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 0 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 1 as libc::c_int,
                         ccwRot60: 5 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 9 as libc::c_int,
                         ccwRot60: 5 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 5 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 2 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 6 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 18 as libc::c_int,
                         ccwRot60: 1 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 10 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 11 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 4 as libc::c_int,
                         ccwRot60: 1 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 3 as libc::c_int,
                         ccwRot60: 5 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 7 as libc::c_int,
                         ccwRot60: 5 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 8 as libc::c_int,
                         ccwRot60: 1 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 0 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 1 as libc::c_int,
                         ccwRot60: 5 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 16 as libc::c_int,
                         ccwRot60: 1 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 5 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 2 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
@@ -2694,213 +2694,213 @@ static mut faceIjkBaseCells: [[[[BaseCellRotation; 3]; 3]; 3]; 20] = [
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 7 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 21 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 38 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 9 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 19 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 34 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 14 as libc::c_int,
                         ccwRot60: 1 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 20 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 36 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 3 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 13 as libc::c_int,
                         ccwRot60: 5 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 29 as libc::c_int,
                         ccwRot60: 5 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 1 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 7 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 21 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 6 as libc::c_int,
                         ccwRot60: 1 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 9 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 19 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 4 as libc::c_int,
                         ccwRot60: 2 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 12 as libc::c_int,
                         ccwRot60: 5 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 26 as libc::c_int,
                         ccwRot60: 5 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 0 as libc::c_int,
                         ccwRot60: 1 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 3 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 13 as libc::c_int,
                         ccwRot60: 5 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 2 as libc::c_int,
                         ccwRot60: 1 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 1 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 7 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
@@ -2909,213 +2909,213 @@ static mut faceIjkBaseCells: [[[[BaseCellRotation; 3]; 3]; 3]; 20] = [
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 26 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 42 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 58 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 29 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 43 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 62 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 38 as libc::c_int,
                         ccwRot60: 1 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 47 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 64 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 12 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 28 as libc::c_int,
                         ccwRot60: 5 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 44 as libc::c_int,
                         ccwRot60: 5 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 13 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 26 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 42 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 21 as libc::c_int,
                         ccwRot60: 1 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 29 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 43 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 4 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 15 as libc::c_int,
                         ccwRot60: 5 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 31 as libc::c_int,
                         ccwRot60: 5 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 3 as libc::c_int,
                         ccwRot60: 1 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 12 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 28 as libc::c_int,
                         ccwRot60: 5 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 7 as libc::c_int,
                         ccwRot60: 1 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 13 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 26 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
@@ -3124,213 +3124,213 @@ static mut faceIjkBaseCells: [[[[BaseCellRotation; 3]; 3]; 3]; 20] = [
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 31 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 41 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 49 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 44 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 53 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 61 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 58 as libc::c_int,
                         ccwRot60: 1 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 65 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 75 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 15 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 22 as libc::c_int,
                         ccwRot60: 5 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 33 as libc::c_int,
                         ccwRot60: 5 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 28 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 31 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 41 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 42 as libc::c_int,
                         ccwRot60: 1 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 44 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 53 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 4 as libc::c_int,
                         ccwRot60: 4 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 8 as libc::c_int,
                         ccwRot60: 5 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 16 as libc::c_int,
                         ccwRot60: 5 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 12 as libc::c_int,
                         ccwRot60: 1 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 15 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 22 as libc::c_int,
                         ccwRot60: 5 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 26 as libc::c_int,
                         ccwRot60: 1 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 28 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 31 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
@@ -3339,213 +3339,213 @@ static mut faceIjkBaseCells: [[[[BaseCellRotation; 3]; 3]; 3]; 20] = [
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 50 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 48 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 49 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 32 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 30 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 33 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 24 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 18 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 16 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 70 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 67 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 66 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 52 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 50 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 48 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 37 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 32 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 30 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 83 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 87 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 85 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 74 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 70 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 67 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 57 as libc::c_int,
                         ccwRot60: 1 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 52 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 50 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
@@ -3554,213 +3554,213 @@ static mut faceIjkBaseCells: [[[[BaseCellRotation; 3]; 3]; 3]; 20] = [
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 25 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 23 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 24 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 17 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 11 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 10 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 14 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 6 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 2 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 45 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 39 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 37 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 35 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 25 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 23 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 27 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 17 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 11 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 63 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 59 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 57 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 56 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 45 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 39 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 46 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 35 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 25 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
@@ -3769,213 +3769,213 @@ static mut faceIjkBaseCells: [[[[BaseCellRotation; 3]; 3]; 3]; 20] = [
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 36 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 20 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 14 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 34 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 19 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 9 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 38 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 21 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 7 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 55 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 40 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 27 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 54 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 36 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 20 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 51 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 34 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 19 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 72 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 60 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 46 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 73 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 55 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 40 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 71 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 54 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 36 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
@@ -3984,213 +3984,213 @@ static mut faceIjkBaseCells: [[[[BaseCellRotation; 3]; 3]; 3]; 20] = [
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 64 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 47 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 38 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 62 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 43 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 29 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 58 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 42 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 26 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 84 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 69 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 51 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 82 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 64 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 47 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 76 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 62 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 43 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 97 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 89 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 71 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 98 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 84 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 69 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 96 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 82 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 64 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
@@ -4199,213 +4199,213 @@ static mut faceIjkBaseCells: [[[[BaseCellRotation; 3]; 3]; 3]; 20] = [
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 75 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 65 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 58 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 61 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 53 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 44 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 49 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 41 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 31 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 94 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 86 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 76 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 81 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 75 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 65 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 66 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 61 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 53 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 107 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 104 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 96 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 101 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 94 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 86 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 85 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 81 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 75 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
@@ -4414,213 +4414,213 @@ static mut faceIjkBaseCells: [[[[BaseCellRotation; 3]; 3]; 3]; 20] = [
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 57 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 59 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 63 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 74 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 78 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 79 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 83 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 92 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 95 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 37 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 39 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 45 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 52 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 57 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 59 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 70 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 74 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 78 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 24 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 23 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 25 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 32 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 37 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 39 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 50 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 52 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 57 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
@@ -4629,213 +4629,213 @@ static mut faceIjkBaseCells: [[[[BaseCellRotation; 3]; 3]; 3]; 20] = [
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 46 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 60 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 72 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 56 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 68 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 80 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 63 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 77 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 90 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 27 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 40 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 55 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 35 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 46 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 60 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 45 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 56 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 68 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 14 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 20 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 36 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 17 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 27 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 40 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 25 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 35 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 46 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
@@ -4844,213 +4844,213 @@ static mut faceIjkBaseCells: [[[[BaseCellRotation; 3]; 3]; 3]; 20] = [
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 71 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 89 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 97 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 73 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 91 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 103 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 72 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 88 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 105 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 51 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 69 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 84 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 54 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 71 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 89 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 55 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 73 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 91 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 38 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 47 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 64 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 34 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 51 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 69 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 36 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 54 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 71 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
@@ -5059,213 +5059,213 @@ static mut faceIjkBaseCells: [[[[BaseCellRotation; 3]; 3]; 3]; 20] = [
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 96 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 104 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 107 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 98 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 110 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 115 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 97 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 111 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 119 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 76 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 86 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 94 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 82 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 96 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 104 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 84 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 98 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 110 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 58 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 65 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 75 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 62 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 76 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 86 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 64 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 82 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 96 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
@@ -5274,213 +5274,213 @@ static mut faceIjkBaseCells: [[[[BaseCellRotation; 3]; 3]; 3]; 20] = [
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 85 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 87 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 83 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 101 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 102 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 100 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 107 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 112 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 114 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 66 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 67 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 70 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 81 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 85 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 87 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 94 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 101 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 102 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 49 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 48 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 50 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 61 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 66 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 67 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 75 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 81 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 85 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
@@ -5489,213 +5489,213 @@ static mut faceIjkBaseCells: [[[[BaseCellRotation; 3]; 3]; 3]; 20] = [
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 95 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 92 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 83 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 79 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 78 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 74 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 63 as libc::c_int,
                         ccwRot60: 1 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 59 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 57 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 109 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 108 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 100 as libc::c_int,
                         ccwRot60: 5 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 93 as libc::c_int,
                         ccwRot60: 1 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 95 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 92 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 77 as libc::c_int,
                         ccwRot60: 1 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 79 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 78 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 117 as libc::c_int,
                         ccwRot60: 4 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 118 as libc::c_int,
                         ccwRot60: 5 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 114 as libc::c_int,
                         ccwRot60: 5 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 106 as libc::c_int,
                         ccwRot60: 1 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 109 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 108 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 90 as libc::c_int,
                         ccwRot60: 1 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 93 as libc::c_int,
                         ccwRot60: 1 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 95 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
@@ -5704,213 +5704,213 @@ static mut faceIjkBaseCells: [[[[BaseCellRotation; 3]; 3]; 3]; 20] = [
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 90 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 77 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 63 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 80 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 68 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 56 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 72 as libc::c_int,
                         ccwRot60: 1 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 60 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 46 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 106 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 93 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 79 as libc::c_int,
                         ccwRot60: 5 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 99 as libc::c_int,
                         ccwRot60: 1 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 90 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 77 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 88 as libc::c_int,
                         ccwRot60: 1 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 80 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 68 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 117 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 109 as libc::c_int,
                         ccwRot60: 5 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 95 as libc::c_int,
                         ccwRot60: 5 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 113 as libc::c_int,
                         ccwRot60: 1 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 106 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 93 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 105 as libc::c_int,
                         ccwRot60: 1 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 99 as libc::c_int,
                         ccwRot60: 1 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 90 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
@@ -5919,213 +5919,213 @@ static mut faceIjkBaseCells: [[[[BaseCellRotation; 3]; 3]; 3]; 20] = [
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 105 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 88 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 72 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 103 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 91 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 73 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 97 as libc::c_int,
                         ccwRot60: 1 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 89 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 71 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 113 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 99 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 80 as libc::c_int,
                         ccwRot60: 5 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 116 as libc::c_int,
                         ccwRot60: 1 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 105 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 88 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 111 as libc::c_int,
                         ccwRot60: 1 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 103 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 91 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 117 as libc::c_int,
                         ccwRot60: 2 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 106 as libc::c_int,
                         ccwRot60: 5 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 90 as libc::c_int,
                         ccwRot60: 5 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 121 as libc::c_int,
                         ccwRot60: 1 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 113 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 99 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 119 as libc::c_int,
                         ccwRot60: 1 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 116 as libc::c_int,
                         ccwRot60: 1 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 105 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
@@ -6134,213 +6134,213 @@ static mut faceIjkBaseCells: [[[[BaseCellRotation; 3]; 3]; 3]; 20] = [
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 119 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 111 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 97 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 115 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 110 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 98 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 107 as libc::c_int,
                         ccwRot60: 1 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 104 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 96 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 121 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 116 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 103 as libc::c_int,
                         ccwRot60: 5 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 120 as libc::c_int,
                         ccwRot60: 1 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 119 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 111 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 112 as libc::c_int,
                         ccwRot60: 1 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 115 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 110 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 117 as libc::c_int,
                         ccwRot60: 1 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 113 as libc::c_int,
                         ccwRot60: 5 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 105 as libc::c_int,
                         ccwRot60: 5 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 118 as libc::c_int,
                         ccwRot60: 1 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 121 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 116 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 114 as libc::c_int,
                         ccwRot60: 1 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 120 as libc::c_int,
                         ccwRot60: 1 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 119 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
@@ -6349,213 +6349,213 @@ static mut faceIjkBaseCells: [[[[BaseCellRotation; 3]; 3]; 3]; 20] = [
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 114 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 112 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 107 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 100 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 102 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 101 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 83 as libc::c_int,
                         ccwRot60: 1 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 87 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 85 as libc::c_int,
                         ccwRot60: 3 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 118 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 120 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 115 as libc::c_int,
                         ccwRot60: 5 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 108 as libc::c_int,
                         ccwRot60: 1 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 114 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 112 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 92 as libc::c_int,
                         ccwRot60: 1 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 100 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 102 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
         [
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 117 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 121 as libc::c_int,
                         ccwRot60: 5 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 119 as libc::c_int,
                         ccwRot60: 5 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 109 as libc::c_int,
                         ccwRot60: 1 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 118 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 120 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
             [
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 95 as libc::c_int,
                         ccwRot60: 1 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 108 as libc::c_int,
                         ccwRot60: 1 as libc::c_int,
-                    };
-                    init
+                    }
                 },
                 {
-                    let mut init = BaseCellRotation {
+                    
+                    BaseCellRotation {
                         baseCell: 114 as libc::c_int,
                         ccwRot60: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 },
             ],
         ],
@@ -6569,12 +6569,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 1 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 1 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -6590,12 +6590,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 2 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 1 as libc::c_int,
                             j: 1 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -6611,12 +6611,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 1 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -6632,12 +6632,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 2 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 1 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -6653,12 +6653,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 0 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 2 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -6674,12 +6674,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 1 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 1 as libc::c_int,
                             j: 1 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -6695,12 +6695,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 1 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 1 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -6716,12 +6716,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 2 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -6737,12 +6737,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 0 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 1 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -6758,12 +6758,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 2 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 1 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -6779,12 +6779,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 1 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 1 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -6800,12 +6800,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 1 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 1 as libc::c_int,
                             k: 1 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -6821,12 +6821,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 3 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 1 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -6842,12 +6842,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 3 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 1 as libc::c_int,
                             j: 1 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -6863,12 +6863,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 11 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 2 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -6884,12 +6884,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 4 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 1 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -6905,12 +6905,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 0 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -6926,12 +6926,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 6 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 1 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -6947,12 +6947,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 0 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 1 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -6968,12 +6968,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 2 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 1 as libc::c_int,
                             k: 1 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -6989,12 +6989,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 7 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 1 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -7010,12 +7010,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 2 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 1 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -7031,12 +7031,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 0 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 1 as libc::c_int,
                             j: 1 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -7052,12 +7052,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 6 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 1 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -7073,12 +7073,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 10 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 2 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -7094,12 +7094,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 6 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -7115,12 +7115,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 3 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -7136,12 +7136,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 11 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 1 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -7157,12 +7157,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 4 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 1 as libc::c_int,
                             j: 1 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -7178,12 +7178,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 3 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 1 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -7199,12 +7199,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 0 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 1 as libc::c_int,
                             k: 1 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -7220,12 +7220,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 4 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -7241,12 +7241,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 5 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 1 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -7262,12 +7262,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 0 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 1 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -7283,12 +7283,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 7 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 1 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -7304,12 +7304,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 11 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 1 as libc::c_int,
                             j: 1 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -7325,12 +7325,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 7 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -7346,12 +7346,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 10 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 1 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -7367,12 +7367,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 12 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 2 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -7388,12 +7388,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 6 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 1 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 1 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -7409,12 +7409,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 7 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 1 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 1 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -7430,12 +7430,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 4 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 1 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -7451,12 +7451,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 3 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 1 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -7472,12 +7472,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 3 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 1 as libc::c_int,
                             k: 1 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -7493,12 +7493,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 4 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 1 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -7514,12 +7514,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 6 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 1 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -7535,12 +7535,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 11 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -7556,12 +7556,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 8 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 1 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -7577,12 +7577,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 5 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 1 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -7598,12 +7598,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 14 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 2 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -7619,12 +7619,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 5 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -7640,12 +7640,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 12 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 1 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -7661,12 +7661,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 10 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 1 as libc::c_int,
                             j: 1 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -7682,12 +7682,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 4 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 1 as libc::c_int,
                             k: 1 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -7703,12 +7703,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 12 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 1 as libc::c_int,
                             j: 1 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -7724,12 +7724,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 7 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 1 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -7745,12 +7745,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 11 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 1 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -7766,12 +7766,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 10 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -7787,12 +7787,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 13 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 2 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -7808,12 +7808,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 10 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 1 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -7829,12 +7829,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 11 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 1 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -7850,12 +7850,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 9 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 1 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -7871,12 +7871,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 8 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 1 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -7892,12 +7892,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 6 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 2 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -7913,12 +7913,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 8 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -7934,12 +7934,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 9 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 1 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -7955,12 +7955,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 14 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 1 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -7976,12 +7976,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 5 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 1 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 1 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -7997,12 +7997,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 16 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 1 as libc::c_int,
                             k: 1 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -8018,12 +8018,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 8 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 1 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 1 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -8039,12 +8039,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 5 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 1 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -8060,12 +8060,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 12 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -8081,12 +8081,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 7 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 2 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -8102,12 +8102,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 12 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 1 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -8123,12 +8123,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 10 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 1 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -8144,12 +8144,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 9 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -8165,12 +8165,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 13 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 1 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -8186,12 +8186,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 16 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 1 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -8207,12 +8207,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 15 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 1 as libc::c_int,
                             k: 1 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -8228,12 +8228,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 15 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 1 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -8249,12 +8249,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 16 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 1 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -8270,12 +8270,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 14 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 1 as libc::c_int,
                             j: 1 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -8291,12 +8291,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 13 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 1 as libc::c_int,
                             j: 1 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -8312,12 +8312,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 5 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 2 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -8333,12 +8333,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 8 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 1 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -8354,12 +8354,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 14 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -8375,12 +8375,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 9 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 1 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 1 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -8396,12 +8396,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 14 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 1 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -8417,12 +8417,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 17 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 1 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -8438,12 +8438,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 12 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 1 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -8459,12 +8459,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 16 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -8480,12 +8480,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 17 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 1 as libc::c_int,
                             k: 1 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -8501,12 +8501,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 15 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 1 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -8522,12 +8522,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 16 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 1 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 1 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -8543,12 +8543,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 9 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 1 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -8564,12 +8564,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 15 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -8585,12 +8585,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 13 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -8606,12 +8606,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 8 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 2 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -8627,12 +8627,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 13 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 1 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -8648,12 +8648,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 17 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 1 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 1 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -8669,12 +8669,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 19 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 1 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -8690,12 +8690,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 14 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 1 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -8711,12 +8711,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 19 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 1 as libc::c_int,
                             k: 1 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -8732,12 +8732,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 17 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 1 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -8753,12 +8753,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 13 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 1 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -8774,12 +8774,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 17 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -8795,12 +8795,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 16 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 1 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -8816,12 +8816,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 9 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 2 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -8837,12 +8837,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 15 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 1 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 1 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -8858,12 +8858,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 15 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 1 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -8879,12 +8879,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 18 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 1 as libc::c_int,
                             k: 1 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -8900,12 +8900,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 18 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 1 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -8921,12 +8921,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 19 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 1 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -8942,12 +8942,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 17 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 1 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -8963,12 +8963,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 19 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -8984,12 +8984,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 18 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 1 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -9005,12 +9005,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 18 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 1 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 1 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -9026,12 +9026,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 19 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 2 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -9047,12 +9047,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 19 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 1 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -9068,12 +9068,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 18 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 0 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -9089,12 +9089,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 19 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 1 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 1 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -9110,12 +9110,12 @@ pub static mut baseCellData: [BaseCellData; 122] = [
                 let mut init = FaceIJK {
                     face: 18 as libc::c_int,
                     coord: {
-                        let mut init = CoordIJK {
+                        
+                        CoordIJK {
                             i: 1 as libc::c_int,
                             j: 0 as libc::c_int,
                             k: 0 as libc::c_int,
-                        };
-                        init
+                        }
                     },
                 };
                 init
@@ -9131,23 +9131,23 @@ pub unsafe extern "C" fn _isBaseCellPentagon(mut baseCell: libc::c_int) -> libc:
     if baseCell < 0 as libc::c_int || baseCell >= 122 as libc::c_int {
         return 0 as libc::c_int;
     }
-    return baseCellData[baseCell as usize].isPentagon;
+    baseCellData[baseCell as usize].isPentagon
 }
 #[no_mangle]
 pub unsafe extern "C" fn _isBaseCellPolarPentagon(mut baseCell: libc::c_int) -> bool {
-    return baseCell == 4 as libc::c_int || baseCell == 117 as libc::c_int;
+    baseCell == 4 as libc::c_int || baseCell == 117 as libc::c_int
 }
 #[no_mangle]
 pub unsafe extern "C" fn _faceIjkToBaseCell(mut h: *const FaceIJK) -> libc::c_int {
-    return faceIjkBaseCells[(*h).face as usize][(*h).coord.i as usize][(*h).coord.j as usize]
+    faceIjkBaseCells[(*h).face as usize][(*h).coord.i as usize][(*h).coord.j as usize]
         [(*h).coord.k as usize]
-        .baseCell;
+        .baseCell
 }
 #[no_mangle]
 pub unsafe extern "C" fn _faceIjkToBaseCellCCWrot60(mut h: *const FaceIJK) -> libc::c_int {
-    return faceIjkBaseCells[(*h).face as usize][(*h).coord.i as usize][(*h).coord.j as usize]
+    faceIjkBaseCells[(*h).face as usize][(*h).coord.i as usize][(*h).coord.j as usize]
         [(*h).coord.k as usize]
-        .ccwRot60;
+        .ccwRot60
 }
 #[no_mangle]
 pub unsafe extern "C" fn _baseCellToFaceIjk(mut baseCell: libc::c_int, mut h: *mut FaceIJK) {
@@ -9179,22 +9179,22 @@ pub unsafe extern "C" fn _baseCellToCCWrot60(
         }
         i += 1;
     }
-    return -(1 as libc::c_int);
+    -(1 as libc::c_int)
 }
 #[no_mangle]
 pub unsafe extern "C" fn _baseCellIsCwOffset(
     mut baseCell: libc::c_int,
     mut testFace: libc::c_int,
 ) -> bool {
-    return baseCellData[baseCell as usize].cwOffsetPent[0 as libc::c_int as usize] == testFace
-        || baseCellData[baseCell as usize].cwOffsetPent[1 as libc::c_int as usize] == testFace;
+    baseCellData[baseCell as usize].cwOffsetPent[0 as libc::c_int as usize] == testFace
+        || baseCellData[baseCell as usize].cwOffsetPent[1 as libc::c_int as usize] == testFace
 }
 #[no_mangle]
 pub unsafe extern "C" fn _getBaseCellNeighbor(
     mut baseCell: libc::c_int,
     mut dir: Direction,
 ) -> libc::c_int {
-    return baseCellNeighbors[baseCell as usize][dir as usize];
+    baseCellNeighbors[baseCell as usize][dir as usize]
 }
 #[no_mangle]
 pub unsafe extern "C" fn _getBaseCellDirection(
@@ -9209,11 +9209,11 @@ pub unsafe extern "C" fn _getBaseCellDirection(
         }
         dir += 1;
     }
-    return INVALID_DIGIT;
+    INVALID_DIGIT
 }
 #[no_mangle]
 pub unsafe extern "C" fn res0CellCount() -> libc::c_int {
-    return 122 as libc::c_int;
+    122 as libc::c_int
 }
 #[no_mangle]
 pub unsafe extern "C" fn getRes0Cells(mut out: *mut H3Index) -> H3Error {
@@ -9227,5 +9227,5 @@ pub unsafe extern "C" fn getRes0Cells(mut out: *mut H3Index) -> H3Error {
         *out.offset(bc as isize) = baseCell;
         bc += 1;
     }
-    return E_SUCCESS as libc::c_int as H3Error;
+    E_SUCCESS as libc::c_int as H3Error
 }

@@ -18,14 +18,14 @@ pub struct Vec3d {
 }
 #[no_mangle]
 pub unsafe extern "C" fn _square(mut x: libc::c_double) -> libc::c_double {
-    return x * x;
+    x * x
 }
 #[no_mangle]
 pub unsafe extern "C" fn _pointSquareDist(
     mut v1: *const Vec3d,
     mut v2: *const Vec3d,
 ) -> libc::c_double {
-    return _square((*v1).x - (*v2).x) + _square((*v1).y - (*v2).y) + _square((*v1).z - (*v2).z);
+    _square((*v1).x - (*v2).x) + _square((*v1).y - (*v2).y) + _square((*v1).z - (*v2).z)
 }
 #[no_mangle]
 pub unsafe extern "C" fn _geoToVec3d(mut geo: *const LatLng, mut v: *mut Vec3d) {

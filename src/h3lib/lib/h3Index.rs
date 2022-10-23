@@ -131,25 +131,25 @@ pub struct IterCellsChildren {
 }
 #[inline(always)]
 unsafe extern "C" fn __inline_isfinitef(mut __x: libc::c_float) -> libc::c_int {
-    return (__x == __x && __x.abs() != ::core::f32::INFINITY) as libc::c_int;
+    (__x == __x && __x.abs() != ::core::f32::INFINITY) as libc::c_int
 }
 #[inline(always)]
 unsafe extern "C" fn __inline_isfinited(mut __x: libc::c_double) -> libc::c_int {
-    return (__x == __x && __x.abs() != ::core::f64::INFINITY) as libc::c_int;
+    (__x == __x && __x.abs() != ::core::f64::INFINITY) as libc::c_int
 }
 #[inline(always)]
 unsafe extern "C" fn __inline_isfinitel(mut __x: f64) -> libc::c_int {
-    return (__x == __x && __x.abs() != ::core::f64::INFINITY) as libc::c_int;
+    (__x == __x && __x.abs() != ::core::f64::INFINITY) as libc::c_int
 }
 #[no_mangle]
 pub unsafe extern "C" fn getResolution(mut h: H3Index) -> libc::c_int {
-    return ((h & (15 as libc::c_ulonglong) << 52 as libc::c_int) >> 52 as libc::c_int)
-        as libc::c_int;
+    ((h & (15 as libc::c_ulonglong) << 52 as libc::c_int) >> 52 as libc::c_int)
+        as libc::c_int
 }
 #[no_mangle]
 pub unsafe extern "C" fn getBaseCellNumber(mut h: H3Index) -> libc::c_int {
-    return ((h & (127 as libc::c_int as uint64_t) << 45 as libc::c_int) >> 45 as libc::c_int)
-        as libc::c_int;
+    ((h & (127 as libc::c_int as uint64_t) << 45 as libc::c_int) >> 45 as libc::c_int)
+        as libc::c_int
 }
 #[no_mangle]
 pub unsafe extern "C" fn stringToH3(
@@ -166,7 +166,7 @@ pub unsafe extern "C" fn stringToH3(
         return E_FAILED as libc::c_int as H3Error;
     }
     *out = h;
-    return E_SUCCESS as libc::c_int as H3Error;
+    E_SUCCESS as libc::c_int as H3Error
 }
 #[no_mangle]
 pub unsafe extern "C" fn h3ToString(
@@ -178,7 +178,7 @@ pub unsafe extern "C" fn h3ToString(
         return E_MEMORY_BOUNDS as libc::c_int as H3Error;
     }
     sprintf(str, b"%llx\0" as *const u8 as *const libc::c_char, h);
-    return E_SUCCESS as libc::c_int as H3Error;
+    E_SUCCESS as libc::c_int as H3Error
 }
 #[no_mangle]
 pub unsafe extern "C" fn isValidCell(mut h: H3Index) -> libc::c_int {
@@ -213,7 +213,7 @@ pub unsafe extern "C" fn isValidCell(mut h: H3Index) -> libc::c_int {
     let mut foundFirstNonZeroDigit: bool = 0 as libc::c_int != 0;
     let mut r: libc::c_int = 1 as libc::c_int;
     while r <= res {
-        let mut digit: Direction = (h >> (15 as libc::c_int - r) * 3 as libc::c_int
+        let mut digit: Direction = (h >> ((15 as libc::c_int - r) * 3 as libc::c_int)
             & 7 as libc::c_int as uint64_t) as Direction;
         if !foundFirstNonZeroDigit
             && digit as libc::c_uint != CENTER_DIGIT as libc::c_int as libc::c_uint
@@ -234,14 +234,14 @@ pub unsafe extern "C" fn isValidCell(mut h: H3Index) -> libc::c_int {
     }
     let mut r_0: libc::c_int = res + 1 as libc::c_int;
     while r_0 <= 15 as libc::c_int {
-        let mut digit_0: Direction = (h >> (15 as libc::c_int - r_0) * 3 as libc::c_int
+        let mut digit_0: Direction = (h >> ((15 as libc::c_int - r_0) * 3 as libc::c_int)
             & 7 as libc::c_int as uint64_t) as Direction;
         if digit_0 as libc::c_uint != INVALID_DIGIT as libc::c_int as libc::c_uint {
             return 0 as libc::c_int;
         }
         r_0 += 1;
     }
-    return 1 as libc::c_int;
+    1 as libc::c_int
 }
 #[no_mangle]
 pub unsafe extern "C" fn setH3Index(
@@ -259,8 +259,8 @@ pub unsafe extern "C" fn setH3Index(
         | (baseCell as uint64_t) << 45 as libc::c_int;
     let mut r: libc::c_int = 1 as libc::c_int;
     while r <= res {
-        h = h & !((7 as libc::c_int as uint64_t) << (15 as libc::c_int - r) * 3 as libc::c_int)
-            | (initDigit as uint64_t) << (15 as libc::c_int - r) * 3 as libc::c_int;
+        h = h & !((7 as libc::c_int as uint64_t) << ((15 as libc::c_int - r) * 3 as libc::c_int))
+            | (initDigit as uint64_t) << ((15 as libc::c_int - r) * 3 as libc::c_int);
         r += 1;
     }
     *hp = h;
@@ -275,15 +275,11 @@ pub unsafe extern "C" fn cellToParent(
         ((h & (15 as libc::c_ulonglong) << 52 as libc::c_int) >> 52 as libc::c_int) as libc::c_int;
     if parentRes < 0 as libc::c_int || parentRes > 15 as libc::c_int {
         return E_RES_DOMAIN as libc::c_int as H3Error;
-    } else {
-        if parentRes > childRes {
-            return E_RES_MISMATCH as libc::c_int as H3Error;
-        } else {
-            if parentRes == childRes {
-                *out = h;
-                return E_SUCCESS as libc::c_int as H3Error;
-            }
-        }
+    } else if parentRes > childRes {
+        return E_RES_MISMATCH as libc::c_int as H3Error;
+    } else if parentRes == childRes {
+        *out = h;
+        return E_SUCCESS as libc::c_int as H3Error;
     }
     h = h & !((15 as libc::c_ulonglong) << 52 as libc::c_int)
         | (parentRes as uint64_t) << 52 as libc::c_int;
@@ -291,12 +287,12 @@ pub unsafe extern "C" fn cellToParent(
     let mut i: libc::c_int = parentRes + 1 as libc::c_int;
     while i <= childRes {
         parentH = parentH
-            & !((7 as libc::c_int as uint64_t) << (15 as libc::c_int - i) * 3 as libc::c_int)
-            | (7 as libc::c_int as uint64_t) << (15 as libc::c_int - i) * 3 as libc::c_int;
+            & !((7 as libc::c_int as uint64_t) << ((15 as libc::c_int - i) * 3 as libc::c_int))
+            | (7 as libc::c_int as uint64_t) << ((15 as libc::c_int - i) * 3 as libc::c_int);
         i += 1;
     }
     *out = parentH;
-    return E_SUCCESS as libc::c_int as H3Error;
+    E_SUCCESS as libc::c_int as H3Error
 }
 unsafe extern "C" fn _hasChildAtRes(mut h: H3Index, mut childRes: libc::c_int) -> bool {
     let mut parentRes: libc::c_int =
@@ -304,7 +300,7 @@ unsafe extern "C" fn _hasChildAtRes(mut h: H3Index, mut childRes: libc::c_int) -
     if childRes < parentRes || childRes > 15 as libc::c_int {
         return 0 as libc::c_int != 0;
     }
-    return 1 as libc::c_int != 0;
+    1 as libc::c_int != 0
 }
 #[no_mangle]
 pub unsafe extern "C" fn cellToChildrenSize(
@@ -327,7 +323,7 @@ pub unsafe extern "C" fn cellToChildrenSize(
     } else {
         *out = _ipow(7 as libc::c_int as int64_t, n as int64_t);
     }
-    return E_SUCCESS as libc::c_int as H3Error;
+    E_SUCCESS as libc::c_int as H3Error
 }
 #[no_mangle]
 pub unsafe extern "C" fn makeDirectChild(mut h: H3Index, mut cellNumber: libc::c_int) -> H3Index {
@@ -338,9 +334,9 @@ pub unsafe extern "C" fn makeDirectChild(mut h: H3Index, mut cellNumber: libc::c
         | (childRes as uint64_t) << 52 as libc::c_int;
     let mut childH: H3Index = h;
     childH = childH
-        & !((7 as libc::c_int as uint64_t) << (15 as libc::c_int - childRes) * 3 as libc::c_int)
-        | (cellNumber as uint64_t) << (15 as libc::c_int - childRes) * 3 as libc::c_int;
-    return childH;
+        & !((7 as libc::c_int as uint64_t) << ((15 as libc::c_int - childRes) * 3 as libc::c_int))
+        | (cellNumber as uint64_t) << ((15 as libc::c_int - childRes) * 3 as libc::c_int);
+    childH
 }
 #[no_mangle]
 pub unsafe extern "C" fn cellToChildren(
@@ -355,7 +351,7 @@ pub unsafe extern "C" fn cellToChildren(
         i += 1;
         iterStepChild(&mut iter);
     }
-    return E_SUCCESS as libc::c_int as H3Error;
+    E_SUCCESS as libc::c_int as H3Error
 }
 #[no_mangle]
 pub unsafe extern "C" fn _zeroIndexDigits(
@@ -372,7 +368,7 @@ pub unsafe extern "C" fn _zeroIndexDigits(
     m = !m;
     m <<= 3 as libc::c_int * (15 as libc::c_int - end);
     m = !m;
-    return h & m;
+    h & m
 }
 #[no_mangle]
 pub unsafe extern "C" fn cellToCenterChild(
@@ -392,7 +388,7 @@ pub unsafe extern "C" fn cellToCenterChild(
     h = h & !((15 as libc::c_ulonglong) << 52 as libc::c_int)
         | (childRes as uint64_t) << 52 as libc::c_int;
     *child = h;
-    return E_SUCCESS as libc::c_int as H3Error;
+    E_SUCCESS as libc::c_int as H3Error
 }
 #[no_mangle]
 pub unsafe extern "C" fn compactCells(
@@ -531,7 +527,7 @@ pub unsafe extern "C" fn compactCells(
             }
             let mut i_1: libc::c_int = 0 as libc::c_int;
             while i_1 < numRemainingHexes {
-                if !(*hashSetArray.offset(i_1 as isize) == 0 as libc::c_int as libc::c_ulonglong) {
+                if *hashSetArray.offset(i_1 as isize) != 0 as libc::c_int as libc::c_ulonglong {
                     let mut count_0: libc::c_int = ((*hashSetArray.offset(i_1 as isize)
                         & (7 as libc::c_int as uint64_t) << 56 as libc::c_int)
                         >> 56 as libc::c_int)
@@ -597,7 +593,7 @@ pub unsafe extern "C" fn compactCells(
                         } else {
                             loc_0 = (loc_0 + 1 as libc::c_int) % numRemainingHexes;
                             loopCount_0 += 1;
-                            if !(*hashSetArray.offset(loc_0 as isize) != parent_0) {
+                            if *hashSetArray.offset(loc_0 as isize) == parent_0 {
                                 break;
                             }
                         }
@@ -630,7 +626,7 @@ pub unsafe extern "C" fn compactCells(
     }
     test_prefix_free(remainingHexes as *mut libc::c_void);
     test_prefix_free(hashSetArray as *mut libc::c_void);
-    return E_SUCCESS as libc::c_int as H3Error;
+    E_SUCCESS as libc::c_int as H3Error
 }
 #[no_mangle]
 pub unsafe extern "C" fn uncompactCells(
@@ -657,7 +653,7 @@ pub unsafe extern "C" fn uncompactCells(
         }
         j += 1;
     }
-    return E_SUCCESS as libc::c_int as H3Error;
+    E_SUCCESS as libc::c_int as H3Error
 }
 #[no_mangle]
 pub unsafe extern "C" fn uncompactCellsSize(
@@ -669,7 +665,7 @@ pub unsafe extern "C" fn uncompactCellsSize(
     let mut numOut: int64_t = 0 as libc::c_int as int64_t;
     let mut i: int64_t = 0 as libc::c_int as int64_t;
     while i < numCompacted {
-        if !(*compactedSet.offset(i as isize) == 0 as libc::c_int as libc::c_ulonglong) {
+        if *compactedSet.offset(i as isize) != 0 as libc::c_int as libc::c_ulonglong {
             let mut childrenSize: int64_t = 0;
             let mut childrenError: H3Error =
                 cellToChildrenSize(*compactedSet.offset(i as isize), res, &mut childrenSize);
@@ -681,21 +677,21 @@ pub unsafe extern "C" fn uncompactCellsSize(
         i += 1;
     }
     *out = numOut;
-    return E_SUCCESS as libc::c_int as H3Error;
+    E_SUCCESS as libc::c_int as H3Error
 }
 #[no_mangle]
 pub unsafe extern "C" fn isResClassIII(mut h: H3Index) -> libc::c_int {
-    return ((h & (15 as libc::c_ulonglong) << 52 as libc::c_int) >> 52 as libc::c_int)
+    ((h & (15 as libc::c_ulonglong) << 52 as libc::c_int) >> 52 as libc::c_int)
         as libc::c_int
-        % 2 as libc::c_int;
+        % 2 as libc::c_int
 }
 #[no_mangle]
 pub unsafe extern "C" fn isPentagon(mut h: H3Index) -> libc::c_int {
-    return (_isBaseCellPentagon(
+    (_isBaseCellPentagon(
         ((h & (127 as libc::c_int as uint64_t) << 45 as libc::c_int) >> 45 as libc::c_int)
             as libc::c_int,
     ) != 0
-        && _h3LeadingNonZeroDigit(h) as u64 == 0) as libc::c_int;
+        && _h3LeadingNonZeroDigit(h) as u64 == 0) as libc::c_int
 }
 #[no_mangle]
 pub unsafe extern "C" fn _h3LeadingNonZeroDigit(mut h: H3Index) -> Direction {
@@ -704,16 +700,16 @@ pub unsafe extern "C" fn _h3LeadingNonZeroDigit(mut h: H3Index) -> Direction {
         <= ((h & (15 as libc::c_ulonglong) << 52 as libc::c_int) >> 52 as libc::c_int)
             as libc::c_int
     {
-        if (h >> (15 as libc::c_int - r) * 3 as libc::c_int & 7 as libc::c_int as uint64_t)
+        if (h >> ((15 as libc::c_int - r) * 3 as libc::c_int) & 7 as libc::c_int as uint64_t)
             as Direction as u64
             != 0
         {
-            return (h >> (15 as libc::c_int - r) * 3 as libc::c_int & 7 as libc::c_int as uint64_t)
+            return (h >> ((15 as libc::c_int - r) * 3 as libc::c_int) & 7 as libc::c_int as uint64_t)
                 as Direction;
         }
         r += 1;
     }
-    return CENTER_DIGIT;
+    CENTER_DIGIT
 }
 #[no_mangle]
 pub unsafe extern "C" fn _h3RotatePent60ccw(mut h: H3Index) -> H3Index {
@@ -722,14 +718,13 @@ pub unsafe extern "C" fn _h3RotatePent60ccw(mut h: H3Index) -> H3Index {
     let mut res: libc::c_int =
         ((h & (15 as libc::c_ulonglong) << 52 as libc::c_int) >> 52 as libc::c_int) as libc::c_int;
     while r <= res {
-        h = h & !((7 as libc::c_int as uint64_t) << (15 as libc::c_int - r) * 3 as libc::c_int)
+        h = h & !((7 as libc::c_int as uint64_t) << ((15 as libc::c_int - r) * 3 as libc::c_int))
             | (_rotate60ccw(
-                (h >> (15 as libc::c_int - r) * 3 as libc::c_int & 7 as libc::c_int as uint64_t)
+                (h >> ((15 as libc::c_int - r) * 3 as libc::c_int) & 7 as libc::c_int as uint64_t)
                     as Direction,
-            ) as uint64_t)
-                << (15 as libc::c_int - r) * 3 as libc::c_int;
+            ) as uint64_t) << ((15 as libc::c_int - r) * 3 as libc::c_int);
         if foundFirstNonZeroDigit == 0
-            && (h >> (15 as libc::c_int - r) * 3 as libc::c_int & 7 as libc::c_int as uint64_t)
+            && (h >> ((15 as libc::c_int - r) * 3 as libc::c_int) & 7 as libc::c_int as uint64_t)
                 as Direction as libc::c_uint
                 != 0 as libc::c_int as libc::c_uint
         {
@@ -742,7 +737,7 @@ pub unsafe extern "C" fn _h3RotatePent60ccw(mut h: H3Index) -> H3Index {
         }
         r += 1;
     }
-    return h;
+    h
 }
 #[no_mangle]
 pub unsafe extern "C" fn _h3RotatePent60cw(mut h: H3Index) -> H3Index {
@@ -751,14 +746,13 @@ pub unsafe extern "C" fn _h3RotatePent60cw(mut h: H3Index) -> H3Index {
     let mut res: libc::c_int =
         ((h & (15 as libc::c_ulonglong) << 52 as libc::c_int) >> 52 as libc::c_int) as libc::c_int;
     while r <= res {
-        h = h & !((7 as libc::c_int as uint64_t) << (15 as libc::c_int - r) * 3 as libc::c_int)
+        h = h & !((7 as libc::c_int as uint64_t) << ((15 as libc::c_int - r) * 3 as libc::c_int))
             | (_rotate60cw(
-                (h >> (15 as libc::c_int - r) * 3 as libc::c_int & 7 as libc::c_int as uint64_t)
+                (h >> ((15 as libc::c_int - r) * 3 as libc::c_int) & 7 as libc::c_int as uint64_t)
                     as Direction,
-            ) as uint64_t)
-                << (15 as libc::c_int - r) * 3 as libc::c_int;
+            ) as uint64_t) << ((15 as libc::c_int - r) * 3 as libc::c_int);
         if foundFirstNonZeroDigit == 0
-            && (h >> (15 as libc::c_int - r) * 3 as libc::c_int & 7 as libc::c_int as uint64_t)
+            && (h >> ((15 as libc::c_int - r) * 3 as libc::c_int) & 7 as libc::c_int as uint64_t)
                 as Direction as libc::c_uint
                 != 0 as libc::c_int as libc::c_uint
         {
@@ -771,7 +765,7 @@ pub unsafe extern "C" fn _h3RotatePent60cw(mut h: H3Index) -> H3Index {
         }
         r += 1;
     }
-    return h;
+    h
 }
 #[no_mangle]
 pub unsafe extern "C" fn _h3Rotate60ccw(mut h: H3Index) -> H3Index {
@@ -779,13 +773,13 @@ pub unsafe extern "C" fn _h3Rotate60ccw(mut h: H3Index) -> H3Index {
     let mut res: libc::c_int =
         ((h & (15 as libc::c_ulonglong) << 52 as libc::c_int) >> 52 as libc::c_int) as libc::c_int;
     while r <= res {
-        let mut oldDigit: Direction = (h >> (15 as libc::c_int - r) * 3 as libc::c_int
+        let mut oldDigit: Direction = (h >> ((15 as libc::c_int - r) * 3 as libc::c_int)
             & 7 as libc::c_int as uint64_t) as Direction;
-        h = h & !((7 as libc::c_int as uint64_t) << (15 as libc::c_int - r) * 3 as libc::c_int)
-            | (_rotate60ccw(oldDigit) as uint64_t) << (15 as libc::c_int - r) * 3 as libc::c_int;
+        h = h & !((7 as libc::c_int as uint64_t) << ((15 as libc::c_int - r) * 3 as libc::c_int))
+            | (_rotate60ccw(oldDigit) as uint64_t) << ((15 as libc::c_int - r) * 3 as libc::c_int);
         r += 1;
     }
-    return h;
+    h
 }
 #[no_mangle]
 pub unsafe extern "C" fn _h3Rotate60cw(mut h: H3Index) -> H3Index {
@@ -793,15 +787,14 @@ pub unsafe extern "C" fn _h3Rotate60cw(mut h: H3Index) -> H3Index {
     let mut res: libc::c_int =
         ((h & (15 as libc::c_ulonglong) << 52 as libc::c_int) >> 52 as libc::c_int) as libc::c_int;
     while r <= res {
-        h = h & !((7 as libc::c_int as uint64_t) << (15 as libc::c_int - r) * 3 as libc::c_int)
+        h = h & !((7 as libc::c_int as uint64_t) << ((15 as libc::c_int - r) * 3 as libc::c_int))
             | (_rotate60cw(
-                (h >> (15 as libc::c_int - r) * 3 as libc::c_int & 7 as libc::c_int as uint64_t)
+                (h >> ((15 as libc::c_int - r) * 3 as libc::c_int) & 7 as libc::c_int as uint64_t)
                     as Direction,
-            ) as uint64_t)
-                << (15 as libc::c_int - r) * 3 as libc::c_int;
+            ) as uint64_t) << ((15 as libc::c_int - r) * 3 as libc::c_int);
         r += 1;
     }
-    return h;
+    h
 }
 #[no_mangle]
 pub unsafe extern "C" fn _faceIjkToH3(mut fijk: *const FaceIJK, mut res: libc::c_int) -> H3Index {
@@ -839,10 +832,8 @@ pub unsafe extern "C" fn _faceIjkToH3(mut fijk: *const FaceIJK, mut res: libc::c
         let mut diff: CoordIJK = CoordIJK { i: 0, j: 0, k: 0 };
         _ijkSub(&mut lastIJK, &mut lastCenter, &mut diff);
         _ijkNormalize(&mut diff);
-        h = h & !((7 as libc::c_int as uint64_t)
-            << (15 as libc::c_int - (r + 1 as libc::c_int)) * 3 as libc::c_int)
-            | (_unitIjkToDigit(&mut diff) as uint64_t)
-                << (15 as libc::c_int - (r + 1 as libc::c_int)) * 3 as libc::c_int;
+        h = h & !((7 as libc::c_int as uint64_t) << ((15 as libc::c_int - (r + 1 as libc::c_int)) * 3 as libc::c_int))
+            | (_unitIjkToDigit(&mut diff) as uint64_t) << ((15 as libc::c_int - (r + 1 as libc::c_int)) * 3 as libc::c_int);
         r -= 1;
     }
     if fijkBC.coord.i > 2 as libc::c_int
@@ -876,7 +867,7 @@ pub unsafe extern "C" fn _faceIjkToH3(mut fijk: *const FaceIJK, mut res: libc::c
             i_0 += 1;
         }
     }
-    return h;
+    h
 }
 #[no_mangle]
 pub unsafe extern "C" fn latLngToCell(
@@ -891,27 +882,23 @@ pub unsafe extern "C" fn latLngToCell(
         == ::core::mem::size_of::<libc::c_float>() as libc::c_ulong
     {
         __inline_isfinitef((*g).lat as libc::c_float)
+    } else if ::core::mem::size_of::<libc::c_double>() as libc::c_ulong
+        == ::core::mem::size_of::<libc::c_double>() as libc::c_ulong
+    {
+        __inline_isfinited((*g).lat)
     } else {
-        if ::core::mem::size_of::<libc::c_double>() as libc::c_ulong
-            == ::core::mem::size_of::<libc::c_double>() as libc::c_ulong
-        {
-            __inline_isfinited((*g).lat)
-        } else {
-            __inline_isfinitel((*g).lat)
-        }
+        __inline_isfinitel((*g).lat)
     }) == 0
         || (if ::core::mem::size_of::<libc::c_double>() as libc::c_ulong
             == ::core::mem::size_of::<libc::c_float>() as libc::c_ulong
         {
             __inline_isfinitef((*g).lng as libc::c_float)
+        } else if ::core::mem::size_of::<libc::c_double>() as libc::c_ulong
+            == ::core::mem::size_of::<libc::c_double>() as libc::c_ulong
+        {
+            __inline_isfinited((*g).lng)
         } else {
-            if ::core::mem::size_of::<libc::c_double>() as libc::c_ulong
-                == ::core::mem::size_of::<libc::c_double>() as libc::c_ulong
-            {
-                __inline_isfinited((*g).lng)
-            } else {
-                __inline_isfinitel((*g).lng)
-            }
+            __inline_isfinitel((*g).lng)
         }) == 0
     {
         return E_LATLNG_DOMAIN as libc::c_int as H3Error;
@@ -923,10 +910,10 @@ pub unsafe extern "C" fn latLngToCell(
     _geoToFaceIjk(g, res, &mut fijk);
     *out = _faceIjkToH3(&mut fijk, res);
     if *out != 0 {
-        return E_SUCCESS as libc::c_int as H3Error;
+        E_SUCCESS as libc::c_int as H3Error
     } else {
-        return E_FAILED as libc::c_int as H3Error;
-    };
+        E_FAILED as libc::c_int as H3Error
+    }
 }
 #[no_mangle]
 pub unsafe extern "C" fn _h3ToFaceIjkWithInitializedFijk(
@@ -957,12 +944,12 @@ pub unsafe extern "C" fn _h3ToFaceIjkWithInitializedFijk(
         }
         _neighbor(
             ijk,
-            (h >> (15 as libc::c_int - r) * 3 as libc::c_int & 7 as libc::c_int as uint64_t)
+            (h >> ((15 as libc::c_int - r) * 3 as libc::c_int) & 7 as libc::c_int as uint64_t)
                 as Direction,
         );
         r += 1;
     }
-    return possibleOverage;
+    possibleOverage
 }
 #[no_mangle]
 pub unsafe extern "C" fn _h3ToFaceIjk(mut h: H3Index, mut fijk: *mut FaceIJK) -> H3Error {
@@ -1015,7 +1002,7 @@ pub unsafe extern "C" fn _h3ToFaceIjk(mut h: H3Index, mut fijk: *mut FaceIJK) ->
     {
         (*fijk).coord = origIJK;
     }
-    return E_SUCCESS as libc::c_int as H3Error;
+    E_SUCCESS as libc::c_int as H3Error
 }
 #[no_mangle]
 pub unsafe extern "C" fn cellToLatLng(mut h3: H3Index, mut g: *mut LatLng) -> H3Error {
@@ -1032,7 +1019,7 @@ pub unsafe extern "C" fn cellToLatLng(mut h3: H3Index, mut g: *mut LatLng) -> H3
         ((h3 & (15 as libc::c_ulonglong) << 52 as libc::c_int) >> 52 as libc::c_int) as libc::c_int,
         g,
     );
-    return E_SUCCESS as libc::c_int as H3Error;
+    E_SUCCESS as libc::c_int as H3Error
 }
 #[no_mangle]
 pub unsafe extern "C" fn cellToBoundary(mut h3: H3Index, mut cb: *mut CellBoundary) -> H3Error {
@@ -1063,7 +1050,7 @@ pub unsafe extern "C" fn cellToBoundary(mut h3: H3Index, mut cb: *mut CellBounda
             cb,
         );
     }
-    return E_SUCCESS as libc::c_int as H3Error;
+    E_SUCCESS as libc::c_int as H3Error
 }
 #[no_mangle]
 pub unsafe extern "C" fn maxFaceCount(mut h3: H3Index, mut out: *mut libc::c_int) -> H3Error {
@@ -1072,7 +1059,7 @@ pub unsafe extern "C" fn maxFaceCount(mut h3: H3Index, mut out: *mut libc::c_int
     } else {
         2 as libc::c_int
     };
-    return E_SUCCESS as libc::c_int as H3Error;
+    E_SUCCESS as libc::c_int as H3Error
 }
 #[no_mangle]
 pub unsafe extern "C" fn getIcosahedronFaces(
@@ -1137,11 +1124,11 @@ pub unsafe extern "C" fn getIcosahedronFaces(
         *out.offset(pos as isize) = face;
         i_0 += 1;
     }
-    return E_SUCCESS as libc::c_int as H3Error;
+    E_SUCCESS as libc::c_int as H3Error
 }
 #[no_mangle]
 pub unsafe extern "C" fn pentagonCount() -> libc::c_int {
-    return 12 as libc::c_int;
+    12 as libc::c_int
 }
 #[no_mangle]
 pub unsafe extern "C" fn getPentagons(mut res: libc::c_int, mut out: *mut H3Index) -> H3Error {
@@ -1155,14 +1142,14 @@ pub unsafe extern "C" fn getPentagons(mut res: libc::c_int, mut out: *mut H3Inde
             let mut pentagon: H3Index = 0;
             setH3Index(&mut pentagon, res, bc, CENTER_DIGIT);
             let fresh0 = i;
-            i = i + 1;
+            i += 1;
             *out.offset(fresh0 as isize) = pentagon;
         }
         bc += 1;
     }
-    return E_SUCCESS as libc::c_int as H3Error;
+    E_SUCCESS as libc::c_int as H3Error
 }
 #[no_mangle]
 pub unsafe extern "C" fn isResolutionClassIII(mut res: libc::c_int) -> libc::c_int {
-    return res % 2 as libc::c_int;
+    res % 2 as libc::c_int
 }
