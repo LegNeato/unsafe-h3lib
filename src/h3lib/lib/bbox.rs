@@ -55,15 +55,15 @@ pub struct BBox {
 }
 #[inline(always)]
 unsafe extern "C" fn __inline_isfinitef(mut __x: libc::c_float) -> libc::c_int {
-    (__x == __x && __x.abs() != ::core::f32::INFINITY) as libc::c_int
+    (__x.abs() != ::core::f32::INFINITY) as libc::c_int
 }
 #[inline(always)]
 unsafe extern "C" fn __inline_isfinited(mut __x: libc::c_double) -> libc::c_int {
-    (__x == __x && __x.abs() != ::core::f64::INFINITY) as libc::c_int
+    (__x.abs() != ::core::f64::INFINITY) as libc::c_int
 }
 #[inline(always)]
 unsafe extern "C" fn __inline_isfinitel(mut __x: f64) -> libc::c_int {
-    (__x == __x && __x.abs() != ::core::f64::INFINITY) as libc::c_int
+    (__x.abs() != ::core::f64::INFINITY) as libc::c_int
 }
 #[no_mangle]
 pub unsafe extern "C" fn bboxIsTransmeridian(mut bbox: *const BBox) -> bool {
@@ -73,7 +73,7 @@ pub unsafe extern "C" fn bboxIsTransmeridian(mut bbox: *const BBox) -> bool {
 pub unsafe extern "C" fn bboxCenter(mut bbox: *const BBox, mut center: *mut LatLng) {
     (*center).lat = ((*bbox).north + (*bbox).south) / 2.0f64;
     let mut east: libc::c_double = if bboxIsTransmeridian(bbox) as libc::c_int != 0 {
-        (*bbox).east + 6.283_185_307_179_586
+        (*bbox).east + std::f64::consts::TAU
     } else {
         (*bbox).east
     }
@@ -107,7 +107,7 @@ pub unsafe extern "C" fn _hexRadiusKm(mut h3Index: H3Index) -> libc::c_double {
     };
     cellToLatLng(h3Index, &mut h3Center);
     cellToBoundary(h3Index, &mut h3Boundary);
-    greatCircleDistanceKm(&mut h3Center, (h3Boundary.verts).as_mut_ptr())
+    greatCircleDistanceKm(&h3Center, (h3Boundary.verts).as_mut_ptr())
 }
 #[no_mangle]
 pub unsafe extern "C" fn bboxHexEstimate(
@@ -130,7 +130,7 @@ pub unsafe extern "C" fn bboxHexEstimate(
     p1.lng = (*bbox).east;
     p2.lat = (*bbox).south;
     p2.lng = (*bbox).west;
-    let mut d: libc::c_double = greatCircleDistanceKm(&mut p1, &mut p2);
+    let mut d: libc::c_double = greatCircleDistanceKm(&p1, &p2);
     let mut lngDiff: libc::c_double = p1.lng - p2.lng;
     let mut latDiff: libc::c_double = p1.lat - p2.lat;
     if lngDiff == 0 as libc::c_int as libc::c_double

@@ -45,14 +45,13 @@ unsafe extern "C" fn _incrementResDigit(mut it: *mut IterCellsChildren, mut res:
     (*it).h = ((*it).h as libc::c_ulonglong).wrapping_add(val) as H3Index as H3Index;
 }
 unsafe extern "C" fn _null_iter() -> IterCellsChildren {
-    return {
-        
+    {
         IterCellsChildren {
             h: 0 as libc::c_int as H3Index,
             _parentRes: -(1 as libc::c_int),
             _skipDigit: -(1 as libc::c_int),
         }
-    };
+    }
 }
 #[no_mangle]
 pub unsafe extern "C" fn iterInitParent(
@@ -128,7 +127,6 @@ pub unsafe extern "C" fn iterInitBaseCellNum(
 pub unsafe extern "C" fn iterInitRes(mut res: libc::c_int) -> IterCellsResolution {
     let mut itC: IterCellsChildren = iterInitBaseCellNum(0 as libc::c_int, res);
     let mut itR: IterCellsResolution = {
-        
         IterCellsResolution {
             h: itC.h,
             _baseCellNum: 0 as libc::c_int,

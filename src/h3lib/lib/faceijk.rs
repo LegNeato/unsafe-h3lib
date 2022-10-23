@@ -99,149 +99,128 @@ pub struct Vec3d {
 #[no_mangle]
 pub static mut faceCenterGeo: [LatLng; 20] = [
     {
-        let mut init = LatLng {
+        LatLng {
             lat: 0.803_582_649_718_99_f64,
             lng: 1.248_397_419_617_396_1_f64,
-        };
-        init
+        }
     },
     {
-        let mut init = LatLng {
+        LatLng {
             lat: 1.307_747_883_455_638_2_f64,
             lng: 2.536_945_009_877_921_4_f64,
-        };
-        init
+        }
     },
     {
-        let mut init = LatLng {
+        LatLng {
             lat: 1.054_751_253_523_952_f64,
             lng: -1.347_517_358_900_396_6_f64,
-        };
-        init
+        }
     },
     {
-        let mut init = LatLng {
+        LatLng {
             lat: 0.600_191_595_538_186_8_f64,
             lng: -0.450_603_909_469_755_76_f64,
-        };
-        init
+        }
     },
     {
-        let mut init = LatLng {
+        LatLng {
             lat: 0.491_715_428_198_773_84_f64,
             lng: 0.401_988_202_911_306_94_f64,
-        };
-        init
+        }
     },
     {
-        let mut init = LatLng {
+        LatLng {
             lat: 0.172_745_327_415_618_7_f64,
             lng: 1.678_146_885_280_433_8_f64,
-        };
-        init
+        }
     },
     {
-        let mut init = LatLng {
+        LatLng {
             lat: 0.605_929_321_571_350_7_f64,
             lng: 2.953_923_329_812_411_7_f64,
-        };
-        init
+        }
     },
     {
-        let mut init = LatLng {
+        LatLng {
             lat: 0.427_370_518_328_979_65_f64,
             lng: -1.888_876_200_336_285_3_f64,
-        };
-        init
+        }
     },
     {
-        let mut init = LatLng {
+        LatLng {
             lat: -0.079_066_118_549_212_83_f64,
             lng: -0.733_429_513_380_867_7_f64,
-        };
-        init
+        }
     },
     {
-        let mut init = LatLng {
+        LatLng {
             lat: -0.230_961_644_455_383_64_f64,
             lng: 0.506_495_587_332_349_f64,
-        };
-        init
+        }
     },
     {
-        let mut init = LatLng {
+        LatLng {
             lat: 0.079_066_118_549_212_83_f64,
             lng: 2.408_163_140_208_925_4_f64,
-        };
-        init
+        }
     },
     {
-        let mut init = LatLng {
+        LatLng {
             lat: 0.230_961_644_455_383_64_f64,
             lng: -2.635_097_066_257_444_f64,
-        };
-        init
+        }
     },
     {
-        let mut init = LatLng {
+        LatLng {
             lat: -0.172_745_327_415_618_7_f64,
             lng: -1.463_445_768_309_359_6_f64,
-        };
-        init
+        }
     },
     {
-        let mut init = LatLng {
+        LatLng {
             lat: -0.605_929_321_571_350_7_f64,
             lng: -0.187_669_323_777_381_63_f64,
-        };
-        init
+        }
     },
     {
-        let mut init = LatLng {
+        LatLng {
             lat: -0.427_370_518_328_979_65_f64,
             lng: 1.252_716_453_253_507_8_f64,
-        };
-        init
+        }
     },
     {
-        let mut init = LatLng {
+        LatLng {
             lat: -0.600_191_595_538_186_8_f64,
             lng: 2.690_988_744_120_037_5_f64,
-        };
-        init
+        }
     },
     {
-        let mut init = LatLng {
+        LatLng {
             lat: -0.491_715_428_198_773_84_f64,
             lng: -2.739_604_450_678_486_5_f64,
-        };
-        init
+        }
     },
     {
-        let mut init = LatLng {
+        LatLng {
             lat: -0.803_582_649_718_99_f64,
             lng: -1.893_195_233_972_397_2_f64,
-        };
-        init
+        }
     },
     {
-        let mut init = LatLng {
+        LatLng {
             lat: -1.307_747_883_455_638_2_f64,
             lng: -0.604_647_643_711_872_1_f64,
-        };
-        init
+        }
     },
     {
-        let mut init = LatLng {
+        LatLng {
             lat: -1.054_751_253_523_952_f64,
             lng: 1.794_075_294_689_396_5_f64,
-        };
-        init
+        }
     },
 ];
 static mut faceCenterPoint: [Vec3d; 20] = [
     {
-        
         Vec3d {
             x: 0.2199307791404606f64,
             y: 0.6583691780274996f64,
@@ -249,7 +228,6 @@ static mut faceCenterPoint: [Vec3d; 20] = [
         }
     },
     {
-        
         Vec3d {
             x: -0.2139234834501421f64,
             y: 0.1478171829550703f64,
@@ -257,15 +235,13 @@ static mut faceCenterPoint: [Vec3d; 20] = [
         }
     },
     {
-        let mut init = Vec3d {
+        Vec3d {
             x: 0.1092625278784797f64,
             y: -0.481_195_157_287_321_f64,
             z: 0.8697775121287253f64,
-        };
-        init
+        }
     },
     {
-        
         Vec3d {
             x: 0.7428567301586791f64,
             y: -0.3593941678278028f64,
@@ -273,15 +249,13 @@ static mut faceCenterPoint: [Vec3d; 20] = [
         }
     },
     {
-        let mut init = Vec3d {
+        Vec3d {
             x: 0.8112534709140969f64,
             y: 0.3448953237639384f64,
             z: 0.472_138_773_641_393_f64,
-        };
-        init
+        }
     },
     {
-        
         Vec3d {
             x: -0.1055498149613921f64,
             y: 0.9794457296411413f64,
@@ -289,7 +263,6 @@ static mut faceCenterPoint: [Vec3d; 20] = [
         }
     },
     {
-        
         Vec3d {
             x: -0.8075407579970092f64,
             y: 0.1533552485898818f64,
@@ -297,7 +270,6 @@ static mut faceCenterPoint: [Vec3d; 20] = [
         }
     },
     {
-        
         Vec3d {
             x: -0.2846148069787907f64,
             y: -0.8644080972654206f64,
@@ -305,7 +277,6 @@ static mut faceCenterPoint: [Vec3d; 20] = [
         }
     },
     {
-        
         Vec3d {
             x: 0.7405621473854482f64,
             y: -0.6673299564565524f64,
@@ -313,7 +284,6 @@ static mut faceCenterPoint: [Vec3d; 20] = [
         }
     },
     {
-        
         Vec3d {
             x: 0.8512303986474293f64,
             y: 0.4722343788582681f64,
@@ -321,7 +291,6 @@ static mut faceCenterPoint: [Vec3d; 20] = [
         }
     },
     {
-        
         Vec3d {
             x: -0.7405621473854481f64,
             y: 0.6673299564565524f64,
@@ -329,7 +298,6 @@ static mut faceCenterPoint: [Vec3d; 20] = [
         }
     },
     {
-        
         Vec3d {
             x: -0.8512303986474292f64,
             y: -0.4722343788582682f64,
@@ -337,7 +305,6 @@ static mut faceCenterPoint: [Vec3d; 20] = [
         }
     },
     {
-        
         Vec3d {
             x: 0.1055498149613919f64,
             y: -0.9794457296411413f64,
@@ -345,7 +312,6 @@ static mut faceCenterPoint: [Vec3d; 20] = [
         }
     },
     {
-        
         Vec3d {
             x: 0.8075407579970092f64,
             y: -0.1533552485898819f64,
@@ -353,7 +319,6 @@ static mut faceCenterPoint: [Vec3d; 20] = [
         }
     },
     {
-        
         Vec3d {
             x: 0.2846148069787908f64,
             y: 0.8644080972654204f64,
@@ -361,7 +326,6 @@ static mut faceCenterPoint: [Vec3d; 20] = [
         }
     },
     {
-        
         Vec3d {
             x: -0.7428567301586791f64,
             y: 0.3593941678278027f64,
@@ -369,15 +333,13 @@ static mut faceCenterPoint: [Vec3d; 20] = [
         }
     },
     {
-        let mut init = Vec3d {
+        Vec3d {
             x: -0.811_253_470_914_097_f64,
             y: -0.3448953237639382f64,
             z: -0.472_138_773_641_393_f64,
-        };
-        init
+        }
     },
     {
-        
         Vec3d {
             x: -0.2199307791404607f64,
             y: -0.6583691780274996f64,
@@ -385,20 +347,18 @@ static mut faceCenterPoint: [Vec3d; 20] = [
         }
     },
     {
-        let mut init = Vec3d {
+        Vec3d {
             x: 0.213_923_483_450_142_f64,
             y: -0.1478171829550704f64,
             z: -0.9656017935214205f64,
-        };
-        init
+        }
     },
     {
-        let mut init = Vec3d {
+        Vec3d {
             x: -0.1092625278784796f64,
             y: 0.481_195_157_287_321_f64,
             z: -0.8697775121287253f64,
-        };
-        init
+        }
     },
 ];
 static mut faceAxesAzRadsCII: [[libc::c_double; 3]; 20] = [
@@ -506,10 +466,9 @@ static mut faceAxesAzRadsCII: [[libc::c_double; 3]; 20] = [
 static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
     [
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 0 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 0 as libc::c_int,
                         j: 0 as libc::c_int,
@@ -517,14 +476,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 0 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 4 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 2 as libc::c_int,
                         j: 0 as libc::c_int,
@@ -532,14 +489,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 1 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 1 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 2 as libc::c_int,
                         j: 2 as libc::c_int,
@@ -547,14 +502,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 5 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 5 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 0 as libc::c_int,
                         j: 2 as libc::c_int,
@@ -562,16 +515,14 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 3 as libc::c_int,
-            };
-            init
+            }
         },
     ],
     [
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 1 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 0 as libc::c_int,
                         j: 0 as libc::c_int,
@@ -579,14 +530,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 0 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 0 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 2 as libc::c_int,
                         j: 0 as libc::c_int,
@@ -594,14 +543,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 1 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 2 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 2 as libc::c_int,
                         j: 2 as libc::c_int,
@@ -609,14 +556,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 5 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 6 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 0 as libc::c_int,
                         j: 2 as libc::c_int,
@@ -624,16 +569,14 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 3 as libc::c_int,
-            };
-            init
+            }
         },
     ],
     [
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 2 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 0 as libc::c_int,
                         j: 0 as libc::c_int,
@@ -641,14 +584,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 0 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 1 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 2 as libc::c_int,
                         j: 0 as libc::c_int,
@@ -656,14 +597,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 1 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 3 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 2 as libc::c_int,
                         j: 2 as libc::c_int,
@@ -671,14 +610,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 5 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 7 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 0 as libc::c_int,
                         j: 2 as libc::c_int,
@@ -686,16 +623,14 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 3 as libc::c_int,
-            };
-            init
+            }
         },
     ],
     [
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 3 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 0 as libc::c_int,
                         j: 0 as libc::c_int,
@@ -703,14 +638,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 0 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 2 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 2 as libc::c_int,
                         j: 0 as libc::c_int,
@@ -718,14 +651,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 1 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 4 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 2 as libc::c_int,
                         j: 2 as libc::c_int,
@@ -733,14 +664,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 5 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 8 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 0 as libc::c_int,
                         j: 2 as libc::c_int,
@@ -748,16 +677,14 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 3 as libc::c_int,
-            };
-            init
+            }
         },
     ],
     [
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 4 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 0 as libc::c_int,
                         j: 0 as libc::c_int,
@@ -765,14 +692,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 0 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 3 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 2 as libc::c_int,
                         j: 0 as libc::c_int,
@@ -780,14 +705,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 1 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 0 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 2 as libc::c_int,
                         j: 2 as libc::c_int,
@@ -795,14 +718,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 5 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 9 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 0 as libc::c_int,
                         j: 2 as libc::c_int,
@@ -810,16 +731,14 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 3 as libc::c_int,
-            };
-            init
+            }
         },
     ],
     [
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 5 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 0 as libc::c_int,
                         j: 0 as libc::c_int,
@@ -827,14 +746,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 0 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 10 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 2 as libc::c_int,
                         j: 2 as libc::c_int,
@@ -842,14 +759,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 3 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 14 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 2 as libc::c_int,
                         j: 0 as libc::c_int,
@@ -857,14 +772,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 3 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 0 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 0 as libc::c_int,
                         j: 2 as libc::c_int,
@@ -872,16 +785,14 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 3 as libc::c_int,
-            };
-            init
+            }
         },
     ],
     [
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 6 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 0 as libc::c_int,
                         j: 0 as libc::c_int,
@@ -889,14 +800,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 0 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 11 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 2 as libc::c_int,
                         j: 2 as libc::c_int,
@@ -904,14 +813,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 3 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 10 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 2 as libc::c_int,
                         j: 0 as libc::c_int,
@@ -919,14 +826,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 3 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 1 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 0 as libc::c_int,
                         j: 2 as libc::c_int,
@@ -934,16 +839,14 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 3 as libc::c_int,
-            };
-            init
+            }
         },
     ],
     [
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 7 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 0 as libc::c_int,
                         j: 0 as libc::c_int,
@@ -951,14 +854,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 0 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 12 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 2 as libc::c_int,
                         j: 2 as libc::c_int,
@@ -966,14 +867,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 3 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 11 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 2 as libc::c_int,
                         j: 0 as libc::c_int,
@@ -981,14 +880,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 3 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 2 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 0 as libc::c_int,
                         j: 2 as libc::c_int,
@@ -996,16 +893,14 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 3 as libc::c_int,
-            };
-            init
+            }
         },
     ],
     [
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 8 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 0 as libc::c_int,
                         j: 0 as libc::c_int,
@@ -1013,14 +908,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 0 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 13 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 2 as libc::c_int,
                         j: 2 as libc::c_int,
@@ -1028,14 +921,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 3 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 12 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 2 as libc::c_int,
                         j: 0 as libc::c_int,
@@ -1043,14 +934,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 3 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 3 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 0 as libc::c_int,
                         j: 2 as libc::c_int,
@@ -1058,16 +947,14 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 3 as libc::c_int,
-            };
-            init
+            }
         },
     ],
     [
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 9 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 0 as libc::c_int,
                         j: 0 as libc::c_int,
@@ -1075,14 +962,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 0 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 14 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 2 as libc::c_int,
                         j: 2 as libc::c_int,
@@ -1090,14 +975,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 3 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 13 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 2 as libc::c_int,
                         j: 0 as libc::c_int,
@@ -1105,14 +988,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 3 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 4 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 0 as libc::c_int,
                         j: 2 as libc::c_int,
@@ -1120,16 +1001,14 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 3 as libc::c_int,
-            };
-            init
+            }
         },
     ],
     [
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 10 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 0 as libc::c_int,
                         j: 0 as libc::c_int,
@@ -1137,14 +1016,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 0 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 5 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 2 as libc::c_int,
                         j: 2 as libc::c_int,
@@ -1152,14 +1029,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 3 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 6 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 2 as libc::c_int,
                         j: 0 as libc::c_int,
@@ -1167,14 +1042,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 3 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 15 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 0 as libc::c_int,
                         j: 2 as libc::c_int,
@@ -1182,16 +1055,14 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 3 as libc::c_int,
-            };
-            init
+            }
         },
     ],
     [
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 11 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 0 as libc::c_int,
                         j: 0 as libc::c_int,
@@ -1199,14 +1070,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 0 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 6 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 2 as libc::c_int,
                         j: 2 as libc::c_int,
@@ -1214,14 +1083,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 3 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 7 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 2 as libc::c_int,
                         j: 0 as libc::c_int,
@@ -1229,14 +1096,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 3 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 16 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 0 as libc::c_int,
                         j: 2 as libc::c_int,
@@ -1244,16 +1109,14 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 3 as libc::c_int,
-            };
-            init
+            }
         },
     ],
     [
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 12 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 0 as libc::c_int,
                         j: 0 as libc::c_int,
@@ -1261,14 +1124,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 0 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 7 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 2 as libc::c_int,
                         j: 2 as libc::c_int,
@@ -1276,14 +1137,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 3 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 8 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 2 as libc::c_int,
                         j: 0 as libc::c_int,
@@ -1291,14 +1150,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 3 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 17 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 0 as libc::c_int,
                         j: 2 as libc::c_int,
@@ -1306,16 +1163,14 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 3 as libc::c_int,
-            };
-            init
+            }
         },
     ],
     [
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 13 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 0 as libc::c_int,
                         j: 0 as libc::c_int,
@@ -1323,14 +1178,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 0 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 8 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 2 as libc::c_int,
                         j: 2 as libc::c_int,
@@ -1338,14 +1191,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 3 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 9 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 2 as libc::c_int,
                         j: 0 as libc::c_int,
@@ -1353,14 +1204,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 3 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 18 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 0 as libc::c_int,
                         j: 2 as libc::c_int,
@@ -1368,16 +1217,14 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 3 as libc::c_int,
-            };
-            init
+            }
         },
     ],
     [
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 14 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 0 as libc::c_int,
                         j: 0 as libc::c_int,
@@ -1385,14 +1232,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 0 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 9 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 2 as libc::c_int,
                         j: 2 as libc::c_int,
@@ -1400,14 +1245,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 3 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 5 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 2 as libc::c_int,
                         j: 0 as libc::c_int,
@@ -1415,14 +1258,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 3 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 19 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 0 as libc::c_int,
                         j: 2 as libc::c_int,
@@ -1430,16 +1271,14 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 3 as libc::c_int,
-            };
-            init
+            }
         },
     ],
     [
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 15 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 0 as libc::c_int,
                         j: 0 as libc::c_int,
@@ -1447,14 +1286,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 0 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 16 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 2 as libc::c_int,
                         j: 0 as libc::c_int,
@@ -1462,14 +1299,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 1 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 19 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 2 as libc::c_int,
                         j: 2 as libc::c_int,
@@ -1477,14 +1312,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 5 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 10 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 0 as libc::c_int,
                         j: 2 as libc::c_int,
@@ -1492,16 +1325,14 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 3 as libc::c_int,
-            };
-            init
+            }
         },
     ],
     [
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 16 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 0 as libc::c_int,
                         j: 0 as libc::c_int,
@@ -1509,14 +1340,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 0 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 17 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 2 as libc::c_int,
                         j: 0 as libc::c_int,
@@ -1524,14 +1353,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 1 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 15 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 2 as libc::c_int,
                         j: 2 as libc::c_int,
@@ -1539,14 +1366,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 5 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 11 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 0 as libc::c_int,
                         j: 2 as libc::c_int,
@@ -1554,16 +1379,14 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 3 as libc::c_int,
-            };
-            init
+            }
         },
     ],
     [
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 17 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 0 as libc::c_int,
                         j: 0 as libc::c_int,
@@ -1571,14 +1394,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 0 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 18 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 2 as libc::c_int,
                         j: 0 as libc::c_int,
@@ -1586,14 +1407,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 1 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 16 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 2 as libc::c_int,
                         j: 2 as libc::c_int,
@@ -1601,14 +1420,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 5 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 12 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 0 as libc::c_int,
                         j: 2 as libc::c_int,
@@ -1616,16 +1433,14 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 3 as libc::c_int,
-            };
-            init
+            }
         },
     ],
     [
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 18 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 0 as libc::c_int,
                         j: 0 as libc::c_int,
@@ -1633,14 +1448,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 0 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 19 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 2 as libc::c_int,
                         j: 0 as libc::c_int,
@@ -1648,14 +1461,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 1 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 17 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 2 as libc::c_int,
                         j: 2 as libc::c_int,
@@ -1663,14 +1474,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 5 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 13 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 0 as libc::c_int,
                         j: 2 as libc::c_int,
@@ -1678,16 +1487,14 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 3 as libc::c_int,
-            };
-            init
+            }
         },
     ],
     [
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 19 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 0 as libc::c_int,
                         j: 0 as libc::c_int,
@@ -1695,14 +1502,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 0 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 15 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 2 as libc::c_int,
                         j: 0 as libc::c_int,
@@ -1710,14 +1515,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 1 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 18 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 2 as libc::c_int,
                         j: 2 as libc::c_int,
@@ -1725,14 +1528,12 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 5 as libc::c_int,
-            };
-            init
+            }
         },
         {
-            let mut init = FaceOrientIJK {
+            FaceOrientIJK {
                 face: 14 as libc::c_int,
                 translate: {
-                    
                     CoordIJK {
                         i: 0 as libc::c_int,
                         j: 2 as libc::c_int,
@@ -1740,8 +1541,7 @@ static mut faceNeighbors: [[FaceOrientIJK; 4]; 20] = [
                     }
                 },
                 ccwRot60: 3 as libc::c_int,
-            };
-            init
+            }
         },
     ],
 ];
@@ -2233,7 +2033,7 @@ pub unsafe extern "C" fn _geoToFaceIjk(
 ) {
     let mut v: Vec2d = Vec2d { x: 0., y: 0. };
     _geoToHex2d(g, res, &mut (*h).face, &mut v);
-    _hex2dToCoordIJK(&mut v, &mut (*h).coord);
+    _hex2dToCoordIJK(&v, &mut (*h).coord);
 }
 #[no_mangle]
 pub unsafe extern "C" fn _geoToHex2d(
@@ -2259,19 +2059,13 @@ pub unsafe extern "C" fn _geoToHex2d(
             )),
     );
     if isResolutionClassIII(res) != 0 {
-        theta = _posAngleRads(
-            (theta - 0.333_473_172_251_832_1)
-                .to_f64()
-                .unwrap(),
-        );
+        theta = _posAngleRads((theta - 0.333_473_172_251_832_1).to_f64().unwrap());
     }
     r = tan(r);
     r = (r / 0.381_966_011_250_105).to_f64().unwrap();
     let mut i: libc::c_int = 0 as libc::c_int;
     while i < res {
-        r = (r * 2.645_751_311_064_590_7)
-            .to_f64()
-            .unwrap();
+        r = (r * 2.645_751_311_064_590_7).to_f64().unwrap();
         i += 1;
     }
     (*v).x = r * cos(theta);
@@ -2293,27 +2087,19 @@ pub unsafe extern "C" fn _hex2dToGeo(
     let mut theta: libc::c_double = atan2((*v).y, (*v).x);
     let mut i: libc::c_int = 0 as libc::c_int;
     while i < res {
-        r = (r / 2.645_751_311_064_590_7)
-            .to_f64()
-            .unwrap();
+        r = (r / 2.645_751_311_064_590_7).to_f64().unwrap();
         i += 1;
     }
     if substrate != 0 {
         r /= 3.0f64;
         if isResolutionClassIII(res) != 0 {
-            r = (r / 2.645_751_311_064_590_7)
-                .to_f64()
-                .unwrap();
+            r = (r / 2.645_751_311_064_590_7).to_f64().unwrap();
         }
     }
     r = (r * 0.381_966_011_250_105).to_f64().unwrap();
     r = atan(r);
     if substrate == 0 && isResolutionClassIII(res) != 0 {
-        theta = _posAngleRads(
-            (theta + 0.333_473_172_251_832_1)
-                .to_f64()
-                .unwrap(),
-        );
+        theta = _posAngleRads((theta + 0.333_473_172_251_832_1).to_f64().unwrap());
     }
     theta = _posAngleRads(faceAxesAzRadsCII[face as usize][0 as libc::c_int as usize] - theta);
     _geoAzDistanceRads(&*faceCenterGeo.as_ptr().offset(face as isize), theta, r, g);
@@ -2326,7 +2112,7 @@ pub unsafe extern "C" fn _faceIjkToGeo(
 ) {
     let mut v: Vec2d = Vec2d { x: 0., y: 0. };
     _ijkToHex2d(&(*h).coord, &mut v);
-    _hex2dToGeo(&mut v, (*h).face, res, 0 as libc::c_int, g);
+    _hex2dToGeo(&v, (*h).face, res, 0 as libc::c_int, g);
 }
 #[no_mangle]
 pub unsafe extern "C" fn _faceIjkPentToCellBoundary(
@@ -2361,7 +2147,7 @@ pub unsafe extern "C" fn _faceIjkPentToCellBoundary(
         if isResolutionClassIII(res) != 0 && vert > start {
             let mut tmpFijk: FaceIJK = fijk;
             let mut orig2d0: Vec2d = Vec2d { x: 0., y: 0. };
-            _ijkToHex2d(&mut lastFijk.coord, &mut orig2d0);
+            _ijkToHex2d(&lastFijk.coord, &mut orig2d0);
             let mut currentToLastDir: libc::c_int =
                 adjacentFaceDir[tmpFijk.face as usize][lastFijk.face as usize];
             let mut fijkOrient: *const FaceOrientIJK =
@@ -2380,35 +2166,32 @@ pub unsafe extern "C" fn _faceIjkPentToCellBoundary(
                 &mut transVec,
                 unitScaleByCIIres[adjRes as usize] * 3 as libc::c_int,
             );
-            _ijkAdd(ijk, &mut transVec, ijk);
+            _ijkAdd(ijk, &transVec, ijk);
             _ijkNormalize(ijk);
             let mut orig2d1: Vec2d = Vec2d { x: 0., y: 0. };
             _ijkToHex2d(ijk, &mut orig2d1);
             let mut maxDim: libc::c_int = maxDimByCIIres[adjRes as usize];
             let mut v0: Vec2d = {
-                
                 Vec2d {
                     x: 3.0f64 * maxDim as libc::c_double,
                     y: 0.0f64,
                 }
             };
             let mut v1: Vec2d = {
-                let mut init = Vec2d {
+                Vec2d {
                     x: -1.5f64 * maxDim as libc::c_double,
                     y: (3.0f64 * 0.866_025_403_784_438_6 * maxDim as f64)
                         .to_f64()
                         .unwrap(),
-                };
-                init
+                }
             };
             let mut v2: Vec2d = {
-                let mut init = Vec2d {
+                Vec2d {
                     x: -1.5f64 * maxDim as libc::c_double,
                     y: (-3.0f64 * 0.866_025_403_784_438_6 * maxDim as f64)
                         .to_f64()
                         .unwrap(),
-                };
-                init
+                }
             };
             let mut edge0: *mut Vec2d = std::ptr::null_mut::<Vec2d>();
             let mut edge1: *mut Vec2d = std::ptr::null_mut::<Vec2d>();
@@ -2421,9 +2204,8 @@ pub unsafe extern "C" fn _faceIjkPentToCellBoundary(
                     edge0 = &mut v1;
                     edge1 = &mut v2;
                 }
-                2 | _ => {
-                    if i64::from(adjacentFaceDir[tmpFijk.face as usize][fijk.face as usize]) != 2
-                    {
+                _ => {
+                    if i64::from(adjacentFaceDir[tmpFijk.face as usize][fijk.face as usize]) != 2 {
                         __assert_rtn(
                             (*::core::mem::transmute::<&[u8; 27], &[libc::c_char; 27]>(
                                 b"_faceIjkPentToCellBoundary\0",
@@ -2441,9 +2223,9 @@ pub unsafe extern "C" fn _faceIjkPentToCellBoundary(
                 }
             }
             let mut inter: Vec2d = Vec2d { x: 0., y: 0. };
-            _v2dIntersect(&mut orig2d0, &mut orig2d1, edge0, edge1, &mut inter);
+            _v2dIntersect(&orig2d0, &orig2d1, edge0, edge1, &mut inter);
             _hex2dToGeo(
-                &mut inter,
+                &inter,
                 tmpFijk.face,
                 adjRes,
                 1 as libc::c_int,
@@ -2453,9 +2235,9 @@ pub unsafe extern "C" fn _faceIjkPentToCellBoundary(
         }
         if vert < start + 5 as libc::c_int {
             let mut vec: Vec2d = Vec2d { x: 0., y: 0. };
-            _ijkToHex2d(&mut fijk.coord, &mut vec);
+            _ijkToHex2d(&fijk.coord, &mut vec);
             _hex2dToGeo(
-                &mut vec,
+                &vec,
                 fijk.face,
                 adjRes,
                 1 as libc::c_int,
@@ -2475,7 +2257,6 @@ pub unsafe extern "C" fn _faceIjkPentToVerts(
 ) {
     let mut vertsCII: [CoordIJK; 5] = [
         {
-            
             CoordIJK {
                 i: 2 as libc::c_int,
                 j: 1 as libc::c_int,
@@ -2483,7 +2264,6 @@ pub unsafe extern "C" fn _faceIjkPentToVerts(
             }
         },
         {
-            
             CoordIJK {
                 i: 1 as libc::c_int,
                 j: 2 as libc::c_int,
@@ -2491,7 +2271,6 @@ pub unsafe extern "C" fn _faceIjkPentToVerts(
             }
         },
         {
-            
             CoordIJK {
                 i: 0 as libc::c_int,
                 j: 2 as libc::c_int,
@@ -2499,7 +2278,6 @@ pub unsafe extern "C" fn _faceIjkPentToVerts(
             }
         },
         {
-            
             CoordIJK {
                 i: 0 as libc::c_int,
                 j: 1 as libc::c_int,
@@ -2507,7 +2285,6 @@ pub unsafe extern "C" fn _faceIjkPentToVerts(
             }
         },
         {
-            
             CoordIJK {
                 i: 1 as libc::c_int,
                 j: 0 as libc::c_int,
@@ -2517,7 +2294,6 @@ pub unsafe extern "C" fn _faceIjkPentToVerts(
     ];
     let mut vertsCIII: [CoordIJK; 5] = [
         {
-            
             CoordIJK {
                 i: 5 as libc::c_int,
                 j: 4 as libc::c_int,
@@ -2525,7 +2301,6 @@ pub unsafe extern "C" fn _faceIjkPentToVerts(
             }
         },
         {
-            
             CoordIJK {
                 i: 1 as libc::c_int,
                 j: 5 as libc::c_int,
@@ -2533,7 +2308,6 @@ pub unsafe extern "C" fn _faceIjkPentToVerts(
             }
         },
         {
-            
             CoordIJK {
                 i: 0 as libc::c_int,
                 j: 5 as libc::c_int,
@@ -2541,7 +2315,6 @@ pub unsafe extern "C" fn _faceIjkPentToVerts(
             }
         },
         {
-            
             CoordIJK {
                 i: 0 as libc::c_int,
                 j: 1 as libc::c_int,
@@ -2549,7 +2322,6 @@ pub unsafe extern "C" fn _faceIjkPentToVerts(
             }
         },
         {
-            
             CoordIJK {
                 i: 4 as libc::c_int,
                 j: 0 as libc::c_int,
@@ -2573,8 +2345,8 @@ pub unsafe extern "C" fn _faceIjkPentToVerts(
     while v < 5 as libc::c_int {
         (*fijkVerts.offset(v as isize)).face = (*fijk).face;
         _ijkAdd(
-            &mut (*fijk).coord,
-            &mut *verts.offset(v as isize),
+            &(*fijk).coord,
+            &*verts.offset(v as isize),
             &mut (*fijkVerts.offset(v as isize)).coord,
         );
         _ijkNormalize(&mut (*fijkVerts.offset(v as isize)).coord);
@@ -2619,39 +2391,36 @@ pub unsafe extern "C" fn _faceIjkToCellBoundary(
             let mut lastV: libc::c_int = (v + 5 as libc::c_int) % 6 as libc::c_int;
             let mut orig2d0: Vec2d = Vec2d { x: 0., y: 0. };
             _ijkToHex2d(
-                &mut (*fijkVerts.as_mut_ptr().offset(lastV as isize)).coord,
+                &(*fijkVerts.as_mut_ptr().offset(lastV as isize)).coord,
                 &mut orig2d0,
             );
             let mut orig2d1: Vec2d = Vec2d { x: 0., y: 0. };
             _ijkToHex2d(
-                &mut (*fijkVerts.as_mut_ptr().offset(v as isize)).coord,
+                &(*fijkVerts.as_mut_ptr().offset(v as isize)).coord,
                 &mut orig2d1,
             );
             let mut maxDim: libc::c_int = maxDimByCIIres[adjRes as usize];
             let mut v0: Vec2d = {
-                
                 Vec2d {
                     x: 3.0f64 * maxDim as libc::c_double,
                     y: 0.0f64,
                 }
             };
             let mut v1: Vec2d = {
-                let mut init = Vec2d {
+                Vec2d {
                     x: -1.5f64 * maxDim as libc::c_double,
                     y: (3.0f64 * 0.866_025_403_784_438_6 * maxDim as f64)
                         .to_f64()
                         .unwrap(),
-                };
-                init
+                }
             };
             let mut v2: Vec2d = {
-                let mut init = Vec2d {
+                Vec2d {
                     x: -1.5f64 * maxDim as libc::c_double,
                     y: (-3.0f64 * 0.866_025_403_784_438_6 * maxDim as f64)
                         .to_f64()
                         .unwrap(),
-                };
-                init
+                }
             };
             let mut face2: libc::c_int = if lastFace == centerIJK.face {
                 fijk.face
@@ -2670,8 +2439,7 @@ pub unsafe extern "C" fn _faceIjkToCellBoundary(
                     edge1 = &mut v2;
                 }
                 _ => {
-                    if i64::from(adjacentFaceDir[centerIJK.face as usize][face2 as usize]) != 2
-                    {
+                    if i64::from(adjacentFaceDir[centerIJK.face as usize][face2 as usize]) != 2 {
                         __assert_rtn(
                             (*::core::mem::transmute::<&[u8; 23], &[libc::c_char; 23]>(
                                 b"_faceIjkToCellBoundary\0",
@@ -2689,13 +2457,13 @@ pub unsafe extern "C" fn _faceIjkToCellBoundary(
                 }
             }
             let mut inter: Vec2d = Vec2d { x: 0., y: 0. };
-            _v2dIntersect(&mut orig2d0, &mut orig2d1, edge0, edge1, &mut inter);
+            _v2dIntersect(&orig2d0, &orig2d1, edge0, edge1, &mut inter);
             let mut isIntersectionAtVertex: bool =
-                _v2dAlmostEquals(&mut orig2d0, &mut inter) as libc::c_int != 0
-                    || _v2dAlmostEquals(&mut orig2d1, &mut inter) as libc::c_int != 0;
+                _v2dAlmostEquals(&orig2d0, &inter) as libc::c_int != 0
+                    || _v2dAlmostEquals(&orig2d1, &inter) as libc::c_int != 0;
             if !isIntersectionAtVertex {
                 _hex2dToGeo(
-                    &mut inter,
+                    &inter,
                     centerIJK.face,
                     adjRes,
                     1 as libc::c_int,
@@ -2706,9 +2474,9 @@ pub unsafe extern "C" fn _faceIjkToCellBoundary(
         }
         if vert < start + 6 as libc::c_int {
             let mut vec: Vec2d = Vec2d { x: 0., y: 0. };
-            _ijkToHex2d(&mut fijk.coord, &mut vec);
+            _ijkToHex2d(&fijk.coord, &mut vec);
             _hex2dToGeo(
-                &mut vec,
+                &vec,
                 fijk.face,
                 adjRes,
                 1 as libc::c_int,
@@ -2729,7 +2497,6 @@ pub unsafe extern "C" fn _faceIjkToVerts(
 ) {
     let mut vertsCII: [CoordIJK; 6] = [
         {
-            
             CoordIJK {
                 i: 2 as libc::c_int,
                 j: 1 as libc::c_int,
@@ -2737,7 +2504,6 @@ pub unsafe extern "C" fn _faceIjkToVerts(
             }
         },
         {
-            
             CoordIJK {
                 i: 1 as libc::c_int,
                 j: 2 as libc::c_int,
@@ -2745,7 +2511,6 @@ pub unsafe extern "C" fn _faceIjkToVerts(
             }
         },
         {
-            
             CoordIJK {
                 i: 0 as libc::c_int,
                 j: 2 as libc::c_int,
@@ -2753,7 +2518,6 @@ pub unsafe extern "C" fn _faceIjkToVerts(
             }
         },
         {
-            
             CoordIJK {
                 i: 0 as libc::c_int,
                 j: 1 as libc::c_int,
@@ -2761,7 +2525,6 @@ pub unsafe extern "C" fn _faceIjkToVerts(
             }
         },
         {
-            
             CoordIJK {
                 i: 1 as libc::c_int,
                 j: 0 as libc::c_int,
@@ -2769,7 +2532,6 @@ pub unsafe extern "C" fn _faceIjkToVerts(
             }
         },
         {
-            
             CoordIJK {
                 i: 2 as libc::c_int,
                 j: 0 as libc::c_int,
@@ -2779,7 +2541,6 @@ pub unsafe extern "C" fn _faceIjkToVerts(
     ];
     let mut vertsCIII: [CoordIJK; 6] = [
         {
-            
             CoordIJK {
                 i: 5 as libc::c_int,
                 j: 4 as libc::c_int,
@@ -2787,7 +2548,6 @@ pub unsafe extern "C" fn _faceIjkToVerts(
             }
         },
         {
-            
             CoordIJK {
                 i: 1 as libc::c_int,
                 j: 5 as libc::c_int,
@@ -2795,7 +2555,6 @@ pub unsafe extern "C" fn _faceIjkToVerts(
             }
         },
         {
-            
             CoordIJK {
                 i: 0 as libc::c_int,
                 j: 5 as libc::c_int,
@@ -2803,7 +2562,6 @@ pub unsafe extern "C" fn _faceIjkToVerts(
             }
         },
         {
-            
             CoordIJK {
                 i: 0 as libc::c_int,
                 j: 1 as libc::c_int,
@@ -2811,7 +2569,6 @@ pub unsafe extern "C" fn _faceIjkToVerts(
             }
         },
         {
-            
             CoordIJK {
                 i: 4 as libc::c_int,
                 j: 0 as libc::c_int,
@@ -2819,7 +2576,6 @@ pub unsafe extern "C" fn _faceIjkToVerts(
             }
         },
         {
-            
             CoordIJK {
                 i: 5 as libc::c_int,
                 j: 0 as libc::c_int,
@@ -2843,8 +2599,8 @@ pub unsafe extern "C" fn _faceIjkToVerts(
     while v < 6 as libc::c_int {
         (*fijkVerts.offset(v as isize)).face = (*fijk).face;
         _ijkAdd(
-            &mut (*fijk).coord,
-            &mut *verts.offset(v as isize),
+            &(*fijk).coord,
+            &*verts.offset(v as isize),
             &mut (*fijkVerts.offset(v as isize)).coord,
         );
         _ijkNormalize(&mut (*fijkVerts.offset(v as isize)).coord);
@@ -2884,9 +2640,9 @@ pub unsafe extern "C" fn _adjustOverageClassII(
                     let mut origin: CoordIJK = CoordIJK { i: 0, j: 0, k: 0 };
                     _setIJK(&mut origin, maxDim, 0 as libc::c_int, 0 as libc::c_int);
                     let mut tmp: CoordIJK = CoordIJK { i: 0, j: 0, k: 0 };
-                    _ijkSub(ijk, &mut origin, &mut tmp);
+                    _ijkSub(ijk, &origin, &mut tmp);
                     _ijkRotate60cw(&mut tmp);
-                    _ijkAdd(&mut tmp, &mut origin, ijk);
+                    _ijkAdd(&tmp, &origin, ijk);
                 }
             }
         } else {
@@ -2906,7 +2662,7 @@ pub unsafe extern "C" fn _adjustOverageClassII(
             unitScale *= 3 as libc::c_int;
         }
         _ijkScale(&mut transVec, unitScale);
-        _ijkAdd(ijk, &mut transVec, ijk);
+        _ijkAdd(ijk, &transVec, ijk);
         _ijkNormalize(ijk);
         if substrate != 0 && (*ijk).i + (*ijk).j + (*ijk).k == maxDim {
             overage = FACE_EDGE;
@@ -2946,7 +2702,7 @@ pub unsafe extern "C" fn _geoToClosestFace(
     let mut f: libc::c_int = 0 as libc::c_int;
     while f < 20 as libc::c_int {
         let mut sqdT: libc::c_double =
-            _pointSquareDist(&*faceCenterPoint.as_ptr().offset(f as isize), &mut v3d);
+            _pointSquareDist(&*faceCenterPoint.as_ptr().offset(f as isize), &v3d);
         if sqdT < *sqd {
             *face = f;
             *sqd = sqdT;

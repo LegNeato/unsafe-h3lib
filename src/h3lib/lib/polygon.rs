@@ -1,6 +1,4 @@
 use ::libc;
-use ::num_traits;
-use num_traits::ToPrimitive;
 extern "C" {
     fn bboxContains(bbox: *const BBox, point: *const LatLng) -> bool;
     fn bboxIsTransmeridian(bbox: *const BBox) -> bool;
@@ -48,10 +46,7 @@ pub unsafe extern "C" fn pointInsideGeoLoop(
     let mut lng: libc::c_double = if isTransmeridian as libc::c_int != 0
         && (*coord).lng < 0 as libc::c_int as libc::c_double
     {
-        (*coord).lng
-            + 6.283_185_307_179_586
-                .to_f64()
-                .unwrap()
+        (*coord).lng + std::f64::consts::TAU
     } else {
         (*coord).lng
     };
@@ -77,19 +72,13 @@ pub unsafe extern "C" fn pointInsideGeoLoop(
         }
         let mut aLng: libc::c_double =
             if isTransmeridian as libc::c_int != 0 && a.lng < 0 as libc::c_int as libc::c_double {
-                a.lng
-                    + 6.283_185_307_179_586
-                        .to_f64()
-                        .unwrap()
+                a.lng + std::f64::consts::TAU
             } else {
                 a.lng
             };
         let mut bLng: libc::c_double =
             if isTransmeridian as libc::c_int != 0 && b.lng < 0 as libc::c_int as libc::c_double {
-                b.lng
-                    + 6.283_185_307_179_586
-                        .to_f64()
-                        .unwrap()
+                b.lng + std::f64::consts::TAU
             } else {
                 b.lng
             };
@@ -100,10 +89,7 @@ pub unsafe extern "C" fn pointInsideGeoLoop(
         let mut testLng: libc::c_double = if isTransmeridian as libc::c_int != 0
             && aLng + (bLng - aLng) * ratio < 0 as libc::c_int as libc::c_double
         {
-            aLng + (bLng - aLng) * ratio
-                + 6.283_185_307_179_586
-                    .to_f64()
-                    .unwrap()
+            aLng + (bLng - aLng) * ratio + std::f64::consts::PI
         } else {
             aLng + (bLng - aLng) * ratio
         };
@@ -117,7 +103,6 @@ pub unsafe extern "C" fn pointInsideGeoLoop(
 pub unsafe extern "C" fn bboxFromGeoLoop(mut loop_0: *const GeoLoop, mut bbox: *mut BBox) {
     if (*loop_0).numVerts == 0 as libc::c_int {
         *bbox = {
-            
             BBox {
                 north: 0 as libc::c_int as libc::c_double,
                 south: 0.,
@@ -167,7 +152,7 @@ pub unsafe extern "C" fn bboxFromGeoLoop(mut loop_0: *const GeoLoop, mut bbox: *
         if lng < 0 as libc::c_int as libc::c_double && lng > maxNegLng {
             maxNegLng = lng;
         }
-        if fabs(lng - next.lng) > 3.141_592_653_589_793_f64 {
+        if fabs(lng - next.lng) > std::f64::consts::PI {
             isTransmeridian = 1 as libc::c_int != 0;
         }
     }
@@ -192,25 +177,19 @@ unsafe extern "C" fn isClockwiseNormalizedGeoLoop(
         a = *((*loop_0).verts).offset(loopIndex as isize);
         b = *((*loop_0).verts)
             .offset(((loopIndex + 1 as libc::c_int) % (*loop_0).numVerts) as isize);
-        if !isTransmeridian && fabs(a.lng - b.lng) > 3.141_592_653_589_793_f64 {
+        if !isTransmeridian && fabs(a.lng - b.lng) > std::f64::consts::PI {
             return isClockwiseNormalizedGeoLoop(loop_0, 1 as libc::c_int != 0);
         }
         sum += ((if isTransmeridian as libc::c_int != 0
             && b.lng < 0 as libc::c_int as libc::c_double
         {
-            b.lng
-                + 6.283_185_307_179_586
-                    .to_f64()
-                    .unwrap()
+            b.lng + std::f64::consts::TAU
         } else {
             b.lng
         }) - (if isTransmeridian as libc::c_int != 0
             && a.lng < 0 as libc::c_int as libc::c_double
         {
-            a.lng
-                + 6.283_185_307_179_586
-                    .to_f64()
-                    .unwrap()
+            a.lng + std::f64::consts::TAU
         } else {
             a.lng
         })) * (b.lat + a.lat);
@@ -233,7 +212,7 @@ pub unsafe extern "C" fn bboxesFromGeoPolygon(
     let mut i: libc::c_int = 0 as libc::c_int;
     while i < (*polygon).numHoles {
         bboxFromGeoLoop(
-            &mut *((*polygon).holes).offset(i as isize),
+            &*((*polygon).holes).offset(i as isize),
             &mut *bboxes.offset((i + 1 as libc::c_int) as isize),
         );
         i += 1;
@@ -254,7 +233,7 @@ pub unsafe extern "C" fn pointInsidePolygon(
         let mut i: libc::c_int = 0 as libc::c_int;
         while i < (*geoPolygon).numHoles {
             if pointInsideGeoLoop(
-                &mut *((*geoPolygon).holes).offset(i as isize),
+                &*((*geoPolygon).holes).offset(i as isize),
                 &*bboxes.offset((i + 1 as libc::c_int) as isize),
                 coord,
             ) {

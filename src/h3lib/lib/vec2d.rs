@@ -34,6 +34,6 @@ pub unsafe extern "C" fn _v2dIntersect(
 }
 #[no_mangle]
 pub unsafe extern "C" fn _v2dAlmostEquals(mut v1: *const Vec2d, mut v2: *const Vec2d) -> bool {
-    return fabs((*v1).x - (*v2).x) < 1.192_092_9e-7_f32 as libc::c_double
-        && fabs((*v1).y - (*v2).y) < 1.192_092_9e-7_f32 as libc::c_double;
+    fabs((*v1).x - (*v2).x) < 1.192_092_9e-7_f32 as libc::c_double
+        && fabs((*v1).y - (*v2).y) < 1.192_092_9e-7_f32 as libc::c_double
 }

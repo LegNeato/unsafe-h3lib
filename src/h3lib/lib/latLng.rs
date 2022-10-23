@@ -52,16 +52,14 @@ pub struct CellBoundary {
 #[no_mangle]
 pub unsafe extern "C" fn _posAngleRads(mut rads: libc::c_double) -> libc::c_double {
     let mut tmp: libc::c_double = if rads < 0.0 {
-        rads + 6.283_185_307_179_586
+        rads + std::f64::consts::TAU
     } else {
         rads
     }
     .to_f64()
     .unwrap();
-    if rads >= 6.283_185_307_179_586 {
-        tmp = (tmp - 6.283_185_307_179_586)
-            .to_f64()
-            .unwrap();
+    if rads >= std::f64::consts::TAU {
+        tmp -= std::f64::consts::TAU
     }
     tmp
 }
@@ -75,13 +73,13 @@ pub unsafe extern "C" fn geoAlmostEqualThreshold(
 }
 #[no_mangle]
 pub unsafe extern "C" fn geoAlmostEqual(mut p1: *const LatLng, mut p2: *const LatLng) -> bool {
-    return geoAlmostEqualThreshold(
+    geoAlmostEqualThreshold(
         p1,
         p2,
         (0.000000001f64 * 0.017_453_292_519_943_295)
             .to_f64()
             .unwrap(),
-    );
+    )
 }
 #[no_mangle]
 pub unsafe extern "C" fn setGeoDegs(
@@ -102,30 +100,26 @@ pub unsafe extern "C" fn _setGeoRads(
 }
 #[no_mangle]
 pub unsafe extern "C" fn degsToRads(mut degrees: libc::c_double) -> libc::c_double {
-    return (degrees * 0.017_453_292_519_943_295)
-        .to_f64()
-        .unwrap();
+    (degrees * 0.017_453_292_519_943_295).to_f64().unwrap()
 }
 #[no_mangle]
 pub unsafe extern "C" fn radsToDegs(mut radians: libc::c_double) -> libc::c_double {
-    return (radians * 57.295_779_513_082_32)
-        .to_f64()
-        .unwrap();
+    (radians * 57.295_779_513_082_32).to_f64().unwrap()
 }
 #[no_mangle]
 pub unsafe extern "C" fn constrainLat(mut lat: libc::c_double) -> libc::c_double {
-    while lat > 1.570_796_326_794_896_6_f64 {
-        lat = lat - 3.141_592_653_589_793_f64;
+    while lat > std::f64::consts::FRAC_PI_2 {
+        lat -= std::f64::consts::PI;
     }
     lat
 }
 #[no_mangle]
 pub unsafe extern "C" fn constrainLng(mut lng: libc::c_double) -> libc::c_double {
-    while lng > 3.141_592_653_589_793_f64 {
-        lng = lng - 2 as libc::c_int as libc::c_double * 3.141_592_653_589_793_f64;
+    while lng > std::f64::consts::PI {
+        lng -= 2 as libc::c_int as libc::c_double * std::f64::consts::PI;
     }
-    while lng < -3.141_592_653_589_793_f64 {
-        lng = lng + 2 as libc::c_int as libc::c_double * 3.141_592_653_589_793_f64;
+    while lng < -std::f64::consts::PI {
+        lng += 2 as libc::c_int as libc::c_double * std::f64::consts::PI;
     }
     lng
 }
@@ -182,54 +176,35 @@ pub unsafe extern "C" fn _geoAzDistanceRads(
     let mut sinlng: libc::c_double = 0.;
     let mut coslng: libc::c_double = 0.;
     az = _posAngleRads(az);
-    if az < 0.0000000000000001
-        || fabs(az - 3.141_592_653_589_793_f64) < 0.0000000000000001
-    {
+    if az < 0.0000000000000001 || fabs(az - std::f64::consts::PI) < 0.0000000000000001 {
         if az < 0.0000000000000001 {
             (*p2).lat = (*p1).lat + distance;
         } else {
             (*p2).lat = (*p1).lat - distance;
         }
-        if fabs((*p2).lat - 1.570_796_326_794_896_6_f64) < 0.0000000000000001 {
-            (*p2).lat = 1.570_796_326_794_896_6_f64;
-            (*p2).lng = 0.0f64;
-        } else if fabs((*p2).lat + 1.570_796_326_794_896_6_f64) < 0.0000000000000001 {
-            (*p2).lat = -1.570_796_326_794_896_6_f64;
+        if fabs((*p2).lat - std::f64::consts::FRAC_PI_2) < 0.0000000000000001
+            || fabs((*p2).lat + std::f64::consts::FRAC_PI_2) < 0.0000000000000001
+        {
+            (*p2).lat = std::f64::consts::FRAC_PI_2;
             (*p2).lng = 0.0f64;
         } else {
             (*p2).lng = constrainLng((*p1).lng);
         }
     } else {
         sinlat = sin((*p1).lat) * cos(distance) + cos((*p1).lat) * sin(distance) * cos(az);
-        if sinlat > 1.0f64 {
-            sinlat = 1.0f64;
-        }
-        if sinlat < -1.0f64 {
-            sinlat = -1.0f64;
-        }
+        sinlat = sinlat.clamp(-1.0f64, 1.0f64);
         (*p2).lat = asin(sinlat);
-        if fabs((*p2).lat - 1.570_796_326_794_896_6_f64) < 0.0000000000000001 {
-            (*p2).lat = 1.570_796_326_794_896_6_f64;
-            (*p2).lng = 0.0f64;
-        } else if fabs((*p2).lat + 1.570_796_326_794_896_6_f64) < 0.0000000000000001 {
-            (*p2).lat = -1.570_796_326_794_896_6_f64;
+        if fabs((*p2).lat - std::f64::consts::FRAC_PI_2) < 0.0000000000000001
+            || fabs((*p2).lat + std::f64::consts::FRAC_PI_2) < 0.0000000000000001
+        {
+            (*p2).lat = std::f64::consts::FRAC_PI_2;
             (*p2).lng = 0.0f64;
         } else {
             sinlng = sin(az) * sin(distance) / cos((*p2).lat);
             coslng =
                 (cos(distance) - sin((*p1).lat) * sin((*p2).lat)) / cos((*p1).lat) / cos((*p2).lat);
-            if sinlng > 1.0f64 {
-                sinlng = 1.0f64;
-            }
-            if sinlng < -1.0f64 {
-                sinlng = -1.0f64;
-            }
-            if coslng > 1.0f64 {
-                coslng = 1.0f64;
-            }
-            if coslng < -1.0f64 {
-                coslng = -1.0f64;
-            }
+            sinlng = sinlng.clamp(-1.0f64, 1.0f64);
+            coslng = coslng.clamp(-1.0f64, 1.0f64);
             (*p2).lng = constrainLng((*p1).lng + atan2(sinlng, coslng));
         }
     };
@@ -405,9 +380,9 @@ pub unsafe extern "C" fn cellAreaRads2(mut cell: H3Index, mut out: *mut libc::c_
     while i < cb.numVerts {
         let mut j: libc::c_int = (i + 1 as libc::c_int) % cb.numVerts;
         area += triangleArea(
-            &mut *(cb.verts).as_mut_ptr().offset(i as isize),
-            &mut *(cb.verts).as_mut_ptr().offset(j as isize),
-            &mut c,
+            &*(cb.verts).as_mut_ptr().offset(i as isize),
+            &*(cb.verts).as_mut_ptr().offset(j as isize),
+            &c,
         );
         i += 1;
     }
@@ -449,8 +424,8 @@ pub unsafe extern "C" fn edgeLengthRads(
     let mut i: libc::c_int = 0 as libc::c_int;
     while i < cb.numVerts - 1 as libc::c_int {
         *length += greatCircleDistanceRads(
-            &mut *(cb.verts).as_mut_ptr().offset(i as isize),
-            &mut *(cb.verts)
+            &*(cb.verts).as_mut_ptr().offset(i as isize),
+            &*(cb.verts)
                 .as_mut_ptr()
                 .offset((i + 1 as libc::c_int) as isize),
         );

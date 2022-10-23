@@ -468,7 +468,7 @@ pub unsafe extern "C" fn gridDisk(
     mut k: libc::c_int,
     mut out: *mut H3Index,
 ) -> H3Error {
-    return gridDiskDistances(origin, k, out, std::ptr::null_mut::<libc::c_int>());
+    gridDiskDistances(origin, k, out, std::ptr::null_mut::<libc::c_int>())
 }
 #[no_mangle]
 pub unsafe extern "C" fn gridDiskDistances(
@@ -643,13 +643,17 @@ pub unsafe extern "C" fn h3NeighborRotations(
                 return E_CELL_INVALID as libc::c_int as H3Error;
             } else if isResolutionClassIII(r + 1 as libc::c_int) != 0 {
                 current = current
-                    & !((7 as libc::c_int as uint64_t) << ((15 as libc::c_int - (r + 1 as libc::c_int)) * 3 as libc::c_int))
-                    | (NEW_DIGIT_II[oldDigit as usize][dir as usize] as uint64_t) << ((15 as libc::c_int - (r + 1 as libc::c_int)) * 3 as libc::c_int);
+                    & !((7 as libc::c_int as uint64_t)
+                        << ((15 as libc::c_int - (r + 1 as libc::c_int)) * 3 as libc::c_int))
+                    | (NEW_DIGIT_II[oldDigit as usize][dir as usize] as uint64_t)
+                        << ((15 as libc::c_int - (r + 1 as libc::c_int)) * 3 as libc::c_int);
                 nextDir = NEW_ADJUSTMENT_II[oldDigit as usize][dir as usize];
             } else {
                 current = current
-                    & !((7 as libc::c_int as uint64_t) << ((15 as libc::c_int - (r + 1 as libc::c_int)) * 3 as libc::c_int))
-                    | (NEW_DIGIT_III[oldDigit as usize][dir as usize] as uint64_t) << ((15 as libc::c_int - (r + 1 as libc::c_int)) * 3 as libc::c_int);
+                    & !((7 as libc::c_int as uint64_t)
+                        << ((15 as libc::c_int - (r + 1 as libc::c_int)) * 3 as libc::c_int))
+                    | (NEW_DIGIT_III[oldDigit as usize][dir as usize] as uint64_t)
+                        << ((15 as libc::c_int - (r + 1 as libc::c_int)) * 3 as libc::c_int);
                 nextDir = NEW_ADJUSTMENT_III[oldDigit as usize][dir as usize];
             }
             if nextDir as libc::c_uint == CENTER_DIGIT as libc::c_int as libc::c_uint {
@@ -680,7 +684,9 @@ pub unsafe extern "C" fn h3NeighborRotations(
             } else if oldLeadingDigit as libc::c_uint == CENTER_DIGIT as libc::c_int as libc::c_uint
             {
                 return E_PENTAGON as libc::c_int as H3Error;
-            } else if oldLeadingDigit as libc::c_uint == JK_AXES_DIGIT as libc::c_int as libc::c_uint {
+            } else if oldLeadingDigit as libc::c_uint
+                == JK_AXES_DIGIT as libc::c_int as libc::c_uint
+            {
                 current = _h3Rotate60ccw(current);
                 *rotations += 1 as libc::c_int;
             } else if oldLeadingDigit as libc::c_uint
@@ -753,7 +759,7 @@ pub unsafe extern "C" fn gridDiskUnsafe(
     mut k: libc::c_int,
     mut out: *mut H3Index,
 ) -> H3Error {
-    return gridDiskDistancesUnsafe(origin, k, out, std::ptr::null_mut::<libc::c_int>());
+    gridDiskDistancesUnsafe(origin, k, out, std::ptr::null_mut::<libc::c_int>())
 }
 #[no_mangle]
 pub unsafe extern "C" fn gridDiskDistancesUnsafe(
@@ -921,7 +927,7 @@ pub unsafe extern "C" fn maxPolygonToCellsSize(
     let geoloop: GeoLoop = (*geoPolygon).geoloop;
     bboxFromGeoLoop(&geoloop, &mut bbox);
     let mut numHexagons: int64_t = 0;
-    let mut estimateErr: H3Error = bboxHexEstimate(&mut bbox, res, &mut numHexagons);
+    let mut estimateErr: H3Error = bboxHexEstimate(&bbox, res, &mut numHexagons);
     if estimateErr != 0 {
         return estimateErr;
     }
@@ -957,7 +963,7 @@ pub unsafe extern "C" fn _getEdgeHexagons(
         };
         let mut numHexesEstimate: int64_t = 0;
         let mut estimateErr: H3Error =
-            lineHexEstimate(&mut origin, &mut destination, res, &mut numHexesEstimate);
+            lineHexEstimate(&origin, &destination, res, &mut numHexesEstimate);
         if estimateErr != 0 {
             return estimateErr;
         }
@@ -971,7 +977,7 @@ pub unsafe extern "C" fn _getEdgeHexagons(
                 / numHexesEstimate as libc::c_double
                 + destination.lng * j as libc::c_double / numHexesEstimate as libc::c_double;
             let mut pointHex: H3Index = 0;
-            let mut e: H3Error = latLngToCell(&mut interpolate, res, &mut pointHex);
+            let mut e: H3Error = latLngToCell(&interpolate, res, &mut pointHex);
             if e != 0 {
                 return e;
             }
@@ -1105,7 +1111,7 @@ pub unsafe extern "C" fn polygonToCells(
                     if *out.offset(loc as isize) != hex {
                         let mut hexCenter: LatLng = LatLng { lat: 0., lng: 0. };
                         cellToLatLng(hex, &mut hexCenter);
-                        if pointInsidePolygon(geoPolygon, bboxes, &mut hexCenter) {
+                        if pointInsidePolygon(geoPolygon, bboxes, &hexCenter) {
                             *out.offset(loc as isize) = hex;
                             *found.offset(numFoundHexes as isize) = hex;
                             numFoundHexes += 1;
@@ -1190,12 +1196,11 @@ pub unsafe extern "C" fn _vertexGraphToLinkedGeo(
     mut out: *mut LinkedGeoPolygon,
 ) {
     *out = {
-        let mut init = LinkedGeoPolygon {
+        LinkedGeoPolygon {
             first: std::ptr::null_mut::<LinkedGeoLoop>(),
             last: std::ptr::null_mut::<LinkedGeoLoop>(),
             next: std::ptr::null_mut::<LinkedGeoPolygon>(),
-        };
-        init
+        }
     };
     let mut loop_0: *mut LinkedGeoLoop = std::ptr::null_mut::<LinkedGeoLoop>();
     let mut edge: *mut VertexNode = std::ptr::null_mut::<VertexNode>();
@@ -1207,10 +1212,10 @@ pub unsafe extern "C" fn _vertexGraphToLinkedGeo(
         }
         loop_0 = addNewLinkedLoop(out);
         loop {
-            addLinkedCoord(loop_0, &mut (*edge).from);
+            addLinkedCoord(loop_0, &(*edge).from);
             nextVtx = (*edge).to;
             removeVertexNode(graph, edge);
-            edge = findNodeForVertex(graph, &mut nextVtx);
+            edge = findNodeForVertex(graph, &nextVtx);
             if edge.is_null() {
                 break;
             }

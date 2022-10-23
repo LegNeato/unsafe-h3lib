@@ -57,7 +57,6 @@ pub const K_AXES_DIGIT: Direction = 1;
 pub const CENTER_DIGIT: Direction = 0;
 static mut UNIT_VECS: [CoordIJK; 7] = [
     {
-        
         CoordIJK {
             i: 0 as libc::c_int,
             j: 0 as libc::c_int,
@@ -65,7 +64,6 @@ static mut UNIT_VECS: [CoordIJK; 7] = [
         }
     },
     {
-        
         CoordIJK {
             i: 0 as libc::c_int,
             j: 0 as libc::c_int,
@@ -73,7 +71,6 @@ static mut UNIT_VECS: [CoordIJK; 7] = [
         }
     },
     {
-        
         CoordIJK {
             i: 0 as libc::c_int,
             j: 1 as libc::c_int,
@@ -81,7 +78,6 @@ static mut UNIT_VECS: [CoordIJK; 7] = [
         }
     },
     {
-        
         CoordIJK {
             i: 0 as libc::c_int,
             j: 1 as libc::c_int,
@@ -89,7 +85,6 @@ static mut UNIT_VECS: [CoordIJK; 7] = [
         }
     },
     {
-        
         CoordIJK {
             i: 1 as libc::c_int,
             j: 0 as libc::c_int,
@@ -97,7 +92,6 @@ static mut UNIT_VECS: [CoordIJK; 7] = [
         }
     },
     {
-        
         CoordIJK {
             i: 1 as libc::c_int,
             j: 0 as libc::c_int,
@@ -105,7 +99,6 @@ static mut UNIT_VECS: [CoordIJK; 7] = [
         }
     },
     {
-        
         CoordIJK {
             i: 1 as libc::c_int,
             j: 1 as libc::c_int,
@@ -137,9 +130,7 @@ pub unsafe extern "C" fn _hex2dToCoordIJK(mut v: *const Vec2d, mut h: *mut Coord
     (*h).k = 0 as libc::c_int;
     a1 = fabsl((*v).x).to_f64().unwrap();
     a2 = fabsl((*v).y).to_f64().unwrap();
-    x2 = (a2 / 0.866_025_403_784_438_6)
-        .to_f64()
-        .unwrap();
+    x2 = (a2 / 0.866_025_403_784_438_6).to_f64().unwrap();
     x1 = (a1 + x2 / 2.0).to_f64().unwrap();
     m1 = x1 as libc::c_int;
     m2 = x2 as libc::c_int;
@@ -209,9 +200,7 @@ pub unsafe extern "C" fn _ijkToHex2d(mut h: *const CoordIJK, mut v: *mut Vec2d) 
     let mut i: libc::c_int = (*h).i - (*h).k;
     let mut j: libc::c_int = (*h).j - (*h).k;
     (*v).x = (i as f64 - 0.5 * j as f64).to_f64().unwrap();
-    (*v).y = (j as f64 * 0.866_025_403_784_438_6)
-        .to_f64()
-        .unwrap();
+    (*v).y = (j as f64 * 0.866_025_403_784_438_6).to_f64().unwrap();
 }
 #[no_mangle]
 pub unsafe extern "C" fn _ijkMatches(
@@ -283,7 +272,7 @@ pub unsafe extern "C" fn _unitIjkToDigit(mut ijk: *const CoordIJK) -> Direction 
     let mut digit: Direction = INVALID_DIGIT;
     let mut i: Direction = CENTER_DIGIT;
     while (i as libc::c_uint) < NUM_DIGITS as libc::c_int as libc::c_uint {
-        if _ijkMatches(&mut c, &*UNIT_VECS.as_ptr().offset(i as isize)) != 0 {
+        if _ijkMatches(&c, &*UNIT_VECS.as_ptr().offset(i as isize)) != 0 {
             digit = i;
             break;
         } else {
@@ -313,7 +302,6 @@ pub unsafe extern "C" fn _upAp7r(mut ijk: *mut CoordIJK) {
 #[no_mangle]
 pub unsafe extern "C" fn _downAp7(mut ijk: *mut CoordIJK) {
     let mut iVec: CoordIJK = {
-        
         CoordIJK {
             i: 3 as libc::c_int,
             j: 0 as libc::c_int,
@@ -321,7 +309,6 @@ pub unsafe extern "C" fn _downAp7(mut ijk: *mut CoordIJK) {
         }
     };
     let mut jVec: CoordIJK = {
-        
         CoordIJK {
             i: 1 as libc::c_int,
             j: 3 as libc::c_int,
@@ -329,7 +316,6 @@ pub unsafe extern "C" fn _downAp7(mut ijk: *mut CoordIJK) {
         }
     };
     let mut kVec: CoordIJK = {
-        
         CoordIJK {
             i: 0 as libc::c_int,
             j: 1 as libc::c_int,
@@ -339,14 +325,13 @@ pub unsafe extern "C" fn _downAp7(mut ijk: *mut CoordIJK) {
     _ijkScale(&mut iVec, (*ijk).i);
     _ijkScale(&mut jVec, (*ijk).j);
     _ijkScale(&mut kVec, (*ijk).k);
-    _ijkAdd(&mut iVec, &mut jVec, ijk);
-    _ijkAdd(ijk, &mut kVec, ijk);
+    _ijkAdd(&iVec, &jVec, ijk);
+    _ijkAdd(ijk, &kVec, ijk);
     _ijkNormalize(ijk);
 }
 #[no_mangle]
 pub unsafe extern "C" fn _downAp7r(mut ijk: *mut CoordIJK) {
     let mut iVec: CoordIJK = {
-        
         CoordIJK {
             i: 3 as libc::c_int,
             j: 1 as libc::c_int,
@@ -354,7 +339,6 @@ pub unsafe extern "C" fn _downAp7r(mut ijk: *mut CoordIJK) {
         }
     };
     let mut jVec: CoordIJK = {
-        
         CoordIJK {
             i: 0 as libc::c_int,
             j: 3 as libc::c_int,
@@ -362,7 +346,6 @@ pub unsafe extern "C" fn _downAp7r(mut ijk: *mut CoordIJK) {
         }
     };
     let mut kVec: CoordIJK = {
-        
         CoordIJK {
             i: 1 as libc::c_int,
             j: 0 as libc::c_int,
@@ -372,8 +355,8 @@ pub unsafe extern "C" fn _downAp7r(mut ijk: *mut CoordIJK) {
     _ijkScale(&mut iVec, (*ijk).i);
     _ijkScale(&mut jVec, (*ijk).j);
     _ijkScale(&mut kVec, (*ijk).k);
-    _ijkAdd(&mut iVec, &mut jVec, ijk);
-    _ijkAdd(ijk, &mut kVec, ijk);
+    _ijkAdd(&iVec, &jVec, ijk);
+    _ijkAdd(ijk, &kVec, ijk);
     _ijkNormalize(ijk);
 }
 #[no_mangle]
@@ -388,7 +371,6 @@ pub unsafe extern "C" fn _neighbor(mut ijk: *mut CoordIJK, mut digit: Direction)
 #[no_mangle]
 pub unsafe extern "C" fn _ijkRotate60ccw(mut ijk: *mut CoordIJK) {
     let mut iVec: CoordIJK = {
-        
         CoordIJK {
             i: 1 as libc::c_int,
             j: 1 as libc::c_int,
@@ -396,7 +378,6 @@ pub unsafe extern "C" fn _ijkRotate60ccw(mut ijk: *mut CoordIJK) {
         }
     };
     let mut jVec: CoordIJK = {
-        
         CoordIJK {
             i: 0 as libc::c_int,
             j: 1 as libc::c_int,
@@ -404,7 +385,6 @@ pub unsafe extern "C" fn _ijkRotate60ccw(mut ijk: *mut CoordIJK) {
         }
     };
     let mut kVec: CoordIJK = {
-        
         CoordIJK {
             i: 1 as libc::c_int,
             j: 0 as libc::c_int,
@@ -414,14 +394,13 @@ pub unsafe extern "C" fn _ijkRotate60ccw(mut ijk: *mut CoordIJK) {
     _ijkScale(&mut iVec, (*ijk).i);
     _ijkScale(&mut jVec, (*ijk).j);
     _ijkScale(&mut kVec, (*ijk).k);
-    _ijkAdd(&mut iVec, &mut jVec, ijk);
-    _ijkAdd(ijk, &mut kVec, ijk);
+    _ijkAdd(&iVec, &jVec, ijk);
+    _ijkAdd(ijk, &kVec, ijk);
     _ijkNormalize(ijk);
 }
 #[no_mangle]
 pub unsafe extern "C" fn _ijkRotate60cw(mut ijk: *mut CoordIJK) {
     let mut iVec: CoordIJK = {
-        
         CoordIJK {
             i: 1 as libc::c_int,
             j: 0 as libc::c_int,
@@ -429,7 +408,6 @@ pub unsafe extern "C" fn _ijkRotate60cw(mut ijk: *mut CoordIJK) {
         }
     };
     let mut jVec: CoordIJK = {
-        
         CoordIJK {
             i: 1 as libc::c_int,
             j: 1 as libc::c_int,
@@ -437,7 +415,6 @@ pub unsafe extern "C" fn _ijkRotate60cw(mut ijk: *mut CoordIJK) {
         }
     };
     let mut kVec: CoordIJK = {
-        
         CoordIJK {
             i: 0 as libc::c_int,
             j: 1 as libc::c_int,
@@ -447,8 +424,8 @@ pub unsafe extern "C" fn _ijkRotate60cw(mut ijk: *mut CoordIJK) {
     _ijkScale(&mut iVec, (*ijk).i);
     _ijkScale(&mut jVec, (*ijk).j);
     _ijkScale(&mut kVec, (*ijk).k);
-    _ijkAdd(&mut iVec, &mut jVec, ijk);
-    _ijkAdd(ijk, &mut kVec, ijk);
+    _ijkAdd(&iVec, &jVec, ijk);
+    _ijkAdd(ijk, &kVec, ijk);
     _ijkNormalize(ijk);
 }
 #[no_mangle]
@@ -478,7 +455,6 @@ pub unsafe extern "C" fn _rotate60cw(mut digit: Direction) -> Direction {
 #[no_mangle]
 pub unsafe extern "C" fn _downAp3(mut ijk: *mut CoordIJK) {
     let mut iVec: CoordIJK = {
-        
         CoordIJK {
             i: 2 as libc::c_int,
             j: 0 as libc::c_int,
@@ -486,7 +462,6 @@ pub unsafe extern "C" fn _downAp3(mut ijk: *mut CoordIJK) {
         }
     };
     let mut jVec: CoordIJK = {
-        
         CoordIJK {
             i: 1 as libc::c_int,
             j: 2 as libc::c_int,
@@ -494,7 +469,6 @@ pub unsafe extern "C" fn _downAp3(mut ijk: *mut CoordIJK) {
         }
     };
     let mut kVec: CoordIJK = {
-        
         CoordIJK {
             i: 0 as libc::c_int,
             j: 1 as libc::c_int,
@@ -504,14 +478,13 @@ pub unsafe extern "C" fn _downAp3(mut ijk: *mut CoordIJK) {
     _ijkScale(&mut iVec, (*ijk).i);
     _ijkScale(&mut jVec, (*ijk).j);
     _ijkScale(&mut kVec, (*ijk).k);
-    _ijkAdd(&mut iVec, &mut jVec, ijk);
-    _ijkAdd(ijk, &mut kVec, ijk);
+    _ijkAdd(&iVec, &jVec, ijk);
+    _ijkAdd(ijk, &kVec, ijk);
     _ijkNormalize(ijk);
 }
 #[no_mangle]
 pub unsafe extern "C" fn _downAp3r(mut ijk: *mut CoordIJK) {
     let mut iVec: CoordIJK = {
-        
         CoordIJK {
             i: 2 as libc::c_int,
             j: 1 as libc::c_int,
@@ -519,7 +492,6 @@ pub unsafe extern "C" fn _downAp3r(mut ijk: *mut CoordIJK) {
         }
     };
     let mut jVec: CoordIJK = {
-        
         CoordIJK {
             i: 0 as libc::c_int,
             j: 2 as libc::c_int,
@@ -527,7 +499,6 @@ pub unsafe extern "C" fn _downAp3r(mut ijk: *mut CoordIJK) {
         }
     };
     let mut kVec: CoordIJK = {
-        
         CoordIJK {
             i: 1 as libc::c_int,
             j: 0 as libc::c_int,
@@ -537,8 +508,8 @@ pub unsafe extern "C" fn _downAp3r(mut ijk: *mut CoordIJK) {
     _ijkScale(&mut iVec, (*ijk).i);
     _ijkScale(&mut jVec, (*ijk).j);
     _ijkScale(&mut kVec, (*ijk).k);
-    _ijkAdd(&mut iVec, &mut jVec, ijk);
-    _ijkAdd(ijk, &mut kVec, ijk);
+    _ijkAdd(&iVec, &jVec, ijk);
+    _ijkAdd(ijk, &kVec, ijk);
     _ijkNormalize(ijk);
 }
 #[no_mangle]
@@ -550,7 +521,6 @@ pub unsafe extern "C" fn ijkDistance(
     _ijkSub(c1, c2, &mut diff);
     _ijkNormalize(&mut diff);
     let mut absDiff: CoordIJK = {
-        
         CoordIJK {
             i: abs(diff.i),
             j: abs(diff.j),
@@ -562,7 +532,8 @@ pub unsafe extern "C" fn ijkDistance(
             absDiff.j
         } else {
             absDiff.k
-        }) {
+        })
+    {
         absDiff.i
     } else if absDiff.j > absDiff.k {
         absDiff.j

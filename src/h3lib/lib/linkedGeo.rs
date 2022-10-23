@@ -1,6 +1,4 @@
 use ::libc;
-use ::num_traits;
-use num_traits::ToPrimitive;
 extern "C" {
     fn bboxContains(bbox: *const BBox, point: *const LatLng) -> bool;
     fn bboxIsTransmeridian(bbox: *const BBox) -> bool;
@@ -164,11 +162,10 @@ pub unsafe extern "C" fn addLinkedCoord(
     } else {
     };
     *coord = {
-        let mut init = LinkedLatLng {
+        LinkedLatLng {
             vertex: *vertex,
             next: std::ptr::null_mut::<LinkedLatLng>(),
-        };
-        init
+        }
     };
     let mut last: *mut LinkedLatLng = (*loop_0).last;
     if last.is_null() {
@@ -264,7 +261,7 @@ unsafe extern "C" fn countContainers(
             && pointInsideLinkedGeoLoop(
                 (**polygons.offset(i as isize)).first,
                 *bboxes.offset(i as isize),
-                &mut (*(*loop_0).first).vertex,
+                &(*(*loop_0).first).vertex,
             ) as libc::c_int
                 != 0
         {
@@ -346,7 +343,7 @@ unsafe extern "C" fn findPolygonForHole(
         if pointInsideLinkedGeoLoop(
             (*polygon).first,
             &*bboxes.offset(index as isize),
-            &mut (*(*loop_0).first).vertex,
+            &(*(*loop_0).first).vertex,
         ) {
             let fresh0 = &mut (*candidates.offset(candidateCount as isize));
             *fresh0 = polygon;
@@ -406,12 +403,11 @@ pub unsafe extern "C" fn normalizeMultiPolygon(mut root: *mut LinkedGeoPolygon) 
     };
     let mut loop_0: *mut LinkedGeoLoop = (*root).first;
     *root = {
-        let mut init = LinkedGeoPolygon {
+        LinkedGeoPolygon {
             first: std::ptr::null_mut::<LinkedGeoLoop>(),
             last: std::ptr::null_mut::<LinkedGeoLoop>(),
             next: std::ptr::null_mut::<LinkedGeoPolygon>(),
-        };
-        init
+        }
     };
     while !loop_0.is_null() {
         if isClockwiseLinkedGeoLoop(loop_0) {
@@ -460,7 +456,6 @@ pub unsafe extern "C" fn bboxFromLinkedGeoLoop(
 ) {
     if ((*loop_0).first).is_null() {
         *bbox = {
-            
             BBox {
                 north: 0 as libc::c_int as libc::c_double,
                 south: 0.,
@@ -519,7 +514,7 @@ pub unsafe extern "C" fn bboxFromLinkedGeoLoop(
         if lng < 0 as libc::c_int as libc::c_double && lng > maxNegLng {
             maxNegLng = lng;
         }
-        if fabs(lng - next.lng) > 3.141_592_653_589_793_f64 {
+        if fabs(lng - next.lng) > std::f64::consts::PI {
             isTransmeridian = 1 as libc::c_int != 0;
         }
     }
@@ -543,10 +538,7 @@ pub unsafe extern "C" fn pointInsideLinkedGeoLoop(
     let mut lng: libc::c_double = if isTransmeridian as libc::c_int != 0
         && (*coord).lng < 0 as libc::c_int as libc::c_double
     {
-        (*coord).lng
-            + 6.283_185_307_179_586
-                .to_f64()
-                .unwrap()
+        (*coord).lng + std::f64::consts::TAU
     } else {
         (*coord).lng
     };
@@ -581,19 +573,13 @@ pub unsafe extern "C" fn pointInsideLinkedGeoLoop(
         }
         let mut aLng: libc::c_double =
             if isTransmeridian as libc::c_int != 0 && a.lng < 0 as libc::c_int as libc::c_double {
-                a.lng
-                    + 6.283_185_307_179_586
-                        .to_f64()
-                        .unwrap()
+                a.lng + std::f64::consts::TAU
             } else {
                 a.lng
             };
         let mut bLng: libc::c_double =
             if isTransmeridian as libc::c_int != 0 && b.lng < 0 as libc::c_int as libc::c_double {
-                b.lng
-                    + 6.283_185_307_179_586
-                        .to_f64()
-                        .unwrap()
+                b.lng + std::f64::consts::TAU
             } else {
                 b.lng
             };
@@ -604,10 +590,7 @@ pub unsafe extern "C" fn pointInsideLinkedGeoLoop(
         let mut testLng: libc::c_double = if isTransmeridian as libc::c_int != 0
             && aLng + (bLng - aLng) * ratio < 0 as libc::c_int as libc::c_double
         {
-            aLng + (bLng - aLng) * ratio
-                + 6.283_185_307_179_586
-                    .to_f64()
-                    .unwrap()
+            aLng + (bLng - aLng) * ratio + std::f64::consts::TAU
         } else {
             aLng + (bLng - aLng) * ratio
         };
@@ -642,25 +625,19 @@ unsafe extern "C" fn isClockwiseNormalizedLinkedGeoLoop(
             (*currentCoord).next
         };
         b = (*nextCoord).vertex;
-        if !isTransmeridian && fabs(a.lng - b.lng) > 3.141_592_653_589_793_f64 {
+        if !isTransmeridian && fabs(a.lng - b.lng) > std::f64::consts::PI {
             return isClockwiseNormalizedLinkedGeoLoop(loop_0, 1 as libc::c_int != 0);
         }
         sum += ((if isTransmeridian as libc::c_int != 0
             && b.lng < 0 as libc::c_int as libc::c_double
         {
-            b.lng
-                + 6.283_185_307_179_586
-                    .to_f64()
-                    .unwrap()
+            b.lng + std::f64::consts::TAU
         } else {
             b.lng
         }) - (if isTransmeridian as libc::c_int != 0
             && a.lng < 0 as libc::c_int as libc::c_double
         {
-            a.lng
-                + 6.283_185_307_179_586
-                    .to_f64()
-                    .unwrap()
+            a.lng + std::f64::consts::TAU
         } else {
             a.lng
         })) * (b.lat + a.lat);

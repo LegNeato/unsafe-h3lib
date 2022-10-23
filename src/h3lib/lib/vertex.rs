@@ -96,7 +96,6 @@ pub struct PentagonDirectionFaces {
 }
 static mut pentagonDirectionFaces: [PentagonDirectionFaces; 12] = [
     {
-        
         PentagonDirectionFaces {
             baseCell: 4 as libc::c_int,
             faces: [
@@ -109,7 +108,6 @@ static mut pentagonDirectionFaces: [PentagonDirectionFaces; 12] = [
         }
     },
     {
-        
         PentagonDirectionFaces {
             baseCell: 14 as libc::c_int,
             faces: [
@@ -122,7 +120,6 @@ static mut pentagonDirectionFaces: [PentagonDirectionFaces; 12] = [
         }
     },
     {
-        
         PentagonDirectionFaces {
             baseCell: 24 as libc::c_int,
             faces: [
@@ -135,7 +132,6 @@ static mut pentagonDirectionFaces: [PentagonDirectionFaces; 12] = [
         }
     },
     {
-        
         PentagonDirectionFaces {
             baseCell: 38 as libc::c_int,
             faces: [
@@ -148,7 +144,6 @@ static mut pentagonDirectionFaces: [PentagonDirectionFaces; 12] = [
         }
     },
     {
-        
         PentagonDirectionFaces {
             baseCell: 49 as libc::c_int,
             faces: [
@@ -161,7 +156,6 @@ static mut pentagonDirectionFaces: [PentagonDirectionFaces; 12] = [
         }
     },
     {
-        
         PentagonDirectionFaces {
             baseCell: 58 as libc::c_int,
             faces: [
@@ -174,7 +168,6 @@ static mut pentagonDirectionFaces: [PentagonDirectionFaces; 12] = [
         }
     },
     {
-        
         PentagonDirectionFaces {
             baseCell: 63 as libc::c_int,
             faces: [
@@ -187,7 +180,6 @@ static mut pentagonDirectionFaces: [PentagonDirectionFaces; 12] = [
         }
     },
     {
-        
         PentagonDirectionFaces {
             baseCell: 72 as libc::c_int,
             faces: [
@@ -200,7 +192,6 @@ static mut pentagonDirectionFaces: [PentagonDirectionFaces; 12] = [
         }
     },
     {
-        
         PentagonDirectionFaces {
             baseCell: 83 as libc::c_int,
             faces: [
@@ -213,7 +204,6 @@ static mut pentagonDirectionFaces: [PentagonDirectionFaces; 12] = [
         }
     },
     {
-        
         PentagonDirectionFaces {
             baseCell: 97 as libc::c_int,
             faces: [
@@ -226,7 +216,6 @@ static mut pentagonDirectionFaces: [PentagonDirectionFaces; 12] = [
         }
     },
     {
-        
         PentagonDirectionFaces {
             baseCell: 107 as libc::c_int,
             faces: [
@@ -239,7 +228,6 @@ static mut pentagonDirectionFaces: [PentagonDirectionFaces; 12] = [
         }
     },
     {
-        
         PentagonDirectionFaces {
             baseCell: 117 as libc::c_int,
             faces: [
@@ -543,9 +531,9 @@ pub unsafe extern "C" fn vertexToLatLng(mut vertex: H3Index, mut coord: *mut Lat
     let mut res: libc::c_int = ((owner & (15 as libc::c_ulonglong) << 52 as libc::c_int)
         >> 52 as libc::c_int) as libc::c_int;
     if isPentagon(owner) != 0 {
-        _faceIjkPentToCellBoundary(&mut fijk, res, vertexNum, 1 as libc::c_int, &mut gb);
+        _faceIjkPentToCellBoundary(&fijk, res, vertexNum, 1 as libc::c_int, &mut gb);
     } else {
-        _faceIjkToCellBoundary(&mut fijk, res, vertexNum, 1 as libc::c_int, &mut gb);
+        _faceIjkToCellBoundary(&fijk, res, vertexNum, 1 as libc::c_int, &mut gb);
     }
     *coord = gb.verts[0 as libc::c_int as usize];
     E_SUCCESS as libc::c_int as H3Error

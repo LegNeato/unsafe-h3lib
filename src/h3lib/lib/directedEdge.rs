@@ -120,10 +120,12 @@ pub unsafe extern "C" fn areNeighborCells(
         let mut destinationParent: H3Index = 0;
         cellToParent(destination, parentRes, &mut destinationParent);
         if originParent == destinationParent {
-            let mut originResDigit: Direction =
-                (origin >> ((15 as libc::c_int - (parentRes + 1 as libc::c_int)) * 3 as libc::c_int)
-                    & 7 as libc::c_int as uint64_t) as Direction;
-            let mut destinationResDigit: Direction = (destination >> ((15 as libc::c_int - (parentRes + 1 as libc::c_int)) * 3 as libc::c_int)
+            let mut originResDigit: Direction = (origin
+                >> ((15 as libc::c_int - (parentRes + 1 as libc::c_int)) * 3 as libc::c_int)
+                & 7 as libc::c_int as uint64_t)
+                as Direction;
+            let mut destinationResDigit: Direction = (destination
+                >> ((15 as libc::c_int - (parentRes + 1 as libc::c_int)) * 3 as libc::c_int)
                 & 7 as libc::c_int as uint64_t)
                 as Direction;
             if originResDigit as libc::c_uint == CENTER_DIGIT as libc::c_int as libc::c_uint
@@ -331,9 +333,9 @@ pub unsafe extern "C" fn directedEdgeToBoundary(
         >> 52 as libc::c_int) as libc::c_int;
     let mut isPent: libc::c_int = isPentagon(origin);
     if isPent != 0 {
-        _faceIjkPentToCellBoundary(&mut fijk, res, startVertex, 2 as libc::c_int, cb);
+        _faceIjkPentToCellBoundary(&fijk, res, startVertex, 2 as libc::c_int, cb);
     } else {
-        _faceIjkToCellBoundary(&mut fijk, res, startVertex, 2 as libc::c_int, cb);
+        _faceIjkToCellBoundary(&fijk, res, startVertex, 2 as libc::c_int, cb);
     }
     E_SUCCESS as libc::c_int as H3Error
 }

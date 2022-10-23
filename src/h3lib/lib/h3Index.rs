@@ -131,20 +131,19 @@ pub struct IterCellsChildren {
 }
 #[inline(always)]
 unsafe extern "C" fn __inline_isfinitef(mut __x: libc::c_float) -> libc::c_int {
-    (__x == __x && __x.abs() != ::core::f32::INFINITY) as libc::c_int
+    (__x.abs() != ::core::f32::INFINITY) as libc::c_int
 }
 #[inline(always)]
 unsafe extern "C" fn __inline_isfinited(mut __x: libc::c_double) -> libc::c_int {
-    (__x == __x && __x.abs() != ::core::f64::INFINITY) as libc::c_int
+    (__x.abs() != ::core::f64::INFINITY) as libc::c_int
 }
 #[inline(always)]
 unsafe extern "C" fn __inline_isfinitel(mut __x: f64) -> libc::c_int {
-    (__x == __x && __x.abs() != ::core::f64::INFINITY) as libc::c_int
+    (__x.abs() != ::core::f64::INFINITY) as libc::c_int
 }
 #[no_mangle]
 pub unsafe extern "C" fn getResolution(mut h: H3Index) -> libc::c_int {
-    ((h & (15 as libc::c_ulonglong) << 52 as libc::c_int) >> 52 as libc::c_int)
-        as libc::c_int
+    ((h & (15 as libc::c_ulonglong) << 52 as libc::c_int) >> 52 as libc::c_int) as libc::c_int
 }
 #[no_mangle]
 pub unsafe extern "C" fn getBaseCellNumber(mut h: H3Index) -> libc::c_int {
@@ -681,8 +680,7 @@ pub unsafe extern "C" fn uncompactCellsSize(
 }
 #[no_mangle]
 pub unsafe extern "C" fn isResClassIII(mut h: H3Index) -> libc::c_int {
-    ((h & (15 as libc::c_ulonglong) << 52 as libc::c_int) >> 52 as libc::c_int)
-        as libc::c_int
+    ((h & (15 as libc::c_ulonglong) << 52 as libc::c_int) >> 52 as libc::c_int) as libc::c_int
         % 2 as libc::c_int
 }
 #[no_mangle]
@@ -704,8 +702,8 @@ pub unsafe extern "C" fn _h3LeadingNonZeroDigit(mut h: H3Index) -> Direction {
             as Direction as u64
             != 0
         {
-            return (h >> ((15 as libc::c_int - r) * 3 as libc::c_int) & 7 as libc::c_int as uint64_t)
-                as Direction;
+            return (h >> ((15 as libc::c_int - r) * 3 as libc::c_int)
+                & 7 as libc::c_int as uint64_t) as Direction;
         }
         r += 1;
     }
@@ -722,7 +720,8 @@ pub unsafe extern "C" fn _h3RotatePent60ccw(mut h: H3Index) -> H3Index {
             | (_rotate60ccw(
                 (h >> ((15 as libc::c_int - r) * 3 as libc::c_int) & 7 as libc::c_int as uint64_t)
                     as Direction,
-            ) as uint64_t) << ((15 as libc::c_int - r) * 3 as libc::c_int);
+            ) as uint64_t)
+                << ((15 as libc::c_int - r) * 3 as libc::c_int);
         if foundFirstNonZeroDigit == 0
             && (h >> ((15 as libc::c_int - r) * 3 as libc::c_int) & 7 as libc::c_int as uint64_t)
                 as Direction as libc::c_uint
@@ -750,7 +749,8 @@ pub unsafe extern "C" fn _h3RotatePent60cw(mut h: H3Index) -> H3Index {
             | (_rotate60cw(
                 (h >> ((15 as libc::c_int - r) * 3 as libc::c_int) & 7 as libc::c_int as uint64_t)
                     as Direction,
-            ) as uint64_t) << ((15 as libc::c_int - r) * 3 as libc::c_int);
+            ) as uint64_t)
+                << ((15 as libc::c_int - r) * 3 as libc::c_int);
         if foundFirstNonZeroDigit == 0
             && (h >> ((15 as libc::c_int - r) * 3 as libc::c_int) & 7 as libc::c_int as uint64_t)
                 as Direction as libc::c_uint
@@ -791,7 +791,8 @@ pub unsafe extern "C" fn _h3Rotate60cw(mut h: H3Index) -> H3Index {
             | (_rotate60cw(
                 (h >> ((15 as libc::c_int - r) * 3 as libc::c_int) & 7 as libc::c_int as uint64_t)
                     as Direction,
-            ) as uint64_t) << ((15 as libc::c_int - r) * 3 as libc::c_int);
+            ) as uint64_t)
+                << ((15 as libc::c_int - r) * 3 as libc::c_int);
         r += 1;
     }
     h
@@ -830,10 +831,12 @@ pub unsafe extern "C" fn _faceIjkToH3(mut fijk: *const FaceIJK, mut res: libc::c
             _downAp7r(&mut lastCenter);
         }
         let mut diff: CoordIJK = CoordIJK { i: 0, j: 0, k: 0 };
-        _ijkSub(&mut lastIJK, &mut lastCenter, &mut diff);
+        _ijkSub(&lastIJK, &lastCenter, &mut diff);
         _ijkNormalize(&mut diff);
-        h = h & !((7 as libc::c_int as uint64_t) << ((15 as libc::c_int - (r + 1 as libc::c_int)) * 3 as libc::c_int))
-            | (_unitIjkToDigit(&mut diff) as uint64_t) << ((15 as libc::c_int - (r + 1 as libc::c_int)) * 3 as libc::c_int);
+        h = h & !((7 as libc::c_int as uint64_t)
+            << ((15 as libc::c_int - (r + 1 as libc::c_int)) * 3 as libc::c_int))
+            | (_unitIjkToDigit(&diff) as uint64_t)
+                << ((15 as libc::c_int - (r + 1 as libc::c_int)) * 3 as libc::c_int);
         r -= 1;
     }
     if fijkBC.coord.i > 2 as libc::c_int
@@ -842,10 +845,10 @@ pub unsafe extern "C" fn _faceIjkToH3(mut fijk: *const FaceIJK, mut res: libc::c
     {
         return 0 as libc::c_int as H3Index;
     }
-    let mut baseCell: libc::c_int = _faceIjkToBaseCell(&mut fijkBC);
+    let mut baseCell: libc::c_int = _faceIjkToBaseCell(&fijkBC);
     h = h & !((127 as libc::c_int as uint64_t) << 45 as libc::c_int)
         | (baseCell as uint64_t) << 45 as libc::c_int;
-    let mut numRots: libc::c_int = _faceIjkToBaseCellCCWrot60(&mut fijkBC);
+    let mut numRots: libc::c_int = _faceIjkToBaseCellCCWrot60(&fijkBC);
     if _isBaseCellPentagon(baseCell) != 0 {
         if _h3LeadingNonZeroDigit(h) as libc::c_uint == K_AXES_DIGIT as libc::c_int as libc::c_uint
         {
@@ -908,7 +911,7 @@ pub unsafe extern "C" fn latLngToCell(
         coord: CoordIJK { i: 0, j: 0, k: 0 },
     };
     _geoToFaceIjk(g, res, &mut fijk);
-    *out = _faceIjkToH3(&mut fijk, res);
+    *out = _faceIjkToH3(&fijk, res);
     if *out != 0 {
         E_SUCCESS as libc::c_int as H3Error
     } else {
@@ -1015,7 +1018,7 @@ pub unsafe extern "C" fn cellToLatLng(mut h3: H3Index, mut g: *mut LatLng) -> H3
         return e;
     }
     _faceIjkToGeo(
-        &mut fijk,
+        &fijk,
         ((h3 & (15 as libc::c_ulonglong) << 52 as libc::c_int) >> 52 as libc::c_int) as libc::c_int,
         g,
     );
@@ -1033,7 +1036,7 @@ pub unsafe extern "C" fn cellToBoundary(mut h3: H3Index, mut cb: *mut CellBounda
     }
     if isPentagon(h3) != 0 {
         _faceIjkPentToCellBoundary(
-            &mut fijk,
+            &fijk,
             ((h3 & (15 as libc::c_ulonglong) << 52 as libc::c_int) >> 52 as libc::c_int)
                 as libc::c_int,
             0 as libc::c_int,
@@ -1042,7 +1045,7 @@ pub unsafe extern "C" fn cellToBoundary(mut h3: H3Index, mut cb: *mut CellBounda
         );
     } else {
         _faceIjkToCellBoundary(
-            &mut fijk,
+            &fijk,
             ((h3 & (15 as libc::c_ulonglong) << 52 as libc::c_int) >> 52 as libc::c_int)
                 as libc::c_int,
             0 as libc::c_int,

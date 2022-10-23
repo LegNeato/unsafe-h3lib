@@ -132,8 +132,8 @@ pub unsafe extern "C" fn addVertexNode(
         *fresh0 = node;
     } else {
         loop {
-            if geoAlmostEqual(&mut (*currentNode).from, fromVtx) as libc::c_int != 0
-                && geoAlmostEqual(&mut (*currentNode).to, toVtx) as libc::c_int != 0
+            if geoAlmostEqual(&(*currentNode).from, fromVtx) as libc::c_int != 0
+                && geoAlmostEqual(&(*currentNode).to, toVtx) as libc::c_int != 0
             {
                 test_prefix_free(node as *mut libc::c_void);
                 return currentNode;
@@ -155,7 +155,7 @@ pub unsafe extern "C" fn removeVertexNode(
     mut graph: *mut VertexGraph,
     mut node: *mut VertexNode,
 ) -> libc::c_int {
-    let mut index: uint32_t = _hashVertex(&mut (*node).from, (*graph).res, (*graph).numBuckets);
+    let mut index: uint32_t = _hashVertex(&(*node).from, (*graph).res, (*graph).numBuckets);
     let mut currentNode: *mut VertexNode = *((*graph).buckets).offset(index as isize);
     let mut found: libc::c_int = 0 as libc::c_int;
     if !currentNode.is_null() {
@@ -189,8 +189,8 @@ pub unsafe extern "C" fn findNodeForEdge(
     let mut node: *mut VertexNode = *((*graph).buckets).offset(index as isize);
     if !node.is_null() {
         loop {
-            if geoAlmostEqual(&mut (*node).from, fromVtx) as libc::c_int != 0
-                && (toVtx.is_null() || geoAlmostEqual(&mut (*node).to, toVtx) as libc::c_int != 0)
+            if geoAlmostEqual(&(*node).from, fromVtx) as libc::c_int != 0
+                && (toVtx.is_null() || geoAlmostEqual(&(*node).to, toVtx) as libc::c_int != 0)
             {
                 return node;
             }
