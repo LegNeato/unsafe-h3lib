@@ -1,6 +1,7 @@
+extern crate unsafe_h3lib_applib;
 use ::libc;
 extern "C" {
-    pub type __sFILEX;
+
     fn exit(_: libc::c_int) -> !;
     fn calloc(_: libc::c_ulong, _: libc::c_ulong) -> *mut libc::c_void;
     fn free(_: *mut libc::c_void);
@@ -65,7 +66,7 @@ pub struct __sFILE {
         unsafe extern "C" fn(*mut libc::c_void, *const libc::c_char, libc::c_int) -> libc::c_int,
     >,
     pub _ub: __sbuf,
-    pub _extra: *mut __sFILEX,
+    pub _extra: *mut libc::c_void,
     pub _ur: libc::c_int,
     pub _ubuf: [libc::c_uchar; 3],
     pub _nbuf: [libc::c_uchar; 1],
@@ -85,8 +86,7 @@ unsafe extern "C" fn assertNoDuplicates(mut cells: *mut H3Index, mut n: libc::c_
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"src/apps/testapps/testCellToChildren.c\0" as *const u8
-                        as *const libc::c_char,
+                    b"src/apps/testapps/testCellToChildren.c\0" as *const u8 as *const libc::c_char,
                     30 as libc::c_int,
                     b"H3_EXPORT(isValidCell)(cells[i])\0" as *const u8 as *const libc::c_char,
                     b"must be valid H3 cell\0" as *const u8 as *const libc::c_char,
@@ -104,8 +104,8 @@ unsafe extern "C" fn assertNoDuplicates(mut cells: *mut H3Index, mut n: libc::c_
                             as *const libc::c_char,
                         currentSuiteName,
                         currentTestName,
-                        b"src/apps/testapps/testCellToChildren.c\0"
-                            as *const u8 as *const libc::c_char,
+                        b"src/apps/testapps/testCellToChildren.c\0" as *const u8
+                            as *const libc::c_char,
                         32 as libc::c_int,
                         b"cells[i] != cells[j]\0" as *const u8 as *const libc::c_char,
                         b"can't have duplicate cells in set\0" as *const u8 as *const libc::c_char,
@@ -147,8 +147,7 @@ unsafe extern "C" fn assertSubset(
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"src/apps/testapps/testCellToChildren.c\0" as *const u8
-                        as *const libc::c_char,
+                    b"src/apps/testapps/testCellToChildren.c\0" as *const u8 as *const libc::c_char,
                     51 as libc::c_int,
                     b"present\0" as *const u8 as *const libc::c_char,
                     b"children must match\0" as *const u8 as *const libc::c_char,
@@ -185,8 +184,7 @@ unsafe extern "C" fn checkChildren(
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToChildren.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToChildren.c\0" as *const u8 as *const libc::c_char,
             71 as libc::c_int,
             b"numChildrenError == expectedError\0" as *const u8 as *const libc::c_char,
             b"Expected error code\0" as *const u8 as *const libc::c_char,
@@ -208,8 +206,7 @@ unsafe extern "C" fn checkChildren(
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToChildren.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToChildren.c\0" as *const u8 as *const libc::c_char,
             76 as libc::c_int,
             b"!(cellToChildren(h, res, children))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,

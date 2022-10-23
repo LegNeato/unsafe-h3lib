@@ -1,6 +1,6 @@
 use ::libc;
 extern "C" {
-    pub type __sFILEX;
+    
     static mut __stdinp: *mut FILE;
     static mut __stderrp: *mut FILE;
     fn feof(_: *mut FILE) -> libc::c_int;
@@ -65,7 +65,7 @@ pub struct __sFILE {
         unsafe extern "C" fn(*mut libc::c_void, *const libc::c_char, libc::c_int) -> libc::c_int,
     >,
     pub _ub: __sbuf,
-    pub _extra: *mut __sFILEX,
+    pub _extra: *mut libc::c_void,
     pub _ur: libc::c_int,
     pub _ubuf: [libc::c_uchar; 3],
     pub _nbuf: [libc::c_uchar; 1],

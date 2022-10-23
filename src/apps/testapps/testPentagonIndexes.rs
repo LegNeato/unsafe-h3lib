@@ -1,6 +1,9 @@
+extern crate unsafe_h3lib;
+extern crate unsafe_h3lib_applib;
+extern crate unsafe_h3lib_testapps_lib;
 use ::libc;
 extern "C" {
-    pub type __sFILEX;
+
     fn exit(_: libc::c_int) -> !;
     fn pentagonCount() -> libc::c_int;
     fn getPentagons(res: libc::c_int, out: *mut H3Index) -> H3Error;
@@ -64,7 +67,7 @@ pub struct __sFILE {
         unsafe extern "C" fn(*mut libc::c_void, *const libc::c_char, libc::c_int) -> libc::c_int,
     >,
     pub _ub: __sbuf,
-    pub _extra: *mut __sFILEX,
+    pub _extra: *mut libc::c_void,
     pub _ur: libc::c_int,
     pub _ubuf: [libc::c_uchar; 3],
     pub _nbuf: [libc::c_uchar; 1],
@@ -102,8 +105,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"src/apps/testapps/testPentagonIndexes.c\0" as *const u8
-                    as *const libc::c_char,
+                b"src/apps/testapps/testPentagonIndexes.c\0" as *const u8 as *const libc::c_char,
                 30 as libc::c_int,
                 b"!(getPentagons(res, h3Indexes))\0" as *const u8 as *const libc::c_char,
                 b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -125,8 +127,8 @@ unsafe extern "C" fn runTests() {
                             as *const libc::c_char,
                         currentSuiteName,
                         currentTestName,
-                        b"src/apps/testapps/testPentagonIndexes.c\0"
-                            as *const u8 as *const libc::c_char,
+                        b"src/apps/testapps/testPentagonIndexes.c\0" as *const u8
+                            as *const libc::c_char,
                         39 as libc::c_int,
                         b"H3_EXPORT(isValidCell(h3Index))\0" as *const u8 as *const libc::c_char,
                         b"index should be valid\0" as *const u8 as *const libc::c_char,
@@ -142,8 +144,8 @@ unsafe extern "C" fn runTests() {
                             as *const libc::c_char,
                         currentSuiteName,
                         currentTestName,
-                        b"src/apps/testapps/testPentagonIndexes.c\0"
-                            as *const u8 as *const libc::c_char,
+                        b"src/apps/testapps/testPentagonIndexes.c\0" as *const u8
+                            as *const libc::c_char,
                         41 as libc::c_int,
                         b"H3_EXPORT(isPentagon(h3Index))\0" as *const u8 as *const libc::c_char,
                         b"index should be pentagon\0" as *const u8 as *const libc::c_char,
@@ -159,8 +161,8 @@ unsafe extern "C" fn runTests() {
                             as *const libc::c_char,
                         currentSuiteName,
                         currentTestName,
-                        b"src/apps/testapps/testPentagonIndexes.c\0"
-                            as *const u8 as *const libc::c_char,
+                        b"src/apps/testapps/testPentagonIndexes.c\0" as *const u8
+                            as *const libc::c_char,
                         43 as libc::c_int,
                         b"H3_EXPORT(getResolution(h3Index)) == res\0" as *const u8
                             as *const libc::c_char,
@@ -181,8 +183,7 @@ unsafe extern "C" fn runTests() {
                                     as *const libc::c_char,
                                 currentSuiteName,
                                 currentTestName,
-                                b"src/apps/testapps/testPentagonIndexes.c\0"
-                                    as *const u8
+                                b"src/apps/testapps/testPentagonIndexes.c\0" as *const u8
                                     as *const libc::c_char,
                                 48 as libc::c_int,
                                 b"false\0" as *const u8 as *const libc::c_char,
@@ -205,8 +206,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"src/apps/testapps/testPentagonIndexes.c\0" as *const u8
-                    as *const libc::c_char,
+                b"src/apps/testapps/testPentagonIndexes.c\0" as *const u8 as *const libc::c_char,
                 55 as libc::c_int,
                 b"numFound == expectedCount\0" as *const u8 as *const libc::c_char,
                 b"there should be exactly 12 pentagons\0" as *const u8 as *const libc::c_char,
@@ -244,8 +244,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testPentagonIndexes.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testPentagonIndexes.c\0" as *const u8 as *const libc::c_char,
             62 as libc::c_int,
             b"H3_EXPORT(getPentagons)(16, h3Indexes) == E_RES_DOMAIN\0" as *const u8
                 as *const libc::c_char,
@@ -263,8 +262,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testPentagonIndexes.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testPentagonIndexes.c\0" as *const u8 as *const libc::c_char,
             64 as libc::c_int,
             b"H3_EXPORT(getPentagons)(100, h3Indexes) == E_RES_DOMAIN\0" as *const u8
                 as *const libc::c_char,
@@ -282,8 +280,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testPentagonIndexes.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testPentagonIndexes.c\0" as *const u8 as *const libc::c_char,
             66 as libc::c_int,
             b"H3_EXPORT(getPentagons)(-1, h3Indexes) == E_RES_DOMAIN\0" as *const u8
                 as *const libc::c_char,
@@ -300,8 +297,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testPentagonIndexes.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testPentagonIndexes.c\0" as *const u8 as *const libc::c_char,
             70 as libc::c_int,
             b"!H3_EXPORT(isPentagon)(0)\0" as *const u8 as *const libc::c_char,
             b"0 is not a pentagon\0" as *const u8 as *const libc::c_char,
@@ -316,8 +312,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testPentagonIndexes.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testPentagonIndexes.c\0" as *const u8 as *const libc::c_char,
             72 as libc::c_int,
             b"!H3_EXPORT(isPentagon)(0x7fffffffffffffff)\0" as *const u8 as *const libc::c_char,
             b"all but high bit is not a pentagon\0" as *const u8 as *const libc::c_char,

@@ -1,6 +1,7 @@
+extern crate unsafe_h3lib_applib;
 use ::libc;
 extern "C" {
-    pub type __sFILEX;
+
     fn exit(_: libc::c_int) -> !;
     fn latLngToCell(g: *const LatLng, res: libc::c_int, out: *mut H3Index) -> H3Error;
     fn cellToLatLng(h3: H3Index, g: *mut LatLng) -> H3Error;
@@ -71,7 +72,7 @@ pub struct __sFILE {
         unsafe extern "C" fn(*mut libc::c_void, *const libc::c_char, libc::c_int) -> libc::c_int,
     >,
     pub _ub: __sbuf,
-    pub _extra: *mut __sFILEX,
+    pub _extra: *mut libc::c_void,
     pub _ur: libc::c_int,
     pub _ubuf: [libc::c_uchar; 3],
     pub _nbuf: [libc::c_uchar; 1],
@@ -115,8 +116,8 @@ unsafe extern "C" fn runTests() {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"src/apps/testapps/testCellToCenterChild.c\0"
-                        as *const u8 as *const libc::c_char,
+                    b"src/apps/testapps/testCellToCenterChild.c\0" as *const u8
+                        as *const libc::c_char,
                     35 as libc::c_int,
                     b"!(latLngToCell(&baseCentroid, res, &h3Index))\0" as *const u8
                         as *const libc::c_char,
@@ -135,8 +136,8 @@ unsafe extern "C" fn runTests() {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"src/apps/testapps/testCellToCenterChild.c\0"
-                        as *const u8 as *const libc::c_char,
+                    b"src/apps/testapps/testCellToCenterChild.c\0" as *const u8
+                        as *const libc::c_char,
                     40 as libc::c_int,
                     b"!(latLngToCell(&centroid, childRes, &geoChild))\0" as *const u8
                         as *const libc::c_char,
@@ -154,8 +155,8 @@ unsafe extern "C" fn runTests() {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"src/apps/testapps/testCellToCenterChild.c\0"
-                        as *const u8 as *const libc::c_char,
+                    b"src/apps/testapps/testCellToCenterChild.c\0" as *const u8
+                        as *const libc::c_char,
                     43 as libc::c_int,
                     b"!(cellToCenterChild(h3Index, childRes, &centerChild))\0" as *const u8
                         as *const libc::c_char,
@@ -172,8 +173,8 @@ unsafe extern "C" fn runTests() {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"src/apps/testapps/testCellToCenterChild.c\0"
-                        as *const u8 as *const libc::c_char,
+                    b"src/apps/testapps/testCellToCenterChild.c\0" as *const u8
+                        as *const libc::c_char,
                     48 as libc::c_int,
                     b"centerChild == geoChild\0" as *const u8 as *const libc::c_char,
                     b"center child should be same as indexed centroid at child resolution\0"
@@ -190,8 +191,8 @@ unsafe extern "C" fn runTests() {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"src/apps/testapps/testCellToCenterChild.c\0"
-                        as *const u8 as *const libc::c_char,
+                    b"src/apps/testapps/testCellToCenterChild.c\0" as *const u8
+                        as *const libc::c_char,
                     50 as libc::c_int,
                     b"H3_EXPORT(getResolution)(centerChild) == childRes\0" as *const u8
                         as *const libc::c_char,
@@ -210,8 +211,8 @@ unsafe extern "C" fn runTests() {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"src/apps/testapps/testCellToCenterChild.c\0"
-                        as *const u8 as *const libc::c_char,
+                    b"src/apps/testapps/testCellToCenterChild.c\0" as *const u8
+                        as *const libc::c_char,
                     53 as libc::c_int,
                     b"!(cellToParent(centerChild, res, &parent))\0" as *const u8
                         as *const libc::c_char,
@@ -228,8 +229,8 @@ unsafe extern "C" fn runTests() {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"src/apps/testapps/testCellToCenterChild.c\0"
-                        as *const u8 as *const libc::c_char,
+                    b"src/apps/testapps/testCellToCenterChild.c\0" as *const u8
+                        as *const libc::c_char,
                     56 as libc::c_int,
                     b"parent == h3Index\0" as *const u8 as *const libc::c_char,
                     b"parent at original resolution should be initial index\0" as *const u8
@@ -252,8 +253,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToCenterChild.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToCenterChild.c\0" as *const u8 as *const libc::c_char,
             64 as libc::c_int,
             b"!(cellToCenterChild(baseHex, res, &child))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -268,8 +268,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToCenterChild.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToCenterChild.c\0" as *const u8 as *const libc::c_char,
             66 as libc::c_int,
             b"child == baseHex\0" as *const u8 as *const libc::c_char,
             b"center child at same resolution should return self\0" as *const u8
@@ -290,8 +289,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToCenterChild.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToCenterChild.c\0" as *const u8 as *const libc::c_char,
             74 as libc::c_int,
             b"H3_EXPORT(cellToCenterChild)(baseHex, res - 1, &child) == E_RES_DOMAIN\0" as *const u8
                 as *const libc::c_char,
@@ -309,8 +307,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToCenterChild.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToCenterChild.c\0" as *const u8 as *const libc::c_char,
             77 as libc::c_int,
             b"H3_EXPORT(cellToCenterChild)(baseHex, -1, &child) == E_RES_DOMAIN\0" as *const u8
                 as *const libc::c_char,
@@ -328,8 +325,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToCenterChild.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToCenterChild.c\0" as *const u8 as *const libc::c_char,
             80 as libc::c_int,
             b"H3_EXPORT(cellToCenterChild)(baseHex, MAX_H3_RES + 1, &child) == E_RES_DOMAIN\0"
                 as *const u8 as *const libc::c_char,

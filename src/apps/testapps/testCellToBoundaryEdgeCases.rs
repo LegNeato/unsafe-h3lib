@@ -1,6 +1,7 @@
+extern crate unsafe_h3lib_applib;
 use ::libc;
 extern "C" {
-    pub type __sFILEX;
+
     fn exit(_: libc::c_int) -> !;
     fn latLngToCell(g: *const LatLng, res: libc::c_int, out: *mut H3Index) -> H3Error;
     fn cellToBoundary(h3: H3Index, gp: *mut CellBoundary) -> H3Error;
@@ -45,7 +46,7 @@ pub struct __sFILE {
         unsafe extern "C" fn(*mut libc::c_void, *const libc::c_char, libc::c_int) -> libc::c_int,
     >,
     pub _ub: __sbuf,
-    pub _extra: *mut __sFILEX,
+    pub _extra: *mut libc::c_void,
     pub _ur: libc::c_int,
     pub _ubuf: [libc::c_uchar; 3],
     pub _nbuf: [libc::c_uchar; 1],
@@ -151,8 +152,8 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"src/apps/testapps/testCellToBoundaryEdgeCases.c\0"
-                    as *const u8 as *const libc::c_char,
+                b"src/apps/testapps/testCellToBoundaryEdgeCases.c\0" as *const u8
+                    as *const libc::c_char,
                 54 as libc::c_int,
                 b"pointInsideGeoLoop(&geoloop, &bbox, &point)\0" as *const u8
                     as *const libc::c_char,
@@ -169,8 +170,8 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"src/apps/testapps/testCellToBoundaryEdgeCases.c\0"
-                    as *const u8 as *const libc::c_char,
+                b"src/apps/testapps/testCellToBoundaryEdgeCases.c\0" as *const u8
+                    as *const libc::c_char,
                 57 as libc::c_int,
                 b"!pointInsideGeoLoop(&geoloop, &bbox, &point)\0" as *const u8
                     as *const libc::c_char,

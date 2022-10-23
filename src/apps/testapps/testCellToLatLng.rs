@@ -1,8 +1,12 @@
+extern crate unsafe_h3lib;
+extern crate unsafe_h3lib_applib;
+extern crate unsafe_h3lib_testapps_lib;
+
 use ::libc;
 use ::num_traits;
 use num_traits::ToPrimitive;
 extern "C" {
-    pub type __sFILEX;
+
     fn fgets(_: *mut libc::c_char, _: libc::c_int, _: *mut FILE) -> *mut libc::c_char;
     static mut __stdinp: *mut FILE;
     static mut __stderrp: *mut FILE;
@@ -55,7 +59,7 @@ pub struct __sFILE {
         unsafe extern "C" fn(*mut libc::c_void, *const libc::c_char, libc::c_int) -> libc::c_int,
     >,
     pub _ub: __sbuf,
-    pub _extra: *mut __sFILEX,
+    pub _extra: *mut libc::c_void,
     pub _ur: libc::c_int,
     pub _ubuf: [libc::c_uchar; 3],
     pub _nbuf: [libc::c_uchar; 1],
@@ -87,8 +91,7 @@ pub unsafe extern "C" fn assertExpected(mut h1: H3Index, mut g1: *const LatLng) 
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToLatLng.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToLatLng.c\0" as *const u8 as *const libc::c_char,
             43 as libc::c_int,
             b"geoAlmostEqualThreshold(&g2, g1, epsilon)\0" as *const u8 as *const libc::c_char,
             b"got expected cellToLatLng output\0" as *const u8 as *const libc::c_char,
@@ -105,8 +108,7 @@ pub unsafe extern "C" fn assertExpected(mut h1: H3Index, mut g1: *const LatLng) 
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToLatLng.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToLatLng.c\0" as *const u8 as *const libc::c_char,
             48 as libc::c_int,
             b"!(latLngToCell(&g2, res, &h2))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -121,8 +123,7 @@ pub unsafe extern "C" fn assertExpected(mut h1: H3Index, mut g1: *const LatLng) 
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToLatLng.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToLatLng.c\0" as *const u8 as *const libc::c_char,
             49 as libc::c_int,
             b"h1 == h2\0" as *const u8 as *const libc::c_char,
             b"got expected latLngToCell output\0" as *const u8 as *const libc::c_char,
@@ -172,8 +173,7 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"src/apps/testapps/testCellToLatLng.c\0" as *const u8
-                    as *const libc::c_char,
+                b"src/apps/testapps/testCellToLatLng.c\0" as *const u8 as *const libc::c_char,
                 76 as libc::c_int,
                 b"!(stringToH3(h3Str, &h3))\0" as *const u8 as *const libc::c_char,
                 b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,

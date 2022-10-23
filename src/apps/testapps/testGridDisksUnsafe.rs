@@ -1,6 +1,9 @@
+extern crate unsafe_h3lib;
+extern crate unsafe_h3lib_applib;
+extern crate unsafe_h3lib_testapps_lib;
 use ::libc;
 extern "C" {
-    pub type __sFILEX;
+
     fn exit(_: libc::c_int) -> !;
     fn calloc(_: libc::c_ulong, _: libc::c_ulong) -> *mut libc::c_void;
     fn free(_: *mut libc::c_void);
@@ -49,7 +52,7 @@ pub struct __sFILE {
         unsafe extern "C" fn(*mut libc::c_void, *const libc::c_char, libc::c_int) -> libc::c_int,
     >,
     pub _ub: __sbuf,
-    pub _extra: *mut __sFILEX,
+    pub _extra: *mut libc::c_void,
     pub _ur: libc::c_int,
     pub _ubuf: [libc::c_uchar; 3],
     pub _nbuf: [libc::c_uchar; 1],
@@ -98,8 +101,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGridDisksUnsafe.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGridDisksUnsafe.c\0" as *const u8 as *const libc::c_char,
             25 as libc::c_int,
             b"!(latLngToCell(&sf, 9, &sfHex))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -135,8 +137,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGridDisksUnsafe.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGridDisksUnsafe.c\0" as *const u8 as *const libc::c_char,
             34 as libc::c_int,
             b"!(gridDisksUnsafe(sfHexPtr, 1, 0, k0))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -151,8 +152,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGridDisksUnsafe.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGridDisksUnsafe.c\0" as *const u8 as *const libc::c_char,
             36 as libc::c_int,
             b"k0[0] == sfHex\0" as *const u8 as *const libc::c_char,
             b"generated identity k-ring\0" as *const u8 as *const libc::c_char,
@@ -218,8 +218,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGridDisksUnsafe.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGridDisksUnsafe.c\0" as *const u8 as *const libc::c_char,
             44 as libc::c_int,
             b"!(gridDisksUnsafe(k1, 6, 1, allKrings))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -236,8 +235,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"src/apps/testapps/testGridDisksUnsafe.c\0" as *const u8
-                    as *const libc::c_char,
+                b"src/apps/testapps/testGridDisksUnsafe.c\0" as *const u8 as *const libc::c_char,
                 47 as libc::c_int,
                 b"allKrings[i] != 0\0" as *const u8 as *const libc::c_char,
                 b"index is populated\0" as *const u8 as *const libc::c_char,
@@ -287,8 +285,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGridDisksUnsafe.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGridDisksUnsafe.c\0" as *const u8 as *const libc::c_char,
             58 as libc::c_int,
             b"!(gridDisksUnsafe(k1, 6, 2, allKrings2))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -305,8 +302,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"src/apps/testapps/testGridDisksUnsafe.c\0" as *const u8
-                    as *const libc::c_char,
+                b"src/apps/testapps/testGridDisksUnsafe.c\0" as *const u8 as *const libc::c_char,
                 61 as libc::c_int,
                 b"allKrings2[i] != 0\0" as *const u8 as *const libc::c_char,
                 b"index is populated\0" as *const u8 as *const libc::c_char,
@@ -357,8 +353,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGridDisksUnsafe.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGridDisksUnsafe.c\0" as *const u8 as *const libc::c_char,
             76 as libc::c_int,
             b"H3_EXPORT(gridDisksUnsafe)(withPentagon, 2, 1, allKrings) == E_PENTAGON\0"
                 as *const u8 as *const libc::c_char,
@@ -382,8 +377,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGridDisksUnsafe.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGridDisksUnsafe.c\0" as *const u8 as *const libc::c_char,
             82 as libc::c_int,
             b"H3_EXPORT(gridDisksUnsafe)(k1, 6, -1, NULL) == E_DOMAIN\0" as *const u8
                 as *const libc::c_char,

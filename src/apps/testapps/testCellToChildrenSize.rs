@@ -1,6 +1,7 @@
+extern crate unsafe_h3lib_applib;
 use ::libc;
 extern "C" {
-    pub type __sFILEX;
+
     fn exit(_: libc::c_int) -> !;
     fn cellToChildrenSize(h: H3Index, childRes: libc::c_int, out: *mut int64_t) -> H3Error;
     static mut __stderrp: *mut FILE;
@@ -61,7 +62,7 @@ pub struct __sFILE {
         unsafe extern "C" fn(*mut libc::c_void, *const libc::c_char, libc::c_int) -> libc::c_int,
     >,
     pub _ub: __sbuf,
-    pub _extra: *mut __sFILEX,
+    pub _extra: *mut libc::c_void,
     pub _ur: libc::c_int,
     pub _ubuf: [libc::c_uchar; 3],
     pub _nbuf: [libc::c_uchar; 1],
@@ -82,8 +83,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToChildrenSize.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToChildrenSize.c\0" as *const u8 as *const libc::c_char,
             28 as libc::c_int,
             b"H3_EXPORT(cellToChildrenSize)(h, 3, &sz) == E_RES_DOMAIN\0" as *const u8
                 as *const libc::c_char,
@@ -99,8 +99,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToChildrenSize.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToChildrenSize.c\0" as *const u8 as *const libc::c_char,
             29 as libc::c_int,
             b"!(cellToChildrenSize(h, 7, &sz))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -115,8 +114,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToChildrenSize.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToChildrenSize.c\0" as *const u8 as *const libc::c_char,
             30 as libc::c_int,
             b"sz == 1\0" as *const u8 as *const libc::c_char,
             b"got expected size for same res\0" as *const u8 as *const libc::c_char,
@@ -131,8 +129,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToChildrenSize.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToChildrenSize.c\0" as *const u8 as *const libc::c_char,
             31 as libc::c_int,
             b"!(cellToChildrenSize(h, 8, &sz))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -147,8 +144,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToChildrenSize.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToChildrenSize.c\0" as *const u8 as *const libc::c_char,
             32 as libc::c_int,
             b"sz == 7\0" as *const u8 as *const libc::c_char,
             b"got expected size for child res\0" as *const u8 as *const libc::c_char,
@@ -163,8 +159,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToChildrenSize.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToChildrenSize.c\0" as *const u8 as *const libc::c_char,
             33 as libc::c_int,
             b"!(cellToChildrenSize(h, 9, &sz))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -179,8 +174,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToChildrenSize.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToChildrenSize.c\0" as *const u8 as *const libc::c_char,
             34 as libc::c_int,
             b"sz == 7 * 7\0" as *const u8 as *const libc::c_char,
             b"got expected size for grandchild res\0" as *const u8 as *const libc::c_char,
@@ -200,8 +194,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToChildrenSize.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToChildrenSize.c\0" as *const u8 as *const libc::c_char,
             42 as libc::c_int,
             b"H3_EXPORT(cellToChildrenSize)(h, 3, &sz) == E_RES_DOMAIN\0" as *const u8
                 as *const libc::c_char,
@@ -217,8 +210,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToChildrenSize.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToChildrenSize.c\0" as *const u8 as *const libc::c_char,
             43 as libc::c_int,
             b"!(cellToChildrenSize(h, 7, &sz))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -233,8 +225,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToChildrenSize.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToChildrenSize.c\0" as *const u8 as *const libc::c_char,
             44 as libc::c_int,
             b"sz == 1\0" as *const u8 as *const libc::c_char,
             b"got expected size for same res\0" as *const u8 as *const libc::c_char,
@@ -249,8 +240,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToChildrenSize.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToChildrenSize.c\0" as *const u8 as *const libc::c_char,
             45 as libc::c_int,
             b"!(cellToChildrenSize(h, 8, &sz))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -265,8 +255,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToChildrenSize.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToChildrenSize.c\0" as *const u8 as *const libc::c_char,
             46 as libc::c_int,
             b"sz == 6\0" as *const u8 as *const libc::c_char,
             b"got expected size for child res\0" as *const u8 as *const libc::c_char,
@@ -281,8 +270,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToChildrenSize.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToChildrenSize.c\0" as *const u8 as *const libc::c_char,
             47 as libc::c_int,
             b"!(cellToChildrenSize(h, 9, &sz))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -300,8 +288,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToChildrenSize.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToChildrenSize.c\0" as *const u8 as *const libc::c_char,
             49 as libc::c_int,
             b"sz == (5 * 7) + (1 * 6)\0" as *const u8 as *const libc::c_char,
             b"got expected size for grandchild res\0" as *const u8 as *const libc::c_char,
@@ -320,8 +307,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToChildrenSize.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToChildrenSize.c\0" as *const u8 as *const libc::c_char,
             56 as libc::c_int,
             b"!(cellToChildrenSize(h, 15, &out))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -336,8 +322,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToChildrenSize.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToChildrenSize.c\0" as *const u8 as *const libc::c_char,
             59 as libc::c_int,
             b"out == expected\0" as *const u8 as *const libc::c_char,
             b"got right size for children 15 levels below\0" as *const u8 as *const libc::c_char,
@@ -356,8 +341,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToChildrenSize.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToChildrenSize.c\0" as *const u8 as *const libc::c_char,
             66 as libc::c_int,
             b"!(cellToChildrenSize(h, 15, &out))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -372,8 +356,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToChildrenSize.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToChildrenSize.c\0" as *const u8 as *const libc::c_char,
             69 as libc::c_int,
             b"out == expected\0" as *const u8 as *const libc::c_char,
             b"got right size for children 15 levels below\0" as *const u8 as *const libc::c_char,

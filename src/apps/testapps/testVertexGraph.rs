@@ -1,6 +1,9 @@
+extern crate unsafe_h3lib;
+extern crate unsafe_h3lib_applib;
+extern crate unsafe_h3lib_testapps_lib;
 use ::libc;
 extern "C" {
-    pub type __sFILEX;
+
     fn __assert_rtn(
         _: *const libc::c_char,
         _: *const libc::c_char,
@@ -65,7 +68,7 @@ pub struct __sFILE {
         unsafe extern "C" fn(*mut libc::c_void, *const libc::c_char, libc::c_int) -> libc::c_int,
     >,
     pub _ub: __sbuf,
-    pub _extra: *mut __sFILEX,
+    pub _extra: *mut libc::c_void,
     pub _ur: libc::c_int,
     pub _ubuf: [libc::c_uchar; 3],
     pub _nbuf: [libc::c_uchar; 1],
@@ -142,8 +145,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVertexGraph.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVertexGraph.c\0" as *const u8 as *const libc::c_char,
             46 as libc::c_int,
             b"graph.numBuckets == 10\0" as *const u8 as *const libc::c_char,
             b"numBuckets set\0" as *const u8 as *const libc::c_char,
@@ -158,8 +160,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVertexGraph.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVertexGraph.c\0" as *const u8 as *const libc::c_char,
             47 as libc::c_int,
             b"graph.size == 0\0" as *const u8 as *const libc::c_char,
             b"size set\0" as *const u8 as *const libc::c_char,
@@ -186,8 +187,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"src/apps/testapps/testVertexGraph.c\0" as *const u8
-                    as *const libc::c_char,
+                b"src/apps/testapps/testVertexGraph.c\0" as *const u8 as *const libc::c_char,
                 60 as libc::c_int,
                 b"!(latLngToCell(&center, res, &centerIndex))\0" as *const u8
                     as *const libc::c_char,
@@ -219,8 +219,7 @@ unsafe extern "C" fn runTests() {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"src/apps/testapps/testVertexGraph.c\0" as *const u8
-                        as *const libc::c_char,
+                    b"src/apps/testapps/testVertexGraph.c\0" as *const u8 as *const libc::c_char,
                     66 as libc::c_int,
                     b"hash1 != hash2\0" as *const u8 as *const libc::c_char,
                     b"Hashes must not be equal\0" as *const u8 as *const libc::c_char,
@@ -241,8 +240,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVertexGraph.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVertexGraph.c\0" as *const u8 as *const libc::c_char,
             74 as libc::c_int,
             b"_hashVertex(&vertex5, 5, numBuckets) < numBuckets\0" as *const u8
                 as *const libc::c_char,
@@ -258,8 +256,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVertexGraph.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVertexGraph.c\0" as *const u8 as *const libc::c_char,
             76 as libc::c_int,
             b"_hashVertex(&vertex6, 5, numBuckets) < numBuckets\0" as *const u8
                 as *const libc::c_char,
@@ -287,8 +284,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVertexGraph.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVertexGraph.c\0" as *const u8 as *const libc::c_char,
             88 as libc::c_int,
             b"node != NULL\0" as *const u8 as *const libc::c_char,
             b"Node found\0" as *const u8 as *const libc::c_char,
@@ -303,8 +299,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVertexGraph.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVertexGraph.c\0" as *const u8 as *const libc::c_char,
             89 as libc::c_int,
             b"node == addedNode\0" as *const u8 as *const libc::c_char,
             b"Right node found\0" as *const u8 as *const libc::c_char,
@@ -319,8 +314,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVertexGraph.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVertexGraph.c\0" as *const u8 as *const libc::c_char,
             90 as libc::c_int,
             b"graph.size == 1\0" as *const u8 as *const libc::c_char,
             b"Graph size incremented\0" as *const u8 as *const libc::c_char,
@@ -337,8 +331,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVertexGraph.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVertexGraph.c\0" as *const u8 as *const libc::c_char,
             95 as libc::c_int,
             b"node != NULL\0" as *const u8 as *const libc::c_char,
             b"Node found after hash collision\0" as *const u8 as *const libc::c_char,
@@ -353,8 +346,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVertexGraph.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVertexGraph.c\0" as *const u8 as *const libc::c_char,
             96 as libc::c_int,
             b"node == addedNode\0" as *const u8 as *const libc::c_char,
             b"Right node found\0" as *const u8 as *const libc::c_char,
@@ -369,8 +361,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVertexGraph.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVertexGraph.c\0" as *const u8 as *const libc::c_char,
             97 as libc::c_int,
             b"graph.size == 2\0" as *const u8 as *const libc::c_char,
             b"Graph size incremented\0" as *const u8 as *const libc::c_char,
@@ -387,8 +378,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVertexGraph.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVertexGraph.c\0" as *const u8 as *const libc::c_char,
             102 as libc::c_int,
             b"node != NULL\0" as *const u8 as *const libc::c_char,
             b"Node found after 2nd hash collision\0" as *const u8 as *const libc::c_char,
@@ -403,8 +393,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVertexGraph.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVertexGraph.c\0" as *const u8 as *const libc::c_char,
             103 as libc::c_int,
             b"node == addedNode\0" as *const u8 as *const libc::c_char,
             b"Right node found\0" as *const u8 as *const libc::c_char,
@@ -419,8 +408,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVertexGraph.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVertexGraph.c\0" as *const u8 as *const libc::c_char,
             104 as libc::c_int,
             b"graph.size == 3\0" as *const u8 as *const libc::c_char,
             b"Graph size incremented\0" as *const u8 as *const libc::c_char,
@@ -437,8 +425,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVertexGraph.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVertexGraph.c\0" as *const u8 as *const libc::c_char,
             110 as libc::c_int,
             b"node == findNodeForEdge(&graph, &vertex1, &vertex2)\0" as *const u8
                 as *const libc::c_char,
@@ -454,8 +441,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVertexGraph.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVertexGraph.c\0" as *const u8 as *const libc::c_char,
             111 as libc::c_int,
             b"node == addedNode\0" as *const u8 as *const libc::c_char,
             b"Old node returned\0" as *const u8 as *const libc::c_char,
@@ -470,8 +456,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVertexGraph.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVertexGraph.c\0" as *const u8 as *const libc::c_char,
             112 as libc::c_int,
             b"graph.size == 3\0" as *const u8 as *const libc::c_char,
             b"Graph size was not changed\0" as *const u8 as *const libc::c_char,
@@ -499,8 +484,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVertexGraph.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVertexGraph.c\0" as *const u8 as *const libc::c_char,
             126 as libc::c_int,
             b"node != NULL\0" as *const u8 as *const libc::c_char,
             b"Node found\0" as *const u8 as *const libc::c_char,
@@ -515,8 +499,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVertexGraph.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVertexGraph.c\0" as *const u8 as *const libc::c_char,
             127 as libc::c_int,
             b"node == addedNode\0" as *const u8 as *const libc::c_char,
             b"Right node found\0" as *const u8 as *const libc::c_char,
@@ -531,8 +514,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVertexGraph.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVertexGraph.c\0" as *const u8 as *const libc::c_char,
             128 as libc::c_int,
             b"graph.size == 1\0" as *const u8 as *const libc::c_char,
             b"Graph size incremented\0" as *const u8 as *const libc::c_char,
@@ -548,8 +530,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVertexGraph.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVertexGraph.c\0" as *const u8 as *const libc::c_char,
             132 as libc::c_int,
             b"node == addedNode\0" as *const u8 as *const libc::c_char,
             b"addVertexNode returned the original node\0" as *const u8 as *const libc::c_char,
@@ -564,8 +545,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVertexGraph.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVertexGraph.c\0" as *const u8 as *const libc::c_char,
             133 as libc::c_int,
             b"graph.size == 1\0" as *const u8 as *const libc::c_char,
             b"Graph size not incremented\0" as *const u8 as *const libc::c_char,
@@ -591,8 +571,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVertexGraph.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVertexGraph.c\0" as *const u8 as *const libc::c_char,
             146 as libc::c_int,
             b"node == NULL\0" as *const u8 as *const libc::c_char,
             b"Node lookup failed correctly for empty graph\0" as *const u8 as *const libc::c_char,
@@ -609,8 +588,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVertexGraph.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVertexGraph.c\0" as *const u8 as *const libc::c_char,
             153 as libc::c_int,
             b"node == NULL\0" as *const u8 as *const libc::c_char,
             b"Node lookup failed correctly for different hash\0" as *const u8
@@ -627,8 +605,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVertexGraph.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVertexGraph.c\0" as *const u8 as *const libc::c_char,
             158 as libc::c_int,
             b"node == NULL\0" as *const u8 as *const libc::c_char,
             b"Node lookup failed correctly for hash collision\0" as *const u8
@@ -646,8 +623,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVertexGraph.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVertexGraph.c\0" as *const u8 as *const libc::c_char,
             165 as libc::c_int,
             b"node == NULL\0" as *const u8 as *const libc::c_char,
             b"Node lookup failed correctly for collision w/iteration\0" as *const u8
@@ -674,8 +650,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVertexGraph.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVertexGraph.c\0" as *const u8 as *const libc::c_char,
             177 as libc::c_int,
             b"node == NULL\0" as *const u8 as *const libc::c_char,
             b"Node lookup failed correctly for empty graph\0" as *const u8 as *const libc::c_char,
@@ -692,8 +667,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVertexGraph.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVertexGraph.c\0" as *const u8 as *const libc::c_char,
             182 as libc::c_int,
             b"node != NULL\0" as *const u8 as *const libc::c_char,
             b"Node lookup succeeded for correct node\0" as *const u8 as *const libc::c_char,
@@ -709,8 +683,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVertexGraph.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVertexGraph.c\0" as *const u8 as *const libc::c_char,
             186 as libc::c_int,
             b"node == NULL\0" as *const u8 as *const libc::c_char,
             b"Node lookup failed correctly for different node\0" as *const u8
@@ -739,8 +712,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVertexGraph.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVertexGraph.c\0" as *const u8 as *const libc::c_char,
             201 as libc::c_int,
             b"success\0" as *const u8 as *const libc::c_char,
             b"Removal successful\0" as *const u8 as *const libc::c_char,
@@ -755,8 +727,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVertexGraph.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVertexGraph.c\0" as *const u8 as *const libc::c_char,
             203 as libc::c_int,
             b"findNodeForVertex(&graph, &vertex1) == NULL\0" as *const u8 as *const libc::c_char,
             b"Node lookup cannot find node\0" as *const u8 as *const libc::c_char,
@@ -771,8 +742,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVertexGraph.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVertexGraph.c\0" as *const u8 as *const libc::c_char,
             204 as libc::c_int,
             b"graph.size == 0\0" as *const u8 as *const libc::c_char,
             b"Graph size decremented\0" as *const u8 as *const libc::c_char,
@@ -790,8 +760,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVertexGraph.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVertexGraph.c\0" as *const u8 as *const libc::c_char,
             211 as libc::c_int,
             b"success\0" as *const u8 as *const libc::c_char,
             b"Removal successful\0" as *const u8 as *const libc::c_char,
@@ -806,8 +775,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVertexGraph.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVertexGraph.c\0" as *const u8 as *const libc::c_char,
             213 as libc::c_int,
             b"findNodeForEdge(&graph, &vertex1, &vertex3) == NULL\0" as *const u8
                 as *const libc::c_char,
@@ -823,8 +791,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVertexGraph.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVertexGraph.c\0" as *const u8 as *const libc::c_char,
             215 as libc::c_int,
             b"findNodeForEdge(&graph, &vertex1, &vertex2)->next == NULL\0" as *const u8
                 as *const libc::c_char,
@@ -840,8 +807,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVertexGraph.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVertexGraph.c\0" as *const u8 as *const libc::c_char,
             216 as libc::c_int,
             b"graph.size == 1\0" as *const u8 as *const libc::c_char,
             b"Graph size decremented\0" as *const u8 as *const libc::c_char,
@@ -871,8 +837,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVertexGraph.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVertexGraph.c\0" as *const u8 as *const libc::c_char,
             227 as libc::c_int,
             b"success\0" as *const u8 as *const libc::c_char,
             b"Removal successful\0" as *const u8 as *const libc::c_char,
@@ -887,8 +852,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVertexGraph.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVertexGraph.c\0" as *const u8 as *const libc::c_char,
             229 as libc::c_int,
             b"findNodeForEdge(&graph, &vertex1, &vertex2) == NULL\0" as *const u8
                 as *const libc::c_char,
@@ -904,8 +868,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVertexGraph.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVertexGraph.c\0" as *const u8 as *const libc::c_char,
             231 as libc::c_int,
             b"findNodeForEdge(&graph, &vertex1, &vertex3) != NULL\0" as *const u8
                 as *const libc::c_char,
@@ -921,8 +884,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVertexGraph.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVertexGraph.c\0" as *const u8 as *const libc::c_char,
             233 as libc::c_int,
             b"findNodeForEdge(&graph, &vertex1, &vertex3)->next == NULL\0" as *const u8
                 as *const libc::c_char,
@@ -938,8 +900,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVertexGraph.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVertexGraph.c\0" as *const u8 as *const libc::c_char,
             234 as libc::c_int,
             b"graph.size == 1\0" as *const u8 as *const libc::c_char,
             b"Graph size decremented\0" as *const u8 as *const libc::c_char,
@@ -970,8 +931,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVertexGraph.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVertexGraph.c\0" as *const u8 as *const libc::c_char,
             246 as libc::c_int,
             b"success\0" as *const u8 as *const libc::c_char,
             b"Removal successful\0" as *const u8 as *const libc::c_char,
@@ -986,8 +946,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVertexGraph.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVertexGraph.c\0" as *const u8 as *const libc::c_char,
             248 as libc::c_int,
             b"findNodeForEdge(&graph, &vertex1, &vertex3) == NULL\0" as *const u8
                 as *const libc::c_char,
@@ -1003,8 +962,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVertexGraph.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVertexGraph.c\0" as *const u8 as *const libc::c_char,
             250 as libc::c_int,
             b"findNodeForEdge(&graph, &vertex1, &vertex4) != NULL\0" as *const u8
                 as *const libc::c_char,
@@ -1020,8 +978,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVertexGraph.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVertexGraph.c\0" as *const u8 as *const libc::c_char,
             251 as libc::c_int,
             b"graph.size == 2\0" as *const u8 as *const libc::c_char,
             b"Graph size decremented\0" as *const u8 as *const libc::c_char,
@@ -1041,8 +998,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVertexGraph.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVertexGraph.c\0" as *const u8 as *const libc::c_char,
             257 as libc::c_int,
             b"!success\0" as *const u8 as *const libc::c_char,
             b"Removal of non-existent node fails\0" as *const u8 as *const libc::c_char,
@@ -1057,8 +1013,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVertexGraph.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVertexGraph.c\0" as *const u8 as *const libc::c_char,
             258 as libc::c_int,
             b"graph.size == 2\0" as *const u8 as *const libc::c_char,
             b"Graph size unchanged\0" as *const u8 as *const libc::c_char,
@@ -1086,8 +1041,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVertexGraph.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVertexGraph.c\0" as *const u8 as *const libc::c_char,
             272 as libc::c_int,
             b"node == NULL\0" as *const u8 as *const libc::c_char,
             b"No node found for empty graph\0" as *const u8 as *const libc::c_char,
@@ -1104,8 +1058,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVertexGraph.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVertexGraph.c\0" as *const u8 as *const libc::c_char,
             277 as libc::c_int,
             b"node == addedNode\0" as *const u8 as *const libc::c_char,
             b"Node found\0" as *const u8 as *const libc::c_char,
@@ -1139,8 +1092,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVertexGraph.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVertexGraph.c\0" as *const u8 as *const libc::c_char,
             293 as libc::c_int,
             b"graph.numBuckets == 1\0" as *const u8 as *const libc::c_char,
             b"1 bucket created\0" as *const u8 as *const libc::c_char,
@@ -1156,8 +1108,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVertexGraph.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVertexGraph.c\0" as *const u8 as *const libc::c_char,
             296 as libc::c_int,
             b"node == NULL\0" as *const u8 as *const libc::c_char,
             b"No node found for empty graph\0" as *const u8 as *const libc::c_char,
@@ -1173,8 +1124,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVertexGraph.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVertexGraph.c\0" as *const u8 as *const libc::c_char,
             299 as libc::c_int,
             b"node != NULL\0" as *const u8 as *const libc::c_char,
             b"Node added\0" as *const u8 as *const libc::c_char,
@@ -1189,8 +1139,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVertexGraph.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVertexGraph.c\0" as *const u8 as *const libc::c_char,
             300 as libc::c_int,
             b"firstVertexNode(&graph) == node\0" as *const u8 as *const libc::c_char,
             b"First node is node\0" as *const u8 as *const libc::c_char,
@@ -1207,8 +1156,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVertexGraph.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVertexGraph.c\0" as *const u8 as *const libc::c_char,
             304 as libc::c_int,
             b"firstVertexNode(&graph) == node\0" as *const u8 as *const libc::c_char,
             b"First node is still node\0" as *const u8 as *const libc::c_char,
@@ -1223,8 +1171,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVertexGraph.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVertexGraph.c\0" as *const u8 as *const libc::c_char,
             305 as libc::c_int,
             b"graph.size == 3\0" as *const u8 as *const libc::c_char,
             b"Graph size updated\0" as *const u8 as *const libc::c_char,

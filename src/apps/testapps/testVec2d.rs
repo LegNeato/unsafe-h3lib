@@ -1,6 +1,9 @@
+extern crate unsafe_h3lib;
+extern crate unsafe_h3lib_applib;
+extern crate unsafe_h3lib_testapps_lib;
 use ::libc;
 extern "C" {
-    pub type __sFILEX;
+
     fn fabs(_: libc::c_double) -> libc::c_double;
     fn exit(_: libc::c_int) -> !;
     static mut __stderrp: *mut FILE;
@@ -48,7 +51,7 @@ pub struct __sFILE {
         unsafe extern "C" fn(*mut libc::c_void, *const libc::c_char, libc::c_int) -> libc::c_int,
     >,
     pub _ub: __sbuf,
-    pub _extra: *mut __sFILEX,
+    pub _extra: *mut libc::c_void,
     pub _ur: libc::c_int,
     pub _ubuf: [libc::c_uchar; 3],
     pub _nbuf: [libc::c_uchar; 1],
@@ -80,8 +83,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVec2d.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVec2d.c\0" as *const u8 as *const libc::c_char,
             29 as libc::c_int,
             b"fabs(mag - expected) < DBL_EPSILON\0" as *const u8 as *const libc::c_char,
             b"magnitude as expected\0" as *const u8 as *const libc::c_char,
@@ -135,8 +137,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVec2d.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVec2d.c\0" as *const u8 as *const libc::c_char,
             45 as libc::c_int,
             b"fabs(intersection.x - expectedX) < DBL_EPSILON\0" as *const u8 as *const libc::c_char,
             b"X coord as expected\0" as *const u8 as *const libc::c_char,
@@ -151,8 +152,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVec2d.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVec2d.c\0" as *const u8 as *const libc::c_char,
             47 as libc::c_int,
             b"fabs(intersection.y - expectedY) < DBL_EPSILON\0" as *const u8 as *const libc::c_char,
             b"Y coord as expected\0" as *const u8 as *const libc::c_char,
@@ -203,8 +203,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVec2d.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVec2d.c\0" as *const u8 as *const libc::c_char,
             57 as libc::c_int,
             b"_v2dAlmostEquals(&v1, &v2)\0" as *const u8 as *const libc::c_char,
             b"true for equal vectors\0" as *const u8 as *const libc::c_char,
@@ -219,8 +218,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVec2d.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVec2d.c\0" as *const u8 as *const libc::c_char,
             58 as libc::c_int,
             b"!_v2dAlmostEquals(&v1, &v3)\0" as *const u8 as *const libc::c_char,
             b"false for different x\0" as *const u8 as *const libc::c_char,
@@ -235,8 +233,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVec2d.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVec2d.c\0" as *const u8 as *const libc::c_char,
             59 as libc::c_int,
             b"!_v2dAlmostEquals(&v1, &v4)\0" as *const u8 as *const libc::c_char,
             b"false for different y\0" as *const u8 as *const libc::c_char,
@@ -251,8 +248,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVec2d.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVec2d.c\0" as *const u8 as *const libc::c_char,
             60 as libc::c_int,
             b"_v2dAlmostEquals(&v1, &v5)\0" as *const u8 as *const libc::c_char,
             b"true for almost equal\0" as *const u8 as *const libc::c_char,

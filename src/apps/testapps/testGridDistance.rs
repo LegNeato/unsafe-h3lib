@@ -1,6 +1,9 @@
+extern crate unsafe_h3lib;
+extern crate unsafe_h3lib_applib;
+extern crate unsafe_h3lib_testapps_lib;
 use ::libc;
 extern "C" {
-    pub type __sFILEX;
+
     static mut __stderrp: *mut FILE;
     fn fprintf(_: *mut FILE, _: *const libc::c_char, _: ...) -> libc::c_int;
     fn printf(_: *const libc::c_char, _: ...) -> libc::c_int;
@@ -43,7 +46,7 @@ pub struct __sFILE {
         unsafe extern "C" fn(*mut libc::c_void, *const libc::c_char, libc::c_int) -> libc::c_int,
     >,
     pub _ub: __sbuf,
-    pub _extra: *mut __sFILEX,
+    pub _extra: *mut libc::c_void,
     pub _ur: libc::c_int,
     pub _ubuf: [libc::c_uchar; 3],
     pub _nbuf: [libc::c_uchar; 1],
@@ -122,8 +125,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGridDistance.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGridDistance.c\0" as *const u8 as *const libc::c_char,
             67 as libc::c_int,
             b"!(gridDistance(bc, p, &distance))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -138,8 +140,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGridDistance.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGridDistance.c\0" as *const u8 as *const libc::c_char,
             68 as libc::c_int,
             b"distance == 3\0" as *const u8 as *const libc::c_char,
             b"distance onto pentagon\0" as *const u8 as *const libc::c_char,
@@ -154,8 +155,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGridDistance.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGridDistance.c\0" as *const u8 as *const libc::c_char,
             69 as libc::c_int,
             b"!(gridDistance(bc, p2, &distance))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -170,8 +170,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGridDistance.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGridDistance.c\0" as *const u8 as *const libc::c_char,
             70 as libc::c_int,
             b"distance == 2\0" as *const u8 as *const libc::c_char,
             b"distance onto p2\0" as *const u8 as *const libc::c_char,
@@ -186,8 +185,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGridDistance.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGridDistance.c\0" as *const u8 as *const libc::c_char,
             71 as libc::c_int,
             b"!(gridDistance(bc, p3, &distance))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -202,8 +200,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGridDistance.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGridDistance.c\0" as *const u8 as *const libc::c_char,
             72 as libc::c_int,
             b"distance == 3\0" as *const u8 as *const libc::c_char,
             b"distance onto p3\0" as *const u8 as *const libc::c_char,
@@ -218,8 +215,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGridDistance.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGridDistance.c\0" as *const u8 as *const libc::c_char,
             79 as libc::c_int,
             b"!(gridDistance(bc, p6, &distance))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -234,8 +230,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGridDistance.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGridDistance.c\0" as *const u8 as *const libc::c_char,
             80 as libc::c_int,
             b"distance == 2\0" as *const u8 as *const libc::c_char,
             b"distance onto p6\0" as *const u8 as *const libc::c_char,
@@ -256,8 +251,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGridDistance.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGridDistance.c\0" as *const u8 as *const libc::c_char,
             92 as libc::c_int,
             b"H3_EXPORT(gridDistance)(destination, origin, &distance) != E_SUCCESS\0" as *const u8
                 as *const libc::c_char,
@@ -275,8 +269,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGridDistance.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGridDistance.c\0" as *const u8 as *const libc::c_char,
             95 as libc::c_int,
             b"H3_EXPORT(gridDistance)(origin, destination, &distance) != E_SUCCESS\0" as *const u8
                 as *const libc::c_char,
@@ -294,8 +287,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGridDistance.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGridDistance.c\0" as *const u8 as *const libc::c_char,
             100 as libc::c_int,
             b"!(gridDistance(bc1, pent1, &distance))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -310,8 +302,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGridDistance.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGridDistance.c\0" as *const u8 as *const libc::c_char,
             101 as libc::c_int,
             b"distance == 1\0" as *const u8 as *const libc::c_char,
             b"distance to neighbor is 1 (15, 4)\0" as *const u8 as *const libc::c_char,
@@ -326,8 +317,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGridDistance.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGridDistance.c\0" as *const u8 as *const libc::c_char,
             102 as libc::c_int,
             b"!(gridDistance(bc1, bc2, &distance))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -342,8 +332,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGridDistance.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGridDistance.c\0" as *const u8 as *const libc::c_char,
             103 as libc::c_int,
             b"distance == 1\0" as *const u8 as *const libc::c_char,
             b"distance to neighbor is 1 (15, 8)\0" as *const u8 as *const libc::c_char,
@@ -358,8 +347,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGridDistance.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGridDistance.c\0" as *const u8 as *const libc::c_char,
             104 as libc::c_int,
             b"!(gridDistance(bc1, bc3, &distance))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -374,8 +362,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGridDistance.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGridDistance.c\0" as *const u8 as *const libc::c_char,
             105 as libc::c_int,
             b"distance == 1\0" as *const u8 as *const libc::c_char,
             b"distance to neighbor is 1 (15, 31)\0" as *const u8 as *const libc::c_char,
@@ -390,8 +377,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGridDistance.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGridDistance.c\0" as *const u8 as *const libc::c_char,
             107 as libc::c_int,
             b"H3_EXPORT(gridDistance)(pent1, bc3, &distance) != E_SUCCESS\0" as *const u8
                 as *const libc::c_char,
@@ -448,8 +434,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGridDistance.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGridDistance.c\0" as *const u8 as *const libc::c_char,
             117 as libc::c_int,
             b"ijkDistance(&z, &z) == 0\0" as *const u8 as *const libc::c_char,
             b"identity distance 0,0,0\0" as *const u8 as *const libc::c_char,
@@ -464,8 +449,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGridDistance.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGridDistance.c\0" as *const u8 as *const libc::c_char,
             118 as libc::c_int,
             b"ijkDistance(&i, &i) == 0\0" as *const u8 as *const libc::c_char,
             b"identity distance 1,0,0\0" as *const u8 as *const libc::c_char,
@@ -480,8 +464,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGridDistance.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGridDistance.c\0" as *const u8 as *const libc::c_char,
             119 as libc::c_int,
             b"ijkDistance(&ik, &ik) == 0\0" as *const u8 as *const libc::c_char,
             b"identity distance 1,0,1\0" as *const u8 as *const libc::c_char,
@@ -496,8 +479,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGridDistance.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGridDistance.c\0" as *const u8 as *const libc::c_char,
             120 as libc::c_int,
             b"ijkDistance(&ij, &ij) == 0\0" as *const u8 as *const libc::c_char,
             b"identity distance 1,1,0\0" as *const u8 as *const libc::c_char,
@@ -512,8 +494,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGridDistance.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGridDistance.c\0" as *const u8 as *const libc::c_char,
             121 as libc::c_int,
             b"ijkDistance(&j2, &j2) == 0\0" as *const u8 as *const libc::c_char,
             b"identity distance 0,2,0\0" as *const u8 as *const libc::c_char,
@@ -528,8 +509,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGridDistance.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGridDistance.c\0" as *const u8 as *const libc::c_char,
             123 as libc::c_int,
             b"ijkDistance(&z, &i) == 1\0" as *const u8 as *const libc::c_char,
             b"0,0,0 to 1,0,0\0" as *const u8 as *const libc::c_char,
@@ -544,8 +524,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGridDistance.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGridDistance.c\0" as *const u8 as *const libc::c_char,
             124 as libc::c_int,
             b"ijkDistance(&z, &j2) == 2\0" as *const u8 as *const libc::c_char,
             b"0,0,0 to 0,2,0\0" as *const u8 as *const libc::c_char,
@@ -560,8 +539,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGridDistance.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGridDistance.c\0" as *const u8 as *const libc::c_char,
             125 as libc::c_int,
             b"ijkDistance(&z, &ik) == 1\0" as *const u8 as *const libc::c_char,
             b"0,0,0 to 1,0,1\0" as *const u8 as *const libc::c_char,
@@ -576,8 +554,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGridDistance.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGridDistance.c\0" as *const u8 as *const libc::c_char,
             126 as libc::c_int,
             b"ijkDistance(&i, &ik) == 1\0" as *const u8 as *const libc::c_char,
             b"1,0,0 to 1,0,1\0" as *const u8 as *const libc::c_char,
@@ -592,8 +569,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGridDistance.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGridDistance.c\0" as *const u8 as *const libc::c_char,
             127 as libc::c_int,
             b"ijkDistance(&ik, &j2) == 3\0" as *const u8 as *const libc::c_char,
             b"1,0,1 to 0,2,0\0" as *const u8 as *const libc::c_char,
@@ -608,8 +584,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGridDistance.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGridDistance.c\0" as *const u8 as *const libc::c_char,
             128 as libc::c_int,
             b"ijkDistance(&ij, &ik) == 2\0" as *const u8 as *const libc::c_char,
             b"1,0,1 to 1,1,0\0" as *const u8 as *const libc::c_char,
@@ -654,8 +629,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGridDistance.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGridDistance.c\0" as *const u8 as *const libc::c_char,
             142 as libc::c_int,
             b"!(cellsToDirectedEdge(origin, dest, &edge))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -670,8 +644,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGridDistance.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGridDistance.c\0" as *const u8 as *const libc::c_char,
             144 as libc::c_int,
             b"0 != edge\0" as *const u8 as *const libc::c_char,
             b"test edge is valid\0" as *const u8 as *const libc::c_char,
@@ -687,8 +660,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGridDistance.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGridDistance.c\0" as *const u8 as *const libc::c_char,
             146 as libc::c_int,
             b"!(gridDistance(edge, origin, &distance))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -703,8 +675,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGridDistance.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGridDistance.c\0" as *const u8 as *const libc::c_char,
             147 as libc::c_int,
             b"distance == 0\0" as *const u8 as *const libc::c_char,
             b"edge has zero distance to origin\0" as *const u8 as *const libc::c_char,
@@ -719,8 +690,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGridDistance.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGridDistance.c\0" as *const u8 as *const libc::c_char,
             148 as libc::c_int,
             b"!(gridDistance(origin, edge, &distance))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -735,8 +705,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGridDistance.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGridDistance.c\0" as *const u8 as *const libc::c_char,
             149 as libc::c_int,
             b"distance == 0\0" as *const u8 as *const libc::c_char,
             b"origin has zero distance to edge\0" as *const u8 as *const libc::c_char,
@@ -751,8 +720,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGridDistance.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGridDistance.c\0" as *const u8 as *const libc::c_char,
             151 as libc::c_int,
             b"!(gridDistance(edge, dest, &distance))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -767,8 +735,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGridDistance.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGridDistance.c\0" as *const u8 as *const libc::c_char,
             152 as libc::c_int,
             b"distance == 1\0" as *const u8 as *const libc::c_char,
             b"edge has distance to destination\0" as *const u8 as *const libc::c_char,
@@ -783,8 +750,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGridDistance.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGridDistance.c\0" as *const u8 as *const libc::c_char,
             153 as libc::c_int,
             b"!(gridDistance(dest, edge, &distance))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -799,8 +765,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGridDistance.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGridDistance.c\0" as *const u8 as *const libc::c_char,
             154 as libc::c_int,
             b"distance == 1\0" as *const u8 as *const libc::c_char,
             b"destination has distance to edge\0" as *const u8 as *const libc::c_char,
@@ -820,8 +785,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGridDistance.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGridDistance.c\0" as *const u8 as *const libc::c_char,
             162 as libc::c_int,
             b"H3_EXPORT(gridDistance)(invalid, invalid, &distance) == E_CELL_INVALID\0" as *const u8
                 as *const libc::c_char,
@@ -839,8 +803,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGridDistance.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGridDistance.c\0" as *const u8 as *const libc::c_char,
             166 as libc::c_int,
             b"H3_EXPORT(gridDistance)(bc1, invalid, &distance) == E_RES_MISMATCH\0" as *const u8
                 as *const libc::c_char,

@@ -1,6 +1,10 @@
+extern crate unsafe_h3lib;
+extern crate unsafe_h3lib_applib;
+extern crate unsafe_h3lib_testapps_lib;
+
 use ::libc;
 extern "C" {
-    pub type __sFILEX;
+
     fn fabs(_: libc::c_double) -> libc::c_double;
     fn exit(_: libc::c_int) -> !;
     static mut __stderrp: *mut FILE;
@@ -41,7 +45,7 @@ pub struct __sFILE {
         unsafe extern "C" fn(*mut libc::c_void, *const libc::c_char, libc::c_int) -> libc::c_int,
     >,
     pub _ub: __sbuf,
-    pub _extra: *mut __sFILEX,
+    pub _extra: *mut libc::c_void,
     pub _ur: libc::c_int,
     pub _ubuf: [libc::c_uchar; 3],
     pub _nbuf: [libc::c_uchar; 1],
@@ -111,8 +115,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVec3d.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVec3d.c\0" as *const u8 as *const libc::c_char,
             33 as libc::c_int,
             b"fabs(_pointSquareDist(&v1, &v1)) < DBL_EPSILON\0" as *const u8 as *const libc::c_char,
             b"distance to self is 0\0" as *const u8 as *const libc::c_char,
@@ -129,8 +132,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVec3d.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVec3d.c\0" as *const u8 as *const libc::c_char,
             35 as libc::c_int,
             b"fabs(_pointSquareDist(&v1, &v2) - 1) < DBL_EPSILON\0" as *const u8
                 as *const libc::c_char,
@@ -148,8 +150,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVec3d.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVec3d.c\0" as *const u8 as *const libc::c_char,
             37 as libc::c_int,
             b"fabs(_pointSquareDist(&v1, &v3) - 2) < DBL_EPSILON\0" as *const u8
                 as *const libc::c_char,
@@ -167,8 +168,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVec3d.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVec3d.c\0" as *const u8 as *const libc::c_char,
             39 as libc::c_int,
             b"fabs(_pointSquareDist(&v1, &v4) - 3) < DBL_EPSILON\0" as *const u8
                 as *const libc::c_char,
@@ -186,8 +186,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVec3d.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVec3d.c\0" as *const u8 as *const libc::c_char,
             41 as libc::c_int,
             b"fabs(_pointSquareDist(&v1, &v5) - 6) < DBL_EPSILON\0" as *const u8
                 as *const libc::c_char,
@@ -227,8 +226,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVec3d.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVec3d.c\0" as *const u8 as *const libc::c_char,
             51 as libc::c_int,
             b"fabs(_pointSquareDist(&origin, &p1) - 1) < EPSILON_RAD\0" as *const u8
                 as *const libc::c_char,
@@ -259,8 +257,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVec3d.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVec3d.c\0" as *const u8 as *const libc::c_char,
             57 as libc::c_int,
             b"fabs(_pointSquareDist(&p1, &p2) - 2) < EPSILON_RAD\0" as *const u8
                 as *const libc::c_char,
@@ -283,17 +280,15 @@ unsafe extern "C" fn runTests() {
         z: 0.,
     };
     _geoToVec3d(&mut c3, &mut p3);
-    if !(fabs(
-        _pointSquareDist(&mut p1, &mut p3) - 4 as libc::c_int as libc::c_double,
-    ) < 0.000000001f64 * 0.0174532925199432957692369076848861271111)
+    if !(fabs(_pointSquareDist(&mut p1, &mut p3) - 4 as libc::c_int as libc::c_double)
+        < 0.000000001f64 * 0.0174532925199432957692369076848861271111)
     {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testVec3d.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testVec3d.c\0" as *const u8 as *const libc::c_char,
             63 as libc::c_int,
             b"fabs(_pointSquareDist(&p1, &p3) - 4) < EPSILON_RAD\0" as *const u8
                 as *const libc::c_char,

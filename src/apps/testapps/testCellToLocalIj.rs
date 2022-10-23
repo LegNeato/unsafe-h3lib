@@ -1,6 +1,9 @@
+extern crate unsafe_h3lib;
+extern crate unsafe_h3lib_applib;
+extern crate unsafe_h3lib_testapps_lib;
 use ::libc;
 extern "C" {
-    pub type __sFILEX;
+
     fn cellToLocalIj(origin: H3Index, h3: H3Index, mode: uint32_t, out: *mut CoordIJ) -> H3Error;
     fn exit(_: libc::c_int) -> !;
     fn localIjToCell(
@@ -77,7 +80,7 @@ pub struct __sFILE {
         unsafe extern "C" fn(*mut libc::c_void, *const libc::c_char, libc::c_int) -> libc::c_int,
     >,
     pub _ub: __sbuf,
-    pub _extra: *mut __sFILEX,
+    pub _extra: *mut libc::c_void,
     pub _ur: libc::c_int,
     pub _ubuf: [libc::c_uchar; 3],
     pub _nbuf: [libc::c_uchar; 1],
@@ -179,8 +182,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8 as *const libc::c_char,
             54 as libc::c_int,
             b"cellToLocalIjk(pent1, bc1, &ijk) == E_SUCCESS\0" as *const u8 as *const libc::c_char,
             b"got ijk for base cells 4 and 15\0" as *const u8 as *const libc::c_char,
@@ -199,8 +201,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8 as *const libc::c_char,
             56 as libc::c_int,
             b"_ijkMatches(&ijk, &UNIT_VECS[2]) == 1\0" as *const u8 as *const libc::c_char,
             b"neighboring base cell at 0,1,0\0" as *const u8 as *const libc::c_char,
@@ -231,8 +232,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8 as *const libc::c_char,
             65 as libc::c_int,
             b"H3_EXPORT(localIjToCell)(origin, &ij, 0, &retrieved) == E_SUCCESS\0" as *const u8
                 as *const libc::c_char,
@@ -248,8 +248,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8 as *const libc::c_char,
             66 as libc::c_int,
             b"retrieved == 0x8029fffffffffff\0" as *const u8 as *const libc::c_char,
             b"origin matches self\0" as *const u8 as *const libc::c_char,
@@ -271,8 +270,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8 as *const libc::c_char,
             70 as libc::c_int,
             b"H3_EXPORT(localIjToCell)(origin, &ij, 0, &retrieved) == E_SUCCESS\0" as *const u8
                 as *const libc::c_char,
@@ -288,8 +286,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8 as *const libc::c_char,
             72 as libc::c_int,
             b"retrieved == 0x8051fffffffffff\0" as *const u8 as *const libc::c_char,
             b"modified index matches expected\0" as *const u8 as *const libc::c_char,
@@ -311,8 +308,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8 as *const libc::c_char,
             76 as libc::c_int,
             b"H3_EXPORT(localIjToCell)(origin, &ij, 0, &retrieved) == E_FAILED\0" as *const u8
                 as *const libc::c_char,
@@ -336,8 +332,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8 as *const libc::c_char,
             81 as libc::c_int,
             b"H3_EXPORT(localIjToCell)(origin, &ij, 0, &retrieved) == E_FAILED\0" as *const u8
                 as *const libc::c_char,
@@ -361,8 +356,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8 as *const libc::c_char,
             86 as libc::c_int,
             b"H3_EXPORT(localIjToCell)(origin, &ij, 0, &retrieved) == E_FAILED\0" as *const u8
                 as *const libc::c_char,
@@ -451,8 +445,7 @@ unsafe extern "C" fn runTests() {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8
-                        as *const libc::c_char,
+                    b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8 as *const libc::c_char,
                     106 as libc::c_int,
                     b"err != 0\0" as *const u8 as *const libc::c_char,
                     b"coordinates out of range\0" as *const u8 as *const libc::c_char,
@@ -469,8 +462,7 @@ unsafe extern "C" fn runTests() {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8
-                        as *const libc::c_char,
+                    b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8 as *const libc::c_char,
                     108 as libc::c_int,
                     b"err == 0\0" as *const u8 as *const libc::c_char,
                     b"coordinates in range\0" as *const u8 as *const libc::c_char,
@@ -486,8 +478,7 @@ unsafe extern "C" fn runTests() {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8
-                        as *const libc::c_char,
+                    b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8 as *const libc::c_char,
                     109 as libc::c_int,
                     b"result == expected[i]\0" as *const u8 as *const libc::c_char,
                     b"result matches expectation\0" as *const u8 as *const libc::c_char,
@@ -509,8 +500,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8 as *const libc::c_char,
             118 as libc::c_int,
             b"H3_EXPORT(cellToLocalIj)(bc1, bc1, 0, &ij) == 0\0" as *const u8
                 as *const libc::c_char,
@@ -526,8 +516,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8 as *const libc::c_char,
             119 as libc::c_int,
             b"ij.i == 0 && ij.j == 0\0" as *const u8 as *const libc::c_char,
             b"ij correct (1)\0" as *const u8 as *const libc::c_char,
@@ -544,8 +533,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8 as *const libc::c_char,
             121 as libc::c_int,
             b"H3_EXPORT(cellToLocalIj)(bc1, pent1, 0, &ij) == 0\0" as *const u8
                 as *const libc::c_char,
@@ -561,8 +549,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8 as *const libc::c_char,
             122 as libc::c_int,
             b"ij.i == 1 && ij.j == 0\0" as *const u8 as *const libc::c_char,
             b"ij correct (2)\0" as *const u8 as *const libc::c_char,
@@ -579,8 +566,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8 as *const libc::c_char,
             124 as libc::c_int,
             b"H3_EXPORT(cellToLocalIj)(bc1, bc2, 0, &ij) == 0\0" as *const u8
                 as *const libc::c_char,
@@ -596,8 +582,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8 as *const libc::c_char,
             125 as libc::c_int,
             b"ij.i == 0 && ij.j == -1\0" as *const u8 as *const libc::c_char,
             b"ij correct (3)\0" as *const u8 as *const libc::c_char,
@@ -614,8 +599,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8 as *const libc::c_char,
             127 as libc::c_int,
             b"H3_EXPORT(cellToLocalIj)(bc1, bc3, 0, &ij) == 0\0" as *const u8
                 as *const libc::c_char,
@@ -631,8 +615,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8 as *const libc::c_char,
             128 as libc::c_int,
             b"ij.i == -1 && ij.j == 0\0" as *const u8 as *const libc::c_char,
             b"ij correct (4)\0" as *const u8 as *const libc::c_char,
@@ -649,8 +632,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8 as *const libc::c_char,
             130 as libc::c_int,
             b"H3_EXPORT(cellToLocalIj)(pent1, bc3, 0, &ij) == E_FAILED\0" as *const u8
                 as *const libc::c_char,
@@ -675,8 +657,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8 as *const libc::c_char,
             139 as libc::c_int,
             b"H3_EXPORT(cellToLocalIj)(bc1, invalidIndex, 0, &ij) == E_CELL_INVALID\0" as *const u8
                 as *const libc::c_char,
@@ -698,8 +679,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8 as *const libc::c_char,
             142 as libc::c_int,
             b"H3_EXPORT(cellToLocalIj)(0x7fffffffffffffff, bc1, 0, &ij) == E_RES_MISMATCH\0"
                 as *const u8 as *const libc::c_char,
@@ -754,8 +734,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8 as *const libc::c_char,
             154 as libc::c_int,
             b"H3_EXPORT(localIjToCell)(0x7fffffffffffffff, &ij, 0, &index) == E_CELL_INVALID\0"
                 as *const u8 as *const libc::c_char,
@@ -793,8 +772,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8 as *const libc::c_char,
             168 as libc::c_int,
             b"H3_EXPORT(cellToLocalIj)(offPent, onPentInvalid, 0, &ij) == E_CELL_INVALID\0"
                 as *const u8 as *const libc::c_char,
@@ -823,8 +801,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8 as *const libc::c_char,
             174 as libc::c_int,
             b"H3_EXPORT(cellToLocalIj)(onPentInvalid, onPentValid, 0, &ij) == E_CELL_INVALID\0"
                 as *const u8 as *const libc::c_char,
@@ -846,8 +823,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8 as *const libc::c_char,
             177 as libc::c_int,
             b"H3_EXPORT(cellToLocalIj)(onPentValid, onPentInvalid, 0, &ij) == E_CELL_INVALID\0"
                 as *const u8 as *const libc::c_char,
@@ -872,8 +848,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8 as *const libc::c_char,
             184 as libc::c_int,
             b"H3_EXPORT(localIjToCell)(onPentInvalid, &ij, 0, &out) == E_CELL_INVALID\0"
                 as *const u8 as *const libc::c_char,
@@ -897,8 +872,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8 as *const libc::c_char,
             190 as libc::c_int,
             b"H3_EXPORT(localIjToCell)(onPentInvalid, &ij, 0, &out) == E_CELL_INVALID\0"
                 as *const u8 as *const libc::c_char,
@@ -955,8 +929,8 @@ unsafe extern "C" fn runTests() {
                                 as *const libc::c_char,
                             currentSuiteName,
                             currentTestName,
-                            b"src/apps/testapps/testCellToLocalIj.c\0"
-                                as *const u8 as *const libc::c_char,
+                            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8
+                                as *const libc::c_char,
                             229 as libc::c_int,
                             b"(bool)internalIjFailed == (bool)externalIjFailed\0" as *const u8
                                 as *const libc::c_char,
@@ -993,8 +967,7 @@ unsafe extern "C" fn runTests() {
                                     as *const libc::c_char,
                                 currentSuiteName,
                                 currentTestName,
-                                b"src/apps/testapps/testCellToLocalIj.c\0"
-                                    as *const u8
+                                b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8
                                     as *const libc::c_char,
                                 245 as libc::c_int,
                                 b"(bool)internalIjFailed2 == (bool)externalIjFailed2\0" as *const u8
@@ -1015,8 +988,8 @@ unsafe extern "C" fn runTests() {
                                         as *const libc::c_char,
                                     currentSuiteName,
                                     currentTestName,
-                                    b"src/apps/testapps/testCellToLocalIj.c\0"
-                                        as *const u8 as *const libc::c_char,
+                                    b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8
+                                        as *const libc::c_char,
                                     252 as libc::c_int,
                                     b"internalIndex == externalIndex\0" as *const u8
                                         as *const libc::c_char,
@@ -1046,8 +1019,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8 as *const libc::c_char,
             262 as libc::c_int,
             b"!(cellToLocalIj(cell, cell, 0, &ij))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -1067,8 +1039,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8
-                    as *const libc::c_char,
+                b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8 as *const libc::c_char,
                 268 as libc::c_int,
                 b"H3_EXPORT(cellToLocalIj)(cell, cell, i, &ij2) == E_OPTION_INVALID\0" as *const u8
                     as *const libc::c_char,
@@ -1087,8 +1058,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8
-                    as *const libc::c_char,
+                b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8 as *const libc::c_char,
                 272 as libc::c_int,
                 b"H3_EXPORT(localIjToCell)(cell, &ij2, i, &cell2) == E_OPTION_INVALID\0"
                     as *const u8 as *const libc::c_char,
@@ -1118,8 +1088,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8 as *const libc::c_char,
             281 as libc::c_int,
             b"H3_EXPORT(localIjToCell)(index, &ij, 0, &out) == E_FAILED\0" as *const u8
                 as *const libc::c_char,
@@ -1157,8 +1126,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8 as *const libc::c_char,
             290 as libc::c_int,
             b"H3_EXPORT(localIjToCell)(origin, &ij, 0, &out) == E_FAILED\0" as *const u8
                 as *const libc::c_char,
@@ -1196,8 +1164,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8 as *const libc::c_char,
             299 as libc::c_int,
             b"H3_EXPORT(localIjToCell)(origin, &ij, 0, &out) == E_FAILED\0" as *const u8
                 as *const libc::c_char,
@@ -1235,8 +1202,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testCellToLocalIj.c\0" as *const u8 as *const libc::c_char,
             308 as libc::c_int,
             b"H3_EXPORT(localIjToCell)(origin, &ij, 0, &out) == E_FAILED\0" as *const u8
                 as *const libc::c_char,

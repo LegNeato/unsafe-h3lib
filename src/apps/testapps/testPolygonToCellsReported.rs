@@ -1,6 +1,9 @@
+extern crate unsafe_h3lib;
+extern crate unsafe_h3lib_applib;
+extern crate unsafe_h3lib_testapps_lib;
 use ::libc;
 extern "C" {
-    pub type __sFILEX;
+
     fn exit(_: libc::c_int) -> !;
     fn calloc(_: libc::c_ulong, _: libc::c_ulong) -> *mut libc::c_void;
     fn free(_: *mut libc::c_void);
@@ -59,7 +62,7 @@ pub struct __sFILE {
         unsafe extern "C" fn(*mut libc::c_void, *const libc::c_char, libc::c_int) -> libc::c_int,
     >,
     pub _ub: __sbuf,
-    pub _extra: *mut __sFILEX,
+    pub _extra: *mut libc::c_void,
     pub _ur: libc::c_int,
     pub _ubuf: [libc::c_uchar; 3],
     pub _nbuf: [libc::c_uchar; 1],
@@ -196,8 +199,8 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"src/apps/testapps/testPolygonToCellsReported.c\0"
-                    as *const u8 as *const libc::c_char,
+                b"src/apps/testapps/testPolygonToCellsReported.c\0" as *const u8
+                    as *const libc::c_char,
                 44 as libc::c_int,
                 b"!(maxPolygonToCellsSize( &worldGeoPolygon, res, 0, &polygonToCellsSize))\0"
                     as *const u8 as *const libc::c_char,
@@ -223,8 +226,8 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"src/apps/testapps/testPolygonToCellsReported.c\0"
-                    as *const u8 as *const libc::c_char,
+                b"src/apps/testapps/testPolygonToCellsReported.c\0" as *const u8
+                    as *const libc::c_char,
                 49 as libc::c_int,
                 b"!(polygonToCells(&worldGeoPolygon, res, 0, polygonToCellsOut))\0" as *const u8
                     as *const libc::c_char,
@@ -249,8 +252,8 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"src/apps/testapps/testPolygonToCellsReported.c\0"
-                    as *const u8 as *const libc::c_char,
+                b"src/apps/testapps/testPolygonToCellsReported.c\0" as *const u8
+                    as *const libc::c_char,
                 55 as libc::c_int,
                 b"!(maxPolygonToCellsSize( &worldGeoPolygon2, res, 0, &polygonToCellsSize2))\0"
                     as *const u8 as *const libc::c_char,
@@ -276,8 +279,8 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"src/apps/testapps/testPolygonToCellsReported.c\0"
-                    as *const u8 as *const libc::c_char,
+                b"src/apps/testapps/testPolygonToCellsReported.c\0" as *const u8
+                    as *const libc::c_char,
                 60 as libc::c_int,
                 b"!(polygonToCells(&worldGeoPolygon2, res, 0, polygonToCellsOut2))\0" as *const u8
                     as *const libc::c_char,
@@ -296,8 +299,8 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"src/apps/testapps/testPolygonToCellsReported.c\0"
-                    as *const u8 as *const libc::c_char,
+                b"src/apps/testapps/testPolygonToCellsReported.c\0" as *const u8
+                    as *const libc::c_char,
                 65 as libc::c_int,
                 b"!(getNumCells(res, &expectedTotalWorld))\0" as *const u8 as *const libc::c_char,
                 b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -312,8 +315,8 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"src/apps/testapps/testPolygonToCellsReported.c\0"
-                    as *const u8 as *const libc::c_char,
+                b"src/apps/testapps/testPolygonToCellsReported.c\0" as *const u8
+                    as *const libc::c_char,
                 67 as libc::c_int,
                 b"actualNumIndexes + actualNumIndexes2 == expectedTotalWorld\0" as *const u8
                     as *const libc::c_char,
@@ -346,8 +349,8 @@ unsafe extern "C" fn runTests() {
                             as *const libc::c_char,
                         currentSuiteName,
                         currentTestName,
-                        b"src/apps/testapps/testPolygonToCellsReported.c\0"
-                            as *const u8 as *const libc::c_char,
+                        b"src/apps/testapps/testPolygonToCellsReported.c\0" as *const u8
+                            as *const libc::c_char,
                         83 as libc::c_int,
                         b"!found\0" as *const u8 as *const libc::c_char,
                         b"Index found more than once when polygonToCellsing the entire world\0"
@@ -430,8 +433,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testPolygonToCellsReported.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testPolygonToCellsReported.c\0" as *const u8 as *const libc::c_char,
             108 as libc::c_int,
             b"!(maxPolygonToCellsSize(&testPolygon, res, 0, &numHexagons))\0" as *const u8
                 as *const libc::c_char,
@@ -457,8 +459,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testPolygonToCellsReported.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testPolygonToCellsReported.c\0" as *const u8 as *const libc::c_char,
             112 as libc::c_int,
             b"!(polygonToCells(&testPolygon, res, 0, hexagons))\0" as *const u8
                 as *const libc::c_char,
@@ -475,8 +476,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testPolygonToCellsReported.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testPolygonToCellsReported.c\0" as *const u8 as *const libc::c_char,
             116 as libc::c_int,
             b"actualNumIndexes == 4499\0" as *const u8 as *const libc::c_char,
             b"got expected polygonToCells size (h3-js#67)\0" as *const u8 as *const libc::c_char,
@@ -552,8 +552,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testPolygonToCellsReported.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testPolygonToCellsReported.c\0" as *const u8 as *const libc::c_char,
             137 as libc::c_int,
             b"!(maxPolygonToCellsSize(&testPolygon, res, 0, &numHexagons))\0" as *const u8
                 as *const libc::c_char,
@@ -579,8 +578,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testPolygonToCellsReported.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testPolygonToCellsReported.c\0" as *const u8 as *const libc::c_char,
             141 as libc::c_int,
             b"!(polygonToCells(&testPolygon, res, 0, hexagons))\0" as *const u8
                 as *const libc::c_char,
@@ -597,8 +595,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testPolygonToCellsReported.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testPolygonToCellsReported.c\0" as *const u8 as *const libc::c_char,
             145 as libc::c_int,
             b"actualNumIndexes == 4609\0" as *const u8 as *const libc::c_char,
             b"got expected polygonToCells size (h3-js#67, 2nd case)\0" as *const u8
@@ -671,8 +668,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testPolygonToCellsReported.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testPolygonToCellsReported.c\0" as *const u8 as *const libc::c_char,
             163 as libc::c_int,
             b"!(maxPolygonToCellsSize(&testPolygon, res, 0, &numHexagons))\0" as *const u8
                 as *const libc::c_char,
@@ -698,8 +694,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testPolygonToCellsReported.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testPolygonToCellsReported.c\0" as *const u8 as *const libc::c_char,
             167 as libc::c_int,
             b"!(polygonToCells(&testPolygon, res, 0, hexagons))\0" as *const u8
                 as *const libc::c_char,
@@ -716,8 +711,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testPolygonToCellsReported.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testPolygonToCellsReported.c\0" as *const u8 as *const libc::c_char,
             170 as libc::c_int,
             b"actualNumIndexes == 4353\0" as *const u8 as *const libc::c_char,
             b"got expected polygonToCells size\0" as *const u8 as *const libc::c_char,
@@ -792,8 +786,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testPolygonToCellsReported.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testPolygonToCellsReported.c\0" as *const u8 as *const libc::c_char,
             196 as libc::c_int,
             b"!(maxPolygonToCellsSize(&testPolygon, res, 0, &numHexagons))\0" as *const u8
                 as *const libc::c_char,
@@ -819,8 +812,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testPolygonToCellsReported.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testPolygonToCellsReported.c\0" as *const u8 as *const libc::c_char,
             200 as libc::c_int,
             b"!(polygonToCells(&testPolygon, res, 0, hexagons))\0" as *const u8
                 as *const libc::c_char,
@@ -837,8 +829,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testPolygonToCellsReported.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testPolygonToCellsReported.c\0" as *const u8 as *const libc::c_char,
             203 as libc::c_int,
             b"actualNumIndexes == 8\0" as *const u8 as *const libc::c_char,
             b"got expected polygonToCells size\0" as *const u8 as *const libc::c_char,

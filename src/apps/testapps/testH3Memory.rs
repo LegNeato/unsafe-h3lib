@@ -1,6 +1,7 @@
+extern crate unsafe_h3lib_applib;
 use ::libc;
 extern "C" {
-    pub type __sFILEX;
+
     fn memset(_: *mut libc::c_void, _: libc::c_int, _: libc::c_ulong) -> *mut libc::c_void;
     fn exit(_: libc::c_int) -> !;
     fn malloc(_: libc::c_ulong) -> *mut libc::c_void;
@@ -106,7 +107,7 @@ pub struct __sFILE {
         unsafe extern "C" fn(*mut libc::c_void, *const libc::c_char, libc::c_int) -> libc::c_int,
     >,
     pub _ub: __sbuf,
-    pub _extra: *mut __sFILEX,
+    pub _extra: *mut libc::c_void,
     pub _ur: libc::c_int,
     pub _ubuf: [libc::c_uchar; 3],
     pub _nbuf: [libc::c_uchar; 1],
@@ -245,8 +246,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Memory.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Memory.c\0" as *const u8 as *const libc::c_char,
             99 as libc::c_int,
             b"!(maxGridDiskSize(k, &hexCount))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -266,8 +266,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Memory.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Memory.c\0" as *const u8 as *const libc::c_char,
             103 as libc::c_int,
             b"!(gridDisk(sunnyvale, k, gridDiskOutput))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -282,8 +281,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Memory.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Memory.c\0" as *const u8 as *const libc::c_char,
             104 as libc::c_int,
             b"actualAllocCalls == 0\0" as *const u8 as *const libc::c_char,
             b"gridDisk did not call alloc\0" as *const u8 as *const libc::c_char,
@@ -298,8 +296,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Memory.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Memory.c\0" as *const u8 as *const libc::c_char,
             105 as libc::c_int,
             b"actualFreeCalls == 0\0" as *const u8 as *const libc::c_char,
             b"gridDisk did not call free\0" as *const u8 as *const libc::c_char,
@@ -315,8 +312,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Memory.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Memory.c\0" as *const u8 as *const libc::c_char,
             108 as libc::c_int,
             b"!(gridDisk(pentagon, k, gridDiskOutput))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -331,8 +327,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Memory.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Memory.c\0" as *const u8 as *const libc::c_char,
             109 as libc::c_int,
             b"actualAllocCalls == 1\0" as *const u8 as *const libc::c_char,
             b"gridDisk called alloc\0" as *const u8 as *const libc::c_char,
@@ -347,8 +342,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Memory.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Memory.c\0" as *const u8 as *const libc::c_char,
             110 as libc::c_int,
             b"actualFreeCalls == 1\0" as *const u8 as *const libc::c_char,
             b"gridDisk called free\0" as *const u8 as *const libc::c_char,
@@ -372,8 +366,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Memory.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Memory.c\0" as *const u8 as *const libc::c_char,
             117 as libc::c_int,
             b"H3_EXPORT(gridDisk)(pentagon, k, gridDiskOutput) == E_MEMORY_ALLOC\0" as *const u8
                 as *const libc::c_char,
@@ -389,8 +382,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Memory.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Memory.c\0" as *const u8 as *const libc::c_char,
             118 as libc::c_int,
             b"actualAllocCalls == 1\0" as *const u8 as *const libc::c_char,
             b"gridDisk called alloc\0" as *const u8 as *const libc::c_char,
@@ -405,8 +397,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Memory.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Memory.c\0" as *const u8 as *const libc::c_char,
             119 as libc::c_int,
             b"actualFreeCalls == 0\0" as *const u8 as *const libc::c_char,
             b"gridDisk did not call free\0" as *const u8 as *const libc::c_char,
@@ -423,8 +414,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"src/apps/testapps/testH3Memory.c\0" as *const u8
-                    as *const libc::c_char,
+                b"src/apps/testapps/testH3Memory.c\0" as *const u8 as *const libc::c_char,
                 123 as libc::c_int,
                 b"!gridDiskOutput[i]\0" as *const u8 as *const libc::c_char,
                 b"gridDisk did not produce output without alloc\0" as *const u8
@@ -446,8 +436,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Memory.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Memory.c\0" as *const u8 as *const libc::c_char,
             132 as libc::c_int,
             b"!(maxGridDiskSize(k, &hexCount))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -468,8 +457,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Memory.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Memory.c\0" as *const u8 as *const libc::c_char,
             138 as libc::c_int,
             b"!(gridDisk(sunnyvale, k, sunnyvaleExpanded))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -484,8 +472,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Memory.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Memory.c\0" as *const u8 as *const libc::c_char,
             139 as libc::c_int,
             b"actualAllocCalls == 0\0" as *const u8 as *const libc::c_char,
             b"gridDisk did not call alloc\0" as *const u8 as *const libc::c_char,
@@ -500,8 +487,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Memory.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Memory.c\0" as *const u8 as *const libc::c_char,
             140 as libc::c_int,
             b"actualFreeCalls == 0\0" as *const u8 as *const libc::c_char,
             b"gridDisk did not call free\0" as *const u8 as *const libc::c_char,
@@ -523,8 +509,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Memory.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Memory.c\0" as *const u8 as *const libc::c_char,
             148 as libc::c_int,
             b"err == E_MEMORY_ALLOC\0" as *const u8 as *const libc::c_char,
             b"malloc failed (1)\0" as *const u8 as *const libc::c_char,
@@ -539,8 +524,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Memory.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Memory.c\0" as *const u8 as *const libc::c_char,
             149 as libc::c_int,
             b"actualAllocCalls == 1\0" as *const u8 as *const libc::c_char,
             b"alloc called once\0" as *const u8 as *const libc::c_char,
@@ -555,8 +539,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Memory.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Memory.c\0" as *const u8 as *const libc::c_char,
             150 as libc::c_int,
             b"actualFreeCalls == 0\0" as *const u8 as *const libc::c_char,
             b"free not called\0" as *const u8 as *const libc::c_char,
@@ -573,8 +556,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Memory.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Memory.c\0" as *const u8 as *const libc::c_char,
             154 as libc::c_int,
             b"err == E_MEMORY_ALLOC\0" as *const u8 as *const libc::c_char,
             b"malloc failed (2)\0" as *const u8 as *const libc::c_char,
@@ -589,8 +571,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Memory.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Memory.c\0" as *const u8 as *const libc::c_char,
             155 as libc::c_int,
             b"actualAllocCalls == 2\0" as *const u8 as *const libc::c_char,
             b"alloc called twice\0" as *const u8 as *const libc::c_char,
@@ -605,8 +586,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Memory.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Memory.c\0" as *const u8 as *const libc::c_char,
             156 as libc::c_int,
             b"actualFreeCalls == 1\0" as *const u8 as *const libc::c_char,
             b"free called once\0" as *const u8 as *const libc::c_char,
@@ -623,8 +603,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Memory.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Memory.c\0" as *const u8 as *const libc::c_char,
             160 as libc::c_int,
             b"err == E_MEMORY_ALLOC\0" as *const u8 as *const libc::c_char,
             b"malloc failed (3)\0" as *const u8 as *const libc::c_char,
@@ -639,8 +618,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Memory.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Memory.c\0" as *const u8 as *const libc::c_char,
             161 as libc::c_int,
             b"actualAllocCalls == 3\0" as *const u8 as *const libc::c_char,
             b"alloc called three times\0" as *const u8 as *const libc::c_char,
@@ -655,8 +633,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Memory.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Memory.c\0" as *const u8 as *const libc::c_char,
             162 as libc::c_int,
             b"actualFreeCalls == 2\0" as *const u8 as *const libc::c_char,
             b"free called twice\0" as *const u8 as *const libc::c_char,
@@ -673,8 +650,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Memory.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Memory.c\0" as *const u8 as *const libc::c_char,
             166 as libc::c_int,
             b"err == E_MEMORY_ALLOC\0" as *const u8 as *const libc::c_char,
             b"compactCells failed (4)\0" as *const u8 as *const libc::c_char,
@@ -689,8 +665,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Memory.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Memory.c\0" as *const u8 as *const libc::c_char,
             167 as libc::c_int,
             b"actualAllocCalls == 4\0" as *const u8 as *const libc::c_char,
             b"alloc called four times\0" as *const u8 as *const libc::c_char,
@@ -705,8 +680,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Memory.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Memory.c\0" as *const u8 as *const libc::c_char,
             168 as libc::c_int,
             b"actualFreeCalls == 3\0" as *const u8 as *const libc::c_char,
             b"free called three times\0" as *const u8 as *const libc::c_char,
@@ -723,8 +697,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Memory.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Memory.c\0" as *const u8 as *const libc::c_char,
             172 as libc::c_int,
             b"err == E_SUCCESS\0" as *const u8 as *const libc::c_char,
             b"compact using successful malloc\0" as *const u8 as *const libc::c_char,
@@ -739,8 +712,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Memory.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Memory.c\0" as *const u8 as *const libc::c_char,
             173 as libc::c_int,
             b"actualAllocCalls == 4\0" as *const u8 as *const libc::c_char,
             b"alloc called four times\0" as *const u8 as *const libc::c_char,
@@ -755,8 +727,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Memory.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Memory.c\0" as *const u8 as *const libc::c_char,
             174 as libc::c_int,
             b"actualFreeCalls == 4\0" as *const u8 as *const libc::c_char,
             b"free called four times\0" as *const u8 as *const libc::c_char,
@@ -779,8 +750,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Memory.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Memory.c\0" as *const u8 as *const libc::c_char,
             182 as libc::c_int,
             b"count == expectedCompactCount\0" as *const u8 as *const libc::c_char,
             b"got expected compact count\0" as *const u8 as *const libc::c_char,
@@ -807,8 +777,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Memory.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Memory.c\0" as *const u8 as *const libc::c_char,
             194 as libc::c_int,
             b"!(maxPolygonToCellsSize(&sfGeoPolygon, 9, 0, &numHexagons))\0" as *const u8
                 as *const libc::c_char,
@@ -836,8 +805,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Memory.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Memory.c\0" as *const u8 as *const libc::c_char,
             200 as libc::c_int,
             b"err == E_MEMORY_ALLOC\0" as *const u8 as *const libc::c_char,
             b"polygonToCells failed (1)\0" as *const u8 as *const libc::c_char,
@@ -852,8 +820,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Memory.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Memory.c\0" as *const u8 as *const libc::c_char,
             201 as libc::c_int,
             b"actualAllocCalls == 1\0" as *const u8 as *const libc::c_char,
             b"alloc called once\0" as *const u8 as *const libc::c_char,
@@ -868,8 +835,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Memory.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Memory.c\0" as *const u8 as *const libc::c_char,
             202 as libc::c_int,
             b"actualFreeCalls == 0\0" as *const u8 as *const libc::c_char,
             b"free not called\0" as *const u8 as *const libc::c_char,
@@ -891,8 +857,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Memory.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Memory.c\0" as *const u8 as *const libc::c_char,
             206 as libc::c_int,
             b"err == E_MEMORY_ALLOC\0" as *const u8 as *const libc::c_char,
             b"polygonToCells failed (2)\0" as *const u8 as *const libc::c_char,
@@ -907,8 +872,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Memory.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Memory.c\0" as *const u8 as *const libc::c_char,
             207 as libc::c_int,
             b"actualAllocCalls == 2\0" as *const u8 as *const libc::c_char,
             b"alloc called twice\0" as *const u8 as *const libc::c_char,
@@ -923,8 +887,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Memory.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Memory.c\0" as *const u8 as *const libc::c_char,
             208 as libc::c_int,
             b"actualFreeCalls == 1\0" as *const u8 as *const libc::c_char,
             b"free called once\0" as *const u8 as *const libc::c_char,
@@ -946,8 +909,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Memory.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Memory.c\0" as *const u8 as *const libc::c_char,
             212 as libc::c_int,
             b"err == E_MEMORY_ALLOC\0" as *const u8 as *const libc::c_char,
             b"polygonToCells failed (3)\0" as *const u8 as *const libc::c_char,
@@ -962,8 +924,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Memory.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Memory.c\0" as *const u8 as *const libc::c_char,
             213 as libc::c_int,
             b"actualAllocCalls == 3\0" as *const u8 as *const libc::c_char,
             b"alloc called three times\0" as *const u8 as *const libc::c_char,
@@ -978,8 +939,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Memory.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Memory.c\0" as *const u8 as *const libc::c_char,
             214 as libc::c_int,
             b"actualFreeCalls == 2\0" as *const u8 as *const libc::c_char,
             b"free called twice\0" as *const u8 as *const libc::c_char,
@@ -1001,8 +961,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Memory.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Memory.c\0" as *const u8 as *const libc::c_char,
             218 as libc::c_int,
             b"err == E_SUCCESS\0" as *const u8 as *const libc::c_char,
             b"polygonToCells succeeded (4)\0" as *const u8 as *const libc::c_char,
@@ -1017,8 +976,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Memory.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Memory.c\0" as *const u8 as *const libc::c_char,
             219 as libc::c_int,
             b"actualAllocCalls == 3\0" as *const u8 as *const libc::c_char,
             b"alloc called three times\0" as *const u8 as *const libc::c_char,
@@ -1033,8 +991,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Memory.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Memory.c\0" as *const u8 as *const libc::c_char,
             220 as libc::c_int,
             b"actualFreeCalls == 3\0" as *const u8 as *const libc::c_char,
             b"free called three times\0" as *const u8 as *const libc::c_char,
@@ -1050,8 +1007,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Memory.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Memory.c\0" as *const u8 as *const libc::c_char,
             223 as libc::c_int,
             b"actualNumIndexes == 1253\0" as *const u8 as *const libc::c_char,
             b"got expected polygonToCells size\0" as *const u8 as *const libc::c_char,

@@ -1,6 +1,9 @@
+extern crate unsafe_h3lib;
+extern crate unsafe_h3lib_applib;
+extern crate unsafe_h3lib_testapps_lib;
 use ::libc;
 extern "C" {
-    pub type __sFILEX;
+
     static mut __stderrp: *mut FILE;
     fn printf(_: *const libc::c_char, _: ...) -> libc::c_int;
     fn fprintf(_: *mut FILE, _: *const libc::c_char, _: ...) -> libc::c_int;
@@ -50,7 +53,7 @@ pub struct __sFILE {
         unsafe extern "C" fn(*mut libc::c_void, *const libc::c_char, libc::c_int) -> libc::c_int,
     >,
     pub _ub: __sbuf,
-    pub _extra: *mut __sFILEX,
+    pub _extra: *mut libc::c_void,
     pub _ur: libc::c_int,
     pub _ubuf: [libc::c_uchar; 3],
     pub _nbuf: [libc::c_uchar; 1],
@@ -99,8 +102,7 @@ unsafe extern "C" fn countFaces(mut h3: H3Index, mut expectedMax: libc::c_int) -
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGetIcosahedronFaces.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGetIcosahedronFaces.c\0" as *const u8 as *const libc::c_char,
             31 as libc::c_int,
             b"!(maxFaceCount(h3, &sz))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -115,8 +117,7 @@ unsafe extern "C" fn countFaces(mut h3: H3Index, mut expectedMax: libc::c_int) -
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGetIcosahedronFaces.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGetIcosahedronFaces.c\0" as *const u8 as *const libc::c_char,
             32 as libc::c_int,
             b"sz == expectedMax\0" as *const u8 as *const libc::c_char,
             b"got expected max face count\0" as *const u8 as *const libc::c_char,
@@ -135,8 +136,7 @@ unsafe extern "C" fn countFaces(mut h3: H3Index, mut expectedMax: libc::c_int) -
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGetIcosahedronFaces.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGetIcosahedronFaces.c\0" as *const u8 as *const libc::c_char,
             35 as libc::c_int,
             b"!(getIcosahedronFaces(h3, faces))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -166,8 +166,7 @@ unsafe extern "C" fn assertSingleHexFace(mut h3: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGetIcosahedronFaces.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGetIcosahedronFaces.c\0" as *const u8 as *const libc::c_char,
             48 as libc::c_int,
             b"validCount == 1\0" as *const u8 as *const libc::c_char,
             b"got a single valid face\0" as *const u8 as *const libc::c_char,
@@ -185,8 +184,7 @@ unsafe extern "C" fn assertMultipleHexFaces(mut h3: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGetIcosahedronFaces.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGetIcosahedronFaces.c\0" as *const u8 as *const libc::c_char,
             53 as libc::c_int,
             b"validCount == 2\0" as *const u8 as *const libc::c_char,
             b"got multiple valid faces for a hexagon\0" as *const u8 as *const libc::c_char,
@@ -203,8 +201,7 @@ unsafe extern "C" fn assertPentagonFaces(mut h3: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGetIcosahedronFaces.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGetIcosahedronFaces.c\0" as *const u8 as *const libc::c_char,
             57 as libc::c_int,
             b"H3_EXPORT(isPentagon)(h3)\0" as *const u8 as *const libc::c_char,
             b"got a pentagon\0" as *const u8 as *const libc::c_char,
@@ -220,8 +217,7 @@ unsafe extern "C" fn assertPentagonFaces(mut h3: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGetIcosahedronFaces.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGetIcosahedronFaces.c\0" as *const u8 as *const libc::c_char,
             59 as libc::c_int,
             b"validCount == 5\0" as *const u8 as *const libc::c_char,
             b"got 5 valid faces for a pentagon\0" as *const u8 as *const libc::c_char,
@@ -295,8 +291,8 @@ unsafe extern "C" fn runTests() {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"src/apps/testapps/testGetIcosahedronFaces.c\0"
-                        as *const u8 as *const libc::c_char,
+                    b"src/apps/testapps/testGetIcosahedronFaces.c\0" as *const u8
+                        as *const libc::c_char,
                     115 as libc::c_int,
                     b"validCount > 0\0" as *const u8 as *const libc::c_char,
                     b"got at least one face\0" as *const u8 as *const libc::c_char,
@@ -319,8 +315,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGetIcosahedronFaces.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGetIcosahedronFaces.c\0" as *const u8 as *const libc::c_char,
             123 as libc::c_int,
             b"singleCount == 4 * 20\0" as *const u8 as *const libc::c_char,
             b"got single face for 4 aligned hex base cells per face\0" as *const u8
@@ -336,8 +331,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGetIcosahedronFaces.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGetIcosahedronFaces.c\0" as *const u8 as *const libc::c_char,
             125 as libc::c_int,
             b"multipleCount == 1.5 * 20\0" as *const u8 as *const libc::c_char,
             b"got multiple faces for non-aligned hex base cells\0" as *const u8
@@ -366,8 +360,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGetIcosahedronFaces.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGetIcosahedronFaces.c\0" as *const u8 as *const libc::c_char,
             144 as libc::c_int,
             b"H3_EXPORT(getIcosahedronFaces)(invalid, &out) == E_CELL_INVALID\0" as *const u8
                 as *const libc::c_char,
@@ -386,8 +379,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGetIcosahedronFaces.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGetIcosahedronFaces.c\0" as *const u8 as *const libc::c_char,
             150 as libc::c_int,
             b"!(maxFaceCount(invalid, &sz))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -406,8 +398,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGetIcosahedronFaces.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGetIcosahedronFaces.c\0" as *const u8 as *const libc::c_char,
             153 as libc::c_int,
             b"H3_EXPORT(getIcosahedronFaces)(invalid, faces) == E_FAILED\0" as *const u8
                 as *const libc::c_char,

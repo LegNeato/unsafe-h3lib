@@ -1,6 +1,9 @@
+extern crate unsafe_h3lib;
+extern crate unsafe_h3lib_applib;
+extern crate unsafe_h3lib_testapps_lib;
 use ::libc;
 extern "C" {
-    pub type __sFILEX;
+
     static mut __stderrp: *mut FILE;
     fn fprintf(_: *mut FILE, _: *const libc::c_char, _: ...) -> libc::c_int;
     fn printf(_: *const libc::c_char, _: ...) -> libc::c_int;
@@ -60,7 +63,7 @@ pub struct __sFILE {
         unsafe extern "C" fn(*mut libc::c_void, *const libc::c_char, libc::c_int) -> libc::c_int,
     >,
     pub _ub: __sbuf,
-    pub _extra: *mut __sFILEX,
+    pub _extra: *mut libc::c_void,
     pub _ur: libc::c_int,
     pub _ubuf: [libc::c_uchar; 3],
     pub _nbuf: [libc::c_uchar; 1],
@@ -94,8 +97,7 @@ unsafe extern "C" fn directedEdge_correctness_assertions(mut h3: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testDirectedEdgeExhaustive.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testDirectedEdgeExhaustive.c\0" as *const u8 as *const libc::c_char,
             37 as libc::c_int,
             b"!(originToDirectedEdges(h3, edges))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -114,8 +116,8 @@ unsafe extern "C" fn directedEdge_correctness_assertions(mut h3: H3Index) {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"src/apps/testapps/testDirectedEdgeExhaustive.c\0"
-                        as *const u8 as *const libc::c_char,
+                    b"src/apps/testapps/testDirectedEdgeExhaustive.c\0" as *const u8
+                        as *const libc::c_char,
                     41 as libc::c_int,
                     b"edges[i] == H3_NULL\0" as *const u8 as *const libc::c_char,
                     b"last pentagon edge is empty\0" as *const u8 as *const libc::c_char,
@@ -132,8 +134,8 @@ unsafe extern "C" fn directedEdge_correctness_assertions(mut h3: H3Index) {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"src/apps/testapps/testDirectedEdgeExhaustive.c\0"
-                        as *const u8 as *const libc::c_char,
+                    b"src/apps/testapps/testDirectedEdgeExhaustive.c\0" as *const u8
+                        as *const libc::c_char,
                     45 as libc::c_int,
                     b"H3_EXPORT(isValidDirectedEdge)(edges[i]) == 1\0" as *const u8
                         as *const libc::c_char,
@@ -151,8 +153,8 @@ unsafe extern "C" fn directedEdge_correctness_assertions(mut h3: H3Index) {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"src/apps/testapps/testDirectedEdgeExhaustive.c\0"
-                        as *const u8 as *const libc::c_char,
+                    b"src/apps/testapps/testDirectedEdgeExhaustive.c\0" as *const u8
+                        as *const libc::c_char,
                     47 as libc::c_int,
                     b"!(getDirectedEdgeOrigin(edges[i], &origin))\0" as *const u8
                         as *const libc::c_char,
@@ -169,8 +171,8 @@ unsafe extern "C" fn directedEdge_correctness_assertions(mut h3: H3Index) {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"src/apps/testapps/testDirectedEdgeExhaustive.c\0"
-                        as *const u8 as *const libc::c_char,
+                    b"src/apps/testapps/testDirectedEdgeExhaustive.c\0" as *const u8
+                        as *const libc::c_char,
                     48 as libc::c_int,
                     b"origin == h3\0" as *const u8 as *const libc::c_char,
                     b"origin matches input origin\0" as *const u8 as *const libc::c_char,
@@ -187,8 +189,8 @@ unsafe extern "C" fn directedEdge_correctness_assertions(mut h3: H3Index) {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"src/apps/testapps/testDirectedEdgeExhaustive.c\0"
-                        as *const u8 as *const libc::c_char,
+                    b"src/apps/testapps/testDirectedEdgeExhaustive.c\0" as *const u8
+                        as *const libc::c_char,
                     52 as libc::c_int,
                     b"!(getDirectedEdgeDestination(edges[i], &destination))\0" as *const u8
                         as *const libc::c_char,
@@ -206,8 +208,8 @@ unsafe extern "C" fn directedEdge_correctness_assertions(mut h3: H3Index) {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"src/apps/testapps/testDirectedEdgeExhaustive.c\0"
-                        as *const u8 as *const libc::c_char,
+                    b"src/apps/testapps/testDirectedEdgeExhaustive.c\0" as *const u8
+                        as *const libc::c_char,
                     55 as libc::c_int,
                     b"!(areNeighborCells(h3, destination, &isNeighbor))\0" as *const u8
                         as *const libc::c_char,
@@ -224,8 +226,8 @@ unsafe extern "C" fn directedEdge_correctness_assertions(mut h3: H3Index) {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"src/apps/testapps/testDirectedEdgeExhaustive.c\0"
-                        as *const u8 as *const libc::c_char,
+                    b"src/apps/testapps/testDirectedEdgeExhaustive.c\0" as *const u8
+                        as *const libc::c_char,
                     56 as libc::c_int,
                     b"isNeighbor\0" as *const u8 as *const libc::c_char,
                     b"destination is a neighbor\0" as *const u8 as *const libc::c_char,
@@ -246,8 +248,7 @@ unsafe extern "C" fn directedEdge_boundary_assertions(mut h3: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testDirectedEdgeExhaustive.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testDirectedEdgeExhaustive.c\0" as *const u8 as *const libc::c_char,
             62 as libc::c_int,
             b"!(originToDirectedEdges(h3, edges))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -276,8 +277,8 @@ unsafe extern "C" fn directedEdge_boundary_assertions(mut h3: H3Index) {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"src/apps/testapps/testDirectedEdgeExhaustive.c\0"
-                        as *const u8 as *const libc::c_char,
+                    b"src/apps/testapps/testDirectedEdgeExhaustive.c\0" as *const u8
+                        as *const libc::c_char,
                     71 as libc::c_int,
                     b"!(directedEdgeToBoundary(edges[i], &edgeBoundary))\0" as *const u8
                         as *const libc::c_char,
@@ -294,8 +295,8 @@ unsafe extern "C" fn directedEdge_boundary_assertions(mut h3: H3Index) {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"src/apps/testapps/testDirectedEdgeExhaustive.c\0"
-                        as *const u8 as *const libc::c_char,
+                    b"src/apps/testapps/testDirectedEdgeExhaustive.c\0" as *const u8
+                        as *const libc::c_char,
                     73 as libc::c_int,
                     b"!(getDirectedEdgeDestination(edges[i], &destination))\0" as *const u8
                         as *const libc::c_char,
@@ -312,8 +313,8 @@ unsafe extern "C" fn directedEdge_boundary_assertions(mut h3: H3Index) {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"src/apps/testapps/testDirectedEdgeExhaustive.c\0"
-                        as *const u8 as *const libc::c_char,
+                    b"src/apps/testapps/testDirectedEdgeExhaustive.c\0" as *const u8
+                        as *const libc::c_char,
                     75 as libc::c_int,
                     b"!(cellsToDirectedEdge(destination, h3, &revEdge))\0" as *const u8
                         as *const libc::c_char,
@@ -330,8 +331,8 @@ unsafe extern "C" fn directedEdge_boundary_assertions(mut h3: H3Index) {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"src/apps/testapps/testDirectedEdgeExhaustive.c\0"
-                        as *const u8 as *const libc::c_char,
+                    b"src/apps/testapps/testDirectedEdgeExhaustive.c\0" as *const u8
+                        as *const libc::c_char,
                     77 as libc::c_int,
                     b"!(directedEdgeToBoundary(revEdge, &revEdgeBoundary))\0" as *const u8
                         as *const libc::c_char,
@@ -348,8 +349,8 @@ unsafe extern "C" fn directedEdge_boundary_assertions(mut h3: H3Index) {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"src/apps/testapps/testDirectedEdgeExhaustive.c\0"
-                        as *const u8 as *const libc::c_char,
+                    b"src/apps/testapps/testDirectedEdgeExhaustive.c\0" as *const u8
+                        as *const libc::c_char,
                     80 as libc::c_int,
                     b"edgeBoundary.numVerts == revEdgeBoundary.numVerts\0" as *const u8
                         as *const libc::c_char,
@@ -375,8 +376,8 @@ unsafe extern "C" fn directedEdge_boundary_assertions(mut h3: H3Index) {
                             as *const libc::c_char,
                         currentSuiteName,
                         currentTestName,
-                        b"src/apps/testapps/testDirectedEdgeExhaustive.c\0"
-                            as *const u8 as *const libc::c_char,
+                        b"src/apps/testapps/testDirectedEdgeExhaustive.c\0" as *const u8
+                            as *const libc::c_char,
                         87 as libc::c_int,
                         b"almostEqual\0" as *const u8 as *const libc::c_char,
                         b"Got expected vertex\0" as *const u8 as *const libc::c_char,

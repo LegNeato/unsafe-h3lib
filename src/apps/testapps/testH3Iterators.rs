@@ -1,6 +1,9 @@
+extern crate unsafe_h3lib;
+extern crate unsafe_h3lib_applib;
+extern crate unsafe_h3lib_testapps_lib;
 use ::libc;
 extern "C" {
-    pub type __sFILEX;
+
     fn exit(_: libc::c_int) -> !;
     fn getNumCells(res: libc::c_int, out: *mut int64_t) -> H3Error;
     fn getResolution(h: H3Index) -> libc::c_int;
@@ -66,7 +69,7 @@ pub struct __sFILE {
         unsafe extern "C" fn(*mut libc::c_void, *const libc::c_char, libc::c_int) -> libc::c_int,
     >,
     pub _ub: __sbuf,
-    pub _extra: *mut __sFILEX,
+    pub _extra: *mut libc::c_void,
     pub _ur: libc::c_int,
     pub _ubuf: [libc::c_uchar; 3],
     pub _nbuf: [libc::c_uchar; 1],
@@ -89,8 +92,7 @@ unsafe extern "C" fn test_number(mut res: libc::c_int) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Iterators.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Iterators.c\0" as *const u8 as *const libc::c_char,
             35 as libc::c_int,
             b"!(getNumCells(res, &expected))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -105,8 +107,7 @@ unsafe extern "C" fn test_number(mut res: libc::c_int) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Iterators.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Iterators.c\0" as *const u8 as *const libc::c_char,
             38 as libc::c_int,
             b"count == expected\0" as *const u8 as *const libc::c_char,
             b"expect the correct number of cells from the iterator\0" as *const u8
@@ -126,8 +127,7 @@ unsafe extern "C" fn test_valid(mut res: libc::c_int) {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"src/apps/testapps/testH3Iterators.c\0" as *const u8
-                    as *const libc::c_char,
+                b"src/apps/testapps/testH3Iterators.c\0" as *const u8 as *const libc::c_char,
                 44 as libc::c_int,
                 b"H3_EXPORT(isValidCell)(iter.h)\0" as *const u8 as *const libc::c_char,
                 b"iterator cell is valid\0" as *const u8 as *const libc::c_char,
@@ -148,8 +148,7 @@ unsafe extern "C" fn test_resolution(mut res: libc::c_int) {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"src/apps/testapps/testH3Iterators.c\0" as *const u8
-                    as *const libc::c_char,
+                b"src/apps/testapps/testH3Iterators.c\0" as *const u8 as *const libc::c_char,
                 52 as libc::c_int,
                 b"H3_EXPORT(getResolution)(iter.h) == res\0" as *const u8 as *const libc::c_char,
                 b"iterator cell is the correct resolution\0" as *const u8 as *const libc::c_char,
@@ -172,8 +171,7 @@ unsafe extern "C" fn test_ordered(mut res: libc::c_int) {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"src/apps/testapps/testH3Iterators.c\0" as *const u8
-                    as *const libc::c_char,
+                b"src/apps/testapps/testH3Iterators.c\0" as *const u8 as *const libc::c_char,
                 64 as libc::c_int,
                 b"prev < iter.h\0" as *const u8 as *const libc::c_char,
                 b"cells should be iterated in order without duplicates\0" as *const u8
@@ -194,8 +192,7 @@ unsafe extern "C" fn assert_is_null_iterator(mut iter: IterCellsChildren) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Iterators.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Iterators.c\0" as *const u8 as *const libc::c_char,
             70 as libc::c_int,
             b"iter.h == H3_NULL\0" as *const u8 as *const libc::c_char,
             b"null iterator cell is H3_NULL\0" as *const u8 as *const libc::c_char,
@@ -210,8 +207,7 @@ unsafe extern "C" fn assert_is_null_iterator(mut iter: IterCellsChildren) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Iterators.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Iterators.c\0" as *const u8 as *const libc::c_char,
             71 as libc::c_int,
             b"iter._parentRes == -1\0" as *const u8 as *const libc::c_char,
             b"null iterator parentRes is -1\0" as *const u8 as *const libc::c_char,
@@ -226,8 +222,7 @@ unsafe extern "C" fn assert_is_null_iterator(mut iter: IterCellsChildren) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Iterators.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Iterators.c\0" as *const u8 as *const libc::c_char,
             72 as libc::c_int,
             b"iter._skipDigit == -1\0" as *const u8 as *const libc::c_char,
             b"null iterator skipDigit is -1\0" as *const u8 as *const libc::c_char,
@@ -260,8 +255,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Iterators.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Iterators.c\0" as *const u8 as *const libc::c_char,
             92 as libc::c_int,
             b"iter.h == H3_NULL\0" as *const u8 as *const libc::c_char,
             b"null iterator returns null\0" as *const u8 as *const libc::c_char,
@@ -280,8 +274,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Iterators.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Iterators.c\0" as *const u8 as *const libc::c_char,
             99 as libc::c_int,
             b"iter.h == H3_NULL\0" as *const u8 as *const libc::c_char,
             b"null iterator returns null\0" as *const u8 as *const libc::c_char,

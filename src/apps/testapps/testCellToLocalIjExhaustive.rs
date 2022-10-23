@@ -1,6 +1,9 @@
+extern crate unsafe_h3lib;
+extern crate unsafe_h3lib_applib;
+extern crate unsafe_h3lib_testapps_lib;
 use ::libc;
 extern "C" {
-    pub type __sFILEX;
+
     fn maxGridDiskSize(k: libc::c_int, out: *mut int64_t) -> H3Error;
     fn gridDiskDistances(
         origin: H3Index,
@@ -106,7 +109,7 @@ pub struct __sFILE {
         unsafe extern "C" fn(*mut libc::c_void, *const libc::c_char, libc::c_int) -> libc::c_int,
     >,
     pub _ub: __sbuf,
-    pub _extra: *mut __sFILEX,
+    pub _extra: *mut libc::c_void,
     pub _ur: libc::c_int,
     pub _ubuf: [libc::c_uchar; 3],
     pub _nbuf: [libc::c_uchar; 1],
@@ -359,8 +362,8 @@ pub unsafe extern "C" fn h3ToLocalIj_coordinates_assertions(mut h3: H3Index) {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"src/apps/testapps/testCellToLocalIjExhaustive.c\0"
-                    as *const u8 as *const libc::c_char,
+                b"src/apps/testapps/testCellToLocalIjExhaustive.c\0" as *const u8
+                    as *const libc::c_char,
                 74 as libc::c_int,
                 b"_ijkMatches(&ijk, &UNIT_VECS[0]) == 1\0" as *const u8 as *const libc::c_char,
                 b"res 0 cell at 0,0,0\0" as *const u8 as *const libc::c_char,
@@ -383,8 +386,8 @@ pub unsafe extern "C" fn h3ToLocalIj_coordinates_assertions(mut h3: H3Index) {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"src/apps/testapps/testCellToLocalIjExhaustive.c\0"
-                    as *const u8 as *const libc::c_char,
+                b"src/apps/testapps/testCellToLocalIjExhaustive.c\0" as *const u8
+                    as *const libc::c_char,
                 77 as libc::c_int,
                 b"_ijkMatches(&ijk, &UNIT_VECS[H3_GET_INDEX_DIGIT(h3, 1)]) == 1\0" as *const u8
                     as *const libc::c_char,
@@ -410,8 +413,8 @@ pub unsafe extern "C" fn h3ToLocalIj_coordinates_assertions(mut h3: H3Index) {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"src/apps/testapps/testCellToLocalIjExhaustive.c\0"
-                    as *const u8 as *const libc::c_char,
+                b"src/apps/testapps/testCellToLocalIjExhaustive.c\0" as *const u8
+                    as *const libc::c_char,
                 83 as libc::c_int,
                 b"_ijkMatches(&ijk, &expected) == 1\0" as *const u8 as *const libc::c_char,
                 b"res 2 cell at expected coordinates\0" as *const u8 as *const libc::c_char,
@@ -427,8 +430,8 @@ pub unsafe extern "C" fn h3ToLocalIj_coordinates_assertions(mut h3: H3Index) {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"src/apps/testapps/testCellToLocalIjExhaustive.c\0"
-                    as *const u8 as *const libc::c_char,
+                b"src/apps/testapps/testCellToLocalIjExhaustive.c\0" as *const u8
+                    as *const libc::c_char,
                 85 as libc::c_int,
                 b"0\0" as *const u8 as *const libc::c_char,
                 b"resolution supported by test function (coordinates)\0" as *const u8
@@ -499,8 +502,8 @@ pub unsafe extern "C" fn h3ToLocalIj_neighbors_assertions(mut h3: H3Index) {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"src/apps/testapps/testCellToLocalIjExhaustive.c\0"
-                        as *const u8 as *const libc::c_char,
+                    b"src/apps/testapps/testCellToLocalIjExhaustive.c\0" as *const u8
+                        as *const libc::c_char,
                     107 as libc::c_int,
                     b"!(h3NeighborRotations(h3, d, &rotations, &offset))\0" as *const u8
                         as *const libc::c_char,
@@ -526,8 +529,8 @@ pub unsafe extern "C" fn h3ToLocalIj_neighbors_assertions(mut h3: H3Index) {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"src/apps/testapps/testCellToLocalIjExhaustive.c\0"
-                        as *const u8 as *const libc::c_char,
+                    b"src/apps/testapps/testCellToLocalIjExhaustive.c\0" as *const u8
+                        as *const libc::c_char,
                     111 as libc::c_int,
                     b"H3_EXPORT(cellToLocalIj)(h3, offset, 0, &ij) == 0\0" as *const u8
                         as *const libc::c_char,
@@ -545,8 +548,8 @@ pub unsafe extern "C" fn h3ToLocalIj_neighbors_assertions(mut h3: H3Index) {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"src/apps/testapps/testCellToLocalIjExhaustive.c\0"
-                        as *const u8 as *const libc::c_char,
+                    b"src/apps/testapps/testCellToLocalIjExhaustive.c\0" as *const u8
+                        as *const libc::c_char,
                     113 as libc::c_int,
                     b"!(ijToIjk(&ij, &ijk))\0" as *const u8 as *const libc::c_char,
                     b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -578,8 +581,8 @@ pub unsafe extern "C" fn h3ToLocalIj_neighbors_assertions(mut h3: H3Index) {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"src/apps/testapps/testCellToLocalIjExhaustive.c\0"
-                        as *const u8 as *const libc::c_char,
+                    b"src/apps/testapps/testCellToLocalIjExhaustive.c\0" as *const u8
+                        as *const libc::c_char,
                     122 as libc::c_int,
                     b"_ijkMatches(&ijk, &originIjk)\0" as *const u8 as *const libc::c_char,
                     b"back to origin\0" as *const u8 as *const libc::c_char,
@@ -807,8 +810,8 @@ pub unsafe extern "C" fn localIjToH3_gridDisk_assertions(mut h3: H3Index) {
                             as *const libc::c_char,
                         currentSuiteName,
                         currentTestName,
-                        b"src/apps/testapps/testCellToLocalIjExhaustive.c\0"
-                            as *const u8 as *const libc::c_char,
+                        b"src/apps/testapps/testCellToLocalIjExhaustive.c\0" as *const u8
+                            as *const libc::c_char,
                         200 as libc::c_int,
                         b"H3_EXPORT(localIjToCell)(h3, &ij, 0, &retrieved) == 0\0" as *const u8
                             as *const libc::c_char,
@@ -826,8 +829,8 @@ pub unsafe extern "C" fn localIjToH3_gridDisk_assertions(mut h3: H3Index) {
                             as *const libc::c_char,
                         currentSuiteName,
                         currentTestName,
-                        b"src/apps/testapps/testCellToLocalIjExhaustive.c\0"
-                            as *const u8 as *const libc::c_char,
+                        b"src/apps/testapps/testCellToLocalIjExhaustive.c\0" as *const u8
+                            as *const libc::c_char,
                         202 as libc::c_int,
                         b"retrieved == neighbors[i]\0" as *const u8 as *const libc::c_char,
                         b"round trip neighboring index matches expected\0" as *const u8
@@ -906,8 +909,8 @@ pub unsafe extern "C" fn localIjToH3_traverse_assertions(mut h3: H3Index) {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"src/apps/testapps/testCellToLocalIjExhaustive.c\0"
-                        as *const u8 as *const libc::c_char,
+                    b"src/apps/testapps/testCellToLocalIjExhaustive.c\0" as *const u8
+                        as *const libc::c_char,
                     241 as libc::c_int,
                     b"H3_EXPORT(isValidCell)(testH3)\0" as *const u8 as *const libc::c_char,
                     b"test coordinates result in valid index\0" as *const u8 as *const libc::c_char,
@@ -936,13 +939,12 @@ pub unsafe extern "C" fn localIjToH3_traverse_assertions(mut h3: H3Index) {
                                 as *const libc::c_char,
                             currentSuiteName,
                             currentTestName,
-                            b"src/apps/testapps/testCellToLocalIjExhaustive.c\0"
-                                as *const u8 as *const libc::c_char,
+                            b"src/apps/testapps/testCellToLocalIjExhaustive.c\0" as *const u8
+                                as *const libc::c_char,
                             256 as libc::c_int,
                             b"H3_EXPORT(localIjToCell)(h3, &expectedIj, 0, &testTestH3) == 0\0"
                                 as *const u8 as *const libc::c_char,
-                            b"converted coordinates again\0" as *const u8
-                                as *const libc::c_char,
+                            b"converted coordinates again\0" as *const u8 as *const libc::c_char,
                         );
                         exit(1 as libc::c_int);
                     }
@@ -955,13 +957,12 @@ pub unsafe extern "C" fn localIjToH3_traverse_assertions(mut h3: H3Index) {
                                 as *const libc::c_char,
                             currentSuiteName,
                             currentTestName,
-                            b"src/apps/testapps/testCellToLocalIjExhaustive.c\0"
-                                as *const u8 as *const libc::c_char,
-                            259 as libc::c_int,
-                            b"testH3 == testTestH3\0" as *const u8
+                            b"src/apps/testapps/testCellToLocalIjExhaustive.c\0" as *const u8
                                 as *const libc::c_char,
-                            b"index has normalizable coordinates in local IJ\0"
-                                as *const u8 as *const libc::c_char,
+                            259 as libc::c_int,
+                            b"testH3 == testTestH3\0" as *const u8 as *const libc::c_char,
+                            b"index has normalizable coordinates in local IJ\0" as *const u8
+                                as *const libc::c_char,
                         );
                         exit(1 as libc::c_int);
                     }

@@ -1,6 +1,7 @@
+extern crate unsafe_h3lib_applib;
 use ::libc;
 extern "C" {
-    pub type __sFILEX;
+
     static mut __stdinp: *mut FILE;
     static mut __stderrp: *mut FILE;
     fn feof(_: *mut FILE) -> libc::c_int;
@@ -46,7 +47,7 @@ pub struct __sFILE {
         unsafe extern "C" fn(*mut libc::c_void, *const libc::c_char, libc::c_int) -> libc::c_int,
     >,
     pub _ub: __sbuf,
-    pub _extra: *mut __sFILEX,
+    pub _extra: *mut libc::c_void,
     pub _ur: libc::c_int,
     pub _ubuf: [libc::c_uchar; 3],
     pub _nbuf: [libc::c_uchar; 1],
@@ -152,8 +153,7 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"src/apps/testapps/testCellToBoundary.c\0" as *const u8
-                    as *const libc::c_char,
+                b"src/apps/testapps/testCellToBoundary.c\0" as *const u8 as *const libc::c_char,
                 114 as libc::c_int,
                 b"!(stringToH3(buff, &h3))\0" as *const u8 as *const libc::c_char,
                 b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,

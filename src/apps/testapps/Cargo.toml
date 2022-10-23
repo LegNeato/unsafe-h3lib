@@ -1,0 +1,206 @@
+[package]
+name = "unsafe-h3lib-testapps"
+authors = ["C2Rust"]
+version = "0.0.0"
+publish = false
+edition = "2021"
+autobins = false
+
+[lib]
+name = "unsafe_h3lib_testapps_lib"
+path = "lib.rs"
+crate-type = ["staticlib", "rlib"]
+
+[dependencies]
+unsafe-h3lib = { version = "*", path = "../../h3lib" }
+unsafe-h3lib-applib = { version = "*", path = "../applib/lib"}
+num-traits = "0.2"
+libc = "0.2"
+
+[[bin]]
+name = "mkRangGeo"
+path = "mkRandGeo.rs"
+
+[[bin]]
+name = "mkRandGeoBoundary"
+path = "mkRandGeoBoundary.rs"
+
+[[bin]]
+name = "testBBox"
+path = "testBBox.rs"
+
+[[bin]]
+name = "testBaseCells"
+path = "testBaseCells.rs"
+
+[[bin]]
+name = "testCellToBoundary"
+path = "testCellToBoundary.rs"
+
+[[bin]]
+name = "testCellToBoundaryEdgeCases"
+path = "testCellToBoundaryEdgeCases.rs"
+
+[[bin]]
+name = "testCellToCenterChild"
+path = "testCellToCenterChild.rs"
+
+[[bin]]
+name = "testCellToChildren"
+path = "testCellToChildren.rs"
+
+[[bin]]
+name = "testCellToChildrenSize"
+path = "testCellToChildrenSize.rs"
+
+[[bin]]
+name = "testCellToLatLng"
+path = "testCellToLatLng.rs"
+
+[[bin]]
+name = "testCellToLocalIj"
+path = "testCellToLocalIj.rs"
+
+[[bin]]
+name = "testCellToLocalIjExhaustive"
+path = "testCellToLocalIjExhaustive.rs"
+
+[[bin]]
+name = "testCellToParent"
+path = "testCellToParent.rs"
+
+[[bin]]
+name = "testCellsToLinkedMultiPolygon"
+path = "testCellsToLinkedMultiPolygon.rs"
+
+[[bin]]
+name = "testCompactCells"
+path = "testCompactCells.rs"
+
+[[bin]]
+name = "testCoordIj"
+path = "testCoordIj.rs"
+
+[[bin]]
+name = "testCoordIjk"
+path = "testCoordIjk.rs"
+
+[[bin]]
+name = "testDirectedEdge"
+path = "testDirectedEdge.rs"
+
+[[bin]]
+name = "testDirectedEdgeExhaustive"
+path = "testDirectedEdgeExhaustive.rs"
+
+[[bin]]
+name = "testGetIcosahedronFaces"
+path = "testGetIcosahedronFaces.rs"
+
+[[bin]]
+name = "testGridDisk"
+path = "testGridDisk.rs"
+
+[[bin]]
+name = "testGridDisksUnsafe"
+path = "testGridDisksUnsafe.rs"
+
+[[bin]]
+name = "testGridDistance"
+path = "testGridDistance.rs"
+
+[[bin]]
+name = "testGridDistanceExhaustive"
+path = "testGridDistanceExhaustive.rs"
+
+[[bin]]
+name = "testGridPathCells"
+path = "testGridPathCells.rs"
+
+[[bin]]
+name = "testGridPathCellsExhaustive"
+path = "testGridPathCellsExhaustive.rs"
+
+[[bin]]
+name = "testGridRingUnsafe"
+path = "testGridRingUnsafe.rs"
+
+[[bin]]
+name = "testH3Api"
+path = "testH3Api.rs"
+
+[[bin]]
+name = "testH3CellArea"
+path = "testH3CellArea.rs"
+
+[[bin]]
+name = "testH3CellAreaExhaustive"
+path = "testH3CellAreaExhaustive.rs"
+
+[[bin]]
+name = "testH3Index"
+path = "testH3Index.rs"
+
+[[bin]]
+name = "testH3Iterators"
+path = "testH3Iterators.rs"
+
+[[bin]]
+name = "testH3Memory"
+path = "testH3Memory.rs"
+
+[[bin]]
+name = "testH3NeighborRotations"
+path = "testH3NeighborRotations.rs"
+
+[[bin]]
+name = "testH3SetToVertexGraph"
+path = "testH3SetToVertexGraph.rs"
+
+[[bin]]
+name = "testLatLng"
+path = "testLatLng.rs"
+
+[[bin]]
+name = "testLatLngToCell"
+path = "testLatLngToCell.rs"
+
+[[bin]]
+name = "testLinkedGeo"
+path = "testLinkedGeo.rs"
+
+[[bin]]
+name = "testPentagonIndexes"
+path = "testPentagonIndexes.rs"
+
+[[bin]]
+name = "testPolygon"
+path = "testPolygon.rs"
+
+[[bin]]
+name = "testPolygonToCells"
+path = "testPolygonToCells.rs"
+
+[[bin]]
+name = "testPolygonToCellsReported"
+path = "testPolygonToCellsReported.rs"
+
+[[bin]]
+name = "testVec2d"
+path = "testVec2d.rs"
+
+[[bin]]
+name = "testVec3d"
+path = "testVec3d.rs"
+
+[[bin]]
+name = "testVertex"
+path = "testVertex.rs"
+
+[[bin]]
+name = "testVertexExhaustive"
+path = "testVertexExhaustive.rs"
+
+[[bin]]
+name = "testVertexGraph"
+path = "testVertexGraph.rs"

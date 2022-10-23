@@ -1,6 +1,9 @@
+extern crate unsafe_h3lib;
+extern crate unsafe_h3lib_applib;
+extern crate unsafe_h3lib_testapps_lib;
 use ::libc;
 extern "C" {
-    pub type __sFILEX;
+
     fn exit(_: libc::c_int) -> !;
     fn malloc(_: libc::c_ulong) -> *mut libc::c_void;
     fn free(_: *mut libc::c_void);
@@ -48,7 +51,7 @@ pub struct __sFILE {
         unsafe extern "C" fn(*mut libc::c_void, *const libc::c_char, libc::c_int) -> libc::c_int,
     >,
     pub _ub: __sbuf,
-    pub _extra: *mut __sFILEX,
+    pub _extra: *mut libc::c_void,
     pub _ur: libc::c_int,
     pub _ubuf: [libc::c_uchar; 3],
     pub _nbuf: [libc::c_uchar; 1],
@@ -69,8 +72,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testBaseCells.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testBaseCells.c\0" as *const u8 as *const libc::c_char,
             26 as libc::c_int,
             b"!(getRes0Cells(indexes))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -87,8 +89,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testBaseCells.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testBaseCells.c\0" as *const u8 as *const libc::c_char,
             27 as libc::c_int,
             b"indexes[0] == 0x8001fffffffffff\0" as *const u8 as *const libc::c_char,
             b"correct first basecell\0" as *const u8 as *const libc::c_char,
@@ -105,8 +106,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testBaseCells.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testBaseCells.c\0" as *const u8 as *const libc::c_char,
             28 as libc::c_int,
             b"indexes[121] == 0x80f3fffffffffff\0" as *const u8 as *const libc::c_char,
             b"correct last basecell\0" as *const u8 as *const libc::c_char,
@@ -123,8 +123,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testBaseCells.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testBaseCells.c\0" as *const u8 as *const libc::c_char,
             34 as libc::c_int,
             b"_baseCellToCCWrot60(16, 0) == 0\0" as *const u8 as *const libc::c_char,
             b"got expected rotation\0" as *const u8 as *const libc::c_char,
@@ -139,8 +138,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testBaseCells.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testBaseCells.c\0" as *const u8 as *const libc::c_char,
             35 as libc::c_int,
             b"_baseCellToCCWrot60(32, 0) == 3\0" as *const u8 as *const libc::c_char,
             b"got expected rotation\0" as *const u8 as *const libc::c_char,
@@ -155,8 +153,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testBaseCells.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testBaseCells.c\0" as *const u8 as *const libc::c_char,
             36 as libc::c_int,
             b"_baseCellToCCWrot60(7, 3) == 1\0" as *const u8 as *const libc::c_char,
             b"got expected rotation\0" as *const u8 as *const libc::c_char,
@@ -172,8 +169,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testBaseCells.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testBaseCells.c\0" as *const u8 as *const libc::c_char,
             40 as libc::c_int,
             b"_baseCellToCCWrot60(16, 42) == INVALID_ROTATIONS\0" as *const u8
                 as *const libc::c_char,
@@ -190,8 +186,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testBaseCells.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testBaseCells.c\0" as *const u8 as *const libc::c_char,
             41 as libc::c_int,
             b"_baseCellToCCWrot60(16, -1) == INVALID_ROTATIONS\0" as *const u8
                 as *const libc::c_char,
@@ -208,8 +203,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testBaseCells.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testBaseCells.c\0" as *const u8 as *const libc::c_char,
             42 as libc::c_int,
             b"_baseCellToCCWrot60(1, 0) == INVALID_ROTATIONS\0" as *const u8 as *const libc::c_char,
             b"should return invalid rotation for base cell not appearing on face\0" as *const u8
@@ -226,8 +220,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testBaseCells.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testBaseCells.c\0" as *const u8 as *const libc::c_char,
             46 as libc::c_int,
             b"_isBaseCellPentagon(-1) == false\0" as *const u8 as *const libc::c_char,
             b"isBaseCellPentagon handles negative\0" as *const u8 as *const libc::c_char,

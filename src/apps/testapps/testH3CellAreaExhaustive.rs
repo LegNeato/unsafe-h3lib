@@ -1,9 +1,11 @@
-
+extern crate unsafe_h3lib;
+extern crate unsafe_h3lib_applib;
+extern crate unsafe_h3lib_testapps_lib;
 use ::libc;
 use ::num_traits;
 use num_traits::ToPrimitive;
 extern "C" {
-    pub type __sFILEX;
+
     fn fabs(_: libc::c_double) -> libc::c_double;
     fn exit(_: libc::c_int) -> !;
     fn getDirectedEdgeDestination(edge: H3Index, out: *mut H3Index) -> H3Error;
@@ -89,7 +91,7 @@ pub struct __sFILE {
         unsafe extern "C" fn(*mut libc::c_void, *const libc::c_char, libc::c_int) -> libc::c_int,
     >,
     pub _ub: __sbuf,
-    pub _extra: *mut __sFILEX,
+    pub _extra: *mut libc::c_void,
     pub _ur: libc::c_int,
     pub _ubuf: [libc::c_uchar; 3],
     pub _nbuf: [libc::c_uchar; 1],
@@ -109,8 +111,7 @@ unsafe extern "C" fn haversine_assert(mut edge: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8 as *const libc::c_char,
             47 as libc::c_int,
             b"!(getDirectedEdgeOrigin(edge, &origin))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -125,8 +126,7 @@ unsafe extern "C" fn haversine_assert(mut edge: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8 as *const libc::c_char,
             48 as libc::c_int,
             b"!(cellToLatLng(origin, &a))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -141,8 +141,7 @@ unsafe extern "C" fn haversine_assert(mut edge: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8 as *const libc::c_char,
             50 as libc::c_int,
             b"!(getDirectedEdgeDestination(edge, &destination))\0" as *const u8
                 as *const libc::c_char,
@@ -158,8 +157,7 @@ unsafe extern "C" fn haversine_assert(mut edge: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8 as *const libc::c_char,
             51 as libc::c_int,
             b"!(cellToLatLng(destination, &b))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -168,12 +166,6 @@ unsafe extern "C" fn haversine_assert(mut edge: H3Index) {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    let mut pos: [libc::c_char; 49] = *::core::mem::transmute::<&[u8; 49], &mut [libc::c_char; 49]>(
-        b"distance between cell centers should be positive\0",
-    );
-    let mut comm: [libc::c_char; 46] = *::core::mem::transmute::<&[u8; 46], &mut [libc::c_char; 46]>(
-        b"pairwise cell distances should be commutative\0",
-    );
     let mut ab: libc::c_double = 0.;
     let mut ba: libc::c_double = 0.;
     ab = greatCircleDistanceRads(&mut a, &mut b);
@@ -184,11 +176,11 @@ unsafe extern "C" fn haversine_assert(mut edge: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8 as *const libc::c_char,
             60 as libc::c_int,
             b"ab > 0\0" as *const u8 as *const libc::c_char,
-            pos.as_mut_ptr(),
+            b"distance between cell centers should be positive\0" as *const u8
+                as *const libc::c_char,
         );
         exit(1 as libc::c_int);
     }
@@ -200,11 +192,10 @@ unsafe extern "C" fn haversine_assert(mut edge: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8 as *const libc::c_char,
             61 as libc::c_int,
             b"ab == ba\0" as *const u8 as *const libc::c_char,
-            comm.as_mut_ptr(),
+            b"pairwise cell distances should be commutative\0" as *const u8 as *const libc::c_char,
         );
         exit(1 as libc::c_int);
     }
@@ -218,11 +209,11 @@ unsafe extern "C" fn haversine_assert(mut edge: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8 as *const libc::c_char,
             65 as libc::c_int,
             b"ab > 0\0" as *const u8 as *const libc::c_char,
-            pos.as_mut_ptr(),
+            b"distance between cell centers should be positive\0" as *const u8
+                as *const libc::c_char,
         );
         exit(1 as libc::c_int);
     }
@@ -234,11 +225,10 @@ unsafe extern "C" fn haversine_assert(mut edge: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8 as *const libc::c_char,
             66 as libc::c_int,
             b"ab == ba\0" as *const u8 as *const libc::c_char,
-            comm.as_mut_ptr(),
+            b"pairwise cell distances should be commutative\0" as *const u8 as *const libc::c_char,
         );
         exit(1 as libc::c_int);
     }
@@ -252,11 +242,11 @@ unsafe extern "C" fn haversine_assert(mut edge: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8 as *const libc::c_char,
             70 as libc::c_int,
             b"ab > 0\0" as *const u8 as *const libc::c_char,
-            pos.as_mut_ptr(),
+            b"distance between cell centers should be positive\0" as *const u8
+                as *const libc::c_char,
         );
         exit(1 as libc::c_int);
     }
@@ -268,11 +258,10 @@ unsafe extern "C" fn haversine_assert(mut edge: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8 as *const libc::c_char,
             71 as libc::c_int,
             b"ab == ba\0" as *const u8 as *const libc::c_char,
-            comm.as_mut_ptr(),
+            b"pairwise cell distances should be commutative\0" as *const u8 as *const libc::c_char,
         );
         exit(1 as libc::c_int);
     }
@@ -303,8 +292,7 @@ unsafe extern "C" fn haversine_assert(mut edge: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8 as *const libc::c_char,
             78 as libc::c_int,
             b"H3_EXPORT(greatCircleDistanceM)(&a, &b) > H3_EXPORT(greatCircleDistanceKm)(&a, &b)\0"
                 as *const u8 as *const libc::c_char,
@@ -317,9 +305,6 @@ unsafe extern "C" fn haversine_assert(mut edge: H3Index) {
     printf(b".\0" as *const u8 as *const libc::c_char);
 }
 unsafe extern "C" fn edge_length_assert(mut edge: H3Index) {
-    let mut msg: [libc::c_char; 25] = *::core::mem::transmute::<&[u8; 25], &mut [libc::c_char; 25]>(
-        b"edge has positive length\0",
-    );
     let mut length: libc::c_double = 0.;
     if edgeLengthRads(edge, &mut length) != 0 {
         fprintf(
@@ -327,8 +312,7 @@ unsafe extern "C" fn edge_length_assert(mut edge: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8 as *const libc::c_char,
             94 as libc::c_int,
             b"!(edgeLengthRads(edge, &length))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -343,11 +327,10 @@ unsafe extern "C" fn edge_length_assert(mut edge: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8 as *const libc::c_char,
             95 as libc::c_int,
             b"length > 0\0" as *const u8 as *const libc::c_char,
-            msg.as_mut_ptr(),
+            b"edge has positive length\0" as *const u8 as *const libc::c_char,
         );
         exit(1 as libc::c_int);
     }
@@ -359,8 +342,7 @@ unsafe extern "C" fn edge_length_assert(mut edge: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8 as *const libc::c_char,
             96 as libc::c_int,
             b"!(edgeLengthKm(edge, &length))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -375,11 +357,10 @@ unsafe extern "C" fn edge_length_assert(mut edge: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8 as *const libc::c_char,
             97 as libc::c_int,
             b"length > 0\0" as *const u8 as *const libc::c_char,
-            msg.as_mut_ptr(),
+            b"edge has positive length\0" as *const u8 as *const libc::c_char,
         );
         exit(1 as libc::c_int);
     }
@@ -391,8 +372,7 @@ unsafe extern "C" fn edge_length_assert(mut edge: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8 as *const libc::c_char,
             98 as libc::c_int,
             b"!(edgeLengthM(edge, &length))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -407,11 +387,10 @@ unsafe extern "C" fn edge_length_assert(mut edge: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8 as *const libc::c_char,
             99 as libc::c_int,
             b"length > 0\0" as *const u8 as *const libc::c_char,
-            msg.as_mut_ptr(),
+            b"edge has positive length\0" as *const u8 as *const libc::c_char,
         );
         exit(1 as libc::c_int);
     }
@@ -419,8 +398,6 @@ unsafe extern "C" fn edge_length_assert(mut edge: H3Index) {
     printf(b".\0" as *const u8 as *const libc::c_char);
 }
 unsafe extern "C" fn cell_area_assert(mut cell: H3Index) {
-    let mut msg: [libc::c_char; 23] =
-        *::core::mem::transmute::<&[u8; 23], &mut [libc::c_char; 23]>(b"cell has positive area\0");
     let mut areaRads: libc::c_double = 0.;
     if cellAreaRads2(cell, &mut areaRads) != 0 {
         fprintf(
@@ -428,8 +405,7 @@ unsafe extern "C" fn cell_area_assert(mut cell: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8 as *const libc::c_char,
             115 as libc::c_int,
             b"!(cellAreaRads2(cell, &areaRads))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -444,11 +420,10 @@ unsafe extern "C" fn cell_area_assert(mut cell: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8 as *const libc::c_char,
             116 as libc::c_int,
             b"areaRads > 0\0" as *const u8 as *const libc::c_char,
-            msg.as_mut_ptr(),
+            b"cell has positive area\0" as *const u8 as *const libc::c_char,
         );
         exit(1 as libc::c_int);
     }
@@ -461,8 +436,7 @@ unsafe extern "C" fn cell_area_assert(mut cell: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8 as *const libc::c_char,
             118 as libc::c_int,
             b"!(cellAreaKm2(cell, &areaKm2))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -477,11 +451,10 @@ unsafe extern "C" fn cell_area_assert(mut cell: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8 as *const libc::c_char,
             119 as libc::c_int,
             b"areaKm2 > 0\0" as *const u8 as *const libc::c_char,
-            msg.as_mut_ptr(),
+            b"cell has positive area\0" as *const u8 as *const libc::c_char,
         );
         exit(1 as libc::c_int);
     }
@@ -494,8 +467,7 @@ unsafe extern "C" fn cell_area_assert(mut cell: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8 as *const libc::c_char,
             121 as libc::c_int,
             b"!(cellAreaM2(cell, &areaM2))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -510,11 +482,10 @@ unsafe extern "C" fn cell_area_assert(mut cell: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8 as *const libc::c_char,
             122 as libc::c_int,
             b"areaM2 > 0\0" as *const u8 as *const libc::c_char,
-            msg.as_mut_ptr(),
+            b"cell has positive area\0" as *const u8 as *const libc::c_char,
         );
         exit(1 as libc::c_int);
     }
@@ -526,8 +497,7 @@ unsafe extern "C" fn cell_area_assert(mut cell: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8 as *const libc::c_char,
             124 as libc::c_int,
             b"areaRads < areaKm2\0" as *const u8 as *const libc::c_char,
             b"area in rads smaller than area in km2\0" as *const u8 as *const libc::c_char,
@@ -542,8 +512,7 @@ unsafe extern "C" fn cell_area_assert(mut cell: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8 as *const libc::c_char,
             125 as libc::c_int,
             b"areaKm2 < areaM2\0" as *const u8 as *const libc::c_char,
             b"area in km2 smaller than area in m2\0" as *const u8 as *const libc::c_char,
@@ -573,8 +542,8 @@ unsafe extern "C" fn earth_area_test(
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"src/apps/testapps/testH3CellAreaExhaustive.c\0"
-                    as *const u8 as *const libc::c_char,
+                b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
+                    as *const libc::c_char,
                 143 as libc::c_int,
                 b"!((*cell_area)(iter.h, &cellArea))\0" as *const u8 as *const libc::c_char,
                 b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -592,8 +561,7 @@ unsafe extern "C" fn earth_area_test(
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8 as *const libc::c_char,
             148 as libc::c_int,
             b"fabs(area - target) < tol\0" as *const u8 as *const libc::c_char,
             b"sum of all cells should give earth area\0" as *const u8 as *const libc::c_char,
@@ -658,11 +626,9 @@ unsafe extern "C" fn runTests() {
     currentTestName = b"cell_area_earth\0" as *const u8 as *const libc::c_char;
     let mut rads2: libc::c_double =
         4 as libc::c_int as libc::c_double * 3.14159265358979323846264338327950288f64;
-    let mut km2: libc::c_double = (rads2
-        * 6371.007180918475
-        * 6371.007180918475)
-    .to_f64()
-    .unwrap();
+    let mut km2: libc::c_double = (rads2 * 6371.007180918475 * 6371.007180918475)
+        .to_f64()
+        .unwrap();
     let mut m2: libc::c_double =
         km2 * 1000 as libc::c_int as libc::c_double * 1000 as libc::c_int as libc::c_double;
     earth_area_test(

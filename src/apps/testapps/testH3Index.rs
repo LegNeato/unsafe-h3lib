@@ -1,6 +1,9 @@
+extern crate unsafe_h3lib;
+extern crate unsafe_h3lib_applib;
+extern crate unsafe_h3lib_testapps_lib;
 use ::libc;
 extern "C" {
-    pub type __sFILEX;
+
     static mut __stderrp: *mut FILE;
     fn fprintf(_: *mut FILE, _: *const libc::c_char, _: ...) -> libc::c_int;
     fn printf(_: *const libc::c_char, _: ...) -> libc::c_int;
@@ -52,7 +55,7 @@ pub struct __sFILE {
         unsafe extern "C" fn(*mut libc::c_void, *const libc::c_char, libc::c_int) -> libc::c_int,
     >,
     pub _ub: __sbuf,
-    pub _extra: *mut __sFILEX,
+    pub _extra: *mut libc::c_void,
     pub _ur: libc::c_int,
     pub _ubuf: [libc::c_uchar; 3],
     pub _nbuf: [libc::c_uchar; 1],
@@ -128,8 +131,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Index.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Index.c\0" as *const u8 as *const libc::c_char,
             36 as libc::c_int,
             b"!(latLngToCell(&g, 14, &h))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -151,8 +153,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Index.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Index.c\0" as *const u8 as *const libc::c_char,
             39 as libc::c_int,
             b"!(latLngToCell(&g2, 15, &h))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -169,8 +170,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Index.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Index.c\0" as *const u8 as *const libc::c_char,
             43 as libc::c_int,
             b"!(latLngToCell(&g4, 0, &h))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -200,8 +200,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Index.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Index.c\0" as *const u8 as *const libc::c_char,
             48 as libc::c_int,
             b"_faceIjkToH3(&fijk0I, 0) == 0\0" as *const u8 as *const libc::c_char,
             b"i out of bounds at res 0\0" as *const u8 as *const libc::c_char,
@@ -230,8 +229,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Index.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Index.c\0" as *const u8 as *const libc::c_char,
             50 as libc::c_int,
             b"_faceIjkToH3(&fijk0J, 0) == 0\0" as *const u8 as *const libc::c_char,
             b"j out of bounds at res 0\0" as *const u8 as *const libc::c_char,
@@ -260,8 +258,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Index.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Index.c\0" as *const u8 as *const libc::c_char,
             52 as libc::c_int,
             b"_faceIjkToH3(&fijk0K, 0) == 0\0" as *const u8 as *const libc::c_char,
             b"k out of bounds at res 0\0" as *const u8 as *const libc::c_char,
@@ -290,8 +287,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Index.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Index.c\0" as *const u8 as *const libc::c_char,
             55 as libc::c_int,
             b"_faceIjkToH3(&fijk1I, 1) == 0\0" as *const u8 as *const libc::c_char,
             b"i out of bounds at res 1\0" as *const u8 as *const libc::c_char,
@@ -320,8 +316,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Index.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Index.c\0" as *const u8 as *const libc::c_char,
             57 as libc::c_int,
             b"_faceIjkToH3(&fijk1J, 1) == 0\0" as *const u8 as *const libc::c_char,
             b"j out of bounds at res 1\0" as *const u8 as *const libc::c_char,
@@ -350,8 +345,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Index.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Index.c\0" as *const u8 as *const libc::c_char,
             59 as libc::c_int,
             b"_faceIjkToH3(&fijk1K, 1) == 0\0" as *const u8 as *const libc::c_char,
             b"k out of bounds at res 1\0" as *const u8 as *const libc::c_char,
@@ -380,8 +374,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Index.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Index.c\0" as *const u8 as *const libc::c_char,
             62 as libc::c_int,
             b"_faceIjkToH3(&fijk2I, 2) == 0\0" as *const u8 as *const libc::c_char,
             b"i out of bounds at res 2\0" as *const u8 as *const libc::c_char,
@@ -410,8 +403,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Index.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Index.c\0" as *const u8 as *const libc::c_char,
             64 as libc::c_int,
             b"_faceIjkToH3(&fijk2J, 2) == 0\0" as *const u8 as *const libc::c_char,
             b"j out of bounds at res 2\0" as *const u8 as *const libc::c_char,
@@ -440,8 +432,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Index.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Index.c\0" as *const u8 as *const libc::c_char,
             66 as libc::c_int,
             b"_faceIjkToH3(&fijk2K, 2) == 0\0" as *const u8 as *const libc::c_char,
             b"k out of bounds at res 2\0" as *const u8 as *const libc::c_char,
@@ -467,8 +458,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"src/apps/testapps/testH3Index.c\0" as *const u8
-                    as *const libc::c_char,
+                b"src/apps/testapps/testH3Index.c\0" as *const u8 as *const libc::c_char,
                 73 as libc::c_int,
                 b"!(latLngToCell(&g, i, &h3))\0" as *const u8 as *const libc::c_char,
                 b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -489,8 +479,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"src/apps/testapps/testH3Index.c\0" as *const u8
-                    as *const libc::c_char,
+                b"src/apps/testapps/testH3Index.c\0" as *const u8 as *const libc::c_char,
                 76 as libc::c_int,
                 b"H3_EXPORT(isValidCell)(h3)\0" as *const u8 as *const libc::c_char,
                 failureMessage.as_mut_ptr(),
@@ -516,8 +505,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Index.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Index.c\0" as *const u8 as *const libc::c_char,
             83 as libc::c_int,
             b"!(latLngToCell(&g, 1, &h3))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -533,8 +521,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Index.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Index.c\0" as *const u8 as *const libc::c_char,
             87 as libc::c_int,
             b"!H3_EXPORT(isValidCell)(h3)\0" as *const u8 as *const libc::c_char,
             b"isValidCell failed on invalid unused digits\0" as *const u8 as *const libc::c_char,
@@ -563,8 +550,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"src/apps/testapps/testH3Index.c\0" as *const u8
-                    as *const libc::c_char,
+                b"src/apps/testapps/testH3Index.c\0" as *const u8 as *const libc::c_char,
                 97 as libc::c_int,
                 b"H3_EXPORT(isValidCell)(h)\0" as *const u8 as *const libc::c_char,
                 failureMessage_0.as_mut_ptr(),
@@ -579,8 +565,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"src/apps/testapps/testH3Index.c\0" as *const u8
-                    as *const libc::c_char,
+                b"src/apps/testapps/testH3Index.c\0" as *const u8 as *const libc::c_char,
                 100 as libc::c_int,
                 b"H3_EXPORT(getBaseCellNumber)(h) == i\0" as *const u8 as *const libc::c_char,
                 b"failed to recover base cell\0" as *const u8 as *const libc::c_char,
@@ -603,8 +588,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Index.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Index.c\0" as *const u8 as *const libc::c_char,
             109 as libc::c_int,
             b"!H3_EXPORT(isValidCell)(hWrongBaseCell)\0" as *const u8 as *const libc::c_char,
             b"isValidCell failed on invalid base cell\0" as *const u8 as *const libc::c_char,
@@ -627,8 +611,7 @@ unsafe extern "C" fn runTests() {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"src/apps/testapps/testH3Index.c\0" as *const u8
-                        as *const libc::c_char,
+                    b"src/apps/testapps/testH3Index.c\0" as *const u8 as *const libc::c_char,
                     118 as libc::c_int,
                     b"H3_EXPORT(isValidCell)(h)\0" as *const u8 as *const libc::c_char,
                     b"isValidCell succeeds on valid mode\0" as *const u8 as *const libc::c_char,
@@ -651,8 +634,7 @@ unsafe extern "C" fn runTests() {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"src/apps/testapps/testH3Index.c\0" as *const u8
-                        as *const libc::c_char,
+                    b"src/apps/testapps/testH3Index.c\0" as *const u8 as *const libc::c_char,
                     122 as libc::c_int,
                     b"!H3_EXPORT(isValidCell)(h)\0" as *const u8 as *const libc::c_char,
                     failureMessage_1.as_mut_ptr(),
@@ -680,8 +662,7 @@ unsafe extern "C" fn runTests() {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"src/apps/testapps/testH3Index.c\0" as *const u8
-                        as *const libc::c_char,
+                    b"src/apps/testapps/testH3Index.c\0" as *const u8 as *const libc::c_char,
                     134 as libc::c_int,
                     b"H3_EXPORT(isValidCell)(h)\0" as *const u8 as *const libc::c_char,
                     b"isValidCell succeeds on valid reserved bits\0" as *const u8
@@ -705,8 +686,7 @@ unsafe extern "C" fn runTests() {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"src/apps/testapps/testH3Index.c\0" as *const u8
-                        as *const libc::c_char,
+                    b"src/apps/testapps/testH3Index.c\0" as *const u8 as *const libc::c_char,
                     139 as libc::c_int,
                     b"!H3_EXPORT(isValidCell)(h)\0" as *const u8 as *const libc::c_char,
                     failureMessage_2.as_mut_ptr(),
@@ -730,8 +710,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Index.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Index.c\0" as *const u8 as *const libc::c_char,
             148 as libc::c_int,
             b"!H3_EXPORT(isValidCell)(h)\0" as *const u8 as *const libc::c_char,
             b"isValidCell failed on high bit\0" as *const u8 as *const libc::c_char,
@@ -752,8 +731,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Index.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Index.c\0" as *const u8 as *const libc::c_char,
             157 as libc::c_int,
             b"!H3_EXPORT(isValidCell)(h)\0" as *const u8 as *const libc::c_char,
             b"isValidCell failed on too large digit\0" as *const u8 as *const libc::c_char,
@@ -771,8 +749,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Index.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Index.c\0" as *const u8 as *const libc::c_char,
             165 as libc::c_int,
             b"!H3_EXPORT(isValidCell)(h)\0" as *const u8 as *const libc::c_char,
             b"isValidCell failed on deleted subsequence\0" as *const u8 as *const libc::c_char,
@@ -813,8 +790,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Index.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Index.c\0" as *const u8 as *const libc::c_char,
             173 as libc::c_int,
             b"H3_EXPORT(h3ToString)(0x1234, buf, bufSz - 1) == E_MEMORY_BOUNDS\0" as *const u8
                 as *const libc::c_char,
@@ -830,8 +806,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Index.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Index.c\0" as *const u8 as *const libc::c_char,
             174 as libc::c_int,
             b"!(h3ToString(0xcafe, buf, bufSz))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -850,8 +825,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Index.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Index.c\0" as *const u8 as *const libc::c_char,
             176 as libc::c_int,
             b"strcmp(buf, \"cafe\") == 0\0" as *const u8 as *const libc::c_char,
             b"h3ToString failed to produce base 16 results\0" as *const u8 as *const libc::c_char,
@@ -871,8 +845,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Index.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Index.c\0" as *const u8 as *const libc::c_char,
             177 as libc::c_int,
             b"!(h3ToString(0xffffffffffffffff, buf, bufSz))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -891,8 +864,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Index.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Index.c\0" as *const u8 as *const libc::c_char,
             179 as libc::c_int,
             b"strcmp(buf, \"ffffffffffffffff\") == 0\0" as *const u8 as *const libc::c_char,
             b"h3ToString failed on large input\0" as *const u8 as *const libc::c_char,
@@ -909,8 +881,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Index.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Index.c\0" as *const u8 as *const libc::c_char,
             180 as libc::c_int,
             b"buf[bufSz - 1] == 0\0" as *const u8 as *const libc::c_char,
             b"didn't null terminate\0" as *const u8 as *const libc::c_char,
@@ -929,8 +900,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Index.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Index.c\0" as *const u8 as *const libc::c_char,
             186 as libc::c_int,
             b"H3_EXPORT(stringToH3)(\"\", &h3) == E_FAILED\0" as *const u8 as *const libc::c_char,
             b"no index from nothing\0" as *const u8 as *const libc::c_char,
@@ -947,8 +917,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Index.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Index.c\0" as *const u8 as *const libc::c_char,
             188 as libc::c_int,
             b"H3_EXPORT(stringToH3)(\"**\", &h3) == E_FAILED\0" as *const u8 as *const libc::c_char,
             b"no index from junk\0" as *const u8 as *const libc::c_char,
@@ -967,8 +936,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Index.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Index.c\0" as *const u8 as *const libc::c_char,
             189 as libc::c_int,
             b"!(stringToH3(\"ffffffffffffffff\", &h3))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -983,8 +951,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Index.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Index.c\0" as *const u8 as *const libc::c_char,
             190 as libc::c_int,
             b"h3 == 0xffffffffffffffff\0" as *const u8 as *const libc::c_char,
             b"got expected on large input\0" as *const u8 as *const libc::c_char,
@@ -1005,8 +972,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Index.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Index.c\0" as *const u8 as *const libc::c_char,
             196 as libc::c_int,
             b"H3_GET_RESOLUTION(h) == 5\0" as *const u8 as *const libc::c_char,
             b"resolution as expected\0" as *const u8 as *const libc::c_char,
@@ -1024,8 +990,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Index.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Index.c\0" as *const u8 as *const libc::c_char,
             197 as libc::c_int,
             b"H3_GET_BASE_CELL(h) == 12\0" as *const u8 as *const libc::c_char,
             b"base cell as expected\0" as *const u8 as *const libc::c_char,
@@ -1043,8 +1008,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Index.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Index.c\0" as *const u8 as *const libc::c_char,
             198 as libc::c_int,
             b"H3_GET_MODE(h) == H3_CELL_MODE\0" as *const u8 as *const libc::c_char,
             b"mode as expected\0" as *const u8 as *const libc::c_char,
@@ -1064,8 +1028,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"src/apps/testapps/testH3Index.c\0" as *const u8
-                    as *const libc::c_char,
+                b"src/apps/testapps/testH3Index.c\0" as *const u8 as *const libc::c_char,
                 200 as libc::c_int,
                 b"H3_GET_INDEX_DIGIT(h, i) == 1\0" as *const u8 as *const libc::c_char,
                 b"digit as expected\0" as *const u8 as *const libc::c_char,
@@ -1087,8 +1050,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"src/apps/testapps/testH3Index.c\0" as *const u8
-                    as *const libc::c_char,
+                b"src/apps/testapps/testH3Index.c\0" as *const u8 as *const libc::c_char,
                 204 as libc::c_int,
                 b"H3_GET_INDEX_DIGIT(h, i) == 7\0" as *const u8 as *const libc::c_char,
                 b"blanked digit as expected\0" as *const u8 as *const libc::c_char,
@@ -1105,8 +1067,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testH3Index.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testH3Index.c\0" as *const u8 as *const libc::c_char,
             206 as libc::c_int,
             b"h == 0x85184927fffffffL\0" as *const u8 as *const libc::c_char,
             b"index matches expected\0" as *const u8 as *const libc::c_char,
@@ -1132,8 +1093,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"src/apps/testapps/testH3Index.c\0" as *const u8
-                    as *const libc::c_char,
+                b"src/apps/testapps/testH3Index.c\0" as *const u8 as *const libc::c_char,
                 213 as libc::c_int,
                 b"!(latLngToCell(&coord, i, &h))\0" as *const u8 as *const libc::c_char,
                 b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -1148,8 +1108,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"src/apps/testapps/testH3Index.c\0" as *const u8
-                    as *const libc::c_char,
+                b"src/apps/testapps/testH3Index.c\0" as *const u8 as *const libc::c_char,
                 215 as libc::c_int,
                 b"H3_EXPORT(isResClassIII)(h) == isResolutionClassIII(i)\0" as *const u8
                     as *const libc::c_char,

@@ -1,6 +1,9 @@
+extern crate unsafe_h3lib;
+extern crate unsafe_h3lib_applib;
+extern crate unsafe_h3lib_testapps_lib;
 use ::libc;
 extern "C" {
-    pub type __sFILEX;
+
     fn exit(_: libc::c_int) -> !;
     fn calloc(_: libc::c_ulong, _: libc::c_ulong) -> *mut libc::c_void;
     fn free(_: *mut libc::c_void);
@@ -66,7 +69,7 @@ pub struct __sFILE {
         unsafe extern "C" fn(*mut libc::c_void, *const libc::c_char, libc::c_int) -> libc::c_int,
     >,
     pub _ub: __sbuf,
-    pub _extra: *mut __sFILEX,
+    pub _extra: *mut libc::c_void,
     pub _ur: libc::c_int,
     pub _ubuf: [libc::c_uchar; 3],
     pub _nbuf: [libc::c_uchar; 1],
@@ -126,8 +129,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGridRingUnsafe.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGridRingUnsafe.c\0" as *const u8 as *const libc::c_char,
             27 as libc::c_int,
             b"!(latLngToCell(&sf, 9, &sfHex))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -144,8 +146,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGridRingUnsafe.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGridRingUnsafe.c\0" as *const u8 as *const libc::c_char,
             31 as libc::c_int,
             b"!(gridRingUnsafe(sfHex, 0, k0))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -160,8 +161,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGridRingUnsafe.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGridRingUnsafe.c\0" as *const u8 as *const libc::c_char,
             32 as libc::c_int,
             b"k0[0] == sfHex\0" as *const u8 as *const libc::c_char,
             b"generated identity k-ring\0" as *const u8 as *const libc::c_char,
@@ -193,8 +193,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGridRingUnsafe.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGridRingUnsafe.c\0" as *const u8 as *const libc::c_char,
             40 as libc::c_int,
             b"!(gridRingUnsafe(sfHex, 1, k1))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -211,8 +210,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"src/apps/testapps/testGridRingUnsafe.c\0" as *const u8
-                    as *const libc::c_char,
+                b"src/apps/testapps/testGridRingUnsafe.c\0" as *const u8 as *const libc::c_char,
                 43 as libc::c_int,
                 b"k1[i] != 0\0" as *const u8 as *const libc::c_char,
                 b"index is populated\0" as *const u8 as *const libc::c_char,
@@ -235,8 +233,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"src/apps/testapps/testGridRingUnsafe.c\0" as *const u8
-                    as *const libc::c_char,
+                b"src/apps/testapps/testGridRingUnsafe.c\0" as *const u8 as *const libc::c_char,
                 50 as libc::c_int,
                 b"inList == 1\0" as *const u8 as *const libc::c_char,
                 b"index found in expected set\0" as *const u8 as *const libc::c_char,
@@ -282,8 +279,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGridRingUnsafe.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGridRingUnsafe.c\0" as *const u8 as *const libc::c_char,
             61 as libc::c_int,
             b"!(gridRingUnsafe(sfHex, 2, k2))\0" as *const u8 as *const libc::c_char,
             b"expected E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -300,8 +296,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"src/apps/testapps/testGridRingUnsafe.c\0" as *const u8
-                    as *const libc::c_char,
+                b"src/apps/testapps/testGridRingUnsafe.c\0" as *const u8 as *const libc::c_char,
                 64 as libc::c_int,
                 b"k2[i] != 0\0" as *const u8 as *const libc::c_char,
                 b"index is populated\0" as *const u8 as *const libc::c_char,
@@ -324,8 +319,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"src/apps/testapps/testGridRingUnsafe.c\0" as *const u8
-                    as *const libc::c_char,
+                b"src/apps/testapps/testGridRingUnsafe.c\0" as *const u8 as *const libc::c_char,
                 71 as libc::c_int,
                 b"inList == 1\0" as *const u8 as *const libc::c_char,
                 b"index found in expected set\0" as *const u8 as *const libc::c_char,
@@ -354,8 +348,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGridRingUnsafe.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGridRingUnsafe.c\0" as *const u8 as *const libc::c_char,
             79 as libc::c_int,
             b"H3_EXPORT(gridRingUnsafe)(nearPentagon, 1, kp1) == E_PENTAGON\0" as *const u8
                 as *const libc::c_char,
@@ -389,8 +382,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGridRingUnsafe.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGridRingUnsafe.c\0" as *const u8 as *const libc::c_char,
             86 as libc::c_int,
             b"H3_EXPORT(gridRingUnsafe)(nearPentagon, 2, kp2) == E_PENTAGON\0" as *const u8
                 as *const libc::c_char,
@@ -430,8 +422,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"src/apps/testapps/testGridRingUnsafe.c\0" as *const u8
-                as *const libc::c_char,
+            b"src/apps/testapps/testGridRingUnsafe.c\0" as *const u8 as *const libc::c_char,
             94 as libc::c_int,
             b"H3_EXPORT(gridRingUnsafe)(nearPentagon, 2, kp2) == E_PENTAGON\0" as *const u8
                 as *const libc::c_char,
@@ -458,8 +449,7 @@ unsafe extern "C" fn runTests() {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"src/apps/testapps/testGridRingUnsafe.c\0" as *const u8
-                        as *const libc::c_char,
+                    b"src/apps/testapps/testGridRingUnsafe.c\0" as *const u8 as *const libc::c_char,
                     104 as libc::c_int,
                     b"!(uncompactCellsSize(&bc, 1, res, &childrenSz))\0" as *const u8
                         as *const libc::c_char,
@@ -487,8 +477,7 @@ unsafe extern "C" fn runTests() {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"src/apps/testapps/testGridRingUnsafe.c\0" as *const u8
-                        as *const libc::c_char,
+                    b"src/apps/testapps/testGridRingUnsafe.c\0" as *const u8 as *const libc::c_char,
                     107 as libc::c_int,
                     b"!(uncompactCells(&bc, 1, children, childrenSz, res))\0" as *const u8
                         as *const libc::c_char,
@@ -516,8 +505,7 @@ unsafe extern "C" fn runTests() {
                                     as *const libc::c_char,
                                 currentSuiteName,
                                 currentTestName,
-                                b"src/apps/testapps/testGridRingUnsafe.c\0"
-                                    as *const u8
+                                b"src/apps/testapps/testGridRingUnsafe.c\0" as *const u8
                                     as *const libc::c_char,
                                 117 as libc::c_int,
                                 b"!(maxGridDiskSize(k, &kSz))\0" as *const u8
@@ -587,16 +575,20 @@ unsafe extern "C" fn runTests() {
                                             {
                                                 fprintf(
                                                     __stderrp,
-                                                    b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8
+                                                    b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0"
+                                                        as *const u8
                                                         as *const libc::c_char,
                                                     currentSuiteName,
                                                     currentTestName,
                                                     b"src/apps/testapps/testGridRingUnsafe.c\0"
-                                                        as *const u8 as *const libc::c_char,
-                                                    147 as libc::c_int,
-                                                    b"internalDistances[iInternal] == k\0" as *const u8
+                                                        as *const u8
                                                         as *const libc::c_char,
-                                                    b"Ring and internal agree on distance\0" as *const u8
+                                                    147 as libc::c_int,
+                                                    b"internalDistances[iInternal] == k\0"
+                                                        as *const u8
+                                                        as *const libc::c_char,
+                                                    b"Ring and internal agree on distance\0"
+                                                        as *const u8
                                                         as *const libc::c_char,
                                                 );
                                                 exit(1 as libc::c_int);
