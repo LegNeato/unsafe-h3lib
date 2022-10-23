@@ -120,7 +120,7 @@ pub unsafe extern "C" fn assertBBox(
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testBBox.c\0" as *const u8
+            b"src/apps/testapps/testBBox.c\0" as *const u8
                 as *const libc::c_char,
             32 as libc::c_int,
             b"bboxEquals(&result, expected)\0" as *const u8 as *const libc::c_char,
@@ -136,7 +136,7 @@ pub unsafe extern "C" fn assertBBox(
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testBBox.c\0" as *const u8
+            b"src/apps/testapps/testBBox.c\0" as *const u8
                 as *const libc::c_char,
             33 as libc::c_int,
             b"bboxContains(&result, inside)\0" as *const u8 as *const libc::c_char,
@@ -152,7 +152,7 @@ pub unsafe extern "C" fn assertBBox(
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testBBox.c\0" as *const u8
+            b"src/apps/testapps/testBBox.c\0" as *const u8
                 as *const libc::c_char,
             35 as libc::c_int,
             b"!bboxContains(&result, outside)\0" as *const u8 as *const libc::c_char,
@@ -549,7 +549,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testBBox.c\0" as *const u8
+            b"src/apps/testapps/testBBox.c\0" as *const u8
                 as *const libc::c_char,
             98 as libc::c_int,
             b"bboxContains(&expected, &westInside)\0" as *const u8 as *const libc::c_char,
@@ -572,7 +572,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testBBox.c\0" as *const u8
+            b"src/apps/testapps/testBBox.c\0" as *const u8
                 as *const libc::c_char,
             101 as libc::c_int,
             b"bboxContains(&expected, &eastInside)\0" as *const u8 as *const libc::c_char,
@@ -595,7 +595,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testBBox.c\0" as *const u8
+            b"src/apps/testapps/testBBox.c\0" as *const u8
                 as *const libc::c_char,
             105 as libc::c_int,
             b"!bboxContains(&expected, &westOutside)\0" as *const u8 as *const libc::c_char,
@@ -618,7 +618,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testBBox.c\0" as *const u8
+            b"src/apps/testapps/testBBox.c\0" as *const u8
                 as *const libc::c_char,
             108 as libc::c_int,
             b"!bboxContains(&expected, &eastOutside)\0" as *const u8 as *const libc::c_char,
@@ -829,7 +829,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testBBox.c\0" as *const u8
+                b"src/apps/testapps/testBBox.c\0" as *const u8
                     as *const libc::c_char,
                 144 as libc::c_int,
                 b"bboxContains(&bbox, &points[i])\0" as *const u8 as *const libc::c_char,
@@ -918,7 +918,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testBBox.c\0" as *const u8
+                b"src/apps/testapps/testBBox.c\0" as *const u8
                     as *const libc::c_char,
                 159 as libc::c_int,
                 b"bboxContains(&bbox, &points[i])\0" as *const u8 as *const libc::c_char,
@@ -955,7 +955,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testBBox.c\0" as *const u8
+            b"src/apps/testapps/testBBox.c\0" as *const u8
                 as *const libc::c_char,
             169 as libc::c_int,
             b"geoAlmostEqual(&center, &expected1)\0" as *const u8 as *const libc::c_char,
@@ -988,7 +988,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testBBox.c\0" as *const u8
+            b"src/apps/testapps/testBBox.c\0" as *const u8
                 as *const libc::c_char,
             174 as libc::c_int,
             b"geoAlmostEqual(&center, &expected2)\0" as *const u8 as *const libc::c_char,
@@ -1021,7 +1021,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testBBox.c\0" as *const u8
+            b"src/apps/testapps/testBBox.c\0" as *const u8
                 as *const libc::c_char,
             179 as libc::c_int,
             b"geoAlmostEqual(&center, &expected3)\0" as *const u8 as *const libc::c_char,
@@ -1054,7 +1054,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testBBox.c\0" as *const u8
+            b"src/apps/testapps/testBBox.c\0" as *const u8
                 as *const libc::c_char,
             184 as libc::c_int,
             b"geoAlmostEqual(&center, &expected4)\0" as *const u8 as *const libc::c_char,
@@ -1087,7 +1087,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testBBox.c\0" as *const u8
+            b"src/apps/testapps/testBBox.c\0" as *const u8
                 as *const libc::c_char,
             190 as libc::c_int,
             b"geoAlmostEqual(&center, &expected5)\0" as *const u8 as *const libc::c_char,
@@ -1122,7 +1122,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testBBox.c\0" as *const u8
+            b"src/apps/testapps/testBBox.c\0" as *const u8
                 as *const libc::c_char,
             200 as libc::c_int,
             b"geoAlmostEqual(&center, &expected1)\0" as *const u8 as *const libc::c_char,
@@ -1155,7 +1155,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testBBox.c\0" as *const u8
+            b"src/apps/testapps/testBBox.c\0" as *const u8
                 as *const libc::c_char,
             205 as libc::c_int,
             b"geoAlmostEqual(&center, &expected2)\0" as *const u8 as *const libc::c_char,
@@ -1188,7 +1188,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testBBox.c\0" as *const u8
+            b"src/apps/testapps/testBBox.c\0" as *const u8
                 as *const libc::c_char,
             211 as libc::c_int,
             b"geoAlmostEqual(&center, &expected3)\0" as *const u8 as *const libc::c_char,
@@ -1214,7 +1214,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testBBox.c\0" as *const u8
+            b"src/apps/testapps/testBBox.c\0" as *const u8
                 as *const libc::c_char,
             217 as libc::c_int,
             b"!bboxIsTransmeridian(&bboxNormal)\0" as *const u8 as *const libc::c_char,
@@ -1239,7 +1239,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testBBox.c\0" as *const u8
+            b"src/apps/testapps/testBBox.c\0" as *const u8
                 as *const libc::c_char,
             221 as libc::c_int,
             b"bboxIsTransmeridian(&bboxTransmeridian)\0" as *const u8 as *const libc::c_char,
@@ -1273,7 +1273,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testBBox.c\0" as *const u8
+            b"src/apps/testapps/testBBox.c\0" as *const u8
                 as *const libc::c_char,
             235 as libc::c_int,
             b"bboxEquals(&bbox, &bbox)\0" as *const u8 as *const libc::c_char,
@@ -1289,7 +1289,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testBBox.c\0" as *const u8
+            b"src/apps/testapps/testBBox.c\0" as *const u8
                 as *const libc::c_char,
             236 as libc::c_int,
             b"!bboxEquals(&bbox, &north)\0" as *const u8 as *const libc::c_char,
@@ -1305,7 +1305,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testBBox.c\0" as *const u8
+            b"src/apps/testapps/testBBox.c\0" as *const u8
                 as *const libc::c_char,
             237 as libc::c_int,
             b"!bboxEquals(&bbox, &south)\0" as *const u8 as *const libc::c_char,
@@ -1321,7 +1321,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testBBox.c\0" as *const u8
+            b"src/apps/testapps/testBBox.c\0" as *const u8
                 as *const libc::c_char,
             238 as libc::c_int,
             b"!bboxEquals(&bbox, &east)\0" as *const u8 as *const libc::c_char,
@@ -1337,7 +1337,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testBBox.c\0" as *const u8
+            b"src/apps/testapps/testBBox.c\0" as *const u8
                 as *const libc::c_char,
             239 as libc::c_int,
             b"!bboxEquals(&bbox, &west)\0" as *const u8 as *const libc::c_char,
@@ -1366,7 +1366,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testBBox.c\0" as *const u8
+            b"src/apps/testapps/testBBox.c\0" as *const u8
                 as *const libc::c_char,
             246 as libc::c_int,
             b"bboxHexEstimate(&bbox, -1, &numHexagons) == E_RES_DOMAIN\0" as *const u8
@@ -1405,7 +1405,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testBBox.c\0" as *const u8
+            b"src/apps/testapps/testBBox.c\0" as *const u8
                 as *const libc::c_char,
             255 as libc::c_int,
             b"lineHexEstimate(&origin, &destination, -1, &numHexagons) == E_RES_DOMAIN\0"

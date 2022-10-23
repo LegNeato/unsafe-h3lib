@@ -109,7 +109,7 @@ unsafe extern "C" fn haversine_assert(mut edge: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             47 as libc::c_int,
             b"!(getDirectedEdgeOrigin(edge, &origin))\0" as *const u8 as *const libc::c_char,
@@ -125,7 +125,7 @@ unsafe extern "C" fn haversine_assert(mut edge: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             48 as libc::c_int,
             b"!(cellToLatLng(origin, &a))\0" as *const u8 as *const libc::c_char,
@@ -141,7 +141,7 @@ unsafe extern "C" fn haversine_assert(mut edge: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             50 as libc::c_int,
             b"!(getDirectedEdgeDestination(edge, &destination))\0" as *const u8
@@ -158,7 +158,7 @@ unsafe extern "C" fn haversine_assert(mut edge: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             51 as libc::c_int,
             b"!(cellToLatLng(destination, &b))\0" as *const u8 as *const libc::c_char,
@@ -184,7 +184,7 @@ unsafe extern "C" fn haversine_assert(mut edge: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             60 as libc::c_int,
             b"ab > 0\0" as *const u8 as *const libc::c_char,
@@ -200,7 +200,7 @@ unsafe extern "C" fn haversine_assert(mut edge: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             61 as libc::c_int,
             b"ab == ba\0" as *const u8 as *const libc::c_char,
@@ -218,7 +218,7 @@ unsafe extern "C" fn haversine_assert(mut edge: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             65 as libc::c_int,
             b"ab > 0\0" as *const u8 as *const libc::c_char,
@@ -234,7 +234,7 @@ unsafe extern "C" fn haversine_assert(mut edge: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             66 as libc::c_int,
             b"ab == ba\0" as *const u8 as *const libc::c_char,
@@ -252,7 +252,7 @@ unsafe extern "C" fn haversine_assert(mut edge: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             70 as libc::c_int,
             b"ab > 0\0" as *const u8 as *const libc::c_char,
@@ -268,7 +268,7 @@ unsafe extern "C" fn haversine_assert(mut edge: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             71 as libc::c_int,
             b"ab == ba\0" as *const u8 as *const libc::c_char,
@@ -285,7 +285,7 @@ unsafe extern "C" fn haversine_assert(mut edge: H3Index) {
                 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testH3CellAreaExhaustive.c\0"
+            b"src/apps/testapps/testH3CellAreaExhaustive.c\0"
                 as *const u8 as *const libc::c_char,
             75 as libc::c_int,
             b"H3_EXPORT(greatCircleDistanceKm)(&a, &b) > H3_EXPORT(greatCircleDistanceRads)(&a, &b)\0"
@@ -303,7 +303,7 @@ unsafe extern "C" fn haversine_assert(mut edge: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             78 as libc::c_int,
             b"H3_EXPORT(greatCircleDistanceM)(&a, &b) > H3_EXPORT(greatCircleDistanceKm)(&a, &b)\0"
@@ -327,7 +327,7 @@ unsafe extern "C" fn edge_length_assert(mut edge: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             94 as libc::c_int,
             b"!(edgeLengthRads(edge, &length))\0" as *const u8 as *const libc::c_char,
@@ -343,7 +343,7 @@ unsafe extern "C" fn edge_length_assert(mut edge: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             95 as libc::c_int,
             b"length > 0\0" as *const u8 as *const libc::c_char,
@@ -359,7 +359,7 @@ unsafe extern "C" fn edge_length_assert(mut edge: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             96 as libc::c_int,
             b"!(edgeLengthKm(edge, &length))\0" as *const u8 as *const libc::c_char,
@@ -375,7 +375,7 @@ unsafe extern "C" fn edge_length_assert(mut edge: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             97 as libc::c_int,
             b"length > 0\0" as *const u8 as *const libc::c_char,
@@ -391,7 +391,7 @@ unsafe extern "C" fn edge_length_assert(mut edge: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             98 as libc::c_int,
             b"!(edgeLengthM(edge, &length))\0" as *const u8 as *const libc::c_char,
@@ -407,7 +407,7 @@ unsafe extern "C" fn edge_length_assert(mut edge: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             99 as libc::c_int,
             b"length > 0\0" as *const u8 as *const libc::c_char,
@@ -428,7 +428,7 @@ unsafe extern "C" fn cell_area_assert(mut cell: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             115 as libc::c_int,
             b"!(cellAreaRads2(cell, &areaRads))\0" as *const u8 as *const libc::c_char,
@@ -444,7 +444,7 @@ unsafe extern "C" fn cell_area_assert(mut cell: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             116 as libc::c_int,
             b"areaRads > 0\0" as *const u8 as *const libc::c_char,
@@ -461,7 +461,7 @@ unsafe extern "C" fn cell_area_assert(mut cell: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             118 as libc::c_int,
             b"!(cellAreaKm2(cell, &areaKm2))\0" as *const u8 as *const libc::c_char,
@@ -477,7 +477,7 @@ unsafe extern "C" fn cell_area_assert(mut cell: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             119 as libc::c_int,
             b"areaKm2 > 0\0" as *const u8 as *const libc::c_char,
@@ -494,7 +494,7 @@ unsafe extern "C" fn cell_area_assert(mut cell: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             121 as libc::c_int,
             b"!(cellAreaM2(cell, &areaM2))\0" as *const u8 as *const libc::c_char,
@@ -510,7 +510,7 @@ unsafe extern "C" fn cell_area_assert(mut cell: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             122 as libc::c_int,
             b"areaM2 > 0\0" as *const u8 as *const libc::c_char,
@@ -526,7 +526,7 @@ unsafe extern "C" fn cell_area_assert(mut cell: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             124 as libc::c_int,
             b"areaRads < areaKm2\0" as *const u8 as *const libc::c_char,
@@ -542,7 +542,7 @@ unsafe extern "C" fn cell_area_assert(mut cell: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             125 as libc::c_int,
             b"areaKm2 < areaM2\0" as *const u8 as *const libc::c_char,
@@ -573,7 +573,7 @@ unsafe extern "C" fn earth_area_test(
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testH3CellAreaExhaustive.c\0"
+                b"src/apps/testapps/testH3CellAreaExhaustive.c\0"
                     as *const u8 as *const libc::c_char,
                 143 as libc::c_int,
                 b"!((*cell_area)(iter.h, &cellArea))\0" as *const u8 as *const libc::c_char,
@@ -592,7 +592,7 @@ unsafe extern "C" fn earth_area_test(
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testH3CellAreaExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             148 as libc::c_int,
             b"fabs(area - target) < tol\0" as *const u8 as *const libc::c_char,

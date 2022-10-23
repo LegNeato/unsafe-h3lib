@@ -125,7 +125,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             36 as libc::c_int,
             b"!(latLngToCell(&sfGeo, 9, &sf))\0" as *const u8 as *const libc::c_char,
@@ -142,7 +142,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             38 as libc::c_int,
             b"!(gridRingUnsafe(sf, 1, ring))\0" as *const u8 as *const libc::c_char,
@@ -159,7 +159,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             41 as libc::c_int,
             b"!(areNeighborCells(sf, sf, &isNeighbor))\0" as *const u8 as *const libc::c_char,
@@ -175,7 +175,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             42 as libc::c_int,
             b"!isNeighbor\0" as *const u8 as *const libc::c_char,
@@ -193,7 +193,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             46 as libc::c_int,
             b"!(maxGridDiskSize(1, &neighborsSize))\0" as *const u8 as *const libc::c_char,
@@ -213,7 +213,7 @@ unsafe extern "C" fn runTests() {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+                    b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                         as *const libc::c_char,
                     50 as libc::c_int,
                     b"!(areNeighborCells(sf, ring[i], &isNeighbor))\0" as *const u8
@@ -236,7 +236,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             57 as libc::c_int,
             b"neighbors == 6\0" as *const u8 as *const libc::c_char,
@@ -274,7 +274,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             60 as libc::c_int,
             b"!(gridRingUnsafe(sf, 2, largerRing))\0" as *const u8 as *const libc::c_char,
@@ -291,7 +291,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             63 as libc::c_int,
             b"!(maxGridDiskSize(2, &neighborsSize))\0" as *const u8 as *const libc::c_char,
@@ -311,7 +311,7 @@ unsafe extern "C" fn runTests() {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+                    b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                         as *const libc::c_char,
                     67 as libc::c_int,
                     b"!(areNeighborCells(sf, largerRing[i], &isNeighbor))\0" as *const u8
@@ -334,7 +334,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             74 as libc::c_int,
             b"neighbors == 0\0" as *const u8 as *const libc::c_char,
@@ -356,7 +356,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             80 as libc::c_int,
             b"H3_EXPORT(areNeighborCells)(sf, sfBroken, &isNeighbor) == E_CELL_INVALID\0"
@@ -375,7 +375,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             83 as libc::c_int,
             b"H3_EXPORT(areNeighborCells)(sfBroken, sf, &isNeighbor) == E_CELL_INVALID\0"
@@ -393,7 +393,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             86 as libc::c_int,
             b"!(latLngToCell(&sfGeo, 7, &sfBigger))\0" as *const u8 as *const libc::c_char,
@@ -411,7 +411,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             89 as libc::c_int,
             b"H3_EXPORT(areNeighborCells)(sf, sfBigger, &isNeighbor) == E_RES_MISMATCH\0"
@@ -434,7 +434,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             92 as libc::c_int,
             b"!(areNeighborCells(ring[2], ring[1], &isNeighbor))\0" as *const u8
@@ -451,7 +451,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             93 as libc::c_int,
             b"isNeighbor\0" as *const u8 as *const libc::c_char,
@@ -488,7 +488,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             106 as libc::c_int,
             b"H3_EXPORT(areNeighborCells)(origin, dest, &out) == E_CELL_INVALID\0" as *const u8
@@ -523,7 +523,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             114 as libc::c_int,
             b"H3_EXPORT(areNeighborCells)(origin, dest, &out) == E_CELL_INVALID\0" as *const u8
@@ -551,7 +551,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             119 as libc::c_int,
             b"H3_EXPORT(areNeighborCells)(origin, dest, &out) == E_CELL_INVALID\0" as *const u8
@@ -570,7 +570,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             126 as libc::c_int,
             b"!(latLngToCell(&sfGeo, 9, &sf))\0" as *const u8 as *const libc::c_char,
@@ -587,7 +587,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             128 as libc::c_int,
             b"!(gridRingUnsafe(sf, 1, ring))\0" as *const u8 as *const libc::c_char,
@@ -605,7 +605,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             132 as libc::c_int,
             b"!(cellsToDirectedEdge(sf, sf2, &edge))\0" as *const u8 as *const libc::c_char,
@@ -622,7 +622,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             134 as libc::c_int,
             b"!(getDirectedEdgeOrigin(edge, &edgeOrigin))\0" as *const u8 as *const libc::c_char,
@@ -638,7 +638,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             135 as libc::c_int,
             b"sf == edgeOrigin\0" as *const u8 as *const libc::c_char,
@@ -655,7 +655,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             138 as libc::c_int,
             b"!(getDirectedEdgeDestination(edge, &edgeDestination))\0" as *const u8
@@ -672,7 +672,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             140 as libc::c_int,
             b"sf2 == edgeDestination\0" as *const u8 as *const libc::c_char,
@@ -689,7 +689,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             144 as libc::c_int,
             b"!(directedEdgeToCells(edge, originDestination))\0" as *const u8
@@ -706,7 +706,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             146 as libc::c_int,
             b"originDestination[0] == sf\0" as *const u8 as *const libc::c_char,
@@ -722,7 +722,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             148 as libc::c_int,
             b"originDestination[1] == sf2\0" as *const u8 as *const libc::c_char,
@@ -740,7 +740,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             152 as libc::c_int,
             b"H3_EXPORT(directedEdgeToCells)(0, originDestination) == E_DIR_EDGE_INVALID\0"
@@ -770,7 +770,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             159 as libc::c_int,
             b"H3_EXPORT(directedEdgeToCells)(invalidEdge, originDestination) != E_SUCCESS\0"
@@ -808,7 +808,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             162 as libc::c_int,
             b"!(gridRingUnsafe(sf, 2, largerRing))\0" as *const u8 as *const libc::c_char,
@@ -828,7 +828,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             168 as libc::c_int,
             b"H3_EXPORT(cellsToDirectedEdge)(sf, sf3, &notEdge) == E_NOT_NEIGHBORS\0" as *const u8
@@ -850,7 +850,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             177 as libc::c_int,
             b"H3_EXPORT(getDirectedEdgeOrigin)(hexagon, &out) == E_DIR_EDGE_INVALID\0" as *const u8
@@ -870,7 +870,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             180 as libc::c_int,
             b"H3_EXPORT(getDirectedEdgeOrigin)(0, &out) == E_DIR_EDGE_INVALID\0" as *const u8
@@ -890,7 +890,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             185 as libc::c_int,
             b"!(latLngToCell(&sfGeo, 9, &sf))\0" as *const u8 as *const libc::c_char,
@@ -907,7 +907,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             187 as libc::c_int,
             b"!(gridRingUnsafe(sf, 1, ring))\0" as *const u8 as *const libc::c_char,
@@ -925,7 +925,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             191 as libc::c_int,
             b"!(cellsToDirectedEdge(sf, sf2, &edge))\0" as *const u8 as *const libc::c_char,
@@ -945,7 +945,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             195 as libc::c_int,
             b"H3_EXPORT(getDirectedEdgeDestination)(edge, &out) == E_FAILED\0" as *const u8
@@ -967,7 +967,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             204 as libc::c_int,
             b"H3_EXPORT(getDirectedEdgeDestination)(hexagon, &out) == E_DIR_EDGE_INVALID\0"
@@ -987,7 +987,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             207 as libc::c_int,
             b"H3_EXPORT(getDirectedEdgeDestination)(0, &out) == E_DIR_EDGE_INVALID\0" as *const u8
@@ -1013,7 +1013,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+                b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                     as *const libc::c_char,
                 217 as libc::c_int,
                 b"!(getPentagons(res, pentagons))\0" as *const u8 as *const libc::c_char,
@@ -1033,7 +1033,7 @@ unsafe extern "C" fn runTests() {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+                    b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                         as *const libc::c_char,
                     220 as libc::c_int,
                     b"!(gridDisk(pentagon, 1, ring))\0" as *const u8 as *const libc::c_char,
@@ -1054,7 +1054,7 @@ unsafe extern "C" fn runTests() {
                                 as *const libc::c_char,
                             currentSuiteName,
                             currentTestName,
-                            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0"
+                            b"src/apps/testapps/testDirectedEdge.c\0"
                                 as *const u8 as *const libc::c_char,
                             226 as libc::c_int,
                             b"!(cellsToDirectedEdge( pentagon, neighbor, &edge))\0" as *const u8
@@ -1072,7 +1072,7 @@ unsafe extern "C" fn runTests() {
                                 as *const libc::c_char,
                             currentSuiteName,
                             currentTestName,
-                            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0"
+                            b"src/apps/testapps/testDirectedEdge.c\0"
                                 as *const u8 as *const libc::c_char,
                             228 as libc::c_int,
                             b"H3_EXPORT(isValidDirectedEdge)(edge)\0" as *const u8
@@ -1091,7 +1091,7 @@ unsafe extern "C" fn runTests() {
                                 as *const libc::c_char,
                             currentSuiteName,
                             currentTestName,
-                            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0"
+                            b"src/apps/testapps/testDirectedEdge.c\0"
                                 as *const u8 as *const libc::c_char,
                             230 as libc::c_int,
                             b"!(cellsToDirectedEdge( neighbor, pentagon, &edge))\0" as *const u8
@@ -1109,7 +1109,7 @@ unsafe extern "C" fn runTests() {
                                 as *const libc::c_char,
                             currentSuiteName,
                             currentTestName,
-                            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0"
+                            b"src/apps/testapps/testDirectedEdge.c\0"
                                 as *const u8 as *const libc::c_char,
                             232 as libc::c_int,
                             b"H3_EXPORT(isValidDirectedEdge)(edge)\0" as *const u8
@@ -1136,7 +1136,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             240 as libc::c_int,
             b"!(latLngToCell(&sfGeo, 9, &sf))\0" as *const u8 as *const libc::c_char,
@@ -1153,7 +1153,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             242 as libc::c_int,
             b"!(gridRingUnsafe(sf, 1, ring))\0" as *const u8 as *const libc::c_char,
@@ -1171,7 +1171,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             246 as libc::c_int,
             b"!(cellsToDirectedEdge(sf, sf2, &edge))\0" as *const u8 as *const libc::c_char,
@@ -1187,7 +1187,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             248 as libc::c_int,
             b"H3_EXPORT(isValidDirectedEdge)(edge) == 1\0" as *const u8 as *const libc::c_char,
@@ -1203,7 +1203,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             250 as libc::c_int,
             b"H3_EXPORT(isValidDirectedEdge)(sf) == 0\0" as *const u8 as *const libc::c_char,
@@ -1222,7 +1222,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             255 as libc::c_int,
             b"H3_EXPORT(isValidDirectedEdge)(undirectedEdge) == 0\0" as *const u8
@@ -1243,7 +1243,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             260 as libc::c_int,
             b"H3_EXPORT(isValidDirectedEdge)(hexagonWithReserved) == 0\0" as *const u8
@@ -1263,7 +1263,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             265 as libc::c_int,
             b"H3_EXPORT(isValidDirectedEdge)(fakeEdge) == 0\0" as *const u8 as *const libc::c_char,
@@ -1284,7 +1284,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             270 as libc::c_int,
             b"H3_EXPORT(isValidDirectedEdge)(invalidEdge) == 0\0" as *const u8
@@ -1310,7 +1310,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             277 as libc::c_int,
             b"H3_EXPORT(isValidDirectedEdge)(goodPentagonalEdge) == 1\0" as *const u8
@@ -1330,7 +1330,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             282 as libc::c_int,
             b"H3_EXPORT(isValidDirectedEdge)(badPentagonalEdge) == 0\0" as *const u8
@@ -1350,7 +1350,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             287 as libc::c_int,
             b"H3_EXPORT(isValidDirectedEdge)(highBitEdge) == 0\0" as *const u8
@@ -1369,7 +1369,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             292 as libc::c_int,
             b"!(latLngToCell(&sfGeo, 9, &sf))\0" as *const u8 as *const libc::c_char,
@@ -1386,7 +1386,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             294 as libc::c_int,
             b"!(originToDirectedEdges(sf, edges))\0" as *const u8 as *const libc::c_char,
@@ -1404,7 +1404,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+                b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                     as *const libc::c_char,
                 298 as libc::c_int,
                 b"H3_EXPORT(isValidDirectedEdge)(edges[i]) == 1\0" as *const u8
@@ -1422,7 +1422,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+                b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                     as *const libc::c_char,
                 301 as libc::c_int,
                 b"!(getDirectedEdgeOrigin(edges[i], &origin))\0" as *const u8
@@ -1439,7 +1439,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+                b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                     as *const libc::c_char,
                 302 as libc::c_int,
                 b"sf == origin\0" as *const u8 as *const libc::c_char,
@@ -1456,7 +1456,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+                b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                     as *const libc::c_char,
                 305 as libc::c_int,
                 b"!(getDirectedEdgeDestination(edges[i], &destination))\0" as *const u8
@@ -1473,7 +1473,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+                b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                     as *const libc::c_char,
                 306 as libc::c_int,
                 b"sf != destination\0" as *const u8 as *const libc::c_char,
@@ -1494,7 +1494,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             313 as libc::c_int,
             b"!(originToDirectedEdges(pentagon, edges))\0" as *const u8 as *const libc::c_char,
@@ -1517,7 +1517,7 @@ unsafe extern "C" fn runTests() {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+                    b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                         as *const libc::c_char,
                     321 as libc::c_int,
                     b"H3_EXPORT(isValidDirectedEdge)(edges[i]) == 1\0" as *const u8
@@ -1536,7 +1536,7 @@ unsafe extern "C" fn runTests() {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+                    b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                         as *const libc::c_char,
                     324 as libc::c_int,
                     b"!(getDirectedEdgeOrigin(edges[i], &origin))\0" as *const u8
@@ -1554,7 +1554,7 @@ unsafe extern "C" fn runTests() {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+                    b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                         as *const libc::c_char,
                     325 as libc::c_int,
                     b"pentagon == origin\0" as *const u8 as *const libc::c_char,
@@ -1572,7 +1572,7 @@ unsafe extern "C" fn runTests() {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+                    b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                         as *const libc::c_char,
                     328 as libc::c_int,
                     b"!(getDirectedEdgeDestination( edges[i], &destination))\0" as *const u8
@@ -1590,7 +1590,7 @@ unsafe extern "C" fn runTests() {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+                    b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                         as *const libc::c_char,
                     329 as libc::c_int,
                     b"pentagon != destination\0" as *const u8 as *const libc::c_char,
@@ -1609,7 +1609,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             333 as libc::c_int,
             b"missingEdgeCount == 1\0" as *const u8 as *const libc::c_char,
@@ -1646,7 +1646,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+                b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                     as *const libc::c_char,
                 346 as libc::c_int,
                 b"!(latLngToCell(&sfGeo, res, &sf))\0" as *const u8 as *const libc::c_char,
@@ -1662,7 +1662,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+                b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                     as *const libc::c_char,
                 347 as libc::c_int,
                 b"!(cellToBoundary(sf, &boundary))\0" as *const u8 as *const libc::c_char,
@@ -1678,7 +1678,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+                b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                     as *const libc::c_char,
                 348 as libc::c_int,
                 b"!(originToDirectedEdges(sf, edges))\0" as *const u8 as *const libc::c_char,
@@ -1697,7 +1697,7 @@ unsafe extern "C" fn runTests() {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+                    b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                         as *const libc::c_char,
                     352 as libc::c_int,
                     b"!(directedEdgeToBoundary(edges[i], &edgeBoundary))\0" as *const u8
@@ -1715,7 +1715,7 @@ unsafe extern "C" fn runTests() {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+                    b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                         as *const libc::c_char,
                     354 as libc::c_int,
                     b"edgeBoundary.numVerts == 2\0" as *const u8 as *const libc::c_char,
@@ -1742,7 +1742,7 @@ unsafe extern "C" fn runTests() {
                             as *const libc::c_char,
                         currentSuiteName,
                         currentTestName,
-                        b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0"
+                        b"src/apps/testapps/testDirectedEdge.c\0"
                             as *const u8 as *const libc::c_char,
                         359 as libc::c_int,
                         b"geoAlmostEqual(&edgeBoundary.verts[j], &boundary.verts[expectedVertices[i][j]])\0"
@@ -1792,7 +1792,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+                b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                     as *const libc::c_char,
                 376 as libc::c_int,
                 b"!(cellToBoundary(pentagon, &boundary))\0" as *const u8 as *const libc::c_char,
@@ -1808,7 +1808,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+                b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                     as *const libc::c_char,
                 377 as libc::c_int,
                 b"!(originToDirectedEdges(pentagon, edges))\0" as *const u8 as *const libc::c_char,
@@ -1831,7 +1831,7 @@ unsafe extern "C" fn runTests() {
                             as *const libc::c_char,
                         currentSuiteName,
                         currentTestName,
-                        b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0"
+                        b"src/apps/testapps/testDirectedEdge.c\0"
                             as *const u8 as *const libc::c_char,
                         385 as libc::c_int,
                         b"!(directedEdgeToBoundary( edges[i], &edgeBoundary))\0" as *const u8
@@ -1849,7 +1849,7 @@ unsafe extern "C" fn runTests() {
                             as *const libc::c_char,
                         currentSuiteName,
                         currentTestName,
-                        b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0"
+                        b"src/apps/testapps/testDirectedEdge.c\0"
                             as *const u8 as *const libc::c_char,
                         389 as libc::c_int,
                         b"edgeBoundary.numVerts == 3\0" as *const u8 as *const libc::c_char,
@@ -1876,7 +1876,7 @@ unsafe extern "C" fn runTests() {
                                 as *const libc::c_char,
                             currentSuiteName,
                             currentTestName,
-                            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0"
+                            b"src/apps/testapps/testDirectedEdge.c\0"
                                 as *const u8 as *const libc::c_char,
                             394 as libc::c_int,
                             b"geoAlmostEqual( &edgeBoundary.verts[j], &boundary.verts[expectedVertices[i][j]])\0"
@@ -1898,7 +1898,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+                b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                     as *const libc::c_char,
                 399 as libc::c_int,
                 b"missingEdgeCount == 1\0" as *const u8 as *const libc::c_char,
@@ -1939,7 +1939,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+                b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                     as *const libc::c_char,
                 414 as libc::c_int,
                 b"!(cellToBoundary(pentagon, &boundary))\0" as *const u8 as *const libc::c_char,
@@ -1955,7 +1955,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+                b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                     as *const libc::c_char,
                 415 as libc::c_int,
                 b"!(originToDirectedEdges(pentagon, edges))\0" as *const u8 as *const libc::c_char,
@@ -1978,7 +1978,7 @@ unsafe extern "C" fn runTests() {
                             as *const libc::c_char,
                         currentSuiteName,
                         currentTestName,
-                        b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0"
+                        b"src/apps/testapps/testDirectedEdge.c\0"
                             as *const u8 as *const libc::c_char,
                         423 as libc::c_int,
                         b"!(directedEdgeToBoundary( edges[i], &edgeBoundary))\0" as *const u8
@@ -1996,7 +1996,7 @@ unsafe extern "C" fn runTests() {
                             as *const libc::c_char,
                         currentSuiteName,
                         currentTestName,
-                        b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0"
+                        b"src/apps/testapps/testDirectedEdge.c\0"
                             as *const u8 as *const libc::c_char,
                         427 as libc::c_int,
                         b"edgeBoundary.numVerts == 2\0" as *const u8 as *const libc::c_char,
@@ -2023,7 +2023,7 @@ unsafe extern "C" fn runTests() {
                                 as *const libc::c_char,
                             currentSuiteName,
                             currentTestName,
-                            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0"
+                            b"src/apps/testapps/testDirectedEdge.c\0"
                                 as *const u8 as *const libc::c_char,
                             432 as libc::c_int,
                             b"geoAlmostEqual( &edgeBoundary.verts[j], &boundary.verts[expectedVertices[i][j]])\0"
@@ -2045,7 +2045,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+                b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                     as *const libc::c_char,
                 437 as libc::c_int,
                 b"missingEdgeCount == 1\0" as *const u8 as *const libc::c_char,
@@ -2065,7 +2065,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             443 as libc::c_int,
             b"!(latLngToCell(&sfGeo, 9, &sf))\0" as *const u8 as *const libc::c_char,
@@ -2090,7 +2090,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             449 as libc::c_int,
             b"H3_EXPORT(directedEdgeToBoundary)(invalidEdge, &cb) == E_DIR_EDGE_INVALID\0"
@@ -2116,7 +2116,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             457 as libc::c_int,
             b"H3_EXPORT(directedEdgeToBoundary)(invalidEdge2, &cb) != E_SUCCESS\0" as *const u8
@@ -2138,7 +2138,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             464 as libc::c_int,
             b"H3_EXPORT(edgeLengthRads)(0, &length) == E_DIR_EDGE_INVALID\0" as *const u8
@@ -2163,7 +2163,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             467 as libc::c_int,
             b"!(latLngToCell(&zero, 0, &h3))\0" as *const u8 as *const libc::c_char,
@@ -2179,7 +2179,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testDirectedEdge.c\0" as *const u8
+            b"src/apps/testapps/testDirectedEdge.c\0" as *const u8
                 as *const libc::c_char,
             469 as libc::c_int,
             b"H3_EXPORT(edgeLengthRads)(h3, &length) == E_DIR_EDGE_INVALID\0" as *const u8

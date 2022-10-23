@@ -75,7 +75,7 @@ unsafe extern "C" fn assertExpected(mut h1: H3Index, mut g1: *const LatLng) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testLatLngToCell.c\0" as *const u8
+            b"src/apps/testapps/testLatLngToCell.c\0" as *const u8
                 as *const libc::c_char,
             39 as libc::c_int,
             b"!(latLngToCell(g1, res, &h2))\0" as *const u8 as *const libc::c_char,
@@ -91,7 +91,7 @@ unsafe extern "C" fn assertExpected(mut h1: H3Index, mut g1: *const LatLng) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testLatLngToCell.c\0" as *const u8
+            b"src/apps/testapps/testLatLngToCell.c\0" as *const u8
                 as *const libc::c_char,
             40 as libc::c_int,
             b"h1 == h2\0" as *const u8 as *const libc::c_char,
@@ -142,7 +142,7 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testLatLngToCell.c\0" as *const u8
+                b"src/apps/testapps/testLatLngToCell.c\0" as *const u8
                     as *const libc::c_char,
                 67 as libc::c_int,
                 b"!(stringToH3(h3Str, &h3))\0" as *const u8 as *const libc::c_char,

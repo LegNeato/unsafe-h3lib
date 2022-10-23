@@ -102,7 +102,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testPentagonIndexes.c\0" as *const u8
+                b"src/apps/testapps/testPentagonIndexes.c\0" as *const u8
                     as *const libc::c_char,
                 30 as libc::c_int,
                 b"!(getPentagons(res, h3Indexes))\0" as *const u8 as *const libc::c_char,
@@ -125,7 +125,7 @@ unsafe extern "C" fn runTests() {
                             as *const libc::c_char,
                         currentSuiteName,
                         currentTestName,
-                        b"/Users/legnitto/src/h3/src/apps/testapps/testPentagonIndexes.c\0"
+                        b"src/apps/testapps/testPentagonIndexes.c\0"
                             as *const u8 as *const libc::c_char,
                         39 as libc::c_int,
                         b"H3_EXPORT(isValidCell(h3Index))\0" as *const u8 as *const libc::c_char,
@@ -142,7 +142,7 @@ unsafe extern "C" fn runTests() {
                             as *const libc::c_char,
                         currentSuiteName,
                         currentTestName,
-                        b"/Users/legnitto/src/h3/src/apps/testapps/testPentagonIndexes.c\0"
+                        b"src/apps/testapps/testPentagonIndexes.c\0"
                             as *const u8 as *const libc::c_char,
                         41 as libc::c_int,
                         b"H3_EXPORT(isPentagon(h3Index))\0" as *const u8 as *const libc::c_char,
@@ -159,7 +159,7 @@ unsafe extern "C" fn runTests() {
                             as *const libc::c_char,
                         currentSuiteName,
                         currentTestName,
-                        b"/Users/legnitto/src/h3/src/apps/testapps/testPentagonIndexes.c\0"
+                        b"src/apps/testapps/testPentagonIndexes.c\0"
                             as *const u8 as *const libc::c_char,
                         43 as libc::c_int,
                         b"H3_EXPORT(getResolution(h3Index)) == res\0" as *const u8
@@ -181,7 +181,7 @@ unsafe extern "C" fn runTests() {
                                     as *const libc::c_char,
                                 currentSuiteName,
                                 currentTestName,
-                                b"/Users/legnitto/src/h3/src/apps/testapps/testPentagonIndexes.c\0"
+                                b"src/apps/testapps/testPentagonIndexes.c\0"
                                     as *const u8
                                     as *const libc::c_char,
                                 48 as libc::c_int,
@@ -205,7 +205,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testPentagonIndexes.c\0" as *const u8
+                b"src/apps/testapps/testPentagonIndexes.c\0" as *const u8
                     as *const libc::c_char,
                 55 as libc::c_int,
                 b"numFound == expectedCount\0" as *const u8 as *const libc::c_char,
@@ -244,7 +244,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPentagonIndexes.c\0" as *const u8
+            b"src/apps/testapps/testPentagonIndexes.c\0" as *const u8
                 as *const libc::c_char,
             62 as libc::c_int,
             b"H3_EXPORT(getPentagons)(16, h3Indexes) == E_RES_DOMAIN\0" as *const u8
@@ -263,7 +263,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPentagonIndexes.c\0" as *const u8
+            b"src/apps/testapps/testPentagonIndexes.c\0" as *const u8
                 as *const libc::c_char,
             64 as libc::c_int,
             b"H3_EXPORT(getPentagons)(100, h3Indexes) == E_RES_DOMAIN\0" as *const u8
@@ -282,7 +282,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPentagonIndexes.c\0" as *const u8
+            b"src/apps/testapps/testPentagonIndexes.c\0" as *const u8
                 as *const libc::c_char,
             66 as libc::c_int,
             b"H3_EXPORT(getPentagons)(-1, h3Indexes) == E_RES_DOMAIN\0" as *const u8
@@ -300,7 +300,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPentagonIndexes.c\0" as *const u8
+            b"src/apps/testapps/testPentagonIndexes.c\0" as *const u8
                 as *const libc::c_char,
             70 as libc::c_int,
             b"!H3_EXPORT(isPentagon)(0)\0" as *const u8 as *const libc::c_char,
@@ -316,7 +316,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPentagonIndexes.c\0" as *const u8
+            b"src/apps/testapps/testPentagonIndexes.c\0" as *const u8
                 as *const libc::c_char,
             72 as libc::c_int,
             b"!H3_EXPORT(isPentagon)(0x7fffffffffffffff)\0" as *const u8 as *const libc::c_char,

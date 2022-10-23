@@ -102,7 +102,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellToBoundaryEdgeCases.c\0" as *const u8
+            b"src/apps/testapps/testCellToBoundaryEdgeCases.c\0" as *const u8
                 as *const libc::c_char,
             41 as libc::c_int,
             b"!(cellToBoundary(cell, &boundary))\0" as *const u8 as *const libc::c_char,
@@ -134,7 +134,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellToBoundaryEdgeCases.c\0" as *const u8
+            b"src/apps/testapps/testCellToBoundaryEdgeCases.c\0" as *const u8
                 as *const libc::c_char,
             50 as libc::c_int,
             b"!(latLngToCell(&point, 1, &cell2))\0" as *const u8 as *const libc::c_char,
@@ -151,7 +151,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testCellToBoundaryEdgeCases.c\0"
+                b"src/apps/testapps/testCellToBoundaryEdgeCases.c\0"
                     as *const u8 as *const libc::c_char,
                 54 as libc::c_int,
                 b"pointInsideGeoLoop(&geoloop, &bbox, &point)\0" as *const u8
@@ -169,7 +169,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testCellToBoundaryEdgeCases.c\0"
+                b"src/apps/testapps/testCellToBoundaryEdgeCases.c\0"
                     as *const u8 as *const libc::c_char,
                 57 as libc::c_int,
                 b"!pointInsideGeoLoop(&geoloop, &bbox, &point)\0" as *const u8

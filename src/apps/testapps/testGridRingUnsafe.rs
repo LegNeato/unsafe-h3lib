@@ -126,7 +126,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridRingUnsafe.c\0" as *const u8
+            b"src/apps/testapps/testGridRingUnsafe.c\0" as *const u8
                 as *const libc::c_char,
             27 as libc::c_int,
             b"!(latLngToCell(&sf, 9, &sfHex))\0" as *const u8 as *const libc::c_char,
@@ -144,7 +144,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridRingUnsafe.c\0" as *const u8
+            b"src/apps/testapps/testGridRingUnsafe.c\0" as *const u8
                 as *const libc::c_char,
             31 as libc::c_int,
             b"!(gridRingUnsafe(sfHex, 0, k0))\0" as *const u8 as *const libc::c_char,
@@ -160,7 +160,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridRingUnsafe.c\0" as *const u8
+            b"src/apps/testapps/testGridRingUnsafe.c\0" as *const u8
                 as *const libc::c_char,
             32 as libc::c_int,
             b"k0[0] == sfHex\0" as *const u8 as *const libc::c_char,
@@ -193,7 +193,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridRingUnsafe.c\0" as *const u8
+            b"src/apps/testapps/testGridRingUnsafe.c\0" as *const u8
                 as *const libc::c_char,
             40 as libc::c_int,
             b"!(gridRingUnsafe(sfHex, 1, k1))\0" as *const u8 as *const libc::c_char,
@@ -211,7 +211,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testGridRingUnsafe.c\0" as *const u8
+                b"src/apps/testapps/testGridRingUnsafe.c\0" as *const u8
                     as *const libc::c_char,
                 43 as libc::c_int,
                 b"k1[i] != 0\0" as *const u8 as *const libc::c_char,
@@ -235,7 +235,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testGridRingUnsafe.c\0" as *const u8
+                b"src/apps/testapps/testGridRingUnsafe.c\0" as *const u8
                     as *const libc::c_char,
                 50 as libc::c_int,
                 b"inList == 1\0" as *const u8 as *const libc::c_char,
@@ -282,7 +282,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridRingUnsafe.c\0" as *const u8
+            b"src/apps/testapps/testGridRingUnsafe.c\0" as *const u8
                 as *const libc::c_char,
             61 as libc::c_int,
             b"!(gridRingUnsafe(sfHex, 2, k2))\0" as *const u8 as *const libc::c_char,
@@ -300,7 +300,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testGridRingUnsafe.c\0" as *const u8
+                b"src/apps/testapps/testGridRingUnsafe.c\0" as *const u8
                     as *const libc::c_char,
                 64 as libc::c_int,
                 b"k2[i] != 0\0" as *const u8 as *const libc::c_char,
@@ -324,7 +324,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testGridRingUnsafe.c\0" as *const u8
+                b"src/apps/testapps/testGridRingUnsafe.c\0" as *const u8
                     as *const libc::c_char,
                 71 as libc::c_int,
                 b"inList == 1\0" as *const u8 as *const libc::c_char,
@@ -354,7 +354,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridRingUnsafe.c\0" as *const u8
+            b"src/apps/testapps/testGridRingUnsafe.c\0" as *const u8
                 as *const libc::c_char,
             79 as libc::c_int,
             b"H3_EXPORT(gridRingUnsafe)(nearPentagon, 1, kp1) == E_PENTAGON\0" as *const u8
@@ -389,7 +389,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridRingUnsafe.c\0" as *const u8
+            b"src/apps/testapps/testGridRingUnsafe.c\0" as *const u8
                 as *const libc::c_char,
             86 as libc::c_int,
             b"H3_EXPORT(gridRingUnsafe)(nearPentagon, 2, kp2) == E_PENTAGON\0" as *const u8
@@ -430,7 +430,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridRingUnsafe.c\0" as *const u8
+            b"src/apps/testapps/testGridRingUnsafe.c\0" as *const u8
                 as *const libc::c_char,
             94 as libc::c_int,
             b"H3_EXPORT(gridRingUnsafe)(nearPentagon, 2, kp2) == E_PENTAGON\0" as *const u8
@@ -458,7 +458,7 @@ unsafe extern "C" fn runTests() {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"/Users/legnitto/src/h3/src/apps/testapps/testGridRingUnsafe.c\0" as *const u8
+                    b"src/apps/testapps/testGridRingUnsafe.c\0" as *const u8
                         as *const libc::c_char,
                     104 as libc::c_int,
                     b"!(uncompactCellsSize(&bc, 1, res, &childrenSz))\0" as *const u8
@@ -487,7 +487,7 @@ unsafe extern "C" fn runTests() {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"/Users/legnitto/src/h3/src/apps/testapps/testGridRingUnsafe.c\0" as *const u8
+                    b"src/apps/testapps/testGridRingUnsafe.c\0" as *const u8
                         as *const libc::c_char,
                     107 as libc::c_int,
                     b"!(uncompactCells(&bc, 1, children, childrenSz, res))\0" as *const u8
@@ -516,7 +516,7 @@ unsafe extern "C" fn runTests() {
                                     as *const libc::c_char,
                                 currentSuiteName,
                                 currentTestName,
-                                b"/Users/legnitto/src/h3/src/apps/testapps/testGridRingUnsafe.c\0"
+                                b"src/apps/testapps/testGridRingUnsafe.c\0"
                                     as *const u8
                                     as *const libc::c_char,
                                 117 as libc::c_int,
@@ -558,7 +558,7 @@ unsafe extern "C" fn runTests() {
                                         as *const libc::c_char,
                                     currentSuiteName,
                                     currentTestName,
-                                    b"/Users/legnitto/src/h3/src/apps/testapps/testGridRingUnsafe.c\0"
+                                    b"src/apps/testapps/testGridRingUnsafe.c\0"
                                         as *const u8 as *const libc::c_char,
                                     129 as libc::c_int,
                                     b"!(gridDiskDistancesSafe( children[j], k, internalNeighbors, internalDistances))\0"
@@ -591,7 +591,7 @@ unsafe extern "C" fn runTests() {
                                                         as *const libc::c_char,
                                                     currentSuiteName,
                                                     currentTestName,
-                                                    b"/Users/legnitto/src/h3/src/apps/testapps/testGridRingUnsafe.c\0"
+                                                    b"src/apps/testapps/testGridRingUnsafe.c\0"
                                                         as *const u8 as *const libc::c_char,
                                                     147 as libc::c_int,
                                                     b"internalDistances[iInternal] == k\0" as *const u8
@@ -615,7 +615,7 @@ unsafe extern "C" fn runTests() {
                                                 as *const libc::c_char,
                                             currentSuiteName,
                                             currentTestName,
-                                            b"/Users/legnitto/src/h3/src/apps/testapps/testGridRingUnsafe.c\0"
+                                            b"src/apps/testapps/testGridRingUnsafe.c\0"
                                                 as *const u8 as *const libc::c_char,
                                             156 as libc::c_int,
                                             b"found == internalFound\0" as *const u8

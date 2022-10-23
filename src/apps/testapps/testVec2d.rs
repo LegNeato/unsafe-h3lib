@@ -80,7 +80,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testVec2d.c\0" as *const u8
+            b"src/apps/testapps/testVec2d.c\0" as *const u8
                 as *const libc::c_char,
             29 as libc::c_int,
             b"fabs(mag - expected) < DBL_EPSILON\0" as *const u8 as *const libc::c_char,
@@ -135,7 +135,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testVec2d.c\0" as *const u8
+            b"src/apps/testapps/testVec2d.c\0" as *const u8
                 as *const libc::c_char,
             45 as libc::c_int,
             b"fabs(intersection.x - expectedX) < DBL_EPSILON\0" as *const u8 as *const libc::c_char,
@@ -151,7 +151,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testVec2d.c\0" as *const u8
+            b"src/apps/testapps/testVec2d.c\0" as *const u8
                 as *const libc::c_char,
             47 as libc::c_int,
             b"fabs(intersection.y - expectedY) < DBL_EPSILON\0" as *const u8 as *const libc::c_char,
@@ -203,7 +203,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testVec2d.c\0" as *const u8
+            b"src/apps/testapps/testVec2d.c\0" as *const u8
                 as *const libc::c_char,
             57 as libc::c_int,
             b"_v2dAlmostEquals(&v1, &v2)\0" as *const u8 as *const libc::c_char,
@@ -219,7 +219,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testVec2d.c\0" as *const u8
+            b"src/apps/testapps/testVec2d.c\0" as *const u8
                 as *const libc::c_char,
             58 as libc::c_int,
             b"!_v2dAlmostEquals(&v1, &v3)\0" as *const u8 as *const libc::c_char,
@@ -235,7 +235,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testVec2d.c\0" as *const u8
+            b"src/apps/testapps/testVec2d.c\0" as *const u8
                 as *const libc::c_char,
             59 as libc::c_int,
             b"!_v2dAlmostEquals(&v1, &v4)\0" as *const u8 as *const libc::c_char,
@@ -251,7 +251,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testVec2d.c\0" as *const u8
+            b"src/apps/testapps/testVec2d.c\0" as *const u8
                 as *const libc::c_char,
             60 as libc::c_int,
             b"_v2dAlmostEquals(&v1, &v5)\0" as *const u8 as *const libc::c_char,

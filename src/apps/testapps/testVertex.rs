@@ -104,7 +104,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testVertex.c\0" as *const u8
+                b"src/apps/testapps/testVertex.c\0" as *const u8
                     as *const libc::c_char,
                 31 as libc::c_int,
                 b"vertexNum >= 0 && vertexNum < NUM_HEX_VERTS\0" as *const u8
@@ -121,7 +121,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testVertex.c\0" as *const u8
+                b"src/apps/testapps/testVertex.c\0" as *const u8
                     as *const libc::c_char,
                 32 as libc::c_int,
                 b"!vertexNums[vertexNum]\0" as *const u8 as *const libc::c_char,
@@ -146,7 +146,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testVertex.c\0" as *const u8
+                b"src/apps/testapps/testVertex.c\0" as *const u8
                     as *const libc::c_char,
                 43 as libc::c_int,
                 b"vertexNum >= 0 && vertexNum < NUM_PENT_VERTS\0" as *const u8
@@ -163,7 +163,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testVertex.c\0" as *const u8
+                b"src/apps/testapps/testVertex.c\0" as *const u8
                     as *const libc::c_char,
                 44 as libc::c_int,
                 b"!vertexNums[vertexNum]\0" as *const u8 as *const libc::c_char,
@@ -184,7 +184,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testVertex.c\0" as *const u8
+            b"src/apps/testapps/testVertex.c\0" as *const u8
                 as *const libc::c_char,
             54 as libc::c_int,
             b"vertexNumForDirection(origin, CENTER_DIGIT) == INVALID_VERTEX_NUM\0" as *const u8
@@ -201,7 +201,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testVertex.c\0" as *const u8
+            b"src/apps/testapps/testVertex.c\0" as *const u8
                 as *const libc::c_char,
             57 as libc::c_int,
             b"vertexNumForDirection(origin, INVALID_DIGIT) == INVALID_VERTEX_NUM\0" as *const u8
@@ -219,7 +219,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testVertex.c\0" as *const u8
+            b"src/apps/testapps/testVertex.c\0" as *const u8
                 as *const libc::c_char,
             62 as libc::c_int,
             b"vertexNumForDirection(pentagon, K_AXES_DIGIT) == INVALID_VERTEX_NUM\0" as *const u8
@@ -253,7 +253,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testVertex.c\0" as *const u8
+                b"src/apps/testapps/testVertex.c\0" as *const u8
                     as *const libc::c_char,
                 70 as libc::c_int,
                 b"dir > 0 && dir < INVALID_DIGIT\0" as *const u8 as *const libc::c_char,
@@ -269,7 +269,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testVertex.c\0" as *const u8
+                b"src/apps/testapps/testVertex.c\0" as *const u8
                     as *const libc::c_char,
                 71 as libc::c_int,
                 b"!seenDirs[dir]\0" as *const u8 as *const libc::c_char,
@@ -292,7 +292,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testVertex.c\0" as *const u8
+            b"src/apps/testapps/testVertex.c\0" as *const u8
                 as *const libc::c_char,
             80 as libc::c_int,
             b"directionForVertexNum(origin, -1) == INVALID_DIGIT\0" as *const u8
@@ -312,7 +312,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testVertex.c\0" as *const u8
+            b"src/apps/testapps/testVertex.c\0" as *const u8
                 as *const libc::c_char,
             82 as libc::c_int,
             b"directionForVertexNum(origin, 6) == INVALID_DIGIT\0" as *const u8
@@ -332,7 +332,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testVertex.c\0" as *const u8
+            b"src/apps/testapps/testVertex.c\0" as *const u8
                 as *const libc::c_char,
             86 as libc::c_int,
             b"directionForVertexNum(pentagon, 5) == INVALID_DIGIT\0" as *const u8
@@ -355,7 +355,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testVertex.c\0" as *const u8
+            b"src/apps/testapps/testVertex.c\0" as *const u8
                 as *const libc::c_char,
             94 as libc::c_int,
             b"H3_EXPORT(cellToVertex)(origin, -1, &vert) == E_DOMAIN\0" as *const u8
@@ -374,7 +374,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testVertex.c\0" as *const u8
+            b"src/apps/testapps/testVertex.c\0" as *const u8
                 as *const libc::c_char,
             96 as libc::c_int,
             b"H3_EXPORT(cellToVertex)(origin, 6, &vert) == E_DOMAIN\0" as *const u8
@@ -394,7 +394,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testVertex.c\0" as *const u8
+            b"src/apps/testapps/testVertex.c\0" as *const u8
                 as *const libc::c_char,
             100 as libc::c_int,
             b"H3_EXPORT(cellToVertex)(pentagon, 5, &vert) == E_DOMAIN\0" as *const u8
@@ -416,7 +416,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testVertex.c\0" as *const u8
+            b"src/apps/testapps/testVertex.c\0" as *const u8
                 as *const libc::c_char,
             107 as libc::c_int,
             b"H3_EXPORT(cellToVertex)(invalid, 3, &vert) == E_FAILED\0" as *const u8
@@ -438,7 +438,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testVertex.c\0" as *const u8
+            b"src/apps/testapps/testVertex.c\0" as *const u8
                 as *const libc::c_char,
             114 as libc::c_int,
             b"H3_EXPORT(cellToVertex)(index, 2, &vert) == E_CELL_INVALID\0" as *const u8
@@ -460,7 +460,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testVertex.c\0" as *const u8
+            b"src/apps/testapps/testVertex.c\0" as *const u8
                 as *const libc::c_char,
             121 as libc::c_int,
             b"H3_EXPORT(cellToVertex)(index, 0, &vert) == E_CELL_INVALID\0" as *const u8
@@ -480,7 +480,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testVertex.c\0" as *const u8
+            b"src/apps/testapps/testVertex.c\0" as *const u8
                 as *const libc::c_char,
             128 as libc::c_int,
             b"H3_EXPORT(isValidVertex)(vert)\0" as *const u8 as *const libc::c_char,
@@ -498,7 +498,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testVertex.c\0" as *const u8
+                b"src/apps/testapps/testVertex.c\0" as *const u8
                     as *const libc::c_char,
                 131 as libc::c_int,
                 b"!(cellToVertex(origin, i, &vert))\0" as *const u8 as *const libc::c_char,
@@ -514,7 +514,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testVertex.c\0" as *const u8
+                b"src/apps/testapps/testVertex.c\0" as *const u8
                     as *const libc::c_char,
                 132 as libc::c_int,
                 b"H3_EXPORT(isValidVertex)(vert)\0" as *const u8 as *const libc::c_char,
@@ -536,7 +536,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testVertex.c\0" as *const u8
+            b"src/apps/testapps/testVertex.c\0" as *const u8
                 as *const libc::c_char,
             140 as libc::c_int,
             b"!(cellToVertex(origin, vertexNum, &vert))\0" as *const u8 as *const libc::c_char,
@@ -553,7 +553,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testVertex.c\0" as *const u8
+            b"src/apps/testapps/testVertex.c\0" as *const u8
                 as *const libc::c_char,
             146 as libc::c_int,
             b"H3_EXPORT(isValidVertex)(vert) == 0\0" as *const u8 as *const libc::c_char,
@@ -573,7 +573,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testVertex.c\0" as *const u8
+            b"src/apps/testapps/testVertex.c\0" as *const u8
                 as *const libc::c_char,
             153 as libc::c_int,
             b"!(cellToVertex(origin, vertexNum, &vert))\0" as *const u8 as *const libc::c_char,
@@ -594,7 +594,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testVertex.c\0" as *const u8
+            b"src/apps/testapps/testVertex.c\0" as *const u8
                 as *const libc::c_char,
             160 as libc::c_int,
             b"origin != owner\0" as *const u8 as *const libc::c_char,
@@ -617,7 +617,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testVertex.c\0" as *const u8
+            b"src/apps/testapps/testVertex.c\0" as *const u8
                 as *const libc::c_char,
             167 as libc::c_int,
             b"H3_EXPORT(isValidVertex)(nonCanonicalVertex) == 0\0" as *const u8
@@ -636,7 +636,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testVertex.c\0" as *const u8
+            b"src/apps/testapps/testVertex.c\0" as *const u8
                 as *const libc::c_char,
             172 as libc::c_int,
             b"H3_EXPORT(isValidVertex)(origin) == 0\0" as *const u8 as *const libc::c_char,
@@ -655,7 +655,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testVertex.c\0" as *const u8
+            b"src/apps/testapps/testVertex.c\0" as *const u8
                 as *const libc::c_char,
             177 as libc::c_int,
             b"H3_EXPORT(isValidVertex)(fakeEdge) == 0\0" as *const u8 as *const libc::c_char,
@@ -672,7 +672,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testVertex.c\0" as *const u8
+            b"src/apps/testapps/testVertex.c\0" as *const u8
                 as *const libc::c_char,
             180 as libc::c_int,
             b"!(cellToVertex(origin, 0, &vert))\0" as *const u8 as *const libc::c_char,
@@ -690,7 +690,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testVertex.c\0" as *const u8
+            b"src/apps/testapps/testVertex.c\0" as *const u8
                 as *const libc::c_char,
             183 as libc::c_int,
             b"H3_EXPORT(isValidVertex)(vert) == 0\0" as *const u8 as *const libc::c_char,
@@ -708,7 +708,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testVertex.c\0" as *const u8
+            b"src/apps/testapps/testVertex.c\0" as *const u8
                 as *const libc::c_char,
             187 as libc::c_int,
             b"!(cellToVertex(pentagon, 0, &vert2))\0" as *const u8 as *const libc::c_char,
@@ -726,7 +726,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testVertex.c\0" as *const u8
+            b"src/apps/testapps/testVertex.c\0" as *const u8
                 as *const libc::c_char,
             190 as libc::c_int,
             b"H3_EXPORT(isValidVertex)(vert2) == 0\0" as *const u8 as *const libc::c_char,
@@ -745,7 +745,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testVertex.c\0" as *const u8
+            b"src/apps/testapps/testVertex.c\0" as *const u8
                 as *const libc::c_char,
             197 as libc::c_int,
             b"H3_EXPORT(vertexToLatLng)(invalid, &latLng) != E_SUCCESS\0" as *const u8
@@ -765,7 +765,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testVertex.c\0" as *const u8
+            b"src/apps/testapps/testVertex.c\0" as *const u8
                 as *const libc::c_char,
             204 as libc::c_int,
             b"H3_EXPORT(cellToVertexes)(invalid, verts) == E_FAILED\0" as *const u8

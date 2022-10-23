@@ -148,7 +148,7 @@ unsafe extern "C" fn gridDisk_equals_gridDiskDistancesSafe_assertions(mut h3: H3
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testGridDisk.c\0" as *const u8
+                b"src/apps/testapps/testGridDisk.c\0" as *const u8
                     as *const libc::c_char,
                 33 as libc::c_int,
                 b"!(maxGridDiskSize(k, &kSz))\0" as *const u8 as *const libc::c_char,
@@ -172,7 +172,7 @@ unsafe extern "C" fn gridDisk_equals_gridDiskDistancesSafe_assertions(mut h3: H3
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testGridDisk.c\0" as *const u8
+                b"src/apps/testapps/testGridDisk.c\0" as *const u8
                     as *const libc::c_char,
                 38 as libc::c_int,
                 b"!(gridDiskDistances(h3, k, neighbors, distances))\0" as *const u8
@@ -197,7 +197,7 @@ unsafe extern "C" fn gridDisk_equals_gridDiskDistancesSafe_assertions(mut h3: H3
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testGridDisk.c\0" as *const u8
+                b"src/apps/testapps/testGridDisk.c\0" as *const u8
                     as *const libc::c_char,
                 43 as libc::c_int,
                 b"!(gridDiskDistancesSafe( h3, k, internalNeighbors, internalDistances))\0"
@@ -229,7 +229,7 @@ unsafe extern "C" fn gridDisk_equals_gridDiskDistancesSafe_assertions(mut h3: H3
                                     as *const libc::c_char,
                                 currentSuiteName,
                                 currentTestName,
-                                b"/Users/legnitto/src/h3/src/apps/testapps/testGridDisk.c\0"
+                                b"src/apps/testapps/testGridDisk.c\0"
                                     as *const u8
                                     as *const libc::c_char,
                                 58 as libc::c_int,
@@ -255,7 +255,7 @@ unsafe extern "C" fn gridDisk_equals_gridDiskDistancesSafe_assertions(mut h3: H3
                             as *const libc::c_char,
                         currentSuiteName,
                         currentTestName,
-                        b"/Users/legnitto/src/h3/src/apps/testapps/testGridDisk.c\0" as *const u8
+                        b"src/apps/testapps/testGridDisk.c\0" as *const u8
                             as *const libc::c_char,
                         66 as libc::c_int,
                         b"found == internalFound\0" as *const u8 as *const libc::c_char,
@@ -292,7 +292,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridDisk.c\0" as *const u8
+            b"src/apps/testapps/testGridDisk.c\0" as *const u8
                 as *const libc::c_char,
             82 as libc::c_int,
             b"!(latLngToCell(&sf, 0, &sfHex0))\0" as *const u8 as *const libc::c_char,
@@ -341,7 +341,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridDisk.c\0" as *const u8
+            b"src/apps/testapps/testGridDisk.c\0" as *const u8
                 as *const libc::c_char,
             90 as libc::c_int,
             b"!(gridDiskDistances(sfHex0, 1, k1, k1Dist))\0" as *const u8 as *const libc::c_char,
@@ -359,7 +359,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testGridDisk.c\0" as *const u8
+                b"src/apps/testapps/testGridDisk.c\0" as *const u8
                     as *const libc::c_char,
                 93 as libc::c_int,
                 b"k1[i] != 0\0" as *const u8 as *const libc::c_char,
@@ -386,7 +386,7 @@ unsafe extern "C" fn runTests() {
                             as *const libc::c_char,
                         currentSuiteName,
                         currentTestName,
-                        b"/Users/legnitto/src/h3/src/apps/testapps/testGridDisk.c\0" as *const u8
+                        b"src/apps/testapps/testGridDisk.c\0" as *const u8
                             as *const libc::c_char,
                         98 as libc::c_int,
                         b"k1Dist[i] == (k1[i] == sfHex0 ? 0 : 1)\0" as *const u8
@@ -407,7 +407,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testGridDisk.c\0" as *const u8
+                b"src/apps/testapps/testGridDisk.c\0" as *const u8
                     as *const libc::c_char,
                 102 as libc::c_int,
                 b"inList == 1\0" as *const u8 as *const libc::c_char,
@@ -461,7 +461,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridDisk.c\0" as *const u8
+            b"src/apps/testapps/testGridDisk.c\0" as *const u8
                 as *const libc::c_char,
             118 as libc::c_int,
             b"!(gridDiskDistances(polar, 1, k2, k2Dist))\0" as *const u8 as *const libc::c_char,
@@ -493,7 +493,7 @@ unsafe extern "C" fn runTests() {
                                 as *const libc::c_char,
                             currentSuiteName,
                             currentTestName,
-                            b"/Users/legnitto/src/h3/src/apps/testapps/testGridDisk.c\0"
+                            b"src/apps/testapps/testGridDisk.c\0"
                                 as *const u8 as *const libc::c_char,
                             128 as libc::c_int,
                             b"k2Dist[i] == (k2[i] == polar ? 0 : 1)\0" as *const u8
@@ -515,7 +515,7 @@ unsafe extern "C" fn runTests() {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"/Users/legnitto/src/h3/src/apps/testapps/testGridDisk.c\0" as *const u8
+                    b"src/apps/testapps/testGridDisk.c\0" as *const u8
                         as *const libc::c_char,
                     132 as libc::c_int,
                     b"inList == 1\0" as *const u8 as *const libc::c_char,
@@ -534,7 +534,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridDisk.c\0" as *const u8
+            b"src/apps/testapps/testGridDisk.c\0" as *const u8
                 as *const libc::c_char,
             135 as libc::c_int,
             b"k2present == 6\0" as *const u8 as *const libc::c_char,
@@ -591,7 +591,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridDisk.c\0" as *const u8
+            b"src/apps/testapps/testGridDisk.c\0" as *const u8
                 as *const libc::c_char,
             150 as libc::c_int,
             b"!(gridDiskDistances(polar, 1, k2, k2Dist))\0" as *const u8 as *const libc::c_char,
@@ -623,7 +623,7 @@ unsafe extern "C" fn runTests() {
                                 as *const libc::c_char,
                             currentSuiteName,
                             currentTestName,
-                            b"/Users/legnitto/src/h3/src/apps/testapps/testGridDisk.c\0"
+                            b"src/apps/testapps/testGridDisk.c\0"
                                 as *const u8 as *const libc::c_char,
                             160 as libc::c_int,
                             b"k2Dist[i] == (k2[i] == polar ? 0 : 1)\0" as *const u8
@@ -645,7 +645,7 @@ unsafe extern "C" fn runTests() {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"/Users/legnitto/src/h3/src/apps/testapps/testGridDisk.c\0" as *const u8
+                    b"src/apps/testapps/testGridDisk.c\0" as *const u8
                         as *const libc::c_char,
                     164 as libc::c_int,
                     b"inList == 1\0" as *const u8 as *const libc::c_char,
@@ -664,7 +664,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridDisk.c\0" as *const u8
+            b"src/apps/testapps/testGridDisk.c\0" as *const u8
                 as *const libc::c_char,
             167 as libc::c_int,
             b"k2present == 6\0" as *const u8 as *const libc::c_char,
@@ -850,7 +850,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridDisk.c\0" as *const u8
+            b"src/apps/testapps/testGridDisk.c\0" as *const u8
                 as *const libc::c_char,
             215 as libc::c_int,
             b"!(gridDiskDistances(polar, 3, k2, k2Dist))\0" as *const u8 as *const libc::c_char,
@@ -876,7 +876,7 @@ unsafe extern "C" fn runTests() {
                                 as *const libc::c_char,
                             currentSuiteName,
                             currentTestName,
-                            b"/Users/legnitto/src/h3/src/apps/testapps/testGridDisk.c\0"
+                            b"src/apps/testapps/testGridDisk.c\0"
                                 as *const u8 as *const libc::c_char,
                             225 as libc::c_int,
                             b"k2Dist[i] == expectedK2Dist[j]\0" as *const u8 as *const libc::c_char,
@@ -897,7 +897,7 @@ unsafe extern "C" fn runTests() {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"/Users/legnitto/src/h3/src/apps/testapps/testGridDisk.c\0" as *const u8
+                    b"src/apps/testapps/testGridDisk.c\0" as *const u8
                         as *const libc::c_char,
                     229 as libc::c_int,
                     b"inList == 1\0" as *const u8 as *const libc::c_char,
@@ -916,7 +916,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridDisk.c\0" as *const u8
+            b"src/apps/testapps/testGridDisk.c\0" as *const u8
                 as *const libc::c_char,
             232 as libc::c_int,
             b"k2present == 31\0" as *const u8 as *const libc::c_char,
@@ -1130,7 +1130,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridDisk.c\0" as *const u8
+            b"src/apps/testapps/testGridDisk.c\0" as *const u8
                 as *const libc::c_char,
             293 as libc::c_int,
             b"!(gridDiskDistances(pent, 4, k2, k2Dist))\0" as *const u8 as *const libc::c_char,
@@ -1160,7 +1160,7 @@ unsafe extern "C" fn runTests() {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"/Users/legnitto/src/h3/src/apps/testapps/testGridDisk.c\0" as *const u8
+                    b"src/apps/testapps/testGridDisk.c\0" as *const u8
                         as *const libc::c_char,
                     305 as libc::c_int,
                     b"inList == 1\0" as *const u8 as *const libc::c_char,
@@ -1179,7 +1179,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridDisk.c\0" as *const u8
+            b"src/apps/testapps/testGridDisk.c\0" as *const u8
                 as *const libc::c_char,
             308 as libc::c_int,
             b"k2present == 51\0" as *const u8 as *const libc::c_char,
@@ -1212,7 +1212,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridDisk.c\0" as *const u8
+            b"src/apps/testapps/testGridDisk.c\0" as *const u8
                 as *const libc::c_char,
             328 as libc::c_int,
             b"!(h3NeighborRotations(origin, CENTER_DIGIT, &rotations, &out))\0" as *const u8
@@ -1229,7 +1229,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridDisk.c\0" as *const u8
+            b"src/apps/testapps/testGridDisk.c\0" as *const u8
                 as *const libc::c_char,
             329 as libc::c_int,
             b"out == origin\0" as *const u8 as *const libc::c_char,
@@ -1245,7 +1245,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridDisk.c\0" as *const u8
+            b"src/apps/testapps/testGridDisk.c\0" as *const u8
                 as *const libc::c_char,
             330 as libc::c_int,
             b"rotations == 0\0" as *const u8 as *const libc::c_char,
@@ -1272,7 +1272,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridDisk.c\0" as *const u8
+            b"src/apps/testapps/testGridDisk.c\0" as *const u8
                 as *const libc::c_char,
             342 as libc::c_int,
             b"!(h3NeighborRotations(origin, K_AXES_DIGIT, &rotations, &out))\0" as *const u8
@@ -1296,7 +1296,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridDisk.c\0" as *const u8
+            b"src/apps/testapps/testGridDisk.c\0" as *const u8
                 as *const libc::c_char,
             346 as libc::c_int,
             b"out == expected\0" as *const u8 as *const libc::c_char,
@@ -1312,7 +1312,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridDisk.c\0" as *const u8
+            b"src/apps/testapps/testGridDisk.c\0" as *const u8
                 as *const libc::c_char,
             347 as libc::c_int,
             b"rotations == 5\0" as *const u8 as *const libc::c_char,
@@ -1339,7 +1339,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridDisk.c\0" as *const u8
+            b"src/apps/testapps/testGridDisk.c\0" as *const u8
                 as *const libc::c_char,
             360 as libc::c_int,
             b"!(h3NeighborRotations(origin, JK_AXES_DIGIT, &rotations, &out))\0" as *const u8
@@ -1363,7 +1363,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridDisk.c\0" as *const u8
+            b"src/apps/testapps/testGridDisk.c\0" as *const u8
                 as *const libc::c_char,
             364 as libc::c_int,
             b"out == expected\0" as *const u8 as *const libc::c_char,
@@ -1379,7 +1379,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridDisk.c\0" as *const u8
+            b"src/apps/testapps/testGridDisk.c\0" as *const u8
                 as *const libc::c_char,
             367 as libc::c_int,
             b"rotations == 0\0" as *const u8 as *const libc::c_char,
@@ -1405,7 +1405,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridDisk.c\0" as *const u8
+            b"src/apps/testapps/testGridDisk.c\0" as *const u8
                 as *const libc::c_char,
             375 as libc::c_int,
             b"h3NeighborRotations(origin, -1, &rotations, &out) == E_FAILED\0" as *const u8
@@ -1424,7 +1424,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridDisk.c\0" as *const u8
+            b"src/apps/testapps/testGridDisk.c\0" as *const u8
                 as *const libc::c_char,
             377 as libc::c_int,
             b"h3NeighborRotations(origin, 7, &rotations, &out) == E_FAILED\0" as *const u8
@@ -1443,7 +1443,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridDisk.c\0" as *const u8
+            b"src/apps/testapps/testGridDisk.c\0" as *const u8
                 as *const libc::c_char,
             379 as libc::c_int,
             b"h3NeighborRotations(origin, 100, &rotations, &out) == E_FAILED\0" as *const u8
@@ -1475,7 +1475,7 @@ unsafe extern "C" fn runTests() {
                             as *const libc::c_char,
                         currentSuiteName,
                         currentTestName,
-                        b"/Users/legnitto/src/h3/src/apps/testapps/testGridDisk.c\0"
+                        b"src/apps/testapps/testGridDisk.c\0"
                             as *const u8 as *const libc::c_char,
                         407 as libc::c_int,
                         b"_getBaseCellNeighbor(neighbor, J_AXES_DIGIT) != pentagon || _baseCellIsCwOffset(pentagon, neighborFace)\0"
@@ -1501,7 +1501,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridDisk.c\0" as *const u8
+            b"src/apps/testapps/testGridDisk.c\0" as *const u8
                 as *const libc::c_char,
             415 as libc::c_int,
             b"!(maxGridDiskSize(k, &kSz))\0" as *const u8 as *const libc::c_char,
@@ -1523,7 +1523,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridDisk.c\0" as *const u8
+            b"src/apps/testapps/testGridDisk.c\0" as *const u8
                 as *const libc::c_char,
             419 as libc::c_int,
             b"H3_EXPORT(gridDisk)(0x7fffffffffffffff, k, neighbors) == E_CELL_INVALID\0"
@@ -1544,7 +1544,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridDisk.c\0" as *const u8
+            b"src/apps/testapps/testGridDisk.c\0" as *const u8
                 as *const libc::c_char,
             426 as libc::c_int,
             b"!(maxGridDiskSize(k, &kSz))\0" as *const u8 as *const libc::c_char,
@@ -1569,7 +1569,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridDisk.c\0" as *const u8
+            b"src/apps/testapps/testGridDisk.c\0" as *const u8
                 as *const libc::c_char,
             430 as libc::c_int,
             b"H3_EXPORT(gridDisk)(0x4d4b00fe5c5c3030, k, neighbors) == E_CELL_INVALID\0"
@@ -1595,7 +1595,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridDisk.c\0" as *const u8
+            b"src/apps/testapps/testGridDisk.c\0" as *const u8
                 as *const libc::c_char,
             438 as libc::c_int,
             b"H3_EXPORT(gridDiskDistances)(index, -1, NULL, NULL) == E_DOMAIN\0" as *const u8
@@ -1618,7 +1618,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridDisk.c\0" as *const u8
+            b"src/apps/testapps/testGridDisk.c\0" as *const u8
                 as *const libc::c_char,
             441 as libc::c_int,
             b"H3_EXPORT(gridDiskDistancesUnsafe)(index, -1, NULL, NULL) == E_DOMAIN\0" as *const u8
@@ -1641,7 +1641,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridDisk.c\0" as *const u8
+            b"src/apps/testapps/testGridDisk.c\0" as *const u8
                 as *const libc::c_char,
             444 as libc::c_int,
             b"H3_EXPORT(gridDiskDistancesSafe)(index, -1, NULL, NULL) == E_DOMAIN\0" as *const u8
@@ -1660,7 +1660,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridDisk.c\0" as *const u8
+            b"src/apps/testapps/testGridDisk.c\0" as *const u8
                 as *const libc::c_char,
             450 as libc::c_int,
             b"H3_EXPORT(maxGridDiskSize)(-1, &sz) == E_DOMAIN\0" as *const u8
@@ -1679,7 +1679,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridDisk.c\0" as *const u8
+            b"src/apps/testapps/testGridDisk.c\0" as *const u8
                 as *const libc::c_char,
             455 as libc::c_int,
             b"!(maxGridDiskSize(26755, &sz))\0" as *const u8 as *const libc::c_char,
@@ -1695,7 +1695,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridDisk.c\0" as *const u8
+            b"src/apps/testapps/testGridDisk.c\0" as *const u8
                 as *const libc::c_char,
             456 as libc::c_int,
             b"sz == 2147570341\0" as *const u8 as *const libc::c_char,
@@ -1715,7 +1715,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridDisk.c\0" as *const u8
+            b"src/apps/testapps/testGridDisk.c\0" as *const u8
                 as *const libc::c_char,
             463 as libc::c_int,
             b"!(getNumCells(15, &max))\0" as *const u8 as *const libc::c_char,
@@ -1733,7 +1733,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testGridDisk.c\0" as *const u8
+                b"src/apps/testapps/testGridDisk.c\0" as *const u8
                     as *const libc::c_char,
                 466 as libc::c_int,
                 b"!(maxGridDiskSize(k, &sz))\0" as *const u8 as *const libc::c_char,
@@ -1749,7 +1749,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testGridDisk.c\0" as *const u8
+                b"src/apps/testapps/testGridDisk.c\0" as *const u8
                     as *const libc::c_char,
                 469 as libc::c_int,
                 b"sz <= max\0" as *const u8 as *const libc::c_char,
@@ -1766,7 +1766,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testGridDisk.c\0" as *const u8
+                b"src/apps/testapps/testGridDisk.c\0" as *const u8
                     as *const libc::c_char,
                 470 as libc::c_int,
                 b"prev <= sz\0" as *const u8 as *const libc::c_char,
@@ -1786,7 +1786,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridDisk.c\0" as *const u8
+            b"src/apps/testapps/testGridDisk.c\0" as *const u8
                 as *const libc::c_char,
             474 as libc::c_int,
             b"!(maxGridDiskSize(2147483647, &sz))\0" as *const u8 as *const libc::c_char,
@@ -1802,7 +1802,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridDisk.c\0" as *const u8
+            b"src/apps/testapps/testGridDisk.c\0" as *const u8
                 as *const libc::c_char,
             476 as libc::c_int,
             b"sz == max\0" as *const u8 as *const libc::c_char,

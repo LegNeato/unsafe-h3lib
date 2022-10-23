@@ -85,7 +85,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridPathCells.c\0" as *const u8
+            b"src/apps/testapps/testGridPathCells.c\0" as *const u8
                 as *const libc::c_char,
             40 as libc::c_int,
             b"lineError == E_FAILED\0" as *const u8 as *const libc::c_char,
@@ -106,7 +106,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridPathCells.c\0" as *const u8
+            b"src/apps/testapps/testGridPathCells.c\0" as *const u8
                 as *const libc::c_char,
             48 as libc::c_int,
             b"!(gridPathCellsSize(start, end, &size))\0" as *const u8 as *const libc::c_char,
@@ -126,7 +126,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridPathCells.c\0" as *const u8
+            b"src/apps/testapps/testGridPathCells.c\0" as *const u8
                 as *const libc::c_char,
             51 as libc::c_int,
             b"H3_EXPORT(gridPathCells)(start, end, path) == E_PENTAGON\0" as *const u8

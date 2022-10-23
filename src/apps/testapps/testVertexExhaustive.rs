@@ -113,7 +113,7 @@ unsafe extern "C" fn directionForVertexNum_symmetry_assertions(mut h3: H3Index) 
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testVertexExhaustive.c\0" as *const u8
+                b"src/apps/testapps/testVertexExhaustive.c\0" as *const u8
                     as *const libc::c_char,
                 31 as libc::c_int,
                 b"vertexNum == i\0" as *const u8 as *const libc::c_char,
@@ -151,7 +151,7 @@ unsafe extern "C" fn cellToVertex_point_assertions(mut h3: H3Index) {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testVertexExhaustive.c\0" as *const u8
+                b"src/apps/testapps/testVertexExhaustive.c\0" as *const u8
                     as *const libc::c_char,
                 46 as libc::c_int,
                 b"!(cellToVertex(h3, i, &vertex))\0" as *const u8 as *const libc::c_char,
@@ -167,7 +167,7 @@ unsafe extern "C" fn cellToVertex_point_assertions(mut h3: H3Index) {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testVertexExhaustive.c\0" as *const u8
+                b"src/apps/testapps/testVertexExhaustive.c\0" as *const u8
                     as *const libc::c_char,
                 47 as libc::c_int,
                 b"!(vertexToLatLng(vertex, &coord))\0" as *const u8 as *const libc::c_char,
@@ -188,7 +188,7 @@ unsafe extern "C" fn cellToVertex_point_assertions(mut h3: H3Index) {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testVertexExhaustive.c\0" as *const u8
+                b"src/apps/testapps/testVertexExhaustive.c\0" as *const u8
                     as *const libc::c_char,
                 50 as libc::c_int,
                 b"almostEqual\0" as *const u8 as *const libc::c_char,
@@ -209,7 +209,7 @@ unsafe extern "C" fn cellToVertex_uniqueness_assertions(mut h3: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testVertexExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testVertexExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             56 as libc::c_int,
             b"!(cellToVertexes(h3, originVerts))\0" as *const u8 as *const libc::c_char,
@@ -231,7 +231,7 @@ unsafe extern "C" fn cellToVertex_uniqueness_assertions(mut h3: H3Index) {
                             as *const libc::c_char,
                         currentSuiteName,
                         currentTestName,
-                        b"/Users/legnitto/src/h3/src/apps/testapps/testVertexExhaustive.c\0"
+                        b"src/apps/testapps/testVertexExhaustive.c\0"
                             as *const u8 as *const libc::c_char,
                         61 as libc::c_int,
                         b"false\0" as *const u8 as *const libc::c_char,
@@ -255,7 +255,7 @@ unsafe extern "C" fn cellToVertex_validity_assertions(mut h3: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testVertexExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testVertexExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             69 as libc::c_int,
             b"!(cellToVertexes(h3, verts))\0" as *const u8 as *const libc::c_char,
@@ -275,7 +275,7 @@ unsafe extern "C" fn cellToVertex_validity_assertions(mut h3: H3Index) {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"/Users/legnitto/src/h3/src/apps/testapps/testVertexExhaustive.c\0"
+                    b"src/apps/testapps/testVertexExhaustive.c\0"
                         as *const u8 as *const libc::c_char,
                     73 as libc::c_int,
                     b"H3_EXPORT(isValidVertex(verts[i]))\0" as *const u8 as *const libc::c_char,
@@ -299,7 +299,7 @@ unsafe extern "C" fn cellToVertex_neighbor_assertions(mut h3: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testVertexExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testVertexExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             83 as libc::c_int,
             b"!(gridDisk(h3, 1, neighbors))\0" as *const u8 as *const libc::c_char,
@@ -315,7 +315,7 @@ unsafe extern "C" fn cellToVertex_neighbor_assertions(mut h3: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testVertexExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testVertexExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             84 as libc::c_int,
             b"!(cellToVertexes(h3, originVerts))\0" as *const u8 as *const libc::c_char,
@@ -336,7 +336,7 @@ unsafe extern "C" fn cellToVertex_neighbor_assertions(mut h3: H3Index) {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"/Users/legnitto/src/h3/src/apps/testapps/testVertexExhaustive.c\0"
+                    b"src/apps/testapps/testVertexExhaustive.c\0"
                         as *const u8 as *const libc::c_char,
                     89 as libc::c_int,
                     b"!(cellToVertexes(neighbor, neighborVerts))\0" as *const u8
@@ -366,7 +366,7 @@ unsafe extern "C" fn cellToVertex_neighbor_assertions(mut h3: H3Index) {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"/Users/legnitto/src/h3/src/apps/testapps/testVertexExhaustive.c\0"
+                    b"src/apps/testapps/testVertexExhaustive.c\0"
                         as *const u8 as *const libc::c_char,
                     102 as libc::c_int,
                     b"intersection == 2\0" as *const u8 as *const libc::c_char,

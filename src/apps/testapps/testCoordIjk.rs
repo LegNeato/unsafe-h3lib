@@ -109,7 +109,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCoordIjk.c\0" as *const u8
+            b"src/apps/testapps/testCoordIjk.c\0" as *const u8
                 as *const libc::c_char,
             32 as libc::c_int,
             b"_unitIjkToDigit(&zero) == CENTER_DIGIT\0" as *const u8 as *const libc::c_char,
@@ -125,7 +125,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCoordIjk.c\0" as *const u8
+            b"src/apps/testapps/testCoordIjk.c\0" as *const u8
                 as *const libc::c_char,
             33 as libc::c_int,
             b"_unitIjkToDigit(&i) == I_AXES_DIGIT\0" as *const u8 as *const libc::c_char,
@@ -143,7 +143,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCoordIjk.c\0" as *const u8
+            b"src/apps/testapps/testCoordIjk.c\0" as *const u8
                 as *const libc::c_char,
             35 as libc::c_int,
             b"_unitIjkToDigit(&outOfRange) == INVALID_DIGIT\0" as *const u8 as *const libc::c_char,
@@ -161,7 +161,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCoordIjk.c\0" as *const u8
+            b"src/apps/testapps/testCoordIjk.c\0" as *const u8
                 as *const libc::c_char,
             37 as libc::c_int,
             b"_unitIjkToDigit(&unnormalizedZero) == CENTER_DIGIT\0" as *const u8
@@ -204,7 +204,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCoordIjk.c\0" as *const u8
+            b"src/apps/testapps/testCoordIjk.c\0" as *const u8
                 as *const libc::c_char,
             47 as libc::c_int,
             b"_ijkMatches(&ijk, &zero)\0" as *const u8 as *const libc::c_char,
@@ -221,7 +221,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCoordIjk.c\0" as *const u8
+            b"src/apps/testapps/testCoordIjk.c\0" as *const u8
                 as *const libc::c_char,
             49 as libc::c_int,
             b"_ijkMatches(&ijk, &i)\0" as *const u8 as *const libc::c_char,
@@ -238,7 +238,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCoordIjk.c\0" as *const u8
+            b"src/apps/testapps/testCoordIjk.c\0" as *const u8
                 as *const libc::c_char,
             51 as libc::c_int,
             b"_ijkMatches(&ijk, &i)\0" as *const u8 as *const libc::c_char,

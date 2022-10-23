@@ -196,7 +196,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testPolygonToCellsReported.c\0"
+                b"src/apps/testapps/testPolygonToCellsReported.c\0"
                     as *const u8 as *const libc::c_char,
                 44 as libc::c_int,
                 b"!(maxPolygonToCellsSize( &worldGeoPolygon, res, 0, &polygonToCellsSize))\0"
@@ -223,7 +223,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testPolygonToCellsReported.c\0"
+                b"src/apps/testapps/testPolygonToCellsReported.c\0"
                     as *const u8 as *const libc::c_char,
                 49 as libc::c_int,
                 b"!(polygonToCells(&worldGeoPolygon, res, 0, polygonToCellsOut))\0" as *const u8
@@ -249,7 +249,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testPolygonToCellsReported.c\0"
+                b"src/apps/testapps/testPolygonToCellsReported.c\0"
                     as *const u8 as *const libc::c_char,
                 55 as libc::c_int,
                 b"!(maxPolygonToCellsSize( &worldGeoPolygon2, res, 0, &polygonToCellsSize2))\0"
@@ -276,7 +276,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testPolygonToCellsReported.c\0"
+                b"src/apps/testapps/testPolygonToCellsReported.c\0"
                     as *const u8 as *const libc::c_char,
                 60 as libc::c_int,
                 b"!(polygonToCells(&worldGeoPolygon2, res, 0, polygonToCellsOut2))\0" as *const u8
@@ -296,7 +296,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testPolygonToCellsReported.c\0"
+                b"src/apps/testapps/testPolygonToCellsReported.c\0"
                     as *const u8 as *const libc::c_char,
                 65 as libc::c_int,
                 b"!(getNumCells(res, &expectedTotalWorld))\0" as *const u8 as *const libc::c_char,
@@ -312,7 +312,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testPolygonToCellsReported.c\0"
+                b"src/apps/testapps/testPolygonToCellsReported.c\0"
                     as *const u8 as *const libc::c_char,
                 67 as libc::c_int,
                 b"actualNumIndexes + actualNumIndexes2 == expectedTotalWorld\0" as *const u8
@@ -346,7 +346,7 @@ unsafe extern "C" fn runTests() {
                             as *const libc::c_char,
                         currentSuiteName,
                         currentTestName,
-                        b"/Users/legnitto/src/h3/src/apps/testapps/testPolygonToCellsReported.c\0"
+                        b"src/apps/testapps/testPolygonToCellsReported.c\0"
                             as *const u8 as *const libc::c_char,
                         83 as libc::c_int,
                         b"!found\0" as *const u8 as *const libc::c_char,
@@ -430,7 +430,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygonToCellsReported.c\0" as *const u8
+            b"src/apps/testapps/testPolygonToCellsReported.c\0" as *const u8
                 as *const libc::c_char,
             108 as libc::c_int,
             b"!(maxPolygonToCellsSize(&testPolygon, res, 0, &numHexagons))\0" as *const u8
@@ -457,7 +457,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygonToCellsReported.c\0" as *const u8
+            b"src/apps/testapps/testPolygonToCellsReported.c\0" as *const u8
                 as *const libc::c_char,
             112 as libc::c_int,
             b"!(polygonToCells(&testPolygon, res, 0, hexagons))\0" as *const u8
@@ -475,7 +475,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygonToCellsReported.c\0" as *const u8
+            b"src/apps/testapps/testPolygonToCellsReported.c\0" as *const u8
                 as *const libc::c_char,
             116 as libc::c_int,
             b"actualNumIndexes == 4499\0" as *const u8 as *const libc::c_char,
@@ -552,7 +552,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygonToCellsReported.c\0" as *const u8
+            b"src/apps/testapps/testPolygonToCellsReported.c\0" as *const u8
                 as *const libc::c_char,
             137 as libc::c_int,
             b"!(maxPolygonToCellsSize(&testPolygon, res, 0, &numHexagons))\0" as *const u8
@@ -579,7 +579,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygonToCellsReported.c\0" as *const u8
+            b"src/apps/testapps/testPolygonToCellsReported.c\0" as *const u8
                 as *const libc::c_char,
             141 as libc::c_int,
             b"!(polygonToCells(&testPolygon, res, 0, hexagons))\0" as *const u8
@@ -597,7 +597,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygonToCellsReported.c\0" as *const u8
+            b"src/apps/testapps/testPolygonToCellsReported.c\0" as *const u8
                 as *const libc::c_char,
             145 as libc::c_int,
             b"actualNumIndexes == 4609\0" as *const u8 as *const libc::c_char,
@@ -671,7 +671,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygonToCellsReported.c\0" as *const u8
+            b"src/apps/testapps/testPolygonToCellsReported.c\0" as *const u8
                 as *const libc::c_char,
             163 as libc::c_int,
             b"!(maxPolygonToCellsSize(&testPolygon, res, 0, &numHexagons))\0" as *const u8
@@ -698,7 +698,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygonToCellsReported.c\0" as *const u8
+            b"src/apps/testapps/testPolygonToCellsReported.c\0" as *const u8
                 as *const libc::c_char,
             167 as libc::c_int,
             b"!(polygonToCells(&testPolygon, res, 0, hexagons))\0" as *const u8
@@ -716,7 +716,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygonToCellsReported.c\0" as *const u8
+            b"src/apps/testapps/testPolygonToCellsReported.c\0" as *const u8
                 as *const libc::c_char,
             170 as libc::c_int,
             b"actualNumIndexes == 4353\0" as *const u8 as *const libc::c_char,
@@ -792,7 +792,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygonToCellsReported.c\0" as *const u8
+            b"src/apps/testapps/testPolygonToCellsReported.c\0" as *const u8
                 as *const libc::c_char,
             196 as libc::c_int,
             b"!(maxPolygonToCellsSize(&testPolygon, res, 0, &numHexagons))\0" as *const u8
@@ -819,7 +819,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygonToCellsReported.c\0" as *const u8
+            b"src/apps/testapps/testPolygonToCellsReported.c\0" as *const u8
                 as *const libc::c_char,
             200 as libc::c_int,
             b"!(polygonToCells(&testPolygon, res, 0, hexagons))\0" as *const u8
@@ -837,7 +837,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygonToCellsReported.c\0" as *const u8
+            b"src/apps/testapps/testPolygonToCellsReported.c\0" as *const u8
                 as *const libc::c_char,
             203 as libc::c_int,
             b"actualNumIndexes == 8\0" as *const u8 as *const libc::c_char,

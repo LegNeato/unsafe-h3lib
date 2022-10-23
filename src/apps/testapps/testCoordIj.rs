@@ -103,7 +103,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCoordIj.c\0" as *const u8
+            b"src/apps/testapps/testCoordIj.c\0" as *const u8
                 as *const libc::c_char,
             41 as libc::c_int,
             b"ij.i == 0\0" as *const u8 as *const libc::c_char,
@@ -119,7 +119,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCoordIj.c\0" as *const u8
+            b"src/apps/testapps/testCoordIj.c\0" as *const u8
                 as *const libc::c_char,
             42 as libc::c_int,
             b"ij.j == 0\0" as *const u8 as *const libc::c_char,
@@ -135,7 +135,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCoordIj.c\0" as *const u8
+            b"src/apps/testapps/testCoordIj.c\0" as *const u8
                 as *const libc::c_char,
             44 as libc::c_int,
             b"!(ijToIjk(&ij, &ijk))\0" as *const u8 as *const libc::c_char,
@@ -151,7 +151,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCoordIj.c\0" as *const u8
+            b"src/apps/testapps/testCoordIj.c\0" as *const u8
                 as *const libc::c_char,
             45 as libc::c_int,
             b"ijk.i == 0\0" as *const u8 as *const libc::c_char,
@@ -167,7 +167,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCoordIj.c\0" as *const u8
+            b"src/apps/testapps/testCoordIj.c\0" as *const u8
                 as *const libc::c_char,
             46 as libc::c_int,
             b"ijk.j == 0\0" as *const u8 as *const libc::c_char,
@@ -183,7 +183,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCoordIj.c\0" as *const u8
+            b"src/apps/testapps/testCoordIj.c\0" as *const u8
                 as *const libc::c_char,
             47 as libc::c_int,
             b"ijk.k == 0\0" as *const u8 as *const libc::c_char,
@@ -227,7 +227,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testCoordIj.c\0" as *const u8
+                b"src/apps/testapps/testCoordIj.c\0" as *const u8
                     as *const libc::c_char,
                 59 as libc::c_int,
                 b"!(ijToIjk(&ij, &recovered))\0" as *const u8 as *const libc::c_char,
@@ -243,7 +243,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testCoordIj.c\0" as *const u8
+                b"src/apps/testapps/testCoordIj.c\0" as *const u8
                     as *const libc::c_char,
                 62 as libc::c_int,
                 b"_ijkMatches(&ijk, &recovered)\0" as *const u8 as *const libc::c_char,
@@ -283,7 +283,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testCoordIj.c\0" as *const u8
+                b"src/apps/testapps/testCoordIj.c\0" as *const u8
                     as *const libc::c_char,
                 76 as libc::c_int,
                 b"_ijkMatches(&ijk, &original)\0" as *const u8 as *const libc::c_char,

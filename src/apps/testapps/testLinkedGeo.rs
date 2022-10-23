@@ -106,7 +106,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testLinkedGeo.c\0" as *const u8
+            b"src/apps/testapps/testLinkedGeo.c\0" as *const u8
                 as *const libc::c_char,
             43 as libc::c_int,
             b"loop != NULL\0" as *const u8 as *const libc::c_char,
@@ -123,7 +123,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testLinkedGeo.c\0" as *const u8
+            b"src/apps/testapps/testLinkedGeo.c\0" as *const u8
                 as *const libc::c_char,
             45 as libc::c_int,
             b"coord != NULL\0" as *const u8 as *const libc::c_char,
@@ -140,7 +140,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testLinkedGeo.c\0" as *const u8
+            b"src/apps/testapps/testLinkedGeo.c\0" as *const u8
                 as *const libc::c_char,
             47 as libc::c_int,
             b"coord != NULL\0" as *const u8 as *const libc::c_char,
@@ -157,7 +157,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testLinkedGeo.c\0" as *const u8
+            b"src/apps/testapps/testLinkedGeo.c\0" as *const u8
                 as *const libc::c_char,
             49 as libc::c_int,
             b"coord != NULL\0" as *const u8 as *const libc::c_char,
@@ -174,7 +174,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testLinkedGeo.c\0" as *const u8
+            b"src/apps/testapps/testLinkedGeo.c\0" as *const u8
                 as *const libc::c_char,
             52 as libc::c_int,
             b"loop != NULL\0" as *const u8 as *const libc::c_char,
@@ -191,7 +191,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testLinkedGeo.c\0" as *const u8
+            b"src/apps/testapps/testLinkedGeo.c\0" as *const u8
                 as *const libc::c_char,
             54 as libc::c_int,
             b"coord != NULL\0" as *const u8 as *const libc::c_char,
@@ -208,7 +208,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testLinkedGeo.c\0" as *const u8
+            b"src/apps/testapps/testLinkedGeo.c\0" as *const u8
                 as *const libc::c_char,
             56 as libc::c_int,
             b"coord != NULL\0" as *const u8 as *const libc::c_char,
@@ -224,7 +224,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testLinkedGeo.c\0" as *const u8
+            b"src/apps/testapps/testLinkedGeo.c\0" as *const u8
                 as *const libc::c_char,
             58 as libc::c_int,
             b"countLinkedPolygons(polygon) == 1\0" as *const u8 as *const libc::c_char,
@@ -240,7 +240,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testLinkedGeo.c\0" as *const u8
+            b"src/apps/testapps/testLinkedGeo.c\0" as *const u8
                 as *const libc::c_char,
             59 as libc::c_int,
             b"countLinkedLoops(polygon) == 2\0" as *const u8 as *const libc::c_char,
@@ -256,7 +256,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testLinkedGeo.c\0" as *const u8
+            b"src/apps/testapps/testLinkedGeo.c\0" as *const u8
                 as *const libc::c_char,
             61 as libc::c_int,
             b"countLinkedCoords(polygon->first) == 3\0" as *const u8 as *const libc::c_char,
@@ -272,7 +272,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testLinkedGeo.c\0" as *const u8
+            b"src/apps/testapps/testLinkedGeo.c\0" as *const u8
                 as *const libc::c_char,
             63 as libc::c_int,
             b"countLinkedCoords(polygon->last) == 2\0" as *const u8 as *const libc::c_char,
@@ -289,7 +289,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testLinkedGeo.c\0" as *const u8
+            b"src/apps/testapps/testLinkedGeo.c\0" as *const u8
                 as *const libc::c_char,
             66 as libc::c_int,
             b"nextPolygon != NULL\0" as *const u8 as *const libc::c_char,
@@ -305,7 +305,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testLinkedGeo.c\0" as *const u8
+            b"src/apps/testapps/testLinkedGeo.c\0" as *const u8
                 as *const libc::c_char,
             68 as libc::c_int,
             b"countLinkedPolygons(polygon) == 2\0" as *const u8 as *const libc::c_char,

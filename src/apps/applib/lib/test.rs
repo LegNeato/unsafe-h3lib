@@ -81,7 +81,7 @@ pub unsafe extern "C" fn t_assertBoundary(mut h3: H3Index, mut b1: *const CellBo
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/applib/lib/test.c\0" as *const u8
+            b"src/apps/applib/lib/test.c\0" as *const u8
                 as *const libc::c_char,
             35 as libc::c_int,
             b"b1->numVerts == b2.numVerts\0" as *const u8 as *const libc::c_char,
@@ -102,7 +102,7 @@ pub unsafe extern "C" fn t_assertBoundary(mut h3: H3Index, mut b1: *const CellBo
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/applib/lib/test.c\0" as *const u8
+                b"src/apps/applib/lib/test.c\0" as *const u8
                     as *const libc::c_char,
                 38 as libc::c_int,
                 b"geoAlmostEqual(&b1->verts[v], &b2.verts[v])\0" as *const u8

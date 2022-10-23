@@ -69,7 +69,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testBaseCells.c\0" as *const u8
+            b"src/apps/testapps/testBaseCells.c\0" as *const u8
                 as *const libc::c_char,
             26 as libc::c_int,
             b"!(getRes0Cells(indexes))\0" as *const u8 as *const libc::c_char,
@@ -87,7 +87,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testBaseCells.c\0" as *const u8
+            b"src/apps/testapps/testBaseCells.c\0" as *const u8
                 as *const libc::c_char,
             27 as libc::c_int,
             b"indexes[0] == 0x8001fffffffffff\0" as *const u8 as *const libc::c_char,
@@ -105,7 +105,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testBaseCells.c\0" as *const u8
+            b"src/apps/testapps/testBaseCells.c\0" as *const u8
                 as *const libc::c_char,
             28 as libc::c_int,
             b"indexes[121] == 0x80f3fffffffffff\0" as *const u8 as *const libc::c_char,
@@ -123,7 +123,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testBaseCells.c\0" as *const u8
+            b"src/apps/testapps/testBaseCells.c\0" as *const u8
                 as *const libc::c_char,
             34 as libc::c_int,
             b"_baseCellToCCWrot60(16, 0) == 0\0" as *const u8 as *const libc::c_char,
@@ -139,7 +139,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testBaseCells.c\0" as *const u8
+            b"src/apps/testapps/testBaseCells.c\0" as *const u8
                 as *const libc::c_char,
             35 as libc::c_int,
             b"_baseCellToCCWrot60(32, 0) == 3\0" as *const u8 as *const libc::c_char,
@@ -155,7 +155,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testBaseCells.c\0" as *const u8
+            b"src/apps/testapps/testBaseCells.c\0" as *const u8
                 as *const libc::c_char,
             36 as libc::c_int,
             b"_baseCellToCCWrot60(7, 3) == 1\0" as *const u8 as *const libc::c_char,
@@ -172,7 +172,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testBaseCells.c\0" as *const u8
+            b"src/apps/testapps/testBaseCells.c\0" as *const u8
                 as *const libc::c_char,
             40 as libc::c_int,
             b"_baseCellToCCWrot60(16, 42) == INVALID_ROTATIONS\0" as *const u8
@@ -190,7 +190,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testBaseCells.c\0" as *const u8
+            b"src/apps/testapps/testBaseCells.c\0" as *const u8
                 as *const libc::c_char,
             41 as libc::c_int,
             b"_baseCellToCCWrot60(16, -1) == INVALID_ROTATIONS\0" as *const u8
@@ -208,7 +208,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testBaseCells.c\0" as *const u8
+            b"src/apps/testapps/testBaseCells.c\0" as *const u8
                 as *const libc::c_char,
             42 as libc::c_int,
             b"_baseCellToCCWrot60(1, 0) == INVALID_ROTATIONS\0" as *const u8 as *const libc::c_char,
@@ -226,7 +226,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testBaseCells.c\0" as *const u8
+            b"src/apps/testapps/testBaseCells.c\0" as *const u8
                 as *const libc::c_char,
             46 as libc::c_int,
             b"_isBaseCellPentagon(-1) == false\0" as *const u8 as *const libc::c_char,

@@ -111,7 +111,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testVec3d.c\0" as *const u8
+            b"src/apps/testapps/testVec3d.c\0" as *const u8
                 as *const libc::c_char,
             33 as libc::c_int,
             b"fabs(_pointSquareDist(&v1, &v1)) < DBL_EPSILON\0" as *const u8 as *const libc::c_char,
@@ -129,7 +129,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testVec3d.c\0" as *const u8
+            b"src/apps/testapps/testVec3d.c\0" as *const u8
                 as *const libc::c_char,
             35 as libc::c_int,
             b"fabs(_pointSquareDist(&v1, &v2) - 1) < DBL_EPSILON\0" as *const u8
@@ -148,7 +148,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testVec3d.c\0" as *const u8
+            b"src/apps/testapps/testVec3d.c\0" as *const u8
                 as *const libc::c_char,
             37 as libc::c_int,
             b"fabs(_pointSquareDist(&v1, &v3) - 2) < DBL_EPSILON\0" as *const u8
@@ -167,7 +167,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testVec3d.c\0" as *const u8
+            b"src/apps/testapps/testVec3d.c\0" as *const u8
                 as *const libc::c_char,
             39 as libc::c_int,
             b"fabs(_pointSquareDist(&v1, &v4) - 3) < DBL_EPSILON\0" as *const u8
@@ -186,7 +186,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testVec3d.c\0" as *const u8
+            b"src/apps/testapps/testVec3d.c\0" as *const u8
                 as *const libc::c_char,
             41 as libc::c_int,
             b"fabs(_pointSquareDist(&v1, &v5) - 6) < DBL_EPSILON\0" as *const u8
@@ -227,7 +227,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testVec3d.c\0" as *const u8
+            b"src/apps/testapps/testVec3d.c\0" as *const u8
                 as *const libc::c_char,
             51 as libc::c_int,
             b"fabs(_pointSquareDist(&origin, &p1) - 1) < EPSILON_RAD\0" as *const u8
@@ -259,7 +259,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testVec3d.c\0" as *const u8
+            b"src/apps/testapps/testVec3d.c\0" as *const u8
                 as *const libc::c_char,
             57 as libc::c_int,
             b"fabs(_pointSquareDist(&p1, &p2) - 2) < EPSILON_RAD\0" as *const u8
@@ -292,7 +292,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testVec3d.c\0" as *const u8
+            b"src/apps/testapps/testVec3d.c\0" as *const u8
                 as *const libc::c_char,
             63 as libc::c_int,
             b"fabs(_pointSquareDist(&p1, &p3) - 4) < EPSILON_RAD\0" as *const u8

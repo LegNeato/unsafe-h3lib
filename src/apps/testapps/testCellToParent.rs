@@ -112,7 +112,7 @@ unsafe extern "C" fn runTests() {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"/Users/legnitto/src/h3/src/apps/testapps/testCellToParent.c\0" as *const u8
+                    b"src/apps/testapps/testCellToParent.c\0" as *const u8
                         as *const libc::c_char,
                     32 as libc::c_int,
                     b"!(latLngToCell(&sf, res, &child))\0" as *const u8 as *const libc::c_char,
@@ -129,7 +129,7 @@ unsafe extern "C" fn runTests() {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"/Users/legnitto/src/h3/src/apps/testapps/testCellToParent.c\0" as *const u8
+                    b"src/apps/testapps/testCellToParent.c\0" as *const u8
                         as *const libc::c_char,
                     34 as libc::c_int,
                     b"!(cellToParent(child, res - step, &parent))\0" as *const u8
@@ -147,7 +147,7 @@ unsafe extern "C" fn runTests() {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"/Users/legnitto/src/h3/src/apps/testapps/testCellToParent.c\0" as *const u8
+                    b"src/apps/testapps/testCellToParent.c\0" as *const u8
                         as *const libc::c_char,
                     36 as libc::c_int,
                     b"!(latLngToCell(&sf, res - step, &comparisonParent))\0" as *const u8
@@ -165,7 +165,7 @@ unsafe extern "C" fn runTests() {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"/Users/legnitto/src/h3/src/apps/testapps/testCellToParent.c\0" as *const u8
+                    b"src/apps/testapps/testCellToParent.c\0" as *const u8
                         as *const libc::c_char,
                     38 as libc::c_int,
                     b"parent == comparisonParent\0" as *const u8 as *const libc::c_char,
@@ -187,7 +187,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellToParent.c\0" as *const u8
+            b"src/apps/testapps/testCellToParent.c\0" as *const u8
                 as *const libc::c_char,
             45 as libc::c_int,
             b"!(latLngToCell(&sf, 5, &child))\0" as *const u8 as *const libc::c_char,
@@ -206,7 +206,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellToParent.c\0" as *const u8
+            b"src/apps/testapps/testCellToParent.c\0" as *const u8
                 as *const libc::c_char,
             49 as libc::c_int,
             b"H3_EXPORT(cellToParent)(child, 6, &parent) == E_RES_MISMATCH\0" as *const u8
@@ -225,7 +225,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellToParent.c\0" as *const u8
+            b"src/apps/testapps/testCellToParent.c\0" as *const u8
                 as *const libc::c_char,
             51 as libc::c_int,
             b"H3_EXPORT(cellToParent)(child, -1, &parent) == E_RES_DOMAIN\0" as *const u8
@@ -244,7 +244,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellToParent.c\0" as *const u8
+            b"src/apps/testapps/testCellToParent.c\0" as *const u8
                 as *const libc::c_char,
             53 as libc::c_int,
             b"H3_EXPORT(cellToParent)(child, 15, &parent) == E_RES_MISMATCH\0" as *const u8
@@ -263,7 +263,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellToParent.c\0" as *const u8
+            b"src/apps/testapps/testCellToParent.c\0" as *const u8
                 as *const libc::c_char,
             55 as libc::c_int,
             b"H3_EXPORT(cellToParent)(child, 16, &parent) == E_RES_DOMAIN\0" as *const u8

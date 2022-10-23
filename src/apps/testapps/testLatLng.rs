@@ -111,7 +111,7 @@ unsafe extern "C" fn testDecreasingFunction(
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testLatLng.c\0" as *const u8
+                b"src/apps/testapps/testLatLng.c\0" as *const u8
                     as *const libc::c_char,
                 43 as libc::c_int,
                 b"!(function(i, &next))\0" as *const u8 as *const libc::c_char,
@@ -127,7 +127,7 @@ unsafe extern "C" fn testDecreasingFunction(
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testLatLng.c\0" as *const u8
+                b"src/apps/testapps/testLatLng.c\0" as *const u8
                     as *const libc::c_char,
                 44 as libc::c_int,
                 b"next > last\0" as *const u8 as *const libc::c_char,
@@ -153,7 +153,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testLatLng.c\0" as *const u8
+            b"src/apps/testapps/testLatLng.c\0" as *const u8
                 as *const libc::c_char,
             55 as libc::c_int,
             b"fabs(rads - originalRads) < EPSILON_RAD\0" as *const u8 as *const libc::c_char,
@@ -184,7 +184,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testLatLng.c\0" as *const u8
+            b"src/apps/testapps/testLatLng.c\0" as *const u8
                 as *const libc::c_char,
             67 as libc::c_int,
             b"H3_EXPORT(greatCircleDistanceRads)(&p1, &p1) < EPSILON_RAD * 1000\0" as *const u8
@@ -205,7 +205,7 @@ unsafe extern "C" fn runTests() {
                 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testLatLng.c\0" as *const u8
+            b"src/apps/testapps/testLatLng.c\0" as *const u8
                 as *const libc::c_char,
             70 as libc::c_int,
             b"fabs(H3_EXPORT(greatCircleDistanceRads)(&p1, &p2) - H3_EXPORT(degsToRads)(10)) < EPSILON_RAD * 1000\0"
@@ -237,7 +237,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testLatLng.c\0" as *const u8
+            b"src/apps/testapps/testLatLng.c\0" as *const u8
                 as *const libc::c_char,
             76 as libc::c_int,
             b"geoAlmostEqualThreshold(&a, &b, DBL_EPSILON)\0" as *const u8 as *const libc::c_char,
@@ -255,7 +255,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testLatLng.c\0" as *const u8
+            b"src/apps/testapps/testLatLng.c\0" as *const u8
                 as *const libc::c_char,
             81 as libc::c_int,
             b"geoAlmostEqualThreshold(&a, &b, 0.0001)\0" as *const u8 as *const libc::c_char,
@@ -273,7 +273,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testLatLng.c\0" as *const u8
+            b"src/apps/testapps/testLatLng.c\0" as *const u8
                 as *const libc::c_char,
             86 as libc::c_int,
             b"!geoAlmostEqualThreshold(&a, &b, 0.000001)\0" as *const u8 as *const libc::c_char,
@@ -291,7 +291,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testLatLng.c\0" as *const u8
+            b"src/apps/testapps/testLatLng.c\0" as *const u8
                 as *const libc::c_char,
             91 as libc::c_int,
             b"!geoAlmostEqualThreshold(&a, &b, 0.000001)\0" as *const u8 as *const libc::c_char,
@@ -308,7 +308,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testLatLng.c\0" as *const u8
+            b"src/apps/testapps/testLatLng.c\0" as *const u8
                 as *const libc::c_char,
             95 as libc::c_int,
             b"constrainLat(0) == 0\0" as *const u8 as *const libc::c_char,
@@ -324,7 +324,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testLatLng.c\0" as *const u8
+            b"src/apps/testapps/testLatLng.c\0" as *const u8
                 as *const libc::c_char,
             96 as libc::c_int,
             b"constrainLat(1) == 1\0" as *const u8 as *const libc::c_char,
@@ -342,7 +342,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testLatLng.c\0" as *const u8
+            b"src/apps/testapps/testLatLng.c\0" as *const u8
                 as *const libc::c_char,
             97 as libc::c_int,
             b"constrainLat(M_PI_2) == M_PI_2\0" as *const u8 as *const libc::c_char,
@@ -360,7 +360,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testLatLng.c\0" as *const u8
+            b"src/apps/testapps/testLatLng.c\0" as *const u8
                 as *const libc::c_char,
             98 as libc::c_int,
             b"constrainLat(M_PI) == 0\0" as *const u8 as *const libc::c_char,
@@ -379,7 +379,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testLatLng.c\0" as *const u8
+            b"src/apps/testapps/testLatLng.c\0" as *const u8
                 as *const libc::c_char,
             99 as libc::c_int,
             b"constrainLat(M_PI + 1) == 1\0" as *const u8 as *const libc::c_char,
@@ -399,7 +399,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testLatLng.c\0" as *const u8
+            b"src/apps/testapps/testLatLng.c\0" as *const u8
                 as *const libc::c_char,
             100 as libc::c_int,
             b"constrainLat(2 * M_PI + 1) == 1\0" as *const u8 as *const libc::c_char,
@@ -415,7 +415,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testLatLng.c\0" as *const u8
+            b"src/apps/testapps/testLatLng.c\0" as *const u8
                 as *const libc::c_char,
             102 as libc::c_int,
             b"constrainLng(0) == 0\0" as *const u8 as *const libc::c_char,
@@ -431,7 +431,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testLatLng.c\0" as *const u8
+            b"src/apps/testapps/testLatLng.c\0" as *const u8
                 as *const libc::c_char,
             103 as libc::c_int,
             b"constrainLng(1) == 1\0" as *const u8 as *const libc::c_char,
@@ -449,7 +449,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testLatLng.c\0" as *const u8
+            b"src/apps/testapps/testLatLng.c\0" as *const u8
                 as *const libc::c_char,
             104 as libc::c_int,
             b"constrainLng(M_PI) == M_PI\0" as *const u8 as *const libc::c_char,
@@ -468,7 +468,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testLatLng.c\0" as *const u8
+            b"src/apps/testapps/testLatLng.c\0" as *const u8
                 as *const libc::c_char,
             105 as libc::c_int,
             b"constrainLng(2 * M_PI) == 0\0" as *const u8 as *const libc::c_char,
@@ -487,7 +487,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testLatLng.c\0" as *const u8
+            b"src/apps/testapps/testLatLng.c\0" as *const u8
                 as *const libc::c_char,
             106 as libc::c_int,
             b"constrainLng(3 * M_PI) == M_PI\0" as *const u8 as *const libc::c_char,
@@ -506,7 +506,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testLatLng.c\0" as *const u8
+            b"src/apps/testapps/testLatLng.c\0" as *const u8
                 as *const libc::c_char,
             107 as libc::c_int,
             b"constrainLng(4 * M_PI) == 0\0" as *const u8 as *const libc::c_char,
@@ -544,7 +544,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testLatLng.c\0" as *const u8
+            b"src/apps/testapps/testLatLng.c\0" as *const u8
                 as *const libc::c_char,
             117 as libc::c_int,
             b"geoAlmostEqual(&expected, &out)\0" as *const u8 as *const libc::c_char,
@@ -580,7 +580,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testLatLng.c\0" as *const u8
+            b"src/apps/testapps/testLatLng.c\0" as *const u8
                 as *const libc::c_char,
             130 as libc::c_int,
             b"geoAlmostEqual(&expected, &out)\0" as *const u8 as *const libc::c_char,
@@ -612,7 +612,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testLatLng.c\0" as *const u8
+            b"src/apps/testapps/testLatLng.c\0" as *const u8
                 as *const libc::c_char,
             137 as libc::c_int,
             b"geoAlmostEqual(&expected, &out)\0" as *const u8 as *const libc::c_char,
@@ -644,7 +644,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testLatLng.c\0" as *const u8
+            b"src/apps/testapps/testLatLng.c\0" as *const u8
                 as *const libc::c_char,
             145 as libc::c_int,
             b"geoAlmostEqual(&expected, &out)\0" as *const u8 as *const libc::c_char,
@@ -676,7 +676,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testLatLng.c\0" as *const u8
+            b"src/apps/testapps/testLatLng.c\0" as *const u8
                 as *const libc::c_char,
             152 as libc::c_int,
             b"geoAlmostEqual(&expected, &out)\0" as *const u8 as *const libc::c_char,
@@ -712,7 +712,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testLatLng.c\0" as *const u8
+            b"src/apps/testapps/testLatLng.c\0" as *const u8
                 as *const libc::c_char,
             168 as libc::c_int,
             b"geoAlmostEqual(&expected, &out)\0" as *const u8 as *const libc::c_char,
@@ -745,7 +745,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testLatLng.c\0" as *const u8
+            b"src/apps/testapps/testLatLng.c\0" as *const u8
                 as *const libc::c_char,
             175 as libc::c_int,
             b"geoAlmostEqual(&expected, &out)\0" as *const u8 as *const libc::c_char,
@@ -776,7 +776,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testLatLng.c\0" as *const u8
+            b"src/apps/testapps/testLatLng.c\0" as *const u8
                 as *const libc::c_char,
             190 as libc::c_int,
             b"fabs(H3_EXPORT(greatCircleDistanceRads)(&start, &out) - distance) < EPSILON_RAD\0"
@@ -795,7 +795,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testLatLng.c\0" as *const u8
+            b"src/apps/testapps/testLatLng.c\0" as *const u8
                 as *const libc::c_char,
             196 as libc::c_int,
             b"H3_EXPORT(greatCircleDistanceRads)(&start, &out) < 0.01\0" as *const u8
@@ -833,7 +833,7 @@ unsafe extern "C" fn runTests() {
                 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testLatLng.c\0" as *const u8
+            b"src/apps/testapps/testLatLng.c\0" as *const u8
                 as *const libc::c_char,
             205 as libc::c_int,
             b"fabs(M_PI_2 - H3_EXPORT(greatCircleDistanceRads)( &negativeLongitude, &zero)) < EPSILON_RAD\0"
@@ -855,7 +855,7 @@ unsafe extern "C" fn runTests() {
                 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testLatLng.c\0" as *const u8
+            b"src/apps/testapps/testLatLng.c\0" as *const u8
                 as *const libc::c_char,
             208 as libc::c_int,
             b"fabs(M_PI_2 - H3_EXPORT(greatCircleDistanceRads)( &zero, &negativeLongitude)) < EPSILON_RAD\0"
@@ -906,7 +906,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testLatLng.c\0" as *const u8
+            b"src/apps/testapps/testLatLng.c\0" as *const u8
                 as *const libc::c_char,
             226 as libc::c_int,
             b"H3_EXPORT(getHexagonAreaAvgKm2)(-1, &out) == E_RES_DOMAIN\0" as *const u8
@@ -925,7 +925,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testLatLng.c\0" as *const u8
+            b"src/apps/testapps/testLatLng.c\0" as *const u8
                 as *const libc::c_char,
             228 as libc::c_int,
             b"H3_EXPORT(getHexagonAreaAvgKm2)(16, &out) == E_RES_DOMAIN\0" as *const u8
@@ -944,7 +944,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testLatLng.c\0" as *const u8
+            b"src/apps/testapps/testLatLng.c\0" as *const u8
                 as *const libc::c_char,
             230 as libc::c_int,
             b"H3_EXPORT(getHexagonAreaAvgM2)(-1, &out) == E_RES_DOMAIN\0" as *const u8
@@ -963,7 +963,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testLatLng.c\0" as *const u8
+            b"src/apps/testapps/testLatLng.c\0" as *const u8
                 as *const libc::c_char,
             232 as libc::c_int,
             b"H3_EXPORT(getHexagonAreaAvgM2)(16, &out) == E_RES_DOMAIN\0" as *const u8
@@ -982,7 +982,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testLatLng.c\0" as *const u8
+            b"src/apps/testapps/testLatLng.c\0" as *const u8
                 as *const libc::c_char,
             234 as libc::c_int,
             b"H3_EXPORT(getHexagonEdgeLengthAvgKm)(-1, &out) == E_RES_DOMAIN\0" as *const u8
@@ -1001,7 +1001,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testLatLng.c\0" as *const u8
+            b"src/apps/testapps/testLatLng.c\0" as *const u8
                 as *const libc::c_char,
             236 as libc::c_int,
             b"H3_EXPORT(getHexagonEdgeLengthAvgKm)(16, &out) == E_RES_DOMAIN\0" as *const u8
@@ -1020,7 +1020,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testLatLng.c\0" as *const u8
+            b"src/apps/testapps/testLatLng.c\0" as *const u8
                 as *const libc::c_char,
             238 as libc::c_int,
             b"H3_EXPORT(getHexagonEdgeLengthAvgM)(-1, &out) == E_RES_DOMAIN\0" as *const u8
@@ -1039,7 +1039,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testLatLng.c\0" as *const u8
+            b"src/apps/testapps/testLatLng.c\0" as *const u8
                 as *const libc::c_char,
             240 as libc::c_int,
             b"H3_EXPORT(getHexagonEdgeLengthAvgM)(16, &out) == E_RES_DOMAIN\0" as *const u8
@@ -1061,7 +1061,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testLatLng.c\0" as *const u8
+                b"src/apps/testapps/testLatLng.c\0" as *const u8
                     as *const libc::c_char,
                 248 as libc::c_int,
                 b"!(getNumCells(i, &next))\0" as *const u8 as *const libc::c_char,
@@ -1077,7 +1077,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testLatLng.c\0" as *const u8
+                b"src/apps/testapps/testLatLng.c\0" as *const u8
                     as *const libc::c_char,
                 249 as libc::c_int,
                 b"next > last\0" as *const u8 as *const libc::c_char,
@@ -1100,7 +1100,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testLatLng.c\0" as *const u8
+            b"src/apps/testapps/testLatLng.c\0" as *const u8
                 as *const libc::c_char,
             257 as libc::c_int,
             b"H3_EXPORT(getNumCells)(-1, &out) == E_RES_DOMAIN\0" as *const u8
@@ -1118,7 +1118,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testLatLng.c\0" as *const u8
+            b"src/apps/testapps/testLatLng.c\0" as *const u8
                 as *const libc::c_char,
             259 as libc::c_int,
             b"H3_EXPORT(getNumCells)(16, &out) == E_RES_DOMAIN\0" as *const u8
@@ -1157,7 +1157,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testLatLng.c\0" as *const u8
+                b"src/apps/testapps/testLatLng.c\0" as *const u8
                     as *const libc::c_char,
                 283 as libc::c_int,
                 b"!(getNumCells(r, &num))\0" as *const u8 as *const libc::c_char,
@@ -1173,7 +1173,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testLatLng.c\0" as *const u8
+                b"src/apps/testapps/testLatLng.c\0" as *const u8
                     as *const libc::c_char,
                 284 as libc::c_int,
                 b"num == expected[r]\0" as *const u8 as *const libc::c_char,

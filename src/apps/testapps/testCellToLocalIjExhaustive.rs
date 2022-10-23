@@ -261,7 +261,7 @@ pub unsafe extern "C" fn localIjToH3_identity_assertions(mut h3: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellToLocalIjExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testCellToLocalIjExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             52 as libc::c_int,
             b"H3_EXPORT(cellToLocalIj)(h3, h3, 0, &ij) == 0\0" as *const u8 as *const libc::c_char,
@@ -280,7 +280,7 @@ pub unsafe extern "C" fn localIjToH3_identity_assertions(mut h3: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellToLocalIjExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testCellToLocalIjExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             56 as libc::c_int,
             b"H3_EXPORT(localIjToCell)(h3, &ij, 0, &retrieved) == 0\0" as *const u8
@@ -297,7 +297,7 @@ pub unsafe extern "C" fn localIjToH3_identity_assertions(mut h3: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellToLocalIjExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testCellToLocalIjExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             57 as libc::c_int,
             b"h3 == retrieved\0" as *const u8 as *const libc::c_char,
@@ -321,7 +321,7 @@ pub unsafe extern "C" fn h3ToLocalIj_coordinates_assertions(mut h3: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellToLocalIjExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testCellToLocalIjExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             70 as libc::c_int,
             b"H3_EXPORT(cellToLocalIj)(h3, h3, 0, &ij) == 0\0" as *const u8 as *const libc::c_char,
@@ -338,7 +338,7 @@ pub unsafe extern "C" fn h3ToLocalIj_coordinates_assertions(mut h3: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellToLocalIjExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testCellToLocalIjExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             72 as libc::c_int,
             b"!(ijToIjk(&ij, &ijk))\0" as *const u8 as *const libc::c_char,
@@ -359,7 +359,7 @@ pub unsafe extern "C" fn h3ToLocalIj_coordinates_assertions(mut h3: H3Index) {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testCellToLocalIjExhaustive.c\0"
+                b"src/apps/testapps/testCellToLocalIjExhaustive.c\0"
                     as *const u8 as *const libc::c_char,
                 74 as libc::c_int,
                 b"_ijkMatches(&ijk, &UNIT_VECS[0]) == 1\0" as *const u8 as *const libc::c_char,
@@ -383,7 +383,7 @@ pub unsafe extern "C" fn h3ToLocalIj_coordinates_assertions(mut h3: H3Index) {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testCellToLocalIjExhaustive.c\0"
+                b"src/apps/testapps/testCellToLocalIjExhaustive.c\0"
                     as *const u8 as *const libc::c_char,
                 77 as libc::c_int,
                 b"_ijkMatches(&ijk, &UNIT_VECS[H3_GET_INDEX_DIGIT(h3, 1)]) == 1\0" as *const u8
@@ -410,7 +410,7 @@ pub unsafe extern "C" fn h3ToLocalIj_coordinates_assertions(mut h3: H3Index) {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testCellToLocalIjExhaustive.c\0"
+                b"src/apps/testapps/testCellToLocalIjExhaustive.c\0"
                     as *const u8 as *const libc::c_char,
                 83 as libc::c_int,
                 b"_ijkMatches(&ijk, &expected) == 1\0" as *const u8 as *const libc::c_char,
@@ -427,7 +427,7 @@ pub unsafe extern "C" fn h3ToLocalIj_coordinates_assertions(mut h3: H3Index) {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testCellToLocalIjExhaustive.c\0"
+                b"src/apps/testapps/testCellToLocalIjExhaustive.c\0"
                     as *const u8 as *const libc::c_char,
                 85 as libc::c_int,
                 b"0\0" as *const u8 as *const libc::c_char,
@@ -457,7 +457,7 @@ pub unsafe extern "C" fn h3ToLocalIj_neighbors_assertions(mut h3: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellToLocalIjExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testCellToLocalIjExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             96 as libc::c_int,
             b"H3_EXPORT(cellToLocalIj)(h3, h3, 0, &origin) == 0\0" as *const u8
@@ -475,7 +475,7 @@ pub unsafe extern "C" fn h3ToLocalIj_neighbors_assertions(mut h3: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellToLocalIjExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testCellToLocalIjExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             98 as libc::c_int,
             b"!(ijToIjk(&origin, &originIjk))\0" as *const u8 as *const libc::c_char,
@@ -499,7 +499,7 @@ pub unsafe extern "C" fn h3ToLocalIj_neighbors_assertions(mut h3: H3Index) {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"/Users/legnitto/src/h3/src/apps/testapps/testCellToLocalIjExhaustive.c\0"
+                    b"src/apps/testapps/testCellToLocalIjExhaustive.c\0"
                         as *const u8 as *const libc::c_char,
                     107 as libc::c_int,
                     b"!(h3NeighborRotations(h3, d, &rotations, &offset))\0" as *const u8
@@ -526,7 +526,7 @@ pub unsafe extern "C" fn h3ToLocalIj_neighbors_assertions(mut h3: H3Index) {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"/Users/legnitto/src/h3/src/apps/testapps/testCellToLocalIjExhaustive.c\0"
+                    b"src/apps/testapps/testCellToLocalIjExhaustive.c\0"
                         as *const u8 as *const libc::c_char,
                     111 as libc::c_int,
                     b"H3_EXPORT(cellToLocalIj)(h3, offset, 0, &ij) == 0\0" as *const u8
@@ -545,7 +545,7 @@ pub unsafe extern "C" fn h3ToLocalIj_neighbors_assertions(mut h3: H3Index) {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"/Users/legnitto/src/h3/src/apps/testapps/testCellToLocalIjExhaustive.c\0"
+                    b"src/apps/testapps/testCellToLocalIjExhaustive.c\0"
                         as *const u8 as *const libc::c_char,
                     113 as libc::c_int,
                     b"!(ijToIjk(&ij, &ijk))\0" as *const u8 as *const libc::c_char,
@@ -578,7 +578,7 @@ pub unsafe extern "C" fn h3ToLocalIj_neighbors_assertions(mut h3: H3Index) {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"/Users/legnitto/src/h3/src/apps/testapps/testCellToLocalIjExhaustive.c\0"
+                    b"src/apps/testapps/testCellToLocalIjExhaustive.c\0"
                         as *const u8 as *const libc::c_char,
                     122 as libc::c_int,
                     b"_ijkMatches(&ijk, &originIjk)\0" as *const u8 as *const libc::c_char,
@@ -602,7 +602,7 @@ pub unsafe extern "C" fn h3ToLocalIj_invalid_assertions(mut h3: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellToLocalIjExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testCellToLocalIjExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             132 as libc::c_int,
             b"r > 0\0" as *const u8 as *const libc::c_char,
@@ -619,7 +619,7 @@ pub unsafe extern "C" fn h3ToLocalIj_invalid_assertions(mut h3: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellToLocalIjExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testCellToLocalIjExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             133 as libc::c_int,
             b"r <= 5\0" as *const u8 as *const libc::c_char,
@@ -638,7 +638,7 @@ pub unsafe extern "C" fn h3ToLocalIj_invalid_assertions(mut h3: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellToLocalIjExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testCellToLocalIjExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             137 as libc::c_int,
             b"!(maxGridDiskSize(maxK, &sz))\0" as *const u8 as *const libc::c_char,
@@ -662,7 +662,7 @@ pub unsafe extern "C" fn h3ToLocalIj_invalid_assertions(mut h3: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellToLocalIjExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testCellToLocalIjExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             142 as libc::c_int,
             b"!(gridDiskDistances(h3, maxK, neighbors, distances))\0" as *const u8
@@ -732,7 +732,7 @@ pub unsafe extern "C" fn localIjToH3_gridDisk_assertions(mut h3: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellToLocalIjExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testCellToLocalIjExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             179 as libc::c_int,
             b"r <= 5\0" as *const u8 as *const libc::c_char,
@@ -751,7 +751,7 @@ pub unsafe extern "C" fn localIjToH3_gridDisk_assertions(mut h3: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellToLocalIjExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testCellToLocalIjExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             183 as libc::c_int,
             b"!(maxGridDiskSize(maxK, &sz))\0" as *const u8 as *const libc::c_char,
@@ -775,7 +775,7 @@ pub unsafe extern "C" fn localIjToH3_gridDisk_assertions(mut h3: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellToLocalIjExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testCellToLocalIjExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             188 as libc::c_int,
             b"!(gridDiskDistances(h3, maxK, neighbors, distances))\0" as *const u8
@@ -807,7 +807,7 @@ pub unsafe extern "C" fn localIjToH3_gridDisk_assertions(mut h3: H3Index) {
                             as *const libc::c_char,
                         currentSuiteName,
                         currentTestName,
-                        b"/Users/legnitto/src/h3/src/apps/testapps/testCellToLocalIjExhaustive.c\0"
+                        b"src/apps/testapps/testCellToLocalIjExhaustive.c\0"
                             as *const u8 as *const libc::c_char,
                         200 as libc::c_int,
                         b"H3_EXPORT(localIjToCell)(h3, &ij, 0, &retrieved) == 0\0" as *const u8
@@ -826,7 +826,7 @@ pub unsafe extern "C" fn localIjToH3_gridDisk_assertions(mut h3: H3Index) {
                             as *const libc::c_char,
                         currentSuiteName,
                         currentTestName,
-                        b"/Users/legnitto/src/h3/src/apps/testapps/testCellToLocalIjExhaustive.c\0"
+                        b"src/apps/testapps/testCellToLocalIjExhaustive.c\0"
                             as *const u8 as *const libc::c_char,
                         202 as libc::c_int,
                         b"retrieved == neighbors[i]\0" as *const u8 as *const libc::c_char,
@@ -854,7 +854,7 @@ pub unsafe extern "C" fn localIjToH3_traverse_assertions(mut h3: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellToLocalIjExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testCellToLocalIjExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             212 as libc::c_int,
             b"r <= 5\0" as *const u8 as *const libc::c_char,
@@ -875,7 +875,7 @@ pub unsafe extern "C" fn localIjToH3_traverse_assertions(mut h3: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellToLocalIjExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testCellToLocalIjExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             217 as libc::c_int,
             b"H3_EXPORT(cellToLocalIj)(h3, h3, 0, &ij) == 0\0" as *const u8 as *const libc::c_char,
@@ -906,7 +906,7 @@ pub unsafe extern "C" fn localIjToH3_traverse_assertions(mut h3: H3Index) {
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"/Users/legnitto/src/h3/src/apps/testapps/testCellToLocalIjExhaustive.c\0"
+                    b"src/apps/testapps/testCellToLocalIjExhaustive.c\0"
                         as *const u8 as *const libc::c_char,
                     241 as libc::c_int,
                     b"H3_EXPORT(isValidCell)(testH3)\0" as *const u8 as *const libc::c_char,
@@ -936,7 +936,7 @@ pub unsafe extern "C" fn localIjToH3_traverse_assertions(mut h3: H3Index) {
                                 as *const libc::c_char,
                             currentSuiteName,
                             currentTestName,
-                            b"/Users/legnitto/src/h3/src/apps/testapps/testCellToLocalIjExhaustive.c\0"
+                            b"src/apps/testapps/testCellToLocalIjExhaustive.c\0"
                                 as *const u8 as *const libc::c_char,
                             256 as libc::c_int,
                             b"H3_EXPORT(localIjToCell)(h3, &expectedIj, 0, &testTestH3) == 0\0"
@@ -955,7 +955,7 @@ pub unsafe extern "C" fn localIjToH3_traverse_assertions(mut h3: H3Index) {
                                 as *const libc::c_char,
                             currentSuiteName,
                             currentTestName,
-                            b"/Users/legnitto/src/h3/src/apps/testapps/testCellToLocalIjExhaustive.c\0"
+                            b"src/apps/testapps/testCellToLocalIjExhaustive.c\0"
                                 as *const u8 as *const libc::c_char,
                             259 as libc::c_int,
                             b"testH3 == testTestH3\0" as *const u8

@@ -152,7 +152,7 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testCellToBoundary.c\0" as *const u8
+                b"src/apps/testapps/testCellToBoundary.c\0" as *const u8
                     as *const libc::c_char,
                 114 as libc::c_int,
                 b"!(stringToH3(buff, &h3))\0" as *const u8 as *const libc::c_char,

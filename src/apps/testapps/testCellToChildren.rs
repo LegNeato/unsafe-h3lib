@@ -85,7 +85,7 @@ unsafe extern "C" fn assertNoDuplicates(mut cells: *mut H3Index, mut n: libc::c_
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"/Users/legnitto/src/h3/src/apps/testapps/testCellToChildren.c\0" as *const u8
+                    b"src/apps/testapps/testCellToChildren.c\0" as *const u8
                         as *const libc::c_char,
                     30 as libc::c_int,
                     b"H3_EXPORT(isValidCell)(cells[i])\0" as *const u8 as *const libc::c_char,
@@ -104,7 +104,7 @@ unsafe extern "C" fn assertNoDuplicates(mut cells: *mut H3Index, mut n: libc::c_
                             as *const libc::c_char,
                         currentSuiteName,
                         currentTestName,
-                        b"/Users/legnitto/src/h3/src/apps/testapps/testCellToChildren.c\0"
+                        b"src/apps/testapps/testCellToChildren.c\0"
                             as *const u8 as *const libc::c_char,
                         32 as libc::c_int,
                         b"cells[i] != cells[j]\0" as *const u8 as *const libc::c_char,
@@ -147,7 +147,7 @@ unsafe extern "C" fn assertSubset(
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"/Users/legnitto/src/h3/src/apps/testapps/testCellToChildren.c\0" as *const u8
+                    b"src/apps/testapps/testCellToChildren.c\0" as *const u8
                         as *const libc::c_char,
                     51 as libc::c_int,
                     b"present\0" as *const u8 as *const libc::c_char,
@@ -185,7 +185,7 @@ unsafe extern "C" fn checkChildren(
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellToChildren.c\0" as *const u8
+            b"src/apps/testapps/testCellToChildren.c\0" as *const u8
                 as *const libc::c_char,
             71 as libc::c_int,
             b"numChildrenError == expectedError\0" as *const u8 as *const libc::c_char,
@@ -208,7 +208,7 @@ unsafe extern "C" fn checkChildren(
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellToChildren.c\0" as *const u8
+            b"src/apps/testapps/testCellToChildren.c\0" as *const u8
                 as *const libc::c_char,
             76 as libc::c_int,
             b"!(cellToChildren(h, res, children))\0" as *const u8 as *const libc::c_char,

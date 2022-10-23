@@ -115,7 +115,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testH3CellArea.c\0" as *const u8
+                b"src/apps/testapps/testH3CellArea.c\0" as *const u8
                     as *const libc::c_char,
                 41 as libc::c_int,
                 b"!(latLngToCell(&gc, res, &cell))\0" as *const u8 as *const libc::c_char,
@@ -132,7 +132,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testH3CellArea.c\0" as *const u8
+                b"src/apps/testapps/testH3CellArea.c\0" as *const u8
                     as *const libc::c_char,
                 43 as libc::c_int,
                 b"!(cellAreaKm2(cell, &area))\0" as *const u8 as *const libc::c_char,
@@ -148,7 +148,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testH3CellArea.c\0" as *const u8
+                b"src/apps/testapps/testH3CellArea.c\0" as *const u8
                     as *const libc::c_char,
                 46 as libc::c_int,
                 b"fabs(area - areasKm2[res]) < 1e-8\0" as *const u8 as *const libc::c_char,
@@ -169,7 +169,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testH3CellArea.c\0" as *const u8
+            b"src/apps/testapps/testH3CellArea.c\0" as *const u8
                 as *const libc::c_char,
             54 as libc::c_int,
             b"H3_EXPORT(cellAreaRads2)(invalid, &area) == E_CELL_INVALID\0" as *const u8
@@ -186,7 +186,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testH3CellArea.c\0" as *const u8
+            b"src/apps/testapps/testH3CellArea.c\0" as *const u8
                 as *const libc::c_char,
             56 as libc::c_int,
             b"H3_EXPORT(cellAreaKm2)(invalid, &area) == E_CELL_INVALID\0" as *const u8
@@ -203,7 +203,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testH3CellArea.c\0" as *const u8
+            b"src/apps/testapps/testH3CellArea.c\0" as *const u8
                 as *const libc::c_char,
             58 as libc::c_int,
             b"H3_EXPORT(cellAreaM2)(invalid, &area) == E_CELL_INVALID\0" as *const u8

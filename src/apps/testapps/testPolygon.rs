@@ -251,7 +251,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             53 as libc::c_int,
             b"!pointInsideGeoLoop(&geoloop, &bbox, &sfVerts[0])\0" as *const u8
@@ -272,7 +272,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             55 as libc::c_int,
             b"pointInsideGeoLoop(&geoloop, &bbox, &sfVerts[3])\0" as *const u8
@@ -289,7 +289,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             58 as libc::c_int,
             b"pointInsideGeoLoop(&geoloop, &bbox, &inside)\0" as *const u8 as *const libc::c_char,
@@ -305,7 +305,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             60 as libc::c_int,
             b"!pointInsideGeoLoop(&geoloop, &bbox, &somewhere)\0" as *const u8
@@ -374,7 +374,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             75 as libc::c_int,
             b"!pointInsideGeoLoop(&geoloop, &bbox, &point)\0" as *const u8 as *const libc::c_char,
@@ -391,7 +391,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             78 as libc::c_int,
             b"!pointInsideGeoLoop(&geoloop, &bbox, &point)\0" as *const u8 as *const libc::c_char,
@@ -408,7 +408,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             81 as libc::c_int,
             b"!pointInsideGeoLoop(&geoloop, &bbox, &point)\0" as *const u8 as *const libc::c_char,
@@ -425,7 +425,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             84 as libc::c_int,
             b"pointInsideGeoLoop(&geoloop, &bbox, &point)\0" as *const u8 as *const libc::c_char,
@@ -489,7 +489,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             100 as libc::c_int,
             b"!pointInsideGeoLoop(&geoloop, &bbox, &point)\0" as *const u8 as *const libc::c_char,
@@ -507,7 +507,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             104 as libc::c_int,
             b"!pointInsideGeoLoop(&geoloop, &bbox, &point)\0" as *const u8 as *const libc::c_char,
@@ -525,7 +525,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             108 as libc::c_int,
             b"pointInsideGeoLoop(&geoloop, &bbox, &point)\0" as *const u8 as *const libc::c_char,
@@ -543,7 +543,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             112 as libc::c_int,
             b"pointInsideGeoLoop(&geoloop, &bbox, &point)\0" as *const u8 as *const libc::c_char,
@@ -604,7 +604,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             126 as libc::c_int,
             b"pointInsideGeoLoop(&geoloop, &bbox, &point)\0" as *const u8 as *const libc::c_char,
@@ -694,7 +694,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             145 as libc::c_int,
             b"pointInsideGeoLoop(&transMeridianGeoLoop, &bbox, &westPoint)\0" as *const u8
@@ -711,7 +711,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             147 as libc::c_int,
             b"pointInsideGeoLoop(&transMeridianGeoLoop, &bbox, &eastPoint)\0" as *const u8
@@ -732,7 +732,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             151 as libc::c_int,
             b"!pointInsideGeoLoop(&transMeridianGeoLoop, &bbox, &westPointOutside)\0" as *const u8
@@ -754,7 +754,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             155 as libc::c_int,
             b"!pointInsideGeoLoop(&transMeridianGeoLoop, &bbox, &eastPointOutside)\0" as *const u8
@@ -804,7 +804,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             169 as libc::c_int,
             b"pointInsideLinkedGeoLoop(&loop, &bbox, &inside)\0" as *const u8
@@ -821,7 +821,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             171 as libc::c_int,
             b"!pointInsideLinkedGeoLoop(&loop, &bbox, &somewhere)\0" as *const u8
@@ -893,7 +893,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             184 as libc::c_int,
             b"bboxEquals(&result, &expected)\0" as *const u8 as *const libc::c_char,
@@ -977,7 +977,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             198 as libc::c_int,
             b"bboxEquals(&result, &expected)\0" as *const u8 as *const libc::c_char,
@@ -1016,7 +1016,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             211 as libc::c_int,
             b"bboxEquals(&result, &expected)\0" as *const u8 as *const libc::c_char,
@@ -1095,7 +1095,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             223 as libc::c_int,
             b"bboxEquals(&result[0], &expected)\0" as *const u8 as *const libc::c_char,
@@ -1221,7 +1221,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             244 as libc::c_int,
             b"bboxEquals(&result[0], &expected)\0" as *const u8 as *const libc::c_char,
@@ -1240,7 +1240,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             246 as libc::c_int,
             b"bboxEquals(&result[1], &expectedHole)\0" as *const u8 as *const libc::c_char,
@@ -1314,7 +1314,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             261 as libc::c_int,
             b"bboxEquals(&result, &expected)\0" as *const u8 as *const libc::c_char,
@@ -1356,7 +1356,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             274 as libc::c_int,
             b"bboxEquals(&result, &expected)\0" as *const u8 as *const libc::c_char,
@@ -1404,7 +1404,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             284 as libc::c_int,
             b"isClockwiseGeoLoop(&geoloop)\0" as *const u8 as *const libc::c_char,
@@ -1454,7 +1454,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             293 as libc::c_int,
             b"isClockwiseLinkedGeoLoop(&loop)\0" as *const u8 as *const libc::c_char,
@@ -1512,7 +1512,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             304 as libc::c_int,
             b"!isClockwiseLinkedGeoLoop(&loop)\0" as *const u8 as *const libc::c_char,
@@ -1567,7 +1567,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             317 as libc::c_int,
             b"isClockwiseGeoLoop(&geoloop)\0" as *const u8 as *const libc::c_char,
@@ -1625,7 +1625,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             329 as libc::c_int,
             b"isClockwiseLinkedGeoLoop(&loop)\0" as *const u8 as *const libc::c_char,
@@ -1684,7 +1684,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             343 as libc::c_int,
             b"!isClockwiseLinkedGeoLoop(&loop)\0" as *const u8 as *const libc::c_char,
@@ -1751,7 +1751,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             358 as libc::c_int,
             b"!(normalizeMultiPolygon(&polygon))\0" as *const u8 as *const libc::c_char,
@@ -1767,7 +1767,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             360 as libc::c_int,
             b"countLinkedPolygons(&polygon) == 1\0" as *const u8 as *const libc::c_char,
@@ -1783,7 +1783,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             361 as libc::c_int,
             b"countLinkedLoops(&polygon) == 1\0" as *const u8 as *const libc::c_char,
@@ -1799,7 +1799,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             362 as libc::c_int,
             b"polygon.first == outer\0" as *const u8 as *const libc::c_char,
@@ -1905,7 +1905,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             384 as libc::c_int,
             b"!(normalizeMultiPolygon(&polygon))\0" as *const u8 as *const libc::c_char,
@@ -1921,7 +1921,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             386 as libc::c_int,
             b"countLinkedPolygons(&polygon) == 2\0" as *const u8 as *const libc::c_char,
@@ -1937,7 +1937,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             388 as libc::c_int,
             b"countLinkedLoops(&polygon) == 1\0" as *const u8 as *const libc::c_char,
@@ -1953,7 +1953,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             390 as libc::c_int,
             b"countLinkedLoops(polygon.next) == 1\0" as *const u8 as *const libc::c_char,
@@ -2066,7 +2066,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             412 as libc::c_int,
             b"!(normalizeMultiPolygon(&polygon))\0" as *const u8 as *const libc::c_char,
@@ -2082,7 +2082,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             414 as libc::c_int,
             b"countLinkedPolygons(&polygon) == 1\0" as *const u8 as *const libc::c_char,
@@ -2098,7 +2098,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             416 as libc::c_int,
             b"countLinkedLoops(&polygon) == 2\0" as *const u8 as *const libc::c_char,
@@ -2114,7 +2114,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             417 as libc::c_int,
             b"polygon.first == outer\0" as *const u8 as *const libc::c_char,
@@ -2130,7 +2130,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             418 as libc::c_int,
             b"polygon.first->next == inner\0" as *const u8 as *const libc::c_char,
@@ -2283,7 +2283,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             447 as libc::c_int,
             b"!(normalizeMultiPolygon(&polygon))\0" as *const u8 as *const libc::c_char,
@@ -2299,7 +2299,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             450 as libc::c_int,
             b"countLinkedPolygons(&polygon) == 1\0" as *const u8 as *const libc::c_char,
@@ -2315,7 +2315,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             451 as libc::c_int,
             b"polygon.first == outer\0" as *const u8 as *const libc::c_char,
@@ -2331,7 +2331,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             453 as libc::c_int,
             b"countLinkedLoops(&polygon) == 3\0" as *const u8 as *const libc::c_char,
@@ -2531,7 +2531,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             485 as libc::c_int,
             b"!(normalizeMultiPolygon(&polygon))\0" as *const u8 as *const libc::c_char,
@@ -2547,7 +2547,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             487 as libc::c_int,
             b"countLinkedPolygons(&polygon) == 2\0" as *const u8 as *const libc::c_char,
@@ -2563,7 +2563,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             489 as libc::c_int,
             b"countLinkedLoops(&polygon) == 2\0" as *const u8 as *const libc::c_char,
@@ -2579,7 +2579,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             491 as libc::c_int,
             b"countLinkedCoords(polygon.first) == 4\0" as *const u8 as *const libc::c_char,
@@ -2595,7 +2595,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             493 as libc::c_int,
             b"countLinkedCoords(polygon.first->next) == 3\0" as *const u8 as *const libc::c_char,
@@ -2611,7 +2611,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             495 as libc::c_int,
             b"countLinkedLoops(polygon.next) == 2\0" as *const u8 as *const libc::c_char,
@@ -2627,7 +2627,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             497 as libc::c_int,
             b"countLinkedCoords(polygon.next->first) == 4\0" as *const u8 as *const libc::c_char,
@@ -2643,7 +2643,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             499 as libc::c_int,
             b"countLinkedCoords(polygon.next->first->next) == 3\0" as *const u8
@@ -2858,7 +2858,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             531 as libc::c_int,
             b"!(normalizeMultiPolygon(&polygon))\0" as *const u8 as *const libc::c_char,
@@ -2874,7 +2874,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             533 as libc::c_int,
             b"countLinkedPolygons(&polygon) == 2\0" as *const u8 as *const libc::c_char,
@@ -2890,7 +2890,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             535 as libc::c_int,
             b"countLinkedLoops(&polygon) == 2\0" as *const u8 as *const libc::c_char,
@@ -2906,7 +2906,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             536 as libc::c_int,
             b"polygon.first == outerBig\0" as *const u8 as *const libc::c_char,
@@ -2922,7 +2922,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             537 as libc::c_int,
             b"polygon.first->next == innerBig\0" as *const u8 as *const libc::c_char,
@@ -2938,7 +2938,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             539 as libc::c_int,
             b"countLinkedLoops(polygon.next) == 2\0" as *const u8 as *const libc::c_char,
@@ -2954,7 +2954,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             540 as libc::c_int,
             b"polygon.next->first == outer\0" as *const u8 as *const libc::c_char,
@@ -2970,7 +2970,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             541 as libc::c_int,
             b"polygon.next->first->next == inner\0" as *const u8 as *const libc::c_char,
@@ -3076,7 +3076,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             564 as libc::c_int,
             b"normalizeMultiPolygon(&polygon) == E_FAILED\0" as *const u8 as *const libc::c_char,
@@ -3092,7 +3092,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             566 as libc::c_int,
             b"countLinkedPolygons(&polygon) == 1\0" as *const u8 as *const libc::c_char,
@@ -3108,7 +3108,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             568 as libc::c_int,
             b"countLinkedLoops(&polygon) == 0\0" as *const u8 as *const libc::c_char,
@@ -3216,7 +3216,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             593 as libc::c_int,
             b"normalizeMultiPolygon(&polygon) == E_FAILED\0" as *const u8 as *const libc::c_char,
@@ -3232,7 +3232,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             595 as libc::c_int,
             b"countLinkedPolygons(&polygon) == 2\0" as *const u8 as *const libc::c_char,
@@ -3248,7 +3248,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             597 as libc::c_int,
             b"countLinkedLoops(&polygon) == 1\0" as *const u8 as *const libc::c_char,
@@ -3264,7 +3264,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             598 as libc::c_int,
             b"polygon.first == outer1\0" as *const u8 as *const libc::c_char,
@@ -3280,7 +3280,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             600 as libc::c_int,
             b"countLinkedLoops(polygon.next) == 1\0" as *const u8 as *const libc::c_char,
@@ -3296,7 +3296,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             601 as libc::c_int,
             b"polygon.next->first == outer2\0" as *const u8 as *const libc::c_char,
@@ -3409,7 +3409,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testPolygon.c\0" as *const u8
+            b"src/apps/testapps/testPolygon.c\0" as *const u8
                 as *const libc::c_char,
             624 as libc::c_int,
             b"normalizeMultiPolygon(&polygon) == E_FAILED\0" as *const u8 as *const libc::c_char,

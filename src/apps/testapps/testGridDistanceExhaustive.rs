@@ -104,7 +104,7 @@ unsafe extern "C" fn gridDistance_identity_assertions(mut h3: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridDistanceExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testGridDistanceExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             39 as libc::c_int,
             b"!(gridDistance(h3, h3, &distance))\0" as *const u8 as *const libc::c_char,
@@ -120,7 +120,7 @@ unsafe extern "C" fn gridDistance_identity_assertions(mut h3: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridDistanceExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testGridDistanceExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             40 as libc::c_int,
             b"distance == 0\0" as *const u8 as *const libc::c_char,
@@ -140,7 +140,7 @@ unsafe extern "C" fn gridDistance_gridDisk_assertions(mut h3: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridDistanceExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testGridDistanceExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             45 as libc::c_int,
             b"r <= 5\0" as *const u8 as *const libc::c_char,
@@ -159,7 +159,7 @@ unsafe extern "C" fn gridDistance_gridDisk_assertions(mut h3: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridDistanceExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testGridDistanceExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             49 as libc::c_int,
             b"!(maxGridDiskSize(maxK, &sz))\0" as *const u8 as *const libc::c_char,
@@ -183,7 +183,7 @@ unsafe extern "C" fn gridDistance_gridDisk_assertions(mut h3: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridDistanceExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testGridDistanceExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             54 as libc::c_int,
             b"!(gridDiskDistances(h3, maxK, neighbors, distances))\0" as *const u8
@@ -208,7 +208,7 @@ unsafe extern "C" fn gridDistance_gridDisk_assertions(mut h3: H3Index) {
                             as *const libc::c_char,
                         currentSuiteName,
                         currentTestName,
-                        b"/Users/legnitto/src/h3/src/apps/testapps/testGridDistanceExhaustive.c\0"
+                        b"src/apps/testapps/testGridDistanceExhaustive.c\0"
                             as *const u8 as *const libc::c_char,
                         69 as libc::c_int,
                         b"calculatedDistance == distances[i]\0" as *const u8 as *const libc::c_char,

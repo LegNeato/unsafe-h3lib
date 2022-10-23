@@ -92,7 +92,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testH3SetToVertexGraph.c\0" as *const u8
+            b"src/apps/testapps/testH3SetToVertexGraph.c\0" as *const u8
                 as *const libc::c_char,
             27 as libc::c_int,
             b"!(h3SetToVertexGraph(((void *)0), 0, &graph))\0" as *const u8 as *const libc::c_char,
@@ -108,7 +108,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testH3SetToVertexGraph.c\0" as *const u8
+            b"src/apps/testapps/testH3SetToVertexGraph.c\0" as *const u8
                 as *const libc::c_char,
             29 as libc::c_int,
             b"graph.size == 0\0" as *const u8 as *const libc::c_char,
@@ -136,7 +136,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testH3SetToVertexGraph.c\0" as *const u8
+            b"src/apps/testapps/testH3SetToVertexGraph.c\0" as *const u8
                 as *const libc::c_char,
             39 as libc::c_int,
             b"!(h3SetToVertexGraph(set, numHexes, &graph))\0" as *const u8 as *const libc::c_char,
@@ -152,7 +152,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testH3SetToVertexGraph.c\0" as *const u8
+            b"src/apps/testapps/testH3SetToVertexGraph.c\0" as *const u8
                 as *const libc::c_char,
             40 as libc::c_int,
             b"graph.size == 6\0" as *const u8 as *const libc::c_char,
@@ -183,7 +183,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testH3SetToVertexGraph.c\0" as *const u8
+            b"src/apps/testapps/testH3SetToVertexGraph.c\0" as *const u8
                 as *const libc::c_char,
             50 as libc::c_int,
             b"!(h3SetToVertexGraph(set, numHexes, &graph))\0" as *const u8 as *const libc::c_char,
@@ -199,7 +199,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testH3SetToVertexGraph.c\0" as *const u8
+            b"src/apps/testapps/testH3SetToVertexGraph.c\0" as *const u8
                 as *const libc::c_char,
             52 as libc::c_int,
             b"graph.size == 12\0" as *const u8 as *const libc::c_char,
@@ -231,7 +231,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testH3SetToVertexGraph.c\0" as *const u8
+            b"src/apps/testapps/testH3SetToVertexGraph.c\0" as *const u8
                 as *const libc::c_char,
             62 as libc::c_int,
             b"!(h3SetToVertexGraph(set, numHexes, &graph))\0" as *const u8 as *const libc::c_char,
@@ -247,7 +247,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testH3SetToVertexGraph.c\0" as *const u8
+            b"src/apps/testapps/testH3SetToVertexGraph.c\0" as *const u8
                 as *const libc::c_char,
             63 as libc::c_int,
             b"graph.size == 10\0" as *const u8 as *const libc::c_char,
@@ -278,7 +278,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testH3SetToVertexGraph.c\0" as *const u8
+            b"src/apps/testapps/testH3SetToVertexGraph.c\0" as *const u8
                 as *const libc::c_char,
             73 as libc::c_int,
             b"!(h3SetToVertexGraph(set, numHexes, &graph))\0" as *const u8 as *const libc::c_char,
@@ -294,7 +294,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testH3SetToVertexGraph.c\0" as *const u8
+            b"src/apps/testapps/testH3SetToVertexGraph.c\0" as *const u8
                 as *const libc::c_char,
             74 as libc::c_int,
             b"graph.size == 12\0" as *const u8 as *const libc::c_char,
@@ -326,7 +326,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testH3SetToVertexGraph.c\0" as *const u8
+            b"src/apps/testapps/testH3SetToVertexGraph.c\0" as *const u8
                 as *const libc::c_char,
             85 as libc::c_int,
             b"!(h3SetToVertexGraph(set, numHexes, &graph))\0" as *const u8 as *const libc::c_char,
@@ -342,7 +342,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testH3SetToVertexGraph.c\0" as *const u8
+            b"src/apps/testapps/testH3SetToVertexGraph.c\0" as *const u8
                 as *const libc::c_char,
             87 as libc::c_int,
             b"graph.size == 3 * 4\0" as *const u8 as *const libc::c_char,
@@ -377,7 +377,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testH3SetToVertexGraph.c\0" as *const u8
+            b"src/apps/testapps/testH3SetToVertexGraph.c\0" as *const u8
                 as *const libc::c_char,
             99 as libc::c_int,
             b"!(h3SetToVertexGraph(set, numHexes, &graph))\0" as *const u8 as *const libc::c_char,
@@ -393,7 +393,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testH3SetToVertexGraph.c\0" as *const u8
+            b"src/apps/testapps/testH3SetToVertexGraph.c\0" as *const u8
                 as *const libc::c_char,
             101 as libc::c_int,
             b"graph.size == (6 * 3) + 6\0" as *const u8 as *const libc::c_char,

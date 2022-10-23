@@ -118,7 +118,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+            b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                 as *const u8 as *const libc::c_char,
             28 as libc::c_int,
             b"!(cellsToLinkedMultiPolygon(((void *)0), 0, &polygon))\0" as *const u8
@@ -135,7 +135,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+            b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                 as *const u8 as *const libc::c_char,
             30 as libc::c_int,
             b"countLinkedLoops(&polygon) == 0\0" as *const u8 as *const libc::c_char,
@@ -162,7 +162,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+            b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                 as *const u8 as *const libc::c_char,
             41 as libc::c_int,
             b"!(cellsToLinkedMultiPolygon(set, numHexes, &polygon))\0" as *const u8
@@ -179,7 +179,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+            b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                 as *const u8 as *const libc::c_char,
             43 as libc::c_int,
             b"countLinkedLoops(&polygon) == 1\0" as *const u8 as *const libc::c_char,
@@ -195,7 +195,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+            b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                 as *const u8 as *const libc::c_char,
             45 as libc::c_int,
             b"countLinkedCoords(polygon.first) == 6\0" as *const u8 as *const libc::c_char,
@@ -224,7 +224,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+            b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                 as *const u8 as *const libc::c_char,
             57 as libc::c_int,
             b"H3_EXPORT(cellsToLinkedMultiPolygon)( set, numHexes, &polygon) == E_CELL_INVALID\0"
@@ -254,7 +254,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+            b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                 as *const u8 as *const libc::c_char,
             66 as libc::c_int,
             b"!(cellsToLinkedMultiPolygon(set, numHexes, &polygon))\0" as *const u8
@@ -271,7 +271,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+            b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                 as *const u8 as *const libc::c_char,
             68 as libc::c_int,
             b"countLinkedLoops(&polygon) == 1\0" as *const u8 as *const libc::c_char,
@@ -287,7 +287,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+            b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                 as *const u8 as *const libc::c_char,
             70 as libc::c_int,
             b"countLinkedCoords(polygon.first) == 10\0" as *const u8 as *const libc::c_char,
@@ -317,7 +317,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+            b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                 as *const u8 as *const libc::c_char,
             84 as libc::c_int,
             b"!(cellsToLinkedMultiPolygon(set, numHexes, &polygon))\0" as *const u8
@@ -334,7 +334,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+            b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                 as *const u8 as *const libc::c_char,
             86 as libc::c_int,
             b"countLinkedPolygons(&polygon) == 2\0" as *const u8 as *const libc::c_char,
@@ -350,7 +350,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+            b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                 as *const u8 as *const libc::c_char,
             88 as libc::c_int,
             b"countLinkedLoops(&polygon) == 1\0" as *const u8 as *const libc::c_char,
@@ -366,7 +366,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+            b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                 as *const u8 as *const libc::c_char,
             90 as libc::c_int,
             b"countLinkedCoords(polygon.first) == 6\0" as *const u8 as *const libc::c_char,
@@ -382,7 +382,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+            b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                 as *const u8 as *const libc::c_char,
             92 as libc::c_int,
             b"countLinkedLoops(polygon.next) == 1\0" as *const u8 as *const libc::c_char,
@@ -398,7 +398,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+            b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                 as *const u8 as *const libc::c_char,
             94 as libc::c_int,
             b"countLinkedCoords(polygon.next->first) == 6\0" as *const u8 as *const libc::c_char,
@@ -429,7 +429,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+            b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                 as *const u8 as *const libc::c_char,
             106 as libc::c_int,
             b"!(cellsToLinkedMultiPolygon(set, numHexes, &polygon))\0" as *const u8
@@ -446,7 +446,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+            b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                 as *const u8 as *const libc::c_char,
             108 as libc::c_int,
             b"countLinkedLoops(&polygon) == 1\0" as *const u8 as *const libc::c_char,
@@ -462,7 +462,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+            b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                 as *const u8 as *const libc::c_char,
             110 as libc::c_int,
             b"countLinkedCoords(polygon.first) == 12\0" as *const u8 as *const libc::c_char,
@@ -497,7 +497,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+            b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                 as *const u8 as *const libc::c_char,
             124 as libc::c_int,
             b"countLinkedLoops(&polygon) == 2\0" as *const u8 as *const libc::c_char,
@@ -513,7 +513,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+            b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                 as *const u8 as *const libc::c_char,
             126 as libc::c_int,
             b"countLinkedCoords(polygon.first) == 6 * 3\0" as *const u8 as *const libc::c_char,
@@ -529,7 +529,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+            b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                 as *const u8 as *const libc::c_char,
             128 as libc::c_int,
             b"countLinkedCoords(polygon.first->next) == 6\0" as *const u8 as *const libc::c_char,
@@ -556,7 +556,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+            b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                 as *const u8 as *const libc::c_char,
             139 as libc::c_int,
             b"!(cellsToLinkedMultiPolygon(set, numHexes, &polygon))\0" as *const u8
@@ -573,7 +573,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+            b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                 as *const u8 as *const libc::c_char,
             141 as libc::c_int,
             b"countLinkedLoops(&polygon) == 1\0" as *const u8 as *const libc::c_char,
@@ -589,7 +589,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+            b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                 as *const u8 as *const libc::c_char,
             143 as libc::c_int,
             b"countLinkedCoords(polygon.first) == 10\0" as *const u8 as *const libc::c_char,
@@ -636,7 +636,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+            b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                 as *const u8 as *const libc::c_char,
             162 as libc::c_int,
             b"!(cellsToLinkedMultiPolygon(set, numHexes, &polygon))\0" as *const u8
@@ -653,7 +653,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+            b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                 as *const u8 as *const libc::c_char,
             164 as libc::c_int,
             b"countLinkedLoops(&polygon) == 1\0" as *const u8 as *const libc::c_char,
@@ -671,7 +671,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+            b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                 as *const u8 as *const libc::c_char,
             166 as libc::c_int,
             b"countLinkedCoords(polygon.first) == (6 * (2 * 2 + 1))\0" as *const u8
@@ -719,7 +719,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+            b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                 as *const u8 as *const libc::c_char,
             185 as libc::c_int,
             b"!(cellsToLinkedMultiPolygon(set, numHexes, &polygon))\0" as *const u8
@@ -736,7 +736,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+            b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                 as *const u8 as *const libc::c_char,
             187 as libc::c_int,
             b"countLinkedLoops(&polygon) == 1\0" as *const u8 as *const libc::c_char,
@@ -754,7 +754,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+            b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                 as *const u8 as *const libc::c_char,
             189 as libc::c_int,
             b"countLinkedCoords(polygon.first) == (6 * (2 * 2 + 1))\0" as *const u8
@@ -807,7 +807,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+            b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                 as *const u8 as *const libc::c_char,
             209 as libc::c_int,
             b"!(cellsToLinkedMultiPolygon(set, numHexes, &polygon))\0" as *const u8
@@ -824,7 +824,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+            b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                 as *const u8 as *const libc::c_char,
             213 as libc::c_int,
             b"countLinkedPolygons(&polygon) == 2\0" as *const u8 as *const libc::c_char,
@@ -840,7 +840,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+            b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                 as *const u8 as *const libc::c_char,
             215 as libc::c_int,
             b"countLinkedLoops(&polygon) == 2\0" as *const u8 as *const libc::c_char,
@@ -856,7 +856,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+            b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                 as *const u8 as *const libc::c_char,
             217 as libc::c_int,
             b"countLinkedCoords(polygon.first) == 42\0" as *const u8 as *const libc::c_char,
@@ -872,7 +872,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+            b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                 as *const u8 as *const libc::c_char,
             219 as libc::c_int,
             b"countLinkedCoords(polygon.first->next) == 30\0" as *const u8 as *const libc::c_char,
@@ -888,7 +888,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+            b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                 as *const u8 as *const libc::c_char,
             221 as libc::c_int,
             b"countLinkedLoops(polygon.next) == 2\0" as *const u8 as *const libc::c_char,
@@ -904,7 +904,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+            b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                 as *const u8 as *const libc::c_char,
             223 as libc::c_int,
             b"countLinkedCoords(polygon.next->first) == 18\0" as *const u8 as *const libc::c_char,
@@ -920,7 +920,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+            b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                 as *const u8 as *const libc::c_char,
             225 as libc::c_int,
             b"countLinkedCoords(polygon.next->first->next) == 6\0" as *const u8
@@ -973,7 +973,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+            b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                 as *const u8 as *const libc::c_char,
             245 as libc::c_int,
             b"!(cellsToLinkedMultiPolygon(set, numHexes, &polygon))\0" as *const u8
@@ -990,7 +990,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+            b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                 as *const u8 as *const libc::c_char,
             249 as libc::c_int,
             b"countLinkedPolygons(&polygon) == 2\0" as *const u8 as *const libc::c_char,
@@ -1006,7 +1006,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+            b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                 as *const u8 as *const libc::c_char,
             251 as libc::c_int,
             b"countLinkedLoops(&polygon) == 2\0" as *const u8 as *const libc::c_char,
@@ -1022,7 +1022,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+            b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                 as *const u8 as *const libc::c_char,
             253 as libc::c_int,
             b"countLinkedCoords(polygon.first) == 18\0" as *const u8 as *const libc::c_char,
@@ -1038,7 +1038,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+            b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                 as *const u8 as *const libc::c_char,
             255 as libc::c_int,
             b"countLinkedCoords(polygon.first->next) == 6\0" as *const u8 as *const libc::c_char,
@@ -1054,7 +1054,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+            b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                 as *const u8 as *const libc::c_char,
             257 as libc::c_int,
             b"countLinkedLoops(polygon.next) == 2\0" as *const u8 as *const libc::c_char,
@@ -1070,7 +1070,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+            b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                 as *const u8 as *const libc::c_char,
             259 as libc::c_int,
             b"countLinkedCoords(polygon.next->first) == 42\0" as *const u8 as *const libc::c_char,
@@ -1086,7 +1086,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+            b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                 as *const u8 as *const libc::c_char,
             261 as libc::c_int,
             b"countLinkedCoords(polygon.next->first->next) == 30\0" as *const u8
@@ -1117,7 +1117,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+            b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                 as *const u8 as *const libc::c_char,
             272 as libc::c_int,
             b"!(cellsToLinkedMultiPolygon(set, numHexes, &polygon))\0" as *const u8
@@ -1134,7 +1134,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+            b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                 as *const u8 as *const libc::c_char,
             274 as libc::c_int,
             b"countLinkedLoops(&polygon) == 1\0" as *const u8 as *const libc::c_char,
@@ -1150,7 +1150,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+            b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                 as *const u8 as *const libc::c_char,
             276 as libc::c_int,
             b"countLinkedCoords(polygon.first) == 12\0" as *const u8 as *const libc::c_char,
@@ -1180,7 +1180,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+            b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                 as *const u8 as *const libc::c_char,
             286 as libc::c_int,
             b"!(cellsToLinkedMultiPolygon(set, numHexes, &polygon))\0" as *const u8
@@ -1197,7 +1197,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+            b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                 as *const u8 as *const libc::c_char,
             288 as libc::c_int,
             b"countLinkedPolygons(&polygon) == 2\0" as *const u8 as *const libc::c_char,
@@ -1213,7 +1213,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+            b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                 as *const u8 as *const libc::c_char,
             290 as libc::c_int,
             b"countLinkedLoops(&polygon) == 1\0" as *const u8 as *const libc::c_char,
@@ -1229,7 +1229,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+            b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                 as *const u8 as *const libc::c_char,
             292 as libc::c_int,
             b"countLinkedCoords(polygon.first) == 6\0" as *const u8 as *const libc::c_char,
@@ -1245,7 +1245,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+            b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                 as *const u8 as *const libc::c_char,
             294 as libc::c_int,
             b"countLinkedLoops(polygon.next) == 1\0" as *const u8 as *const libc::c_char,
@@ -1261,7 +1261,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+            b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                 as *const u8 as *const libc::c_char,
             296 as libc::c_int,
             b"countLinkedCoords(polygon.next->first) == 6\0" as *const u8 as *const libc::c_char,
@@ -1293,7 +1293,7 @@ unsafe extern "C" fn runTests() {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+            b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                 as *const u8 as *const libc::c_char,
             309 as libc::c_int,
             b"H3_EXPORT(cellsToLinkedMultiPolygon)(set, numHexes, &polygon) == E_FAILED\0"
@@ -1339,7 +1339,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+                b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                     as *const u8 as *const libc::c_char,
                 323 as libc::c_int,
                 b"!(cellToCenterChild(baseCell, res, &origin))\0" as *const u8
@@ -1356,7 +1356,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+                b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                     as *const u8 as *const libc::c_char,
                 324 as libc::c_int,
                 b"!(gridDisk(origin, 2, indexes))\0" as *const u8 as *const libc::c_char,
@@ -1377,7 +1377,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+                b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                     as *const u8 as *const libc::c_char,
                 329 as libc::c_int,
                 b"!(cellsToLinkedMultiPolygon( indexes, numHexes, &polygon))\0" as *const u8
@@ -1394,7 +1394,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+                b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                     as *const u8 as *const libc::c_char,
                 330 as libc::c_int,
                 b"countLinkedPolygons(&polygon) == 1\0" as *const u8 as *const libc::c_char,
@@ -1410,7 +1410,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+                b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                     as *const u8 as *const libc::c_char,
                 332 as libc::c_int,
                 b"countLinkedLoops(&polygon) == 1\0" as *const u8 as *const libc::c_char,
@@ -1426,7 +1426,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+                b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                     as *const u8 as *const libc::c_char,
                 334 as libc::c_int,
                 b"countLinkedCoords(polygon.first) == 30\0" as *const u8 as *const libc::c_char,
@@ -1453,7 +1453,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+                b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                     as *const u8 as *const libc::c_char,
                 354 as libc::c_int,
                 b"!(cellToCenterChild(baseCell, res, &origin))\0" as *const u8
@@ -1470,7 +1470,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+                b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                     as *const u8 as *const libc::c_char,
                 355 as libc::c_int,
                 b"!(gridDisk(origin, 1, diskIndexes))\0" as *const u8 as *const libc::c_char,
@@ -1496,7 +1496,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+                b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                     as *const u8 as *const libc::c_char,
                 361 as libc::c_int,
                 b"j == 6\0" as *const u8 as *const libc::c_char,
@@ -1518,7 +1518,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+                b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                     as *const u8 as *const libc::c_char,
                 366 as libc::c_int,
                 b"!(cellsToLinkedMultiPolygon(indexes, 6, &polygon))\0" as *const u8
@@ -1535,7 +1535,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+                b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                     as *const u8 as *const libc::c_char,
                 367 as libc::c_int,
                 b"countLinkedPolygons(&polygon) == 1\0" as *const u8 as *const libc::c_char,
@@ -1551,7 +1551,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+                b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                     as *const u8 as *const libc::c_char,
                 369 as libc::c_int,
                 b"countLinkedLoops(&polygon) == 1\0" as *const u8 as *const libc::c_char,
@@ -1567,7 +1567,7 @@ unsafe extern "C" fn runTests() {
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
+                b"src/apps/testapps/testCellsToLinkedMultiPolygon.c\0"
                     as *const u8 as *const libc::c_char,
                 371 as libc::c_int,
                 b"countLinkedCoords(polygon.first) == 15\0" as *const u8 as *const libc::c_char,

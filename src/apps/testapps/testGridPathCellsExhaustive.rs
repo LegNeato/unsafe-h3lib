@@ -104,7 +104,7 @@ unsafe extern "C" fn gridPathCells_assertions(mut start: H3Index, mut end: H3Ind
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridPathCellsExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testGridPathCellsExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             40 as libc::c_int,
             b"!(gridPathCellsSize(start, end, &sz))\0" as *const u8 as *const libc::c_char,
@@ -120,7 +120,7 @@ unsafe extern "C" fn gridPathCells_assertions(mut start: H3Index, mut end: H3Ind
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridPathCellsExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testGridPathCellsExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             41 as libc::c_int,
             b"sz > 0\0" as *const u8 as *const libc::c_char,
@@ -140,7 +140,7 @@ unsafe extern "C" fn gridPathCells_assertions(mut start: H3Index, mut end: H3Ind
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridPathCellsExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testGridPathCellsExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             44 as libc::c_int,
             b"!(gridPathCells(start, end, line))\0" as *const u8 as *const libc::c_char,
@@ -156,7 +156,7 @@ unsafe extern "C" fn gridPathCells_assertions(mut start: H3Index, mut end: H3Ind
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridPathCellsExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testGridPathCellsExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             46 as libc::c_int,
             b"line[0] == start\0" as *const u8 as *const libc::c_char,
@@ -172,7 +172,7 @@ unsafe extern "C" fn gridPathCells_assertions(mut start: H3Index, mut end: H3Ind
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridPathCellsExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testGridPathCellsExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             47 as libc::c_int,
             b"line[sz - 1] == end\0" as *const u8 as *const libc::c_char,
@@ -190,7 +190,7 @@ unsafe extern "C" fn gridPathCells_assertions(mut start: H3Index, mut end: H3Ind
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testGridPathCellsExhaustive.c\0"
+                b"src/apps/testapps/testGridPathCellsExhaustive.c\0"
                     as *const u8 as *const libc::c_char,
                 50 as libc::c_int,
                 b"H3_EXPORT(isValidCell)(line[i])\0" as *const u8 as *const libc::c_char,
@@ -212,7 +212,7 @@ unsafe extern "C" fn gridPathCells_assertions(mut start: H3Index, mut end: H3Ind
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testGridPathCellsExhaustive.c\0"
+                b"src/apps/testapps/testGridPathCellsExhaustive.c\0"
                     as *const u8 as *const libc::c_char,
                 53 as libc::c_int,
                 b"!(areNeighborCells(line[i], line[i - 1], &isNeighbor))\0" as *const u8
@@ -229,7 +229,7 @@ unsafe extern "C" fn gridPathCells_assertions(mut start: H3Index, mut end: H3Ind
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
                 currentSuiteName,
                 currentTestName,
-                b"/Users/legnitto/src/h3/src/apps/testapps/testGridPathCellsExhaustive.c\0"
+                b"src/apps/testapps/testGridPathCellsExhaustive.c\0"
                     as *const u8 as *const libc::c_char,
                 54 as libc::c_int,
                 b"isNeighbor\0" as *const u8 as *const libc::c_char,
@@ -252,7 +252,7 @@ unsafe extern "C" fn gridPathCells_assertions(mut start: H3Index, mut end: H3Ind
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"/Users/legnitto/src/h3/src/apps/testapps/testGridPathCellsExhaustive.c\0"
+                    b"src/apps/testapps/testGridPathCellsExhaustive.c\0"
                         as *const u8 as *const libc::c_char,
                     57 as libc::c_int,
                     b"!(areNeighborCells(line[i], line[i - 2], &isNeighbor))\0" as *const u8
@@ -270,7 +270,7 @@ unsafe extern "C" fn gridPathCells_assertions(mut start: H3Index, mut end: H3Ind
                         as *const libc::c_char,
                     currentSuiteName,
                     currentTestName,
-                    b"/Users/legnitto/src/h3/src/apps/testapps/testGridPathCellsExhaustive.c\0"
+                    b"src/apps/testapps/testGridPathCellsExhaustive.c\0"
                         as *const u8 as *const libc::c_char,
                     60 as libc::c_int,
                     b"!isNeighbor\0" as *const u8 as *const libc::c_char,
@@ -294,7 +294,7 @@ unsafe extern "C" fn gridPathCells_invalid_assertions(mut start: H3Index, mut en
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridPathCellsExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testGridPathCellsExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             73 as libc::c_int,
             b"H3_EXPORT(gridPathCellsSize)(start, end, &sz) != E_SUCCESS\0" as *const u8
@@ -313,7 +313,7 @@ unsafe extern "C" fn gridPathCells_invalid_assertions(mut start: H3Index, mut en
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridPathCellsExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testGridPathCellsExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             77 as libc::c_int,
             b"err != E_SUCCESS\0" as *const u8 as *const libc::c_char,
@@ -333,7 +333,7 @@ unsafe extern "C" fn gridPathCells_gridDisk_assertions(mut h3: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridPathCellsExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testGridPathCellsExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             85 as libc::c_int,
             b"r <= 5\0" as *const u8 as *const libc::c_char,
@@ -352,7 +352,7 @@ unsafe extern "C" fn gridPathCells_gridDisk_assertions(mut h3: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridPathCellsExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testGridPathCellsExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             89 as libc::c_int,
             b"!(maxGridDiskSize(maxK, &sz))\0" as *const u8 as *const libc::c_char,
@@ -375,7 +375,7 @@ unsafe extern "C" fn gridPathCells_gridDisk_assertions(mut h3: H3Index) {
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
             currentSuiteName,
             currentTestName,
-            b"/Users/legnitto/src/h3/src/apps/testapps/testGridPathCellsExhaustive.c\0" as *const u8
+            b"src/apps/testapps/testGridPathCellsExhaustive.c\0" as *const u8
                 as *const libc::c_char,
             96 as libc::c_int,
             b"!(gridDisk(h3, maxK, neighbors))\0" as *const u8 as *const libc::c_char,
