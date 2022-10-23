@@ -1,6 +1,4 @@
-extern crate unsafe_h3lib;
-extern crate unsafe_h3lib_applib;
-extern crate unsafe_h3lib_testapps_lib;
+extern crate unsafe_h3lib_testapps;
 
 use ::libc;
 use ::num_traits;

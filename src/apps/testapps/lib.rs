@@ -10,12 +10,9 @@
 #![register_tool(c2rust)]
 #![allow(clippy::missing_safety_doc)]
 
-extern crate libc;
 extern crate unsafe_h3lib;
 extern crate unsafe_h3lib_applib;
 
+// Symbols in these binaries are used by other test binaries.
 pub mod testH3CellArea;
 pub mod testH3Memory;
-//pub mod kml;
-//pub mod test;
-//pub mod utility;

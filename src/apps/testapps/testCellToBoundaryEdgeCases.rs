@@ -1,4 +1,4 @@
-extern crate unsafe_h3lib_applib;
+extern crate unsafe_h3lib_testapps;
 use ::libc;
 extern "C" {
 

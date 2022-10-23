@@ -7,7 +7,7 @@ edition = "2021"
 autobins = false
 
 [lib]
-name = "unsafe_h3lib_testapps_lib"
+name = "unsafe_h3lib_testapps"
 path = "lib.rs"
 crate-type = ["staticlib", "rlib"]
 
