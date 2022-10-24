@@ -1,3 +1,11 @@
+#![allow(dead_code)]
+#![allow(non_camel_case_types)]
+#![allow(non_snake_case)]
+#![allow(non_upper_case_globals)]
+#![allow(unused_assignments)]
+#![allow(unused_mut)]
+#![allow(clippy::missing_safety_doc)]
+
 extern crate unsafe_h3lib_benchmarks;
 use ::libc;
 extern "C" {
@@ -42,7 +50,7 @@ pub struct CellBoundary {
 pub static mut edges: [H3Index; 6] = [0 as libc::c_int as H3Index, 0, 0, 0, 0, 0];
 #[no_mangle]
 pub static mut hex: H3Index = 0x89283080ddbffff as libc::c_long as H3Index;
-unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> libc::c_int {
+unsafe fn main_0(mut _argc: libc::c_int, mut _argv: *mut *mut libc::c_char) -> libc::c_int {
     let mut outBoundary: CellBoundary = CellBoundary {
         numVerts: 0,
         verts: [LatLng { lat: 0., lng: 0. }; 10],

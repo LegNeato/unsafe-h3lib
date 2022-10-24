@@ -1,3 +1,11 @@
+#![allow(dead_code)]
+#![allow(non_camel_case_types)]
+#![allow(non_snake_case)]
+#![allow(non_upper_case_globals)]
+#![allow(unused_assignments)]
+#![allow(unused_mut)]
+#![allow(clippy::missing_safety_doc)]
+
 extern crate unsafe_h3lib_benchmarks;
 use ::libc;
 extern "C" {
@@ -120,7 +128,7 @@ pub static mut nestedDonuts: [H3Index; 24] = [
 ];
 #[no_mangle]
 pub static mut nestedDonutsCount: libc::c_int = 24 as libc::c_int;
-unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> libc::c_int {
+unsafe fn main_0(mut _argc: libc::c_int, mut _argv: *mut *mut libc::c_char) -> libc::c_int {
     let mut polygon: LinkedGeoPolygon = LinkedGeoPolygon {
         first: 0 as *mut LinkedGeoLoop,
         last: 0 as *mut LinkedGeoLoop,
@@ -193,9 +201,9 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
         elapsed_0.tv_sec -= 1;
         elapsed_0.tv_nsec = (1E9f64 + elapsed_0.tv_nsec as libc::c_double) as libc::c_long;
     }
-    let duration_0: f64 = ((elapsed_0.tv_sec as libc::c_double * 1E9f64
-        + elapsed_0.tv_nsec as libc::c_double)
-        / 1E3f64);
+    let duration_0: f64 = elapsed_0.tv_sec as libc::c_double * 1E9f64
+        + elapsed_0.tv_nsec as libc::c_double
+        / 1E3f64;
     printf(
         b"\t-- %s: %Lf microseconds per iteration (%d iterations)\n\0" as *const u8
             as *const libc::c_char,

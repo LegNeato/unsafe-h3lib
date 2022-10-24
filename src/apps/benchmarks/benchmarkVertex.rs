@@ -1,3 +1,11 @@
+#![allow(dead_code)]
+#![allow(non_camel_case_types)]
+#![allow(non_snake_case)]
+#![allow(non_upper_case_globals)]
+#![allow(unused_assignments)]
+#![allow(unused_mut)]
+#![allow(clippy::missing_safety_doc)]
+
 extern crate unsafe_h3lib_benchmarks;
 use ::libc;
 extern "C" {
@@ -76,7 +84,7 @@ pub static mut ring2Pent: [H3Index; 16] = [
 ];
 #[no_mangle]
 pub static mut ring2PentCount: libc::c_int = 16 as libc::c_int;
-unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> libc::c_int {
+unsafe fn main_0(mut _argc: libc::c_int, mut _argv: *mut *mut libc::c_char) -> libc::c_int {
     let mut vertexes: *mut H3Index = calloc(
         6 as libc::c_int as libc::c_ulong,
         ::core::mem::size_of::<H3Index>() as libc::c_ulong,

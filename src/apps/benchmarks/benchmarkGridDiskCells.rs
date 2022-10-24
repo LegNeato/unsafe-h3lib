@@ -1,3 +1,11 @@
+#![allow(dead_code)]
+#![allow(non_camel_case_types)]
+#![allow(non_snake_case)]
+#![allow(non_upper_case_globals)]
+#![allow(unused_assignments)]
+#![allow(unused_mut)]
+#![allow(clippy::missing_safety_doc)]
+
 extern crate unsafe_h3lib_benchmarks;
 use ::libc;
 extern "C" {
@@ -33,7 +41,7 @@ pub type H3Error = uint32_t;
 pub static mut hex: H3Index = 0x89283080ddbffff as libc::c_long as H3Index;
 #[no_mangle]
 pub static mut pentagon: H3Index = 0x89080000003ffff as libc::c_long as H3Index;
-unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> libc::c_int {
+unsafe fn main_0(mut _argc: libc::c_int, mut _argv: *mut *mut libc::c_char) -> libc::c_int {
     let mut outSz: int64_t = 0;
     if maxGridDiskSize(40 as libc::c_int, &mut outSz) != 0 {
         printf(b"Failed\n\0" as *const u8 as *const libc::c_char);
@@ -106,9 +114,9 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
         elapsed_0.tv_sec -= 1;
         elapsed_0.tv_nsec = (1E9f64 + elapsed_0.tv_nsec as libc::c_double) as libc::c_long;
     }
-    let duration_0: f64 = ((elapsed_0.tv_sec as libc::c_double * 1E9f64
+    let duration_0: f64 = (elapsed_0.tv_sec as libc::c_double * 1E9f64
         + elapsed_0.tv_nsec as libc::c_double)
-        / 1E3f64);
+        / 1E3f64;
     printf(
         b"\t-- %s: %Lf microseconds per iteration (%d iterations)\n\0" as *const u8
             as *const libc::c_char,

@@ -1,3 +1,11 @@
+#![allow(dead_code)]
+#![allow(non_camel_case_types)]
+#![allow(non_snake_case)]
+#![allow(non_upper_case_globals)]
+#![allow(unused_assignments)]
+#![allow(unused_mut)]
+#![allow(clippy::missing_safety_doc)]
+
 extern crate unsafe_h3lib_benchmarks;
 use ::libc;
 extern "C" {
@@ -35,7 +43,7 @@ pub static mut startIndex: H3Index = 0x89283082803ffff as libc::c_long as H3Inde
 pub static mut endNear: H3Index = 0x892830814b3ffff as libc::c_long as H3Index;
 #[no_mangle]
 pub static mut endFar: H3Index = 0x8929a5653c3ffff as libc::c_long as H3Index;
-unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> libc::c_int {
+unsafe fn main_0(mut _argc: libc::c_int, mut _argv: *mut *mut libc::c_char) -> libc::c_int {
     let mut size: int64_t = 0;
     gridPathCellsSize(startIndex, endFar, &mut size);
     let mut out: *mut H3Index = calloc(

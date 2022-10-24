@@ -1,3 +1,11 @@
+#![allow(dead_code)]
+#![allow(non_camel_case_types)]
+#![allow(non_snake_case)]
+#![allow(non_upper_case_globals)]
+#![allow(unused_assignments)]
+#![allow(unused_mut)]
+#![allow(clippy::missing_safety_doc)]
+
 extern crate unsafe_h3lib_benchmarks;
 use ::libc;
 extern "C" {
@@ -78,7 +86,7 @@ pub static mut ca: CellArray = CellArray {
     cells: 0 as *mut H3Index,
     N: 0,
 };
-unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> libc::c_int {
+unsafe fn main_0(mut _argc: libc::c_int, mut _argv: *mut *mut libc::c_char) -> libc::c_int {
     ca = pentagonSetup(2 as libc::c_int, 8 as libc::c_int, 0 as libc::c_int);
     let iterations: libc::c_int = 1000 as libc::c_int;
     let mut name: *const libc::c_char =

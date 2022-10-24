@@ -1,3 +1,11 @@
+#![allow(dead_code)]
+#![allow(non_camel_case_types)]
+#![allow(non_snake_case)]
+#![allow(non_upper_case_globals)]
+#![allow(unused_assignments)]
+#![allow(unused_mut)]
+#![allow(clippy::missing_safety_doc)]
+
 extern crate unsafe_h3lib_benchmarks;
 use ::libc;
 extern "C" {
@@ -770,7 +778,7 @@ pub static mut largeBBox: BBox = BBox {
     east: 0.,
     west: 0.,
 };
-unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> libc::c_int {
+unsafe fn main_0(mut _argc: libc::c_int, mut _argv: *mut *mut libc::c_char) -> libc::c_int {
     smallGeoLoop.numVerts = 6 as libc::c_int;
     smallGeoLoop.verts = smallVerts.as_mut_ptr();
     bboxFromGeoLoop(&mut smallGeoLoop, &mut smallBBox);
