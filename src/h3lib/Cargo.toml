@@ -1,9 +1,7 @@
-
 [package]
 name = "unsafe-h3lib"
-authors = ["C2Rust"]
-version = "0.0.0"
-publish = false
+authors = ["Christian Legnitto <christian@legnitto.com>", "C2Rust"]
+version = "0.0.1"
 edition = "2021"
 autobins = false
 
@@ -13,5 +11,5 @@ path = "lib/lib.rs"
 crate-type = ["staticlib", "rlib"]
 
 [dependencies]
-num-traits= "0.2"
-libc= "0.2"
+num-traits = "0.2"
+libc = "0.2"

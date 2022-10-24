@@ -1,6 +1,6 @@
 [package]
 name = "unsafe-h3lib-applib"
-authors = ["C2Rust"]
+authors = ["Christian Legnitto <christian@legnitto.com>", "C2Rust"]
 version = "0.0.0"
 publish = false
 edition = "2021"
