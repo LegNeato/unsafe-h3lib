@@ -1,3 +1,4 @@
+extern crate unsafe_h3lib_fuzzers;
 use ::libc;
 extern "C" {
     

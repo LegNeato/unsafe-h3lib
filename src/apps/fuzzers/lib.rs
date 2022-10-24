@@ -7,5 +7,5 @@
 extern crate unsafe_h3lib;
 extern crate unsafe_h3lib_applib;
 
-// The filters depend on testapp functions.
+// The fuzzers depend on testapp functions.
 extern crate unsafe_h3lib_testapps;

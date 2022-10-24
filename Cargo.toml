@@ -4,6 +4,7 @@ members = [
    "src/apps/applib",
    "src/apps/benchmarks",
    "src/apps/filters",
+   "src/apps/fuzzers",
    "src/apps/miscapps",
    "src/apps/testapps",
 ]
