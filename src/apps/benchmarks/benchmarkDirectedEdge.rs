@@ -80,7 +80,7 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
         elapsed.tv_sec -= 1;
         elapsed.tv_nsec = (1E9f64 + elapsed.tv_nsec as libc::c_double) as libc::c_long;
     }
-    let duration: f64 = 
+    let duration: f64 =
         (elapsed.tv_sec as libc::c_double * 1E9f64 + elapsed.tv_nsec as libc::c_double) / 1E3f64;
     printf(
         b"\t-- %s: %Lf microseconds per iteration (%d iterations)\n\0" as *const u8

@@ -1,0 +1,55 @@
+[package]
+name = "unsafe-h3lib-filters"
+authors = ["C2Rust"]
+version = "0.0.0"
+publish = false
+edition = "2021"
+autobins = false
+
+[lib]
+name = "unsafe_h3lib_filters"
+path = "lib.rs"
+crate-type = ["staticlib", "rlib"]
+
+[dependencies]
+unsafe-h3lib = { version = "*", path = "../../h3lib" }
+unsafe-h3lib-applib = { version = "*", path = "../applib" }
+unsafe-h3lib-testapps = { version = "*", path = "../testapps" }
+num-traits = "0.2"
+libc = "0.2"
+
+[[bin]]
+name = "cellToBoundary"
+path = "cellToBoundary.rs"
+
+[[bin]]
+name = "cellToLatLng"
+path = "cellToLatLng.rs"
+
+[[bin]]
+name = "cellToLocalIj"
+path = "cellToLocalIj.rs"
+
+[[bin]]
+name = "gridDisk"
+path = "gridDisk.rs"
+
+[[bin]]
+name = "gridDiskUnsafe"
+path = "gridDiskUnsafe.rs"
+
+[[bin]]
+name = "h3"
+path = "h3.rs"
+
+[[bin]]
+name = "h3ToComponents"
+path = "h3ToComponents.rs"
+
+[[bin]]
+name = "latLngToCell"
+path = "latLngToCell.rs"
+
+[[bin]]
+name = "localIjToCell"
+path = "localIjToCell.rs"

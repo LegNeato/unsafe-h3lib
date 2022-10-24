@@ -1,3 +1,4 @@
+extern crate unsafe_h3lib_filters;
 use ::libc;
 extern "C" {
     fn strcasecmp(_: *const libc::c_char, _: *const libc::c_char) -> libc::c_int;

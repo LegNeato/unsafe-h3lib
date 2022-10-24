@@ -1,6 +1,7 @@
+extern crate unsafe_h3lib_filters;
 use ::libc;
 extern "C" {
-    
+
     static mut __stdinp: *mut FILE;
     static mut __stderrp: *mut FILE;
     fn feof(_: *mut FILE) -> libc::c_int;

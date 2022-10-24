@@ -3,6 +3,7 @@ members = [
    "src/h3lib",
    "src/apps/applib",
    "src/apps/benchmarks",
+   "src/apps/filters",
    "src/apps/miscapps",
    "src/apps/testapps",
 ]

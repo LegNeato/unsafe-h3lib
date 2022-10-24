@@ -1,4 +1,3 @@
-
 extern crate unsafe_h3lib_benchmarks;
 use ::libc;
 extern "C" {
@@ -84,7 +83,7 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
         elapsed.tv_sec -= 1;
         elapsed.tv_nsec = (1E9f64 + elapsed.tv_nsec as libc::c_double) as libc::c_long;
     }
-    let duration: f64 = 
+    let duration: f64 =
         (elapsed.tv_sec as libc::c_double * 1E9f64 + elapsed.tv_nsec as libc::c_double) / 1E3f64;
     printf(
         b"\t-- %s: %Lf microseconds per iteration (%d iterations)\n\0" as *const u8
@@ -120,9 +119,9 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
         elapsed_0.tv_sec -= 1;
         elapsed_0.tv_nsec = (1E9f64 + elapsed_0.tv_nsec as libc::c_double) as libc::c_long;
     }
-    let duration_0: f64 = 
-        (elapsed_0.tv_sec as libc::c_double * 1E9f64 + elapsed_0.tv_nsec as libc::c_double)
-            / 1E3f64;
+    let duration_0: f64 = (elapsed_0.tv_sec as libc::c_double * 1E9f64
+        + elapsed_0.tv_nsec as libc::c_double)
+        / 1E3f64;
     printf(
         b"\t-- %s: %Lf microseconds per iteration (%d iterations)\n\0" as *const u8
             as *const libc::c_char,
@@ -157,9 +156,9 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
         elapsed_1.tv_sec -= 1;
         elapsed_1.tv_nsec = (1E9f64 + elapsed_1.tv_nsec as libc::c_double) as libc::c_long;
     }
-    let duration_1: f64 = 
-        (elapsed_1.tv_sec as libc::c_double * 1E9f64 + elapsed_1.tv_nsec as libc::c_double)
-            / 1E3f64;
+    let duration_1: f64 = (elapsed_1.tv_sec as libc::c_double * 1E9f64
+        + elapsed_1.tv_nsec as libc::c_double)
+        / 1E3f64;
     printf(
         b"\t-- %s: %Lf microseconds per iteration (%d iterations)\n\0" as *const u8
             as *const libc::c_char,
