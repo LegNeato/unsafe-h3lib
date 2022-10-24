@@ -1,6 +1,7 @@
+extern crate unsafe_h3lib_miscapps;
 use ::libc;
 extern "C" {
-    
+
     fn exit(_: libc::c_int) -> !;
     fn _baseCellToFaceIjk(baseCell: libc::c_int, h: *mut FaceIJK);
     fn _faceIjkToBaseCellCCWrot60(h: *const FaceIJK) -> libc::c_int;

@@ -1,0 +1,42 @@
+[package]
+name = "unsafe-h3lib-miscapps"
+authors = ["C2Rust"]
+version = "0.0.0"
+publish = false
+edition = "2021"
+autobins = false
+
+[lib]
+name = "unsafe_h3lib_miscapps"
+path = "lib.rs"
+crate-type = ["staticlib", "rlib"]
+
+[dependencies]
+unsafe-h3lib = { version = "*", path = "../../h3lib" }
+unsafe-h3lib-applib = { version = "*", path = "../applib" }
+num-traits = "0.2"
+libc = "0.2"
+
+[[bin]]
+name = "cellToBoundaryHier"
+path = "cellToBoundaryHier.rs"
+
+[[bin]]
+name = "cellToLatLngHier"
+path = "cellToLatLngHier.rs"
+
+[[bin]]
+name = "generateBaseCellNeighbors"
+path = "generateBaseCellNeighbors.rs"
+
+[[bin]]
+name = "generateFaceCenterPoint"
+path = "generateFaceCenterPoint.rs"
+
+[[bin]]
+name = "generatePentagonDirectionFaces"
+path = "generatePentagonDirectionFaces.rs"
+
+[[bin]]
+name = "h3ToHier"
+path = "h3ToHier.rs"

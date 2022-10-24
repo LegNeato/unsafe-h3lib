@@ -1,6 +1,7 @@
+extern crate unsafe_h3lib_miscapps;
 use ::libc;
 extern "C" {
-    
+
     static mut __stderrp: *mut FILE;
     fn isValidCell(h: H3Index) -> libc::c_int;
     fn isPentagon(h: H3Index) -> libc::c_int;

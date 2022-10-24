@@ -1,6 +1,7 @@
+extern crate unsafe_h3lib_miscapps;
 use ::libc;
 extern "C" {
-    
+
     static mut __stderrp: *mut FILE;
     fn printf(_: *const libc::c_char, _: ...) -> libc::c_int;
     fn sprintf(_: *mut libc::c_char, _: *const libc::c_char, _: ...) -> libc::c_int;
