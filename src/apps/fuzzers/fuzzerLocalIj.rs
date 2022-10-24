@@ -1,7 +1,7 @@
 extern crate unsafe_h3lib_fuzzers;
 use ::libc;
 extern "C" {
-    
+
     fn strcmp(_: *const libc::c_char, _: *const libc::c_char) -> libc::c_int;
     fn fclose(_: *mut FILE) -> libc::c_int;
     fn fopen(_: *const libc::c_char, _: *const libc::c_char) -> *mut FILE;
