@@ -1,4 +1,5 @@
 
+extern crate unsafe_h3lib_benchmarks;
 use ::libc;
 extern "C" {
     fn printf(_: *const libc::c_char, _: ...) -> libc::c_int;

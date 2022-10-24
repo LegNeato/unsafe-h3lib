@@ -1,3 +1,4 @@
+extern crate unsafe_h3lib_benchmarks;
 use ::libc;
 extern "C" {
     fn cellsToLinkedMultiPolygon(

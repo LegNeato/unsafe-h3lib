@@ -1,3 +1,4 @@
+extern crate unsafe_h3lib_benchmarks;
 use ::libc;
 extern "C" {
     fn clock_gettime(__clock_id: clockid_t, __tp: *mut timespec) -> libc::c_int;

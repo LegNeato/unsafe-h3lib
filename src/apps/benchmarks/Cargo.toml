@@ -1,0 +1,55 @@
+[package]
+name = "unsafe-h3lib-benchmarks"
+authors = ["C2Rust"]
+version = "0.0.0"
+publish = false
+edition = "2021"
+autobins = false
+
+[lib]
+name = "unsafe_h3lib_benchmarks"
+path = "lib.rs"
+crate-type = ["staticlib", "rlib"]
+
+[dependencies]
+unsafe-h3lib = { version = "*", path = "../../h3lib" }
+unsafe-h3lib-applib = { version = "*", path = "../applib" }
+unsafe-h3lib-testapps = { version = "*", path = "../testapps" }
+num-traits = "0.2"
+libc = "0.2"
+
+[[bin]]
+name = "benchmarkCellsToLinkedMultiPolygon"
+path = "benchmarkCellsToLinkedMultiPolygon.rs"
+
+[[bin]]
+name = "benchmarkDirectedEdge"
+path = "benchmarkDirectedEdge.rs"
+
+[[bin]]
+name = "benchmarkGridDiskCells"
+path = "benchmarkGridDiskCells.rs"
+
+[[bin]]
+name = "benchmarkGridPathCells"
+path = "benchmarkGridPathCells.rs"
+
+[[bin]]
+name = "benchmarkH3Api"
+path = "benchmarkH3Api.rs"
+
+[[bin]]
+name = "benchmarkIsValidCell"
+path = "benchmarkIsValidCell.rs"
+
+[[bin]]
+name = "benchmarkPolygon"
+path = "benchmarkPolygon.rs"
+
+[[bin]]
+name = "benchmarkPolygonToCells"
+path = "benchmarkPolygonToCells.rs"
+
+[[bin]]
+name = "benchmarkVertex"
+path = "benchmarkVertex.rs"
