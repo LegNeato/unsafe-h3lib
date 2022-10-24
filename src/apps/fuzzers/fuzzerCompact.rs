@@ -115,7 +115,7 @@ pub unsafe extern "C" fn generateTestCase(
             as size_t as size_t;
     }
     fclose(fp);
-    return 0 as libc::c_int;
+    0 as libc::c_int
 }
 #[no_mangle]
 pub static mut MAX_UNCOMPACT_RES: libc::c_int = 9 as libc::c_int;
@@ -165,7 +165,7 @@ pub unsafe extern "C" fn LLVMFuzzerTestOneInput(
         );
         free(uncompacted as *mut libc::c_void);
     }
-    return 0 as libc::c_int;
+    0 as libc::c_int
 }
 unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> libc::c_int {
     if argc == 3 as libc::c_int {
@@ -208,11 +208,11 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
         error(b"Error reading test case file\n\0" as *const u8 as *const libc::c_char);
     }
     fclose(fp);
-    return LLVMFuzzerTestOneInput(
+    LLVMFuzzerTestOneInput(
         data.as_mut_ptr(),
         (::core::mem::size_of::<H3Index>() as libc::c_ulong)
             .wrapping_mul(1024 as libc::c_int as libc::c_ulong),
-    );
+    )
 }
 pub fn main() {
     let mut args: Vec<*mut libc::c_char> = Vec::new();
@@ -228,6 +228,6 @@ pub fn main() {
         ::std::process::exit(main_0(
             (args.len() - 1) as libc::c_int,
             args.as_mut_ptr() as *mut *mut libc::c_char,
-        ) as i32)
+        ))
     }
 }

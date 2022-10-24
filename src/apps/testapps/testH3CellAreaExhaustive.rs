@@ -630,8 +630,7 @@ unsafe extern "C" fn runTests() {
         Some(cell_area_assert as unsafe extern "C" fn(H3Index) -> ()),
     );
     currentTestName = b"cell_area_earth\0" as *const u8 as *const libc::c_char;
-    let mut rads2: libc::c_double =
-        4 as libc::c_int as libc::c_double * 3.14159265358979323846264338327950288f64;
+    let mut rads2: libc::c_double = 4 as libc::c_int as libc::c_double * std::f64::consts::PI;
     let mut km2: libc::c_double = (rads2 * 6371.007180918475 * 6371.007180918475)
         .to_f64()
         .unwrap();
@@ -739,8 +738,8 @@ unsafe fn main_0() -> libc::c_int {
         b"\nDONE: %d assertions\n\0" as *const u8 as *const libc::c_char,
         globalTestCount,
     );
-    return 0 as libc::c_int;
+    0 as libc::c_int
 }
 pub fn main() {
-    unsafe { ::std::process::exit(main_0() as i32) }
+    unsafe { ::std::process::exit(main_0()) }
 }

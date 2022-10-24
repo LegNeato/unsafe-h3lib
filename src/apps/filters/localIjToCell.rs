@@ -114,14 +114,13 @@ pub unsafe extern "C" fn doCell(mut ij: *const CoordIJ, mut origin: H3Index) {
 unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> libc::c_int {
     let mut origin: H3Index = 0 as libc::c_int as H3Index;
     let mut ij: CoordIJ = {
-        let mut init = CoordIJ {
+        CoordIJ {
             i: 0 as libc::c_int,
             j: 0,
-        };
-        init
+        }
     };
     let mut helpArg: Arg = {
-        let mut init = Arg {
+        Arg {
             names: [
                 b"-h\0" as *const u8 as *const libc::c_char,
                 b"--help\0" as *const u8 as *const libc::c_char,
@@ -129,14 +128,13 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
             required: false,
             scanFormat: std::ptr::null::<libc::c_char>(),
             valueName: std::ptr::null::<libc::c_char>(),
-            value: 0 as *mut libc::c_void,
+            value: std::ptr::null_mut::<libc::c_void>(),
             found: false,
             helpText: b"Show this help message.\0" as *const u8 as *const libc::c_char,
-        };
-        init
+        }
     };
     let mut originArg: Arg = {
-        let mut init = Arg {
+        Arg {
             names: [
                 b"-o\0" as *const u8 as *const libc::c_char,
                 b"--origin\0" as *const u8 as *const libc::c_char,
@@ -148,11 +146,10 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
             found: false,
             helpText: b"Origin (anchoring index) for the local coordinate system.\0" as *const u8
                 as *const libc::c_char,
-        };
-        init
+        }
     };
     let mut iArg: Arg = {
-        let mut init = Arg {
+        Arg {
             names: [
                 b"-i\0" as *const u8 as *const libc::c_char,
                 std::ptr::null::<libc::c_char>(),
@@ -165,11 +162,10 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
             helpText:
                 b"I coordinate. If not specified \"i j\" pairs will be read from standard input.\0"
                     as *const u8 as *const libc::c_char,
-        };
-        init
+        }
     };
     let mut jArg: Arg = {
-        let mut init = Arg {
+        Arg {
             names: [
                 b"-j\0" as *const u8 as *const libc::c_char,
                 std::ptr::null::<libc::c_char>(),
@@ -180,8 +176,7 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
             value: &mut ij.j as *mut libc::c_int as *mut libc::c_void,
             found: false,
             helpText: b"J coordinate.\0" as *const u8 as *const libc::c_char,
-        };
-        init
+        }
     };
     let mut args: [*mut Arg; 4] = [&mut helpArg, &mut originArg, &mut iArg, &mut jArg];
     let numArgs: libc::c_int = 4 as libc::c_int;
@@ -252,7 +247,7 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
             doCell(&mut ij, origin);
         }
     }
-    return 0;
+    0
 }
 pub fn main() {
     let mut args: Vec<*mut libc::c_char> = Vec::new();
@@ -268,6 +263,6 @@ pub fn main() {
         ::std::process::exit(main_0(
             (args.len() - 1) as libc::c_int,
             args.as_mut_ptr() as *mut *mut libc::c_char,
-        ) as i32)
+        ))
     }
 }

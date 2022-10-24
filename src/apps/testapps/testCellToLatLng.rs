@@ -86,9 +86,7 @@ pub struct LatLng {
 }
 #[no_mangle]
 pub unsafe extern "C" fn assertExpected(mut h1: H3Index, mut g1: *const LatLng) {
-    let epsilon: libc::c_double = (0.000001f64 * 0.0174532925199432957692369076848861271111)
-        .to_f64()
-        .unwrap();
+    let epsilon: libc::c_double = (0.000001f64 * 0.017_453_292_519_943_295).to_f64().unwrap();
     let mut g2: LatLng = LatLng { lat: 0., lng: 0. };
     cellToLatLng(h1, &mut g2);
     if !geoAlmostEqualThreshold(&mut g2, g1, epsilon) {
@@ -123,7 +121,7 @@ pub unsafe extern "C" fn assertExpected(mut h1: H3Index, mut g1: *const LatLng) 
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(h1 == h2) {
+    if h1 != h2 {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -192,7 +190,7 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
         setGeoDegs(&mut coord, latDegs, lngDegs);
         assertExpected(h3, &mut coord);
     }
-    return 0;
+    0
 }
 pub fn main() {
     let mut args: Vec<*mut libc::c_char> = Vec::new();
@@ -208,6 +206,6 @@ pub fn main() {
         ::std::process::exit(main_0(
             (args.len() - 1) as libc::c_int,
             args.as_mut_ptr() as *mut *mut libc::c_char,
-        ) as i32)
+        ))
     }
 }

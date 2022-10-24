@@ -49,11 +49,10 @@ pub struct CellBoundary {
 }
 #[no_mangle]
 pub static mut coord: LatLng = {
-    let mut init = LatLng {
+    LatLng {
         lat: 0.659966917655f64,
         lng: -2.1364398519396f64,
-    };
-    init
+    }
 };
 #[no_mangle]
 pub static mut hex: H3Index = 0x89283080ddbffff as libc::c_long as H3Index;
@@ -174,7 +173,7 @@ unsafe fn main_0(mut _argc: libc::c_int, mut _argv: *mut *mut libc::c_char) -> l
         duration_1 / iterations_1 as f64,
         iterations_1,
     );
-    return 0;
+    0
 }
 pub fn main() {
     let mut args: Vec<*mut libc::c_char> = Vec::new();
@@ -190,6 +189,6 @@ pub fn main() {
         ::std::process::exit(main_0(
             (args.len() - 1) as libc::c_int,
             args.as_mut_ptr() as *mut *mut libc::c_char,
-        ) as i32)
+        ))
     }
 }

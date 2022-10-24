@@ -124,7 +124,7 @@ unsafe fn main_0(mut _argc: libc::c_int, mut _argv: *mut *mut libc::c_char) -> l
         iterations_0,
     );
     free(out as *mut libc::c_void);
-    return 0;
+    0
 }
 pub fn main() {
     let mut args: Vec<*mut libc::c_char> = Vec::new();
@@ -140,6 +140,6 @@ pub fn main() {
         ::std::process::exit(main_0(
             (args.len() - 1) as libc::c_int,
             args.as_mut_ptr() as *mut *mut libc::c_char,
-        ) as i32)
+        ))
     }
 }

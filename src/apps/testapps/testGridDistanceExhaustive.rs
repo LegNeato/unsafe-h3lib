@@ -122,7 +122,7 @@ unsafe extern "C" fn gridDistance_identity_assertions(mut h3: H3Index) {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(distance == 0 as libc::c_int as libc::c_longlong) {
+    if distance != 0 as libc::c_int as libc::c_longlong {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -141,7 +141,7 @@ unsafe extern "C" fn gridDistance_identity_assertions(mut h3: H3Index) {
 unsafe extern "C" fn gridDistance_gridDisk_assertions(mut h3: H3Index) {
     let mut r: libc::c_int =
         ((h3 & (15 as libc::c_ulonglong) << 52 as libc::c_int) >> 52 as libc::c_int) as libc::c_int;
-    if !(r <= 5 as libc::c_int) {
+    if r > 5 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -200,12 +200,12 @@ unsafe extern "C" fn gridDistance_gridDisk_assertions(mut h3: H3Index) {
     printf(b".\0" as *const u8 as *const libc::c_char);
     let mut i: int64_t = 0 as libc::c_int as int64_t;
     while i < sz {
-        if !(*neighbors.offset(i as isize) == 0 as libc::c_int as libc::c_ulonglong) {
+        if *neighbors.offset(i as isize) != 0 as libc::c_int as libc::c_ulonglong {
             let mut calculatedDistance: int64_t = 0;
             let mut calculatedError: H3Error =
                 gridDistance(h3, *neighbors.offset(i as isize), &mut calculatedDistance);
             if calculatedError == E_SUCCESS as libc::c_int as libc::c_uint {
-                if !(calculatedDistance == *distances.offset(i as isize) as libc::c_longlong) {
+                if calculatedDistance != *distances.offset(i as isize) as libc::c_longlong {
                     fprintf(
                         __stderrp,
                         b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8
@@ -274,8 +274,8 @@ unsafe fn main_0() -> libc::c_int {
         b"\nDONE: %d assertions\n\0" as *const u8 as *const libc::c_char,
         globalTestCount,
     );
-    return 0 as libc::c_int;
+    0 as libc::c_int
 }
 pub fn main() {
-    unsafe { ::std::process::exit(main_0() as i32) }
+    unsafe { ::std::process::exit(main_0()) }
 }

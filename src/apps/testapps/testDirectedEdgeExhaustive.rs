@@ -115,7 +115,7 @@ unsafe extern "C" fn directedEdge_correctness_assertions(mut h3: H3Index) {
     let mut i: libc::c_int = 0 as libc::c_int;
     while i < 6 as libc::c_int {
         if pentagon != 0 && i == 0 as libc::c_int {
-            if !(edges[i as usize] == 0 as libc::c_int as libc::c_ulonglong) {
+            if edges[i as usize] != 0 as libc::c_int as libc::c_ulonglong {
                 fprintf(
                     __stderrp,
                     b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8
@@ -133,7 +133,7 @@ unsafe extern "C" fn directedEdge_correctness_assertions(mut h3: H3Index) {
             globalTestCount += 1;
             printf(b".\0" as *const u8 as *const libc::c_char);
         } else {
-            if !(isValidDirectedEdge(edges[i as usize]) == 1 as libc::c_int) {
+            if isValidDirectedEdge(edges[i as usize]) != 1 as libc::c_int {
                 fprintf(
                     __stderrp,
                     b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8
@@ -170,7 +170,7 @@ unsafe extern "C" fn directedEdge_correctness_assertions(mut h3: H3Index) {
             }
             globalTestCount += 1;
             printf(b".\0" as *const u8 as *const libc::c_char);
-            if !(origin == h3) {
+            if origin != h3 {
                 fprintf(
                     __stderrp,
                     b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8
@@ -275,7 +275,7 @@ unsafe extern "C" fn directedEdge_boundary_assertions(mut h3: H3Index) {
     };
     let mut i: libc::c_int = 0 as libc::c_int;
     while i < 6 as libc::c_int {
-        if !(edges[i as usize] == 0 as libc::c_int as libc::c_ulonglong) {
+        if edges[i as usize] != 0 as libc::c_int as libc::c_ulonglong {
             if directedEdgeToBoundary(edges[i as usize], &mut edgeBoundary) != 0 {
                 fprintf(
                     __stderrp,
@@ -348,7 +348,7 @@ unsafe extern "C" fn directedEdge_boundary_assertions(mut h3: H3Index) {
             }
             globalTestCount += 1;
             printf(b".\0" as *const u8 as *const libc::c_char);
-            if !(edgeBoundary.numVerts == revEdgeBoundary.numVerts) {
+            if edgeBoundary.numVerts != revEdgeBoundary.numVerts {
                 fprintf(
                     __stderrp,
                     b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8
@@ -473,8 +473,8 @@ unsafe fn main_0() -> libc::c_int {
         b"\nDONE: %d assertions\n\0" as *const u8 as *const libc::c_char,
         globalTestCount,
     );
-    return 0 as libc::c_int;
+    0 as libc::c_int
 }
 pub fn main() {
-    unsafe { ::std::process::exit(main_0() as i32) }
+    unsafe { ::std::process::exit(main_0()) }
 }

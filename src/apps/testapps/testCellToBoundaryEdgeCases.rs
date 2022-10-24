@@ -95,11 +95,10 @@ unsafe extern "C" fn runTests() {
     currentTestName = b"doublePrecisionVertex\0" as *const u8 as *const libc::c_char;
     let mut cell: H3Index = 0x81083ffffffffff as libc::c_long as H3Index;
     let mut point: LatLng = {
-        let mut init = LatLng {
+        LatLng {
             lat: degsToRads(61.890838431f64),
             lng: degsToRads(8.644221328f64),
-        };
-        init
+        }
     };
     let mut boundary: CellBoundary = CellBoundary {
         numVerts: 0,
@@ -123,11 +122,10 @@ unsafe extern "C" fn runTests() {
     printf(b".\0" as *const u8 as *const libc::c_char);
     let mut verts: *mut LatLng = (boundary.verts).as_mut_ptr();
     let mut geoloop: GeoLoop = {
-        let mut init = GeoLoop {
+        GeoLoop {
             numVerts: boundary.numVerts,
-            verts: verts,
-        };
-        init
+            verts,
+        }
     };
     let mut bbox: BBox = BBox {
         north: 0.,
@@ -202,8 +200,8 @@ unsafe fn main_0() -> libc::c_int {
         b"\nDONE: %d assertions\n\0" as *const u8 as *const libc::c_char,
         globalTestCount,
     );
-    return 0 as libc::c_int;
+    0 as libc::c_int
 }
 pub fn main() {
-    unsafe { ::std::process::exit(main_0() as i32) }
+    unsafe { ::std::process::exit(main_0()) }
 }

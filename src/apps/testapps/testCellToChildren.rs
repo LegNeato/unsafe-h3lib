@@ -86,7 +86,7 @@ pub type FILE = __sFILE;
 unsafe extern "C" fn assertNoDuplicates(mut cells: *mut H3Index, mut n: libc::c_int) {
     let mut i: libc::c_int = 0 as libc::c_int;
     while i < n {
-        if !(*cells.offset(i as isize) == 0 as libc::c_int as libc::c_ulonglong) {
+        if *cells.offset(i as isize) != 0 as libc::c_int as libc::c_ulonglong {
             if isValidCell(*cells.offset(i as isize)) == 0 {
                 fprintf(
                     __stderrp,
@@ -105,7 +105,7 @@ unsafe extern "C" fn assertNoDuplicates(mut cells: *mut H3Index, mut n: libc::c_
             printf(b".\0" as *const u8 as *const libc::c_char);
             let mut j: libc::c_int = i + 1 as libc::c_int;
             while j < n {
-                if !(*cells.offset(i as isize) != *cells.offset(j as isize)) {
+                if *cells.offset(i as isize) == *cells.offset(j as isize) {
                     fprintf(
                         __stderrp,
                         b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8
@@ -137,7 +137,7 @@ unsafe extern "C" fn assertSubset(
     assertNoDuplicates(set1, len1);
     let mut i: libc::c_int = 0 as libc::c_int;
     while i < len1 {
-        if !(*set1.offset(i as isize) == 0 as libc::c_int as libc::c_ulonglong) {
+        if *set1.offset(i as isize) != 0 as libc::c_int as libc::c_ulonglong {
             let mut present: bool = 0 as libc::c_int != 0;
             let mut j: libc::c_int = 0 as libc::c_int;
             while j < len2 {
@@ -186,7 +186,7 @@ unsafe extern "C" fn checkChildren(
 ) {
     let mut numChildren: int64_t = 0;
     let mut numChildrenError: H3Error = cellToChildrenSize(h, res, &mut numChildren);
-    if !(numChildrenError == expectedError) {
+    if numChildrenError != expectedError {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -417,8 +417,8 @@ unsafe fn main_0() -> libc::c_int {
         b"\nDONE: %d assertions\n\0" as *const u8 as *const libc::c_char,
         globalTestCount,
     );
-    return 0 as libc::c_int;
+    0 as libc::c_int
 }
 pub fn main() {
-    unsafe { ::std::process::exit(main_0() as i32) }
+    unsafe { ::std::process::exit(main_0()) }
 }

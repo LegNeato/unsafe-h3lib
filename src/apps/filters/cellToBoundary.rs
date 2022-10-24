@@ -119,7 +119,7 @@ pub unsafe extern "C" fn doCell(mut h: H3Index, mut isKmlOut: libc::c_int) {
 }
 unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> libc::c_int {
     let mut helpArg: Arg = {
-        let mut init = Arg {
+        Arg {
             names: [
                 b"-h\0" as *const u8 as *const libc::c_char,
                 b"--help\0" as *const u8 as *const libc::c_char,
@@ -127,15 +127,14 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
             required: false,
             scanFormat: std::ptr::null::<libc::c_char>(),
             valueName: std::ptr::null::<libc::c_char>(),
-            value: 0 as *mut libc::c_void,
+            value: std::ptr::null_mut::<libc::c_void>(),
             found: false,
             helpText: b"Show this help message.\0" as *const u8 as *const libc::c_char,
-        };
-        init
+        }
     };
     let mut index: H3Index = 0 as libc::c_int as H3Index;
     let mut indexArg: Arg = {
-        let mut init = Arg {
+        Arg {
             names: [
                 b"-i\0" as *const u8 as *const libc::c_char,
                 b"--index\0" as *const u8 as *const libc::c_char,
@@ -147,11 +146,10 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
             found: false,
             helpText: b"Index, or not specified to read indexes from standard input.\0" as *const u8
                 as *const libc::c_char,
-        };
-        init
+        }
     };
     let mut kmlArg: Arg = {
-        let mut init = Arg {
+        Arg {
             names: [
                 b"-k\0" as *const u8 as *const libc::c_char,
                 b"--kml\0" as *const u8 as *const libc::c_char,
@@ -159,11 +157,10 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
             required: false,
             scanFormat: std::ptr::null::<libc::c_char>(),
             valueName: std::ptr::null::<libc::c_char>(),
-            value: 0 as *mut libc::c_void,
+            value: std::ptr::null_mut::<libc::c_void>(),
             found: false,
             helpText: b"Print output in KML format.\0" as *const u8 as *const libc::c_char,
-        };
-        init
+        }
     };
     let mut userKmlName: [libc::c_char; 256] = [
         0 as libc::c_int as libc::c_char,
@@ -424,7 +421,7 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
         0,
     ];
     let mut kmlNameArg: Arg = {
-        let mut init = Arg {
+        Arg {
             names: [
                 b"--kn\0" as *const u8 as *const libc::c_char,
                 b"--kml-name\0" as *const u8 as *const libc::c_char,
@@ -436,8 +433,7 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
             found: false,
             helpText: b"Text for the KML name tag, if --kml is specified.\0" as *const u8
                 as *const libc::c_char,
-        };
-        init
+        }
     };
     let mut userKmlDesc: [libc::c_char; 256] = [
         0 as libc::c_int as libc::c_char,
@@ -698,7 +694,7 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
         0,
     ];
     let mut kmlDescArg: Arg = {
-        let mut init = Arg {
+        Arg {
             names: [
                 b"--kd\0" as *const u8 as *const libc::c_char,
                 b"--kml-description\0" as *const u8 as *const libc::c_char,
@@ -710,8 +706,7 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
             found: false,
             helpText: b"Text for the KML description tag, if --kml is specified.\0" as *const u8
                 as *const libc::c_char,
-        };
-        init
+        }
     };
     let mut args: [*mut Arg; 5] = [
         &mut helpArg,
@@ -769,7 +764,7 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
     if kmlArg.found {
         kmlPtsFooter();
     }
-    return 0;
+    0
 }
 pub fn main() {
     let mut args: Vec<*mut libc::c_char> = Vec::new();
@@ -785,6 +780,6 @@ pub fn main() {
         ::std::process::exit(main_0(
             (args.len() - 1) as libc::c_int,
             args.as_mut_ptr() as *mut *mut libc::c_char,
-        ) as i32)
+        ))
     }
 }

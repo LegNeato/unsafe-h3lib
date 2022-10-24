@@ -90,7 +90,7 @@ pub struct VertexGraph {
 unsafe extern "C" fn runTests() {
     currentTestName = b"empty\0" as *const u8 as *const libc::c_char;
     let mut graph: VertexGraph = VertexGraph {
-        buckets: 0 as *mut *mut VertexNode,
+        buckets: std::ptr::null_mut::<*mut VertexNode>(),
         numBuckets: 0,
         size: 0,
         res: 0,
@@ -110,7 +110,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(graph.size == 0 as libc::c_int) {
+    if graph.size != 0 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -128,7 +128,7 @@ unsafe extern "C" fn runTests() {
     destroyVertexGraph(&mut graph);
     currentTestName = b"singleHex\0" as *const u8 as *const libc::c_char;
     let mut graph_0: VertexGraph = VertexGraph {
-        buckets: 0 as *mut *mut VertexNode,
+        buckets: std::ptr::null_mut::<*mut VertexNode>(),
         numBuckets: 0,
         size: 0,
         res: 0,
@@ -152,7 +152,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(graph_0.size == 6 as libc::c_int) {
+    if graph_0.size != 6 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -170,7 +170,7 @@ unsafe extern "C" fn runTests() {
     destroyVertexGraph(&mut graph_0);
     currentTestName = b"nonContiguous2\0" as *const u8 as *const libc::c_char;
     let mut graph_1: VertexGraph = VertexGraph {
-        buckets: 0 as *mut *mut VertexNode,
+        buckets: std::ptr::null_mut::<*mut VertexNode>(),
         numBuckets: 0,
         size: 0,
         res: 0,
@@ -197,7 +197,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(graph_1.size == 12 as libc::c_int) {
+    if graph_1.size != 12 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -216,7 +216,7 @@ unsafe extern "C" fn runTests() {
     destroyVertexGraph(&mut graph_1);
     currentTestName = b"contiguous2\0" as *const u8 as *const libc::c_char;
     let mut graph_2: VertexGraph = VertexGraph {
-        buckets: 0 as *mut *mut VertexNode,
+        buckets: std::ptr::null_mut::<*mut VertexNode>(),
         numBuckets: 0,
         size: 0,
         res: 0,
@@ -243,7 +243,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(graph_2.size == 10 as libc::c_int) {
+    if graph_2.size != 10 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -261,7 +261,7 @@ unsafe extern "C" fn runTests() {
     destroyVertexGraph(&mut graph_2);
     currentTestName = b"contiguous2distorted\0" as *const u8 as *const libc::c_char;
     let mut graph_3: VertexGraph = VertexGraph {
-        buckets: 0 as *mut *mut VertexNode,
+        buckets: std::ptr::null_mut::<*mut VertexNode>(),
         numBuckets: 0,
         size: 0,
         res: 0,
@@ -288,7 +288,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(graph_3.size == 12 as libc::c_int) {
+    if graph_3.size != 12 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -306,7 +306,7 @@ unsafe extern "C" fn runTests() {
     destroyVertexGraph(&mut graph_3);
     currentTestName = b"contiguous3\0" as *const u8 as *const libc::c_char;
     let mut graph_4: VertexGraph = VertexGraph {
-        buckets: 0 as *mut *mut VertexNode,
+        buckets: std::ptr::null_mut::<*mut VertexNode>(),
         numBuckets: 0,
         size: 0,
         res: 0,
@@ -334,7 +334,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(graph_4.size == 3 as libc::c_int * 4 as libc::c_int) {
+    if graph_4.size != 3 as libc::c_int * 4 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -352,7 +352,7 @@ unsafe extern "C" fn runTests() {
     destroyVertexGraph(&mut graph_4);
     currentTestName = b"hole\0" as *const u8 as *const libc::c_char;
     let mut graph_5: VertexGraph = VertexGraph {
-        buckets: 0 as *mut *mut VertexNode,
+        buckets: std::ptr::null_mut::<*mut VertexNode>(),
         numBuckets: 0,
         size: 0,
         res: 0,
@@ -383,7 +383,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(graph_5.size == 6 as libc::c_int * 3 as libc::c_int + 6 as libc::c_int) {
+    if graph_5.size != 6 as libc::c_int * 3 as libc::c_int + 6 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -412,8 +412,8 @@ unsafe fn main_0() -> libc::c_int {
         b"\nDONE: %d assertions\n\0" as *const u8 as *const libc::c_char,
         globalTestCount,
     );
-    return 0 as libc::c_int;
+    0 as libc::c_int
 }
 pub fn main() {
-    unsafe { ::std::process::exit(main_0() as i32) }
+    unsafe { ::std::process::exit(main_0()) }
 }

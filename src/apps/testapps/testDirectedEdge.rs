@@ -119,11 +119,10 @@ pub const J_AXES_DIGIT: Direction = 2;
 pub const K_AXES_DIGIT: Direction = 1;
 pub const CENTER_DIGIT: Direction = 0;
 static mut sfGeo: LatLng = {
-    let mut init = LatLng {
+    LatLng {
         lat: 0.659966917655f64,
         lng: -2.1364398519396f64,
-    };
-    init
+    }
 };
 unsafe extern "C" fn runTests() {
     currentTestName = b"areNeighborCells\0" as *const u8 as *const libc::c_char;
@@ -233,7 +232,7 @@ unsafe extern "C" fn runTests() {
         }
         i += 1;
     }
-    if !(neighbors == 6 as libc::c_int) {
+    if neighbors != 6 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -327,7 +326,7 @@ unsafe extern "C" fn runTests() {
         }
         i_0 += 1;
     }
-    if !(neighbors == 0 as libc::c_int) {
+    if neighbors != 0 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -346,8 +345,8 @@ unsafe extern "C" fn runTests() {
     let mut sfBroken: H3Index = sf;
     sfBroken = sfBroken & !((15 as libc::c_int as uint64_t) << 59 as libc::c_int)
         | (2 as libc::c_int as uint64_t) << 59 as libc::c_int;
-    if !(areNeighborCells(sf, sfBroken, &mut isNeighbor)
-        == E_CELL_INVALID as libc::c_int as libc::c_uint)
+    if areNeighborCells(sf, sfBroken, &mut isNeighbor)
+        != E_CELL_INVALID as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -364,8 +363,8 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(areNeighborCells(sfBroken, sf, &mut isNeighbor)
-        == E_CELL_INVALID as libc::c_int as libc::c_uint)
+    if areNeighborCells(sfBroken, sf, &mut isNeighbor)
+        != E_CELL_INVALID as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -398,8 +397,8 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(areNeighborCells(sf, sfBigger, &mut isNeighbor)
-        == E_RES_MISMATCH as libc::c_int as libc::c_uint)
+    if areNeighborCells(sf, sfBigger, &mut isNeighbor)
+        != E_RES_MISMATCH as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -464,17 +463,16 @@ unsafe extern "C" fn runTests() {
     let mut dest: H3Index = origin;
     origin = origin
         & !((7 as libc::c_int as uint64_t)
-            << (15 as libc::c_int - 5 as libc::c_int) * 3 as libc::c_int)
+            << ((15 as libc::c_int - 5 as libc::c_int) * 3 as libc::c_int))
         | (INVALID_DIGIT as libc::c_int as uint64_t)
-            << (15 as libc::c_int - 5 as libc::c_int) * 3 as libc::c_int;
+            << ((15 as libc::c_int - 5 as libc::c_int) * 3 as libc::c_int);
     dest = dest
         & !((7 as libc::c_int as uint64_t)
-            << (15 as libc::c_int - 5 as libc::c_int) * 3 as libc::c_int)
+            << ((15 as libc::c_int - 5 as libc::c_int) * 3 as libc::c_int))
         | (JK_AXES_DIGIT as libc::c_int as uint64_t)
-            << (15 as libc::c_int - 5 as libc::c_int) * 3 as libc::c_int;
+            << ((15 as libc::c_int - 5 as libc::c_int) * 3 as libc::c_int);
     let mut out: libc::c_int = 0;
-    if !(areNeighborCells(origin, dest, &mut out) == E_CELL_INVALID as libc::c_int as libc::c_uint)
-    {
+    if areNeighborCells(origin, dest, &mut out) != E_CELL_INVALID as libc::c_int as libc::c_uint {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -499,16 +497,15 @@ unsafe extern "C" fn runTests() {
     dest = origin;
     origin = origin
         & !((7 as libc::c_int as uint64_t)
-            << (15 as libc::c_int - 5 as libc::c_int) * 3 as libc::c_int)
+            << ((15 as libc::c_int - 5 as libc::c_int) * 3 as libc::c_int))
         | (K_AXES_DIGIT as libc::c_int as uint64_t)
-            << (15 as libc::c_int - 5 as libc::c_int) * 3 as libc::c_int;
+            << ((15 as libc::c_int - 5 as libc::c_int) * 3 as libc::c_int);
     dest = dest
         & !((7 as libc::c_int as uint64_t)
-            << (15 as libc::c_int - 5 as libc::c_int) * 3 as libc::c_int)
+            << ((15 as libc::c_int - 5 as libc::c_int) * 3 as libc::c_int))
         | (IK_AXES_DIGIT as libc::c_int as uint64_t)
-            << (15 as libc::c_int - 5 as libc::c_int) * 3 as libc::c_int;
-    if !(areNeighborCells(origin, dest, &mut out) == E_CELL_INVALID as libc::c_int as libc::c_uint)
-    {
+            << ((15 as libc::c_int - 5 as libc::c_int) * 3 as libc::c_int);
+    if areNeighborCells(origin, dest, &mut out) != E_CELL_INVALID as libc::c_int as libc::c_uint {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -526,16 +523,15 @@ unsafe extern "C" fn runTests() {
     printf(b".\0" as *const u8 as *const libc::c_char);
     origin = origin
         & !((7 as libc::c_int as uint64_t)
-            << (15 as libc::c_int - 5 as libc::c_int) * 3 as libc::c_int)
+            << ((15 as libc::c_int - 5 as libc::c_int) * 3 as libc::c_int))
         | (IK_AXES_DIGIT as libc::c_int as uint64_t)
-            << (15 as libc::c_int - 5 as libc::c_int) * 3 as libc::c_int;
+            << ((15 as libc::c_int - 5 as libc::c_int) * 3 as libc::c_int);
     dest = dest
         & !((7 as libc::c_int as uint64_t)
-            << (15 as libc::c_int - 5 as libc::c_int) * 3 as libc::c_int)
+            << ((15 as libc::c_int - 5 as libc::c_int) * 3 as libc::c_int))
         | (K_AXES_DIGIT as libc::c_int as uint64_t)
-            << (15 as libc::c_int - 5 as libc::c_int) * 3 as libc::c_int;
-    if !(areNeighborCells(origin, dest, &mut out) == E_CELL_INVALID as libc::c_int as libc::c_uint)
-    {
+            << ((15 as libc::c_int - 5 as libc::c_int) * 3 as libc::c_int);
+    if areNeighborCells(origin, dest, &mut out) != E_CELL_INVALID as libc::c_int as libc::c_uint {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -617,7 +613,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(sf_0 == edgeOrigin) {
+    if sf_0 != edgeOrigin {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -649,7 +645,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(sf2 == edgeDestination) {
+    if sf2 != edgeDestination {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -681,7 +677,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(originDestination[0 as libc::c_int as usize] == sf_0) {
+    if originDestination[0 as libc::c_int as usize] != sf_0 {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -696,7 +692,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(originDestination[1 as libc::c_int as usize] == sf2) {
+    if originDestination[1 as libc::c_int as usize] != sf2 {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -711,8 +707,8 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(directedEdgeToCells(0 as libc::c_int as H3Index, originDestination.as_mut_ptr())
-        == E_DIR_EDGE_INVALID as libc::c_int as libc::c_uint)
+    if directedEdgeToCells(0 as libc::c_int as H3Index, originDestination.as_mut_ptr())
+        != E_DIR_EDGE_INVALID as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -740,8 +736,8 @@ unsafe extern "C" fn runTests() {
         | (INVALID_DIGIT as libc::c_int as uint64_t) << 56 as libc::c_int;
     invalidEdge = invalidEdge & !((15 as libc::c_int as uint64_t) << 59 as libc::c_int)
         | (2 as libc::c_int as uint64_t) << 59 as libc::c_int;
-    if !(directedEdgeToCells(invalidEdge, originDestination.as_mut_ptr())
-        != E_SUCCESS as libc::c_int as libc::c_uint)
+    if directedEdgeToCells(invalidEdge, originDestination.as_mut_ptr())
+        == E_SUCCESS as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -796,8 +792,8 @@ unsafe extern "C" fn runTests() {
     printf(b".\0" as *const u8 as *const libc::c_char);
     let mut sf3: H3Index = largerRing_0[0 as libc::c_int as usize];
     let mut notEdge: H3Index = 0;
-    if !(cellsToDirectedEdge(sf_0, sf3, &mut notEdge)
-        == E_NOT_NEIGHBORS as libc::c_int as libc::c_uint)
+    if cellsToDirectedEdge(sf_0, sf3, &mut notEdge)
+        != E_NOT_NEIGHBORS as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -817,8 +813,8 @@ unsafe extern "C" fn runTests() {
     currentTestName = b"getDirectedEdgeOriginBadInput\0" as *const u8 as *const libc::c_char;
     let mut hexagon: H3Index = 0x891ea6d6533ffff as libc::c_long as H3Index;
     let mut out_0: H3Index = 0;
-    if !(getDirectedEdgeOrigin(hexagon, &mut out_0)
-        == E_DIR_EDGE_INVALID as libc::c_int as libc::c_uint)
+    if getDirectedEdgeOrigin(hexagon, &mut out_0)
+        != E_DIR_EDGE_INVALID as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -836,8 +832,8 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(getDirectedEdgeOrigin(0 as libc::c_int as H3Index, &mut out_0)
-        == E_DIR_EDGE_INVALID as libc::c_int as libc::c_uint)
+    if getDirectedEdgeOrigin(0 as libc::c_int as H3Index, &mut out_0)
+        != E_DIR_EDGE_INVALID as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -908,8 +904,7 @@ unsafe extern "C" fn runTests() {
     edge_0 = edge_0 & !((7 as libc::c_int as uint64_t) << 56 as libc::c_int)
         | (INVALID_DIGIT as libc::c_int as uint64_t) << 56 as libc::c_int;
     let mut out_1: H3Index = 0;
-    if !(getDirectedEdgeDestination(edge_0, &mut out_1) == E_FAILED as libc::c_int as libc::c_uint)
-    {
+    if getDirectedEdgeDestination(edge_0, &mut out_1) != E_FAILED as libc::c_int as libc::c_uint {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -928,8 +923,8 @@ unsafe extern "C" fn runTests() {
     currentTestName = b"getDirectedEdgeDestination\0" as *const u8 as *const libc::c_char;
     let mut hexagon_0: H3Index = 0x891ea6d6533ffff as libc::c_long as H3Index;
     let mut out_2: H3Index = 0;
-    if !(getDirectedEdgeDestination(hexagon_0, &mut out_2)
-        == E_DIR_EDGE_INVALID as libc::c_int as libc::c_uint)
+    if getDirectedEdgeDestination(hexagon_0, &mut out_2)
+        != E_DIR_EDGE_INVALID as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -947,8 +942,8 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(getDirectedEdgeDestination(0 as libc::c_int as H3Index, &mut out_2)
-        == E_DIR_EDGE_INVALID as libc::c_int as libc::c_uint)
+    if getDirectedEdgeDestination(0 as libc::c_int as H3Index, &mut out_2)
+        != E_DIR_EDGE_INVALID as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -1143,7 +1138,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(isValidDirectedEdge(edge_2) == 1 as libc::c_int) {
+    if isValidDirectedEdge(edge_2) != 1 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1158,7 +1153,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(isValidDirectedEdge(sf_2) == 0 as libc::c_int) {
+    if isValidDirectedEdge(sf_2) != 0 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1176,7 +1171,7 @@ unsafe extern "C" fn runTests() {
     let mut undirectedEdge: H3Index = edge_2;
     undirectedEdge = undirectedEdge & !((15 as libc::c_int as uint64_t) << 59 as libc::c_int)
         | (3 as libc::c_int as uint64_t) << 59 as libc::c_int;
-    if !(isValidDirectedEdge(undirectedEdge) == 0 as libc::c_int) {
+    if isValidDirectedEdge(undirectedEdge) != 0 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1196,7 +1191,7 @@ unsafe extern "C" fn runTests() {
     hexagonWithReserved = hexagonWithReserved
         & !((7 as libc::c_int as uint64_t) << 56 as libc::c_int)
         | (1 as libc::c_int as uint64_t) << 56 as libc::c_int;
-    if !(isValidDirectedEdge(hexagonWithReserved) == 0 as libc::c_int) {
+    if isValidDirectedEdge(hexagonWithReserved) != 0 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1215,7 +1210,7 @@ unsafe extern "C" fn runTests() {
     let mut fakeEdge: H3Index = sf_2;
     fakeEdge = fakeEdge & !((15 as libc::c_int as uint64_t) << 59 as libc::c_int)
         | (2 as libc::c_int as uint64_t) << 59 as libc::c_int;
-    if !(isValidDirectedEdge(fakeEdge) == 0 as libc::c_int) {
+    if isValidDirectedEdge(fakeEdge) != 0 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1235,7 +1230,7 @@ unsafe extern "C" fn runTests() {
         | (2 as libc::c_int as uint64_t) << 59 as libc::c_int;
     invalidEdge_0 = invalidEdge_0 & !((7 as libc::c_int as uint64_t) << 56 as libc::c_int)
         | (INVALID_DIGIT as libc::c_int as uint64_t) << 56 as libc::c_int;
-    if !(isValidDirectedEdge(invalidEdge_0) == 0 as libc::c_int) {
+    if isValidDirectedEdge(invalidEdge_0) != 0 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1260,7 +1255,7 @@ unsafe extern "C" fn runTests() {
     goodPentagonalEdge = goodPentagonalEdge
         & !((7 as libc::c_int as uint64_t) << 56 as libc::c_int)
         | (2 as libc::c_int as uint64_t) << 56 as libc::c_int;
-    if !(isValidDirectedEdge(goodPentagonalEdge) == 1 as libc::c_int) {
+    if isValidDirectedEdge(goodPentagonalEdge) != 1 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1279,7 +1274,7 @@ unsafe extern "C" fn runTests() {
     let mut badPentagonalEdge: H3Index = goodPentagonalEdge;
     badPentagonalEdge = badPentagonalEdge & !((7 as libc::c_int as uint64_t) << 56 as libc::c_int)
         | (1 as libc::c_int as uint64_t) << 56 as libc::c_int;
-    if !(isValidDirectedEdge(badPentagonalEdge) == 0 as libc::c_int) {
+    if isValidDirectedEdge(badPentagonalEdge) != 0 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1298,7 +1293,7 @@ unsafe extern "C" fn runTests() {
     let mut highBitEdge: H3Index = edge_2;
     highBitEdge = highBitEdge & !((1 as libc::c_int as uint64_t) << 63 as libc::c_int)
         | (1 as libc::c_int as uint64_t) << 63 as libc::c_int;
-    if !(isValidDirectedEdge(highBitEdge) == 0 as libc::c_int) {
+    if isValidDirectedEdge(highBitEdge) != 0 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1349,7 +1344,7 @@ unsafe extern "C" fn runTests() {
     printf(b".\0" as *const u8 as *const libc::c_char);
     let mut i_2: libc::c_int = 0 as libc::c_int;
     while i_2 < 6 as libc::c_int {
-        if !(isValidDirectedEdge(edges[i_2 as usize]) == 1 as libc::c_int) {
+        if isValidDirectedEdge(edges[i_2 as usize]) != 1 as libc::c_int {
             fprintf(
                 __stderrp,
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1382,7 +1377,7 @@ unsafe extern "C" fn runTests() {
         }
         globalTestCount += 1;
         printf(b".\0" as *const u8 as *const libc::c_char);
-        if !(sf_3 == origin_0) {
+        if sf_3 != origin_0 {
             fprintf(
                 __stderrp,
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1414,7 +1409,7 @@ unsafe extern "C" fn runTests() {
         }
         globalTestCount += 1;
         printf(b".\0" as *const u8 as *const libc::c_char);
-        if !(sf_3 != destination) {
+        if sf_3 == destination {
             fprintf(
                 __stderrp,
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1455,7 +1450,7 @@ unsafe extern "C" fn runTests() {
         if edges_0[i_3 as usize] == 0 as libc::c_int as libc::c_ulonglong {
             missingEdgeCount += 1;
         } else {
-            if !(isValidDirectedEdge(edges_0[i_3 as usize]) == 1 as libc::c_int) {
+            if isValidDirectedEdge(edges_0[i_3 as usize]) != 1 as libc::c_int {
                 fprintf(
                     __stderrp,
                     b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8
@@ -1490,7 +1485,7 @@ unsafe extern "C" fn runTests() {
             }
             globalTestCount += 1;
             printf(b".\0" as *const u8 as *const libc::c_char);
-            if !(pentagon_1 == origin_1) {
+            if pentagon_1 != origin_1 {
                 fprintf(
                     __stderrp,
                     b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8
@@ -1524,7 +1519,7 @@ unsafe extern "C" fn runTests() {
             }
             globalTestCount += 1;
             printf(b".\0" as *const u8 as *const libc::c_char);
-            if !(pentagon_1 != destination_0) {
+            if pentagon_1 == destination_0 {
                 fprintf(
                     __stderrp,
                     b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8
@@ -1543,7 +1538,7 @@ unsafe extern "C" fn runTests() {
         }
         i_3 += 1;
     }
-    if !(missingEdgeCount == 1 as libc::c_int) {
+    if missingEdgeCount != 1 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1643,7 +1638,7 @@ unsafe extern "C" fn runTests() {
             }
             globalTestCount += 1;
             printf(b".\0" as *const u8 as *const libc::c_char);
-            if !(edgeBoundary.numVerts == 2 as libc::c_int) {
+            if edgeBoundary.numVerts != 2 as libc::c_int {
                 fprintf(
                     __stderrp,
                     b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8
@@ -1774,7 +1769,7 @@ unsafe extern "C" fn runTests() {
                 }
                 globalTestCount += 1;
                 printf(b".\0" as *const u8 as *const libc::c_char);
-                if !(edgeBoundary_0.numVerts == 3 as libc::c_int) {
+                if edgeBoundary_0.numVerts != 3 as libc::c_int {
                     fprintf(
                         __stderrp,
                         b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8
@@ -1824,7 +1819,7 @@ unsafe extern "C" fn runTests() {
             }
             i_5 += 1;
         }
-        if !(missingEdgeCount_0 == 1 as libc::c_int) {
+        if missingEdgeCount_0 != 1 as libc::c_int {
             fprintf(
                 __stderrp,
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1918,7 +1913,7 @@ unsafe extern "C" fn runTests() {
                 }
                 globalTestCount += 1;
                 printf(b".\0" as *const u8 as *const libc::c_char);
-                if !(edgeBoundary_1.numVerts == 2 as libc::c_int) {
+                if edgeBoundary_1.numVerts != 2 as libc::c_int {
                     fprintf(
                         __stderrp,
                         b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8
@@ -1968,7 +1963,7 @@ unsafe extern "C" fn runTests() {
             }
             i_6 += 1;
         }
-        if !(missingEdgeCount_1 == 1 as libc::c_int) {
+        if missingEdgeCount_1 != 1 as libc::c_int {
             fprintf(
                 __stderrp,
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -2009,8 +2004,8 @@ unsafe extern "C" fn runTests() {
         numVerts: 0,
         verts: [LatLng { lat: 0., lng: 0. }; 10],
     };
-    if !(directedEdgeToBoundary(invalidEdge_1, &mut cb)
-        == E_DIR_EDGE_INVALID as libc::c_int as libc::c_uint)
+    if directedEdgeToBoundary(invalidEdge_1, &mut cb)
+        != E_DIR_EDGE_INVALID as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -2035,8 +2030,7 @@ unsafe extern "C" fn runTests() {
         | ((122 as libc::c_int + 1 as libc::c_int) as uint64_t) << 45 as libc::c_int;
     invalidEdge2 = invalidEdge2 & !((15 as libc::c_int as uint64_t) << 59 as libc::c_int)
         | (2 as libc::c_int as uint64_t) << 59 as libc::c_int;
-    if !(directedEdgeToBoundary(invalidEdge2, &mut cb) != E_SUCCESS as libc::c_int as libc::c_uint)
-    {
+    if directedEdgeToBoundary(invalidEdge2, &mut cb) == E_SUCCESS as libc::c_int as libc::c_uint {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -2055,8 +2049,8 @@ unsafe extern "C" fn runTests() {
     printf(b".\0" as *const u8 as *const libc::c_char);
     currentTestName = b"edgeLength_invalid\0" as *const u8 as *const libc::c_char;
     let mut length: libc::c_double = 0.;
-    if !(edgeLengthRads(0 as libc::c_int as H3Index, &mut length)
-        == E_DIR_EDGE_INVALID as libc::c_int as libc::c_uint)
+    if edgeLengthRads(0 as libc::c_int as H3Index, &mut length)
+        != E_DIR_EDGE_INVALID as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -2074,11 +2068,10 @@ unsafe extern "C" fn runTests() {
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
     let mut zero: LatLng = {
-        let mut init = LatLng {
+        LatLng {
             lat: 0 as libc::c_int as libc::c_double,
             lng: 0 as libc::c_int as libc::c_double,
-        };
-        init
+        }
     };
     let mut h3: H3Index = 0;
     if latLngToCell(&mut zero, 0 as libc::c_int, &mut h3) != 0 {
@@ -2096,7 +2089,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(edgeLengthRads(h3, &mut length) == E_DIR_EDGE_INVALID as libc::c_int as libc::c_uint) {
+    if edgeLengthRads(h3, &mut length) != E_DIR_EDGE_INVALID as libc::c_int as libc::c_uint {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -2124,8 +2117,8 @@ unsafe fn main_0() -> libc::c_int {
         b"\nDONE: %d assertions\n\0" as *const u8 as *const libc::c_char,
         globalTestCount,
     );
-    return 0 as libc::c_int;
+    0 as libc::c_int
 }
 pub fn main() {
-    unsafe { ::std::process::exit(main_0() as i32) }
+    unsafe { ::std::process::exit(main_0()) }
 }

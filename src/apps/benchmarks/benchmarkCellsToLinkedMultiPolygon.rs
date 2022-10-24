@@ -130,9 +130,9 @@ pub static mut nestedDonuts: [H3Index; 24] = [
 pub static mut nestedDonutsCount: libc::c_int = 24 as libc::c_int;
 unsafe fn main_0(mut _argc: libc::c_int, mut _argv: *mut *mut libc::c_char) -> libc::c_int {
     let mut polygon: LinkedGeoPolygon = LinkedGeoPolygon {
-        first: 0 as *mut LinkedGeoLoop,
-        last: 0 as *mut LinkedGeoLoop,
-        next: 0 as *mut LinkedGeoPolygon,
+        first: std::ptr::null_mut::<LinkedGeoLoop>(),
+        last: std::ptr::null_mut::<LinkedGeoLoop>(),
+        next: std::ptr::null_mut::<LinkedGeoPolygon>(),
     };
     let iterations: libc::c_int = 10000 as libc::c_int;
     let mut name: *const libc::c_char =
@@ -201,9 +201,8 @@ unsafe fn main_0(mut _argc: libc::c_int, mut _argv: *mut *mut libc::c_char) -> l
         elapsed_0.tv_sec -= 1;
         elapsed_0.tv_nsec = (1E9f64 + elapsed_0.tv_nsec as libc::c_double) as libc::c_long;
     }
-    let duration_0: f64 = elapsed_0.tv_sec as libc::c_double * 1E9f64
-        + elapsed_0.tv_nsec as libc::c_double
-        / 1E3f64;
+    let duration_0: f64 =
+        elapsed_0.tv_sec as libc::c_double * 1E9f64 + elapsed_0.tv_nsec as libc::c_double / 1E3f64;
     printf(
         b"\t-- %s: %Lf microseconds per iteration (%d iterations)\n\0" as *const u8
             as *const libc::c_char,
@@ -250,7 +249,7 @@ unsafe fn main_0(mut _argc: libc::c_int, mut _argv: *mut *mut libc::c_char) -> l
         duration_1 / iterations_1 as f64,
         iterations_1,
     );
-    return 0;
+    0
 }
 pub fn main() {
     let mut args: Vec<*mut libc::c_char> = Vec::new();
@@ -266,6 +265,6 @@ pub fn main() {
         ::std::process::exit(main_0(
             (args.len() - 1) as libc::c_int,
             args.as_mut_ptr() as *mut *mut libc::c_char,
-        ) as i32)
+        ))
     }
 }

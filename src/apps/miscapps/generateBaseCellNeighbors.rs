@@ -96,14 +96,13 @@ unsafe extern "C" fn auditBaseCellNeighbors(
     while i < 122 as libc::c_int {
         let mut j: libc::c_int = 0 as libc::c_int;
         while j <= NUM_DIRS {
-            if !((*baseCellNeighbors.offset(i as isize))[j as usize] == 127 as libc::c_int) {
+            if (*baseCellNeighbors.offset(i as isize))[j as usize] != 127 as libc::c_int {
                 let mut ourDir: CoordIJK = {
-                    let mut init = CoordIJK {
+                    CoordIJK {
                         i: 0 as libc::c_int,
                         j: 0 as libc::c_int,
                         k: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 };
                 _neighbor(&mut ourDir, j as Direction);
                 let mut k: libc::c_int = 0 as libc::c_int;
@@ -125,12 +124,11 @@ unsafe extern "C" fn auditBaseCellNeighbors(
                     );
                 }
                 let mut theirDir: CoordIJK = {
-                    let mut init = CoordIJK {
+                    CoordIJK {
                         i: 0 as libc::c_int,
                         j: 0 as libc::c_int,
                         k: 0 as libc::c_int,
-                    };
-                    init
+                    }
                 };
                 _neighbor(&mut theirDir, k as Direction);
                 let mut reverse: libc::c_int = 0 as libc::c_int;
@@ -143,15 +141,15 @@ unsafe extern "C" fn auditBaseCellNeighbors(
                     _ijkRotate60ccw(&mut ourDir);
                     rotate += 1;
                 }
-                if _isBaseCellPentagon((*baseCellNeighbors.offset(i as isize))[j as usize]) == 0 {
-                    if ourDir.i != theirDir.i || ourDir.j != theirDir.j || ourDir.k != theirDir.k {
-                        printf(
-                            b"WRONG DIRECTION between %d and %d\n\0" as *const u8
-                                as *const libc::c_char,
-                            i,
-                            (*baseCellNeighbors.offset(i as isize))[j as usize],
-                        );
-                    }
+                if _isBaseCellPentagon((*baseCellNeighbors.offset(i as isize))[j as usize]) == 0
+                    && (ourDir.i != theirDir.i || ourDir.j != theirDir.j || ourDir.k != theirDir.k)
+                {
+                    printf(
+                        b"WRONG DIRECTION between %d and %d\n\0" as *const u8
+                            as *const libc::c_char,
+                        i,
+                        (*baseCellNeighbors.offset(i as isize))[j as usize],
+                    );
                 }
             }
             j += 1;
@@ -199,18 +197,16 @@ unsafe extern "C" fn generate() {
                 let mut axis: libc::c_int = 0 as libc::c_int;
                 while axis < 3 as libc::c_int {
                     let mut fijk_0: FaceIJK = {
-                        let mut init = FaceIJK {
+                        FaceIJK {
                             face: f,
                             coord: {
-                                let mut init = CoordIJK {
+                                CoordIJK {
                                     i: 0 as libc::c_int,
                                     j: 0 as libc::c_int,
                                     k: 0 as libc::c_int,
-                                };
-                                init
+                                }
                             },
-                        };
-                        init
+                        }
                     };
                     match axis {
                         0 => {
@@ -226,18 +222,16 @@ unsafe extern "C" fn generate() {
                     }
                     if _faceIjkToBaseCell(&mut fijk_0) == i {
                         let mut neighborFijk: FaceIJK = {
-                            let mut init = FaceIJK {
+                            FaceIJK {
                                 face: fijk_0.face,
                                 coord: {
-                                    let mut init = CoordIJK {
+                                    CoordIJK {
                                         i: fijk_0.coord.i / 2 as libc::c_int,
                                         j: fijk_0.coord.j / 2 as libc::c_int,
                                         k: fijk_0.coord.k / 2 as libc::c_int,
-                                    };
-                                    init
+                                    }
                                 },
-                            };
-                            init
+                            }
                         };
                         let mut rotations: libc::c_int = _faceIjkToBaseCellCCWrot60(&mut fijk_0);
                         let mut ijk: CoordIJK = neighborFijk.coord;
@@ -388,7 +382,7 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
         exit(1 as libc::c_int);
     }
     generate();
-    return 0;
+    0
 }
 pub fn main() {
     let mut args: Vec<*mut libc::c_char> = Vec::new();
@@ -404,6 +398,6 @@ pub fn main() {
         ::std::process::exit(main_0(
             (args.len() - 1) as libc::c_int,
             args.as_mut_ptr() as *mut *mut libc::c_char,
-        ) as i32)
+        ))
     }
 }

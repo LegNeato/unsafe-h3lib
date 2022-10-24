@@ -102,93 +102,81 @@ unsafe extern "C" fn runTests() {
     currentTestName = b"entireWorld\0" as *const u8 as *const libc::c_char;
     let mut worldVerts: [LatLng; 4] = [
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: -1.5707963267948966f64,
-                lng: -3.14159265358979323846f64,
-            };
-            init
+                lng: -std::f64::consts::PI,
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 1.5707963267948966f64,
-                lng: -3.14159265358979323846f64,
-            };
-            init
+                lng: -std::f64::consts::PI,
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 1.5707963267948966f64,
                 lng: 0 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: -1.5707963267948966f64,
                 lng: 0 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
     ];
     let mut worldGeoLoop: GeoLoop = {
-        let mut init = GeoLoop {
+        GeoLoop {
             numVerts: 4 as libc::c_int,
             verts: worldVerts.as_mut_ptr(),
-        };
-        init
+        }
     };
     let mut worldGeoPolygon: GeoPolygon = {
-        let mut init = GeoPolygon {
+        GeoPolygon {
             geoloop: worldGeoLoop,
             numHoles: 0 as libc::c_int,
-            holes: 0 as *mut GeoLoop,
-        };
-        init
+            holes: std::ptr::null_mut::<GeoLoop>(),
+        }
     };
     let mut worldVerts2: [LatLng; 4] = [
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: -1.5707963267948966f64,
                 lng: 0 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 1.5707963267948966f64,
                 lng: 0 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 1.5707963267948966f64,
-                lng: 3.14159265358979323846f64,
-            };
-            init
+                lng: std::f64::consts::PI,
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: -1.5707963267948966f64,
-                lng: 3.14159265358979323846f64,
-            };
-            init
+                lng: std::f64::consts::PI,
+            }
         },
     ];
     let mut worldGeoLoop2: GeoLoop = {
-        let mut init = GeoLoop {
+        GeoLoop {
             numVerts: 4 as libc::c_int,
             verts: worldVerts2.as_mut_ptr(),
-        };
-        init
+        }
     };
     let mut worldGeoPolygon2: GeoPolygon = {
-        let mut init = GeoPolygon {
+        GeoPolygon {
             geoloop: worldGeoLoop2,
             numHoles: 0 as libc::c_int,
-            holes: 0 as *mut GeoLoop,
-        };
-        init
+            holes: std::ptr::null_mut::<GeoLoop>(),
+        }
     };
     let mut res: libc::c_int = 0 as libc::c_int;
     while res < 3 as libc::c_int {
@@ -315,7 +303,7 @@ unsafe extern "C" fn runTests() {
         }
         globalTestCount += 1;
         printf(b".\0" as *const u8 as *const libc::c_char);
-        if !(actualNumIndexes + actualNumIndexes2 == expectedTotalWorld) {
+        if actualNumIndexes + actualNumIndexes2 != expectedTotalWorld {
             fprintf(
                 __stderrp,
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -335,7 +323,7 @@ unsafe extern "C" fn runTests() {
         printf(b".\0" as *const u8 as *const libc::c_char);
         let mut i: libc::c_int = 0 as libc::c_int;
         while (i as libc::c_longlong) < polygonToCellsSize {
-            if !(*polygonToCellsOut.offset(i as isize) == 0 as libc::c_int as libc::c_ulonglong) {
+            if *polygonToCellsOut.offset(i as isize) != 0 as libc::c_int as libc::c_ulonglong {
                 let mut found: bool = 0 as libc::c_int != 0;
                 let mut j: libc::c_int = 0 as libc::c_int;
                 while (j as libc::c_longlong) < polygonToCellsSize2 {
@@ -380,48 +368,43 @@ unsafe extern "C" fn runTests() {
     let mut west: libc::c_double = degsToRads(-57.65625f64);
     let mut testVerts: [LatLng; 4] = [
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: north,
                 lng: east,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: south,
                 lng: east,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: south,
                 lng: west,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: north,
                 lng: west,
-            };
-            init
+            }
         },
     ];
     let mut testGeoLoop: GeoLoop = {
-        let mut init = GeoLoop {
+        GeoLoop {
             numVerts: 4 as libc::c_int,
             verts: testVerts.as_mut_ptr(),
-        };
-        init
+        }
     };
     let mut testPolygon: GeoPolygon = GeoPolygon {
         geoloop: GeoLoop {
             numVerts: 0,
-            verts: 0 as *mut LatLng,
+            verts: std::ptr::null_mut::<LatLng>(),
         },
         numHoles: 0,
-        holes: 0 as *mut GeoLoop,
+        holes: std::ptr::null_mut::<GeoLoop>(),
     };
     testPolygon.geoloop = testGeoLoop;
     testPolygon.numHoles = 0 as libc::c_int;
@@ -476,7 +459,7 @@ unsafe extern "C" fn runTests() {
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
     let mut actualNumIndexes_0: int64_t = countNonNullIndexes(hexagons, numHexagons);
-    if !(actualNumIndexes_0 == 4499 as libc::c_int as libc::c_longlong) {
+    if actualNumIndexes_0 != 4499 as libc::c_int as libc::c_longlong {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -499,48 +482,43 @@ unsafe extern "C" fn runTests() {
     let mut west_0: libc::c_double = degsToRads(-59.0625f64);
     let mut testVerts_0: [LatLng; 4] = [
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: north_0,
                 lng: east_0,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: south_0,
                 lng: east_0,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: south_0,
                 lng: west_0,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: north_0,
                 lng: west_0,
-            };
-            init
+            }
         },
     ];
     let mut testGeoLoop_0: GeoLoop = {
-        let mut init = GeoLoop {
+        GeoLoop {
             numVerts: 4 as libc::c_int,
             verts: testVerts_0.as_mut_ptr(),
-        };
-        init
+        }
     };
     let mut testPolygon_0: GeoPolygon = GeoPolygon {
         geoloop: GeoLoop {
             numVerts: 0,
-            verts: 0 as *mut LatLng,
+            verts: std::ptr::null_mut::<LatLng>(),
         },
         numHoles: 0,
-        holes: 0 as *mut GeoLoop,
+        holes: std::ptr::null_mut::<GeoLoop>(),
     };
     testPolygon_0.geoloop = testGeoLoop_0;
     testPolygon_0.numHoles = 0 as libc::c_int;
@@ -595,7 +573,7 @@ unsafe extern "C" fn runTests() {
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
     let mut actualNumIndexes_1: int64_t = countNonNullIndexes(hexagons_0, numHexagons_0);
-    if !(actualNumIndexes_1 == 4609 as libc::c_int as libc::c_longlong) {
+    if actualNumIndexes_1 != 4609 as libc::c_int as libc::c_longlong {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -615,48 +593,43 @@ unsafe extern "C" fn runTests() {
     currentTestName = b"h3_136\0" as *const u8 as *const libc::c_char;
     let mut testVerts_1: [LatLng; 4] = [
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.10068990369902957f64,
                 lng: 0.8920772174196191f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.10032914690616246f64,
                 lng: 0.8915914753447348f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.10033349237998787f64,
                 lng: 0.8915860128746426f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.10069496685903621f64,
                 lng: 0.8920742194546231f64,
-            };
-            init
+            }
         },
     ];
     let mut testGeoLoop_1: GeoLoop = {
-        let mut init = GeoLoop {
+        GeoLoop {
             numVerts: 4 as libc::c_int,
             verts: testVerts_1.as_mut_ptr(),
-        };
-        init
+        }
     };
     let mut testPolygon_1: GeoPolygon = GeoPolygon {
         geoloop: GeoLoop {
             numVerts: 0,
-            verts: 0 as *mut LatLng,
+            verts: std::ptr::null_mut::<LatLng>(),
         },
         numHoles: 0,
-        holes: 0 as *mut GeoLoop,
+        holes: std::ptr::null_mut::<GeoLoop>(),
     };
     testPolygon_1.geoloop = testGeoLoop_1;
     testPolygon_1.numHoles = 0 as libc::c_int;
@@ -711,7 +684,7 @@ unsafe extern "C" fn runTests() {
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
     let mut actualNumIndexes_2: int64_t = countNonNullIndexes(hexagons_1, numHexagons_1);
-    if !(actualNumIndexes_2 == 4353 as libc::c_int as libc::c_longlong) {
+    if actualNumIndexes_2 != 4353 as libc::c_int as libc::c_longlong {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -733,48 +706,43 @@ unsafe extern "C" fn runTests() {
     cellToLatLng(center, &mut centerLatLng);
     let mut testVerts_2: [LatLng; 4] = [
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: centerLatLng.lat,
                 lng: -2.121207808248113f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.6565301558937859f64,
                 lng: -2.1281107217935986f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.6515463604919347f64,
                 lng: -2.1345342663428695f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.6466583305904194f64,
                 lng: -2.1276313527973842f64,
-            };
-            init
+            }
         },
     ];
     let mut testGeoLoop_2: GeoLoop = {
-        let mut init = GeoLoop {
+        GeoLoop {
             numVerts: 4 as libc::c_int,
             verts: testVerts_2.as_mut_ptr(),
-        };
-        init
+        }
     };
     let mut testPolygon_2: GeoPolygon = GeoPolygon {
         geoloop: GeoLoop {
             numVerts: 0,
-            verts: 0 as *mut LatLng,
+            verts: std::ptr::null_mut::<LatLng>(),
         },
         numHoles: 0,
-        holes: 0 as *mut GeoLoop,
+        holes: std::ptr::null_mut::<GeoLoop>(),
     };
     testPolygon_2.geoloop = testGeoLoop_2;
     testPolygon_2.numHoles = 0 as libc::c_int;
@@ -829,7 +797,7 @@ unsafe extern "C" fn runTests() {
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
     let mut actualNumIndexes_3: int64_t = countNonNullIndexes(hexagons_2, numHexagons_2);
-    if !(actualNumIndexes_3 == 8 as libc::c_int as libc::c_longlong) {
+    if actualNumIndexes_3 != 8 as libc::c_int as libc::c_longlong {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -857,8 +825,8 @@ unsafe fn main_0() -> libc::c_int {
         b"\nDONE: %d assertions\n\0" as *const u8 as *const libc::c_char,
         globalTestCount,
     );
-    return 0 as libc::c_int;
+    0 as libc::c_int
 }
 pub fn main() {
-    unsafe { ::std::process::exit(main_0() as i32) }
+    unsafe { ::std::process::exit(main_0()) }
 }

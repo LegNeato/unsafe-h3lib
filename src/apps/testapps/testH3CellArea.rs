@@ -90,31 +90,30 @@ pub struct __sFILE {
 }
 pub type FILE = __sFILE;
 static mut areasKm2: [libc::c_double; 16] = [
-    2.562182162955496e+06f64,
-    4.476842017201860e+05f64,
-    6.596162242711056e+04f64,
-    9.228872919002590e+03f64,
-    1.318694490797110e+03f64,
-    1.879593512281298e+02f64,
-    2.687164354763186e+01f64,
-    3.840848847060638e+00f64,
-    5.486939641329893e-01f64,
-    7.838600808637444e-02f64,
-    1.119834221989390e-02f64,
-    1.599777169186614e-03f64,
-    2.285390931423380e-04f64,
-    3.264850232091780e-05f64,
-    4.664070326136774e-06f64,
-    6.662957615868888e-07f64,
+    2.562_182_162_955_496e6_f64,
+    4.476_842_017_201_86e5_f64,
+    6.596_162_242_711_056e4_f64,
+    9.228_872_919_002_59e3_f64,
+    1.318_694_490_797_11e3_f64,
+    1.879_593_512_281_298e2_f64,
+    2.687_164_354_763_186e1_f64,
+    3.840_848_847_060_638_f64,
+    5.486_939_641_329_893e-1_f64,
+    7.838_600_808_637_444e-2_f64,
+    1.119_834_221_989_39e-2_f64,
+    1.599_777_169_186_614e-3_f64,
+    2.285_390_931_423_38e-4_f64,
+    3.264_850_232_091_78e-5_f64,
+    4.664_070_326_136_774e-6_f64,
+    6.662_957_615_868_888e-7_f64,
 ];
 unsafe extern "C" fn runTests() {
     currentTestName = b"specific_cell_area\0" as *const u8 as *const libc::c_char;
     let mut gc: LatLng = {
-        let mut init = LatLng {
+        LatLng {
             lat: 0.0f64,
             lng: 0.0f64,
-        };
-        init
+        }
     };
     let mut res: libc::c_int = 0 as libc::c_int;
     while res <= 15 as libc::c_int - 1 as libc::c_int {
@@ -170,7 +169,7 @@ unsafe extern "C" fn runTests() {
     currentTestName = b"cell_area_invalid\0" as *const u8 as *const libc::c_char;
     let mut invalid: H3Index = 0xffffffffffffffff as libc::c_ulong as H3Index;
     let mut area_0: libc::c_double = 0.;
-    if !(cellAreaRads2(invalid, &mut area_0) == E_CELL_INVALID as libc::c_int as libc::c_uint) {
+    if cellAreaRads2(invalid, &mut area_0) != E_CELL_INVALID as libc::c_int as libc::c_uint {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -186,7 +185,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(cellAreaKm2(invalid, &mut area_0) == E_CELL_INVALID as libc::c_int as libc::c_uint) {
+    if cellAreaKm2(invalid, &mut area_0) != E_CELL_INVALID as libc::c_int as libc::c_uint {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -202,7 +201,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(cellAreaM2(invalid, &mut area_0) == E_CELL_INVALID as libc::c_int as libc::c_uint) {
+    if cellAreaM2(invalid, &mut area_0) != E_CELL_INVALID as libc::c_int as libc::c_uint {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -230,8 +229,8 @@ unsafe fn main_0() -> libc::c_int {
         b"\nDONE: %d assertions\n\0" as *const u8 as *const libc::c_char,
         globalTestCount,
     );
-    return 0 as libc::c_int;
+    0 as libc::c_int
 }
 pub fn main() {
-    unsafe { ::std::process::exit(main_0() as i32) }
+    unsafe { ::std::process::exit(main_0()) }
 }

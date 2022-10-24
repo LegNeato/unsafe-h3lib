@@ -169,7 +169,7 @@ pub unsafe extern "C" fn generateTestCase(
             as size_t as size_t;
     }
     fclose(fp);
-    return 0 as libc::c_int;
+    0 as libc::c_int
 }
 #[no_mangle]
 pub unsafe extern "C" fn LLVMFuzzerTestOneInput(
@@ -185,7 +185,7 @@ pub unsafe extern "C" fn LLVMFuzzerTestOneInput(
     h3NeighborRotations((*args).index, (*args).dir, &mut rotations, &mut out);
     directionForNeighbor((*args).index, (*args).index2);
     let mut graph: VertexGraph = VertexGraph {
-        buckets: 0 as *mut *mut VertexNode,
+        buckets: std::ptr::null_mut::<*mut VertexNode>(),
         numBuckets: 0,
         size: 0,
         res: 0,
@@ -196,15 +196,15 @@ pub unsafe extern "C" fn LLVMFuzzerTestOneInput(
     let mut err: H3Error = h3SetToVertexGraph(h3Set, inputSize as libc::c_int, &mut graph);
     if err == 0 {
         let mut linkedGeoPolygon: LinkedGeoPolygon = LinkedGeoPolygon {
-            first: 0 as *mut LinkedGeoLoop,
-            last: 0 as *mut LinkedGeoLoop,
-            next: 0 as *mut LinkedGeoPolygon,
+            first: std::ptr::null_mut::<LinkedGeoLoop>(),
+            last: std::ptr::null_mut::<LinkedGeoLoop>(),
+            next: std::ptr::null_mut::<LinkedGeoPolygon>(),
         };
         _vertexGraphToLinkedGeo(&mut graph, &mut linkedGeoPolygon);
         destroyLinkedMultiPolygon(&mut linkedGeoPolygon);
         destroyVertexGraph(&mut graph);
     }
-    return 0 as libc::c_int;
+    0 as libc::c_int
 }
 unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> libc::c_int {
     if argc == 3 as libc::c_int {
@@ -245,10 +245,10 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
         error(b"Error reading test case file\n\0" as *const u8 as *const libc::c_char);
     }
     fclose(fp);
-    return LLVMFuzzerTestOneInput(
+    LLVMFuzzerTestOneInput(
         data.as_mut_ptr(),
         ::core::mem::size_of::<inputArgs>() as libc::c_ulong,
-    );
+    )
 }
 pub fn main() {
     let mut args: Vec<*mut libc::c_char> = Vec::new();
@@ -264,6 +264,6 @@ pub fn main() {
         ::std::process::exit(main_0(
             (args.len() - 1) as libc::c_int,
             args.as_mut_ptr() as *mut *mut libc::c_char,
-        ) as i32)
+        ))
     }
 }

@@ -123,7 +123,7 @@ unsafe extern "C" fn gridPathCells_assertions(mut start: H3Index, mut end: H3Ind
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(sz > 0 as libc::c_int as libc::c_longlong) {
+    if sz <= 0 as libc::c_int as libc::c_longlong {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -159,7 +159,7 @@ unsafe extern "C" fn gridPathCells_assertions(mut start: H3Index, mut end: H3Ind
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(*line.offset(0 as libc::c_int as isize) == start) {
+    if *line.offset(0 as libc::c_int as isize) != start {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -175,7 +175,7 @@ unsafe extern "C" fn gridPathCells_assertions(mut start: H3Index, mut end: H3Ind
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(*line.offset((sz - 1 as libc::c_int as libc::c_longlong) as isize) == end) {
+    if *line.offset((sz - 1 as libc::c_int as libc::c_longlong) as isize) != end {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -297,7 +297,7 @@ unsafe extern "C" fn gridPathCells_assertions(mut start: H3Index, mut end: H3Ind
 }
 unsafe extern "C" fn gridPathCells_invalid_assertions(mut start: H3Index, mut end: H3Index) {
     let mut sz: int64_t = 0;
-    if !(gridPathCellsSize(start, end, &mut sz) != E_SUCCESS as libc::c_int as libc::c_uint) {
+    if gridPathCellsSize(start, end, &mut sz) == E_SUCCESS as libc::c_int as libc::c_uint {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -314,9 +314,9 @@ unsafe extern "C" fn gridPathCells_invalid_assertions(mut start: H3Index, mut en
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    let mut line: *mut H3Index = 0 as *mut H3Index;
+    let mut line: *mut H3Index = std::ptr::null_mut::<H3Index>();
     let mut err: H3Error = gridPathCells(start, end, line);
-    if !(err != E_SUCCESS as libc::c_int as libc::c_uint) {
+    if err == E_SUCCESS as libc::c_int as libc::c_uint {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -336,7 +336,7 @@ unsafe extern "C" fn gridPathCells_invalid_assertions(mut start: H3Index, mut en
 unsafe extern "C" fn gridPathCells_gridDisk_assertions(mut h3: H3Index) {
     let mut r: libc::c_int =
         ((h3 & (15 as libc::c_ulonglong) << 52 as libc::c_int) >> 52 as libc::c_int) as libc::c_int;
-    if !(r <= 5 as libc::c_int) {
+    if r > 5 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -396,7 +396,7 @@ unsafe extern "C" fn gridPathCells_gridDisk_assertions(mut h3: H3Index) {
     printf(b".\0" as *const u8 as *const libc::c_char);
     let mut i: libc::c_int = 0 as libc::c_int;
     while (i as libc::c_longlong) < sz {
-        if !(*neighbors.offset(i as isize) == 0 as libc::c_int as libc::c_ulonglong) {
+        if *neighbors.offset(i as isize) != 0 as libc::c_int as libc::c_ulonglong {
             let mut distance: int64_t = 0;
             let mut distanceError: H3Error =
                 gridDistance(h3, *neighbors.offset(i as isize), &mut distance);
@@ -441,8 +441,8 @@ unsafe fn main_0() -> libc::c_int {
         b"\nDONE: %d assertions\n\0" as *const u8 as *const libc::c_char,
         globalTestCount,
     );
-    return 0 as libc::c_int;
+    0 as libc::c_int
 }
 pub fn main() {
-    unsafe { ::std::process::exit(main_0() as i32) }
+    unsafe { ::std::process::exit(main_0()) }
 }

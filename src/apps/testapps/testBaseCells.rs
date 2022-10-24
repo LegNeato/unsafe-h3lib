@@ -87,8 +87,8 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(*indexes.offset(0 as libc::c_int as isize)
-        == 0x8001fffffffffff as libc::c_long as libc::c_ulonglong)
+    if *indexes.offset(0 as libc::c_int as isize)
+        != 0x8001fffffffffff as libc::c_long as libc::c_ulonglong
     {
         fprintf(
             __stderrp,
@@ -104,8 +104,8 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(*indexes.offset(121 as libc::c_int as isize)
-        == 0x80f3fffffffffff as libc::c_long as libc::c_ulonglong)
+    if *indexes.offset(121 as libc::c_int as isize)
+        != 0x80f3fffffffffff as libc::c_long as libc::c_ulonglong
     {
         fprintf(
             __stderrp,
@@ -123,7 +123,7 @@ unsafe extern "C" fn runTests() {
     printf(b".\0" as *const u8 as *const libc::c_char);
     free(indexes as *mut libc::c_void);
     currentTestName = b"baseCellToCCWrot60\0" as *const u8 as *const libc::c_char;
-    if !(_baseCellToCCWrot60(16 as libc::c_int, 0 as libc::c_int) == 0 as libc::c_int) {
+    if _baseCellToCCWrot60(16 as libc::c_int, 0 as libc::c_int) != 0 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -138,7 +138,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(_baseCellToCCWrot60(32 as libc::c_int, 0 as libc::c_int) == 3 as libc::c_int) {
+    if _baseCellToCCWrot60(32 as libc::c_int, 0 as libc::c_int) != 3 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -153,7 +153,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(_baseCellToCCWrot60(7 as libc::c_int, 3 as libc::c_int) == 1 as libc::c_int) {
+    if _baseCellToCCWrot60(7 as libc::c_int, 3 as libc::c_int) != 1 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -169,7 +169,7 @@ unsafe extern "C" fn runTests() {
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
     currentTestName = b"baseCellToCCWrot60_invalid\0" as *const u8 as *const libc::c_char;
-    if !(_baseCellToCCWrot60(16 as libc::c_int, 42 as libc::c_int) == -(1 as libc::c_int)) {
+    if _baseCellToCCWrot60(16 as libc::c_int, 42 as libc::c_int) != -(1 as libc::c_int) {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -186,7 +186,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(_baseCellToCCWrot60(16 as libc::c_int, -(1 as libc::c_int)) == -(1 as libc::c_int)) {
+    if _baseCellToCCWrot60(16 as libc::c_int, -(1 as libc::c_int)) != -(1 as libc::c_int) {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -203,7 +203,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(_baseCellToCCWrot60(1 as libc::c_int, 0 as libc::c_int) == -(1 as libc::c_int)) {
+    if _baseCellToCCWrot60(1 as libc::c_int, 0 as libc::c_int) != -(1 as libc::c_int) {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -220,7 +220,7 @@ unsafe extern "C" fn runTests() {
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
     currentTestName = b"isBaseCellPentagon_invalid\0" as *const u8 as *const libc::c_char;
-    if !(_isBaseCellPentagon(-(1 as libc::c_int)) == 0 as libc::c_int) {
+    if _isBaseCellPentagon(-(1 as libc::c_int)) != 0 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -247,8 +247,8 @@ unsafe fn main_0() -> libc::c_int {
         b"\nDONE: %d assertions\n\0" as *const u8 as *const libc::c_char,
         globalTestCount,
     );
-    return 0 as libc::c_int;
+    0 as libc::c_int
 }
 pub fn main() {
-    unsafe { ::std::process::exit(main_0() as i32) }
+    unsafe { ::std::process::exit(main_0()) }
 }

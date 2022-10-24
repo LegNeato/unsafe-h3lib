@@ -97,7 +97,7 @@ pub unsafe extern "C" fn resDigitToChar(mut d: libc::c_int) -> libc::c_char {
     if d < 0 as libc::c_int || d > 7 as libc::c_int {
         return 'x' as i32 as libc::c_char;
     }
-    return ('0' as i32 + d) as libc::c_char;
+    ('0' as i32 + d) as libc::c_char
 }
 #[no_mangle]
 pub unsafe extern "C" fn doCell(mut h: H3Index, mut verboseMode: bool) {
@@ -166,8 +166,9 @@ pub unsafe extern "C" fn doCell(mut h: H3Index, mut verboseMode: bool) {
                 b"\xE2\x95\x91%3i Child   \xE2\x95\x91 %c\n\0" as *const u8 as *const libc::c_char,
                 i,
                 resDigitToChar(
-                    (h >> (15 as libc::c_int - i) * 3 as libc::c_int & 7 as libc::c_int as uint64_t)
-                        as Direction as libc::c_int,
+                    (h >> ((15 as libc::c_int - i) * 3 as libc::c_int)
+                        & 7 as libc::c_int as uint64_t) as Direction
+                        as libc::c_int,
                 ) as libc::c_int,
             );
             i += 1;
@@ -188,7 +189,7 @@ pub unsafe extern "C" fn doCell(mut h: H3Index, mut verboseMode: bool) {
             printf(
                 b"%c\0" as *const u8 as *const libc::c_char,
                 resDigitToChar(
-                    (h >> (15 as libc::c_int - i_0) * 3 as libc::c_int
+                    (h >> ((15 as libc::c_int - i_0) * 3 as libc::c_int)
                         & 7 as libc::c_int as uint64_t) as Direction
                         as libc::c_int,
                 ) as libc::c_int,
@@ -210,7 +211,7 @@ pub unsafe extern "C" fn doCell(mut h: H3Index, mut verboseMode: bool) {
             printf(
                 b"%c\0" as *const u8 as *const libc::c_char,
                 resDigitToChar(
-                    (h >> (15 as libc::c_int - i_1) * 3 as libc::c_int
+                    (h >> ((15 as libc::c_int - i_1) * 3 as libc::c_int)
                         & 7 as libc::c_int as uint64_t) as Direction
                         as libc::c_int,
                 ) as libc::c_int,
@@ -224,7 +225,7 @@ pub unsafe extern "C" fn doCell(mut h: H3Index, mut verboseMode: bool) {
 }
 unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> libc::c_int {
     let mut helpArg: Arg = {
-        let mut init = Arg {
+        Arg {
             names: [
                 b"-h\0" as *const u8 as *const libc::c_char,
                 b"--help\0" as *const u8 as *const libc::c_char,
@@ -232,14 +233,13 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
             required: false,
             scanFormat: std::ptr::null::<libc::c_char>(),
             valueName: std::ptr::null::<libc::c_char>(),
-            value: 0 as *mut libc::c_void,
+            value: std::ptr::null_mut::<libc::c_void>(),
             found: false,
             helpText: b"Show this help message.\0" as *const u8 as *const libc::c_char,
-        };
-        init
+        }
     };
     let mut verboseArg: Arg = {
-        let mut init = Arg {
+        Arg {
             names: [
                 b"-v\0" as *const u8 as *const libc::c_char,
                 b"--verbose\0" as *const u8 as *const libc::c_char,
@@ -247,15 +247,14 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
             required: false,
             scanFormat: std::ptr::null::<libc::c_char>(),
             valueName: std::ptr::null::<libc::c_char>(),
-            value: 0 as *mut libc::c_void,
+            value: std::ptr::null_mut::<libc::c_void>(),
             found: false,
             helpText: b"Verbose output mode.\0" as *const u8 as *const libc::c_char,
-        };
-        init
+        }
     };
     let mut index: H3Index = 0 as libc::c_int as H3Index;
     let mut indexArg: Arg = {
-        let mut init = Arg {
+        Arg {
             names: [
                 b"-i\0" as *const u8 as *const libc::c_char,
                 b"--index\0" as *const u8 as *const libc::c_char,
@@ -267,8 +266,7 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
             found: false,
             helpText: b"Index, or not specified to read indexes from standard input.\0" as *const u8
                 as *const libc::c_char,
-        };
-        init
+        }
     };
     let numArgs: libc::c_int = 3 as libc::c_int;
     let mut args: [*mut Arg; 3] = [&mut helpArg, &mut verboseArg, &mut indexArg];
@@ -303,7 +301,7 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
             doCell(h3, verboseArg.found);
         }
     }
-    return 0;
+    0
 }
 pub fn main() {
     let mut args: Vec<*mut libc::c_char> = Vec::new();
@@ -319,6 +317,6 @@ pub fn main() {
         ::std::process::exit(main_0(
             (args.len() - 1) as libc::c_int,
             args.as_mut_ptr() as *mut *mut libc::c_char,
-        ) as i32)
+        ))
     }
 }

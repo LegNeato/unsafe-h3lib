@@ -197,7 +197,7 @@ unsafe extern "C" fn runTests() {
         }
         i += 1;
     }
-    if !(count == expectedCompactCount) {
+    if count != expectedCompactCount {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -270,7 +270,7 @@ unsafe extern "C" fn runTests() {
         }
         i_0 += 1;
     }
-    if !(count2 as libc::c_longlong == hexCount) {
+    if count2 as libc::c_longlong != hexCount {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -350,7 +350,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(*compressed_0.offset(0 as libc::c_int as isize) == parent) {
+    if *compressed_0.offset(0 as libc::c_int as isize) != parent {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -367,7 +367,7 @@ unsafe extern "C" fn runTests() {
     printf(b".\0" as *const u8 as *const libc::c_char);
     let mut idx: libc::c_int = 1 as libc::c_int;
     while (idx as libc::c_longlong) < arrSize {
-        if !(*compressed_0.offset(idx as isize) == 0 as libc::c_int as libc::c_ulonglong) {
+        if *compressed_0.offset(idx as isize) != 0 as libc::c_int as libc::c_ulonglong {
             fprintf(
                 __stderrp,
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -424,7 +424,7 @@ unsafe extern "C" fn runTests() {
     printf(b".\0" as *const u8 as *const libc::c_char);
     let mut i_2: libc::c_int = 0 as libc::c_int;
     while i_2 < hexCount_0 {
-        if !(*compressed_1.offset(i_2 as isize) == *res0Hexes.offset(i_2 as isize)) {
+        if *compressed_1.offset(i_2 as isize) != *res0Hexes.offset(i_2 as isize) {
             fprintf(
                 __stderrp,
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -499,7 +499,7 @@ unsafe extern "C" fn runTests() {
         }
         i_3 += 1;
     }
-    if !(count2_0 == hexCount_0) {
+    if count2_0 != hexCount_0 {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -553,7 +553,7 @@ unsafe extern "C" fn runTests() {
         }
         i_4 += 1;
     }
-    if !(count_0 == expectedCompactCount_0) {
+    if count_0 != expectedCompactCount_0 {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -626,7 +626,7 @@ unsafe extern "C" fn runTests() {
         }
         i_5 += 1;
     }
-    if !(count2_1 == hexCount_1) {
+    if count2_1 != hexCount_1 {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -657,11 +657,11 @@ unsafe extern "C" fn runTests() {
         i_6 += 1;
     }
     let mut compressed_3: [H3Index; 10] = [0; 10];
-    if !(compactCells(
+    if compactCells(
         someHexagons.as_mut_ptr(),
         compressed_3.as_mut_ptr(),
         numHex as int64_t,
-    ) == E_DUPLICATE_INPUT as libc::c_int as libc::c_uint)
+    ) != E_DUPLICATE_INPUT as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -725,7 +725,7 @@ unsafe extern "C" fn runTests() {
         ::core::mem::size_of::<H3Index>() as libc::c_ulong,
     ) as *mut H3Index;
     let mut compactCellsResult: H3Error = compactCells(children_0, output, arrSize_0);
-    if !(compactCellsResult == E_DUPLICATE_INPUT as libc::c_int as libc::c_uint) {
+    if compactCellsResult != E_DUPLICATE_INPUT as libc::c_int as libc::c_uint {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -809,7 +809,7 @@ unsafe extern "C" fn runTests() {
         ::core::mem::size_of::<H3Index>() as libc::c_ulong,
     ) as *mut H3Index;
     let mut compactCellsResult_0: H3Error = compactCells(children_1, output_0, arrSize_1);
-    if !(compactCellsResult_0 == E_DUPLICATE_INPUT as libc::c_int as libc::c_uint) {
+    if compactCellsResult_0 != E_DUPLICATE_INPUT as libc::c_int as libc::c_uint {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -890,11 +890,11 @@ unsafe extern "C" fn runTests() {
     free(output_1 as *mut libc::c_void);
     free(children_2 as *mut libc::c_void);
     currentTestName = b"compactCells_empty\0" as *const u8 as *const libc::c_char;
-    if !(compactCells(
+    if compactCells(
         std::ptr::null::<H3Index>(),
         std::ptr::null_mut::<H3Index>(),
         0 as libc::c_int as int64_t,
-    ) == E_SUCCESS as libc::c_int as libc::c_uint)
+    ) != E_SUCCESS as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -941,11 +941,11 @@ unsafe extern "C" fn runTests() {
         0 as libc::c_int as H3Index,
         0 as libc::c_int as H3Index,
     ];
-    if !(compactCells(
+    if compactCells(
         disparate.as_mut_ptr(),
         output_2.as_mut_ptr(),
         numHex_0 as int64_t,
-    ) == E_SUCCESS as libc::c_int as libc::c_uint)
+    ) != E_SUCCESS as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -964,7 +964,7 @@ unsafe extern "C" fn runTests() {
     printf(b".\0" as *const u8 as *const libc::c_char);
     let mut i_8: libc::c_int = 0 as libc::c_int;
     while i_8 < numHex_0 {
-        if !(disparate[i_8 as usize] == output_2[i_8 as usize]) {
+        if disparate[i_8 as usize] != output_2[i_8 as usize] {
             fprintf(
                 __stderrp,
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1001,8 +1001,8 @@ unsafe extern "C" fn runTests() {
         0 as libc::c_int as H3Index,
         0 as libc::c_int as H3Index,
     ];
-    if !(compactCells(bad.as_mut_ptr(), output_3.as_mut_ptr(), numHex_1 as int64_t)
-        == E_CELL_INVALID as libc::c_int as libc::c_uint)
+    if compactCells(bad.as_mut_ptr(), output_3.as_mut_ptr(), numHex_1 as int64_t)
+        != E_CELL_INVALID as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -1038,11 +1038,11 @@ unsafe extern "C" fn runTests() {
     bad_0[1 as libc::c_int as usize] = bad_0[1 as libc::c_int as usize]
         & !((15 as libc::c_ulonglong) << 52 as libc::c_int)
         | (5 as libc::c_int as uint64_t) << 52 as libc::c_int;
-    if !(compactCells(
+    if compactCells(
         bad_0.as_mut_ptr(),
         output_4.as_mut_ptr(),
         numHex_2 as int64_t,
-    ) == E_RES_MISMATCH as libc::c_int as libc::c_uint)
+    ) != E_RES_MISMATCH as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -1152,11 +1152,11 @@ unsafe extern "C" fn runTests() {
         0,
         0,
     ];
-    if !(compactCells(
+    if compactCells(
         bad_1.as_mut_ptr(),
         output_5.as_mut_ptr(),
         numHex_3 as int64_t,
-    ) == E_RES_DOMAIN as libc::c_int as libc::c_uint)
+    ) != E_RES_DOMAIN as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -1192,12 +1192,12 @@ unsafe extern "C" fn runTests() {
         i_9 += 1;
     }
     let mut sizeResult: int64_t = 0;
-    if !(uncompactCellsSize(
+    if uncompactCellsSize(
         someHexagons_0.as_mut_ptr(),
         numHex_4 as int64_t,
         4 as libc::c_int,
         &mut sizeResult,
-    ) == E_RES_MISMATCH as libc::c_int as libc::c_uint)
+    ) != E_RES_MISMATCH as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -1217,12 +1217,12 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(uncompactCellsSize(
+    if uncompactCellsSize(
         someHexagons_0.as_mut_ptr(),
         numHex_4 as int64_t,
         -(1 as libc::c_int),
         &mut sizeResult,
-    ) == E_RES_MISMATCH as libc::c_int as libc::c_uint)
+    ) != E_RES_MISMATCH as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -1242,12 +1242,12 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(uncompactCellsSize(
+    if uncompactCellsSize(
         someHexagons_0.as_mut_ptr(),
         numHex_4 as int64_t,
         15 as libc::c_int + 1 as libc::c_int,
         &mut sizeResult,
-    ) == E_RES_MISMATCH as libc::c_int as libc::c_uint)
+    ) != E_RES_MISMATCH as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -1279,7 +1279,7 @@ unsafe extern "C" fn runTests() {
         numHex_4 as int64_t,
         0 as libc::c_int,
     );
-    if !(uncompactCellsResult == E_RES_MISMATCH as libc::c_int as libc::c_uint) {
+    if uncompactCellsResult != E_RES_MISMATCH as libc::c_int as libc::c_uint {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1302,7 +1302,7 @@ unsafe extern "C" fn runTests() {
         numHex_4 as int64_t,
         6 as libc::c_int,
     );
-    if !(uncompactCellsResult == E_MEMORY_BOUNDS as libc::c_int as libc::c_uint) {
+    if uncompactCellsResult != E_MEMORY_BOUNDS as libc::c_int as libc::c_uint {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1325,7 +1325,7 @@ unsafe extern "C" fn runTests() {
         (numHex_4 - 1 as libc::c_int) as int64_t,
         5 as libc::c_int,
     );
-    if !(uncompactCellsResult == E_MEMORY_BOUNDS as libc::c_int as libc::c_uint) {
+    if uncompactCellsResult != E_MEMORY_BOUNDS as libc::c_int as libc::c_uint {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1358,7 +1358,7 @@ unsafe extern "C" fn runTests() {
         (numHex_4 * 7 as libc::c_int) as int64_t,
         15 as libc::c_int + 1 as libc::c_int,
     );
-    if !(uncompactCellsResult == E_RES_MISMATCH as libc::c_int as libc::c_uint) {
+    if uncompactCellsResult != E_RES_MISMATCH as libc::c_int as libc::c_uint {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1456,7 +1456,7 @@ unsafe extern "C" fn runTests() {
     while (i_11 as libc::c_longlong) < childrenSz {
         if *result.offset(i_11 as isize) != 0 as libc::c_int as libc::c_ulonglong {
             found += 1;
-            if !(*result.offset(i_11 as isize) == origin) {
+            if *result.offset(i_11 as isize) != origin {
                 fprintf(
                     __stderrp,
                     b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8
@@ -1475,7 +1475,7 @@ unsafe extern "C" fn runTests() {
         }
         i_11 += 1;
     }
-    if !(found == 1 as libc::c_int) {
+    if found != 1 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1516,7 +1516,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(uncompactSz == 0 as libc::c_int as libc::c_longlong) {
+    if uncompactSz != 0 as libc::c_int as libc::c_longlong {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1531,13 +1531,13 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(uncompactCells(
+    if uncompactCells(
         std::ptr::null::<H3Index>(),
         0 as libc::c_int as int64_t,
-        0 as *mut H3Index,
+        std::ptr::null_mut::<H3Index>(),
         0 as libc::c_int as int64_t,
         0 as libc::c_int,
-    ) == E_SUCCESS as libc::c_int as libc::c_uint)
+    ) != E_SUCCESS as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -1666,7 +1666,7 @@ unsafe extern "C" fn runTests() {
         }
         i_12 += 1;
     }
-    if !(found_0 as libc::c_longlong == childrenSz_1) {
+    if found_0 as libc::c_longlong != childrenSz_1 {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1765,7 +1765,7 @@ unsafe extern "C" fn runTests() {
     while (i_13 as libc::c_longlong) < childrenSz_2 {
         if *result_0.offset(i_13 as isize) != 0 as libc::c_int as libc::c_ulonglong {
             found_1 += 1;
-            if !(*result_0.offset(i_13 as isize) == pentagon) {
+            if *result_0.offset(i_13 as isize) != pentagon {
                 fprintf(
                     __stderrp,
                     b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8
@@ -1784,7 +1784,7 @@ unsafe extern "C" fn runTests() {
         }
         i_13 += 1;
     }
-    if !(found_1 == 1 as libc::c_int) {
+    if found_1 != 1 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1827,7 +1827,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(out == expected) {
+    if out != expected {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1868,7 +1868,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(out_0 == expected_0) {
+    if out_0 != expected_0 {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1895,8 +1895,8 @@ unsafe fn main_0() -> libc::c_int {
         b"\nDONE: %d assertions\n\0" as *const u8 as *const libc::c_char,
         globalTestCount,
     );
-    return 0 as libc::c_int;
+    0 as libc::c_int
 }
 pub fn main() {
-    unsafe { ::std::process::exit(main_0() as i32) }
+    unsafe { ::std::process::exit(main_0()) }
 }

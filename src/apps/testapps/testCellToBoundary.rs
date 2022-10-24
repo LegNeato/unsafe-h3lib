@@ -102,7 +102,7 @@ pub unsafe extern "C" fn readBoundary(mut f: *mut FILE, mut b: *mut CellBoundary
             return -(3 as libc::c_int);
         }
         if buff[0 as libc::c_int as usize] as libc::c_int == '}' as i32 {
-            if !((*b).numVerts == 0 as libc::c_int) {
+            if (*b).numVerts != 0 as libc::c_int {
                 break;
             }
             printf(b"reading empty cell boundary\0" as *const u8 as *const libc::c_char);
@@ -135,7 +135,7 @@ pub unsafe extern "C" fn readBoundary(mut f: *mut FILE, mut b: *mut CellBoundary
             (*b).numVerts += 1;
         }
     }
-    return 0 as libc::c_int;
+    0 as libc::c_int
 }
 unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> libc::c_int {
     if argc > 1 as libc::c_int {
@@ -177,7 +177,7 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
         readBoundary(__stdinp, &mut b);
         t_assertBoundary(h3, &mut b);
     }
-    return 0;
+    0
 }
 pub fn main() {
     let mut args: Vec<*mut libc::c_char> = Vec::new();
@@ -193,6 +193,6 @@ pub fn main() {
         ::std::process::exit(main_0(
             (args.len() - 1) as libc::c_int,
             args.as_mut_ptr() as *mut *mut libc::c_char,
-        ) as i32)
+        ))
     }
 }

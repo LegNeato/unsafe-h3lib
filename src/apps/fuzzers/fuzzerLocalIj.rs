@@ -122,7 +122,7 @@ pub unsafe extern "C" fn generateTestCase(
             as size_t as size_t;
     }
     fclose(fp);
-    return 0 as libc::c_int;
+    0 as libc::c_int
 }
 #[no_mangle]
 pub unsafe extern "C" fn testTwoIndexes(mut index: H3Index, mut index2: H3Index) {
@@ -151,11 +151,10 @@ pub unsafe extern "C" fn LLVMFuzzerTestOneInput(
     testTwoIndexes((*args).index, (*args).index2);
     let mut out: H3Index = 0;
     let mut ij: CoordIJ = {
-        let mut init = CoordIJ {
+        CoordIJ {
             i: (*args).i,
             j: (*args).j,
-        };
-        init
+        }
     };
     let mut err: H3Error = localIjToCell(
         (*args).index,
@@ -178,7 +177,7 @@ pub unsafe extern "C" fn LLVMFuzzerTestOneInput(
         testTwoIndexes((*args).index, out);
     }
     cellToLocalIj((*args).index, (*args).index2, mode, &mut ij);
-    return 0 as libc::c_int;
+    0 as libc::c_int
 }
 unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> libc::c_int {
     if argc == 3 as libc::c_int {
@@ -219,10 +218,10 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
         error(b"Error reading test case file\n\0" as *const u8 as *const libc::c_char);
     }
     fclose(fp);
-    return LLVMFuzzerTestOneInput(
+    LLVMFuzzerTestOneInput(
         data.as_mut_ptr(),
         ::core::mem::size_of::<inputArgs>() as libc::c_ulong,
-    );
+    )
 }
 pub fn main() {
     let mut args: Vec<*mut libc::c_char> = Vec::new();
@@ -238,6 +237,6 @@ pub fn main() {
         ::std::process::exit(main_0(
             (args.len() - 1) as libc::c_int,
             args.as_mut_ptr() as *mut *mut libc::c_char,
-        ) as i32)
+        ))
     }
 }

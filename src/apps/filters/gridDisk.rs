@@ -128,7 +128,7 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
     let mut k: libc::c_int = 0 as libc::c_int;
     let mut origin: H3Index = 0 as libc::c_int as H3Index;
     let mut helpArg: Arg = {
-        let mut init = Arg {
+        Arg {
             names: [
                 b"-h\0" as *const u8 as *const libc::c_char,
                 b"--help\0" as *const u8 as *const libc::c_char,
@@ -136,14 +136,13 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
             required: false,
             scanFormat: std::ptr::null::<libc::c_char>(),
             valueName: std::ptr::null::<libc::c_char>(),
-            value: 0 as *mut libc::c_void,
+            value: std::ptr::null_mut::<libc::c_void>(),
             found: false,
             helpText: b"Show this help message.\0" as *const u8 as *const libc::c_char,
-        };
-        init
+        }
     };
     let mut kArg: Arg = {
-        let mut init = Arg {
+        Arg {
             names: [
                 b"-k\0" as *const u8 as *const libc::c_char,
                 std::ptr::null::<libc::c_char>(),
@@ -154,11 +153,10 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
             value: &mut k as *mut libc::c_int as *mut libc::c_void,
             found: false,
             helpText: b"Radius in hexagons.\0" as *const u8 as *const libc::c_char,
-        };
-        init
+        }
     };
     let mut printDistancesArg: Arg = {
-        let mut init = Arg {
+        Arg {
             names: [
                 b"-d\0" as *const u8 as *const libc::c_char,
                 b"--print-distances\0" as *const u8 as *const libc::c_char,
@@ -166,15 +164,14 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
             required: false,
             scanFormat: std::ptr::null::<libc::c_char>(),
             valueName: std::ptr::null::<libc::c_char>(),
-            value: 0 as *mut libc::c_void,
+            value: std::ptr::null_mut::<libc::c_void>(),
             found: false,
             helpText: b"Print distance from origin after each index.\0" as *const u8
                 as *const libc::c_char,
-        };
-        init
+        }
     };
     let mut originArg: Arg = {
-        let mut init = Arg {
+        Arg {
             names: [
                 b"-o\0" as *const u8 as *const libc::c_char,
                 b"--origin\0" as *const u8 as *const libc::c_char,
@@ -186,8 +183,7 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
             found: false,
             helpText: b"Origin, or not specified to read origins from standard input.\0"
                 as *const u8 as *const libc::c_char,
-        };
-        init
+        }
     };
     let mut args: [*mut Arg; 4] = [
         &mut helpArg,
@@ -226,7 +222,7 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
             doCell(h3, k, printDistancesArg.found as libc::c_int);
         }
     }
-    return 0;
+    0
 }
 pub fn main() {
     let mut args: Vec<*mut libc::c_char> = Vec::new();
@@ -242,6 +238,6 @@ pub fn main() {
         ::std::process::exit(main_0(
             (args.len() - 1) as libc::c_int,
             args.as_mut_ptr() as *mut *mut libc::c_char,
-        ) as i32)
+        ))
     }
 }

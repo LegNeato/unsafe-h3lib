@@ -83,8 +83,8 @@ unsafe extern "C" fn runTests() {
     currentTestName = b"cellToChildrenSize_hexagon\0" as *const u8 as *const libc::c_char;
     let mut h: H3Index = 0x87283080dffffff as libc::c_long as H3Index;
     let mut sz: int64_t = 0;
-    if !(cellToChildrenSize(h, 3 as libc::c_int, &mut sz)
-        == E_RES_DOMAIN as libc::c_int as libc::c_uint)
+    if cellToChildrenSize(h, 3 as libc::c_int, &mut sz)
+        != E_RES_DOMAIN as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -116,7 +116,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(sz == 1 as libc::c_int as libc::c_longlong) {
+    if sz != 1 as libc::c_int as libc::c_longlong {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -146,7 +146,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(sz == 7 as libc::c_int as libc::c_longlong) {
+    if sz != 7 as libc::c_int as libc::c_longlong {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -176,7 +176,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(sz == (7 as libc::c_int * 7 as libc::c_int) as libc::c_longlong) {
+    if sz != (7 as libc::c_int * 7 as libc::c_int) as libc::c_longlong {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -194,8 +194,8 @@ unsafe extern "C" fn runTests() {
     currentTestName = b"cellToChildrenSize_pentagon\0" as *const u8 as *const libc::c_char;
     let mut h_0: H3Index = 0x870800000ffffff as libc::c_long as H3Index;
     let mut sz_0: int64_t = 0;
-    if !(cellToChildrenSize(h_0, 3 as libc::c_int, &mut sz_0)
-        == E_RES_DOMAIN as libc::c_int as libc::c_uint)
+    if cellToChildrenSize(h_0, 3 as libc::c_int, &mut sz_0)
+        != E_RES_DOMAIN as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -227,7 +227,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(sz_0 == 1 as libc::c_int as libc::c_longlong) {
+    if sz_0 != 1 as libc::c_int as libc::c_longlong {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -257,7 +257,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(sz_0 == 6 as libc::c_int as libc::c_longlong) {
+    if sz_0 != 6 as libc::c_int as libc::c_longlong {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -287,9 +287,9 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(sz_0
-        == (5 as libc::c_int * 7 as libc::c_int + 1 as libc::c_int * 6 as libc::c_int)
-            as libc::c_longlong)
+    if sz_0
+        != (5 as libc::c_int * 7 as libc::c_int + 1 as libc::c_int * 6 as libc::c_int)
+            as libc::c_longlong
     {
         fprintf(
             __stderrp,
@@ -324,7 +324,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(out == expected) {
+    if out != expected {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -358,7 +358,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(out_0 == expected_0) {
+    if out_0 != expected_0 {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -385,8 +385,8 @@ unsafe fn main_0() -> libc::c_int {
         b"\nDONE: %d assertions\n\0" as *const u8 as *const libc::c_char,
         globalTestCount,
     );
-    return 0 as libc::c_int;
+    0 as libc::c_int
 }
 pub fn main() {
-    unsafe { ::std::process::exit(main_0() as i32) }
+    unsafe { ::std::process::exit(main_0()) }
 }

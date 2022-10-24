@@ -125,11 +125,10 @@ unsafe extern "C" fn runTests() {
     currentTestName = b"latLngToCellExtremeCoordinates\0" as *const u8 as *const libc::c_char;
     let mut h: H3Index = 0;
     let mut g: LatLng = {
-        let mut init = LatLng {
+        LatLng {
             lat: 0 as libc::c_int as libc::c_double,
             lng: 1E45f64,
-        };
-        init
+        }
     };
     if latLngToCell(&mut g, 14 as libc::c_int, &mut h) != 0 {
         fprintf(
@@ -147,11 +146,10 @@ unsafe extern "C" fn runTests() {
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
     let mut g2: LatLng = {
-        let mut init = LatLng {
+        LatLng {
             lat: 1E46f64,
             lng: 1E45f64,
-        };
-        init
+        }
     };
     if latLngToCell(&mut g2, 15 as libc::c_int, &mut h) != 0 {
         fprintf(
@@ -187,20 +185,18 @@ unsafe extern "C" fn runTests() {
     printf(b".\0" as *const u8 as *const libc::c_char);
     currentTestName = b"faceIjkToH3ExtremeCoordinates\0" as *const u8 as *const libc::c_char;
     let mut fijk0I: FaceIJK = {
-        let mut init = FaceIJK {
+        FaceIJK {
             face: 0 as libc::c_int,
             coord: {
-                let mut init = CoordIJK {
+                CoordIJK {
                     i: 3 as libc::c_int,
                     j: 0 as libc::c_int,
                     k: 0 as libc::c_int,
-                };
-                init
+                }
             },
-        };
-        init
+        }
     };
-    if !(_faceIjkToH3(&mut fijk0I, 0 as libc::c_int) == 0 as libc::c_int as libc::c_ulonglong) {
+    if _faceIjkToH3(&mut fijk0I, 0 as libc::c_int) != 0 as libc::c_int as libc::c_ulonglong {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -216,20 +212,18 @@ unsafe extern "C" fn runTests() {
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
     let mut fijk0J: FaceIJK = {
-        let mut init = FaceIJK {
+        FaceIJK {
             face: 1 as libc::c_int,
             coord: {
-                let mut init = CoordIJK {
+                CoordIJK {
                     i: 0 as libc::c_int,
                     j: 4 as libc::c_int,
                     k: 0 as libc::c_int,
-                };
-                init
+                }
             },
-        };
-        init
+        }
     };
-    if !(_faceIjkToH3(&mut fijk0J, 0 as libc::c_int) == 0 as libc::c_int as libc::c_ulonglong) {
+    if _faceIjkToH3(&mut fijk0J, 0 as libc::c_int) != 0 as libc::c_int as libc::c_ulonglong {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -245,20 +239,18 @@ unsafe extern "C" fn runTests() {
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
     let mut fijk0K: FaceIJK = {
-        let mut init = FaceIJK {
+        FaceIJK {
             face: 2 as libc::c_int,
             coord: {
-                let mut init = CoordIJK {
+                CoordIJK {
                     i: 2 as libc::c_int,
                     j: 0 as libc::c_int,
                     k: 5 as libc::c_int,
-                };
-                init
+                }
             },
-        };
-        init
+        }
     };
-    if !(_faceIjkToH3(&mut fijk0K, 0 as libc::c_int) == 0 as libc::c_int as libc::c_ulonglong) {
+    if _faceIjkToH3(&mut fijk0K, 0 as libc::c_int) != 0 as libc::c_int as libc::c_ulonglong {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -274,20 +266,18 @@ unsafe extern "C" fn runTests() {
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
     let mut fijk1I: FaceIJK = {
-        let mut init = FaceIJK {
+        FaceIJK {
             face: 3 as libc::c_int,
             coord: {
-                let mut init = CoordIJK {
+                CoordIJK {
                     i: 6 as libc::c_int,
                     j: 0 as libc::c_int,
                     k: 0 as libc::c_int,
-                };
-                init
+                }
             },
-        };
-        init
+        }
     };
-    if !(_faceIjkToH3(&mut fijk1I, 1 as libc::c_int) == 0 as libc::c_int as libc::c_ulonglong) {
+    if _faceIjkToH3(&mut fijk1I, 1 as libc::c_int) != 0 as libc::c_int as libc::c_ulonglong {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -303,20 +293,18 @@ unsafe extern "C" fn runTests() {
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
     let mut fijk1J: FaceIJK = {
-        let mut init = FaceIJK {
+        FaceIJK {
             face: 4 as libc::c_int,
             coord: {
-                let mut init = CoordIJK {
+                CoordIJK {
                     i: 0 as libc::c_int,
                     j: 7 as libc::c_int,
                     k: 1 as libc::c_int,
-                };
-                init
+                }
             },
-        };
-        init
+        }
     };
-    if !(_faceIjkToH3(&mut fijk1J, 1 as libc::c_int) == 0 as libc::c_int as libc::c_ulonglong) {
+    if _faceIjkToH3(&mut fijk1J, 1 as libc::c_int) != 0 as libc::c_int as libc::c_ulonglong {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -332,20 +320,18 @@ unsafe extern "C" fn runTests() {
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
     let mut fijk1K: FaceIJK = {
-        let mut init = FaceIJK {
+        FaceIJK {
             face: 5 as libc::c_int,
             coord: {
-                let mut init = CoordIJK {
+                CoordIJK {
                     i: 2 as libc::c_int,
                     j: 0 as libc::c_int,
                     k: 8 as libc::c_int,
-                };
-                init
+                }
             },
-        };
-        init
+        }
     };
-    if !(_faceIjkToH3(&mut fijk1K, 1 as libc::c_int) == 0 as libc::c_int as libc::c_ulonglong) {
+    if _faceIjkToH3(&mut fijk1K, 1 as libc::c_int) != 0 as libc::c_int as libc::c_ulonglong {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -361,20 +347,18 @@ unsafe extern "C" fn runTests() {
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
     let mut fijk2I: FaceIJK = {
-        let mut init = FaceIJK {
+        FaceIJK {
             face: 6 as libc::c_int,
             coord: {
-                let mut init = CoordIJK {
+                CoordIJK {
                     i: 18 as libc::c_int,
                     j: 0 as libc::c_int,
                     k: 0 as libc::c_int,
-                };
-                init
+                }
             },
-        };
-        init
+        }
     };
-    if !(_faceIjkToH3(&mut fijk2I, 2 as libc::c_int) == 0 as libc::c_int as libc::c_ulonglong) {
+    if _faceIjkToH3(&mut fijk2I, 2 as libc::c_int) != 0 as libc::c_int as libc::c_ulonglong {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -390,20 +374,18 @@ unsafe extern "C" fn runTests() {
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
     let mut fijk2J: FaceIJK = {
-        let mut init = FaceIJK {
+        FaceIJK {
             face: 7 as libc::c_int,
             coord: {
-                let mut init = CoordIJK {
+                CoordIJK {
                     i: 0 as libc::c_int,
                     j: 19 as libc::c_int,
                     k: 1 as libc::c_int,
-                };
-                init
+                }
             },
-        };
-        init
+        }
     };
-    if !(_faceIjkToH3(&mut fijk2J, 2 as libc::c_int) == 0 as libc::c_int as libc::c_ulonglong) {
+    if _faceIjkToH3(&mut fijk2J, 2 as libc::c_int) != 0 as libc::c_int as libc::c_ulonglong {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -419,20 +401,18 @@ unsafe extern "C" fn runTests() {
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
     let mut fijk2K: FaceIJK = {
-        let mut init = FaceIJK {
+        FaceIJK {
             face: 8 as libc::c_int,
             coord: {
-                let mut init = CoordIJK {
+                CoordIJK {
                     i: 2 as libc::c_int,
                     j: 0 as libc::c_int,
                     k: 20 as libc::c_int,
-                };
-                init
+                }
             },
-        };
-        init
+        }
     };
-    if !(_faceIjkToH3(&mut fijk2K, 2 as libc::c_int) == 0 as libc::c_int as libc::c_ulonglong) {
+    if _faceIjkToH3(&mut fijk2K, 2 as libc::c_int) != 0 as libc::c_int as libc::c_ulonglong {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -451,11 +431,10 @@ unsafe extern "C" fn runTests() {
     let mut i: libc::c_int = 0 as libc::c_int;
     while i <= 15 as libc::c_int {
         let mut g_0: LatLng = {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0 as libc::c_int as libc::c_double,
                 lng: 0 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         };
         let mut h3: H3Index = 0;
         if latLngToCell(&mut g_0, i, &mut h3) != 0 {
@@ -498,11 +477,10 @@ unsafe extern "C" fn runTests() {
     }
     currentTestName = b"isValidCellDigits\0" as *const u8 as *const libc::c_char;
     let mut g_1: LatLng = {
-        let mut init = LatLng {
+        LatLng {
             lat: 0 as libc::c_int as libc::c_double,
             lng: 0 as libc::c_int as libc::c_double,
-        };
-        init
+        }
     };
     let mut h3_0: H3Index = 0;
     if latLngToCell(&mut g_1, 1 as libc::c_int, &mut h3_0) != 0 {
@@ -565,7 +543,7 @@ unsafe extern "C" fn runTests() {
         }
         globalTestCount += 1;
         printf(b".\0" as *const u8 as *const libc::c_char);
-        if !(getBaseCellNumber(h_0) == i_0) {
+        if getBaseCellNumber(h_0) != i_0 {
             fprintf(
                 __stderrp,
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -785,11 +763,11 @@ unsafe extern "C" fn runTests() {
         0,
         0,
     ];
-    if !(h3ToString(
+    if h3ToString(
         0x1234 as libc::c_int as H3Index,
         buf.as_mut_ptr(),
         bufSz.wrapping_sub(1 as libc::c_int as libc::c_ulong),
-    ) == E_MEMORY_BOUNDS as libc::c_int as libc::c_uint)
+    ) != E_MEMORY_BOUNDS as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -821,10 +799,10 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(strcmp(
+    if strcmp(
         buf.as_mut_ptr(),
         b"cafe\0" as *const u8 as *const libc::c_char,
-    ) == 0 as libc::c_int)
+    ) != 0 as libc::c_int
     {
         fprintf(
             __stderrp,
@@ -860,10 +838,10 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(strcmp(
+    if strcmp(
         buf.as_mut_ptr(),
         b"ffffffffffffffff\0" as *const u8 as *const libc::c_char,
-    ) == 0 as libc::c_int)
+    ) != 0 as libc::c_int
     {
         fprintf(
             __stderrp,
@@ -879,8 +857,8 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(buf[bufSz.wrapping_sub(1 as libc::c_int as libc::c_ulong) as usize] as libc::c_int
-        == 0 as libc::c_int)
+    if buf[bufSz.wrapping_sub(1 as libc::c_int as libc::c_ulong) as usize] as libc::c_int
+        != 0 as libc::c_int
     {
         fprintf(
             __stderrp,
@@ -898,8 +876,8 @@ unsafe extern "C" fn runTests() {
     printf(b".\0" as *const u8 as *const libc::c_char);
     currentTestName = b"stringToH3\0" as *const u8 as *const libc::c_char;
     let mut h3_1: H3Index = 0;
-    if !(stringToH3(b"\0" as *const u8 as *const libc::c_char, &mut h3_1)
-        == E_FAILED as libc::c_int as libc::c_uint)
+    if stringToH3(b"\0" as *const u8 as *const libc::c_char, &mut h3_1)
+        != E_FAILED as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -915,8 +893,8 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(stringToH3(b"**\0" as *const u8 as *const libc::c_char, &mut h3_1)
-        == E_FAILED as libc::c_int as libc::c_uint)
+    if stringToH3(b"**\0" as *const u8 as *const libc::c_char, &mut h3_1)
+        != E_FAILED as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -951,7 +929,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(h3_1 == 0xffffffffffffffff as libc::c_ulong as libc::c_ulonglong) {
+    if h3_1 != 0xffffffffffffffff as libc::c_ulong as libc::c_ulonglong {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -969,9 +947,8 @@ unsafe extern "C" fn runTests() {
     currentTestName = b"setH3Index\0" as *const u8 as *const libc::c_char;
     let mut h_6: H3Index = 0;
     setH3Index(&mut h_6, 5 as libc::c_int, 12 as libc::c_int, K_AXES_DIGIT);
-    if !(((h_6 & (15 as libc::c_ulonglong) << 52 as libc::c_int) >> 52 as libc::c_int)
-        as libc::c_int
-        == 5 as libc::c_int)
+    if ((h_6 & (15 as libc::c_ulonglong) << 52 as libc::c_int) >> 52 as libc::c_int) as libc::c_int
+        != 5 as libc::c_int
     {
         fprintf(
             __stderrp,
@@ -987,9 +964,9 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(((h_6 & (127 as libc::c_int as uint64_t) << 45 as libc::c_int) >> 45 as libc::c_int)
+    if ((h_6 & (127 as libc::c_int as uint64_t) << 45 as libc::c_int) >> 45 as libc::c_int)
         as libc::c_int
-        == 12 as libc::c_int)
+        != 12 as libc::c_int
     {
         fprintf(
             __stderrp,
@@ -1005,9 +982,9 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(((h_6 & (15 as libc::c_int as uint64_t) << 59 as libc::c_int) >> 59 as libc::c_int)
+    if ((h_6 & (15 as libc::c_int as uint64_t) << 59 as libc::c_int) >> 59 as libc::c_int)
         as libc::c_int
-        == 1 as libc::c_int)
+        != 1 as libc::c_int
     {
         fprintf(
             __stderrp,
@@ -1025,9 +1002,9 @@ unsafe extern "C" fn runTests() {
     printf(b".\0" as *const u8 as *const libc::c_char);
     let mut i_3: libc::c_int = 1 as libc::c_int;
     while i_3 <= 5 as libc::c_int {
-        if !((h_6 >> (15 as libc::c_int - i_3) * 3 as libc::c_int & 7 as libc::c_int as uint64_t)
+        if (h_6 >> ((15 as libc::c_int - i_3) * 3 as libc::c_int) & 7 as libc::c_int as uint64_t)
             as Direction as libc::c_uint
-            == 1 as libc::c_int as libc::c_uint)
+            != 1 as libc::c_int as libc::c_uint
         {
             fprintf(
                 __stderrp,
@@ -1047,9 +1024,9 @@ unsafe extern "C" fn runTests() {
     }
     let mut i_4: libc::c_int = 6 as libc::c_int;
     while i_4 <= 15 as libc::c_int {
-        if !((h_6 >> (15 as libc::c_int - i_4) * 3 as libc::c_int & 7 as libc::c_int as uint64_t)
+        if (h_6 >> ((15 as libc::c_int - i_4) * 3 as libc::c_int) & 7 as libc::c_int as uint64_t)
             as Direction as libc::c_uint
-            == 7 as libc::c_int as libc::c_uint)
+            != 7 as libc::c_int as libc::c_uint
         {
             fprintf(
                 __stderrp,
@@ -1067,7 +1044,7 @@ unsafe extern "C" fn runTests() {
         printf(b".\0" as *const u8 as *const libc::c_char);
         i_4 += 1;
     }
-    if !(h_6 == 0x85184927fffffff as libc::c_long as libc::c_ulonglong) {
+    if h_6 != 0x85184927fffffff as libc::c_long as libc::c_ulonglong {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1084,11 +1061,10 @@ unsafe extern "C" fn runTests() {
     printf(b".\0" as *const u8 as *const libc::c_char);
     currentTestName = b"isResClassIII\0" as *const u8 as *const libc::c_char;
     let mut coord: LatLng = {
-        let mut init = LatLng {
+        LatLng {
             lat: 0 as libc::c_int as libc::c_double,
             lng: 0 as libc::c_int as libc::c_double,
-        };
-        init
+        }
     };
     let mut i_5: libc::c_int = 0 as libc::c_int;
     while i_5 <= 15 as libc::c_int {
@@ -1108,7 +1084,7 @@ unsafe extern "C" fn runTests() {
         }
         globalTestCount += 1;
         printf(b".\0" as *const u8 as *const libc::c_char);
-        if !(isResClassIII(h_7) == isResolutionClassIII(i_5)) {
+        if isResClassIII(h_7) != isResolutionClassIII(i_5) {
             fprintf(
                 __stderrp,
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1138,8 +1114,8 @@ unsafe fn main_0() -> libc::c_int {
         b"\nDONE: %d assertions\n\0" as *const u8 as *const libc::c_char,
         globalTestCount,
     );
-    return 0 as libc::c_int;
+    0 as libc::c_int
 }
 pub fn main() {
-    unsafe { ::std::process::exit(main_0() as i32) }
+    unsafe { ::std::process::exit(main_0()) }
 }

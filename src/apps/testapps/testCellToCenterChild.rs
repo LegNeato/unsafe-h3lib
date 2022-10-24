@@ -174,7 +174,7 @@ unsafe extern "C" fn runTests() {
             }
             globalTestCount += 1;
             printf(b".\0" as *const u8 as *const libc::c_char);
-            if !(centerChild == geoChild) {
+            if centerChild != geoChild {
                 fprintf(
                     __stderrp,
                     b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8
@@ -192,7 +192,7 @@ unsafe extern "C" fn runTests() {
             }
             globalTestCount += 1;
             printf(b".\0" as *const u8 as *const libc::c_char);
-            if !(getResolution(centerChild) == childRes) {
+            if getResolution(centerChild) != childRes {
                 fprintf(
                     __stderrp,
                     b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8
@@ -230,7 +230,7 @@ unsafe extern "C" fn runTests() {
             }
             globalTestCount += 1;
             printf(b".\0" as *const u8 as *const libc::c_char);
-            if !(parent == h3Index) {
+            if parent != h3Index {
                 fprintf(
                     __stderrp,
                     b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8
@@ -270,7 +270,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(child == baseHex) {
+    if child != baseHex {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -289,8 +289,8 @@ unsafe extern "C" fn runTests() {
     currentTestName = b"invalidInputs\0" as *const u8 as *const libc::c_char;
     let mut res_1: libc::c_int = getResolution(baseHex);
     let mut child_0: H3Index = 0;
-    if !(cellToCenterChild(baseHex, res_1 - 1 as libc::c_int, &mut child_0)
-        == E_RES_DOMAIN as libc::c_int as libc::c_uint)
+    if cellToCenterChild(baseHex, res_1 - 1 as libc::c_int, &mut child_0)
+        != E_RES_DOMAIN as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -307,8 +307,8 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(cellToCenterChild(baseHex, -(1 as libc::c_int), &mut child_0)
-        == E_RES_DOMAIN as libc::c_int as libc::c_uint)
+    if cellToCenterChild(baseHex, -(1 as libc::c_int), &mut child_0)
+        != E_RES_DOMAIN as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -325,8 +325,8 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(cellToCenterChild(baseHex, 15 as libc::c_int + 1 as libc::c_int, &mut child_0)
-        == E_RES_DOMAIN as libc::c_int as libc::c_uint)
+    if cellToCenterChild(baseHex, 15 as libc::c_int + 1 as libc::c_int, &mut child_0)
+        != E_RES_DOMAIN as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -355,8 +355,8 @@ unsafe fn main_0() -> libc::c_int {
         b"\nDONE: %d assertions\n\0" as *const u8 as *const libc::c_char,
         globalTestCount,
     );
-    return 0 as libc::c_int;
+    0 as libc::c_int
 }
 pub fn main() {
-    unsafe { ::std::process::exit(main_0() as i32) }
+    unsafe { ::std::process::exit(main_0()) }
 }

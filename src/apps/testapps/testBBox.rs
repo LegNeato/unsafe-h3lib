@@ -173,381 +173,332 @@ unsafe extern "C" fn runTests() {
     currentTestName = b"posLatPosLng\0" as *const u8 as *const libc::c_char;
     let mut verts: [LatLng; 4] = [
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.8f64,
                 lng: 0.3f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.7f64,
                 lng: 0.6f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 1.1f64,
                 lng: 0.7f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 1.0f64,
                 lng: 0.2f64,
-            };
-            init
+            }
         },
     ];
     let geoloop: GeoLoop = {
-        let mut init = GeoLoop {
+        GeoLoop {
             numVerts: 4 as libc::c_int,
             verts: verts.as_mut_ptr(),
-        };
-        init
+        }
     };
     let expected: BBox = {
-        let mut init = BBox {
+        BBox {
             north: 1.1f64,
             south: 0.7f64,
             east: 0.7f64,
             west: 0.2f64,
-        };
-        init
+        }
     };
     let inside: LatLng = {
-        let mut init = LatLng {
+        LatLng {
             lat: 0.9f64,
             lng: 0.4f64,
-        };
-        init
+        }
     };
     let outside: LatLng = {
-        let mut init = LatLng {
+        LatLng {
             lat: 0.0f64,
             lng: 0.0f64,
-        };
-        init
+        }
     };
     assertBBox(&geoloop, &expected, &inside, &outside);
     currentTestName = b"negLatPosLng\0" as *const u8 as *const libc::c_char;
     let mut verts_0: [LatLng; 4] = [
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: -0.3f64,
                 lng: 0.6f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: -0.4f64,
                 lng: 0.9f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: -0.2f64,
                 lng: 0.8f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: -0.1f64,
                 lng: 0.6f64,
-            };
-            init
+            }
         },
     ];
     let geoloop_0: GeoLoop = {
-        let mut init = GeoLoop {
+        GeoLoop {
             numVerts: 4 as libc::c_int,
             verts: verts_0.as_mut_ptr(),
-        };
-        init
+        }
     };
     let expected_0: BBox = {
-        let mut init = BBox {
+        BBox {
             north: -0.1f64,
             south: -0.4f64,
             east: 0.9f64,
             west: 0.6f64,
-        };
-        init
+        }
     };
     let inside_0: LatLng = {
-        let mut init = LatLng {
+        LatLng {
             lat: -0.3f64,
             lng: 0.8f64,
-        };
-        init
+        }
     };
     let outside_0: LatLng = {
-        let mut init = LatLng {
+        LatLng {
             lat: 0.0f64,
             lng: 0.0f64,
-        };
-        init
+        }
     };
     assertBBox(&geoloop_0, &expected_0, &inside_0, &outside_0);
     currentTestName = b"posLatNegLng\0" as *const u8 as *const libc::c_char;
     let mut verts_1: [LatLng; 4] = [
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.7f64,
                 lng: -1.4f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.8f64,
                 lng: -0.9f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 1.0f64,
                 lng: -0.8f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 1.1f64,
                 lng: -1.3f64,
-            };
-            init
+            }
         },
     ];
     let geoloop_1: GeoLoop = {
-        let mut init = GeoLoop {
+        GeoLoop {
             numVerts: 4 as libc::c_int,
             verts: verts_1.as_mut_ptr(),
-        };
-        init
+        }
     };
     let expected_1: BBox = {
-        let mut init = BBox {
+        BBox {
             north: 1.1f64,
             south: 0.7f64,
             east: -0.8f64,
             west: -1.4f64,
-        };
-        init
+        }
     };
     let inside_1: LatLng = {
-        let mut init = LatLng {
+        LatLng {
             lat: 0.9f64,
             lng: -1.0f64,
-        };
-        init
+        }
     };
     let outside_1: LatLng = {
-        let mut init = LatLng {
+        LatLng {
             lat: 0.0f64,
             lng: 0.0f64,
-        };
-        init
+        }
     };
     assertBBox(&geoloop_1, &expected_1, &inside_1, &outside_1);
     currentTestName = b"negLatNegLng\0" as *const u8 as *const libc::c_char;
     let mut verts_2: [LatLng; 4] = [
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: -0.4f64,
                 lng: -1.4f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: -0.3f64,
                 lng: -1.1f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: -0.1f64,
                 lng: -1.2f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: -0.2f64,
                 lng: -1.4f64,
-            };
-            init
+            }
         },
     ];
     let geoloop_2: GeoLoop = {
-        let mut init = GeoLoop {
+        GeoLoop {
             numVerts: 4 as libc::c_int,
             verts: verts_2.as_mut_ptr(),
-        };
-        init
+        }
     };
     let expected_2: BBox = {
-        let mut init = BBox {
+        BBox {
             north: -0.1f64,
             south: -0.4f64,
             east: -1.1f64,
             west: -1.4f64,
-        };
-        init
+        }
     };
     let inside_2: LatLng = {
-        let mut init = LatLng {
+        LatLng {
             lat: -0.3f64,
             lng: -1.2f64,
-        };
-        init
+        }
     };
     let outside_2: LatLng = {
-        let mut init = LatLng {
+        LatLng {
             lat: 0.0f64,
             lng: 0.0f64,
-        };
-        init
+        }
     };
     assertBBox(&geoloop_2, &expected_2, &inside_2, &outside_2);
     currentTestName = b"aroundZeroZero\0" as *const u8 as *const libc::c_char;
     let mut verts_3: [LatLng; 4] = [
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.4f64,
                 lng: -0.4f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.4f64,
                 lng: 0.4f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: -0.4f64,
                 lng: 0.4f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: -0.4f64,
                 lng: -0.4f64,
-            };
-            init
+            }
         },
     ];
     let geoloop_3: GeoLoop = {
-        let mut init = GeoLoop {
+        GeoLoop {
             numVerts: 4 as libc::c_int,
             verts: verts_3.as_mut_ptr(),
-        };
-        init
+        }
     };
     let expected_3: BBox = {
-        let mut init = BBox {
+        BBox {
             north: 0.4f64,
             south: -0.4f64,
             east: 0.4f64,
             west: -0.4f64,
-        };
-        init
+        }
     };
     let inside_3: LatLng = {
-        let mut init = LatLng {
+        LatLng {
             lat: -0.1f64,
             lng: -0.1f64,
-        };
-        init
+        }
     };
     let outside_3: LatLng = {
-        let mut init = LatLng {
+        LatLng {
             lat: 1.0f64,
             lng: -1.0f64,
-        };
-        init
+        }
     };
     assertBBox(&geoloop_3, &expected_3, &inside_3, &outside_3);
     currentTestName = b"transmeridian\0" as *const u8 as *const libc::c_char;
     let mut verts_4: [LatLng; 4] = [
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.4f64,
-                lng: 3.14159265358979323846264338327950288f64 - 0.1f64,
-            };
-            init
+                lng: std::f64::consts::PI - 0.1f64,
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.4f64,
-                lng: -3.14159265358979323846264338327950288f64 + 0.1f64,
-            };
-            init
+                lng: -std::f64::consts::PI + 0.1f64,
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: -0.4f64,
-                lng: -3.14159265358979323846264338327950288f64 + 0.1f64,
-            };
-            init
+                lng: -std::f64::consts::PI + 0.1f64,
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: -0.4f64,
-                lng: 3.14159265358979323846264338327950288f64 - 0.1f64,
-            };
-            init
+                lng: std::f64::consts::PI - 0.1f64,
+            }
         },
     ];
     let geoloop_4: GeoLoop = {
-        let mut init = GeoLoop {
+        GeoLoop {
             numVerts: 4 as libc::c_int,
             verts: verts_4.as_mut_ptr(),
-        };
-        init
+        }
     };
     let expected_4: BBox = {
-        let mut init = BBox {
+        BBox {
             north: 0.4f64,
             south: -0.4f64,
-            east: -3.14159265358979323846264338327950288f64 + 0.1f64,
-            west: 3.14159265358979323846264338327950288f64 - 0.1f64,
-        };
-        init
+            east: -std::f64::consts::PI + 0.1f64,
+            west: std::f64::consts::PI - 0.1f64,
+        }
     };
     let insideOnMeridian: LatLng = {
-        let mut init = LatLng {
+        LatLng {
             lat: -0.1f64,
-            lng: 3.14159265358979323846264338327950288f64,
-        };
-        init
+            lng: std::f64::consts::PI,
+        }
     };
     let outside_4: LatLng = {
-        let mut init = LatLng {
+        LatLng {
             lat: 1.0f64,
-            lng: 3.14159265358979323846264338327950288f64 - 0.5f64,
-        };
-        init
+            lng: std::f64::consts::PI - 0.5f64,
+        }
     };
     assertBBox(&geoloop_4, &expected_4, &insideOnMeridian, &outside_4);
     let westInside: LatLng = {
-        let mut init = LatLng {
+        LatLng {
             lat: 0.1f64,
-            lng: 3.14159265358979323846264338327950288f64 - 0.05f64,
-        };
-        init
+            lng: std::f64::consts::PI - 0.05f64,
+        }
     };
     if !bboxContains(&expected_4, &westInside) {
         fprintf(
@@ -565,11 +516,10 @@ unsafe extern "C" fn runTests() {
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
     let eastInside: LatLng = {
-        let mut init = LatLng {
+        LatLng {
             lat: 0.1f64,
-            lng: -3.14159265358979323846264338327950288f64 + 0.05f64,
-        };
-        init
+            lng: -std::f64::consts::PI + 0.05f64,
+        }
     };
     if !bboxContains(&expected_4, &eastInside) {
         fprintf(
@@ -587,11 +537,10 @@ unsafe extern "C" fn runTests() {
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
     let westOutside: LatLng = {
-        let mut init = LatLng {
+        LatLng {
             lat: 0.1f64,
-            lng: 3.14159265358979323846264338327950288f64 - 0.5f64,
-        };
-        init
+            lng: std::f64::consts::PI - 0.5f64,
+        }
     };
     if bboxContains(&expected_4, &westOutside) {
         fprintf(
@@ -609,11 +558,10 @@ unsafe extern "C" fn runTests() {
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
     let eastOutside: LatLng = {
-        let mut init = LatLng {
+        LatLng {
             lat: 0.1f64,
-            lng: -3.14159265358979323846264338327950288f64 + 0.5f64,
-        };
-        init
+            lng: -std::f64::consts::PI + 0.5f64,
+        }
     };
     if bboxContains(&expected_4, &eastOutside) {
         fprintf(
@@ -633,193 +581,168 @@ unsafe extern "C" fn runTests() {
     currentTestName = b"edgeOnNorthPole\0" as *const u8 as *const libc::c_char;
     let mut verts_5: [LatLng; 4] = [
         {
-            let mut init = LatLng {
-                lat: 1.57079632679489661923132169163975144f64 - 0.1f64,
+            LatLng {
+                lat: std::f64::consts::FRAC_PI_2 - 0.1f64,
                 lng: 0.1f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
-                lat: 1.57079632679489661923132169163975144f64 - 0.1f64,
+            LatLng {
+                lat: std::f64::consts::FRAC_PI_2 - 0.1f64,
                 lng: 0.8f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
-                lat: 1.57079632679489661923132169163975144f64,
+            LatLng {
+                lat: std::f64::consts::FRAC_PI_2,
                 lng: 0.8f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
-                lat: 1.57079632679489661923132169163975144f64,
+            LatLng {
+                lat: std::f64::consts::FRAC_PI_2,
                 lng: 0.1f64,
-            };
-            init
+            }
         },
     ];
     let geoloop_5: GeoLoop = {
-        let mut init = GeoLoop {
+        GeoLoop {
             numVerts: 4 as libc::c_int,
             verts: verts_5.as_mut_ptr(),
-        };
-        init
+        }
     };
     let expected_5: BBox = {
-        let mut init = BBox {
-            north: 1.57079632679489661923132169163975144f64,
-            south: 1.57079632679489661923132169163975144f64 - 0.1f64,
+        BBox {
+            north: std::f64::consts::FRAC_PI_2,
+            south: std::f64::consts::FRAC_PI_2 - 0.1f64,
             east: 0.8f64,
             west: 0.1f64,
-        };
-        init
+        }
     };
     let inside_4: LatLng = {
-        let mut init = LatLng {
-            lat: 1.57079632679489661923132169163975144f64 - 0.01f64,
+        LatLng {
+            lat: std::f64::consts::FRAC_PI_2 - 0.01f64,
             lng: 0.4f64,
-        };
-        init
+        }
     };
     let outside_5: LatLng = {
-        let mut init = LatLng {
-            lat: 1.57079632679489661923132169163975144f64,
+        LatLng {
+            lat: std::f64::consts::FRAC_PI_2,
             lng: 0.9f64,
-        };
-        init
+        }
     };
     assertBBox(&geoloop_5, &expected_5, &inside_4, &outside_5);
     currentTestName = b"edgeOnSouthPole\0" as *const u8 as *const libc::c_char;
     let mut verts_6: [LatLng; 4] = [
         {
-            let mut init = LatLng {
-                lat: -1.57079632679489661923132169163975144f64 + 0.1f64,
+            LatLng {
+                lat: -std::f64::consts::FRAC_PI_2 + 0.1f64,
                 lng: 0.1f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
-                lat: -1.57079632679489661923132169163975144f64 + 0.1f64,
+            LatLng {
+                lat: -std::f64::consts::FRAC_PI_2 + 0.1f64,
                 lng: 0.8f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
-                lat: -1.57079632679489661923132169163975144f64,
+            LatLng {
+                lat: -std::f64::consts::FRAC_PI_2,
                 lng: 0.8f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
-                lat: -1.57079632679489661923132169163975144f64,
+            LatLng {
+                lat: -std::f64::consts::FRAC_PI_2,
                 lng: 0.1f64,
-            };
-            init
+            }
         },
     ];
     let geoloop_6: GeoLoop = {
-        let mut init = GeoLoop {
+        GeoLoop {
             numVerts: 4 as libc::c_int,
             verts: verts_6.as_mut_ptr(),
-        };
-        init
+        }
     };
     let expected_6: BBox = {
-        let mut init = BBox {
-            north: -1.57079632679489661923132169163975144f64 + 0.1f64,
-            south: -1.57079632679489661923132169163975144f64,
+        BBox {
+            north: -std::f64::consts::FRAC_PI_2 + 0.1f64,
+            south: -std::f64::consts::FRAC_PI_2,
             east: 0.8f64,
             west: 0.1f64,
-        };
-        init
+        }
     };
     let inside_5: LatLng = {
-        let mut init = LatLng {
-            lat: -1.57079632679489661923132169163975144f64 + 0.01f64,
+        LatLng {
+            lat: -std::f64::consts::FRAC_PI_2 + 0.01f64,
             lng: 0.4f64,
-        };
-        init
+        }
     };
     let outside_6: LatLng = {
-        let mut init = LatLng {
-            lat: -1.57079632679489661923132169163975144f64,
+        LatLng {
+            lat: -std::f64::consts::FRAC_PI_2,
             lng: 0.9f64,
-        };
-        init
+        }
     };
     assertBBox(&geoloop_6, &expected_6, &inside_5, &outside_6);
     currentTestName = b"containsEdges\0" as *const u8 as *const libc::c_char;
     let bbox: BBox = {
-        let mut init = BBox {
+        BBox {
             north: 0.1f64,
             south: -0.1f64,
             east: 0.2f64,
             west: -0.2f64,
-        };
-        init
+        }
     };
     let mut points: [LatLng; 8] = [
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.1f64,
                 lng: 0.2f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.1f64,
                 lng: 0.0f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.1f64,
                 lng: -0.2f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.0f64,
                 lng: 0.2f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: -0.1f64,
                 lng: 0.2f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: -0.1f64,
                 lng: 0.0f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: -0.1f64,
                 lng: -0.2f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.0f64,
                 lng: -0.2f64,
-            };
-            init
+            }
         },
     ];
     let numPoints: libc::c_int = 8 as libc::c_int;
@@ -844,70 +767,61 @@ unsafe extern "C" fn runTests() {
     }
     currentTestName = b"containsEdgesTransmeridian\0" as *const u8 as *const libc::c_char;
     let bbox_0: BBox = {
-        let mut init = BBox {
+        BBox {
             north: 0.1f64,
             south: -0.1f64,
-            east: -3.14159265358979323846264338327950288f64 + 0.2f64,
-            west: 3.14159265358979323846264338327950288f64 - 0.2f64,
-        };
-        init
+            east: -std::f64::consts::PI + 0.2f64,
+            west: std::f64::consts::PI - 0.2f64,
+        }
     };
     let mut points_0: [LatLng; 8] = [
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.1f64,
-                lng: -3.14159265358979323846264338327950288f64 + 0.2f64,
-            };
-            init
+                lng: -std::f64::consts::PI + 0.2f64,
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.1f64,
-                lng: 3.14159265358979323846264338327950288f64,
-            };
-            init
+                lng: std::f64::consts::PI,
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.1f64,
-                lng: 3.14159265358979323846264338327950288f64 - 0.2f64,
-            };
-            init
+                lng: std::f64::consts::PI - 0.2f64,
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.0f64,
-                lng: -3.14159265358979323846264338327950288f64 + 0.2f64,
-            };
-            init
+                lng: -std::f64::consts::PI + 0.2f64,
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: -0.1f64,
-                lng: -3.14159265358979323846264338327950288f64 + 0.2f64,
-            };
-            init
+                lng: -std::f64::consts::PI + 0.2f64,
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: -0.1f64,
-                lng: 3.14159265358979323846264338327950288f64,
-            };
-            init
+                lng: std::f64::consts::PI,
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: -0.1f64,
-                lng: 3.14159265358979323846264338327950288f64 - 0.2f64,
-            };
-            init
+                lng: std::f64::consts::PI - 0.2f64,
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.0f64,
-                lng: 3.14159265358979323846264338327950288f64 - 0.2f64,
-            };
-            init
+                lng: std::f64::consts::PI - 0.2f64,
+            }
         },
     ];
     let numPoints_0: libc::c_int = 8 as libc::c_int;
@@ -933,20 +847,18 @@ unsafe extern "C" fn runTests() {
     currentTestName = b"bboxCenterBasicQuandrants\0" as *const u8 as *const libc::c_char;
     let mut center: LatLng = LatLng { lat: 0., lng: 0. };
     let mut bbox1: BBox = {
-        let mut init = BBox {
+        BBox {
             north: 1.0f64,
             south: 0.8f64,
             east: 1.0f64,
             west: 0.8f64,
-        };
-        init
+        }
     };
     let mut expected1: LatLng = {
-        let mut init = LatLng {
+        LatLng {
             lat: 0.9f64,
             lng: 0.9f64,
-        };
-        init
+        }
     };
     bboxCenter(&mut bbox1, &mut center);
     if !geoAlmostEqual(&mut center, &mut expected1) {
@@ -965,20 +877,18 @@ unsafe extern "C" fn runTests() {
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
     let mut bbox2: BBox = {
-        let mut init = BBox {
+        BBox {
             north: -0.8f64,
             south: -1.0f64,
             east: 1.0f64,
             west: 0.8f64,
-        };
-        init
+        }
     };
     let mut expected2: LatLng = {
-        let mut init = LatLng {
+        LatLng {
             lat: -0.9f64,
             lng: 0.9f64,
-        };
-        init
+        }
     };
     bboxCenter(&mut bbox2, &mut center);
     if !geoAlmostEqual(&mut center, &mut expected2) {
@@ -997,20 +907,18 @@ unsafe extern "C" fn runTests() {
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
     let mut bbox3: BBox = {
-        let mut init = BBox {
+        BBox {
             north: 1.0f64,
             south: 0.8f64,
             east: -0.8f64,
             west: -1.0f64,
-        };
-        init
+        }
     };
     let mut expected3: LatLng = {
-        let mut init = LatLng {
+        LatLng {
             lat: 0.9f64,
             lng: -0.9f64,
-        };
-        init
+        }
     };
     bboxCenter(&mut bbox3, &mut center);
     if !geoAlmostEqual(&mut center, &mut expected3) {
@@ -1029,20 +937,18 @@ unsafe extern "C" fn runTests() {
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
     let mut bbox4: BBox = {
-        let mut init = BBox {
+        BBox {
             north: -0.8f64,
             south: -1.0f64,
             east: -0.8f64,
             west: -1.0f64,
-        };
-        init
+        }
     };
     let mut expected4: LatLng = {
-        let mut init = LatLng {
+        LatLng {
             lat: -0.9f64,
             lng: -0.9f64,
-        };
-        init
+        }
     };
     bboxCenter(&mut bbox4, &mut center);
     if !geoAlmostEqual(&mut center, &mut expected4) {
@@ -1061,20 +967,18 @@ unsafe extern "C" fn runTests() {
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
     let mut bbox5: BBox = {
-        let mut init = BBox {
+        BBox {
             north: 0.8f64,
             south: -0.8f64,
             east: 1.0f64,
             west: -1.0f64,
-        };
-        init
+        }
     };
     let mut expected5: LatLng = {
-        let mut init = LatLng {
+        LatLng {
             lat: 0.0f64,
             lng: 0.0f64,
-        };
-        init
+        }
     };
     bboxCenter(&mut bbox5, &mut center);
     if !geoAlmostEqual(&mut center, &mut expected5) {
@@ -1095,20 +999,18 @@ unsafe extern "C" fn runTests() {
     currentTestName = b"bboxCenterTransmeridian\0" as *const u8 as *const libc::c_char;
     let mut center_0: LatLng = LatLng { lat: 0., lng: 0. };
     let mut bbox1_0: BBox = {
-        let mut init = BBox {
+        BBox {
             north: 1.0f64,
             south: 0.8f64,
-            east: -3.14159265358979323846264338327950288f64 + 0.3f64,
-            west: 3.14159265358979323846264338327950288f64 - 0.1f64,
-        };
-        init
+            east: -std::f64::consts::PI + 0.3f64,
+            west: std::f64::consts::PI - 0.1f64,
+        }
     };
     let mut expected1_0: LatLng = {
-        let mut init = LatLng {
+        LatLng {
             lat: 0.9f64,
-            lng: -3.14159265358979323846264338327950288f64 + 0.1f64,
-        };
-        init
+            lng: -std::f64::consts::PI + 0.1f64,
+        }
     };
     bboxCenter(&mut bbox1_0, &mut center_0);
     if !geoAlmostEqual(&mut center_0, &mut expected1_0) {
@@ -1127,20 +1029,18 @@ unsafe extern "C" fn runTests() {
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
     let mut bbox2_0: BBox = {
-        let mut init = BBox {
+        BBox {
             north: 1.0f64,
             south: 0.8f64,
-            east: -3.14159265358979323846264338327950288f64 + 0.1f64,
-            west: 3.14159265358979323846264338327950288f64 - 0.3f64,
-        };
-        init
+            east: -std::f64::consts::PI + 0.1f64,
+            west: std::f64::consts::PI - 0.3f64,
+        }
     };
     let mut expected2_0: LatLng = {
-        let mut init = LatLng {
+        LatLng {
             lat: 0.9f64,
-            lng: 3.14159265358979323846264338327950288f64 - 0.1f64,
-        };
-        init
+            lng: std::f64::consts::PI - 0.1f64,
+        }
     };
     bboxCenter(&mut bbox2_0, &mut center_0);
     if !geoAlmostEqual(&mut center_0, &mut expected2_0) {
@@ -1159,20 +1059,18 @@ unsafe extern "C" fn runTests() {
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
     let mut bbox3_0: BBox = {
-        let mut init = BBox {
+        BBox {
             north: 1.0f64,
             south: 0.8f64,
-            east: -3.14159265358979323846264338327950288f64 + 0.1f64,
-            west: 3.14159265358979323846264338327950288f64 - 0.1f64,
-        };
-        init
+            east: -std::f64::consts::PI + 0.1f64,
+            west: std::f64::consts::PI - 0.1f64,
+        }
     };
     let mut expected3_0: LatLng = {
-        let mut init = LatLng {
+        LatLng {
             lat: 0.9f64,
-            lng: 3.14159265358979323846264338327950288f64,
-        };
-        init
+            lng: std::f64::consts::PI,
+        }
     };
     bboxCenter(&mut bbox3_0, &mut center_0);
     if !geoAlmostEqual(&mut center_0, &mut expected3_0) {
@@ -1192,13 +1090,12 @@ unsafe extern "C" fn runTests() {
     printf(b".\0" as *const u8 as *const libc::c_char);
     currentTestName = b"bboxIsTransmeridian\0" as *const u8 as *const libc::c_char;
     let mut bboxNormal: BBox = {
-        let mut init = BBox {
+        BBox {
             north: 1.0f64,
             south: 0.8f64,
             east: 1.0f64,
             west: 0.8f64,
-        };
-        init
+        }
     };
     if bboxIsTransmeridian(&mut bboxNormal) {
         fprintf(
@@ -1216,13 +1113,12 @@ unsafe extern "C" fn runTests() {
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
     let mut bboxTransmeridian: BBox = {
-        let mut init = BBox {
+        BBox {
             north: 1.0f64,
             south: 0.8f64,
-            east: -3.14159265358979323846264338327950288f64 + 0.3f64,
-            west: 3.14159265358979323846264338327950288f64 - 0.1f64,
-        };
-        init
+            east: -std::f64::consts::PI + 0.3f64,
+            west: std::f64::consts::PI - 0.1f64,
+        }
     };
     if !bboxIsTransmeridian(&mut bboxTransmeridian) {
         fprintf(
@@ -1241,13 +1137,12 @@ unsafe extern "C" fn runTests() {
     printf(b".\0" as *const u8 as *const libc::c_char);
     currentTestName = b"bboxEquals\0" as *const u8 as *const libc::c_char;
     let mut bbox_1: BBox = {
-        let mut init = BBox {
+        BBox {
             north: 1.0f64,
             south: 0.0f64,
             east: 1.0f64,
             west: 0.0f64,
-        };
-        init
+        }
     };
     let mut north: BBox = bbox_1;
     north.north += 0.1f64;
@@ -1335,16 +1230,15 @@ unsafe extern "C" fn runTests() {
     currentTestName = b"bboxHexEstimate_invalidRes\0" as *const u8 as *const libc::c_char;
     let mut numHexagons: int64_t = 0;
     let mut bbox_2: BBox = {
-        let mut init = BBox {
+        BBox {
             north: 1.0f64,
             south: 0.0f64,
             east: 1.0f64,
             west: 0.0f64,
-        };
-        init
+        }
     };
-    if !(bboxHexEstimate(&mut bbox_2, -(1 as libc::c_int), &mut numHexagons)
-        == E_RES_DOMAIN as libc::c_int as libc::c_uint)
+    if bboxHexEstimate(&mut bbox_2, -(1 as libc::c_int), &mut numHexagons)
+        != E_RES_DOMAIN as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -1364,25 +1258,23 @@ unsafe extern "C" fn runTests() {
     currentTestName = b"lineHexEstimate_invalidRes\0" as *const u8 as *const libc::c_char;
     let mut numHexagons_0: int64_t = 0;
     let mut origin: LatLng = {
-        let mut init = LatLng {
+        LatLng {
             lat: 0.0f64,
             lng: 0.0f64,
-        };
-        init
+        }
     };
     let mut destination: LatLng = {
-        let mut init = LatLng {
+        LatLng {
             lat: 1.0f64,
             lng: 1.0f64,
-        };
-        init
+        }
     };
-    if !(lineHexEstimate(
+    if lineHexEstimate(
         &mut origin,
         &mut destination,
         -(1 as libc::c_int),
         &mut numHexagons_0,
-    ) == E_RES_DOMAIN as libc::c_int as libc::c_uint)
+    ) != E_RES_DOMAIN as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -1411,8 +1303,8 @@ unsafe fn main_0() -> libc::c_int {
         b"\nDONE: %d assertions\n\0" as *const u8 as *const libc::c_char,
         globalTestCount,
     );
-    return 0 as libc::c_int;
+    0 as libc::c_int
 }
 pub fn main() {
-    unsafe { ::std::process::exit(main_0() as i32) }
+    unsafe { ::std::process::exit(main_0()) }
 }

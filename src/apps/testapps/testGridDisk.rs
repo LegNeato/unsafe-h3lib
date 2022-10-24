@@ -226,8 +226,8 @@ unsafe extern "C" fn gridDisk_equals_gridDiskDistancesSafe_assertions(mut h3: H3
                         == *neighbors.offset(iNeighbor as isize)
                     {
                         internalFound += 1;
-                        if !(*distances.offset(iNeighbor as isize)
-                            == *internalDistances.offset(iInternal as isize))
+                        if *distances.offset(iNeighbor as isize)
+                            != *internalDistances.offset(iInternal as isize)
                         {
                             fprintf(
                                 __stderrp,
@@ -253,7 +253,7 @@ unsafe extern "C" fn gridDisk_equals_gridDiskDistancesSafe_assertions(mut h3: H3
                         iInternal += 1;
                     }
                 }
-                if !(found == internalFound) {
+                if found != internalFound {
                     fprintf(
                         __stderrp,
                         b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8
@@ -283,11 +283,10 @@ unsafe extern "C" fn gridDisk_equals_gridDiskDistancesSafe_assertions(mut h3: H3
 unsafe extern "C" fn runTests() {
     currentTestName = b"gridDisk0\0" as *const u8 as *const libc::c_char;
     let mut sf: LatLng = {
-        let mut init = LatLng {
+        LatLng {
             lat: 0.659966917655f64,
-            lng: 2 as libc::c_int as libc::c_double * 3.14159f64 - 2.1364398519396f64,
-        };
-        init
+            lng: 2 as libc::c_int as libc::c_double * std::f64::consts::PI - 2.1364398519396f64,
+        }
     };
     let mut sfHex0: H3Index = 0;
     if latLngToCell(&mut sf, 0 as libc::c_int, &mut sfHex0) != 0 {
@@ -355,7 +354,7 @@ unsafe extern "C" fn runTests() {
     printf(b".\0" as *const u8 as *const libc::c_char);
     let mut i: libc::c_int = 0 as libc::c_int;
     while i < 7 as libc::c_int {
-        if !(k1[i as usize] != 0 as libc::c_int as libc::c_ulonglong) {
+        if k1[i as usize] == 0 as libc::c_int as libc::c_ulonglong {
             fprintf(
                 __stderrp,
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -374,12 +373,12 @@ unsafe extern "C" fn runTests() {
         let mut j: libc::c_int = 0 as libc::c_int;
         while j < 7 as libc::c_int {
             if k1[i as usize] == expectedK1[j as usize] {
-                if !(k1Dist[i as usize]
-                    == (if k1[i as usize] == sfHex0 {
+                if k1Dist[i as usize]
+                    != (if k1[i as usize] == sfHex0 {
                         0 as libc::c_int
                     } else {
                         1 as libc::c_int
-                    }))
+                    })
                 {
                     fprintf(
                         __stderrp,
@@ -401,7 +400,7 @@ unsafe extern "C" fn runTests() {
             }
             j += 1;
         }
-        if !(inList == 1 as libc::c_int) {
+        if inList != 1 as libc::c_int {
             fprintf(
                 __stderrp,
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -478,12 +477,12 @@ unsafe extern "C" fn runTests() {
             let mut j_0: libc::c_int = 0 as libc::c_int;
             while j_0 < 7 as libc::c_int {
                 if k2[i_0 as usize] == expectedK2[j_0 as usize] {
-                    if !(k2Dist[i_0 as usize]
-                        == (if k2[i_0 as usize] == polar {
+                    if k2Dist[i_0 as usize]
+                        != (if k2[i_0 as usize] == polar {
                             0 as libc::c_int
                         } else {
                             1 as libc::c_int
-                        }))
+                        })
                     {
                         fprintf(
                             __stderrp,
@@ -506,7 +505,7 @@ unsafe extern "C" fn runTests() {
                 }
                 j_0 += 1;
             }
-            if !(inList_0 == 1 as libc::c_int) {
+            if inList_0 != 1 as libc::c_int {
                 fprintf(
                     __stderrp,
                     b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8
@@ -525,7 +524,7 @@ unsafe extern "C" fn runTests() {
         }
         i_0 += 1;
     }
-    if !(k2present == 6 as libc::c_int) {
+    if k2present != 6 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -605,12 +604,12 @@ unsafe extern "C" fn runTests() {
             let mut j_1: libc::c_int = 0 as libc::c_int;
             while j_1 < 7 as libc::c_int {
                 if k2_0[i_1 as usize] == expectedK2_0[j_1 as usize] {
-                    if !(k2Dist_0[i_1 as usize]
-                        == (if k2_0[i_1 as usize] == polar_0 {
+                    if k2Dist_0[i_1 as usize]
+                        != (if k2_0[i_1 as usize] == polar_0 {
                             0 as libc::c_int
                         } else {
                             1 as libc::c_int
-                        }))
+                        })
                     {
                         fprintf(
                             __stderrp,
@@ -633,7 +632,7 @@ unsafe extern "C" fn runTests() {
                 }
                 j_1 += 1;
             }
-            if !(inList_1 == 1 as libc::c_int) {
+            if inList_1 != 1 as libc::c_int {
                 fprintf(
                     __stderrp,
                     b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8
@@ -652,7 +651,7 @@ unsafe extern "C" fn runTests() {
         }
         i_1 += 1;
     }
-    if !(k2present_0 == 6 as libc::c_int) {
+    if k2present_0 != 6 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -861,7 +860,7 @@ unsafe extern "C" fn runTests() {
             let mut j_2: libc::c_int = 0 as libc::c_int;
             while j_2 < 37 as libc::c_int {
                 if k2_1[i_2 as usize] == expectedK2_1[j_2 as usize] {
-                    if !(k2Dist_1[i_2 as usize] == expectedK2Dist[j_2 as usize]) {
+                    if k2Dist_1[i_2 as usize] != expectedK2Dist[j_2 as usize] {
                         fprintf(
                             __stderrp,
                             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8
@@ -882,7 +881,7 @@ unsafe extern "C" fn runTests() {
                 }
                 j_2 += 1;
             }
-            if !(inList_2 == 1 as libc::c_int) {
+            if inList_2 != 1 as libc::c_int {
                 fprintf(
                     __stderrp,
                     b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8
@@ -901,7 +900,7 @@ unsafe extern "C" fn runTests() {
         }
         i_2 += 1;
     }
-    if !(k2present_1 == 31 as libc::c_int) {
+    if k2present_1 != 31 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1142,7 +1141,7 @@ unsafe extern "C" fn runTests() {
                 }
                 j_3 += 1;
             }
-            if !(inList_3 == 1 as libc::c_int) {
+            if inList_3 != 1 as libc::c_int {
                 fprintf(
                     __stderrp,
                     b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8
@@ -1161,7 +1160,7 @@ unsafe extern "C" fn runTests() {
         }
         i_3 += 1;
     }
-    if !(k2present_2 == 51 as libc::c_int) {
+    if k2present_2 != 51 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1209,7 +1208,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(out == origin) {
+    if out != origin {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1224,7 +1223,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(rotations == 0 as libc::c_int) {
+    if rotations != 0 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1273,7 +1272,7 @@ unsafe extern "C" fn runTests() {
         1 as libc::c_int,
         CENTER_DIGIT,
     );
-    if !(out_0 == expected) {
+    if out_0 != expected {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1288,7 +1287,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(rotations_0 == 5 as libc::c_int) {
+    if rotations_0 != 5 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1337,7 +1336,7 @@ unsafe extern "C" fn runTests() {
         0 as libc::c_int,
         CENTER_DIGIT,
     );
-    if !(out_1 == expected_0) {
+    if out_1 != expected_0 {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1352,7 +1351,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(rotations_1 == 0 as libc::c_int) {
+    if rotations_1 != 0 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1371,12 +1370,12 @@ unsafe extern "C" fn runTests() {
     let mut origin_2: H3Index = 0x811d7ffffffffff as libc::c_long as H3Index;
     let mut rotations_2: libc::c_int = 0 as libc::c_int;
     let mut out_2: H3Index = 0;
-    if !(h3NeighborRotations(
+    if h3NeighborRotations(
         origin_2,
         4294967295 as Direction,
         &mut rotations_2,
         &mut out_2,
-    ) == E_FAILED as libc::c_int as libc::c_uint)
+    ) != E_FAILED as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -1393,8 +1392,8 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(h3NeighborRotations(origin_2, INVALID_DIGIT, &mut rotations_2, &mut out_2)
-        == E_FAILED as libc::c_int as libc::c_uint)
+    if h3NeighborRotations(origin_2, INVALID_DIGIT, &mut rotations_2, &mut out_2)
+        != E_FAILED as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -1411,8 +1410,8 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(h3NeighborRotations(origin_2, 100 as Direction, &mut rotations_2, &mut out_2)
-        == E_FAILED as libc::c_int as libc::c_uint)
+    if h3NeighborRotations(origin_2, 100 as Direction, &mut rotations_2, &mut out_2)
+        != E_FAILED as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -1432,7 +1431,7 @@ unsafe extern "C" fn runTests() {
     currentTestName = b"cwOffsetPent\0" as *const u8 as *const libc::c_char;
     let mut pentagon: libc::c_int = 0 as libc::c_int;
     while pentagon < 122 as libc::c_int {
-        if !(_isBaseCellPentagon(pentagon) == 0) {
+        if _isBaseCellPentagon(pentagon) != 0 {
             let mut neighbor: libc::c_int = 0 as libc::c_int;
             while neighbor < 122 as libc::c_int {
                 let mut homeFaceIjk: FaceIJK = FaceIJK {
@@ -1489,8 +1488,8 @@ unsafe extern "C" fn runTests() {
         kSz as libc::c_ulong,
         ::core::mem::size_of::<H3Index>() as libc::c_ulong,
     ) as *mut H3Index;
-    if !(gridDisk(0x7fffffffffffffff as libc::c_long as H3Index, k, neighbors)
-        == E_CELL_INVALID as libc::c_int as libc::c_uint)
+    if gridDisk(0x7fffffffffffffff as libc::c_long as H3Index, k, neighbors)
+        != E_CELL_INVALID as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -1530,11 +1529,11 @@ unsafe extern "C" fn runTests() {
         kSz_0 as libc::c_ulong,
         ::core::mem::size_of::<H3Index>() as libc::c_ulong,
     ) as *mut H3Index;
-    if !(gridDisk(
+    if gridDisk(
         0x4d4b00fe5c5c3030 as libc::c_long as H3Index,
         k_0,
         neighbors_0,
-    ) == E_CELL_INVALID as libc::c_int as libc::c_uint)
+    ) != E_CELL_INVALID as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -1554,12 +1553,12 @@ unsafe extern "C" fn runTests() {
     free(neighbors_0 as *mut libc::c_void);
     currentTestName = b"gridDiskDistances_invalidK\0" as *const u8 as *const libc::c_char;
     let mut index: H3Index = 0x811d7ffffffffff as libc::c_long as H3Index;
-    if !(gridDiskDistances(
+    if gridDiskDistances(
         index,
         -(1 as libc::c_int),
-        0 as *mut H3Index,
-        0 as *mut libc::c_int,
-    ) == E_DOMAIN as libc::c_int as libc::c_uint)
+        std::ptr::null_mut::<H3Index>(),
+        std::ptr::null_mut::<libc::c_int>(),
+    ) != E_DOMAIN as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -1576,12 +1575,12 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(gridDiskDistancesUnsafe(
+    if gridDiskDistancesUnsafe(
         index,
         -(1 as libc::c_int),
-        0 as *mut H3Index,
-        0 as *mut libc::c_int,
-    ) == E_DOMAIN as libc::c_int as libc::c_uint)
+        std::ptr::null_mut::<H3Index>(),
+        std::ptr::null_mut::<libc::c_int>(),
+    ) != E_DOMAIN as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -1598,12 +1597,12 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(gridDiskDistancesSafe(
+    if gridDiskDistancesSafe(
         index,
         -(1 as libc::c_int),
-        0 as *mut H3Index,
-        0 as *mut libc::c_int,
-    ) == E_DOMAIN as libc::c_int as libc::c_uint)
+        std::ptr::null_mut::<H3Index>(),
+        std::ptr::null_mut::<libc::c_int>(),
+    ) != E_DOMAIN as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -1622,7 +1621,7 @@ unsafe extern "C" fn runTests() {
     printf(b".\0" as *const u8 as *const libc::c_char);
     currentTestName = b"maxGridDiskSize_invalid\0" as *const u8 as *const libc::c_char;
     let mut sz: int64_t = 0;
-    if !(maxGridDiskSize(-(1 as libc::c_int), &mut sz) == E_DOMAIN as libc::c_int as libc::c_uint) {
+    if maxGridDiskSize(-(1 as libc::c_int), &mut sz) != E_DOMAIN as libc::c_int as libc::c_uint {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1655,7 +1654,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(sz_0 == 2147570341 as libc::c_long as libc::c_longlong) {
+    if sz_0 != 2147570341 as libc::c_long as libc::c_longlong {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1706,7 +1705,7 @@ unsafe extern "C" fn runTests() {
         }
         globalTestCount += 1;
         printf(b".\0" as *const u8 as *const libc::c_char);
-        if !(sz_1 <= max) {
+        if sz_1 > max {
             fprintf(
                 __stderrp,
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1722,7 +1721,7 @@ unsafe extern "C" fn runTests() {
         }
         globalTestCount += 1;
         printf(b".\0" as *const u8 as *const libc::c_char);
-        if !(prev <= sz_1) {
+        if prev > sz_1 {
             fprintf(
                 __stderrp,
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1756,7 +1755,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(sz_1 == max) {
+    if sz_1 != max {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1784,8 +1783,8 @@ unsafe fn main_0() -> libc::c_int {
         b"\nDONE: %d assertions\n\0" as *const u8 as *const libc::c_char,
         globalTestCount,
     );
-    return 0 as libc::c_int;
+    0 as libc::c_int
 }
 pub fn main() {
-    unsafe { ::std::process::exit(main_0() as i32) }
+    unsafe { ::std::process::exit(main_0()) }
 }

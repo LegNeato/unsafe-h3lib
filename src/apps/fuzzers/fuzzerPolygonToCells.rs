@@ -135,7 +135,7 @@ pub unsafe extern "C" fn generateTestCase(
             as size_t as size_t;
     }
     fclose(fp);
-    return 0 as libc::c_int;
+    0 as libc::c_int
 }
 #[no_mangle]
 pub static mut MAX_RES: libc::c_int = 15 as libc::c_int;
@@ -168,7 +168,7 @@ pub unsafe extern "C" fn populateGeoLoop(
     *offset = (*offset).wrapping_add(
         (::core::mem::size_of::<LatLng>() as libc::c_ulong).wrapping_mul(numVerts as libc::c_ulong),
     );
-    return 0 as libc::c_int;
+    0 as libc::c_int
 }
 #[no_mangle]
 pub unsafe extern "C" fn run(
@@ -200,10 +200,10 @@ pub unsafe extern "C" fn LLVMFuzzerTestOneInput(
     let mut geoPolygon: GeoPolygon = GeoPolygon {
         geoloop: GeoLoop {
             numVerts: 0,
-            verts: 0 as *mut LatLng,
+            verts: std::ptr::null_mut::<LatLng>(),
         },
         numHoles: 0,
-        holes: 0 as *mut GeoLoop,
+        holes: std::ptr::null_mut::<GeoLoop>(),
     };
     geoPolygon.numHoles = (*args).numHoles % MAX_HOLES;
     if geoPolygon.numHoles < 0 as libc::c_int {
@@ -237,7 +237,7 @@ pub unsafe extern "C" fn LLVMFuzzerTestOneInput(
     geoPolygon.numHoles = 0 as libc::c_int;
     run(&mut geoPolygon, 0 as libc::c_int as uint32_t, res);
     free(geoPolygon.holes as *mut libc::c_void);
-    return 0 as libc::c_int;
+    0 as libc::c_int
 }
 unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> libc::c_int {
     if argc == 3 as libc::c_int {
@@ -278,10 +278,10 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
         error(b"Error reading test case file\n\0" as *const u8 as *const libc::c_char);
     }
     fclose(fp);
-    return LLVMFuzzerTestOneInput(
+    LLVMFuzzerTestOneInput(
         data.as_mut_ptr(),
         ::core::mem::size_of::<inputArgs>() as libc::c_ulong,
-    );
+    )
 }
 pub fn main() {
     let mut args: Vec<*mut libc::c_char> = Vec::new();
@@ -297,6 +297,6 @@ pub fn main() {
         ::std::process::exit(main_0(
             (args.len() - 1) as libc::c_int,
             args.as_mut_ptr() as *mut *mut libc::c_char,
-        ) as i32)
+        ))
     }
 }

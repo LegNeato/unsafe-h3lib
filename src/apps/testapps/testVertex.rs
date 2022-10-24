@@ -183,7 +183,7 @@ unsafe extern "C" fn runTests() {
     }
     currentTestName = b"vertexNumForDirection_badDirections\0" as *const u8 as *const libc::c_char;
     let mut origin_0: H3Index = 0x823007fffffffff as libc::c_long as H3Index;
-    if !(vertexNumForDirection(origin_0, CENTER_DIGIT) == -(1 as libc::c_int)) {
+    if vertexNumForDirection(origin_0, CENTER_DIGIT) != -(1 as libc::c_int) {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -199,7 +199,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(vertexNumForDirection(origin_0, INVALID_DIGIT) == -(1 as libc::c_int)) {
+    if vertexNumForDirection(origin_0, INVALID_DIGIT) != -(1 as libc::c_int) {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -216,7 +216,7 @@ unsafe extern "C" fn runTests() {
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
     let mut pentagon_0: H3Index = 0x823007fffffffff as libc::c_long as H3Index;
-    if !(vertexNumForDirection(pentagon_0, K_AXES_DIGIT) == -(1 as libc::c_int)) {
+    if vertexNumForDirection(pentagon_0, K_AXES_DIGIT) != -(1 as libc::c_int) {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -284,8 +284,8 @@ unsafe extern "C" fn runTests() {
     }
     currentTestName = b"directionForVertexNum_badVerts\0" as *const u8 as *const libc::c_char;
     let mut origin_2: H3Index = 0x823d6ffffffffff as libc::c_long as H3Index;
-    if !(directionForVertexNum(origin_2, -(1 as libc::c_int)) as libc::c_uint
-        == INVALID_DIGIT as libc::c_int as libc::c_uint)
+    if directionForVertexNum(origin_2, -(1 as libc::c_int)) as libc::c_uint
+        != INVALID_DIGIT as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -303,8 +303,8 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(directionForVertexNum(origin_2, 6 as libc::c_int) as libc::c_uint
-        == INVALID_DIGIT as libc::c_int as libc::c_uint)
+    if directionForVertexNum(origin_2, 6 as libc::c_int) as libc::c_uint
+        != INVALID_DIGIT as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -322,8 +322,8 @@ unsafe extern "C" fn runTests() {
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
     let mut pentagon_1: H3Index = 0x823007fffffffff as libc::c_long as H3Index;
-    if !(directionForVertexNum(pentagon_1, 5 as libc::c_int) as libc::c_uint
-        == INVALID_DIGIT as libc::c_int as libc::c_uint)
+    if directionForVertexNum(pentagon_1, 5 as libc::c_int) as libc::c_uint
+        != INVALID_DIGIT as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -344,8 +344,8 @@ unsafe extern "C" fn runTests() {
     currentTestName = b"cellToVertex_badVerts\0" as *const u8 as *const libc::c_char;
     let mut origin_3: H3Index = 0x823d6ffffffffff as libc::c_long as H3Index;
     let mut vert: H3Index = 0;
-    if !(cellToVertex(origin_3, -(1 as libc::c_int), &mut vert)
-        == E_DOMAIN as libc::c_int as libc::c_uint)
+    if cellToVertex(origin_3, -(1 as libc::c_int), &mut vert)
+        != E_DOMAIN as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -362,8 +362,8 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(cellToVertex(origin_3, 6 as libc::c_int, &mut vert)
-        == E_DOMAIN as libc::c_int as libc::c_uint)
+    if cellToVertex(origin_3, 6 as libc::c_int, &mut vert)
+        != E_DOMAIN as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -381,8 +381,8 @@ unsafe extern "C" fn runTests() {
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
     let mut pentagon_2: H3Index = 0x823007fffffffff as libc::c_long as H3Index;
-    if !(cellToVertex(pentagon_2, 5 as libc::c_int, &mut vert)
-        == E_DOMAIN as libc::c_int as libc::c_uint)
+    if cellToVertex(pentagon_2, 5 as libc::c_int, &mut vert)
+        != E_DOMAIN as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -402,8 +402,8 @@ unsafe extern "C" fn runTests() {
     currentTestName = b"cellToVertex_invalid\0" as *const u8 as *const libc::c_char;
     let mut invalid: H3Index = 0xffffffffffffffff as libc::c_ulong as H3Index;
     let mut vert_0: H3Index = 0;
-    if !(cellToVertex(invalid, 3 as libc::c_int, &mut vert_0)
-        == E_FAILED as libc::c_int as libc::c_uint)
+    if cellToVertex(invalid, 3 as libc::c_int, &mut vert_0)
+        != E_FAILED as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -423,8 +423,8 @@ unsafe extern "C" fn runTests() {
     currentTestName = b"cellToVertex_invalid2\0" as *const u8 as *const libc::c_char;
     let mut index: H3Index = 0x685b2396e900fff9 as libc::c_long as H3Index;
     let mut vert_1: H3Index = 0;
-    if !(cellToVertex(index, 2 as libc::c_int, &mut vert_1)
-        == E_CELL_INVALID as libc::c_int as libc::c_uint)
+    if cellToVertex(index, 2 as libc::c_int, &mut vert_1)
+        != E_CELL_INVALID as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -444,8 +444,8 @@ unsafe extern "C" fn runTests() {
     currentTestName = b"cellToVertex_invalid3\0" as *const u8 as *const libc::c_char;
     let mut index_0: H3Index = 0x20ff20202020ff35 as libc::c_long as H3Index;
     let mut vert_2: H3Index = 0;
-    if !(cellToVertex(index_0, 0 as libc::c_int, &mut vert_2)
-        == E_CELL_INVALID as libc::c_int as libc::c_uint)
+    if cellToVertex(index_0, 0 as libc::c_int, &mut vert_2)
+        != E_CELL_INVALID as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -534,7 +534,7 @@ unsafe extern "C" fn runTests() {
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
     vert_4 ^= 1 as libc::c_int as libc::c_ulonglong;
-    if !(isValidVertex(vert_4) == 0 as libc::c_int) {
+    if isValidVertex(vert_4) != 0 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -573,7 +573,7 @@ unsafe extern "C" fn runTests() {
         | (1 as libc::c_int as uint64_t) << 59 as libc::c_int;
     owner = owner & !((7 as libc::c_int as uint64_t) << 56 as libc::c_int)
         | (0 as libc::c_int as uint64_t) << 56 as libc::c_int;
-    if !(origin_6 != owner) {
+    if origin_6 == owner {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -595,7 +595,7 @@ unsafe extern "C" fn runTests() {
     nonCanonicalVertex = nonCanonicalVertex
         & !((7 as libc::c_int as uint64_t) << 56 as libc::c_int)
         | (vertexNum_3 as uint64_t) << 56 as libc::c_int;
-    if !(isValidVertex(nonCanonicalVertex) == 0 as libc::c_int) {
+    if isValidVertex(nonCanonicalVertex) != 0 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -613,7 +613,7 @@ unsafe extern "C" fn runTests() {
     printf(b".\0" as *const u8 as *const libc::c_char);
     currentTestName = b"isValidVertex_badVerts\0" as *const u8 as *const libc::c_char;
     let mut origin_7: H3Index = 0x823d6ffffffffff as libc::c_long as H3Index;
-    if !(isValidVertex(origin_7) == 0 as libc::c_int) {
+    if isValidVertex(origin_7) != 0 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -631,7 +631,7 @@ unsafe extern "C" fn runTests() {
     let mut fakeEdge: H3Index = origin_7;
     fakeEdge = fakeEdge & !((15 as libc::c_int as uint64_t) << 59 as libc::c_int)
         | (2 as libc::c_int as uint64_t) << 59 as libc::c_int;
-    if !(isValidVertex(fakeEdge) == 0 as libc::c_int) {
+    if isValidVertex(fakeEdge) != 0 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -664,7 +664,7 @@ unsafe extern "C" fn runTests() {
     printf(b".\0" as *const u8 as *const libc::c_char);
     vert_6 = vert_6 & !((7 as libc::c_int as uint64_t) << 56 as libc::c_int)
         | (6 as libc::c_int as uint64_t) << 56 as libc::c_int;
-    if !(isValidVertex(vert_6) == 0 as libc::c_int) {
+    if isValidVertex(vert_6) != 0 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -698,7 +698,7 @@ unsafe extern "C" fn runTests() {
     printf(b".\0" as *const u8 as *const libc::c_char);
     vert2 = vert2 & !((7 as libc::c_int as uint64_t) << 56 as libc::c_int)
         | (5 as libc::c_int as uint64_t) << 56 as libc::c_int;
-    if !(isValidVertex(vert2) == 0 as libc::c_int) {
+    if isValidVertex(vert2) != 0 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -716,7 +716,7 @@ unsafe extern "C" fn runTests() {
     currentTestName = b"vertexToLatLng_invalid\0" as *const u8 as *const libc::c_char;
     let mut invalid_0: H3Index = 0xffffffffffffffff as libc::c_ulong as H3Index;
     let mut latLng: LatLng = LatLng { lat: 0., lng: 0. };
-    if !(vertexToLatLng(invalid_0, &mut latLng) != E_SUCCESS as libc::c_int as libc::c_uint) {
+    if vertexToLatLng(invalid_0, &mut latLng) == E_SUCCESS as libc::c_int as libc::c_uint {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -735,7 +735,7 @@ unsafe extern "C" fn runTests() {
     currentTestName = b"cellToVertexes_invalid\0" as *const u8 as *const libc::c_char;
     let mut invalid_1: H3Index = 0xffffffffffffffff as libc::c_ulong as H3Index;
     let mut verts: [H3Index; 6] = [0 as libc::c_int as H3Index, 0, 0, 0, 0, 0];
-    if !(cellToVertexes(invalid_1, verts.as_mut_ptr()) == E_FAILED as libc::c_int as libc::c_uint) {
+    if cellToVertexes(invalid_1, verts.as_mut_ptr()) != E_FAILED as libc::c_int as libc::c_uint {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -763,8 +763,8 @@ unsafe fn main_0() -> libc::c_int {
         b"\nDONE: %d assertions\n\0" as *const u8 as *const libc::c_char,
         globalTestCount,
     );
-    return 0 as libc::c_int;
+    0 as libc::c_int
 }
 pub fn main() {
-    unsafe { ::std::process::exit(main_0() as i32) }
+    unsafe { ::std::process::exit(main_0()) }
 }

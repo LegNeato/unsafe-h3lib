@@ -160,7 +160,7 @@ unsafe extern "C" fn runTests() {
                 }
                 globalTestCount += 1;
                 printf(b".\0" as *const u8 as *const libc::c_char);
-                if !(getResolution(h3Index) == res) {
+                if getResolution(h3Index) != res {
                     fprintf(
                         __stderrp,
                         b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8
@@ -206,7 +206,7 @@ unsafe extern "C" fn runTests() {
             }
             i += 1;
         }
-        if !(numFound == expectedCount) {
+        if numFound != expectedCount {
             fprintf(
                 __stderrp,
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -242,8 +242,8 @@ unsafe extern "C" fn runTests() {
         0,
         0,
     ];
-    if !(getPentagons(16 as libc::c_int, h3Indexes_0.as_mut_ptr())
-        == E_RES_DOMAIN as libc::c_int as libc::c_uint)
+    if getPentagons(16 as libc::c_int, h3Indexes_0.as_mut_ptr())
+        != E_RES_DOMAIN as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -260,8 +260,8 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(getPentagons(100 as libc::c_int, h3Indexes_0.as_mut_ptr())
-        == E_RES_DOMAIN as libc::c_int as libc::c_uint)
+    if getPentagons(100 as libc::c_int, h3Indexes_0.as_mut_ptr())
+        != E_RES_DOMAIN as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -278,8 +278,8 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(getPentagons(-(1 as libc::c_int), h3Indexes_0.as_mut_ptr())
-        == E_RES_DOMAIN as libc::c_int as libc::c_uint)
+    if getPentagons(-(1 as libc::c_int), h3Indexes_0.as_mut_ptr())
+        != E_RES_DOMAIN as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -339,8 +339,8 @@ unsafe fn main_0() -> libc::c_int {
         b"\nDONE: %d assertions\n\0" as *const u8 as *const libc::c_char,
         globalTestCount,
     );
-    return 0 as libc::c_int;
+    0 as libc::c_int
 }
 pub fn main() {
-    unsafe { ::std::process::exit(main_0() as i32) }
+    unsafe { ::std::process::exit(main_0()) }
 }

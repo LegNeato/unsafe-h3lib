@@ -142,9 +142,9 @@ pub unsafe extern "C" fn test_prefix_malloc(mut size: size_t) -> *mut libc::c_vo
         failAlloc = 1 as libc::c_int != 0;
     }
     if failAlloc {
-        return 0 as *mut libc::c_void;
+        return std::ptr::null_mut::<libc::c_void>();
     }
-    return malloc(size);
+    malloc(size)
 }
 #[no_mangle]
 pub unsafe extern "C" fn test_prefix_calloc(
@@ -156,9 +156,9 @@ pub unsafe extern "C" fn test_prefix_calloc(
         failAlloc = 1 as libc::c_int != 0;
     }
     if failAlloc {
-        return 0 as *mut libc::c_void;
+        return std::ptr::null_mut::<libc::c_void>();
     }
-    return calloc(num, size);
+    calloc(num, size)
 }
 #[no_mangle]
 pub unsafe extern "C" fn test_prefix_realloc(
@@ -170,14 +170,14 @@ pub unsafe extern "C" fn test_prefix_realloc(
         failAlloc = 1 as libc::c_int != 0;
     }
     if failAlloc {
-        return 0 as *mut libc::c_void;
+        return std::ptr::null_mut::<libc::c_void>();
     }
-    return realloc(ptr, size);
+    realloc(ptr, size)
 }
 #[no_mangle]
 pub unsafe extern "C" fn test_prefix_free(mut ptr: *mut libc::c_void) {
     actualFreeCalls += 1;
-    return free(ptr);
+    free(ptr)
 }
 #[no_mangle]
 pub static mut sunnyvale: H3Index = 0x89283470c27ffff as libc::c_long as H3Index;
@@ -185,55 +185,48 @@ pub static mut sunnyvale: H3Index = 0x89283470c27ffff as libc::c_long as H3Index
 pub static mut pentagon: H3Index = 0x89080000003ffff as libc::c_long as H3Index;
 static mut sfVerts: [LatLng; 6] = [
     {
-        let mut init = LatLng {
+        LatLng {
             lat: 0.659966917655f64,
             lng: -2.1364398519396f64,
-        };
-        init
+        }
     },
     {
-        let mut init = LatLng {
+        LatLng {
             lat: 0.6595011102219f64,
             lng: -2.1359434279405f64,
-        };
-        init
+        }
     },
     {
-        let mut init = LatLng {
+        LatLng {
             lat: 0.6583348114025f64,
             lng: -2.1354884206045f64,
-        };
-        init
+        }
     },
     {
-        let mut init = LatLng {
+        LatLng {
             lat: 0.6581220034068f64,
             lng: -2.1382437718946f64,
-        };
-        init
+        }
     },
     {
-        let mut init = LatLng {
+        LatLng {
             lat: 0.6594479998527f64,
             lng: -2.1384597563896f64,
-        };
-        init
+        }
     },
     {
-        let mut init = LatLng {
+        LatLng {
             lat: 0.6599990002976f64,
             lng: -2.1376771158464f64,
-        };
-        init
+        }
     },
 ];
 static mut sfGeoLoop: GeoLoop = unsafe {
     {
-        let mut init = GeoLoop {
+        GeoLoop {
             numVerts: 6 as libc::c_int,
             verts: sfVerts.as_ptr() as *mut _,
-        };
-        init
+        }
     }
 };
 static mut sfGeoPolygon: GeoPolygon = GeoPolygon {
@@ -283,7 +276,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(actualAllocCalls == 0 as libc::c_int) {
+    if actualAllocCalls != 0 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -298,7 +291,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(actualFreeCalls == 0 as libc::c_int) {
+    if actualFreeCalls != 0 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -329,7 +322,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(actualAllocCalls == 1 as libc::c_int) {
+    if actualAllocCalls != 1 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -344,7 +337,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(actualFreeCalls == 1 as libc::c_int) {
+    if actualFreeCalls != 1 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -368,7 +361,7 @@ unsafe extern "C" fn runTests() {
             .wrapping_mul(::core::mem::size_of::<H3Index>() as libc::c_ulong as libc::c_ulonglong)
             as libc::c_ulong,
     );
-    if !(gridDisk(pentagon, k, gridDiskOutput) == E_MEMORY_ALLOC as libc::c_int as libc::c_uint) {
+    if gridDisk(pentagon, k, gridDiskOutput) != E_MEMORY_ALLOC as libc::c_int as libc::c_uint {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -384,7 +377,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(actualAllocCalls == 1 as libc::c_int) {
+    if actualAllocCalls != 1 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -399,7 +392,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(actualFreeCalls == 0 as libc::c_int) {
+    if actualFreeCalls != 0 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -474,7 +467,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(actualAllocCalls == 0 as libc::c_int) {
+    if actualAllocCalls != 0 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -489,7 +482,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(actualFreeCalls == 0 as libc::c_int) {
+    if actualFreeCalls != 0 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -511,7 +504,7 @@ unsafe extern "C" fn runTests() {
     resetMemoryCounters(0 as libc::c_int);
     failAlloc = 1 as libc::c_int != 0;
     let mut err: H3Error = compactCells(sunnyvaleExpanded, compressed, hexCount_0);
-    if !(err == E_MEMORY_ALLOC as libc::c_int as libc::c_uint) {
+    if err != E_MEMORY_ALLOC as libc::c_int as libc::c_uint {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -526,7 +519,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(actualAllocCalls == 1 as libc::c_int) {
+    if actualAllocCalls != 1 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -541,7 +534,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(actualFreeCalls == 0 as libc::c_int) {
+    if actualFreeCalls != 0 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -558,7 +551,7 @@ unsafe extern "C" fn runTests() {
     printf(b".\0" as *const u8 as *const libc::c_char);
     resetMemoryCounters(1 as libc::c_int);
     err = compactCells(sunnyvaleExpanded, compressed, hexCount_0);
-    if !(err == E_MEMORY_ALLOC as libc::c_int as libc::c_uint) {
+    if err != E_MEMORY_ALLOC as libc::c_int as libc::c_uint {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -573,7 +566,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(actualAllocCalls == 2 as libc::c_int) {
+    if actualAllocCalls != 2 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -588,7 +581,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(actualFreeCalls == 1 as libc::c_int) {
+    if actualFreeCalls != 1 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -605,7 +598,7 @@ unsafe extern "C" fn runTests() {
     printf(b".\0" as *const u8 as *const libc::c_char);
     resetMemoryCounters(2 as libc::c_int);
     err = compactCells(sunnyvaleExpanded, compressed, hexCount_0);
-    if !(err == E_MEMORY_ALLOC as libc::c_int as libc::c_uint) {
+    if err != E_MEMORY_ALLOC as libc::c_int as libc::c_uint {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -620,7 +613,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(actualAllocCalls == 3 as libc::c_int) {
+    if actualAllocCalls != 3 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -635,7 +628,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(actualFreeCalls == 2 as libc::c_int) {
+    if actualFreeCalls != 2 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -652,7 +645,7 @@ unsafe extern "C" fn runTests() {
     printf(b".\0" as *const u8 as *const libc::c_char);
     resetMemoryCounters(3 as libc::c_int);
     err = compactCells(sunnyvaleExpanded, compressed, hexCount_0);
-    if !(err == E_MEMORY_ALLOC as libc::c_int as libc::c_uint) {
+    if err != E_MEMORY_ALLOC as libc::c_int as libc::c_uint {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -667,7 +660,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(actualAllocCalls == 4 as libc::c_int) {
+    if actualAllocCalls != 4 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -682,7 +675,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(actualFreeCalls == 3 as libc::c_int) {
+    if actualFreeCalls != 3 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -699,7 +692,7 @@ unsafe extern "C" fn runTests() {
     printf(b".\0" as *const u8 as *const libc::c_char);
     resetMemoryCounters(4 as libc::c_int);
     err = compactCells(sunnyvaleExpanded, compressed, hexCount_0);
-    if !(err == E_SUCCESS as libc::c_int as libc::c_uint) {
+    if err != E_SUCCESS as libc::c_int as libc::c_uint {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -714,7 +707,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(actualAllocCalls == 4 as libc::c_int) {
+    if actualAllocCalls != 4 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -729,7 +722,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(actualFreeCalls == 4 as libc::c_int) {
+    if actualFreeCalls != 4 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -752,7 +745,7 @@ unsafe extern "C" fn runTests() {
         }
         i_0 += 1;
     }
-    if !(count == expectedCompactCount) {
+    if count != expectedCompactCount {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -807,7 +800,7 @@ unsafe extern "C" fn runTests() {
         0 as libc::c_int as uint32_t,
         hexagons,
     );
-    if !(err_0 == E_MEMORY_ALLOC as libc::c_int as libc::c_uint) {
+    if err_0 != E_MEMORY_ALLOC as libc::c_int as libc::c_uint {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -822,7 +815,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(actualAllocCalls == 1 as libc::c_int) {
+    if actualAllocCalls != 1 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -837,7 +830,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(actualFreeCalls == 0 as libc::c_int) {
+    if actualFreeCalls != 0 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -859,7 +852,7 @@ unsafe extern "C" fn runTests() {
         0 as libc::c_int as uint32_t,
         hexagons,
     );
-    if !(err_0 == E_MEMORY_ALLOC as libc::c_int as libc::c_uint) {
+    if err_0 != E_MEMORY_ALLOC as libc::c_int as libc::c_uint {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -874,7 +867,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(actualAllocCalls == 2 as libc::c_int) {
+    if actualAllocCalls != 2 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -889,7 +882,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(actualFreeCalls == 1 as libc::c_int) {
+    if actualFreeCalls != 1 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -911,7 +904,7 @@ unsafe extern "C" fn runTests() {
         0 as libc::c_int as uint32_t,
         hexagons,
     );
-    if !(err_0 == E_MEMORY_ALLOC as libc::c_int as libc::c_uint) {
+    if err_0 != E_MEMORY_ALLOC as libc::c_int as libc::c_uint {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -926,7 +919,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(actualAllocCalls == 3 as libc::c_int) {
+    if actualAllocCalls != 3 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -941,7 +934,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(actualFreeCalls == 2 as libc::c_int) {
+    if actualFreeCalls != 2 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -963,7 +956,7 @@ unsafe extern "C" fn runTests() {
         0 as libc::c_int as uint32_t,
         hexagons,
     );
-    if !(err_0 == E_SUCCESS as libc::c_int as libc::c_uint) {
+    if err_0 != E_SUCCESS as libc::c_int as libc::c_uint {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -978,7 +971,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(actualAllocCalls == 3 as libc::c_int) {
+    if actualAllocCalls != 3 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -993,7 +986,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(actualFreeCalls == 3 as libc::c_int) {
+    if actualFreeCalls != 3 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1009,7 +1002,7 @@ unsafe extern "C" fn runTests() {
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
     let mut actualNumIndexes: int64_t = countNonNullIndexes(hexagons, numHexagons);
-    if !(actualNumIndexes == 1253 as libc::c_int as libc::c_longlong) {
+    if actualNumIndexes != 1253 as libc::c_int as libc::c_longlong {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1037,8 +1030,8 @@ unsafe fn main_0() -> libc::c_int {
         b"\nDONE: %d assertions\n\0" as *const u8 as *const libc::c_char,
         globalTestCount,
     );
-    return 0 as libc::c_int;
+    0 as libc::c_int
 }
 pub fn main() {
-    unsafe { ::std::process::exit(main_0() as i32) }
+    unsafe { ::std::process::exit(main_0()) }
 }

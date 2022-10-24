@@ -256,7 +256,7 @@ pub unsafe extern "C" fn iterateAllIndexesAtResPartial(
     mut callback: Option<unsafe extern "C" fn(H3Index) -> ()>,
     mut baseCells: libc::c_int,
 ) {
-    if !(baseCells <= 122 as libc::c_int) as libc::c_int as libc::c_long != 0 {
+    if i64::from(baseCells) > 122_i64 {
         __assert_rtn(
             (*::core::mem::transmute::<&[u8; 30], &[libc::c_char; 30]>(
                 b"iterateAllIndexesAtResPartial\0",
@@ -292,7 +292,7 @@ pub unsafe extern "C" fn iterateBaseCellIndexesAtRes(
 pub unsafe extern "C" fn randomGeo(mut g: *mut LatLng) {
     static mut init: libc::c_int = 0 as libc::c_int;
     if init == 0 {
-        srand(time(0 as *mut time_t) as libc::c_uint);
+        srand(time(std::ptr::null_mut::<time_t>()) as libc::c_uint);
         init = 1 as libc::c_int;
     }
     (*g).lat = degsToRads(
@@ -317,5 +317,5 @@ pub unsafe extern "C" fn countNonNullIndexes(
         }
         i += 1;
     }
-    return nonNullIndexes;
+    nonNullIndexes
 }

@@ -75,7 +75,7 @@ pub unsafe extern "C" fn t_assertBoundary(mut h3: H3Index, mut b1: *const CellBo
         verts: [LatLng { lat: 0., lng: 0. }; 10],
     };
     cellToBoundary(h3, &mut b2);
-    if !((*b1).numVerts == b2.numVerts) {
+    if (*b1).numVerts != b2.numVerts {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,

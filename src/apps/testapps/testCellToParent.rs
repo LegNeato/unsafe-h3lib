@@ -96,15 +96,14 @@ unsafe fn main_0() -> libc::c_int {
         b"\nDONE: %d assertions\n\0" as *const u8 as *const libc::c_char,
         globalTestCount,
     );
-    return 0 as libc::c_int;
+    0 as libc::c_int
 }
 unsafe extern "C" fn runTests() {
     let mut sf: LatLng = {
-        let mut init = LatLng {
+        LatLng {
             lat: 0.659966917655f64,
             lng: 2 as libc::c_int as libc::c_double * 3.14159f64 - 2.1364398519396f64,
-        };
-        init
+        }
     };
     currentTestName = b"ancestorsForEachRes\0" as *const u8 as *const libc::c_char;
     let mut child: H3Index = 0;
@@ -164,7 +163,7 @@ unsafe extern "C" fn runTests() {
             }
             globalTestCount += 1;
             printf(b".\0" as *const u8 as *const libc::c_char);
-            if !(parent == comparisonParent) {
+            if parent != comparisonParent {
                 fprintf(
                     __stderrp,
                     b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8
@@ -202,8 +201,8 @@ unsafe extern "C" fn runTests() {
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
     let mut parent_0: H3Index = 0;
-    if !(cellToParent(child_0, 6 as libc::c_int, &mut parent_0)
-        == E_RES_MISMATCH as libc::c_int as libc::c_uint)
+    if cellToParent(child_0, 6 as libc::c_int, &mut parent_0)
+        != E_RES_MISMATCH as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -220,8 +219,8 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(cellToParent(child_0, -(1 as libc::c_int), &mut parent_0)
-        == E_RES_DOMAIN as libc::c_int as libc::c_uint)
+    if cellToParent(child_0, -(1 as libc::c_int), &mut parent_0)
+        != E_RES_DOMAIN as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -238,8 +237,8 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(cellToParent(child_0, 15 as libc::c_int, &mut parent_0)
-        == E_RES_MISMATCH as libc::c_int as libc::c_uint)
+    if cellToParent(child_0, 15 as libc::c_int, &mut parent_0)
+        != E_RES_MISMATCH as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -256,8 +255,8 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(cellToParent(child_0, 16 as libc::c_int, &mut parent_0)
-        == E_RES_DOMAIN as libc::c_int as libc::c_uint)
+    if cellToParent(child_0, 16 as libc::c_int, &mut parent_0)
+        != E_RES_DOMAIN as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -276,5 +275,5 @@ unsafe extern "C" fn runTests() {
     printf(b".\0" as *const u8 as *const libc::c_char);
 }
 pub fn main() {
-    unsafe { ::std::process::exit(main_0() as i32) }
+    unsafe { ::std::process::exit(main_0()) }
 }

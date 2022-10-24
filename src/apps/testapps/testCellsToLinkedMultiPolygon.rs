@@ -117,9 +117,9 @@ pub struct LinkedGeoPolygon {
 unsafe extern "C" fn runTests() {
     currentTestName = b"empty\0" as *const u8 as *const libc::c_char;
     let mut polygon: LinkedGeoPolygon = LinkedGeoPolygon {
-        first: 0 as *mut LinkedGeoLoop,
-        last: 0 as *mut LinkedGeoLoop,
-        next: 0 as *mut LinkedGeoPolygon,
+        first: std::ptr::null_mut::<LinkedGeoLoop>(),
+        last: std::ptr::null_mut::<LinkedGeoLoop>(),
+        next: std::ptr::null_mut::<LinkedGeoPolygon>(),
     };
     if cellsToLinkedMultiPolygon(std::ptr::null::<H3Index>(), 0, &mut polygon) != 0 {
         fprintf(
@@ -138,7 +138,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedLoops(&mut polygon) == 0 as libc::c_int) {
+    if countLinkedLoops(&mut polygon) != 0 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -157,9 +157,9 @@ unsafe extern "C" fn runTests() {
     destroyLinkedMultiPolygon(&mut polygon);
     currentTestName = b"singleHex\0" as *const u8 as *const libc::c_char;
     let mut polygon_0: LinkedGeoPolygon = LinkedGeoPolygon {
-        first: 0 as *mut LinkedGeoLoop,
-        last: 0 as *mut LinkedGeoLoop,
-        next: 0 as *mut LinkedGeoPolygon,
+        first: std::ptr::null_mut::<LinkedGeoLoop>(),
+        last: std::ptr::null_mut::<LinkedGeoLoop>(),
+        next: std::ptr::null_mut::<LinkedGeoPolygon>(),
     };
     let mut set: [H3Index; 1] = [0x890dab6220bffff as libc::c_long as H3Index];
     let mut numHexes: libc::c_int = (::core::mem::size_of::<[H3Index; 1]>() as libc::c_ulong)
@@ -182,7 +182,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedLoops(&mut polygon_0) == 1 as libc::c_int) {
+    if countLinkedLoops(&mut polygon_0) != 1 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -198,7 +198,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedCoords(polygon_0.first) == 6 as libc::c_int) {
+    if countLinkedCoords(polygon_0.first) != 6 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -217,16 +217,16 @@ unsafe extern "C" fn runTests() {
     destroyLinkedMultiPolygon(&mut polygon_0);
     currentTestName = b"invalid\0" as *const u8 as *const libc::c_char;
     let mut polygon_1: LinkedGeoPolygon = LinkedGeoPolygon {
-        first: 0 as *mut LinkedGeoLoop,
-        last: 0 as *mut LinkedGeoLoop,
-        next: 0 as *mut LinkedGeoPolygon,
+        first: std::ptr::null_mut::<LinkedGeoLoop>(),
+        last: std::ptr::null_mut::<LinkedGeoLoop>(),
+        next: std::ptr::null_mut::<LinkedGeoPolygon>(),
     };
     let mut set_0: [H3Index; 1] = [0xfffffffffffffff as libc::c_long as H3Index];
     let mut numHexes_0: libc::c_int = (::core::mem::size_of::<[H3Index; 1]>() as libc::c_ulong)
         .wrapping_div(::core::mem::size_of::<H3Index>() as libc::c_ulong)
         as libc::c_int;
-    if !(cellsToLinkedMultiPolygon(set_0.as_mut_ptr(), numHexes_0, &mut polygon_1)
-        == E_CELL_INVALID as libc::c_int as libc::c_uint)
+    if cellsToLinkedMultiPolygon(set_0.as_mut_ptr(), numHexes_0, &mut polygon_1)
+        != E_CELL_INVALID as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -246,9 +246,9 @@ unsafe extern "C" fn runTests() {
     printf(b".\0" as *const u8 as *const libc::c_char);
     currentTestName = b"contiguous2\0" as *const u8 as *const libc::c_char;
     let mut polygon_2: LinkedGeoPolygon = LinkedGeoPolygon {
-        first: 0 as *mut LinkedGeoLoop,
-        last: 0 as *mut LinkedGeoLoop,
-        next: 0 as *mut LinkedGeoPolygon,
+        first: std::ptr::null_mut::<LinkedGeoLoop>(),
+        last: std::ptr::null_mut::<LinkedGeoLoop>(),
+        next: std::ptr::null_mut::<LinkedGeoPolygon>(),
     };
     let mut set_1: [H3Index; 2] = [
         0x8928308291bffff as libc::c_long as H3Index,
@@ -274,7 +274,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedLoops(&mut polygon_2) == 1 as libc::c_int) {
+    if countLinkedLoops(&mut polygon_2) != 1 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -290,7 +290,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedCoords(polygon_2.first) == 10 as libc::c_int) {
+    if countLinkedCoords(polygon_2.first) != 10 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -309,9 +309,9 @@ unsafe extern "C" fn runTests() {
     destroyLinkedMultiPolygon(&mut polygon_2);
     currentTestName = b"nonContiguous2\0" as *const u8 as *const libc::c_char;
     let mut polygon_3: LinkedGeoPolygon = LinkedGeoPolygon {
-        first: 0 as *mut LinkedGeoLoop,
-        last: 0 as *mut LinkedGeoLoop,
-        next: 0 as *mut LinkedGeoPolygon,
+        first: std::ptr::null_mut::<LinkedGeoLoop>(),
+        last: std::ptr::null_mut::<LinkedGeoLoop>(),
+        next: std::ptr::null_mut::<LinkedGeoPolygon>(),
     };
     let mut set_2: [H3Index; 2] = [
         0x8928308291bffff as libc::c_long as H3Index,
@@ -337,7 +337,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedPolygons(&mut polygon_3) == 2 as libc::c_int) {
+    if countLinkedPolygons(&mut polygon_3) != 2 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -353,7 +353,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedLoops(&mut polygon_3) == 1 as libc::c_int) {
+    if countLinkedLoops(&mut polygon_3) != 1 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -369,7 +369,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedCoords(polygon_3.first) == 6 as libc::c_int) {
+    if countLinkedCoords(polygon_3.first) != 6 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -385,7 +385,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedLoops(polygon_3.next) == 1 as libc::c_int) {
+    if countLinkedLoops(polygon_3.next) != 1 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -401,7 +401,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedCoords((*polygon_3.next).first) == 6 as libc::c_int) {
+    if countLinkedCoords((*polygon_3.next).first) != 6 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -420,9 +420,9 @@ unsafe extern "C" fn runTests() {
     destroyLinkedMultiPolygon(&mut polygon_3);
     currentTestName = b"contiguous3\0" as *const u8 as *const libc::c_char;
     let mut polygon_4: LinkedGeoPolygon = LinkedGeoPolygon {
-        first: 0 as *mut LinkedGeoLoop,
-        last: 0 as *mut LinkedGeoLoop,
-        next: 0 as *mut LinkedGeoPolygon,
+        first: std::ptr::null_mut::<LinkedGeoLoop>(),
+        last: std::ptr::null_mut::<LinkedGeoLoop>(),
+        next: std::ptr::null_mut::<LinkedGeoPolygon>(),
     };
     let mut set_3: [H3Index; 3] = [
         0x8928308288bffff as libc::c_long as H3Index,
@@ -449,7 +449,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedLoops(&mut polygon_4) == 1 as libc::c_int) {
+    if countLinkedLoops(&mut polygon_4) != 1 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -465,7 +465,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedCoords(polygon_4.first) == 12 as libc::c_int) {
+    if countLinkedCoords(polygon_4.first) != 12 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -484,9 +484,9 @@ unsafe extern "C" fn runTests() {
     destroyLinkedMultiPolygon(&mut polygon_4);
     currentTestName = b"hole\0" as *const u8 as *const libc::c_char;
     let mut polygon_5: LinkedGeoPolygon = LinkedGeoPolygon {
-        first: 0 as *mut LinkedGeoLoop,
-        last: 0 as *mut LinkedGeoLoop,
-        next: 0 as *mut LinkedGeoPolygon,
+        first: std::ptr::null_mut::<LinkedGeoLoop>(),
+        last: std::ptr::null_mut::<LinkedGeoLoop>(),
+        next: std::ptr::null_mut::<LinkedGeoPolygon>(),
     };
     let mut set_4: [H3Index; 6] = [
         0x892830828c7ffff as libc::c_long as H3Index,
@@ -500,7 +500,7 @@ unsafe extern "C" fn runTests() {
         .wrapping_div(::core::mem::size_of::<H3Index>() as libc::c_ulong)
         as libc::c_int;
     cellsToLinkedMultiPolygon(set_4.as_mut_ptr(), numHexes_4, &mut polygon_5);
-    if !(countLinkedLoops(&mut polygon_5) == 2 as libc::c_int) {
+    if countLinkedLoops(&mut polygon_5) != 2 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -516,7 +516,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedCoords(polygon_5.first) == 6 as libc::c_int * 3 as libc::c_int) {
+    if countLinkedCoords(polygon_5.first) != 6 as libc::c_int * 3 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -532,7 +532,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedCoords((*polygon_5.first).next) == 6 as libc::c_int) {
+    if countLinkedCoords((*polygon_5.first).next) != 6 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -551,9 +551,9 @@ unsafe extern "C" fn runTests() {
     destroyLinkedMultiPolygon(&mut polygon_5);
     currentTestName = b"pentagon\0" as *const u8 as *const libc::c_char;
     let mut polygon_6: LinkedGeoPolygon = LinkedGeoPolygon {
-        first: 0 as *mut LinkedGeoLoop,
-        last: 0 as *mut LinkedGeoLoop,
-        next: 0 as *mut LinkedGeoPolygon,
+        first: std::ptr::null_mut::<LinkedGeoLoop>(),
+        last: std::ptr::null_mut::<LinkedGeoLoop>(),
+        next: std::ptr::null_mut::<LinkedGeoPolygon>(),
     };
     let mut set_5: [H3Index; 1] = [0x851c0003fffffff as libc::c_long as H3Index];
     let mut numHexes_5: libc::c_int = (::core::mem::size_of::<[H3Index; 1]>() as libc::c_ulong)
@@ -576,7 +576,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedLoops(&mut polygon_6) == 1 as libc::c_int) {
+    if countLinkedLoops(&mut polygon_6) != 1 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -592,7 +592,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedCoords(polygon_6.first) == 10 as libc::c_int) {
+    if countLinkedCoords(polygon_6.first) != 10 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -611,9 +611,9 @@ unsafe extern "C" fn runTests() {
     destroyLinkedMultiPolygon(&mut polygon_6);
     currentTestName = b"twoRing\0" as *const u8 as *const libc::c_char;
     let mut polygon_7: LinkedGeoPolygon = LinkedGeoPolygon {
-        first: 0 as *mut LinkedGeoLoop,
-        last: 0 as *mut LinkedGeoLoop,
-        next: 0 as *mut LinkedGeoPolygon,
+        first: std::ptr::null_mut::<LinkedGeoLoop>(),
+        last: std::ptr::null_mut::<LinkedGeoLoop>(),
+        next: std::ptr::null_mut::<LinkedGeoPolygon>(),
     };
     let mut set_6: [H3Index; 19] = [
         0x8930062838bffff as libc::c_long as H3Index,
@@ -656,7 +656,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedLoops(&mut polygon_7) == 1 as libc::c_int) {
+    if countLinkedLoops(&mut polygon_7) != 1 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -672,8 +672,8 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedCoords(polygon_7.first)
-        == 6 as libc::c_int * (2 as libc::c_int * 2 as libc::c_int + 1 as libc::c_int))
+    if countLinkedCoords(polygon_7.first)
+        != 6 as libc::c_int * (2 as libc::c_int * 2 as libc::c_int + 1 as libc::c_int)
     {
         fprintf(
             __stderrp,
@@ -694,9 +694,9 @@ unsafe extern "C" fn runTests() {
     destroyLinkedMultiPolygon(&mut polygon_7);
     currentTestName = b"twoRingUnordered\0" as *const u8 as *const libc::c_char;
     let mut polygon_8: LinkedGeoPolygon = LinkedGeoPolygon {
-        first: 0 as *mut LinkedGeoLoop,
-        last: 0 as *mut LinkedGeoLoop,
-        next: 0 as *mut LinkedGeoPolygon,
+        first: std::ptr::null_mut::<LinkedGeoLoop>(),
+        last: std::ptr::null_mut::<LinkedGeoLoop>(),
+        next: std::ptr::null_mut::<LinkedGeoPolygon>(),
     };
     let mut set_7: [H3Index; 19] = [
         0x89300628393ffff as libc::c_long as H3Index,
@@ -739,7 +739,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedLoops(&mut polygon_8) == 1 as libc::c_int) {
+    if countLinkedLoops(&mut polygon_8) != 1 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -755,8 +755,8 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedCoords(polygon_8.first)
-        == 6 as libc::c_int * (2 as libc::c_int * 2 as libc::c_int + 1 as libc::c_int))
+    if countLinkedCoords(polygon_8.first)
+        != 6 as libc::c_int * (2 as libc::c_int * 2 as libc::c_int + 1 as libc::c_int)
     {
         fprintf(
             __stderrp,
@@ -777,9 +777,9 @@ unsafe extern "C" fn runTests() {
     destroyLinkedMultiPolygon(&mut polygon_8);
     currentTestName = b"nestedDonut\0" as *const u8 as *const libc::c_char;
     let mut polygon_9: LinkedGeoPolygon = LinkedGeoPolygon {
-        first: 0 as *mut LinkedGeoLoop,
-        last: 0 as *mut LinkedGeoLoop,
-        next: 0 as *mut LinkedGeoPolygon,
+        first: std::ptr::null_mut::<LinkedGeoLoop>(),
+        last: std::ptr::null_mut::<LinkedGeoLoop>(),
+        next: std::ptr::null_mut::<LinkedGeoPolygon>(),
     };
     let mut set_8: [H3Index; 24] = [
         0x89283082813ffff as libc::c_long as H3Index,
@@ -827,7 +827,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedPolygons(&mut polygon_9) == 2 as libc::c_int) {
+    if countLinkedPolygons(&mut polygon_9) != 2 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -843,7 +843,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedLoops(&mut polygon_9) == 2 as libc::c_int) {
+    if countLinkedLoops(&mut polygon_9) != 2 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -859,7 +859,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedCoords(polygon_9.first) == 42 as libc::c_int) {
+    if countLinkedCoords(polygon_9.first) != 42 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -875,7 +875,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedCoords((*polygon_9.first).next) == 30 as libc::c_int) {
+    if countLinkedCoords((*polygon_9.first).next) != 30 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -891,7 +891,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedLoops(polygon_9.next) == 2 as libc::c_int) {
+    if countLinkedLoops(polygon_9.next) != 2 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -907,7 +907,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedCoords((*polygon_9.next).first) == 18 as libc::c_int) {
+    if countLinkedCoords((*polygon_9.next).first) != 18 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -923,7 +923,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedCoords((*(*polygon_9.next).first).next) == 6 as libc::c_int) {
+    if countLinkedCoords((*(*polygon_9.next).first).next) != 6 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -943,9 +943,9 @@ unsafe extern "C" fn runTests() {
     destroyLinkedMultiPolygon(&mut polygon_9);
     currentTestName = b"nestedDonutTransmeridian\0" as *const u8 as *const libc::c_char;
     let mut polygon_10: LinkedGeoPolygon = LinkedGeoPolygon {
-        first: 0 as *mut LinkedGeoLoop,
-        last: 0 as *mut LinkedGeoLoop,
-        next: 0 as *mut LinkedGeoPolygon,
+        first: std::ptr::null_mut::<LinkedGeoLoop>(),
+        last: std::ptr::null_mut::<LinkedGeoLoop>(),
+        next: std::ptr::null_mut::<LinkedGeoPolygon>(),
     };
     let mut set_9: [H3Index; 24] = [
         0x897eb5722c7ffff as libc::c_long as H3Index,
@@ -993,7 +993,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedPolygons(&mut polygon_10) == 2 as libc::c_int) {
+    if countLinkedPolygons(&mut polygon_10) != 2 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1009,7 +1009,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedLoops(&mut polygon_10) == 2 as libc::c_int) {
+    if countLinkedLoops(&mut polygon_10) != 2 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1025,7 +1025,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedCoords(polygon_10.first) == 18 as libc::c_int) {
+    if countLinkedCoords(polygon_10.first) != 18 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1041,7 +1041,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedCoords((*polygon_10.first).next) == 6 as libc::c_int) {
+    if countLinkedCoords((*polygon_10.first).next) != 6 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1057,7 +1057,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedLoops(polygon_10.next) == 2 as libc::c_int) {
+    if countLinkedLoops(polygon_10.next) != 2 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1073,7 +1073,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedCoords((*polygon_10.next).first) == 42 as libc::c_int) {
+    if countLinkedCoords((*polygon_10.next).first) != 42 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1089,7 +1089,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedCoords((*(*polygon_10.next).first).next) == 30 as libc::c_int) {
+    if countLinkedCoords((*(*polygon_10.next).first).next) != 30 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1109,9 +1109,9 @@ unsafe extern "C" fn runTests() {
     destroyLinkedMultiPolygon(&mut polygon_10);
     currentTestName = b"contiguous2distorted\0" as *const u8 as *const libc::c_char;
     let mut polygon_11: LinkedGeoPolygon = LinkedGeoPolygon {
-        first: 0 as *mut LinkedGeoLoop,
-        last: 0 as *mut LinkedGeoLoop,
-        next: 0 as *mut LinkedGeoPolygon,
+        first: std::ptr::null_mut::<LinkedGeoLoop>(),
+        last: std::ptr::null_mut::<LinkedGeoLoop>(),
+        next: std::ptr::null_mut::<LinkedGeoPolygon>(),
     };
     let mut set_10: [H3Index; 2] = [
         0x894cc5365afffff as libc::c_long as H3Index,
@@ -1137,7 +1137,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedLoops(&mut polygon_11) == 1 as libc::c_int) {
+    if countLinkedLoops(&mut polygon_11) != 1 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1153,7 +1153,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedCoords(polygon_11.first) == 12 as libc::c_int) {
+    if countLinkedCoords(polygon_11.first) != 12 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1172,9 +1172,9 @@ unsafe extern "C" fn runTests() {
     destroyLinkedMultiPolygon(&mut polygon_11);
     currentTestName = b"negativeHashedCoordinates\0" as *const u8 as *const libc::c_char;
     let mut polygon_12: LinkedGeoPolygon = LinkedGeoPolygon {
-        first: 0 as *mut LinkedGeoLoop,
-        last: 0 as *mut LinkedGeoLoop,
-        next: 0 as *mut LinkedGeoPolygon,
+        first: std::ptr::null_mut::<LinkedGeoLoop>(),
+        last: std::ptr::null_mut::<LinkedGeoLoop>(),
+        next: std::ptr::null_mut::<LinkedGeoPolygon>(),
     };
     let mut set_11: [H3Index; 2] = [
         0x88ad36c547fffff as libc::c_long as H3Index,
@@ -1200,7 +1200,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedPolygons(&mut polygon_12) == 2 as libc::c_int) {
+    if countLinkedPolygons(&mut polygon_12) != 2 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1216,7 +1216,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedLoops(&mut polygon_12) == 1 as libc::c_int) {
+    if countLinkedLoops(&mut polygon_12) != 1 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1232,7 +1232,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedCoords(polygon_12.first) == 6 as libc::c_int) {
+    if countLinkedCoords(polygon_12.first) != 6 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1248,7 +1248,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedLoops(polygon_12.next) == 1 as libc::c_int) {
+    if countLinkedLoops(polygon_12.next) != 1 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1264,7 +1264,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedCoords((*polygon_12.next).first) == 6 as libc::c_int) {
+    if countLinkedCoords((*polygon_12.next).first) != 6 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1283,9 +1283,9 @@ unsafe extern "C" fn runTests() {
     destroyLinkedMultiPolygon(&mut polygon_12);
     currentTestName = b"specificLeak\0" as *const u8 as *const libc::c_char;
     let mut polygon_13: LinkedGeoPolygon = LinkedGeoPolygon {
-        first: 0 as *mut LinkedGeoLoop,
-        last: 0 as *mut LinkedGeoLoop,
-        next: 0 as *mut LinkedGeoPolygon,
+        first: std::ptr::null_mut::<LinkedGeoLoop>(),
+        last: std::ptr::null_mut::<LinkedGeoLoop>(),
+        next: std::ptr::null_mut::<LinkedGeoPolygon>(),
     };
     let mut set_12: [H3Index; 2] = [
         0xd60006d60000f100 as libc::c_ulong as H3Index,
@@ -1294,8 +1294,8 @@ unsafe extern "C" fn runTests() {
     let mut numHexes_12: libc::c_int = (::core::mem::size_of::<[H3Index; 2]>() as libc::c_ulong)
         .wrapping_div(::core::mem::size_of::<H3Index>() as libc::c_ulong)
         as libc::c_int;
-    if !(cellsToLinkedMultiPolygon(set_12.as_mut_ptr(), numHexes_12, &mut polygon_13)
-        == E_FAILED as libc::c_int as libc::c_uint)
+    if cellsToLinkedMultiPolygon(set_12.as_mut_ptr(), numHexes_12, &mut polygon_13)
+        != E_FAILED as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -1376,9 +1376,9 @@ unsafe extern "C" fn runTests() {
         globalTestCount += 1;
         printf(b".\0" as *const u8 as *const libc::c_char);
         let mut polygon_14: LinkedGeoPolygon = LinkedGeoPolygon {
-            first: 0 as *mut LinkedGeoLoop,
-            last: 0 as *mut LinkedGeoLoop,
-            next: 0 as *mut LinkedGeoPolygon,
+            first: std::ptr::null_mut::<LinkedGeoLoop>(),
+            last: std::ptr::null_mut::<LinkedGeoLoop>(),
+            next: std::ptr::null_mut::<LinkedGeoPolygon>(),
         };
         if cellsToLinkedMultiPolygon(indexes.as_mut_ptr(), numHexes_13, &mut polygon_14) != 0 {
             fprintf(
@@ -1397,7 +1397,7 @@ unsafe extern "C" fn runTests() {
         }
         globalTestCount += 1;
         printf(b".\0" as *const u8 as *const libc::c_char);
-        if !(countLinkedPolygons(&mut polygon_14) == 1 as libc::c_int) {
+        if countLinkedPolygons(&mut polygon_14) != 1 as libc::c_int {
             fprintf(
                 __stderrp,
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1413,7 +1413,7 @@ unsafe extern "C" fn runTests() {
         }
         globalTestCount += 1;
         printf(b".\0" as *const u8 as *const libc::c_char);
-        if !(countLinkedLoops(&mut polygon_14) == 1 as libc::c_int) {
+        if countLinkedLoops(&mut polygon_14) != 1 as libc::c_int {
             fprintf(
                 __stderrp,
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1429,7 +1429,7 @@ unsafe extern "C" fn runTests() {
         }
         globalTestCount += 1;
         printf(b".\0" as *const u8 as *const libc::c_char);
-        if !(countLinkedCoords(polygon_14.first) == 30 as libc::c_int) {
+        if countLinkedCoords(polygon_14.first) != 30 as libc::c_int {
             fprintf(
                 __stderrp,
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1494,12 +1494,12 @@ unsafe extern "C" fn runTests() {
         while i < 7 as libc::c_int {
             if diskIndexes[i as usize] != 0 {
                 let fresh0 = j;
-                j = j + 1;
+                j += 1;
                 indexes_0[fresh0 as usize] = diskIndexes[i as usize];
             }
             i += 1;
         }
-        if !(j == 6 as libc::c_int) {
+        if j != 6 as libc::c_int {
             fprintf(
                 __stderrp,
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1516,9 +1516,9 @@ unsafe extern "C" fn runTests() {
         globalTestCount += 1;
         printf(b".\0" as *const u8 as *const libc::c_char);
         let mut polygon_15: LinkedGeoPolygon = LinkedGeoPolygon {
-            first: 0 as *mut LinkedGeoLoop,
-            last: 0 as *mut LinkedGeoLoop,
-            next: 0 as *mut LinkedGeoPolygon,
+            first: std::ptr::null_mut::<LinkedGeoLoop>(),
+            last: std::ptr::null_mut::<LinkedGeoLoop>(),
+            next: std::ptr::null_mut::<LinkedGeoPolygon>(),
         };
         if cellsToLinkedMultiPolygon(indexes_0.as_mut_ptr(), 6 as libc::c_int, &mut polygon_15) != 0
         {
@@ -1538,7 +1538,7 @@ unsafe extern "C" fn runTests() {
         }
         globalTestCount += 1;
         printf(b".\0" as *const u8 as *const libc::c_char);
-        if !(countLinkedPolygons(&mut polygon_15) == 1 as libc::c_int) {
+        if countLinkedPolygons(&mut polygon_15) != 1 as libc::c_int {
             fprintf(
                 __stderrp,
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1554,7 +1554,7 @@ unsafe extern "C" fn runTests() {
         }
         globalTestCount += 1;
         printf(b".\0" as *const u8 as *const libc::c_char);
-        if !(countLinkedLoops(&mut polygon_15) == 1 as libc::c_int) {
+        if countLinkedLoops(&mut polygon_15) != 1 as libc::c_int {
             fprintf(
                 __stderrp,
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1570,7 +1570,7 @@ unsafe extern "C" fn runTests() {
         }
         globalTestCount += 1;
         printf(b".\0" as *const u8 as *const libc::c_char);
-        if !(countLinkedCoords(polygon_15.first) == 15 as libc::c_int) {
+        if countLinkedCoords(polygon_15.first) != 15 as libc::c_int {
             fprintf(
                 __stderrp,
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1602,8 +1602,8 @@ unsafe fn main_0() -> libc::c_int {
         b"\nDONE: %d assertions\n\0" as *const u8 as *const libc::c_char,
         globalTestCount,
     );
-    return 0 as libc::c_int;
+    0 as libc::c_int
 }
 pub fn main() {
-    unsafe { ::std::process::exit(main_0() as i32) }
+    unsafe { ::std::process::exit(main_0()) }
 }

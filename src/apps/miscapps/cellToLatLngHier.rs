@@ -129,8 +129,8 @@ pub unsafe extern "C" fn recursiveH3IndexToGeo(
     while d < 7 as libc::c_int {
         if !(isPentagon(h) != 0 && d == 1 as libc::c_int) {
             h = h & !((7 as libc::c_int as uint64_t)
-                << (15 as libc::c_int - res) * 3 as libc::c_int)
-                | (d as uint64_t) << (15 as libc::c_int - res) * 3 as libc::c_int;
+                << ((15 as libc::c_int - res) * 3 as libc::c_int))
+                | (d as uint64_t) << ((15 as libc::c_int - res) * 3 as libc::c_int);
             if res
                 == ((h & (15 as libc::c_ulonglong) << 52 as libc::c_int) >> 52 as libc::c_int)
                     as libc::c_int
@@ -147,7 +147,7 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
     let mut res: libc::c_int = 0 as libc::c_int;
     let mut parentIndex: H3Index = 0 as libc::c_int as H3Index;
     let mut helpArg: Arg = {
-        let mut init = Arg {
+        Arg {
             names: [
                 b"-h\0" as *const u8 as *const libc::c_char,
                 b"--help\0" as *const u8 as *const libc::c_char,
@@ -155,14 +155,13 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
             required: false,
             scanFormat: std::ptr::null::<libc::c_char>(),
             valueName: std::ptr::null::<libc::c_char>(),
-            value: 0 as *mut libc::c_void,
+            value: std::ptr::null_mut::<libc::c_void>(),
             found: false,
             helpText: b"Show this help message.\0" as *const u8 as *const libc::c_char,
-        };
-        init
+        }
     };
     let mut resArg: Arg = {
-        let mut init = Arg {
+        Arg {
             names: [
                 b"-r\0" as *const u8 as *const libc::c_char,
                 b"--resolution\0" as *const u8 as *const libc::c_char,
@@ -174,11 +173,10 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
             found: false,
             helpText: b"Resolution, if less than the resolution of the parent only the parent is printed. Default the resolution of the parent.\0"
                 as *const u8 as *const libc::c_char,
-        };
-        init
+        }
     };
     let mut parentArg: Arg = {
-        let mut init = Arg {
+        Arg {
             names: [
                 b"-p\0" as *const u8 as *const libc::c_char,
                 b"--parent\0" as *const u8 as *const libc::c_char,
@@ -190,11 +188,10 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
             found: false,
             helpText: b"Print cell centers descendent from this index.\0" as *const u8
                 as *const libc::c_char,
-        };
-        init
+        }
     };
     let mut kmlArg: Arg = {
-        let mut init = Arg {
+        Arg {
             names: [
                 b"-k\0" as *const u8 as *const libc::c_char,
                 b"--kml\0" as *const u8 as *const libc::c_char,
@@ -202,11 +199,10 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
             required: false,
             scanFormat: std::ptr::null::<libc::c_char>(),
             valueName: std::ptr::null::<libc::c_char>(),
-            value: 0 as *mut libc::c_void,
+            value: std::ptr::null_mut::<libc::c_void>(),
             found: false,
             helpText: b"Print output in KML format.\0" as *const u8 as *const libc::c_char,
-        };
-        init
+        }
     };
     let mut userKmlName: [libc::c_char; 256] = [
         0 as libc::c_int as libc::c_char,
@@ -467,7 +463,7 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
         0,
     ];
     let mut kmlNameArg: Arg = {
-        let mut init = Arg {
+        Arg {
             names: [
                 b"--kn\0" as *const u8 as *const libc::c_char,
                 b"--kml-name\0" as *const u8 as *const libc::c_char,
@@ -479,8 +475,7 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
             found: false,
             helpText: b"Text for the KML name tag, if --kml is specified.\0" as *const u8
                 as *const libc::c_char,
-        };
-        init
+        }
     };
     let mut userKmlDesc: [libc::c_char; 256] = [
         0 as libc::c_int as libc::c_char,
@@ -741,7 +736,7 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
         0,
     ];
     let mut kmlDescArg: Arg = {
-        let mut init = Arg {
+        Arg {
             names: [
                 b"--kd\0" as *const u8 as *const libc::c_char,
                 b"--kml-description\0" as *const u8 as *const libc::c_char,
@@ -753,8 +748,7 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
             found: false,
             helpText: b"Text for the KML description tag, if --kml is specified.\0" as *const u8
                 as *const libc::c_char,
-        };
-        init
+        }
     };
     let mut args: [*mut Arg; 6] = [
         &mut helpArg,
@@ -810,7 +804,7 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
     let mut rootRes: libc::c_int = ((parentIndex & (15 as libc::c_ulonglong) << 52 as libc::c_int)
         >> 52 as libc::c_int) as libc::c_int;
     if kmlArg.found {
-        let mut kmlName: *mut libc::c_char = 0 as *mut libc::c_char;
+        let mut kmlName: *mut libc::c_char = std::ptr::null_mut::<libc::c_char>();
         if kmlNameArg.found {
             kmlName = strdup(userKmlName.as_mut_ptr());
         } else {
@@ -848,7 +842,7 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
     if kmlArg.found {
         kmlBoundaryFooter();
     }
-    return 0;
+    0
 }
 pub fn main() {
     let mut args: Vec<*mut libc::c_char> = Vec::new();
@@ -864,6 +858,6 @@ pub fn main() {
         ::std::process::exit(main_0(
             (args.len() - 1) as libc::c_int,
             args.as_mut_ptr() as *mut *mut libc::c_char,
-        ) as i32)
+        ))
     }
 }

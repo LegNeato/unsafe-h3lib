@@ -157,46 +157,40 @@ pub struct BBox {
 }
 static mut sfVerts: [LatLng; 6] = [
     {
-        let mut init = LatLng {
+        LatLng {
             lat: 0.659966917655f64,
             lng: -2.1364398519396f64,
-        };
-        init
+        }
     },
     {
-        let mut init = LatLng {
+        LatLng {
             lat: 0.6595011102219f64,
             lng: -2.1359434279405f64,
-        };
-        init
+        }
     },
     {
-        let mut init = LatLng {
+        LatLng {
             lat: 0.6583348114025f64,
             lng: -2.1354884206045f64,
-        };
-        init
+        }
     },
     {
-        let mut init = LatLng {
+        LatLng {
             lat: 0.6581220034068f64,
             lng: -2.1382437718946f64,
-        };
-        init
+        }
     },
     {
-        let mut init = LatLng {
+        LatLng {
             lat: 0.6594479998527f64,
             lng: -2.1384597563896f64,
-        };
-        init
+        }
     },
     {
-        let mut init = LatLng {
+        LatLng {
             lat: 0.6599990002976f64,
             lng: -2.1376771158464f64,
-        };
-        init
+        }
     },
 ];
 unsafe extern "C" fn createLinkedLoop(
@@ -205,12 +199,11 @@ unsafe extern "C" fn createLinkedLoop(
     mut numVerts: libc::c_int,
 ) {
     *loop_0 = {
-        let mut init = LinkedGeoLoop {
-            first: 0 as *mut LinkedLatLng,
-            last: 0 as *mut LinkedLatLng,
-            next: 0 as *mut LinkedGeoLoop,
-        };
-        init
+        LinkedGeoLoop {
+            first: std::ptr::null_mut::<LinkedLatLng>(),
+            last: std::ptr::null_mut::<LinkedLatLng>(),
+            next: std::ptr::null_mut::<LinkedGeoLoop>(),
+        }
     };
     let mut i: libc::c_int = 0 as libc::c_int;
     while i < numVerts {
@@ -223,25 +216,22 @@ unsafe extern "C" fn createLinkedLoop(
 unsafe extern "C" fn runTests() {
     currentTestName = b"pointInsideGeoLoop\0" as *const u8 as *const libc::c_char;
     let mut geoloop: GeoLoop = {
-        let mut init = GeoLoop {
+        GeoLoop {
             numVerts: 6 as libc::c_int,
             verts: sfVerts.as_mut_ptr(),
-        };
-        init
+        }
     };
     let mut inside: LatLng = {
-        let mut init = LatLng {
+        LatLng {
             lat: 0.659f64,
             lng: -2.136f64,
-        };
-        init
+        }
     };
     let mut somewhere: LatLng = {
-        let mut init = LatLng {
+        LatLng {
             lat: 1 as libc::c_int as libc::c_double,
             lng: 2 as libc::c_int as libc::c_double,
-        };
-        init
+        }
     };
     let mut bbox: BBox = BBox {
         north: 0.,
@@ -324,40 +314,35 @@ unsafe extern "C" fn runTests() {
     currentTestName = b"pointInsideGeoLoopCornerCases\0" as *const u8 as *const libc::c_char;
     let mut verts: [LatLng; 4] = [
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0 as libc::c_int as libc::c_double,
                 lng: 0 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 1 as libc::c_int as libc::c_double,
                 lng: 0 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 1 as libc::c_int as libc::c_double,
                 lng: 1 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0 as libc::c_int as libc::c_double,
                 lng: 1 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
     ];
     let mut geoloop_0: GeoLoop = {
-        let mut init = GeoLoop {
+        GeoLoop {
             numVerts: 4 as libc::c_int,
             verts: verts.as_mut_ptr(),
-        };
-        init
+        }
     };
     let mut bbox_0: BBox = BBox {
         north: 0.,
@@ -367,11 +352,10 @@ unsafe extern "C" fn runTests() {
     };
     bboxFromGeoLoop(&mut geoloop_0, &mut bbox_0);
     let mut point: LatLng = {
-        let mut init = LatLng {
+        LatLng {
             lat: 0 as libc::c_int as libc::c_double,
             lng: 0 as libc::c_int as libc::c_double,
-        };
-        init
+        }
     };
     if pointInsideGeoLoop(&mut geoloop_0, &mut bbox_0, &mut point) {
         fprintf(
@@ -439,40 +423,35 @@ unsafe extern "C" fn runTests() {
     currentTestName = b"pointInsideGeoLoopEdgeCases\0" as *const u8 as *const libc::c_char;
     let mut verts_0: [LatLng; 4] = [
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0 as libc::c_int as libc::c_double,
                 lng: 0 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 1 as libc::c_int as libc::c_double,
                 lng: 0 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 1 as libc::c_int as libc::c_double,
                 lng: 1 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0 as libc::c_int as libc::c_double,
                 lng: 1 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
     ];
     let mut geoloop_1: GeoLoop = {
-        let mut init = GeoLoop {
+        GeoLoop {
             numVerts: 4 as libc::c_int,
             verts: verts_0.as_mut_ptr(),
-        };
-        init
+        }
     };
     let mut bbox_1: BBox = BBox {
         north: 0.,
@@ -553,33 +532,29 @@ unsafe extern "C" fn runTests() {
     currentTestName = b"pointInsideGeoLoopExtraEdgeCase\0" as *const u8 as *const libc::c_char;
     let mut verts_1: [LatLng; 3] = [
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0 as libc::c_int as libc::c_double,
                 lng: 0 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 1 as libc::c_int as libc::c_double,
                 lng: 0.5f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0 as libc::c_int as libc::c_double,
                 lng: 1 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
     ];
     let mut geoloop_2: GeoLoop = {
-        let mut init = GeoLoop {
+        GeoLoop {
             numVerts: 3 as libc::c_int,
             verts: verts_1.as_mut_ptr(),
-        };
-        init
+        }
     };
     let mut bbox_2: BBox = BBox {
         north: 0.,
@@ -589,11 +564,10 @@ unsafe extern "C" fn runTests() {
     };
     bboxFromGeoLoop(&mut geoloop_2, &mut bbox_2);
     let mut point_1: LatLng = {
-        let mut init = LatLng {
+        LatLng {
             lat: 0.5f64,
             lng: 0.5f64,
-        };
-        init
+        }
     };
     if !pointInsideGeoLoop(&mut geoloop_2, &mut bbox_2, &mut point_1) {
         fprintf(
@@ -614,68 +588,59 @@ unsafe extern "C" fn runTests() {
     currentTestName = b"pointInsideGeoLoopTransmeridian\0" as *const u8 as *const libc::c_char;
     let mut verts_2: [LatLng; 4] = [
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.01f64,
-                lng: -3.14159265358979323846f64 + 0.01f64,
-            };
-            init
+                lng: -std::f64::consts::PI + 0.01f64,
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.01f64,
-                lng: 3.14159265358979323846f64 - 0.01f64,
-            };
-            init
+                lng: std::f64::consts::PI - 0.01f64,
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: -0.01f64,
-                lng: 3.14159265358979323846f64 - 0.01f64,
-            };
-            init
+                lng: std::f64::consts::PI - 0.01f64,
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: -0.01f64,
-                lng: -3.14159265358979323846f64 + 0.01f64,
-            };
-            init
+                lng: -std::f64::consts::PI + 0.01f64,
+            }
         },
     ];
     let mut transMeridianGeoLoop: GeoLoop = {
-        let mut init = GeoLoop {
+        GeoLoop {
             numVerts: 4 as libc::c_int,
             verts: verts_2.as_mut_ptr(),
-        };
-        init
+        }
     };
     let mut eastPoint: LatLng = {
-        let mut init = LatLng {
+        LatLng {
             lat: 0.001f64,
-            lng: -3.14159265358979323846f64 + 0.001f64,
-        };
-        init
+            lng: -std::f64::consts::PI + 0.001f64,
+        }
     };
     let mut eastPointOutside: LatLng = {
-        let mut init = LatLng {
+        LatLng {
             lat: 0.001f64,
-            lng: -3.14159265358979323846f64 + 0.1f64,
-        };
-        init
+            lng: -std::f64::consts::PI + 0.1f64,
+        }
     };
     let mut westPoint: LatLng = {
-        let mut init = LatLng {
+        LatLng {
             lat: 0.001f64,
-            lng: 3.14159265358979323846f64 - 0.001f64,
-        };
-        init
+            lng: std::f64::consts::PI - 0.001f64,
+        }
     };
     let mut westPointOutside: LatLng = {
-        let mut init = LatLng {
+        LatLng {
             lat: 0.001f64,
-            lng: 3.14159265358979323846f64 - 0.1f64,
-        };
-        init
+            lng: std::f64::consts::PI - 0.1f64,
+        }
     };
     let mut bbox_3: BBox = BBox {
         north: 0.,
@@ -760,23 +725,21 @@ unsafe extern "C" fn runTests() {
     printf(b".\0" as *const u8 as *const libc::c_char);
     currentTestName = b"pointInsideLinkedGeoLoop\0" as *const u8 as *const libc::c_char;
     let mut somewhere_0: LatLng = {
-        let mut init = LatLng {
+        LatLng {
             lat: 1 as libc::c_int as libc::c_double,
             lng: 2 as libc::c_int as libc::c_double,
-        };
-        init
+        }
     };
     let mut inside_0: LatLng = {
-        let mut init = LatLng {
+        LatLng {
             lat: 0.659f64,
             lng: -2.136f64,
-        };
-        init
+        }
     };
     let mut loop_0: LinkedGeoLoop = LinkedGeoLoop {
-        first: 0 as *mut LinkedLatLng,
-        last: 0 as *mut LinkedLatLng,
-        next: 0 as *mut LinkedGeoLoop,
+        first: std::ptr::null_mut::<LinkedLatLng>(),
+        last: std::ptr::null_mut::<LinkedLatLng>(),
+        next: std::ptr::null_mut::<LinkedGeoLoop>(),
     };
     createLinkedLoop(
         &mut loop_0,
@@ -826,49 +789,43 @@ unsafe extern "C" fn runTests() {
     currentTestName = b"bboxFromGeoLoop\0" as *const u8 as *const libc::c_char;
     let mut verts_3: [LatLng; 4] = [
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.8f64,
                 lng: 0.3f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.7f64,
                 lng: 0.6f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 1.1f64,
                 lng: 0.7f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 1.0f64,
                 lng: 0.2f64,
-            };
-            init
+            }
         },
     ];
     let mut geoloop_3: GeoLoop = {
-        let mut init = GeoLoop {
+        GeoLoop {
             numVerts: 4 as libc::c_int,
             verts: verts_3.as_mut_ptr(),
-        };
-        init
+        }
     };
     let expected: BBox = {
-        let mut init = BBox {
+        BBox {
             north: 1.1f64,
             south: 0.7f64,
             east: 0.7f64,
             west: 0.2f64,
-        };
-        init
+        }
     };
     let mut result: BBox = BBox {
         north: 0.,
@@ -895,63 +852,55 @@ unsafe extern "C" fn runTests() {
     currentTestName = b"bboxFromGeoLoopTransmeridian\0" as *const u8 as *const libc::c_char;
     let mut verts_4: [LatLng; 6] = [
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.1f64,
-                lng: -3.14159265358979323846f64 + 0.1f64,
-            };
-            init
+                lng: -std::f64::consts::PI + 0.1f64,
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.1f64,
-                lng: 3.14159265358979323846f64 - 0.1f64,
-            };
-            init
+                lng: std::f64::consts::PI - 0.1f64,
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.05f64,
-                lng: 3.14159265358979323846f64 - 0.2f64,
-            };
-            init
+                lng: std::f64::consts::PI - 0.2f64,
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: -0.1f64,
-                lng: 3.14159265358979323846f64 - 0.1f64,
-            };
-            init
+                lng: std::f64::consts::PI - 0.1f64,
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: -0.1f64,
-                lng: -3.14159265358979323846f64 + 0.1f64,
-            };
-            init
+                lng: -std::f64::consts::PI + 0.1f64,
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: -0.05f64,
-                lng: -3.14159265358979323846f64 + 0.2f64,
-            };
-            init
+                lng: -std::f64::consts::PI + 0.2f64,
+            }
         },
     ];
     let mut geoloop_4: GeoLoop = {
-        let mut init = GeoLoop {
+        GeoLoop {
             numVerts: 6 as libc::c_int,
             verts: verts_4.as_mut_ptr(),
-        };
-        init
+        }
     };
     let expected_0: BBox = {
-        let mut init = BBox {
+        BBox {
             north: 0.1f64,
             south: -0.1f64,
-            east: -3.14159265358979323846f64 + 0.2f64,
-            west: 3.14159265358979323846f64 - 0.2f64,
-        };
-        init
+            east: -std::f64::consts::PI + 0.2f64,
+            west: std::f64::consts::PI - 0.2f64,
+        }
     };
     let mut result_0: BBox = BBox {
         north: 0.,
@@ -978,18 +927,17 @@ unsafe extern "C" fn runTests() {
     currentTestName = b"bboxFromGeoLoopNoVertices\0" as *const u8 as *const libc::c_char;
     let mut geoloop_5: GeoLoop = GeoLoop {
         numVerts: 0,
-        verts: 0 as *mut LatLng,
+        verts: std::ptr::null_mut::<LatLng>(),
     };
-    geoloop_5.verts = 0 as *mut LatLng;
+    geoloop_5.verts = std::ptr::null_mut::<LatLng>();
     geoloop_5.numVerts = 0 as libc::c_int;
     let expected_1: BBox = {
-        let mut init = BBox {
+        BBox {
             north: 0.0f64,
             south: 0.0f64,
             east: 0.0f64,
             west: 0.0f64,
-        };
-        init
+        }
     };
     let mut result_1: BBox = BBox {
         north: 0.,
@@ -1016,57 +964,50 @@ unsafe extern "C" fn runTests() {
     currentTestName = b"bboxesFromGeoPolygon\0" as *const u8 as *const libc::c_char;
     let mut verts_5: [LatLng; 4] = [
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.8f64,
                 lng: 0.3f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.7f64,
                 lng: 0.6f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 1.1f64,
                 lng: 0.7f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 1.0f64,
                 lng: 0.2f64,
-            };
-            init
+            }
         },
     ];
     let mut geoloop_6: GeoLoop = {
-        let mut init = GeoLoop {
+        GeoLoop {
             numVerts: 4 as libc::c_int,
             verts: verts_5.as_mut_ptr(),
-        };
-        init
+        }
     };
     let mut polygon: GeoPolygon = {
-        let mut init = GeoPolygon {
+        GeoPolygon {
             geoloop: geoloop_6,
             numHoles: 0 as libc::c_int,
-            holes: 0 as *mut GeoLoop,
-        };
-        init
+            holes: std::ptr::null_mut::<GeoLoop>(),
+        }
     };
     let expected_2: BBox = {
-        let mut init = BBox {
+        BBox {
             north: 1.1f64,
             south: 0.7f64,
             east: 0.7f64,
             west: 0.2f64,
-        };
-        init
+        }
     };
     let mut result_2: *mut BBox = calloc(
         ::core::mem::size_of::<BBox>() as libc::c_ulong,
@@ -1095,103 +1036,90 @@ unsafe extern "C" fn runTests() {
     currentTestName = b"bboxesFromGeoPolygonHole\0" as *const u8 as *const libc::c_char;
     let mut verts_6: [LatLng; 4] = [
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.8f64,
                 lng: 0.3f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.7f64,
                 lng: 0.6f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 1.1f64,
                 lng: 0.7f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 1.0f64,
                 lng: 0.2f64,
-            };
-            init
+            }
         },
     ];
     let mut geoloop_7: GeoLoop = {
-        let mut init = GeoLoop {
+        GeoLoop {
             numVerts: 4 as libc::c_int,
             verts: verts_6.as_mut_ptr(),
-        };
-        init
+        }
     };
     let mut holeVerts: [LatLng; 4] = [
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.9f64,
                 lng: 0.3f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.9f64,
                 lng: 0.5f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 1.0f64,
                 lng: 0.7f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.9f64,
                 lng: 0.3f64,
-            };
-            init
+            }
         },
     ];
     let mut holeGeoLoop: GeoLoop = {
-        let mut init = GeoLoop {
+        GeoLoop {
             numVerts: 4 as libc::c_int,
             verts: holeVerts.as_mut_ptr(),
-        };
-        init
+        }
     };
     let mut polygon_0: GeoPolygon = {
-        let mut init = GeoPolygon {
+        GeoPolygon {
             geoloop: geoloop_7,
             numHoles: 1 as libc::c_int,
             holes: &mut holeGeoLoop,
-        };
-        init
+        }
     };
     let expected_3: BBox = {
-        let mut init = BBox {
+        BBox {
             north: 1.1f64,
             south: 0.7f64,
             east: 0.7f64,
             west: 0.2f64,
-        };
-        init
+        }
     };
     let expectedHole: BBox = {
-        let mut init = BBox {
+        BBox {
             north: 1.0f64,
             south: 0.9f64,
             east: 0.7f64,
             west: 0.3f64,
-        };
-        init
+        }
     };
     let mut result_3: *mut BBox = calloc(
         ::core::mem::size_of::<BBox>() as libc::c_ulong,
@@ -1238,38 +1166,34 @@ unsafe extern "C" fn runTests() {
     currentTestName = b"bboxFromLinkedGeoLoop\0" as *const u8 as *const libc::c_char;
     let mut verts_7: [LatLng; 4] = [
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.8f64,
                 lng: 0.3f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.7f64,
                 lng: 0.6f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 1.1f64,
                 lng: 0.7f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 1.0f64,
                 lng: 0.2f64,
-            };
-            init
+            }
         },
     ];
     let mut loop_1: LinkedGeoLoop = LinkedGeoLoop {
-        first: 0 as *mut LinkedLatLng,
-        last: 0 as *mut LinkedLatLng,
-        next: 0 as *mut LinkedGeoLoop,
+        first: std::ptr::null_mut::<LinkedLatLng>(),
+        last: std::ptr::null_mut::<LinkedLatLng>(),
+        next: std::ptr::null_mut::<LinkedGeoLoop>(),
     };
     createLinkedLoop(
         &mut loop_1,
@@ -1277,13 +1201,12 @@ unsafe extern "C" fn runTests() {
         4 as libc::c_int,
     );
     let expected_4: BBox = {
-        let mut init = BBox {
+        BBox {
             north: 1.1f64,
             south: 0.7f64,
             east: 0.7f64,
             west: 0.2f64,
-        };
-        init
+        }
     };
     let mut result_4: BBox = BBox {
         north: 0.,
@@ -1310,21 +1233,19 @@ unsafe extern "C" fn runTests() {
     destroyLinkedGeoLoop(&mut loop_1);
     currentTestName = b"bboxFromLinkedGeoLoopNoVertices\0" as *const u8 as *const libc::c_char;
     let mut loop_2: LinkedGeoLoop = {
-        let mut init = LinkedGeoLoop {
-            first: 0 as *mut LinkedLatLng,
-            last: 0 as *mut LinkedLatLng,
-            next: 0 as *mut LinkedGeoLoop,
-        };
-        init
+        LinkedGeoLoop {
+            first: std::ptr::null_mut::<LinkedLatLng>(),
+            last: std::ptr::null_mut::<LinkedLatLng>(),
+            next: std::ptr::null_mut::<LinkedGeoLoop>(),
+        }
     };
     let expected_5: BBox = {
-        let mut init = BBox {
+        BBox {
             north: 0.0f64,
             south: 0.0f64,
             east: 0.0f64,
             west: 0.0f64,
-        };
-        init
+        }
     };
     let mut result_5: BBox = BBox {
         north: 0.,
@@ -1352,33 +1273,29 @@ unsafe extern "C" fn runTests() {
     currentTestName = b"isClockwiseGeoLoop\0" as *const u8 as *const libc::c_char;
     let mut verts_8: [LatLng; 3] = [
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0 as libc::c_int as libc::c_double,
                 lng: 0 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.1f64,
                 lng: 0.1f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0 as libc::c_int as libc::c_double,
                 lng: 0.1f64,
-            };
-            init
+            }
         },
     ];
     let mut geoloop_8: GeoLoop = {
-        let mut init = GeoLoop {
+        GeoLoop {
             numVerts: 3 as libc::c_int,
             verts: verts_8.as_mut_ptr(),
-        };
-        init
+        }
     };
     if !isClockwiseGeoLoop(&mut geoloop_8) {
         fprintf(
@@ -1398,31 +1315,28 @@ unsafe extern "C" fn runTests() {
     currentTestName = b"isClockwiseLinkedGeoLoop\0" as *const u8 as *const libc::c_char;
     let mut verts_9: [LatLng; 3] = [
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.1f64,
                 lng: 0.1f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.2f64,
                 lng: 0.2f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.1f64,
                 lng: 0.2f64,
-            };
-            init
+            }
         },
     ];
     let mut loop_3: LinkedGeoLoop = LinkedGeoLoop {
-        first: 0 as *mut LinkedLatLng,
-        last: 0 as *mut LinkedLatLng,
-        next: 0 as *mut LinkedGeoLoop,
+        first: std::ptr::null_mut::<LinkedLatLng>(),
+        last: std::ptr::null_mut::<LinkedLatLng>(),
+        next: std::ptr::null_mut::<LinkedGeoLoop>(),
     };
     createLinkedLoop(
         &mut loop_3,
@@ -1448,38 +1362,34 @@ unsafe extern "C" fn runTests() {
     currentTestName = b"isNotClockwiseLinkedGeoLoop\0" as *const u8 as *const libc::c_char;
     let mut verts_10: [LatLng; 4] = [
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0 as libc::c_int as libc::c_double,
                 lng: 0 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0 as libc::c_int as libc::c_double,
                 lng: 0.4f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.4f64,
                 lng: 0.4f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.4f64,
                 lng: 0 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
     ];
     let mut loop_4: LinkedGeoLoop = LinkedGeoLoop {
-        first: 0 as *mut LinkedLatLng,
-        last: 0 as *mut LinkedLatLng,
-        next: 0 as *mut LinkedGeoLoop,
+        first: std::ptr::null_mut::<LinkedLatLng>(),
+        last: std::ptr::null_mut::<LinkedLatLng>(),
+        next: std::ptr::null_mut::<LinkedGeoLoop>(),
     };
     createLinkedLoop(
         &mut loop_4,
@@ -1505,40 +1415,35 @@ unsafe extern "C" fn runTests() {
     currentTestName = b"isClockwiseGeoLoopTransmeridian\0" as *const u8 as *const libc::c_char;
     let mut verts_11: [LatLng; 4] = [
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.4f64,
-                lng: 3.14159265358979323846f64 - 0.1f64,
-            };
-            init
+                lng: std::f64::consts::PI - 0.1f64,
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.4f64,
-                lng: -3.14159265358979323846f64 + 0.1f64,
-            };
-            init
+                lng: -std::f64::consts::PI + 0.1f64,
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: -0.4f64,
-                lng: -3.14159265358979323846f64 + 0.1f64,
-            };
-            init
+                lng: -std::f64::consts::PI + 0.1f64,
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: -0.4f64,
-                lng: 3.14159265358979323846f64 - 0.1f64,
-            };
-            init
+                lng: std::f64::consts::PI - 0.1f64,
+            }
         },
     ];
     let mut geoloop_9: GeoLoop = {
-        let mut init = GeoLoop {
+        GeoLoop {
             numVerts: 4 as libc::c_int,
             verts: verts_11.as_mut_ptr(),
-        };
-        init
+        }
     };
     if !isClockwiseGeoLoop(&mut geoloop_9) {
         fprintf(
@@ -1559,38 +1464,34 @@ unsafe extern "C" fn runTests() {
         b"isClockwiseLinkedGeoLoopTransmeridian\0" as *const u8 as *const libc::c_char;
     let mut verts_12: [LatLng; 4] = [
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.4f64,
-                lng: 3.14159265358979323846f64 - 0.1f64,
-            };
-            init
+                lng: std::f64::consts::PI - 0.1f64,
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.4f64,
-                lng: -3.14159265358979323846f64 + 0.1f64,
-            };
-            init
+                lng: -std::f64::consts::PI + 0.1f64,
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: -0.4f64,
-                lng: -3.14159265358979323846f64 + 0.1f64,
-            };
-            init
+                lng: -std::f64::consts::PI + 0.1f64,
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: -0.4f64,
-                lng: 3.14159265358979323846f64 - 0.1f64,
-            };
-            init
+                lng: std::f64::consts::PI - 0.1f64,
+            }
         },
     ];
     let mut loop_5: LinkedGeoLoop = LinkedGeoLoop {
-        first: 0 as *mut LinkedLatLng,
-        last: 0 as *mut LinkedLatLng,
-        next: 0 as *mut LinkedGeoLoop,
+        first: std::ptr::null_mut::<LinkedLatLng>(),
+        last: std::ptr::null_mut::<LinkedLatLng>(),
+        next: std::ptr::null_mut::<LinkedGeoLoop>(),
     };
     createLinkedLoop(
         &mut loop_5,
@@ -1617,38 +1518,34 @@ unsafe extern "C" fn runTests() {
         b"isNotClockwiseLinkedGeoLoopTransmeridian\0" as *const u8 as *const libc::c_char;
     let mut verts_13: [LatLng; 4] = [
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.4f64,
-                lng: 3.14159265358979323846f64 - 0.1f64,
-            };
-            init
+                lng: std::f64::consts::PI - 0.1f64,
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: -0.4f64,
-                lng: 3.14159265358979323846f64 - 0.1f64,
-            };
-            init
+                lng: std::f64::consts::PI - 0.1f64,
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: -0.4f64,
-                lng: -3.14159265358979323846f64 + 0.1f64,
-            };
-            init
+                lng: -std::f64::consts::PI + 0.1f64,
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.4f64,
-                lng: -3.14159265358979323846f64 + 0.1f64,
-            };
-            init
+                lng: -std::f64::consts::PI + 0.1f64,
+            }
         },
     ];
     let mut loop_6: LinkedGeoLoop = LinkedGeoLoop {
-        first: 0 as *mut LinkedLatLng,
-        last: 0 as *mut LinkedLatLng,
-        next: 0 as *mut LinkedGeoLoop,
+        first: std::ptr::null_mut::<LinkedLatLng>(),
+        last: std::ptr::null_mut::<LinkedLatLng>(),
+        next: std::ptr::null_mut::<LinkedGeoLoop>(),
     };
     createLinkedLoop(
         &mut loop_6,
@@ -1675,25 +1572,22 @@ unsafe extern "C" fn runTests() {
     currentTestName = b"normalizeMultiPolygonSingle\0" as *const u8 as *const libc::c_char;
     let mut verts_14: [LatLng; 3] = [
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0 as libc::c_int as libc::c_double,
                 lng: 0 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0 as libc::c_int as libc::c_double,
                 lng: 1 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 1 as libc::c_int as libc::c_double,
                 lng: 1 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
     ];
     let mut outer: *mut LinkedGeoLoop =
@@ -1713,12 +1607,11 @@ unsafe extern "C" fn runTests() {
         3 as libc::c_int,
     );
     let mut polygon_1: LinkedGeoPolygon = {
-        let mut init = LinkedGeoPolygon {
-            first: 0 as *mut LinkedGeoLoop,
-            last: 0 as *mut LinkedGeoLoop,
-            next: 0 as *mut LinkedGeoPolygon,
-        };
-        init
+        LinkedGeoPolygon {
+            first: std::ptr::null_mut::<LinkedGeoLoop>(),
+            last: std::ptr::null_mut::<LinkedGeoLoop>(),
+            next: std::ptr::null_mut::<LinkedGeoPolygon>(),
+        }
     };
     addLinkedLoop(&mut polygon_1, outer);
     if normalizeMultiPolygon(&mut polygon_1) != 0 {
@@ -1736,7 +1629,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedPolygons(&mut polygon_1) == 1 as libc::c_int) {
+    if countLinkedPolygons(&mut polygon_1) != 1 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1751,7 +1644,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedLoops(&mut polygon_1) == 1 as libc::c_int) {
+    if countLinkedLoops(&mut polygon_1) != 1 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1766,7 +1659,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(polygon_1.first == outer) {
+    if polygon_1.first != outer {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1785,25 +1678,22 @@ unsafe extern "C" fn runTests() {
     currentTestName = b"normalizeMultiPolygonTwoOuterLoops\0" as *const u8 as *const libc::c_char;
     let mut verts1: [LatLng; 3] = [
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0 as libc::c_int as libc::c_double,
                 lng: 0 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0 as libc::c_int as libc::c_double,
                 lng: 1 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 1 as libc::c_int as libc::c_double,
                 lng: 1 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
     ];
     let mut outer1: *mut LinkedGeoLoop =
@@ -1824,25 +1714,22 @@ unsafe extern "C" fn runTests() {
     );
     let mut verts2: [LatLng; 3] = [
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 2 as libc::c_int as libc::c_double,
                 lng: 2 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 2 as libc::c_int as libc::c_double,
                 lng: 3 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 3 as libc::c_int as libc::c_double,
                 lng: 3 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
     ];
     let mut outer2: *mut LinkedGeoLoop =
@@ -1862,12 +1749,11 @@ unsafe extern "C" fn runTests() {
         3 as libc::c_int,
     );
     let mut polygon_2: LinkedGeoPolygon = {
-        let mut init = LinkedGeoPolygon {
-            first: 0 as *mut LinkedGeoLoop,
-            last: 0 as *mut LinkedGeoLoop,
-            next: 0 as *mut LinkedGeoPolygon,
-        };
-        init
+        LinkedGeoPolygon {
+            first: std::ptr::null_mut::<LinkedGeoLoop>(),
+            last: std::ptr::null_mut::<LinkedGeoLoop>(),
+            next: std::ptr::null_mut::<LinkedGeoPolygon>(),
+        }
     };
     addLinkedLoop(&mut polygon_2, outer1);
     addLinkedLoop(&mut polygon_2, outer2);
@@ -1886,7 +1772,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedPolygons(&mut polygon_2) == 2 as libc::c_int) {
+    if countLinkedPolygons(&mut polygon_2) != 2 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1901,7 +1787,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedLoops(&mut polygon_2) == 1 as libc::c_int) {
+    if countLinkedLoops(&mut polygon_2) != 1 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1916,7 +1802,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedLoops(polygon_2.next) == 1 as libc::c_int) {
+    if countLinkedLoops(polygon_2.next) != 1 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1935,32 +1821,28 @@ unsafe extern "C" fn runTests() {
     currentTestName = b"normalizeMultiPolygonOneHole\0" as *const u8 as *const libc::c_char;
     let mut verts_15: [LatLng; 4] = [
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0 as libc::c_int as libc::c_double,
                 lng: 0 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0 as libc::c_int as libc::c_double,
                 lng: 3 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 3 as libc::c_int as libc::c_double,
                 lng: 3 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 3 as libc::c_int as libc::c_double,
                 lng: 0 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
     ];
     let mut outer_0: *mut LinkedGeoLoop =
@@ -1981,25 +1863,22 @@ unsafe extern "C" fn runTests() {
     );
     let mut verts2_0: [LatLng; 3] = [
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 1 as libc::c_int as libc::c_double,
                 lng: 1 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 2 as libc::c_int as libc::c_double,
                 lng: 2 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 1 as libc::c_int as libc::c_double,
                 lng: 2 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
     ];
     let mut inner: *mut LinkedGeoLoop =
@@ -2019,12 +1898,11 @@ unsafe extern "C" fn runTests() {
         3 as libc::c_int,
     );
     let mut polygon_3: LinkedGeoPolygon = {
-        let mut init = LinkedGeoPolygon {
-            first: 0 as *mut LinkedGeoLoop,
-            last: 0 as *mut LinkedGeoLoop,
-            next: 0 as *mut LinkedGeoPolygon,
-        };
-        init
+        LinkedGeoPolygon {
+            first: std::ptr::null_mut::<LinkedGeoLoop>(),
+            last: std::ptr::null_mut::<LinkedGeoLoop>(),
+            next: std::ptr::null_mut::<LinkedGeoPolygon>(),
+        }
     };
     addLinkedLoop(&mut polygon_3, inner);
     addLinkedLoop(&mut polygon_3, outer_0);
@@ -2043,7 +1921,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedPolygons(&mut polygon_3) == 1 as libc::c_int) {
+    if countLinkedPolygons(&mut polygon_3) != 1 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -2058,7 +1936,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedLoops(&mut polygon_3) == 2 as libc::c_int) {
+    if countLinkedLoops(&mut polygon_3) != 2 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -2073,7 +1951,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(polygon_3.first == outer_0) {
+    if polygon_3.first != outer_0 {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -2088,7 +1966,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !((*polygon_3.first).next == inner) {
+    if (*polygon_3.first).next != inner {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -2107,32 +1985,28 @@ unsafe extern "C" fn runTests() {
     currentTestName = b"normalizeMultiPolygonTwoHoles\0" as *const u8 as *const libc::c_char;
     let mut verts_16: [LatLng; 4] = [
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0 as libc::c_int as libc::c_double,
                 lng: 0 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0 as libc::c_int as libc::c_double,
                 lng: 0.4f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.4f64,
                 lng: 0.4f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.4f64,
                 lng: 0 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
     ];
     let mut outer_1: *mut LinkedGeoLoop =
@@ -2153,25 +2027,22 @@ unsafe extern "C" fn runTests() {
     );
     let mut verts2_1: [LatLng; 3] = [
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.1f64,
                 lng: 0.1f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.2f64,
                 lng: 0.2f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.1f64,
                 lng: 0.2f64,
-            };
-            init
+            }
         },
     ];
     let mut inner1: *mut LinkedGeoLoop =
@@ -2192,25 +2063,22 @@ unsafe extern "C" fn runTests() {
     );
     let mut verts3: [LatLng; 3] = [
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.2f64,
                 lng: 0.2f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.3f64,
                 lng: 0.3f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.2f64,
                 lng: 0.3f64,
-            };
-            init
+            }
         },
     ];
     let mut inner2: *mut LinkedGeoLoop =
@@ -2230,12 +2098,11 @@ unsafe extern "C" fn runTests() {
         3 as libc::c_int,
     );
     let mut polygon_4: LinkedGeoPolygon = {
-        let mut init = LinkedGeoPolygon {
-            first: 0 as *mut LinkedGeoLoop,
-            last: 0 as *mut LinkedGeoLoop,
-            next: 0 as *mut LinkedGeoPolygon,
-        };
-        init
+        LinkedGeoPolygon {
+            first: std::ptr::null_mut::<LinkedGeoLoop>(),
+            last: std::ptr::null_mut::<LinkedGeoLoop>(),
+            next: std::ptr::null_mut::<LinkedGeoPolygon>(),
+        }
     };
     addLinkedLoop(&mut polygon_4, inner2);
     addLinkedLoop(&mut polygon_4, outer_1);
@@ -2255,7 +2122,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedPolygons(&mut polygon_4) == 1 as libc::c_int) {
+    if countLinkedPolygons(&mut polygon_4) != 1 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -2270,7 +2137,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(polygon_4.first == outer_1) {
+    if polygon_4.first != outer_1 {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -2285,7 +2152,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedLoops(&mut polygon_4) == 3 as libc::c_int) {
+    if countLinkedLoops(&mut polygon_4) != 3 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -2304,32 +2171,28 @@ unsafe extern "C" fn runTests() {
     currentTestName = b"normalizeMultiPolygonTwoDonuts\0" as *const u8 as *const libc::c_char;
     let mut verts_17: [LatLng; 4] = [
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0 as libc::c_int as libc::c_double,
                 lng: 0 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0 as libc::c_int as libc::c_double,
                 lng: 3 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 3 as libc::c_int as libc::c_double,
                 lng: 3 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 3 as libc::c_int as libc::c_double,
                 lng: 0 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
     ];
     let mut outer_2: *mut LinkedGeoLoop =
@@ -2350,25 +2213,22 @@ unsafe extern "C" fn runTests() {
     );
     let mut verts2_2: [LatLng; 3] = [
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 1 as libc::c_int as libc::c_double,
                 lng: 1 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 2 as libc::c_int as libc::c_double,
                 lng: 2 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 1 as libc::c_int as libc::c_double,
                 lng: 2 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
     ];
     let mut inner_0: *mut LinkedGeoLoop =
@@ -2389,32 +2249,28 @@ unsafe extern "C" fn runTests() {
     );
     let mut verts3_0: [LatLng; 4] = [
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0 as libc::c_int as libc::c_double,
                 lng: 0 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0 as libc::c_int as libc::c_double,
                 lng: -(3 as libc::c_int) as libc::c_double,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: -(3 as libc::c_int) as libc::c_double,
                 lng: -(3 as libc::c_int) as libc::c_double,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: -(3 as libc::c_int) as libc::c_double,
                 lng: 0 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
     ];
     let mut outer2_0: *mut LinkedGeoLoop =
@@ -2435,25 +2291,22 @@ unsafe extern "C" fn runTests() {
     );
     let mut verts4: [LatLng; 3] = [
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: -(1 as libc::c_int) as libc::c_double,
                 lng: -(1 as libc::c_int) as libc::c_double,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: -(2 as libc::c_int) as libc::c_double,
                 lng: -(2 as libc::c_int) as libc::c_double,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: -(1 as libc::c_int) as libc::c_double,
                 lng: -(2 as libc::c_int) as libc::c_double,
-            };
-            init
+            }
         },
     ];
     let mut inner2_0: *mut LinkedGeoLoop =
@@ -2473,12 +2326,11 @@ unsafe extern "C" fn runTests() {
         3 as libc::c_int,
     );
     let mut polygon_5: LinkedGeoPolygon = {
-        let mut init = LinkedGeoPolygon {
-            first: 0 as *mut LinkedGeoLoop,
-            last: 0 as *mut LinkedGeoLoop,
-            next: 0 as *mut LinkedGeoPolygon,
-        };
-        init
+        LinkedGeoPolygon {
+            first: std::ptr::null_mut::<LinkedGeoLoop>(),
+            last: std::ptr::null_mut::<LinkedGeoLoop>(),
+            next: std::ptr::null_mut::<LinkedGeoPolygon>(),
+        }
     };
     addLinkedLoop(&mut polygon_5, inner2_0);
     addLinkedLoop(&mut polygon_5, inner_0);
@@ -2499,7 +2351,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedPolygons(&mut polygon_5) == 2 as libc::c_int) {
+    if countLinkedPolygons(&mut polygon_5) != 2 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -2514,7 +2366,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedLoops(&mut polygon_5) == 2 as libc::c_int) {
+    if countLinkedLoops(&mut polygon_5) != 2 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -2529,7 +2381,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedCoords(polygon_5.first) == 4 as libc::c_int) {
+    if countLinkedCoords(polygon_5.first) != 4 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -2544,7 +2396,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedCoords((*polygon_5.first).next) == 3 as libc::c_int) {
+    if countLinkedCoords((*polygon_5.first).next) != 3 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -2559,7 +2411,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedLoops(polygon_5.next) == 2 as libc::c_int) {
+    if countLinkedLoops(polygon_5.next) != 2 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -2574,7 +2426,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedCoords((*polygon_5.next).first) == 4 as libc::c_int) {
+    if countLinkedCoords((*polygon_5.next).first) != 4 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -2589,7 +2441,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedCoords((*(*polygon_5.next).first).next) == 3 as libc::c_int) {
+    if countLinkedCoords((*(*polygon_5.next).first).next) != 3 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -2609,32 +2461,28 @@ unsafe extern "C" fn runTests() {
     currentTestName = b"normalizeMultiPolygonNestedDonuts\0" as *const u8 as *const libc::c_char;
     let mut verts_18: [LatLng; 4] = [
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.2f64,
                 lng: 0.2f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.2f64,
                 lng: -0.2f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: -0.2f64,
                 lng: -0.2f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: -0.2f64,
                 lng: 0.2f64,
-            };
-            init
+            }
         },
     ];
     let mut outer_3: *mut LinkedGeoLoop =
@@ -2655,32 +2503,28 @@ unsafe extern "C" fn runTests() {
     );
     let mut verts2_3: [LatLng; 4] = [
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.1f64,
                 lng: 0.1f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: -0.1f64,
                 lng: 0.1f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: -0.1f64,
                 lng: -0.1f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.1f64,
                 lng: -0.1f64,
-            };
-            init
+            }
         },
     ];
     let mut inner_1: *mut LinkedGeoLoop =
@@ -2701,32 +2545,28 @@ unsafe extern "C" fn runTests() {
     );
     let mut verts3_1: [LatLng; 4] = [
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.6f64,
                 lng: 0.6f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.6f64,
                 lng: -0.6f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: -0.6f64,
                 lng: -0.6f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: -0.6f64,
                 lng: 0.6f64,
-            };
-            init
+            }
         },
     ];
     let mut outerBig: *mut LinkedGeoLoop =
@@ -2747,32 +2587,28 @@ unsafe extern "C" fn runTests() {
     );
     let mut verts4_0: [LatLng; 4] = [
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.5f64,
                 lng: 0.5f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: -0.5f64,
                 lng: 0.5f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: -0.5f64,
                 lng: -0.5f64,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0.5f64,
                 lng: -0.5f64,
-            };
-            init
+            }
         },
     ];
     let mut innerBig: *mut LinkedGeoLoop =
@@ -2792,12 +2628,11 @@ unsafe extern "C" fn runTests() {
         4 as libc::c_int,
     );
     let mut polygon_6: LinkedGeoPolygon = {
-        let mut init = LinkedGeoPolygon {
-            first: 0 as *mut LinkedGeoLoop,
-            last: 0 as *mut LinkedGeoLoop,
-            next: 0 as *mut LinkedGeoPolygon,
-        };
-        init
+        LinkedGeoPolygon {
+            first: std::ptr::null_mut::<LinkedGeoLoop>(),
+            last: std::ptr::null_mut::<LinkedGeoLoop>(),
+            next: std::ptr::null_mut::<LinkedGeoPolygon>(),
+        }
     };
     addLinkedLoop(&mut polygon_6, inner_1);
     addLinkedLoop(&mut polygon_6, outerBig);
@@ -2818,7 +2653,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedPolygons(&mut polygon_6) == 2 as libc::c_int) {
+    if countLinkedPolygons(&mut polygon_6) != 2 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -2833,7 +2668,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedLoops(&mut polygon_6) == 2 as libc::c_int) {
+    if countLinkedLoops(&mut polygon_6) != 2 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -2848,7 +2683,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(polygon_6.first == outerBig) {
+    if polygon_6.first != outerBig {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -2863,7 +2698,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !((*polygon_6.first).next == innerBig) {
+    if (*polygon_6.first).next != innerBig {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -2878,7 +2713,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedLoops(polygon_6.next) == 2 as libc::c_int) {
+    if countLinkedLoops(polygon_6.next) != 2 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -2893,7 +2728,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !((*polygon_6.next).first == outer_3) {
+    if (*polygon_6.next).first != outer_3 {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -2908,7 +2743,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !((*(*polygon_6.next).first).next == inner_1) {
+    if (*(*polygon_6.next).first).next != inner_1 {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -2927,25 +2762,22 @@ unsafe extern "C" fn runTests() {
     currentTestName = b"normalizeMultiPolygonNoOuterLoops\0" as *const u8 as *const libc::c_char;
     let mut verts1_0: [LatLng; 3] = [
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0 as libc::c_int as libc::c_double,
                 lng: 0 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 1 as libc::c_int as libc::c_double,
                 lng: 1 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0 as libc::c_int as libc::c_double,
                 lng: 1 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
     ];
     let mut outer1_0: *mut LinkedGeoLoop =
@@ -2966,25 +2798,22 @@ unsafe extern "C" fn runTests() {
     );
     let mut verts2_4: [LatLng; 3] = [
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 2 as libc::c_int as libc::c_double,
                 lng: 2 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 3 as libc::c_int as libc::c_double,
                 lng: 3 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 2 as libc::c_int as libc::c_double,
                 lng: 3 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
     ];
     let mut outer2_1: *mut LinkedGeoLoop =
@@ -3004,16 +2833,15 @@ unsafe extern "C" fn runTests() {
         3 as libc::c_int,
     );
     let mut polygon_7: LinkedGeoPolygon = {
-        let mut init = LinkedGeoPolygon {
-            first: 0 as *mut LinkedGeoLoop,
-            last: 0 as *mut LinkedGeoLoop,
-            next: 0 as *mut LinkedGeoPolygon,
-        };
-        init
+        LinkedGeoPolygon {
+            first: std::ptr::null_mut::<LinkedGeoLoop>(),
+            last: std::ptr::null_mut::<LinkedGeoLoop>(),
+            next: std::ptr::null_mut::<LinkedGeoPolygon>(),
+        }
     };
     addLinkedLoop(&mut polygon_7, outer1_0);
     addLinkedLoop(&mut polygon_7, outer2_1);
-    if !(normalizeMultiPolygon(&mut polygon_7) == E_FAILED as libc::c_int as libc::c_uint) {
+    if normalizeMultiPolygon(&mut polygon_7) != E_FAILED as libc::c_int as libc::c_uint {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -3028,7 +2856,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedPolygons(&mut polygon_7) == 1 as libc::c_int) {
+    if countLinkedPolygons(&mut polygon_7) != 1 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -3043,7 +2871,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedLoops(&mut polygon_7) == 0 as libc::c_int) {
+    if countLinkedLoops(&mut polygon_7) != 0 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -3063,25 +2891,22 @@ unsafe extern "C" fn runTests() {
         b"normalizeMultiPolygonAlreadyNormalized\0" as *const u8 as *const libc::c_char;
     let mut verts1_1: [LatLng; 3] = [
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0 as libc::c_int as libc::c_double,
                 lng: 0 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0 as libc::c_int as libc::c_double,
                 lng: 1 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 1 as libc::c_int as libc::c_double,
                 lng: 1 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
     ];
     let mut outer1_1: *mut LinkedGeoLoop =
@@ -3102,25 +2927,22 @@ unsafe extern "C" fn runTests() {
     );
     let mut verts2_5: [LatLng; 3] = [
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 2 as libc::c_int as libc::c_double,
                 lng: 2 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 2 as libc::c_int as libc::c_double,
                 lng: 3 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 3 as libc::c_int as libc::c_double,
                 lng: 3 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
     ];
     let mut outer2_2: *mut LinkedGeoLoop =
@@ -3140,17 +2962,16 @@ unsafe extern "C" fn runTests() {
         3 as libc::c_int,
     );
     let mut polygon_8: LinkedGeoPolygon = {
-        let mut init = LinkedGeoPolygon {
-            first: 0 as *mut LinkedGeoLoop,
-            last: 0 as *mut LinkedGeoLoop,
-            next: 0 as *mut LinkedGeoPolygon,
-        };
-        init
+        LinkedGeoPolygon {
+            first: std::ptr::null_mut::<LinkedGeoLoop>(),
+            last: std::ptr::null_mut::<LinkedGeoLoop>(),
+            next: std::ptr::null_mut::<LinkedGeoPolygon>(),
+        }
     };
     addLinkedLoop(&mut polygon_8, outer1_1);
     let mut next: *mut LinkedGeoPolygon = addNewLinkedPolygon(&mut polygon_8);
     addLinkedLoop(next, outer2_2);
-    if !(normalizeMultiPolygon(&mut polygon_8) == E_FAILED as libc::c_int as libc::c_uint) {
+    if normalizeMultiPolygon(&mut polygon_8) != E_FAILED as libc::c_int as libc::c_uint {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -3165,7 +2986,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedPolygons(&mut polygon_8) == 2 as libc::c_int) {
+    if countLinkedPolygons(&mut polygon_8) != 2 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -3180,7 +3001,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedLoops(&mut polygon_8) == 1 as libc::c_int) {
+    if countLinkedLoops(&mut polygon_8) != 1 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -3195,7 +3016,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(polygon_8.first == outer1_1) {
+    if polygon_8.first != outer1_1 {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -3210,7 +3031,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedLoops(polygon_8.next) == 1 as libc::c_int) {
+    if countLinkedLoops(polygon_8.next) != 1 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -3225,7 +3046,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !((*polygon_8.next).first == outer2_2) {
+    if (*polygon_8.next).first != outer2_2 {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -3244,32 +3065,28 @@ unsafe extern "C" fn runTests() {
     currentTestName = b"normalizeMultiPolygon_unassignedHole\0" as *const u8 as *const libc::c_char;
     let mut verts_19: [LatLng; 4] = [
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0 as libc::c_int as libc::c_double,
                 lng: 0 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 0 as libc::c_int as libc::c_double,
                 lng: 1 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 1 as libc::c_int as libc::c_double,
                 lng: 1 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 1 as libc::c_int as libc::c_double,
                 lng: 0 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
     ];
     let mut outer_4: *mut LinkedGeoLoop =
@@ -3290,25 +3107,22 @@ unsafe extern "C" fn runTests() {
     );
     let mut verts2_6: [LatLng; 3] = [
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 2 as libc::c_int as libc::c_double,
                 lng: 2 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 3 as libc::c_int as libc::c_double,
                 lng: 3 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
         {
-            let mut init = LatLng {
+            LatLng {
                 lat: 2 as libc::c_int as libc::c_double,
                 lng: 3 as libc::c_int as libc::c_double,
-            };
-            init
+            }
         },
     ];
     let mut inner_2: *mut LinkedGeoLoop =
@@ -3328,16 +3142,15 @@ unsafe extern "C" fn runTests() {
         3 as libc::c_int,
     );
     let mut polygon_9: LinkedGeoPolygon = {
-        let mut init = LinkedGeoPolygon {
-            first: 0 as *mut LinkedGeoLoop,
-            last: 0 as *mut LinkedGeoLoop,
-            next: 0 as *mut LinkedGeoPolygon,
-        };
-        init
+        LinkedGeoPolygon {
+            first: std::ptr::null_mut::<LinkedGeoLoop>(),
+            last: std::ptr::null_mut::<LinkedGeoLoop>(),
+            next: std::ptr::null_mut::<LinkedGeoPolygon>(),
+        }
     };
     addLinkedLoop(&mut polygon_9, inner_2);
     addLinkedLoop(&mut polygon_9, outer_4);
-    if !(normalizeMultiPolygon(&mut polygon_9) == E_FAILED as libc::c_int as libc::c_uint) {
+    if normalizeMultiPolygon(&mut polygon_9) != E_FAILED as libc::c_int as libc::c_uint {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -3365,8 +3178,8 @@ unsafe fn main_0() -> libc::c_int {
         b"\nDONE: %d assertions\n\0" as *const u8 as *const libc::c_char,
         globalTestCount,
     );
-    return 0 as libc::c_int;
+    0 as libc::c_int
 }
 pub fn main() {
-    unsafe { ::std::process::exit(main_0() as i32) }
+    unsafe { ::std::process::exit(main_0()) }
 }

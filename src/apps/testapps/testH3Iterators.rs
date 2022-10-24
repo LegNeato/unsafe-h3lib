@@ -107,7 +107,7 @@ unsafe extern "C" fn test_number(mut res: libc::c_int) {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(count == expected) {
+    if count != expected {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -148,7 +148,7 @@ unsafe extern "C" fn test_valid(mut res: libc::c_int) {
 unsafe extern "C" fn test_resolution(mut res: libc::c_int) {
     let mut iter: IterCellsResolution = iterInitRes(res);
     while iter.h != 0 {
-        if !(getResolution(iter.h) == res) {
+        if getResolution(iter.h) != res {
             fprintf(
                 __stderrp,
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -171,7 +171,7 @@ unsafe extern "C" fn test_ordered(mut res: libc::c_int) {
     let mut prev: H3Index = iter.h;
     iterStepRes(&mut iter);
     while iter.h != 0 {
-        if !(prev < iter.h) {
+        if prev >= iter.h {
             fprintf(
                 __stderrp,
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -192,7 +192,7 @@ unsafe extern "C" fn test_ordered(mut res: libc::c_int) {
     }
 }
 unsafe extern "C" fn assert_is_null_iterator(mut iter: IterCellsChildren) {
-    if !(iter.h == 0 as libc::c_int as libc::c_ulonglong) {
+    if iter.h != 0 as libc::c_int as libc::c_ulonglong {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -207,7 +207,7 @@ unsafe extern "C" fn assert_is_null_iterator(mut iter: IterCellsChildren) {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(iter._parentRes == -(1 as libc::c_int)) {
+    if iter._parentRes != -(1 as libc::c_int) {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -222,7 +222,7 @@ unsafe extern "C" fn assert_is_null_iterator(mut iter: IterCellsChildren) {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(iter._skipDigit == -(1 as libc::c_int)) {
+    if iter._skipDigit != -(1 as libc::c_int) {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -255,7 +255,7 @@ unsafe extern "C" fn runTests() {
     let mut iter: IterCellsChildren = iterInitBaseCellNum(-(1 as libc::c_int), 0 as libc::c_int);
     assert_is_null_iterator(iter);
     iterStepChild(&mut iter);
-    if !(iter.h == 0 as libc::c_int as libc::c_ulonglong) {
+    if iter.h != 0 as libc::c_int as libc::c_ulonglong {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -274,7 +274,7 @@ unsafe extern "C" fn runTests() {
     let mut iter_0: IterCellsResolution = iterInitRes(-(1 as libc::c_int));
     assert_is_null_iterator(iter_0._itC);
     iterStepRes(&mut iter_0);
-    if !(iter_0.h == 0 as libc::c_int as libc::c_ulonglong) {
+    if iter_0.h != 0 as libc::c_int as libc::c_ulonglong {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -321,8 +321,8 @@ unsafe fn main_0() -> libc::c_int {
         b"\nDONE: %d assertions\n\0" as *const u8 as *const libc::c_char,
         globalTestCount,
     );
-    return 0 as libc::c_int;
+    0 as libc::c_int
 }
 pub fn main() {
-    unsafe { ::std::process::exit(main_0() as i32) }
+    unsafe { ::std::process::exit(main_0()) }
 }

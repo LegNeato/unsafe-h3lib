@@ -76,46 +76,41 @@ pub struct Vec3d {
 unsafe extern "C" fn runTests() {
     currentTestName = b"_pointSquareDist\0" as *const u8 as *const libc::c_char;
     let mut v1: Vec3d = {
-        let mut init = Vec3d {
+        Vec3d {
             x: 0 as libc::c_int as libc::c_double,
             y: 0 as libc::c_int as libc::c_double,
             z: 0 as libc::c_int as libc::c_double,
-        };
-        init
+        }
     };
     let mut v2: Vec3d = {
-        let mut init = Vec3d {
+        Vec3d {
             x: 1 as libc::c_int as libc::c_double,
             y: 0 as libc::c_int as libc::c_double,
             z: 0 as libc::c_int as libc::c_double,
-        };
-        init
+        }
     };
     let mut v3: Vec3d = {
-        let mut init = Vec3d {
+        Vec3d {
             x: 0 as libc::c_int as libc::c_double,
             y: 1 as libc::c_int as libc::c_double,
             z: 1 as libc::c_int as libc::c_double,
-        };
-        init
+        }
     };
     let mut v4: Vec3d = {
-        let mut init = Vec3d {
+        Vec3d {
             x: 1 as libc::c_int as libc::c_double,
             y: 1 as libc::c_int as libc::c_double,
             z: 1 as libc::c_int as libc::c_double,
-        };
-        init
+        }
     };
     let mut v5: Vec3d = {
-        let mut init = Vec3d {
+        Vec3d {
             x: 1 as libc::c_int as libc::c_double,
             y: 1 as libc::c_int as libc::c_double,
             z: 2 as libc::c_int as libc::c_double,
-        };
-        init
+        }
     };
-    if !(fabs(_pointSquareDist(&mut v1, &mut v1)) < 2.2204460492503131e-16f64) {
+    if !(fabs(_pointSquareDist(&mut v1, &mut v1)) < 2.220_446_049_250_313e-16_f64) {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -131,7 +126,7 @@ unsafe extern "C" fn runTests() {
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
     if !(fabs(_pointSquareDist(&mut v1, &mut v2) - 1 as libc::c_int as libc::c_double)
-        < 2.2204460492503131e-16f64)
+        < 2.220_446_049_250_313e-16_f64)
     {
         fprintf(
             __stderrp,
@@ -149,7 +144,7 @@ unsafe extern "C" fn runTests() {
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
     if !(fabs(_pointSquareDist(&mut v1, &mut v3) - 2 as libc::c_int as libc::c_double)
-        < 2.2204460492503131e-16f64)
+        < 2.220_446_049_250_313e-16_f64)
     {
         fprintf(
             __stderrp,
@@ -167,7 +162,7 @@ unsafe extern "C" fn runTests() {
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
     if !(fabs(_pointSquareDist(&mut v1, &mut v4) - 3 as libc::c_int as libc::c_double)
-        < 2.2204460492503131e-16f64)
+        < 2.220_446_049_250_313e-16_f64)
     {
         fprintf(
             __stderrp,
@@ -185,7 +180,7 @@ unsafe extern "C" fn runTests() {
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
     if !(fabs(_pointSquareDist(&mut v1, &mut v5) - 6 as libc::c_int as libc::c_double)
-        < 2.2204460492503131e-16f64)
+        < 2.220_446_049_250_313e-16_f64)
     {
         fprintf(
             __stderrp,
@@ -204,19 +199,17 @@ unsafe extern "C" fn runTests() {
     printf(b".\0" as *const u8 as *const libc::c_char);
     currentTestName = b"_geoToVec3d\0" as *const u8 as *const libc::c_char;
     let mut origin: Vec3d = {
-        let mut init = Vec3d {
+        Vec3d {
             x: 0 as libc::c_int as libc::c_double,
             y: 0.,
             z: 0.,
-        };
-        init
+        }
     };
     let mut c1: LatLng = {
-        let mut init = LatLng {
+        LatLng {
             lat: 0 as libc::c_int as libc::c_double,
             lng: 0 as libc::c_int as libc::c_double,
-        };
-        init
+        }
     };
     let mut p1: Vec3d = Vec3d {
         x: 0.,
@@ -225,7 +218,7 @@ unsafe extern "C" fn runTests() {
     };
     _geoToVec3d(&mut c1, &mut p1);
     if !(fabs(_pointSquareDist(&mut origin, &mut p1) - 1 as libc::c_int as libc::c_double)
-        < 0.000000001f64 * 0.0174532925199432957692369076848861271111)
+        < 0.000000001f64 * 0.017_453_292_519_943_295)
     {
         fprintf(
             __stderrp,
@@ -243,11 +236,10 @@ unsafe extern "C" fn runTests() {
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
     let mut c2: LatLng = {
-        let mut init = LatLng {
-            lat: 1.57079632679489661923132169163975144f64,
+        LatLng {
+            lat: std::f64::consts::FRAC_PI_2,
             lng: 0 as libc::c_int as libc::c_double,
-        };
-        init
+        }
     };
     let mut p2: Vec3d = Vec3d {
         x: 0.,
@@ -256,7 +248,7 @@ unsafe extern "C" fn runTests() {
     };
     _geoToVec3d(&mut c2, &mut p2);
     if !(fabs(_pointSquareDist(&mut p1, &mut p2) - 2 as libc::c_int as libc::c_double)
-        < 0.000000001f64 * 0.0174532925199432957692369076848861271111)
+        < 0.000000001f64 * 0.017_453_292_519_943_295)
     {
         fprintf(
             __stderrp,
@@ -274,11 +266,10 @@ unsafe extern "C" fn runTests() {
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
     let mut c3: LatLng = {
-        let mut init = LatLng {
-            lat: 3.14159265358979323846264338327950288f64,
+        LatLng {
+            lat: std::f64::consts::PI,
             lng: 0 as libc::c_int as libc::c_double,
-        };
-        init
+        }
     };
     let mut p3: Vec3d = Vec3d {
         x: 0.,
@@ -287,7 +278,7 @@ unsafe extern "C" fn runTests() {
     };
     _geoToVec3d(&mut c3, &mut p3);
     if !(fabs(_pointSquareDist(&mut p1, &mut p3) - 4 as libc::c_int as libc::c_double)
-        < 0.000000001f64 * 0.0174532925199432957692369076848861271111)
+        < 0.000000001f64 * 0.017_453_292_519_943_295)
     {
         fprintf(
             __stderrp,
@@ -316,8 +307,8 @@ unsafe fn main_0() -> libc::c_int {
         b"\nDONE: %d assertions\n\0" as *const u8 as *const libc::c_char,
         globalTestCount,
     );
-    return 0 as libc::c_int;
+    0 as libc::c_int
 }
 pub fn main() {
-    unsafe { ::std::process::exit(main_0() as i32) }
+    unsafe { ::std::process::exit(main_0()) }
 }

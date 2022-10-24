@@ -144,60 +144,53 @@ pub const K_AXES_DIGIT: Direction = 1;
 pub const CENTER_DIGIT: Direction = 0;
 static mut UNIT_VECS: [CoordIJK; 7] = [
     {
-        let mut init = CoordIJK {
+        CoordIJK {
             i: 0 as libc::c_int,
             j: 0 as libc::c_int,
             k: 0 as libc::c_int,
-        };
-        init
+        }
     },
     {
-        let mut init = CoordIJK {
+        CoordIJK {
             i: 0 as libc::c_int,
             j: 0 as libc::c_int,
             k: 1 as libc::c_int,
-        };
-        init
+        }
     },
     {
-        let mut init = CoordIJK {
+        CoordIJK {
             i: 0 as libc::c_int,
             j: 1 as libc::c_int,
             k: 0 as libc::c_int,
-        };
-        init
+        }
     },
     {
-        let mut init = CoordIJK {
+        CoordIJK {
             i: 0 as libc::c_int,
             j: 1 as libc::c_int,
             k: 1 as libc::c_int,
-        };
-        init
+        }
     },
     {
-        let mut init = CoordIJK {
+        CoordIJK {
             i: 1 as libc::c_int,
             j: 0 as libc::c_int,
             k: 0 as libc::c_int,
-        };
-        init
+        }
     },
     {
-        let mut init = CoordIJK {
+        CoordIJK {
             i: 1 as libc::c_int,
             j: 0 as libc::c_int,
             k: 1 as libc::c_int,
-        };
-        init
+        }
     },
     {
-        let mut init = CoordIJK {
+        CoordIJK {
             i: 1 as libc::c_int,
             j: 1 as libc::c_int,
             k: 0 as libc::c_int,
-        };
-        init
+        }
     },
 ];
 static mut MAX_DISTANCES: [libc::c_int; 6] = [
@@ -210,60 +203,53 @@ static mut MAX_DISTANCES: [libc::c_int; 6] = [
 ];
 static mut DIRECTIONS: [CoordIJ; 6] = [
     {
-        let mut init = CoordIJ {
+        CoordIJ {
             i: 0 as libc::c_int,
             j: 1 as libc::c_int,
-        };
-        init
+        }
     },
     {
-        let mut init = CoordIJ {
+        CoordIJ {
             i: -(1 as libc::c_int),
             j: 0 as libc::c_int,
-        };
-        init
+        }
     },
     {
-        let mut init = CoordIJ {
+        CoordIJ {
             i: -(1 as libc::c_int),
             j: -(1 as libc::c_int),
-        };
-        init
+        }
     },
     {
-        let mut init = CoordIJ {
+        CoordIJ {
             i: 0 as libc::c_int,
             j: -(1 as libc::c_int),
-        };
-        init
+        }
     },
     {
-        let mut init = CoordIJ {
+        CoordIJ {
             i: 1 as libc::c_int,
             j: 0 as libc::c_int,
-        };
-        init
+        }
     },
     {
-        let mut init = CoordIJ {
+        CoordIJ {
             i: 1 as libc::c_int,
             j: 1 as libc::c_int,
-        };
-        init
+        }
     },
 ];
 static mut NEXT_RING_DIRECTION: CoordIJ = {
-    let mut init = CoordIJ {
+    CoordIJ {
         i: 1 as libc::c_int,
         j: 0 as libc::c_int,
-    };
-    init
+    }
 };
 #[no_mangle]
 pub unsafe extern "C" fn localIjToH3_identity_assertions(mut h3: H3Index) {
     let mut ij: CoordIJ = CoordIJ { i: 0, j: 0 };
-    if !(cellToLocalIj(h3, h3, 0 as libc::c_int as uint32_t, &mut ij)
-        == 0 as libc::c_int as libc::c_uint)
+    if cellToLocalIj(h3, h3, 0 as libc::c_int as uint32_t, &mut ij)
+        != 0 as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -281,8 +267,8 @@ pub unsafe extern "C" fn localIjToH3_identity_assertions(mut h3: H3Index) {
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
     let mut retrieved: H3Index = 0;
-    if !(localIjToCell(h3, &mut ij, 0 as libc::c_int as uint32_t, &mut retrieved)
-        == 0 as libc::c_int as libc::c_uint)
+    if localIjToCell(h3, &mut ij, 0 as libc::c_int as uint32_t, &mut retrieved)
+        != 0 as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -300,7 +286,7 @@ pub unsafe extern "C" fn localIjToH3_identity_assertions(mut h3: H3Index) {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(h3 == retrieved) {
+    if h3 != retrieved {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -322,8 +308,8 @@ pub unsafe extern "C" fn h3ToLocalIj_coordinates_assertions(mut h3: H3Index) {
     let mut r: libc::c_int =
         ((h3 & (15 as libc::c_ulonglong) << 52 as libc::c_int) >> 52 as libc::c_int) as libc::c_int;
     let mut ij: CoordIJ = CoordIJ { i: 0, j: 0 };
-    if !(cellToLocalIj(h3, h3, 0 as libc::c_int as uint32_t, &mut ij)
-        == 0 as libc::c_int as libc::c_uint)
+    if cellToLocalIj(h3, h3, 0 as libc::c_int as uint32_t, &mut ij)
+        != 0 as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -358,10 +344,10 @@ pub unsafe extern "C" fn h3ToLocalIj_coordinates_assertions(mut h3: H3Index) {
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
     if r == 0 as libc::c_int {
-        if !(_ijkMatches(
+        if _ijkMatches(
             &mut ijk,
             &*UNIT_VECS.as_ptr().offset(0 as libc::c_int as isize),
-        ) == 1 as libc::c_int)
+        ) != 1 as libc::c_int
         {
             fprintf(
                 __stderrp,
@@ -379,13 +365,13 @@ pub unsafe extern "C" fn h3ToLocalIj_coordinates_assertions(mut h3: H3Index) {
         globalTestCount += 1;
         printf(b".\0" as *const u8 as *const libc::c_char);
     } else if r == 1 as libc::c_int {
-        if !(_ijkMatches(
+        if _ijkMatches(
             &mut ijk,
             &*UNIT_VECS.as_ptr().offset(
-                (h3 >> (15 as libc::c_int - 1 as libc::c_int) * 3 as libc::c_int
+                (h3 >> ((15 as libc::c_int - 1 as libc::c_int) * 3 as libc::c_int)
                     & 7 as libc::c_int as uint64_t) as Direction as isize,
             ),
-        ) == 1 as libc::c_int)
+        ) != 1 as libc::c_int
         {
             fprintf(
                 __stderrp,
@@ -405,15 +391,15 @@ pub unsafe extern "C" fn h3ToLocalIj_coordinates_assertions(mut h3: H3Index) {
         printf(b".\0" as *const u8 as *const libc::c_char);
     } else if r == 2 as libc::c_int {
         let mut expected: CoordIJK =
-            UNIT_VECS[(h3 >> (15 as libc::c_int - 1 as libc::c_int) * 3 as libc::c_int
+            UNIT_VECS[(h3 >> ((15 as libc::c_int - 1 as libc::c_int) * 3 as libc::c_int)
                 & 7 as libc::c_int as uint64_t) as Direction as usize];
         _downAp7r(&mut expected);
         _neighbor(
             &mut expected,
-            (h3 >> (15 as libc::c_int - 2 as libc::c_int) * 3 as libc::c_int
+            (h3 >> ((15 as libc::c_int - 2 as libc::c_int) * 3 as libc::c_int)
                 & 7 as libc::c_int as uint64_t) as Direction,
         );
-        if !(_ijkMatches(&mut ijk, &mut expected) == 1 as libc::c_int) {
+        if _ijkMatches(&mut ijk, &mut expected) != 1 as libc::c_int {
             fprintf(
                 __stderrp,
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -452,14 +438,13 @@ pub unsafe extern "C" fn h3ToLocalIj_coordinates_assertions(mut h3: H3Index) {
 #[no_mangle]
 pub unsafe extern "C" fn h3ToLocalIj_neighbors_assertions(mut h3: H3Index) {
     let mut origin: CoordIJ = {
-        let mut init = CoordIJ {
+        CoordIJ {
             i: 0 as libc::c_int,
             j: 0,
-        };
-        init
+        }
     };
-    if !(cellToLocalIj(h3, h3, 0 as libc::c_int as uint32_t, &mut origin)
-        == 0 as libc::c_int as libc::c_uint)
+    if cellToLocalIj(h3, h3, 0 as libc::c_int as uint32_t, &mut origin)
+        != 0 as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -520,14 +505,13 @@ pub unsafe extern "C" fn h3ToLocalIj_neighbors_assertions(mut h3: H3Index) {
             globalTestCount += 1;
             printf(b".\0" as *const u8 as *const libc::c_char);
             let mut ij: CoordIJ = {
-                let mut init = CoordIJ {
+                CoordIJ {
                     i: 0 as libc::c_int,
                     j: 0,
-                };
-                init
+                }
             };
-            if !(cellToLocalIj(h3, offset, 0 as libc::c_int as uint32_t, &mut ij)
-                == 0 as libc::c_int as libc::c_uint)
+            if cellToLocalIj(h3, offset, 0 as libc::c_int as uint32_t, &mut ij)
+                != 0 as libc::c_int as libc::c_uint
             {
                 fprintf(
                     __stderrp,
@@ -565,12 +549,11 @@ pub unsafe extern "C" fn h3ToLocalIj_neighbors_assertions(mut h3: H3Index) {
             globalTestCount += 1;
             printf(b".\0" as *const u8 as *const libc::c_char);
             let mut invertedIjk: CoordIJK = {
-                let mut init = CoordIJK {
+                CoordIJK {
                     i: 0 as libc::c_int,
                     j: 0,
                     k: 0,
-                };
-                init
+                }
             };
             _neighbor(&mut invertedIjk, d);
             let mut i: libc::c_int = 0 as libc::c_int;
@@ -605,7 +588,7 @@ pub unsafe extern "C" fn h3ToLocalIj_neighbors_assertions(mut h3: H3Index) {
 pub unsafe extern "C" fn h3ToLocalIj_invalid_assertions(mut h3: H3Index) {
     let mut r: libc::c_int =
         ((h3 & (15 as libc::c_ulonglong) << 52 as libc::c_int) >> 52 as libc::c_int) as libc::c_int;
-    if !(r > 0 as libc::c_int) {
+    if r <= 0 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -622,7 +605,7 @@ pub unsafe extern "C" fn h3ToLocalIj_invalid_assertions(mut h3: H3Index) {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(r <= 5 as libc::c_int) {
+    if r > 5 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -684,7 +667,7 @@ pub unsafe extern "C" fn h3ToLocalIj_invalid_assertions(mut h3: H3Index) {
     printf(b".\0" as *const u8 as *const libc::c_char);
     let mut i: int64_t = 0 as libc::c_int as int64_t;
     while i < sz {
-        if !(*neighbors.offset(i as isize) == 0 as libc::c_int as libc::c_ulonglong) {
+        if *neighbors.offset(i as isize) != 0 as libc::c_int as libc::c_ulonglong {
             let mut ij: CoordIJ = CoordIJ { i: 0, j: 0 };
             if cellToLocalIj(
                 h3,
@@ -703,9 +686,9 @@ pub unsafe extern "C" fn h3ToLocalIj_invalid_assertions(mut h3: H3Index) {
                     let mut h3Invalid: H3Index = h3;
                     h3Invalid = h3Invalid
                         & !((7 as libc::c_int as uint64_t)
-                            << (15 as libc::c_int - 0 as libc::c_int) * 3 as libc::c_int)
+                            << ((15 as libc::c_int - 0 as libc::c_int) * 3 as libc::c_int))
                         | (dir as uint64_t)
-                            << (15 as libc::c_int - 0 as libc::c_int) * 3 as libc::c_int;
+                            << ((15 as libc::c_int - 0 as libc::c_int) * 3 as libc::c_int);
                     let mut ij2: CoordIJ = CoordIJ { i: 0, j: 0 };
                     cellToLocalIj(
                         h3Invalid,
@@ -716,9 +699,9 @@ pub unsafe extern "C" fn h3ToLocalIj_invalid_assertions(mut h3: H3Index) {
                     let mut neighborInvalid: H3Index = *neighbors.offset(i as isize);
                     neighborInvalid = neighborInvalid
                         & !((7 as libc::c_int as uint64_t)
-                            << (15 as libc::c_int - 0 as libc::c_int) * 3 as libc::c_int)
+                            << ((15 as libc::c_int - 0 as libc::c_int) * 3 as libc::c_int))
                         | (dir as uint64_t)
-                            << (15 as libc::c_int - 0 as libc::c_int) * 3 as libc::c_int;
+                            << ((15 as libc::c_int - 0 as libc::c_int) * 3 as libc::c_int);
                     cellToLocalIj(h3, neighborInvalid, 0 as libc::c_int as uint32_t, &mut ij2);
                     let mut out: H3Index = 0;
                     localIjToCell(h3Invalid, &mut ij, 0 as libc::c_int as uint32_t, &mut out);
@@ -735,7 +718,7 @@ pub unsafe extern "C" fn h3ToLocalIj_invalid_assertions(mut h3: H3Index) {
 pub unsafe extern "C" fn localIjToH3_gridDisk_assertions(mut h3: H3Index) {
     let mut r: libc::c_int =
         ((h3 & (15 as libc::c_ulonglong) << 52 as libc::c_int) >> 52 as libc::c_int) as libc::c_int;
-    if !(r <= 5 as libc::c_int) {
+    if r > 5 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -797,7 +780,7 @@ pub unsafe extern "C" fn localIjToH3_gridDisk_assertions(mut h3: H3Index) {
     printf(b".\0" as *const u8 as *const libc::c_char);
     let mut i: int64_t = 0 as libc::c_int as int64_t;
     while i < sz {
-        if !(*neighbors.offset(i as isize) == 0 as libc::c_int as libc::c_ulonglong) {
+        if *neighbors.offset(i as isize) != 0 as libc::c_int as libc::c_ulonglong {
             let mut ij: CoordIJ = CoordIJ { i: 0, j: 0 };
             if cellToLocalIj(
                 h3,
@@ -807,8 +790,8 @@ pub unsafe extern "C" fn localIjToH3_gridDisk_assertions(mut h3: H3Index) {
             ) == 0 as libc::c_int as libc::c_uint
             {
                 let mut retrieved: H3Index = 0;
-                if !(localIjToCell(h3, &mut ij, 0 as libc::c_int as uint32_t, &mut retrieved)
-                    == 0 as libc::c_int as libc::c_uint)
+                if localIjToCell(h3, &mut ij, 0 as libc::c_int as uint32_t, &mut retrieved)
+                    != 0 as libc::c_int as libc::c_uint
                 {
                     fprintf(
                         __stderrp,
@@ -828,7 +811,7 @@ pub unsafe extern "C" fn localIjToH3_gridDisk_assertions(mut h3: H3Index) {
                 }
                 globalTestCount += 1;
                 printf(b".\0" as *const u8 as *const libc::c_char);
-                if !(retrieved == *neighbors.offset(i as isize)) {
+                if retrieved != *neighbors.offset(i as isize) {
                     fprintf(
                         __stderrp,
                         b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8
@@ -857,7 +840,7 @@ pub unsafe extern "C" fn localIjToH3_gridDisk_assertions(mut h3: H3Index) {
 pub unsafe extern "C" fn localIjToH3_traverse_assertions(mut h3: H3Index) {
     let mut r: libc::c_int =
         ((h3 & (15 as libc::c_ulonglong) << 52 as libc::c_int) >> 52 as libc::c_int) as libc::c_int;
-    if !(r <= 5 as libc::c_int) {
+    if r > 5 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -876,8 +859,8 @@ pub unsafe extern "C" fn localIjToH3_traverse_assertions(mut h3: H3Index) {
     printf(b".\0" as *const u8 as *const libc::c_char);
     let mut k: libc::c_int = MAX_DISTANCES[r as usize];
     let mut ij: CoordIJ = CoordIJ { i: 0, j: 0 };
-    if !(cellToLocalIj(h3, h3, 0 as libc::c_int as uint32_t, &mut ij)
-        == 0 as libc::c_int as libc::c_uint)
+    if cellToLocalIj(h3, h3, 0 as libc::c_int as uint32_t, &mut ij)
+        != 0 as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -929,52 +912,50 @@ pub unsafe extern "C" fn localIjToH3_traverse_assertions(mut h3: H3Index) {
             let mut reverseFailed: libc::c_int =
                 cellToLocalIj(h3, testH3, 0 as libc::c_int as uint32_t, &mut expectedIj)
                     as libc::c_int;
-            if reverseFailed == 0 {
-                if expectedIj.i != ij.i || expectedIj.j != ij.j {
-                    let mut testTestH3: H3Index = 0;
-                    if !(localIjToCell(
-                        h3,
-                        &mut expectedIj,
-                        0 as libc::c_int as uint32_t,
-                        &mut testTestH3,
-                    ) == 0 as libc::c_int as libc::c_uint)
-                    {
-                        fprintf(
-                            __stderrp,
-                            b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8
-                                as *const libc::c_char,
-                            currentSuiteName,
-                            currentTestName,
-                            b"src/apps/testapps/testCellToLocalIjExhaustive.c\0" as *const u8
-                                as *const libc::c_char,
-                            256 as libc::c_int,
-                            b"H3_EXPORT(localIjToCell)(h3, &expectedIj, 0, &testTestH3) == 0\0"
-                                as *const u8 as *const libc::c_char,
-                            b"converted coordinates again\0" as *const u8 as *const libc::c_char,
-                        );
-                        exit(1 as libc::c_int);
-                    }
-                    globalTestCount += 1;
-                    printf(b".\0" as *const u8 as *const libc::c_char);
-                    if !(testH3 == testTestH3) {
-                        fprintf(
-                            __stderrp,
-                            b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8
-                                as *const libc::c_char,
-                            currentSuiteName,
-                            currentTestName,
-                            b"src/apps/testapps/testCellToLocalIjExhaustive.c\0" as *const u8
-                                as *const libc::c_char,
-                            259 as libc::c_int,
-                            b"testH3 == testTestH3\0" as *const u8 as *const libc::c_char,
-                            b"index has normalizable coordinates in local IJ\0" as *const u8
-                                as *const libc::c_char,
-                        );
-                        exit(1 as libc::c_int);
-                    }
-                    globalTestCount += 1;
-                    printf(b".\0" as *const u8 as *const libc::c_char);
+            if reverseFailed == 0 && (expectedIj.i != ij.i || expectedIj.j != ij.j) {
+                let mut testTestH3: H3Index = 0;
+                if localIjToCell(
+                    h3,
+                    &mut expectedIj,
+                    0 as libc::c_int as uint32_t,
+                    &mut testTestH3,
+                ) != 0 as libc::c_int as libc::c_uint
+                {
+                    fprintf(
+                        __stderrp,
+                        b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8
+                            as *const libc::c_char,
+                        currentSuiteName,
+                        currentTestName,
+                        b"src/apps/testapps/testCellToLocalIjExhaustive.c\0" as *const u8
+                            as *const libc::c_char,
+                        256 as libc::c_int,
+                        b"H3_EXPORT(localIjToCell)(h3, &expectedIj, 0, &testTestH3) == 0\0"
+                            as *const u8 as *const libc::c_char,
+                        b"converted coordinates again\0" as *const u8 as *const libc::c_char,
+                    );
+                    exit(1 as libc::c_int);
                 }
+                globalTestCount += 1;
+                printf(b".\0" as *const u8 as *const libc::c_char);
+                if testH3 != testTestH3 {
+                    fprintf(
+                        __stderrp,
+                        b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8
+                            as *const libc::c_char,
+                        currentSuiteName,
+                        currentTestName,
+                        b"src/apps/testapps/testCellToLocalIjExhaustive.c\0" as *const u8
+                            as *const libc::c_char,
+                        259 as libc::c_int,
+                        b"testH3 == testTestH3\0" as *const u8 as *const libc::c_char,
+                        b"index has normalizable coordinates in local IJ\0" as *const u8
+                            as *const libc::c_char,
+                    );
+                    exit(1 as libc::c_int);
+                }
+                globalTestCount += 1;
+                printf(b".\0" as *const u8 as *const libc::c_char);
             }
         }
         i += 1;
@@ -1085,8 +1066,8 @@ unsafe fn main_0() -> libc::c_int {
         b"\nDONE: %d assertions\n\0" as *const u8 as *const libc::c_char,
         globalTestCount,
     );
-    return 0 as libc::c_int;
+    0 as libc::c_int
 }
 pub fn main() {
-    unsafe { ::std::process::exit(main_0() as i32) }
+    unsafe { ::std::process::exit(main_0()) }
 }

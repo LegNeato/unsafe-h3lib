@@ -89,8 +89,8 @@ pub unsafe extern "C" fn recursiveH3IndexToHier(mut h: H3Index, mut res: libc::c
     while d < 7 as libc::c_int {
         if !(isPentagon(h) != 0 && d == 1 as libc::c_int) {
             h = h & !((7 as libc::c_int as uint64_t)
-                << (15 as libc::c_int - res) * 3 as libc::c_int)
-                | (d as uint64_t) << (15 as libc::c_int - res) * 3 as libc::c_int;
+                << ((15 as libc::c_int - res) * 3 as libc::c_int))
+                | (d as uint64_t) << ((15 as libc::c_int - res) * 3 as libc::c_int);
             if res
                 == ((h & (15 as libc::c_ulonglong) << 52 as libc::c_int) >> 52 as libc::c_int)
                     as libc::c_int
@@ -107,7 +107,7 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
     let mut res: libc::c_int = 0;
     let mut parentIndex: H3Index = 0 as libc::c_int as H3Index;
     let mut helpArg: Arg = {
-        let mut init = Arg {
+        Arg {
             names: [
                 b"-h\0" as *const u8 as *const libc::c_char,
                 b"--help\0" as *const u8 as *const libc::c_char,
@@ -115,14 +115,13 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
             required: false,
             scanFormat: std::ptr::null::<libc::c_char>(),
             valueName: std::ptr::null::<libc::c_char>(),
-            value: 0 as *mut libc::c_void,
+            value: std::ptr::null_mut::<libc::c_void>(),
             found: false,
             helpText: b"Show this help message.\0" as *const u8 as *const libc::c_char,
-        };
-        init
+        }
     };
     let mut resArg: Arg = {
-        let mut init = Arg {
+        Arg {
             names: [
                 b"-r\0" as *const u8 as *const libc::c_char,
                 b"--resolution\0" as *const u8 as *const libc::c_char,
@@ -133,11 +132,10 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
             value: &mut res as *mut libc::c_int as *mut libc::c_void,
             found: false,
             helpText: b"Resolution, 0-15 inclusive.\0" as *const u8 as *const libc::c_char,
-        };
-        init
+        }
     };
     let mut parentArg: Arg = {
-        let mut init = Arg {
+        Arg {
             names: [
                 b"-p\0" as *const u8 as *const libc::c_char,
                 b"--parent\0" as *const u8 as *const libc::c_char,
@@ -149,8 +147,7 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
             found: false,
             helpText: b"Print only indexes descendent from this index.\0" as *const u8
                 as *const libc::c_char,
-        };
-        init
+        }
     };
     let mut args: [*mut Arg; 3] = [&mut helpArg, &mut resArg, &mut parentArg];
     let numArgs: libc::c_int = 3 as libc::c_int;
@@ -227,7 +224,7 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
             bc += 1;
         }
     }
-    return 0;
+    0
 }
 pub fn main() {
     let mut args: Vec<*mut libc::c_char> = Vec::new();
@@ -243,6 +240,6 @@ pub fn main() {
         ::std::process::exit(main_0(
             (args.len() - 1) as libc::c_int,
             args.as_mut_ptr() as *mut *mut libc::c_char,
-        ) as i32)
+        ))
     }
 }

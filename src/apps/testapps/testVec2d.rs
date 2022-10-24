@@ -75,15 +75,14 @@ pub struct Vec2d {
 unsafe extern "C" fn runTests() {
     currentTestName = b"_v2dMag\0" as *const u8 as *const libc::c_char;
     let mut v: Vec2d = {
-        let mut init = Vec2d {
+        Vec2d {
             x: 3.0f64,
             y: 4.0f64,
-        };
-        init
+        }
     };
     let mut expected: libc::c_double = 5.0f64;
     let mut mag: libc::c_double = _v2dMag(&mut v);
-    if !(fabs(mag - expected) < 2.2204460492503131e-16f64) {
+    if !(fabs(mag - expected) < 2.220_446_049_250_313e-16_f64) {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -100,44 +99,39 @@ unsafe extern "C" fn runTests() {
     printf(b".\0" as *const u8 as *const libc::c_char);
     currentTestName = b"_v2dIntersect\0" as *const u8 as *const libc::c_char;
     let mut p0: Vec2d = {
-        let mut init = Vec2d {
+        Vec2d {
             x: 2.0f64,
             y: 2.0f64,
-        };
-        init
+        }
     };
     let mut p1: Vec2d = {
-        let mut init = Vec2d {
+        Vec2d {
             x: 6.0f64,
             y: 6.0f64,
-        };
-        init
+        }
     };
     let mut p2: Vec2d = {
-        let mut init = Vec2d {
+        Vec2d {
             x: 0.0f64,
             y: 4.0f64,
-        };
-        init
+        }
     };
     let mut p3: Vec2d = {
-        let mut init = Vec2d {
+        Vec2d {
             x: 10.0f64,
             y: 4.0f64,
-        };
-        init
+        }
     };
     let mut intersection: Vec2d = {
-        let mut init = Vec2d {
+        Vec2d {
             x: 0.0f64,
             y: 0.0f64,
-        };
-        init
+        }
     };
     _v2dIntersect(&mut p0, &mut p1, &mut p2, &mut p3, &mut intersection);
     let mut expectedX: libc::c_double = 4.0f64;
     let mut expectedY: libc::c_double = 4.0f64;
-    if !(fabs(intersection.x - expectedX) < 2.2204460492503131e-16f64) {
+    if !(fabs(intersection.x - expectedX) < 2.220_446_049_250_313e-16_f64) {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -152,7 +146,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(fabs(intersection.y - expectedY) < 2.2204460492503131e-16f64) {
+    if !(fabs(intersection.y - expectedY) < 2.220_446_049_250_313e-16_f64) {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -169,39 +163,34 @@ unsafe extern "C" fn runTests() {
     printf(b".\0" as *const u8 as *const libc::c_char);
     currentTestName = b"_v2dAlmostEquals\0" as *const u8 as *const libc::c_char;
     let mut v1: Vec2d = {
-        let mut init = Vec2d {
+        Vec2d {
             x: 3.0f64,
             y: 4.0f64,
-        };
-        init
+        }
     };
     let mut v2: Vec2d = {
-        let mut init = Vec2d {
+        Vec2d {
             x: 3.0f64,
             y: 4.0f64,
-        };
-        init
+        }
     };
     let mut v3: Vec2d = {
-        let mut init = Vec2d {
+        Vec2d {
             x: 3.5f64,
             y: 4.0f64,
-        };
-        init
+        }
     };
     let mut v4: Vec2d = {
-        let mut init = Vec2d {
+        Vec2d {
             x: 3.0f64,
             y: 4.5f64,
-        };
-        init
+        }
     };
     let mut v5: Vec2d = {
-        let mut init = Vec2d {
-            x: 3.0f64 + 2.2204460492503131e-16f64,
-            y: 4.0f64 - 2.2204460492503131e-16f64,
-        };
-        init
+        Vec2d {
+            x: 3.0f64 + 2.220_446_049_250_313e-16_f64,
+            y: 4.0f64 - 2.220_446_049_250_313e-16_f64,
+        }
     };
     if !_v2dAlmostEquals(&mut v1, &mut v2) {
         fprintf(
@@ -275,8 +264,8 @@ unsafe fn main_0() -> libc::c_int {
         b"\nDONE: %d assertions\n\0" as *const u8 as *const libc::c_char,
         globalTestCount,
     );
-    return 0 as libc::c_int;
+    0 as libc::c_int
 }
 pub fn main() {
-    unsafe { ::std::process::exit(main_0() as i32) }
+    unsafe { ::std::process::exit(main_0()) }
 }

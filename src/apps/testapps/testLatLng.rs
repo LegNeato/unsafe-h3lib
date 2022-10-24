@@ -153,8 +153,7 @@ unsafe extern "C" fn runTests() {
     let mut originalRads: libc::c_double = 1 as libc::c_int as libc::c_double;
     let mut degs: libc::c_double = radsToDegs(originalRads);
     let mut rads: libc::c_double = degsToRads(degs);
-    if !(fabs(rads - originalRads) < (0.000000001f64 * 0.0174532925199432957692369076848861271111))
-    {
+    if !(fabs(rads - originalRads) < (0.000000001f64 * 0.017_453_292_519_943_295)) {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -183,7 +182,7 @@ unsafe extern "C" fn runTests() {
         10 as libc::c_int as libc::c_double,
     );
     if !(greatCircleDistanceRads(&mut p1, &mut p1)
-        < 0.000000001f64 * 0.0174532925199432957692369076848861271111 * 1000 as f64)
+        < 0.000000001f64 * 0.017_453_292_519_943_295 * 1000_f64)
     {
         fprintf(
             __stderrp,
@@ -202,7 +201,7 @@ unsafe extern "C" fn runTests() {
     printf(b".\0" as *const u8 as *const libc::c_char);
     if !(fabs(
         greatCircleDistanceRads(&mut p1, &mut p2) - degsToRads(10 as libc::c_int as libc::c_double),
-    ) < 0.000000001f64 * 0.0174532925199432957692369076848861271111 * 1000 as f64)
+    ) < 0.000000001f64 * 0.017_453_292_519_943_295 * 1000_f64)
     {
         fprintf(
             __stderrp,
@@ -223,20 +222,18 @@ unsafe extern "C" fn runTests() {
     printf(b".\0" as *const u8 as *const libc::c_char);
     currentTestName = b"geoAlmostEqualThreshold\0" as *const u8 as *const libc::c_char;
     let mut a: LatLng = {
-        let mut init = LatLng {
+        LatLng {
             lat: 15 as libc::c_int as libc::c_double,
             lng: 10 as libc::c_int as libc::c_double,
-        };
-        init
+        }
     };
     let mut b: LatLng = {
-        let mut init = LatLng {
+        LatLng {
             lat: 15 as libc::c_int as libc::c_double,
             lng: 10 as libc::c_int as libc::c_double,
-        };
-        init
+        }
     };
-    if !geoAlmostEqualThreshold(&mut a, &mut b, 2.2204460492503131e-16f64) {
+    if !geoAlmostEqualThreshold(&mut a, &mut b, 2.220_446_049_250_313e-16_f64) {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -333,9 +330,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(constrainLat(1.57079632679489661923132169163975144f64)
-        == 1.57079632679489661923132169163975144f64)
-    {
+    if !(constrainLat(std::f64::consts::FRAC_PI_2) == std::f64::consts::FRAC_PI_2) {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -350,9 +345,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(constrainLat(3.14159265358979323846264338327950288f64)
-        == 0 as libc::c_int as libc::c_double)
-    {
+    if !(constrainLat(std::f64::consts::PI) == 0 as libc::c_int as libc::c_double) {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -367,9 +360,8 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(constrainLat(
-        3.14159265358979323846264338327950288f64 + 1 as libc::c_int as libc::c_double,
-    ) == 1 as libc::c_int as libc::c_double)
+    if !(constrainLat(std::f64::consts::PI + 1 as libc::c_int as libc::c_double)
+        == 1 as libc::c_int as libc::c_double)
     {
         fprintf(
             __stderrp,
@@ -386,7 +378,7 @@ unsafe extern "C" fn runTests() {
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
     if !(constrainLat(
-        2 as libc::c_int as libc::c_double * 3.14159265358979323846264338327950288f64
+        2 as libc::c_int as libc::c_double * std::f64::consts::PI
             + 1 as libc::c_int as libc::c_double,
     ) == 1 as libc::c_int as libc::c_double)
     {
@@ -434,9 +426,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(constrainLng(3.14159265358979323846264338327950288f64)
-        == 3.14159265358979323846264338327950288f64)
-    {
+    if !(constrainLng(std::f64::consts::PI) == std::f64::consts::PI) {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -451,9 +441,8 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(constrainLng(
-        2 as libc::c_int as libc::c_double * 3.14159265358979323846264338327950288f64,
-    ) == 0 as libc::c_int as libc::c_double)
+    if !(constrainLng(2 as libc::c_int as libc::c_double * std::f64::consts::PI)
+        == 0 as libc::c_int as libc::c_double)
     {
         fprintf(
             __stderrp,
@@ -469,9 +458,8 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(constrainLng(
-        3 as libc::c_int as libc::c_double * 3.14159265358979323846264338327950288f64,
-    ) == 3.14159265358979323846264338327950288f64)
+    if !(constrainLng(3 as libc::c_int as libc::c_double * std::f64::consts::PI)
+        == std::f64::consts::PI)
     {
         fprintf(
             __stderrp,
@@ -487,9 +475,8 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(constrainLng(
-        4 as libc::c_int as libc::c_double * 3.14159265358979323846264338327950288f64,
-    ) == 0 as libc::c_int as libc::c_double)
+    if !(constrainLng(4 as libc::c_int as libc::c_double * std::f64::consts::PI)
+        == 0 as libc::c_int as libc::c_double)
     {
         fprintf(
             __stderrp,
@@ -507,19 +494,17 @@ unsafe extern "C" fn runTests() {
     printf(b".\0" as *const u8 as *const libc::c_char);
     currentTestName = b"_geoAzDistanceRads_noop\0" as *const u8 as *const libc::c_char;
     let mut start: LatLng = {
-        let mut init = LatLng {
+        LatLng {
             lat: 15 as libc::c_int as libc::c_double,
             lng: 10 as libc::c_int as libc::c_double,
-        };
-        init
+        }
     };
     let mut out: LatLng = LatLng { lat: 0., lng: 0. };
     let mut expected: LatLng = {
-        let mut init = LatLng {
+        LatLng {
             lat: 15 as libc::c_int as libc::c_double,
             lng: 10 as libc::c_int as libc::c_double,
-        };
-        init
+        }
     };
     _geoAzDistanceRads(
         &mut start,
@@ -751,7 +736,7 @@ unsafe extern "C" fn runTests() {
     let mut distance: libc::c_double = degsToRads(15 as libc::c_int as libc::c_double);
     _geoAzDistanceRads(&mut start_2, azimuth, distance, &mut out_2);
     if !(fabs(greatCircleDistanceRads(&mut start_2, &mut out_2) - distance)
-        < 0.000000001f64 * 0.0174532925199432957692369076848861271111)
+        < 0.000000001f64 * 0.017_453_292_519_943_295)
     {
         fprintf(
             __stderrp,
@@ -788,24 +773,19 @@ unsafe extern "C" fn runTests() {
     printf(b".\0" as *const u8 as *const libc::c_char);
     currentTestName = b"distanceRads_wrappedLongitude\0" as *const u8 as *const libc::c_char;
     let negativeLongitude: LatLng = {
-        let mut init = LatLng {
+        LatLng {
             lat: 0 as libc::c_int as libc::c_double,
-            lng: -(3.14159265358979323846264338327950288f64
-                + 1.57079632679489661923132169163975144f64),
-        };
-        init
+            lng: -(std::f64::consts::PI + std::f64::consts::FRAC_PI_2),
+        }
     };
     let zero: LatLng = {
-        let mut init = LatLng {
+        LatLng {
             lat: 0 as libc::c_int as libc::c_double,
             lng: 0 as libc::c_int as libc::c_double,
-        };
-        init
+        }
     };
-    if !(fabs(
-        1.57079632679489661923132169163975144f64
-            - greatCircleDistanceRads(&negativeLongitude, &zero),
-    ) < 0.000000001f64 * 0.0174532925199432957692369076848861271111)
+    if !(fabs(std::f64::consts::FRAC_PI_2 - greatCircleDistanceRads(&negativeLongitude, &zero))
+        < 0.000000001f64 * 0.017_453_292_519_943_295)
     {
         fprintf(
             __stderrp,
@@ -824,10 +804,8 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(fabs(
-        1.57079632679489661923132169163975144f64
-            - greatCircleDistanceRads(&zero, &negativeLongitude),
-    ) < 0.000000001f64 * 0.0174532925199432957692369076848861271111)
+    if !(fabs(std::f64::consts::FRAC_PI_2 - greatCircleDistanceRads(&zero, &negativeLongitude))
+        < 0.000000001f64 * 0.017_453_292_519_943_295)
     {
         fprintf(
             __stderrp,
@@ -878,8 +856,8 @@ unsafe extern "C" fn runTests() {
     );
     currentTestName = b"doubleConstantsErrors\0" as *const u8 as *const libc::c_char;
     let mut out_3: libc::c_double = 0.;
-    if !(getHexagonAreaAvgKm2(-(1 as libc::c_int), &mut out_3)
-        == E_RES_DOMAIN as libc::c_int as libc::c_uint)
+    if getHexagonAreaAvgKm2(-(1 as libc::c_int), &mut out_3)
+        != E_RES_DOMAIN as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -896,8 +874,8 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(getHexagonAreaAvgKm2(16 as libc::c_int, &mut out_3)
-        == E_RES_DOMAIN as libc::c_int as libc::c_uint)
+    if getHexagonAreaAvgKm2(16 as libc::c_int, &mut out_3)
+        != E_RES_DOMAIN as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -914,8 +892,8 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(getHexagonAreaAvgM2(-(1 as libc::c_int), &mut out_3)
-        == E_RES_DOMAIN as libc::c_int as libc::c_uint)
+    if getHexagonAreaAvgM2(-(1 as libc::c_int), &mut out_3)
+        != E_RES_DOMAIN as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -932,8 +910,8 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(getHexagonAreaAvgM2(16 as libc::c_int, &mut out_3)
-        == E_RES_DOMAIN as libc::c_int as libc::c_uint)
+    if getHexagonAreaAvgM2(16 as libc::c_int, &mut out_3)
+        != E_RES_DOMAIN as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -950,8 +928,8 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(getHexagonEdgeLengthAvgKm(-(1 as libc::c_int), &mut out_3)
-        == E_RES_DOMAIN as libc::c_int as libc::c_uint)
+    if getHexagonEdgeLengthAvgKm(-(1 as libc::c_int), &mut out_3)
+        != E_RES_DOMAIN as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -968,8 +946,8 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(getHexagonEdgeLengthAvgKm(16 as libc::c_int, &mut out_3)
-        == E_RES_DOMAIN as libc::c_int as libc::c_uint)
+    if getHexagonEdgeLengthAvgKm(16 as libc::c_int, &mut out_3)
+        != E_RES_DOMAIN as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -986,8 +964,8 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(getHexagonEdgeLengthAvgM(-(1 as libc::c_int), &mut out_3)
-        == E_RES_DOMAIN as libc::c_int as libc::c_uint)
+    if getHexagonEdgeLengthAvgM(-(1 as libc::c_int), &mut out_3)
+        != E_RES_DOMAIN as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -1004,8 +982,8 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(getHexagonEdgeLengthAvgM(16 as libc::c_int, &mut out_3)
-        == E_RES_DOMAIN as libc::c_int as libc::c_uint)
+    if getHexagonEdgeLengthAvgM(16 as libc::c_int, &mut out_3)
+        != E_RES_DOMAIN as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -1042,7 +1020,7 @@ unsafe extern "C" fn runTests() {
         }
         globalTestCount += 1;
         printf(b".\0" as *const u8 as *const libc::c_char);
-        if !(next > last) {
+        if next <= last {
             fprintf(
                 __stderrp,
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1062,9 +1040,7 @@ unsafe extern "C" fn runTests() {
     }
     currentTestName = b"intConstantsErrors\0" as *const u8 as *const libc::c_char;
     let mut out_4: int64_t = 0;
-    if !(getNumCells(-(1 as libc::c_int), &mut out_4)
-        == E_RES_DOMAIN as libc::c_int as libc::c_uint)
-    {
+    if getNumCells(-(1 as libc::c_int), &mut out_4) != E_RES_DOMAIN as libc::c_int as libc::c_uint {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1080,8 +1056,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(getNumCells(16 as libc::c_int, &mut out_4) == E_RES_DOMAIN as libc::c_int as libc::c_uint)
-    {
+    if getNumCells(16 as libc::c_int, &mut out_4) != E_RES_DOMAIN as libc::c_int as libc::c_uint {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1134,7 +1109,7 @@ unsafe extern "C" fn runTests() {
         }
         globalTestCount += 1;
         printf(b".\0" as *const u8 as *const libc::c_char);
-        if !(num == expected_2[r as usize]) {
+        if num != expected_2[r as usize] {
             fprintf(
                 __stderrp,
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -1163,8 +1138,8 @@ unsafe fn main_0() -> libc::c_int {
         b"\nDONE: %d assertions\n\0" as *const u8 as *const libc::c_char,
         globalTestCount,
     );
-    return 0 as libc::c_int;
+    0 as libc::c_int
 }
 pub fn main() {
-    unsafe { ::std::process::exit(main_0() as i32) }
+    unsafe { ::std::process::exit(main_0()) }
 }

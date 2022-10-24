@@ -116,7 +116,7 @@ unsafe extern "C" fn directionForVertexNum_symmetry_assertions(mut h3: H3Index) 
     while i < numVerts {
         let mut dir: Direction = directionForVertexNum(h3, i);
         let mut vertexNum: libc::c_int = vertexNumForDirection(h3, dir);
-        if !(vertexNum == i) {
+        if vertexNum != i {
             fprintf(
                 __stderrp,
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -360,7 +360,7 @@ unsafe extern "C" fn cellToVertex_neighbor_assertions(mut h3: H3Index) {
                 }
                 v1 += 1;
             }
-            if !(intersection == 2 as libc::c_int) {
+            if intersection != 2 as libc::c_int {
                 fprintf(
                     __stderrp,
                     b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8
@@ -515,8 +515,8 @@ unsafe fn main_0() -> libc::c_int {
         b"\nDONE: %d assertions\n\0" as *const u8 as *const libc::c_char,
         globalTestCount,
     );
-    return 0 as libc::c_int;
+    0 as libc::c_int
 }
 pub fn main() {
-    unsafe { ::std::process::exit(main_0() as i32) }
+    unsafe { ::std::process::exit(main_0()) }
 }

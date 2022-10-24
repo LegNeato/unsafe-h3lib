@@ -55,7 +55,7 @@ pub unsafe extern "C" fn pentagonSetup(
     let mut p: H3Index = 0;
     cellToCenterChild(pParent, parentRes, &mut p);
     let mut ca_0: CellArray = CellArray {
-        cells: 0 as *mut H3Index,
+        cells: std::ptr::null_mut::<H3Index>(),
         N: 0,
     };
     cellToChildrenSize(p, childRes, &mut ca_0.N);
@@ -71,7 +71,7 @@ pub unsafe extern "C" fn pentagonSetup(
             i += nullEvery as libc::c_longlong;
         }
     }
-    return ca_0;
+    ca_0
 }
 #[inline]
 unsafe extern "C" fn runValidation(ca_0: CellArray) {
@@ -83,7 +83,7 @@ unsafe extern "C" fn runValidation(ca_0: CellArray) {
 }
 #[no_mangle]
 pub static mut ca: CellArray = CellArray {
-    cells: 0 as *mut H3Index,
+    cells: std::ptr::null_mut::<H3Index>(),
     N: 0,
 };
 unsafe fn main_0(mut _argc: libc::c_int, mut _argv: *mut *mut libc::c_char) -> libc::c_int {
@@ -286,7 +286,7 @@ unsafe fn main_0(mut _argc: libc::c_int, mut _argv: *mut *mut libc::c_char) -> l
         iterations_3,
     );
     free(ca.cells as *mut libc::c_void);
-    return 0;
+    0
 }
 pub fn main() {
     let mut args: Vec<*mut libc::c_char> = Vec::new();
@@ -302,6 +302,6 @@ pub fn main() {
         ::std::process::exit(main_0(
             (args.len() - 1) as libc::c_int,
             args.as_mut_ptr() as *mut *mut libc::c_char,
-        ) as i32)
+        ))
     }
 }

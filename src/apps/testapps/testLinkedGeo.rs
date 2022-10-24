@@ -106,8 +106,8 @@ unsafe extern "C" fn runTests() {
         1 as libc::c_int as libc::c_ulong,
         ::core::mem::size_of::<LinkedGeoPolygon>() as libc::c_ulong,
     ) as *mut LinkedGeoPolygon;
-    let mut loop_0: *mut LinkedGeoLoop = 0 as *mut LinkedGeoLoop;
-    let mut coord: *mut LinkedLatLng = 0 as *mut LinkedLatLng;
+    let mut loop_0: *mut LinkedGeoLoop = std::ptr::null_mut::<LinkedGeoLoop>();
+    let mut coord: *mut LinkedLatLng = std::ptr::null_mut::<LinkedLatLng>();
     loop_0 = addNewLinkedLoop(polygon);
     if loop_0.is_null() {
         fprintf(
@@ -220,7 +220,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedPolygons(polygon) == 1 as libc::c_int) {
+    if countLinkedPolygons(polygon) != 1 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -235,7 +235,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedLoops(polygon) == 2 as libc::c_int) {
+    if countLinkedLoops(polygon) != 2 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -250,7 +250,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedCoords((*polygon).first) == 3 as libc::c_int) {
+    if countLinkedCoords((*polygon).first) != 3 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -265,7 +265,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedCoords((*polygon).last) == 2 as libc::c_int) {
+    if countLinkedCoords((*polygon).last) != 2 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -296,7 +296,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(countLinkedPolygons(polygon) == 2 as libc::c_int) {
+    if countLinkedPolygons(polygon) != 2 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -325,8 +325,8 @@ unsafe fn main_0() -> libc::c_int {
         b"\nDONE: %d assertions\n\0" as *const u8 as *const libc::c_char,
         globalTestCount,
     );
-    return 0 as libc::c_int;
+    0 as libc::c_int
 }
 pub fn main() {
-    unsafe { ::std::process::exit(main_0() as i32) }
+    unsafe { ::std::process::exit(main_0()) }
 }

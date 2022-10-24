@@ -117,7 +117,7 @@ unsafe extern "C" fn countFaces(mut h3: H3Index, mut expectedMax: libc::c_int) -
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(sz == expectedMax) {
+    if sz != expectedMax {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -162,11 +162,11 @@ unsafe extern "C" fn countFaces(mut h3: H3Index, mut expectedMax: libc::c_int) -
         i += 1;
     }
     free(faces as *mut libc::c_void);
-    return validCount;
+    validCount
 }
 unsafe extern "C" fn assertSingleHexFace(mut h3: H3Index) {
     let mut validCount: libc::c_int = countFaces(h3, 2 as libc::c_int);
-    if !(validCount == 1 as libc::c_int) {
+    if validCount != 1 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -184,7 +184,7 @@ unsafe extern "C" fn assertSingleHexFace(mut h3: H3Index) {
 }
 unsafe extern "C" fn assertMultipleHexFaces(mut h3: H3Index) {
     let mut validCount: libc::c_int = countFaces(h3, 2 as libc::c_int);
-    if !(validCount == 2 as libc::c_int) {
+    if validCount != 2 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -217,7 +217,7 @@ unsafe extern "C" fn assertPentagonFaces(mut h3: H3Index) {
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
     let mut validCount: libc::c_int = countFaces(h3, 5 as libc::c_int);
-    if !(validCount == 5 as libc::c_int) {
+    if validCount != 5 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -290,7 +290,7 @@ unsafe extern "C" fn runTests() {
             let mut baseCell: H3Index = 0;
             setH3Index(&mut baseCell, 0 as libc::c_int, i, CENTER_DIGIT);
             let mut validCount: libc::c_int = countFaces(baseCell, 2 as libc::c_int);
-            if !(validCount > 0 as libc::c_int) {
+            if validCount <= 0 as libc::c_int {
                 fprintf(
                     __stderrp,
                     b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8
@@ -315,7 +315,7 @@ unsafe extern "C" fn runTests() {
         }
         i += 1;
     }
-    if !(singleCount == 4 as libc::c_int * 20 as libc::c_int) {
+    if singleCount != 4 as libc::c_int * 20 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -360,7 +360,7 @@ unsafe extern "C" fn runTests() {
     currentTestName = b"invalid\0" as *const u8 as *const libc::c_char;
     let mut invalid: H3Index = 0xffffffffffffffff as libc::c_ulong as H3Index;
     let mut out: libc::c_int = 0;
-    if !(getIcosahedronFaces(invalid, &mut out) == E_CELL_INVALID as libc::c_int as libc::c_uint) {
+    if getIcosahedronFaces(invalid, &mut out) != E_CELL_INVALID as libc::c_int as libc::c_uint {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -398,7 +398,7 @@ unsafe extern "C" fn runTests() {
         sz as libc::c_ulong,
         ::core::mem::size_of::<libc::c_int>() as libc::c_ulong,
     ) as *mut libc::c_int;
-    if !(getIcosahedronFaces(invalid_0, faces) == E_FAILED as libc::c_int as libc::c_uint) {
+    if getIcosahedronFaces(invalid_0, faces) != E_FAILED as libc::c_int as libc::c_uint {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -427,8 +427,8 @@ unsafe fn main_0() -> libc::c_int {
         b"\nDONE: %d assertions\n\0" as *const u8 as *const libc::c_char,
         globalTestCount,
     );
-    return 0 as libc::c_int;
+    0 as libc::c_int
 }
 pub fn main() {
-    unsafe { ::std::process::exit(main_0() as i32) }
+    unsafe { ::std::process::exit(main_0()) }
 }

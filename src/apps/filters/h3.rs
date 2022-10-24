@@ -69,7 +69,7 @@ pub unsafe extern "C" fn has(
     mut level: libc::c_int,
     mut argv: *mut *mut libc::c_char,
 ) -> bool {
-    return strcasecmp(subcommand, *argv.offset(level as isize)) == 0 as libc::c_int;
+    strcasecmp(subcommand, *argv.offset(level as isize)) == 0 as libc::c_int
 }
 #[no_mangle]
 pub unsafe extern "C" fn cellToLatLngCmd(
@@ -77,7 +77,7 @@ pub unsafe extern "C" fn cellToLatLngCmd(
     mut argv: *mut *mut libc::c_char,
 ) -> bool {
     let mut cellToLatLngArg: Arg = {
-        let mut init = Arg {
+        Arg {
             names: [
                 b"cellToLatLng\0" as *const u8 as *const libc::c_char,
                 std::ptr::null::<libc::c_char>(),
@@ -85,15 +85,14 @@ pub unsafe extern "C" fn cellToLatLngCmd(
             required: 1 as libc::c_int != 0,
             scanFormat: std::ptr::null::<libc::c_char>(),
             valueName: std::ptr::null::<libc::c_char>(),
-            value: 0 as *mut libc::c_void,
+            value: std::ptr::null_mut::<libc::c_void>(),
             found: false,
             helpText: b"Convert an H3 cell to a latitude/longitude coordinate\0" as *const u8
                 as *const libc::c_char,
-        };
-        init
+        }
     };
     let mut helpArg: Arg = {
-        let mut init = Arg {
+        Arg {
             names: [
                 b"-h\0" as *const u8 as *const libc::c_char,
                 b"--help\0" as *const u8 as *const libc::c_char,
@@ -101,15 +100,14 @@ pub unsafe extern "C" fn cellToLatLngCmd(
             required: false,
             scanFormat: std::ptr::null::<libc::c_char>(),
             valueName: std::ptr::null::<libc::c_char>(),
-            value: 0 as *mut libc::c_void,
+            value: std::ptr::null_mut::<libc::c_void>(),
             found: false,
             helpText: b"Show this help message.\0" as *const u8 as *const libc::c_char,
-        };
-        init
+        }
     };
     let mut cell: H3Index = 0 as libc::c_int as H3Index;
     let mut cellArg: Arg = {
-        let mut init = Arg {
+        Arg {
             names: [
                 b"-c\0" as *const u8 as *const libc::c_char,
                 b"--cell\0" as *const u8 as *const libc::c_char,
@@ -120,8 +118,7 @@ pub unsafe extern "C" fn cellToLatLngCmd(
             value: &mut cell as *mut H3Index as *mut libc::c_void,
             found: false,
             helpText: b"H3 Cell\0" as *const u8 as *const libc::c_char,
-        };
-        init
+        }
     };
     let mut args: [*mut Arg; 3] = [&mut cellToLatLngArg, &mut helpArg, &mut cellArg];
     if parseArgs(
@@ -143,7 +140,7 @@ pub unsafe extern "C" fn cellToLatLngCmd(
         radsToDegs(ll.lat),
         radsToDegs(ll.lng),
     );
-    return 1 as libc::c_int != 0;
+    1 as libc::c_int != 0
 }
 #[no_mangle]
 pub unsafe extern "C" fn latLngToCellCmd(
@@ -154,7 +151,7 @@ pub unsafe extern "C" fn latLngToCellCmd(
     let mut lat: libc::c_double = 0 as libc::c_int as libc::c_double;
     let mut lng: libc::c_double = 0 as libc::c_int as libc::c_double;
     let mut latLngToCellArg: Arg = {
-        let mut init = Arg {
+        Arg {
             names: [
                 b"latLngToCell\0" as *const u8 as *const libc::c_char,
                 std::ptr::null::<libc::c_char>(),
@@ -162,15 +159,14 @@ pub unsafe extern "C" fn latLngToCellCmd(
             required: 1 as libc::c_int != 0,
             scanFormat: std::ptr::null::<libc::c_char>(),
             valueName: std::ptr::null::<libc::c_char>(),
-            value: 0 as *mut libc::c_void,
+            value: std::ptr::null_mut::<libc::c_void>(),
             found: false,
             helpText: b"Convert degrees latitude/longitude coordinate to an H3 cell.\0" as *const u8
                 as *const libc::c_char,
-        };
-        init
+        }
     };
     let mut helpArg: Arg = {
-        let mut init = Arg {
+        Arg {
             names: [
                 b"-h\0" as *const u8 as *const libc::c_char,
                 b"--help\0" as *const u8 as *const libc::c_char,
@@ -178,14 +174,13 @@ pub unsafe extern "C" fn latLngToCellCmd(
             required: false,
             scanFormat: std::ptr::null::<libc::c_char>(),
             valueName: std::ptr::null::<libc::c_char>(),
-            value: 0 as *mut libc::c_void,
+            value: std::ptr::null_mut::<libc::c_void>(),
             found: false,
             helpText: b"Show this help message.\0" as *const u8 as *const libc::c_char,
-        };
-        init
+        }
     };
     let mut resArg: Arg = {
-        let mut init = Arg {
+        Arg {
             names: [
                 b"-r\0" as *const u8 as *const libc::c_char,
                 b"--resolution\0" as *const u8 as *const libc::c_char,
@@ -196,11 +191,10 @@ pub unsafe extern "C" fn latLngToCellCmd(
             value: &mut res as *mut libc::c_int as *mut libc::c_void,
             found: false,
             helpText: b"Resolution, 0-15 inclusive.\0" as *const u8 as *const libc::c_char,
-        };
-        init
+        }
     };
     let mut latArg: Arg = {
-        let mut init = Arg {
+        Arg {
             names: [
                 b"--lat\0" as *const u8 as *const libc::c_char,
                 b"--latitude\0" as *const u8 as *const libc::c_char,
@@ -211,11 +205,10 @@ pub unsafe extern "C" fn latLngToCellCmd(
             value: &mut lat as *mut libc::c_double as *mut libc::c_void,
             found: false,
             helpText: b"Latitude in degrees.\0" as *const u8 as *const libc::c_char,
-        };
-        init
+        }
     };
     let mut lngArg: Arg = {
-        let mut init = Arg {
+        Arg {
             names: [
                 b"--lng\0" as *const u8 as *const libc::c_char,
                 b"--longitude\0" as *const u8 as *const libc::c_char,
@@ -226,8 +219,7 @@ pub unsafe extern "C" fn latLngToCellCmd(
             value: &mut lng as *mut libc::c_double as *mut libc::c_void,
             found: false,
             helpText: b"Longitude in degrees.\0" as *const u8 as *const libc::c_char,
-        };
-        init
+        }
     };
     let mut args: [*mut Arg; 5] = [
         &mut latLngToCellArg,
@@ -249,11 +241,10 @@ pub unsafe extern "C" fn latLngToCellCmd(
         return helpArg.found;
     }
     let mut ll: LatLng = {
-        let mut init = LatLng {
+        LatLng {
             lat: degsToRads(lat),
             lng: degsToRads(lng),
-        };
-        init
+        }
     };
     let mut c: H3Index = 0;
     let mut e: H3Error = latLngToCell(&mut ll, res, &mut c);
@@ -262,7 +253,7 @@ pub unsafe extern "C" fn latLngToCellCmd(
     } else {
         h3Println(0 as libc::c_int as H3Index);
     }
-    return 1 as libc::c_int != 0;
+    1 as libc::c_int != 0
 }
 #[no_mangle]
 pub unsafe extern "C" fn generalHelp(
@@ -270,7 +261,7 @@ pub unsafe extern "C" fn generalHelp(
     mut argv: *mut *mut libc::c_char,
 ) -> bool {
     let mut helpArg: Arg = {
-        let mut init = Arg {
+        Arg {
             names: [
                 b"-h\0" as *const u8 as *const libc::c_char,
                 b"--help\0" as *const u8 as *const libc::c_char,
@@ -278,14 +269,13 @@ pub unsafe extern "C" fn generalHelp(
             required: false,
             scanFormat: std::ptr::null::<libc::c_char>(),
             valueName: std::ptr::null::<libc::c_char>(),
-            value: 0 as *mut libc::c_void,
+            value: std::ptr::null_mut::<libc::c_void>(),
             found: false,
             helpText: b"Show this help message.\0" as *const u8 as *const libc::c_char,
-        };
-        init
+        }
     };
     let mut cellToLatLngArg: Arg = {
-        let mut init = Arg {
+        Arg {
             names: [
                 b"cellToLatLng\0" as *const u8 as *const libc::c_char,
                 std::ptr::null::<libc::c_char>(),
@@ -293,15 +283,14 @@ pub unsafe extern "C" fn generalHelp(
             required: false,
             scanFormat: std::ptr::null::<libc::c_char>(),
             valueName: std::ptr::null::<libc::c_char>(),
-            value: 0 as *mut libc::c_void,
+            value: std::ptr::null_mut::<libc::c_void>(),
             found: false,
             helpText: b"Convert an H3 cell to a latitude/longitude coordinate\0" as *const u8
                 as *const libc::c_char,
-        };
-        init
+        }
     };
     let mut latLngToCellArg: Arg = {
-        let mut init = Arg {
+        Arg {
             names: [
                 b"latLngToCell\0" as *const u8 as *const libc::c_char,
                 std::ptr::null::<libc::c_char>(),
@@ -309,24 +298,23 @@ pub unsafe extern "C" fn generalHelp(
             required: false,
             scanFormat: std::ptr::null::<libc::c_char>(),
             valueName: std::ptr::null::<libc::c_char>(),
-            value: 0 as *mut libc::c_void,
+            value: std::ptr::null_mut::<libc::c_void>(),
             found: false,
             helpText: b"Convert degrees latitude/longitude coordinate to an H3 cell.\0" as *const u8
                 as *const libc::c_char,
-        };
-        init
+        }
     };
     let mut args: [*mut Arg; 3] = [&mut helpArg, &mut cellToLatLngArg, &mut latLngToCellArg];
     let mut helpText: *const libc::c_char = b"Please use one of the subcommands listed to perform an H3 calculation. Use h3 <SUBCOMMAND> --help for details on the usage of any subcommand.\0"
         as *const u8 as *const libc::c_char;
-    return parseArgs(
+    parseArgs(
         argc,
         argv,
         3 as libc::c_int,
         args.as_mut_ptr(),
         &mut helpArg,
         helpText,
-    ) != 0;
+    ) != 0
 }
 unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> libc::c_int {
     if argc <= 1 as libc::c_int {
@@ -363,7 +351,7 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
         b"Please use h3 --help to see how to use this command.\n\0" as *const u8
             as *const libc::c_char,
     );
-    return 1 as libc::c_int;
+    1 as libc::c_int
 }
 pub fn main() {
     let mut args: Vec<*mut libc::c_char> = Vec::new();
@@ -379,6 +367,6 @@ pub fn main() {
         ::std::process::exit(main_0(
             (args.len() - 1) as libc::c_int,
             args.as_mut_ptr() as *mut *mut libc::c_char,
-        ) as i32)
+        ))
     }
 }

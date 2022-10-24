@@ -96,7 +96,7 @@ pub unsafe extern "C" fn parseArgs(
             1 as libc::c_int
         };
     }
-    return 0 as libc::c_int;
+    0 as libc::c_int
 }
 #[no_mangle]
 pub unsafe extern "C" fn _parseArgsList(
@@ -117,15 +117,14 @@ pub unsafe extern "C" fn _parseArgsList(
             let mut argName: *const libc::c_char = std::ptr::null::<libc::c_char>();
             let mut k: libc::c_int = 0 as libc::c_int;
             while k < 2 as libc::c_int {
-                if !((**args.offset(j as isize)).names[k as usize]).is_null() {
-                    if strcasecmp(
+                if !((**args.offset(j as isize)).names[k as usize]).is_null()
+                    && strcasecmp(
                         *argv.offset(i as isize),
                         (**args.offset(j as isize)).names[k as usize],
                     ) == 0 as libc::c_int
-                    {
-                        argName = (**args.offset(j as isize)).names[k as usize];
-                        break;
-                    }
+                {
+                    argName = (**args.offset(j as isize)).names[k as usize];
+                    break;
                 }
                 k += 1;
             }
@@ -185,7 +184,7 @@ pub unsafe extern "C" fn _parseArgsList(
             i_0 += 1;
         }
     }
-    return 0 as libc::c_int;
+    0 as libc::c_int
 }
 #[no_mangle]
 pub unsafe extern "C" fn printHelp(

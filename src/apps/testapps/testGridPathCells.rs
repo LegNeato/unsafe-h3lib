@@ -88,7 +88,7 @@ unsafe extern "C" fn runTests() {
     let mut end: H3Index = 0x851d9b1bfffffff as libc::c_long as H3Index;
     let mut size: int64_t = 0;
     let mut lineError: H3Error = gridPathCellsSize(start, end, &mut size);
-    if !(lineError == E_FAILED as libc::c_int as libc::c_uint) {
+    if lineError != E_FAILED as libc::c_int as libc::c_uint {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -127,7 +127,7 @@ unsafe extern "C" fn runTests() {
         ::core::mem::size_of::<H3Index>() as libc::c_ulong,
         size_0 as libc::c_ulong,
     ) as *mut H3Index;
-    if !(gridPathCells(start_0, end_0, path) == E_PENTAGON as libc::c_int as libc::c_uint) {
+    if gridPathCells(start_0, end_0, path) != E_PENTAGON as libc::c_int as libc::c_uint {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -156,8 +156,8 @@ unsafe fn main_0() -> libc::c_int {
         b"\nDONE: %d assertions\n\0" as *const u8 as *const libc::c_char,
         globalTestCount,
     );
-    return 0 as libc::c_int;
+    0 as libc::c_int
 }
 pub fn main() {
-    unsafe { ::std::process::exit(main_0() as i32) }
+    unsafe { ::std::process::exit(main_0()) }
 }

@@ -94,11 +94,10 @@ pub struct LatLng {
 }
 unsafe extern "C" fn runTests() {
     let mut sf: LatLng = {
-        let mut init = LatLng {
+        LatLng {
             lat: 0.659966917655f64,
-            lng: 2 as libc::c_int as libc::c_double * 3.14159f64 - 2.1364398519396f64,
-        };
-        init
+            lng: 2 as libc::c_int as libc::c_double * std::f64::consts::PI - 2.1364398519396f64,
+        }
     };
     let mut sfHex: H3Index = 0;
     if latLngToCell(&mut sf, 9 as libc::c_int, &mut sfHex) != 0 {
@@ -152,7 +151,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(k0[0 as libc::c_int as usize] == sfHex) {
+    if k0[0 as libc::c_int as usize] != sfHex {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -235,7 +234,7 @@ unsafe extern "C" fn runTests() {
     printf(b".\0" as *const u8 as *const libc::c_char);
     let mut i: libc::c_int = 0 as libc::c_int;
     while i < 42 as libc::c_int {
-        if !(allKrings[i as usize] != 0 as libc::c_int as libc::c_ulonglong) {
+        if allKrings[i as usize] == 0 as libc::c_int as libc::c_ulonglong {
             fprintf(
                 __stderrp,
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -252,7 +251,7 @@ unsafe extern "C" fn runTests() {
         printf(b".\0" as *const u8 as *const libc::c_char);
         if i % 7 as libc::c_int == 0 as libc::c_int {
             let mut index: libc::c_int = i / 7 as libc::c_int;
-            if !(k1[index as usize] == allKrings[i as usize]) {
+            if k1[index as usize] != allKrings[i as usize] {
                 fprintf(
                     __stderrp,
                     b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8
@@ -302,7 +301,7 @@ unsafe extern "C" fn runTests() {
     printf(b".\0" as *const u8 as *const libc::c_char);
     let mut i_0: libc::c_int = 0 as libc::c_int;
     while i_0 < 6 as libc::c_int * (1 as libc::c_int + 6 as libc::c_int + 12 as libc::c_int) {
-        if !(*allKrings2.offset(i_0 as isize) != 0 as libc::c_int as libc::c_ulonglong) {
+        if *allKrings2.offset(i_0 as isize) == 0 as libc::c_int as libc::c_ulonglong {
             fprintf(
                 __stderrp,
                 b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -320,7 +319,7 @@ unsafe extern "C" fn runTests() {
         if i_0 % (1 as libc::c_int + 6 as libc::c_int + 12 as libc::c_int) == 0 as libc::c_int {
             let mut index_0: libc::c_int =
                 i_0 / (1 as libc::c_int + 6 as libc::c_int + 12 as libc::c_int);
-            if !(k1[index_0 as usize] == *allKrings2.offset(i_0 as isize)) {
+            if k1[index_0 as usize] != *allKrings2.offset(i_0 as isize) {
                 fprintf(
                     __stderrp,
                     b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8
@@ -347,12 +346,12 @@ unsafe extern "C" fn runTests() {
         (2 as libc::c_int * (1 as libc::c_int + 6 as libc::c_int)) as libc::c_ulong,
         ::core::mem::size_of::<H3Index>() as libc::c_ulong,
     ) as *mut H3Index;
-    if !(gridDisksUnsafe(
+    if gridDisksUnsafe(
         withPentagon.as_mut_ptr(),
         2 as libc::c_int,
         1 as libc::c_int,
         allKrings_0,
-    ) == E_PENTAGON as libc::c_int as libc::c_uint)
+    ) != E_PENTAGON as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -371,12 +370,12 @@ unsafe extern "C" fn runTests() {
     printf(b".\0" as *const u8 as *const libc::c_char);
     free(allKrings_0 as *mut libc::c_void);
     currentTestName = b"invalid_k\0" as *const u8 as *const libc::c_char;
-    if !(gridDisksUnsafe(
+    if gridDisksUnsafe(
         k1.as_mut_ptr(),
         6 as libc::c_int,
         -(1 as libc::c_int),
-        0 as *mut H3Index,
-    ) == E_DOMAIN as libc::c_int as libc::c_uint)
+        std::ptr::null_mut::<H3Index>(),
+    ) != E_DOMAIN as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -405,8 +404,8 @@ unsafe fn main_0() -> libc::c_int {
         b"\nDONE: %d assertions\n\0" as *const u8 as *const libc::c_char,
         globalTestCount,
     );
-    return 0 as libc::c_int;
+    0 as libc::c_int
 }
 pub fn main() {
-    unsafe { ::std::process::exit(main_0() as i32) }
+    unsafe { ::std::process::exit(main_0()) }
 }

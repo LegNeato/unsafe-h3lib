@@ -211,8 +211,8 @@ pub unsafe extern "C" fn recursiveH3IndexToGeo(
 ) {
     let mut d: libc::c_int = 0 as libc::c_int;
     while d < 7 as libc::c_int {
-        h = h & !((7 as libc::c_int as uint64_t) << (15 as libc::c_int - res) * 3 as libc::c_int)
-            | (d as uint64_t) << (15 as libc::c_int - res) * 3 as libc::c_int;
+        h = h & !((7 as libc::c_int as uint64_t) << ((15 as libc::c_int - res) * 3 as libc::c_int))
+            | (d as uint64_t) << ((15 as libc::c_int - res) * 3 as libc::c_int);
         if !(_isBaseCellPentagon(
             ((h & (127 as libc::c_int as uint64_t) << 45 as libc::c_int) >> 45 as libc::c_int)
                 as libc::c_int,
@@ -250,25 +250,23 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
         error(b"resolution must be an integer\0" as *const u8 as *const libc::c_char);
     }
     let mut maxK: libc::c_int = 5 as libc::c_int;
-    if argc > 2 as libc::c_int {
-        if sscanf(
+    if argc > 2 as libc::c_int
+        && sscanf(
             *argv.offset(2 as libc::c_int as isize),
             b"%d\0" as *const u8 as *const libc::c_char,
             &mut maxK as *mut libc::c_int,
         ) == 0
-        {
-            error(b"maxK must be an integer\0" as *const u8 as *const libc::c_char);
-        }
+    {
+        error(b"maxK must be an integer\0" as *const u8 as *const libc::c_char);
     }
     let mut testOutput: TestOutput = {
-        let mut init = TestOutput {
+        TestOutput {
             ret0: 0 as libc::c_int,
             ret0ValidationFailures: 0 as libc::c_int,
             ret1: 0 as libc::c_int,
             ret1ValidationFailures: 0 as libc::c_int,
             ret2: 0 as libc::c_int,
-        };
-        init
+        }
     };
     let mut bc: libc::c_int = 0 as libc::c_int;
     while bc < 122 as libc::c_int {
@@ -306,7 +304,7 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
         );
         return 1 as libc::c_int;
     }
-    return 0 as libc::c_int;
+    0 as libc::c_int
 }
 pub fn main() {
     let mut args: Vec<*mut libc::c_char> = Vec::new();
@@ -322,6 +320,6 @@ pub fn main() {
         ::std::process::exit(main_0(
             (args.len() - 1) as libc::c_int,
             args.as_mut_ptr() as *mut *mut libc::c_char,
-        ) as i32)
+        ))
     }
 }

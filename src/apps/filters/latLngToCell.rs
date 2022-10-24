@@ -120,11 +120,10 @@ pub unsafe extern "C" fn doCoords(
     mut res: libc::c_int,
 ) {
     let mut g: LatLng = {
-        let mut init = LatLng {
+        LatLng {
             lat: degsToRads(lat),
             lng: degsToRads(lng),
-        };
-        init
+        }
     };
     let mut h: H3Index = 0;
     let mut e: H3Error = latLngToCell(&mut g, res, &mut h);
@@ -139,7 +138,7 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
     let mut lat: libc::c_double = 0 as libc::c_int as libc::c_double;
     let mut lng: libc::c_double = 0 as libc::c_int as libc::c_double;
     let mut helpArg: Arg = {
-        let mut init = Arg {
+        Arg {
             names: [
                 b"-h\0" as *const u8 as *const libc::c_char,
                 b"--help\0" as *const u8 as *const libc::c_char,
@@ -147,14 +146,13 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
             required: false,
             scanFormat: std::ptr::null::<libc::c_char>(),
             valueName: std::ptr::null::<libc::c_char>(),
-            value: 0 as *mut libc::c_void,
+            value: std::ptr::null_mut::<libc::c_void>(),
             found: false,
             helpText: b"Show this help message.\0" as *const u8 as *const libc::c_char,
-        };
-        init
+        }
     };
     let mut resArg: Arg = {
-        let mut init = Arg {
+        Arg {
             names: [
                 b"-r\0" as *const u8 as *const libc::c_char,
                 b"--resolution\0" as *const u8 as *const libc::c_char,
@@ -165,11 +163,10 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
             value: &mut res as *mut libc::c_int as *mut libc::c_void,
             found: false,
             helpText: b"Resolution, 0-15 inclusive.\0" as *const u8 as *const libc::c_char,
-        };
-        init
+        }
     };
     let mut latArg: Arg = {
-        let mut init = Arg {
+        Arg {
             names: [
                 b"--lat\0" as *const u8 as *const libc::c_char,
                 b"--latitude\0" as *const u8 as *const libc::c_char,
@@ -181,11 +178,10 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
             found: false,
             helpText: b"Latitude in degrees. If not specified, \"latitude longitude\" pairs will be read from standard input.\0"
                 as *const u8 as *const libc::c_char,
-        };
-        init
+        }
     };
     let mut lngArg: Arg = {
-        let mut init = Arg {
+        Arg {
             names: [
                 b"--lng\0" as *const u8 as *const libc::c_char,
                 b"--longitude\0" as *const u8 as *const libc::c_char,
@@ -196,8 +192,7 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
             value: &mut lng as *mut libc::c_double as *mut libc::c_void,
             found: false,
             helpText: b"Longitude in degrees.\0" as *const u8 as *const libc::c_char,
-        };
-        init
+        }
     };
     let mut args: [*mut Arg; 4] = [&mut helpArg, &mut resArg, &mut latArg, &mut lngArg];
     let numArgs: libc::c_int = 4 as libc::c_int;
@@ -254,7 +249,7 @@ unsafe fn main_0(mut argc: libc::c_int, mut argv: *mut *mut libc::c_char) -> lib
             doCoords(lat, lng, res);
         }
     }
-    return 0;
+    0
 }
 pub fn main() {
     let mut args: Vec<*mut libc::c_char> = Vec::new();
@@ -270,6 +265,6 @@ pub fn main() {
         ::std::process::exit(main_0(
             (args.len() - 1) as libc::c_int,
             args.as_mut_ptr() as *mut *mut libc::c_char,
-        ) as i32)
+        ))
     }
 }

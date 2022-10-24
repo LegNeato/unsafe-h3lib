@@ -91,22 +91,20 @@ pub const CENTER_DIGIT: Direction = 0;
 unsafe extern "C" fn runTests() {
     currentTestName = b"ijkToIj_zero\0" as *const u8 as *const libc::c_char;
     let mut ijk: CoordIJK = {
-        let mut init = CoordIJK {
+        CoordIJK {
             i: 0 as libc::c_int,
             j: 0,
             k: 0,
-        };
-        init
+        }
     };
     let mut ij: CoordIJ = {
-        let mut init = CoordIJ {
+        CoordIJ {
             i: 0 as libc::c_int,
             j: 0,
-        };
-        init
+        }
     };
     ijkToIj(&mut ijk, &mut ij);
-    if !(ij.i == 0 as libc::c_int) {
+    if ij.i != 0 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -121,7 +119,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(ij.j == 0 as libc::c_int) {
+    if ij.j != 0 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -151,7 +149,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(ijk.i == 0 as libc::c_int) {
+    if ijk.i != 0 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -166,7 +164,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(ijk.j == 0 as libc::c_int) {
+    if ijk.j != 0 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -181,7 +179,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(ijk.k == 0 as libc::c_int) {
+    if ijk.k != 0 as libc::c_int {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -200,29 +198,26 @@ unsafe extern "C" fn runTests() {
     let mut dir: Direction = CENTER_DIGIT;
     while (dir as libc::c_uint) < NUM_DIGITS as libc::c_int as libc::c_uint {
         let mut ijk_0: CoordIJK = {
-            let mut init = CoordIJK {
+            CoordIJK {
                 i: 0 as libc::c_int,
                 j: 0,
                 k: 0,
-            };
-            init
+            }
         };
         _neighbor(&mut ijk_0, dir);
         let mut ij_0: CoordIJ = {
-            let mut init = CoordIJ {
+            CoordIJ {
                 i: 0 as libc::c_int,
                 j: 0,
-            };
-            init
+            }
         };
         ijkToIj(&mut ijk_0, &mut ij_0);
         let mut recovered: CoordIJK = {
-            let mut init = CoordIJK {
+            CoordIJK {
                 i: 0 as libc::c_int,
                 j: 0,
                 k: 0,
-            };
-            init
+            }
         };
         if ijToIjk(&mut ij_0, &mut recovered) != 0 {
             fprintf(
@@ -260,21 +255,19 @@ unsafe extern "C" fn runTests() {
     let mut dir_0: Direction = CENTER_DIGIT;
     while (dir_0 as libc::c_uint) < NUM_DIGITS as libc::c_int as libc::c_uint {
         let mut ijk_1: CoordIJK = {
-            let mut init = CoordIJK {
+            CoordIJK {
                 i: 0 as libc::c_int,
                 j: 0,
                 k: 0,
-            };
-            init
+            }
         };
         _neighbor(&mut ijk_1, dir_0);
         let mut original: CoordIJK = {
-            let mut init = CoordIJK {
+            CoordIJK {
                 i: ijk_1.i,
                 j: ijk_1.j,
                 k: ijk_1.k,
-            };
-            init
+            }
         };
         ijkToCube(&mut ijk_1);
         cubeToIjk(&mut ijk_1);
@@ -307,8 +300,8 @@ unsafe fn main_0() -> libc::c_int {
         b"\nDONE: %d assertions\n\0" as *const u8 as *const libc::c_char,
         globalTestCount,
     );
-    return 0 as libc::c_int;
+    0 as libc::c_int
 }
 pub fn main() {
-    unsafe { ::std::process::exit(main_0() as i32) }
+    unsafe { ::std::process::exit(main_0()) }
 }

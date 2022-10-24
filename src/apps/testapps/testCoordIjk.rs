@@ -80,39 +80,34 @@ pub const CENTER_DIGIT: Direction = 0;
 unsafe extern "C" fn runTests() {
     currentTestName = b"_unitIjkToDigit\0" as *const u8 as *const libc::c_char;
     let mut zero: CoordIJK = {
-        let mut init = CoordIJK {
+        CoordIJK {
             i: 0 as libc::c_int,
             j: 0,
             k: 0,
-        };
-        init
+        }
     };
     let mut i: CoordIJK = {
-        let mut init = CoordIJK {
+        CoordIJK {
             i: 1 as libc::c_int,
             j: 0 as libc::c_int,
             k: 0 as libc::c_int,
-        };
-        init
+        }
     };
     let mut outOfRange: CoordIJK = {
-        let mut init = CoordIJK {
+        CoordIJK {
             i: 2 as libc::c_int,
             j: 0 as libc::c_int,
             k: 0 as libc::c_int,
-        };
-        init
+        }
     };
     let mut unnormalizedZero: CoordIJK = {
-        let mut init = CoordIJK {
+        CoordIJK {
             i: 2 as libc::c_int,
             j: 2 as libc::c_int,
             k: 2 as libc::c_int,
-        };
-        init
+        }
     };
-    if !(_unitIjkToDigit(&mut zero) as libc::c_uint == CENTER_DIGIT as libc::c_int as libc::c_uint)
-    {
+    if _unitIjkToDigit(&mut zero) as libc::c_uint != CENTER_DIGIT as libc::c_int as libc::c_uint {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -127,7 +122,7 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(_unitIjkToDigit(&mut i) as libc::c_uint == I_AXES_DIGIT as libc::c_int as libc::c_uint) {
+    if _unitIjkToDigit(&mut i) as libc::c_uint != I_AXES_DIGIT as libc::c_int as libc::c_uint {
         fprintf(
             __stderrp,
             b"%s.%s: t_assert failed at %s:%d, %s, %s\n\0" as *const u8 as *const libc::c_char,
@@ -142,8 +137,8 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(_unitIjkToDigit(&mut outOfRange) as libc::c_uint
-        == INVALID_DIGIT as libc::c_int as libc::c_uint)
+    if _unitIjkToDigit(&mut outOfRange) as libc::c_uint
+        != INVALID_DIGIT as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -159,8 +154,8 @@ unsafe extern "C" fn runTests() {
     }
     globalTestCount += 1;
     printf(b".\0" as *const u8 as *const libc::c_char);
-    if !(_unitIjkToDigit(&mut unnormalizedZero) as libc::c_uint
-        == CENTER_DIGIT as libc::c_int as libc::c_uint)
+    if _unitIjkToDigit(&mut unnormalizedZero) as libc::c_uint
+        != CENTER_DIGIT as libc::c_int as libc::c_uint
     {
         fprintf(
             __stderrp,
@@ -179,28 +174,25 @@ unsafe extern "C" fn runTests() {
     printf(b".\0" as *const u8 as *const libc::c_char);
     currentTestName = b"_neighbor\0" as *const u8 as *const libc::c_char;
     let mut ijk: CoordIJK = {
-        let mut init = CoordIJK {
+        CoordIJK {
             i: 0 as libc::c_int,
             j: 0,
             k: 0,
-        };
-        init
+        }
     };
     let mut zero_0: CoordIJK = {
-        let mut init = CoordIJK {
+        CoordIJK {
             i: 0 as libc::c_int,
             j: 0,
             k: 0,
-        };
-        init
+        }
     };
     let mut i_0: CoordIJK = {
-        let mut init = CoordIJK {
+        CoordIJK {
             i: 1 as libc::c_int,
             j: 0 as libc::c_int,
             k: 0 as libc::c_int,
-        };
-        init
+        }
     };
     _neighbor(&mut ijk, CENTER_DIGIT);
     if _ijkMatches(&mut ijk, &mut zero_0) == 0 {
@@ -262,8 +254,8 @@ unsafe fn main_0() -> libc::c_int {
         b"\nDONE: %d assertions\n\0" as *const u8 as *const libc::c_char,
         globalTestCount,
     );
-    return 0 as libc::c_int;
+    0 as libc::c_int
 }
 pub fn main() {
-    unsafe { ::std::process::exit(main_0() as i32) }
+    unsafe { ::std::process::exit(main_0()) }
 }
