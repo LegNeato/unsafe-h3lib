@@ -1,5 +1,6 @@
 [workspace]
 members = [
    "src/h3lib",
-   "src/apps",
+   "src/apps/applib",
+   "src/apps/testapps",
 ]

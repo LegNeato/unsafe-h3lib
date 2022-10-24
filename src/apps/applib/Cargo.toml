@@ -8,10 +8,10 @@ autobins = false
 
 [lib]
 name = "unsafe_h3lib_applib"
-path = "lib.rs"
+path = "lib/lib.rs"
 crate-type = ["staticlib", "rlib"]
 
 [dependencies]
-unsafe-h3lib = { version = "*", path = "../../../h3lib" }
+unsafe-h3lib = { version = "*", path = "../../h3lib" }
 num-traits = "0.2"
 libc = "0.2"

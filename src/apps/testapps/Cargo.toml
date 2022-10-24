@@ -13,7 +13,7 @@ crate-type = ["staticlib", "rlib"]
 
 [dependencies]
 unsafe-h3lib = { version = "*", path = "../../h3lib" }
-unsafe-h3lib-applib = { version = "*", path = "../applib/lib"}
+unsafe-h3lib-applib = { version = "*", path = "../applib"}
 num-traits = "0.2"
 libc = "0.2"
 
